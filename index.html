@@ -287,29 +287,29 @@
 					try {
 						// Get the base URL for config loading
 						const getConfigPath = () => {
-							// Check if we're on GitHub Pages
-							if (window.location.hostname.endsWith('github.io')) {
-								const pathSegments = window.location.pathname.split('/');
-								// Remove empty segments and get repo name
-								const repoName = pathSegments.filter(s => s)[0];
-								return `/${repoName}/config.json`;
+							const origin = window.location.origin;
+							const pathname = window.location.pathname;
+							
+							// If we're at the root or index.html
+							if (pathname === '/' || pathname.endsWith('index.html')) {
+								return '/config.json';
 							}
 							
-							// For custom domain or local development
-							const currentPath = window.location.pathname;
-							const configPath = currentPath.endsWith('/') 
-								? currentPath + 'config.json'
-								: currentPath.substring(0, currentPath.lastIndexOf('/') + 1) + 'config.json';
+							// Remove any trailing slashes and index.html
+							const cleanPath = pathname.replace(/\/+$/, '').replace(/\/index\.html$/, '');
 							
-							return configPath;
+							// For subdirectory deployments (including GitHub Pages)
+							return `${cleanPath}/config.json`;
 						};
 
 						const configPath = getConfigPath();
 						console.log('Loading config from:', configPath);
+						console.log('Full URL:', window.location.origin + configPath);
 						
 						// Load webhook URL from config file
 						const configResponse = await fetch(configPath);
 						if (!configResponse.ok) {
+							console.error('Config fetch failed:', configResponse.status, configResponse.statusText);
 							throw new Error(`Failed to load configuration. Please try again later.`);
 						}
 						

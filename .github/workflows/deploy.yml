@@ -27,27 +27,28 @@ jobs:
       
       - name: Debug environment
         run: |
+          echo "Current directory contents:"
+          ls -la
           echo "Checking if webhook URL is set:"
           if [ -n "${{ secrets.DISCORD_WEBHOOK_URL }}" ]; then
             echo "Webhook URL is set"
           else
             echo "Webhook URL is NOT set"
+            exit 1
           fi
       
       - name: Create config file
         env:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          echo "Creating config.json..."
-          if [ -z "$WEBHOOK_URL" ]; then
-            echo "Error: WEBHOOK_URL is empty"
-            exit 1
-          fi
+          echo "Creating config.json in repository root..."
           echo "{\"webhookUrl\":\"$WEBHOOK_URL\"}" > config.json
           echo "Config file created. Verifying contents (webhook URL hidden):"
           cat config.json | sed 's/https:\/\/[^"]*/"[WEBHOOK_URL_HIDDEN]"/'
           echo "File permissions and size:"
           ls -l config.json
+          echo "Directory contents after config creation:"
+          ls -la
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
