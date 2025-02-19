@@ -78,17 +78,15 @@
 			}
 		</style>
 		<script>
-			// Add debugging for script load order
-			console.log('Start of head scripts');
+			// Add debugging for webhook URL
+			console.log('Initial script - webhook URL:', window.DISCORD_WEBHOOK_URL);
 			window.addEventListener('DOMContentLoaded', () => {
 				console.log('DOMContentLoaded - webhook URL:', window.DISCORD_WEBHOOK_URL);
 			});
 		</script>
-		<script src="./config.js"></script>
-		<script>console.log('After config.js load - webhook URL:', window.DISCORD_WEBHOOK_URL);</script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 		<script type="module" crossorigin src="./assets/main.tsx.ed6f4f5c.js"></script>
 		<link rel="stylesheet" href="./assets/main.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 	</head>
 	<body class="is-preload">
 		<!-- Toast Container -->

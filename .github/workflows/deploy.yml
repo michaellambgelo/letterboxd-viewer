@@ -35,20 +35,18 @@ jobs:
             exit 1
           fi
       
-      - name: Update config.js
+      - name: Update HTML with webhook URL
         env:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          # Create config with debugging
-          echo 'console.log("Config script starting");' > config.js
-          echo 'window.DISCORD_WEBHOOK_URL = "'"$WEBHOOK_URL"'";' >> config.js
-          echo 'console.log("Config script finished - webhook URL:", window.DISCORD_WEBHOOK_URL);' >> config.js
+          # Create a temporary file with the script tag
+          SCRIPT_TAG="<script>window.DISCORD_WEBHOOK_URL='$WEBHOOK_URL';</script>"
           
-          echo "Config file updated. Contents (webhook hidden):"
-          cat config.js | sed 's|https://[^"]*|[WEBHOOK_URL_HIDDEN]|'
+          # Use perl for reliable HTML modification
+          perl -i -pe "s|</title>|\$&\n\t\t$SCRIPT_TAG|" index.html
           
-          echo "File exists and is readable:"
-          ls -l config.js
+          echo "HTML updated. Verifying injection (URL hidden):"
+          grep -A 1 "window.DISCORD_WEBHOOK_URL" index.html | sed 's|https://[^'"'"']*|[WEBHOOK_URL_HIDDEN]|'
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
