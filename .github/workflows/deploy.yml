@@ -25,28 +25,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Debug environment
-        run: |
-          echo "Checking if webhook URL is set:"
-          if [ -n "${{ secrets.DISCORD_WEBHOOK_URL }}" ]; then
-            echo "Webhook URL is set"
-          else
-            echo "Webhook URL is NOT set"
-            exit 1
-          fi
-      
-      - name: Update HTML with webhook URL
+      - name: Inject webhook URL
         env:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          # Create a temporary file with the script tag
-          SCRIPT_TAG="<script>window.DISCORD_WEBHOOK_URL='$WEBHOOK_URL';</script>"
-          
-          # Use perl for reliable HTML modification
-          perl -i -pe "s|</title>|\$&\n\t\t$SCRIPT_TAG|" index.html
-          
-          echo "HTML updated. Verifying injection (URL hidden):"
-          grep -A 1 "window.DISCORD_WEBHOOK_URL" index.html | sed 's|https://[^'"'"']*|[WEBHOOK_URL_HIDDEN]|'
+          perl -i -pe 's|</title>|$&\n\t\t<script>window.DISCORD_WEBHOOK_URL="$ENV{WEBHOOK_URL}";</script>|' index.html
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -59,9 +42,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      
-      - name: Debug deployment
-        run: |
-          echo "Deployment URL: ${{ steps.deployment.outputs.page_url }}"
-          echo "Final directory structure:"
-          find . -type f -print
