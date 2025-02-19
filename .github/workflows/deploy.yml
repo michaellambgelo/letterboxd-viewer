@@ -37,18 +37,16 @@ jobs:
             exit 1
           fi
       
-      - name: Create config file
+      - name: Inject webhook URL
         env:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          echo "Creating config.json in repository root..."
-          echo "{\"webhookUrl\":\"$WEBHOOK_URL\"}" > config.json
-          echo "Config file created. Verifying contents (webhook URL hidden):"
-          cat config.json | sed 's/https:\/\/[^"]*/"[WEBHOOK_URL_HIDDEN]"/'
-          echo "File permissions and size:"
-          ls -l config.json
-          echo "Directory contents after config creation:"
-          ls -la
+          echo "Injecting webhook URL into index.html..."
+          # Create a temporary file with the replacement
+          sed "s|const getConfigPath = .*|const webhookUrl = '$WEBHOOK_URL'; // Injected during build|" index.html > index.html.tmp
+          # Replace the original file
+          mv index.html.tmp index.html
+          echo "Webhook URL injected successfully"
       
       - name: Setup Pages
         uses: actions/configure-pages@v4

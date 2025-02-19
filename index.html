@@ -285,38 +285,33 @@
 					submitButton.value = 'Sending...';
 					
 					try {
-						// Get the base URL for config loading
+						// For local development, load from config.json
 						const getConfigPath = () => {
-							const origin = window.location.origin;
-							const pathname = window.location.pathname;
-							
-							// If we're at the root or index.html
-							if (pathname === '/' || pathname.endsWith('index.html')) {
+							if (window.location.hostname === 'localhost' || 
+								window.location.hostname === '127.0.0.1' || 
+								window.location.hostname === '') {
 								return '/config.json';
 							}
-							
-							// Remove any trailing slashes and index.html
-							const cleanPath = pathname.replace(/\/+$/, '').replace(/\/index\.html$/, '');
-							
-							// For subdirectory deployments (including GitHub Pages)
-							return `${cleanPath}/config.json`;
+							return null;
 						};
 
-						const configPath = getConfigPath();
-						console.log('Loading config from:', configPath);
-						console.log('Full URL:', window.location.origin + configPath);
+						// This line will be replaced during build for production
+						let webhookUrl = null;
 						
-						// Load webhook URL from config file
-						const configResponse = await fetch(configPath);
-						if (!configResponse.ok) {
-							console.error('Config fetch failed:', configResponse.status, configResponse.statusText);
-							throw new Error(`Failed to load configuration. Please try again later.`);
+						// Try to load from config for local development
+						if (!webhookUrl) {
+							const configPath = getConfigPath();
+							if (configPath) {
+								console.log('Loading config from:', configPath);
+								const configResponse = await fetch(configPath);
+								if (!configResponse.ok) {
+									throw new Error('Failed to load configuration');
+								}
+								const config = await configResponse.json();
+								webhookUrl = config.webhookUrl;
+							}
 						}
 						
-						const config = await configResponse.json();
-						console.log('Config loaded:', { hasWebhook: !!config.webhookUrl });
-						
-						const webhookUrl = config.webhookUrl;
 						if (!webhookUrl) {
 							throw new Error('Contact form is not properly configured. Please try again later.');
 						}
