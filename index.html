@@ -285,12 +285,30 @@
 					submitButton.value = 'Sending...';
 					
 					try {
-						// Get the base path for GitHub Pages
-						const basePath = location.pathname.endsWith('/') ? location.pathname : location.pathname + '/';
-						console.log('Loading config from:', basePath + 'config.json');
+						// Get the base URL for config loading
+						const getConfigPath = () => {
+							// Check if we're on GitHub Pages
+							if (window.location.hostname.endsWith('github.io')) {
+								const pathSegments = window.location.pathname.split('/');
+								// Remove empty segments and get repo name
+								const repoName = pathSegments.filter(s => s)[0];
+								return `/${repoName}/config.json`;
+							}
+							
+							// For custom domain or local development
+							const currentPath = window.location.pathname;
+							const configPath = currentPath.endsWith('/') 
+								? currentPath + 'config.json'
+								: currentPath.substring(0, currentPath.lastIndexOf('/') + 1) + 'config.json';
+							
+							return configPath;
+						};
+
+						const configPath = getConfigPath();
+						console.log('Loading config from:', configPath);
 						
 						// Load webhook URL from config file
-						const configResponse = await fetch(basePath + 'config.json');
+						const configResponse = await fetch(configPath);
 						if (!configResponse.ok) {
 							throw new Error(`Failed to load configuration. Please try again later.`);
 						}
