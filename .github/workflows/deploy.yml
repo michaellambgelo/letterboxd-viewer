@@ -20,20 +20,33 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    env:
-      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       
+      - name: Debug environment
+        run: |
+          echo "Checking if webhook URL is set:"
+          if [ -n "${{ secrets.DISCORD_WEBHOOK_URL }}" ]; then
+            echo "Webhook URL is set"
+          else
+            echo "Webhook URL is NOT set"
+          fi
+      
       - name: Create config file
+        env:
+          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           echo "Creating config.json..."
-          echo "{\"webhookUrl\": \"$DISCORD_WEBHOOK_URL\"}" > config.json
-          echo "Config file contents:"
+          if [ -z "$WEBHOOK_URL" ]; then
+            echo "Error: WEBHOOK_URL is empty"
+            exit 1
+          fi
+          echo "{\"webhookUrl\":\"$WEBHOOK_URL\"}" > config.json
+          echo "Config file created. Verifying contents (webhook URL hidden):"
           cat config.json | sed 's/https:\/\/[^"]*/"[WEBHOOK_URL_HIDDEN]"/'
-          echo "Verifying file exists:"
+          echo "File permissions and size:"
           ls -l config.json
       
       - name: Setup Pages
