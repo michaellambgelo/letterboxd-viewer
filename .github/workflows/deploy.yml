@@ -27,9 +27,6 @@ jobs:
       
       - name: Debug environment
         run: |
-          echo "Current directory: $PWD"
-          echo "Directory contents before:"
-          ls -la
           echo "Checking if webhook URL is set:"
           if [ -n "${{ secrets.DISCORD_WEBHOOK_URL }}" ]; then
             echo "Webhook URL is set"
@@ -42,15 +39,29 @@ jobs:
         env:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          # Create a script tag with the webhook URL
-          SCRIPT_TAG="<script>window.DISCORD_WEBHOOK_URL = '$WEBHOOK_URL';</script>"
+          echo "Original head tag position:"
+          grep -n "</head>" index.html || echo "Head tag not found"
           
-          # Insert it right before the closing head tag
-          sed -i "s|</head>|$SCRIPT_TAG\n</head>|" index.html
+          # Use awk to inject the script tag
+          awk '
+          BEGIN { found = 0 }
+          /<\/head>/ && !found {
+            printf "<script>window.DISCORD_WEBHOOK_URL = \"%s\";</script>\n", ENVIRON["WEBHOOK_URL"]
+            found = 1
+          }
+          { print }
+          ' index.html > index.html.tmp
           
-          echo "Webhook URL injected into HTML"
-          echo "Verifying injection:"
-          grep -A 1 "window.DISCORD_WEBHOOK_URL" index.html | sed 's|https://[^"]*|[WEBHOOK_URL_HIDDEN]|'
+          # Check if the modification was successful
+          if grep -q "window.DISCORD_WEBHOOK_URL" index.html.tmp; then
+            mv index.html.tmp index.html
+            echo "Successfully injected webhook URL"
+            echo "Modified head section (URL hidden):"
+            grep -A 2 -B 2 "window.DISCORD_WEBHOOK_URL" index.html | sed 's|https://[^"]*|[WEBHOOK_URL_HIDDEN]|'
+          else
+            echo "Failed to inject webhook URL"
+            exit 1
+          fi
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
