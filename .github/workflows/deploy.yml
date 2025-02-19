@@ -45,15 +45,14 @@ jobs:
           echo "Before injection (showing relevant line):"
           grep -n "let webhookUrl = null;" index.html || echo "Pattern not found"
           
-          # Create a temporary file with the replacement
-          awk -v url="$WEBHOOK_URL" '
-          {
-            if ($0 ~ /let webhookUrl = null;/) {
-              print "						const webhookUrl = \"" url "\"; // Injected during build"
-            } else {
-              print $0
-            }
-          }' index.html > index.html.tmp
+          # Create a temporary file with the exact replacement
+          sed '/let webhookUrl = null;/c\						const webhookUrl = "'"$WEBHOOK_URL"'"; // Injected by GitHub Actions' index.html > index.html.tmp
+          
+          echo "Checking if replacement was successful..."
+          if ! grep -q "Injected by GitHub Actions" index.html.tmp; then
+            echo "Error: Replacement string not found in temporary file"
+            exit 1
+          fi
           
           # Replace the original file
           mv index.html.tmp index.html
@@ -62,8 +61,10 @@ jobs:
           grep -n "webhookUrl = " index.html | sed 's|https://[^"]*|[WEBHOOK_URL_HIDDEN]|'
           
           echo "Verifying file was modified:"
-          if grep -q "Injected during build" index.html; then
+          if grep -q "Injected by GitHub Actions" index.html; then
             echo "Webhook URL successfully injected"
+            echo "Number of lines containing webhookUrl:"
+            grep -c "webhookUrl" index.html
           else
             echo "Failed to inject webhook URL"
             exit 1

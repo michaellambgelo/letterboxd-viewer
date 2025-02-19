@@ -285,6 +285,9 @@
 					submitButton.value = 'Sending...';
 					
 					try {
+						console.log('Form submission started');
+						console.log('Current hostname:', window.location.hostname);
+						
 						// For local development, load from config.json
 						const getConfigPath = () => {
 							if (window.location.hostname === 'localhost' || 
@@ -297,22 +300,28 @@
 
 						// This line will be replaced during build with the actual webhook URL
 						let webhookUrl = null;
+						console.log('Initial webhookUrl:', webhookUrl);
 						
 						// Try to load from config for local development
 						const configPath = getConfigPath();
+						console.log('Config path:', configPath);
+						
 						if (configPath && !webhookUrl) {
-							console.log('Loading config from:', configPath);
+							console.log('Attempting to load local config...');
 							try {
 								const configResponse = await fetch(configPath);
+								console.log('Config response:', configResponse.status, configResponse.statusText);
 								if (configResponse.ok) {
 									const config = await configResponse.json();
 									webhookUrl = config.webhookUrl;
+									console.log('Loaded webhook from config:', !!webhookUrl);
 								}
 							} catch (error) {
 								console.log('Failed to load local config:', error);
 							}
 						}
 						
+						console.log('Final webhookUrl status:', !!webhookUrl);
 						if (!webhookUrl) {
 							throw new Error('Contact form is not properly configured. Please try again later.');
 						}
