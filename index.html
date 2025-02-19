@@ -264,10 +264,16 @@
 
 				// Test toast on page load (for debugging)
 				window.addEventListener('load', () => {
-					console.log('Testing toast notification system...');
-					setTimeout(() => {
-						showToast('Toast notification system initialized', 'success');
-					}, 1000);
+					const isLocalhost = window.location.hostname === 'localhost' || 
+						window.location.hostname === '127.0.0.1' ||
+						window.location.hostname === '';
+					
+					if (isLocalhost) {
+						console.log('Testing toast notification system...');
+						setTimeout(() => {
+							showToast('Toast notification system initialized', 'success');
+						}, 1000);
+					}
 				});
 
 				// Contact form submission handler
