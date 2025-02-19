@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<!--
+	Multiverse by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+	<head>
+		<title>Michael Lamb's Letterboxd diary</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html"><strong>Letterboxd diary</strong> of Michael Lamb</a></h1>
+						<nav>
+							<ul>
+								<li><a href="#footer" class="icon solid fa-info-circle">About</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+						{{#rss_items}}
+						<article class="thumb">
+							<a href="{{link}}" class="image"><img src="{{image}}" alt="" /></a>
+							<h2>{{title}}</h2>
+							<p>{{description}}</p>
+						</article>
+						{{/rss_items}}
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer" class="panel">
+						<div class="inner split">
+							<div>
+								<section>
+									<h2>This Letterboxd diary viewer was created by Michael Lamb</h2>
+									<p>The project was built from a template created by HTML5UP.</p>
+									<p>Codeium was used to modify the template to suit the requirements of the project.</p>
+								</section>
+								<section>
+									<h2>Follow me on ...</h2>
+									<ul class="icons">
+										<li><a href="https://www.facebook.com/michaellambms/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="https://www.instagram.com/themichaellamb/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="https://github.com/michaellambgelo" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="https://www.linkedin.com/in/michael-lamb-ms/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</section>
+								<p class="copyright">
+									&copy; Letterboxd Diary Viewer. Design: <a href="http://html5up.net">HTML5 UP</a>.
+								</p>
+							</div>
+							<div>
+								<section>
+									<h2>Get in touch</h2>
+									<form id="contact-form" onsubmit="return handleSubmit(event)">
+										<div class="fields">
+											<div class="field half">
+												<input type="text" name="name" id="name" placeholder="Name" required />
+											</div>
+											<div class="field half">
+												<input type="text" name="email" id="email" placeholder="Email" required />
+											</div>
+											<div class="field">
+												<textarea name="message" id="message" rows="4" placeholder="Message" required></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</section>
+							</div>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				$.ajax({
+					type: 'GET',
+					url: 'data/rss.xml', // fetch the latest rss.xml file
+					dataType: 'xml',
+					success: function(data) {
+						var rss_items = [];
+						$(data).find('item').each(function() {
+							var description = $(this).find('description').text();
+							var title = $(this).find('title').text();
+							
+							// Extract image URL from description
+							var imgMatch = description.match(/src="([^"]+)"/);
+							var imgUrl = imgMatch ? imgMatch[1] : null;
+							
+							// Skip items without images
+							if (!imgUrl) return;
+							
+							// Remove "contains spoilers" from the title
+							title = title.replace('(contains spoilers)', '').trim();
+							title = title.replace('contains spoilers', '').trim();
+							
+							// Sanitize the title to match Python's filename format
+							var imgBase = title.toLowerCase()
+								.replace(/ /g, '-')  // Replace spaces with hyphens
+								.replace(/[^a-z0-9-]/g, '')  // Remove special chars except hyphens
+								.replace(/-+/g, '-')  // Replace multiple hyphens with single
+								.replace(/^-|-$/g, '')  // Remove leading/trailing hyphens
+								.replace(/½/g, '');  // Remove ½ character
+							
+							var item = {
+								link: $(this).find('link').text(),
+								title: title,
+								description: description
+							};
+
+							// For list entries, use the original image URL
+							if (imgUrl.includes('letterboxd-list-')) {
+								item.image = imgUrl;
+								item.fullImage = imgUrl;
+							} else {
+								// For movie entries, use our downloaded images
+								item.image = 'assets/images/thumbs/' + imgBase + '_thumb.jpg';
+								item.fullImage = 'assets/images/fulls/' + imgBase + '_full.jpg';
+							}
+							
+							rss_items.push(item);
+						});
+						var template = Handlebars.compile($('#template').html());
+						$('#main').html(template({rss_items: rss_items}));
+					}
+				});
+			</script>
+			<script id="template" type="text/x-handlebars-template">
+				{{#rss_items}}
+				<article class="thumb">
+					<a href="{{link}}" class="image"><img src="{{image}}" alt="" /></a>
+					<h2>{{title}}</h2>
+					<p>{{description}}</p>
+				</article>
+				{{/rss_items}}
+			</script>
+			<script>
+				async function handleSubmit(event) {
+					event.preventDefault();
+					
+					// Get form elements
+					const form = event.target;
+					const submitButton = form.querySelector('input[type="submit"]');
+					const name = document.getElementById('name').value.trim();
+					const email = document.getElementById('email').value.trim();
+					const message = document.getElementById('message').value.trim();
+					
+					// Basic validation
+					if (!name || !email || !message) {
+						alert('Please fill in all fields');
+						return false;
+					}
+					
+					// Email validation
+					const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+					if (!emailRegex.test(email)) {
+						alert('Please enter a valid email address');
+						return false;
+					}
+					
+					// Disable submit button to prevent double submission
+					submitButton.disabled = true;
+					submitButton.value = 'Sending...';
+					
+					// Replace with your webhook URL and authorization token
+					const webhookUrl = 'https://discord.com/api/webhooks/1341651837069299795/LgRKX1FyvNEJgpSGbT5dF0J1y6WACkj2TunMgpOT5R2SjAt5viEfzLyeQtqjqZa9sQy8';
+					
+					// Format the message for the webhook
+					const payload = {
+						content: `📬 New Contact Form Submission\n\n👤 From: ${name}\n📧 Email: ${email}\n\n💬 Message:\n${message}`,
+						username: "Contact Form",
+						avatar_url: "https://your-domain.com/assets/images/contact-avatar.png", // Optional: Add your avatar
+						tts: false,
+						embeds: [{
+							title: "Contact Form Submission",
+							color: 5793266, // Nice blue color
+							fields: [
+								{
+									name: "Name",
+									value: name,
+									inline: true
+								},
+								{
+									name: "Email",
+									value: email,
+									inline: true
+								},
+								{
+									name: "Message",
+									value: message
+								}
+							],
+							timestamp: new Date().toISOString()
+						}]
+					};
+					
+					try {
+						const response = await fetch(webhookUrl, {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json',
+							},
+							body: JSON.stringify(payload)
+						});
+						
+						if (response.ok) {
+							// Show success message
+							const successMessage = document.createElement('div');
+							successMessage.className = 'success-message';
+							successMessage.textContent = 'Message sent successfully!';
+							form.appendChild(successMessage);
+							
+							// Reset form
+							form.reset();
+							
+							// Remove success message after 5 seconds
+							setTimeout(() => {
+								successMessage.remove();
+							}, 5000);
+						} else {
+							throw new Error(`HTTP error! status: ${response.status}`);
+						}
+					} catch (error) {
+						console.error('Error:', error);
+						alert('Failed to send message. Please try again later.');
+					} finally {
+						// Re-enable submit button
+						submitButton.disabled = false;
+						submitButton.value = 'Send';
+					}
+					
+					return false;
+				}
+				
+				// Add some basic styles for the success message
+				const style = document.createElement('style');
+				style.textContent = `
+					.success-message {
+						background-color: #4CAF50;
+						color: white;
+						padding: 1em;
+						margin-top: 1em;
+						border-radius: 4px;
+						text-align: center;
+						animation: fadeIn 0.3s ease-in;
+					}
+					@keyframes fadeIn {
+						from { opacity: 0; transform: translateY(-10px); }
+						to { opacity: 1; transform: translateY(0); }
+					}
+				`;
+				document.head.appendChild(style);
+			</script>
+
+	</body>
+</html>
