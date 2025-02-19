@@ -27,6 +27,9 @@ jobs:
       
       - name: Debug environment
         run: |
+          echo "Current directory: $PWD"
+          echo "Directory contents before:"
+          ls -la
           echo "Checking if webhook URL is set:"
           if [ -n "${{ secrets.DISCORD_WEBHOOK_URL }}" ]; then
             echo "Webhook URL is set"
@@ -39,8 +42,14 @@ jobs:
         env:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
+          echo "Creating config.json..."
           echo "{\"webhookUrl\":\"$WEBHOOK_URL\"}" > config.json
-          echo "Config file created successfully"
+          echo "Config file created. Contents (webhook hidden):"
+          cat config.json | sed 's|https://[^"]*|[WEBHOOK_URL_HIDDEN]|'
+          echo "File permissions:"
+          ls -l config.json
+          echo "Directory contents after:"
+          ls -la
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -53,3 +62,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      
+      - name: Debug deployment
+        run: |
+          echo "Deployment URL: ${{ steps.deployment.outputs.page_url }}"
+          echo "Final directory contents:"
+          ls -la
