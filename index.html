@@ -285,47 +285,19 @@
 					submitButton.value = 'Sending...';
 					
 					try {
-						console.log('Form submission started');
-						console.log('Current hostname:', window.location.hostname);
-						
-						// For local development, load from config.json
-						const getConfigPath = () => {
-							if (window.location.hostname === 'localhost' || 
-								window.location.hostname === '127.0.0.1' || 
-								window.location.hostname === '') {
-								return '/config.json';
-							}
-							return null;
-						};
-
-						// This line will be replaced during build with the actual webhook URL
-						let webhookUrl = null;
-						console.log('Initial webhookUrl:', webhookUrl);
-						
-						// Try to load from config for local development
-						const configPath = getConfigPath();
-						console.log('Config path:', configPath);
-						
-						if (configPath && !webhookUrl) {
-							console.log('Attempting to load local config...');
-							try {
-								const configResponse = await fetch(configPath);
-								console.log('Config response:', configResponse.status, configResponse.statusText);
-								if (configResponse.ok) {
-									const config = await configResponse.json();
-									webhookUrl = config.webhookUrl;
-									console.log('Loaded webhook from config:', !!webhookUrl);
-								}
-							} catch (error) {
-								console.log('Failed to load local config:', error);
-							}
+						// Load webhook URL from config file
+						const configResponse = await fetch('config.json');
+						if (!configResponse.ok) {
+							throw new Error('Failed to load configuration. Please try again later.');
 						}
 						
-						console.log('Final webhookUrl status:', !!webhookUrl);
+						const config = await configResponse.json();
+						const webhookUrl = config.webhookUrl;
+						
 						if (!webhookUrl) {
 							throw new Error('Contact form is not properly configured. Please try again later.');
 						}
-					
+						
 						// Format the message for the webhook
 						const payload = {
 							content: null,
