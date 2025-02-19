@@ -38,24 +38,19 @@ jobs:
             exit 1
           fi
       
-      - name: Create config file
+      - name: Inject webhook URL into HTML
         env:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          # Create letterboxd-viewer directory if it doesn't exist
-          mkdir -p letterboxd-viewer
+          # Create a script tag with the webhook URL
+          SCRIPT_TAG="<script>window.DISCORD_WEBHOOK_URL = '$WEBHOOK_URL';</script>"
           
-          # Copy all files to letterboxd-viewer directory
-          cp -r * letterboxd-viewer/ || true
+          # Insert it right before the closing head tag
+          sed -i "s|</head>|$SCRIPT_TAG\n</head>|" index.html
           
-          # Create config.json in letterboxd-viewer directory
-          echo "{\"webhookUrl\":\"$WEBHOOK_URL\"}" > letterboxd-viewer/config.json
-          
-          echo "Config file created in letterboxd-viewer directory. Contents (webhook hidden):"
-          cat letterboxd-viewer/config.json | sed 's|https://[^"]*|[WEBHOOK_URL_HIDDEN]|'
-          
-          echo "letterboxd-viewer directory contents:"
-          ls -la letterboxd-viewer/
+          echo "Webhook URL injected into HTML"
+          echo "Verifying injection:"
+          grep -A 1 "window.DISCORD_WEBHOOK_URL" index.html | sed 's|https://[^"]*|[WEBHOOK_URL_HIDDEN]|'
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -63,7 +58,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'letterboxd-viewer'
+          path: '.'
           
       - name: Deploy to GitHub Pages
         id: deployment

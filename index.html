@@ -285,25 +285,10 @@
 					submitButton.value = 'Sending...';
 					
 					try {
-						// Get base path for config
-						const basePath = location.pathname.endsWith('/') ? location.pathname : location.pathname + '/';
-						console.log('Base path:', basePath);
-						const configUrl = basePath + 'config.json';
-						console.log('Loading config from:', configUrl);
+						// Get webhook URL from global variable
+						const webhookUrl = window.DISCORD_WEBHOOK_URL;
+						console.log('Webhook URL available:', !!webhookUrl);
 						
-						// Load webhook URL from config file
-						const configResponse = await fetch(configUrl);
-						console.log('Config response status:', configResponse.status);
-						
-						if (!configResponse.ok) {
-							console.error('Failed to load config:', configResponse.status, configResponse.statusText);
-							throw new Error('Failed to load configuration. Please try again later.');
-						}
-						
-						const config = await configResponse.json();
-						console.log('Config loaded:', { hasWebhook: !!config.webhookUrl });
-						
-						const webhookUrl = config.webhookUrl;
 						if (!webhookUrl) {
 							throw new Error('Contact form is not properly configured. Please try again later.');
 						}
