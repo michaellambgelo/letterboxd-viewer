@@ -16,9 +16,21 @@ A web-based gallery viewer that displays your Letterboxd movie entries in a beau
 2. Run the Python script to download your feed
 3. Open index.html in a web browser to view your movie gallery
 
+## Deployment
+
+This project is set up for deployment on GitHub Pages. To deploy:
+
+1. Fork this repository
+2. Go to your repository settings > Secrets and variables > Actions
+3. Add a new secret named `DISCORD_WEBHOOK_URL` with your Discord webhook URL
+4. Enable GitHub Pages in your repository settings
+5. Push changes to the main branch to trigger deployment
+
+The site will be automatically deployed to `https://[your-username].github.io/letterboxd-viewer/`
+
 ## Contact
 
-The gallery includes a contact form that sends messages through a Discord webhook. Configure the webhook URL in the JavaScript code in index.html to receive messages.
+The gallery includes a contact form that sends messages through a Discord webhook. The webhook URL is configured through GitHub Actions environment variables for security.
 
 ---
 
