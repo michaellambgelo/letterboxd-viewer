@@ -295,20 +295,21 @@
 							return null;
 						};
 
-						// This line will be replaced during build for production
+						// This line will be replaced during build with the actual webhook URL
 						let webhookUrl = null;
 						
 						// Try to load from config for local development
-						if (!webhookUrl) {
-							const configPath = getConfigPath();
-							if (configPath) {
-								console.log('Loading config from:', configPath);
+						const configPath = getConfigPath();
+						if (configPath && !webhookUrl) {
+							console.log('Loading config from:', configPath);
+							try {
 								const configResponse = await fetch(configPath);
-								if (!configResponse.ok) {
-									throw new Error('Failed to load configuration');
+								if (configResponse.ok) {
+									const config = await configResponse.json();
+									webhookUrl = config.webhookUrl;
 								}
-								const config = await configResponse.json();
-								webhookUrl = config.webhookUrl;
+							} catch (error) {
+								console.log('Failed to load local config:', error);
 							}
 						}
 						
