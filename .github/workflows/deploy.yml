@@ -25,6 +25,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
       - name: Debug environment
         run: |
           echo "Current directory contents:"
@@ -45,17 +50,8 @@ jobs:
           echo "Before injection (showing relevant line):"
           grep -n "let webhookUrl = null;" index.html || echo "Pattern not found"
           
-          # Create a temporary file with the exact replacement
-          sed '/let webhookUrl = null;/c\						const webhookUrl = "'"$WEBHOOK_URL"'"; // Injected by GitHub Actions' index.html > index.html.tmp
-          
-          echo "Checking if replacement was successful..."
-          if ! grep -q "Injected by GitHub Actions" index.html.tmp; then
-            echo "Error: Replacement string not found in temporary file"
-            exit 1
-          fi
-          
-          # Replace the original file
-          mv index.html.tmp index.html
+          # Use Node.js script to inject the webhook URL
+          node scripts/inject-webhook.js "$WEBHOOK_URL"
           
           echo "After injection (showing relevant line, URL hidden):"
           grep -n "webhookUrl = " index.html | sed 's|https://[^"]*|[WEBHOOK_URL_HIDDEN]|'
