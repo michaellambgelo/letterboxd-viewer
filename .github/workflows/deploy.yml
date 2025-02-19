@@ -42,14 +42,20 @@ jobs:
         env:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          echo "Creating config.json..."
-          echo "{\"webhookUrl\":\"$WEBHOOK_URL\"}" > config.json
-          echo "Config file created. Contents (webhook hidden):"
-          cat config.json | sed 's|https://[^"]*|[WEBHOOK_URL_HIDDEN]|'
-          echo "File permissions:"
-          ls -l config.json
-          echo "Directory contents after:"
-          ls -la
+          # Create letterboxd-viewer directory if it doesn't exist
+          mkdir -p letterboxd-viewer
+          
+          # Copy all files to letterboxd-viewer directory
+          cp -r * letterboxd-viewer/ || true
+          
+          # Create config.json in letterboxd-viewer directory
+          echo "{\"webhookUrl\":\"$WEBHOOK_URL\"}" > letterboxd-viewer/config.json
+          
+          echo "Config file created in letterboxd-viewer directory. Contents (webhook hidden):"
+          cat letterboxd-viewer/config.json | sed 's|https://[^"]*|[WEBHOOK_URL_HIDDEN]|'
+          
+          echo "letterboxd-viewer directory contents:"
+          ls -la letterboxd-viewer/
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -57,7 +63,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: 'letterboxd-viewer'
           
       - name: Deploy to GitHub Pages
         id: deployment
@@ -66,5 +72,5 @@ jobs:
       - name: Debug deployment
         run: |
           echo "Deployment URL: ${{ steps.deployment.outputs.page_url }}"
-          echo "Final directory contents:"
-          ls -la
+          echo "Final directory structure:"
+          find . -type f -print
