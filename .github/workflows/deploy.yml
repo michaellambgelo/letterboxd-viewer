@@ -35,33 +35,15 @@ jobs:
             exit 1
           fi
       
-      - name: Inject webhook URL into HTML
+      - name: Update config.js
         env:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          echo "Original head tag position:"
-          grep -n "</head>" index.html || echo "Head tag not found"
+          echo "// This file is auto-generated during deployment" > config.js
+          echo "window.DISCORD_WEBHOOK_URL = \"$WEBHOOK_URL\";" >> config.js
           
-          # Use awk to inject the script tag
-          awk '
-          BEGIN { found = 0 }
-          /<\/head>/ && !found {
-            printf "<script>window.DISCORD_WEBHOOK_URL = \"%s\";</script>\n", ENVIRON["WEBHOOK_URL"]
-            found = 1
-          }
-          { print }
-          ' index.html > index.html.tmp
-          
-          # Check if the modification was successful
-          if grep -q "window.DISCORD_WEBHOOK_URL" index.html.tmp; then
-            mv index.html.tmp index.html
-            echo "Successfully injected webhook URL"
-            echo "Modified head section (URL hidden):"
-            grep -A 2 -B 2 "window.DISCORD_WEBHOOK_URL" index.html | sed 's|https://[^"]*|[WEBHOOK_URL_HIDDEN]|'
-          else
-            echo "Failed to inject webhook URL"
-            exit 1
-          fi
+          echo "Config file updated. Contents (webhook hidden):"
+          cat config.js | sed 's|https://[^"]*|[WEBHOOK_URL_HIDDEN]|'
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
