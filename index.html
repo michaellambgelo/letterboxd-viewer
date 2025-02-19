@@ -285,8 +285,11 @@
 					submitButton.value = 'Sending...';
 					
 					try {
+						// Get base path for config
+						const basePath = location.pathname.endsWith('/') ? location.pathname : location.pathname + '/';
+						
 						// Load webhook URL from config file
-						const configResponse = await fetch('config.json');
+						const configResponse = await fetch(basePath + 'config.json');
 						if (!configResponse.ok) {
 							throw new Error('Failed to load configuration. Please try again later.');
 						}
