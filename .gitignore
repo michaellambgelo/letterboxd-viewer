@@ -1,0 +1,7 @@
+# Local config file with sensitive data
+config.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
