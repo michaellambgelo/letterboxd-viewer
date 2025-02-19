@@ -11,11 +11,17 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,7 +29,12 @@ jobs:
       
       - name: Create config file
         run: |
-          echo "{\"webhookUrl\": \"${{ secrets.DISCORD_WEBHOOK_URL }}\"}" > config.json
+          echo "Creating config.json..."
+          echo "{\"webhookUrl\": \"$DISCORD_WEBHOOK_URL\"}" > config.json
+          echo "Config file contents:"
+          cat config.json | sed 's/https:\/\/[^"]*/"[WEBHOOK_URL_HIDDEN]"/'
+          echo "Verifying file exists:"
+          ls -l config.json
       
       - name: Setup Pages
         uses: actions/configure-pages@v4

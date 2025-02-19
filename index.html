@@ -167,13 +167,22 @@
 					submitButton.value = 'Sending...';
 					
 					try {
-						// Load webhook URL from config file
-						const configResponse = await fetch('config.json');
-						const config = await configResponse.json();
-						const webhookUrl = config.webhookUrl;
+						// Get the base path for GitHub Pages
+						const basePath = location.pathname.endsWith('/') ? location.pathname : location.pathname + '/';
+						console.log('Loading config from:', basePath + 'config.json');
 						
+						// Load webhook URL from config file
+						const configResponse = await fetch(basePath + 'config.json');
+						if (!configResponse.ok) {
+							throw new Error(`Failed to load config: ${configResponse.status} ${configResponse.statusText}`);
+						}
+						
+						const config = await configResponse.json();
+						console.log('Config loaded:', { hasWebhook: !!config.webhookUrl });
+						
+						const webhookUrl = config.webhookUrl;
 						if (!webhookUrl) {
-							throw new Error('Webhook URL not configured');
+							throw new Error('Webhook URL not found in config');
 						}
 					
 						// Format the message for the webhook
