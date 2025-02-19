@@ -45,14 +45,24 @@ jobs:
           echo "Before injection (showing relevant line):"
           grep -n "let webhookUrl = null;" index.html || echo "Pattern not found"
           
-          # Use perl for more reliable replacement
-          perl -pi -e 's/let webhookUrl = null;/const webhookUrl = "\Q$ENV{WEBHOOK_URL}\E";/' index.html
+          # Create a temporary file with the replacement
+          awk -v url="$WEBHOOK_URL" '
+          {
+            if ($0 ~ /let webhookUrl = null;/) {
+              print "						const webhookUrl = \"" url "\"; // Injected during build"
+            } else {
+              print $0
+            }
+          }' index.html > index.html.tmp
+          
+          # Replace the original file
+          mv index.html.tmp index.html
           
           echo "After injection (showing relevant line, URL hidden):"
           grep -n "webhookUrl = " index.html | sed 's|https://[^"]*|[WEBHOOK_URL_HIDDEN]|'
           
           echo "Verifying file was modified:"
-          if grep -q "$WEBHOOK_URL" index.html; then
+          if grep -q "Injected during build" index.html; then
             echo "Webhook URL successfully injected"
           else
             echo "Failed to inject webhook URL"
