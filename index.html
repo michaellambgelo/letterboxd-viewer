@@ -166,9 +166,27 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
+				// Function to format the title with line breaks
+				function formatTitle(title) {
+					// Pattern matches: film title, year, and optional rating
+					const pattern = /^(.*?),\s*(\d{4})(?:\s*-\s*(.+))?$/;
+					const match = title.match(pattern);
+					
+					if (match) {
+						const [_, filmTitle, year, rating] = match;
+						let formatted = filmTitle;
+						formatted += '<br>' + year;
+						if (rating) {
+							formatted += '<br>' + rating;
+						}
+						return formatted;
+					}
+					return title; // Return original if no match
+				}
+
 				$.ajax({
 					type: 'GET',
-					url: 'data/rss.xml', // fetch the latest rss.xml file
+					url: 'data/rss.xml',
 					dataType: 'xml',
 					success: function(data) {
 						var rss_items = [];
@@ -183,21 +201,17 @@
 							// Skip items without images
 							if (!imgUrl) return;
 							
-							// Remove "contains spoilers" from the title
-							title = title.replace('(contains spoilers)', '').trim();
-							title = title.replace('contains spoilers', '').trim();
-							
-							// Sanitize the title to match Python's filename format
+							// Sanitize the title for image filename
 							var imgBase = title.toLowerCase()
-								.replace(/ /g, '-')  // Replace spaces with hyphens
-								.replace(/[^a-z0-9-]/g, '')  // Remove special chars except hyphens
-								.replace(/-+/g, '-')  // Replace multiple hyphens with single
-								.replace(/^-|-$/g, '')  // Remove leading/trailing hyphens
-								.replace(/½/g, '');  // Remove ½ character
+								.replace(/ /g, '-')
+								.replace(/[^a-z0-9-]/g, '')
+								.replace(/-+/g, '-')
+								.replace(/^-|-$/g, '')
+								.replace(/½/g, '');
 							
 							var item = {
 								link: $(this).find('link').text(),
-								title: title,
+								title: formatTitle(title),
 								description: description
 							};
 
@@ -222,7 +236,7 @@
 				{{#rss_items}}
 				<article class="thumb">
 					<a href="{{link}}" class="image"><img src="{{image}}" alt="" /></a>
-					<h2>{{title}}</h2>
+					<h2>{{{title}}}</h2>
 					<p>{{description}}</p>
 				</article>
 				{{/rss_items}}
