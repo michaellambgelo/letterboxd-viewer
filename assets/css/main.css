@@ -1560,6 +1560,7 @@ input, select, textarea {
 		flex-wrap: wrap;
 		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 		position: relative;
+		font-size: 1.4em;
 	}
 
 		#main .thumb {
