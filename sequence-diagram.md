@@ -11,7 +11,7 @@ sequenceDiagram
     participant Python as download_rss.py
     participant Letterboxd as Letterboxd RSS Feed
     participant Discord as Discord Webhook
-    participant InjectWebhook as inject-webhook.js
+    participant InjectWebhook as .github/workflows/deploy.yml
 
     %% Initial page load
     User->>Browser: Open Letterboxd Viewer
@@ -48,7 +48,8 @@ sequenceDiagram
     Browser-->>User: Show success message
     
     %% Behind the scenes: RSS download process
-    Note over Python,Letterboxd: This happens separately, not during user interaction
+    Note over Python,Letterboxd: This happens separately, 
+    Note over Python,Letterboxd: not during user interaction
     Python->>Letterboxd: Request RSS feed
     Letterboxd-->>Python: Return RSS feed data
     Python->>Python: Process RSS data
