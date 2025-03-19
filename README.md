@@ -16,6 +16,19 @@ A web-based gallery viewer that displays your Letterboxd movie entries in a beau
 2. Run the Python script to download your feed
 3. Open index.html in a web browser to view your movie gallery
 
+## Automated RSS Feed Updates
+
+This project includes a GitHub Action workflow that automatically updates your Letterboxd RSS feed data:
+
+1. The `.github/workflows/download-data-and-assets.yml` workflow runs every 6 hours to fetch your latest Letterboxd activity
+2. It can also be triggered manually from the Actions tab in your repository
+3. When new entries are found, the workflow commits and pushes the changes automatically
+
+To use this feature after forking the repository:
+1. Ensure your fork has GitHub Actions enabled
+2. Update the RSS feed URL in `scripts/download_rss.py` with your Letterboxd username
+3. The first workflow run will populate your gallery with your Letterboxd data
+
 ## Deployment
 
 This project is set up for deployment on GitHub Pages. To deploy:
