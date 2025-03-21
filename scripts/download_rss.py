@@ -130,9 +130,7 @@ def clean_image_directories():
 # Fetch the RSS feed
 def download_rss():
     try:
-        # Clean image directories first
-        clean_image_directories()
-        
+        # a call to clean_image_directories() is removed to achieve an append-only update of the RSS feed
         response = requests.get(url)
         response.raise_for_status()
         
