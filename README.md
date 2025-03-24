@@ -45,6 +45,8 @@ The site will be automatically deployed to `https://[your-username].github.io/le
 
 The gallery includes a contact form that sends messages through a Discord webhook. The webhook URL is configured through GitHub Actions environment variables for security.
 
+Learn more about Discord Webhooks from [this support article](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)
+
 ---
 
 ## Template Attribution
