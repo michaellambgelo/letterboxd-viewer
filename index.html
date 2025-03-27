@@ -186,25 +186,66 @@
 
 				$.ajax({
 					type: 'GET',
-					url: 'data/rss.xml',
+					url: 'data/cleaned_rss.xml',
 					dataType: 'xml',
 					success: function(data) {
 						var rss_items = [];
+						
+						// Debug: Show the raw XML in console
+						console.log("Loaded XML data:", data);
+						
 						$(data).find('item').each(function() {
-							var description = $(this).find('description').text();
+							// Debug: Show each item
+							console.log("Processing item:", $(this).find('title').text());
+							
+							// Extract description content directly
+							var description = $(this).find('description').html() || "";
+							
+							// Debug: Show the extracted description
+							console.log("Raw description:", description);
+							
+							// Clean up CDATA wrapper if present
+							if (description.includes('CDATA')) {
+								description = description.replace(/<!\[CDATA\[(.*?)\]\]>/s, '$1');
+							}
+							
+							// Debug: Show the cleaned description
+							console.log("Cleaned description:", description);
+							
 							var title = $(this).find('title').text();
 							
-							// Extract image URL from description
+							// Extract image URL from description - not needed for cleaned RSS
+							// as img tags have been removed, but we'll keep the code for backward compatibility
 							var imgMatch = description.match(/src="([^"]+)"/);
 							var imgUrl = imgMatch ? imgMatch[1] : null;
+							
+							// For items without image match in description, try to construct the URL from the title
+							if (!imgUrl) {
+								// Sanitize the title for image filename
+								var imgBase = title.toLowerCase()
+									.replace(/ /g, '-')
+									.replace(/[^\p{L}0-9-]/gu, '')
+									.replace(/-+/g, '-')
+									.replace(/^-|-$/g, '')
+									.replace(/½/g, '');
+								
+								// Check if this might be a movie entry by looking at the title format
+								if (title.match(/.*,\s*\d{4}/)) {
+									// Assume it's a movie entry and construct the image path
+									var thumbPath = 'assets/images/thumbs/' + imgBase + '_thumb.jpg';
+									
+									// Use a placeholder image URL
+									imgUrl = thumbPath;
+								}
+							}
 							
 							// Skip items without images
 							if (!imgUrl) return;
 							
-							// Sanitize the title for image filename
+							// Sanitize the title for image filename - preserve accented characters
 							var imgBase = title.toLowerCase()
 								.replace(/ /g, '-')
-								.replace(/[^\p{L}0-9-]/gu, '')
+								.replace(/[^\p{L}0-9-]/gu, '')  // This regex preserves Unicode letters including accents
 								.replace(/-+/g, '-')
 								.replace(/^-|-$/g, '')
 								.replace(/½/g, '');
@@ -239,10 +280,14 @@
 						$('#main').poptrox({
 							baseZIndex: 20000,
 							caption: function($a) {
+								// Debug: Show the article being processed
 								var $article = $a.closest('.thumb');
+								console.log("Article for caption:", $article);
+								console.log("Description content:", $article.find('.description-content').html());
+								
 								var captionHtml = '<div class="caption-content">' + 
 									$article.find('h2').html() + 
-									$article.find('p').html() + 
+									'<div class="review-text">' + $article.find('.description-content').html() + '</div>' +
 									'</div>';
 								return captionHtml;
 							},
@@ -318,7 +363,7 @@
 				<article class="thumb">
 					<a href="{{fullImage}}" class="image"><img src="{{image}}" alt="" /></a>
 					<h2>{{{title}}}</h2>
-					<p>{{description}}</p>
+					<div class="description-content">{{{description}}}</div>
 				</article>
 				{{/rss_items}}
 			</script>
