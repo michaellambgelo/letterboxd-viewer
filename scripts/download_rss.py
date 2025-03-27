@@ -6,6 +6,8 @@ from PIL import Image
 import sys
 from pathlib import Path
 import shutil
+import re
+from bs4 import BeautifulSoup
 
 # Set stdout encoding to UTF-8
 if sys.stdout.encoding != 'utf-8':
@@ -127,6 +129,64 @@ def clean_image_directories():
     except Exception as e:
         print(f"Error cleaning image directories: {e}")
 
+# Function to clean description content
+def clean_description(description):
+    """
+    Clean the description content by:
+    1. Removing <img> tags
+    2. Removing non-renderable HTML
+    3. Removing empty paragraph tags
+    4. Trimming whitespace
+    5. Ensuring cleaned content appears below article content
+    
+    Args:
+        description (str): The HTML description content from the RSS feed
+        
+    Returns:
+        str: Cleaned HTML description
+    """
+    try:
+        # If the description is CDATA wrapped, extract the content
+        if description.startswith('<![CDATA[') and description.endswith(']]>'):
+            description = description[9:-3]
+        
+        # Decode HTML entities if they exist
+        if '&lt;' in description:
+            from html import unescape
+            description = unescape(description)
+        
+        # Use BeautifulSoup to parse the HTML
+        soup = BeautifulSoup(description, 'html.parser')
+        
+        # Find and remove all img tags
+        for img in soup.find_all('img'):
+            img.decompose()
+        
+        # Remove empty paragraph tags
+        for p in soup.find_all('p'):
+            if not p.get_text(strip=True):  # If paragraph is empty or contains only whitespace
+                p.decompose()
+        
+        # Keep only renderable HTML elements (p, br, a, ul, ol, li, etc.)
+        # This is a whitelist approach to ensure only safe elements remain
+        allowed_tags = ['p', 'br', 'a', 'ul', 'ol', 'li', 'strong', 'em', 'b', 'i', 'span', 'div']
+        for tag in soup.find_all():
+            if tag.name not in allowed_tags:
+                # Replace with its text content
+                tag.replace_with(soup.new_string(tag.get_text()))
+        
+        # Get the cleaned HTML as a string and trim whitespace
+        cleaned_html = str(soup).strip()
+        
+        # If the result is completely empty, return an empty paragraph
+        if not cleaned_html or cleaned_html == "":
+            return "<p>No content available</p>"
+            
+        return cleaned_html
+    except Exception as e:
+        print(f"Error cleaning description: {e}")
+        return description  # Return original if cleaning fails
+
 # Fetch the RSS feed
 def download_rss():
     try:
@@ -143,15 +203,18 @@ def download_rss():
         # Parse the XML
         tree = ET.fromstring(response.content)
         
+        # Create a dictionary to store cleaned descriptions
+        cleaned_descriptions = {}
+        
         # Find all items
         for item in tree.findall('.//item'):
             try:
                 # Extract description and title
-                description = item.find('description').text
+                description_elem = item.find('description')
+                description = description_elem.text
                 title = item.find('title').text
                 
                 # Find image URL using more robust parsing
-                import re
                 img_match = re.search(r'src="([^"]+)"', description)
                 if img_match:
                     img_url = img_match.group(1)
@@ -180,10 +243,73 @@ def download_rss():
                     if not full_path.exists() or not thumb_path.exists():
                         if download_image(img_url, str(full_path)):
                             create_thumbnail(str(full_path), str(thumb_path))
+                
+                # Clean the description content
+                cleaned_description = clean_description(description)
+                
+                # Store the cleaned description with the item's ID
+                item_id = item.find('guid').text
+                cleaned_descriptions[item_id] = cleaned_description
                     
             except Exception as e:
                 print(f'Error processing item: {e}')
                 continue
+        
+        # Save the cleaned RSS data to a new file
+        cleaned_rss_path = data_dir / 'cleaned_rss.xml'
+        
+        # Create a new XML string manually to ensure proper formatting
+        xml_lines = ['<?xml version="1.0" encoding="utf-8"?>']
+        xml_lines.append('<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:letterboxd="https://letterboxd.com" xmlns:tmdb="https://themoviedb.org">')
+        xml_lines.append('  <channel>')
+        
+        # Add channel metadata
+        channel = tree.find('channel')
+        for child in channel:
+            if child.tag == 'item':
+                continue
+            
+            # Convert element to string
+            child_str = ET.tostring(child, encoding='unicode')
+            xml_lines.append(f"    {child_str}")
+        
+        # Add items with cleaned descriptions
+        for item in tree.findall('.//item'):
+            item_id = item.find('guid').text
+            
+            # Start item tag
+            xml_lines.append('    <item>')
+            
+            # Add all child elements except description
+            for child in item:
+                if child.tag == 'description':
+                    continue
+                
+                # Convert element to string
+                child_str = ET.tostring(child, encoding='unicode')
+                xml_lines.append(f"      {child_str}")
+            
+            # Add description with CDATA if we have a cleaned version
+            if item_id in cleaned_descriptions:
+                cleaned_desc = cleaned_descriptions[item_id]
+                xml_lines.append(f'      <description><![CDATA[{cleaned_desc}]]></description>')
+            else:
+                # Fallback to original description
+                desc = item.find('description').text
+                xml_lines.append(f'      <description>{desc}</description>')
+            
+            # End item tag
+            xml_lines.append('    </item>')
+        
+        # Close channel and rss tags
+        xml_lines.append('  </channel>')
+        xml_lines.append('</rss>')
+        
+        # Write the XML to file
+        with open(cleaned_rss_path, 'w', encoding='utf-8') as f:
+            f.write('\n'.join(xml_lines))
+        
+        print(f'Successfully saved cleaned RSS feed to {cleaned_rss_path}')
                 
     except requests.RequestException as e:
         print(f'Failed to fetch RSS feed: {e}')
