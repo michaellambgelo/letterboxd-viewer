@@ -209,33 +209,114 @@
 								.replace(/^-|-$/g, '')
 								.replace(/½/g, '');
 							
-							var item = {
-								link: $(this).find('link').text(),
-								title: formatTitle(title),
-								description: description
-							};
-
+							// Prepare image paths
+							var thumbImage, fullImage;
+							
 							// For list entries, use the original image URL
 							if (imgUrl.includes('letterboxd-list-')) {
-								item.image = imgUrl;
-								item.fullImage = imgUrl;
+								thumbImage = imgUrl;
+								fullImage = imgUrl;
 							} else {
 								// For movie entries, use our downloaded images
-								item.image = 'assets/images/thumbs/' + imgBase + '_thumb.jpg';
-								item.fullImage = 'assets/images/fulls/' + imgBase + '_full.jpg';
+								thumbImage = 'assets/images/thumbs/' + imgBase + '_thumb.jpg';
+								fullImage = 'assets/images/fulls/' + imgBase + '_full.jpg';
 							}
 							
+							var item = {
+								link: fullImage, // Link to the full-size image for the modal
+								title: formatTitle(title),
+								description: description,
+								image: thumbImage,
+								fullImage: fullImage
+							};
+
 							rss_items.push(item);
 						});
 						var template = Handlebars.compile($('#template').html());
 						$('#main').html(template({rss_items: rss_items}));
+						
+						// Initialize Poptrox after content is loaded
+						$('#main').poptrox({
+							baseZIndex: 20000,
+							caption: function($a) {
+								var $article = $a.closest('.thumb');
+								var captionHtml = '<div class="caption-content">' + 
+									$article.find('h2').html() + 
+									$article.find('p').html() + 
+									'</div>';
+								return captionHtml;
+							},
+							fadeSpeed: 300,
+							onPopupClose: function() { $('body').removeClass('modal-active'); },
+							onPopupOpen: function() { $('body').addClass('modal-active'); },
+							overlayOpacity: 0.8,
+							popupCloserText: '',
+							popupHeight: 'auto',
+							popupLoaderText: '',
+							popupSpeed: 300,
+							popupWidth: 600,
+							selector: '.thumb > a.image',
+							usePopupCaption: true,
+							usePopupCloser: true,
+							usePopupDefaultStyling: false,
+							usePopupForceClose: true,
+							usePopupLoader: true,
+							usePopupNav: true,
+							windowMargin: 50
+						});
+						
+						// Add minimal CSS for better readability
+						$('<style>')
+							.prop('type', 'text/css')
+							.html(`
+								.poptrox-popup {
+									background: rgba(20, 20, 20, 0.95) !important;
+									border-radius: 8px !important;
+									overflow: hidden !important;
+									box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5) !important;
+								}
+								.poptrox-popup .pic {
+									padding: 20px 20px 10px 20px !important;
+								}
+								.poptrox-popup .pic img {
+									max-width: 100% !important;
+									border-radius: 4px !important;
+								}
+								.poptrox-popup .caption {
+									padding: 0 20px 20px 20px !important;
+								}
+								.caption-content {
+									background: rgba(0, 0, 0, 0.7) !important;
+									padding: 15px !important;
+									border-radius: 4px !important;
+									color: #fff !important;
+								}
+								.caption-content h2 {
+									margin-top: 0 !important;
+									color: #fff !important;
+								}
+								.caption-content p {
+									margin-bottom: 0 !important;
+									color: #ddd !important;
+								}
+								.poptrox-popup .closer {
+									top: 10px !important;
+									right: 10px !important;
+									width: 30px !important;
+									height: 30px !important;
+									color: #fff !important;
+									background: rgba(0, 0, 0, 0.5) !important;
+									border-radius: 50% !important;
+								}
+							`)
+							.appendTo('head');
 					}
 				});
 			</script>
 			<script id="template" type="text/x-handlebars-template">
 				{{#rss_items}}
 				<article class="thumb">
-					<a href="{{link}}" class="image"><img src="{{image}}" alt="" /></a>
+					<a href="{{fullImage}}" class="image"><img src="{{image}}" alt="" /></a>
 					<h2>{{{title}}}</h2>
 					<p>{{description}}</p>
 				</article>
