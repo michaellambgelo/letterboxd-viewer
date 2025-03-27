@@ -30,11 +30,11 @@ sequenceDiagram
     %% User interaction with gallery
     User->>Browser: Click on movie thumbnail
     Browser->>MainJS: Trigger poptrox lightbox
-    MainJS->>Browser: Display movie details in lightbox
-    Browser-->>User: Show movie details
+    MainJS->>Browser: Display movie review details in lightbox
+    Browser-->>User: Show movie review details
     
     %% User interaction with footer
-    User->>Browser: Click "About" link
+    User->>Browser: Click "Contact" link
     Browser->>MainJS: Trigger panel show
     MainJS->>Browser: Display footer panel
     Browser-->>User: Show about information
