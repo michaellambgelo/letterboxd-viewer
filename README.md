@@ -2,11 +2,19 @@
 
 A web-based gallery viewer that displays your Letterboxd movie entries in a beautiful grid layout. This project fetches your Letterboxd RSS feed and renders it as an interactive gallery with movie posters and details.
 
+This project is designed to be easy to customize and does not require anything to be downloaded! Once configured, the GitHub actions allow for fetching data and storing it in the remote repository, and deploying the code to GitHub Pages.
+
+Keep reading for more details.
+
+## Architecture
+
+Review this [sequence diagram](/sequence-diagram.md) to understand how Letterboxd Gallery Viewer works. 
+
 ## Features
 
 - Fetches and displays Letterboxd RSS feed entries
 - Responsive gallery layout with movie posters
-- Lightbox view for detailed movie information
+- Lightbox view for full review content
 - Contact form with webhook integration
 - Mobile-friendly design
 
