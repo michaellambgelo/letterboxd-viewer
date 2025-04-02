@@ -168,10 +168,12 @@
 			<script>
 				// Function to format the title with line breaks
 				function formatTitle(title) {
-					// Pattern matches: film title, year, and optional rating
-					const pattern = /^(.*?),\s*(\d{4})(?:\s*-\s*(.+))?$/;
-					const match = title.match(pattern);
+					// First pattern matches: film title, year, and optional rating (e.g., "Title, 2023 - ★★★★")
+					const yearPattern = /^(.*?),\s*(\d{4})(?:\s*-\s*(.+))?$/;
+					// Second pattern matches: film title and rating without year (e.g., "Title - ★★★★")
+					const noYearPattern = /^(.*?)\s+-\s+(★.+)$/;
 					
+					let match = title.match(yearPattern);
 					if (match) {
 						const [_, filmTitle, year, rating] = match;
 						let formatted = filmTitle;
@@ -181,6 +183,16 @@
 						}
 						return formatted;
 					}
+					
+					// Try the no-year pattern
+					match = title.match(noYearPattern);
+					if (match) {
+						const [_, filmTitle, rating] = match;
+						let formatted = filmTitle;
+						formatted += '<br>' + rating;
+						return formatted;
+					}
+					
 					return title; // Return original if no match
 				}
 
@@ -230,7 +242,7 @@
 									.replace(/½/g, '');
 								
 								// Check if this might be a movie entry by looking at the title format
-								if (title.match(/.*,\s*\d{4}/)) {
+								if (title.match(/.*,\s*\d{4}/) || title.match(/.*\s+-\s+★/)) {
 									// Assume it's a movie entry and construct the image path
 									var thumbPath = 'assets/images/thumbs/' + imgBase + '_thumb.jpg';
 									
