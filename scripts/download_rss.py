@@ -190,7 +190,7 @@ def clean_description(description):
 # Fetch the RSS feed
 def download_rss():
     try:
-        # a call to clean_image_directories() is removed to achieve an append-only update of the RSS feed
+        clean_image_directories()
         response = requests.get(url)
         response.raise_for_status()
         
