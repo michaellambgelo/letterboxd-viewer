@@ -1,4 +1,4 @@
-# Letterboxd Gallery Viewer [![built with Codeium](https://codeium.com/badges/main)](https://codeium.com) [![Deploy to GitHub Pages](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/deploy.yml/badge.svg)](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/deploy.yml)
+# Letterboxd Gallery Viewer [![built with Codeium](https://codeium.com/badges/main)](https://codeium.com) [![Deploy to GitHub Pages](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/deploy.yml/badge.svg)](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/deploy.yml) [![RSS Feed Update](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/download-data-and-assets.yml/badge.svg?event=schedule)](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/download-data-and-assets.yml)
 
 A web-based gallery viewer that displays your Letterboxd movie entries in a beautiful grid layout. This project fetches your Letterboxd RSS feed and renders it as an interactive gallery with movie posters and details.
 
