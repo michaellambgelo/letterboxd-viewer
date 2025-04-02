@@ -206,8 +206,15 @@ def download_rss():
         # Create a dictionary to store cleaned descriptions
         cleaned_descriptions = {}
         
-        # Find all items
+        # Find all items - limit to first 4 entries
+        entry_count = 0
+        max_entries = 4
+        
         for item in tree.findall('.//item'):
+            # Break if we've processed the maximum number of entries
+            if entry_count >= max_entries:
+                break
+                
             try:
                 # Extract description and title
                 description_elem = item.find('description')
@@ -250,6 +257,9 @@ def download_rss():
                 # Store the cleaned description with the item's ID
                 item_id = item.find('guid').text
                 cleaned_descriptions[item_id] = cleaned_description
+                
+                # Increment the entry counter
+                entry_count += 1
                     
             except Exception as e:
                 print(f'Error processing item: {e}')
@@ -273,8 +283,14 @@ def download_rss():
             child_str = ET.tostring(child, encoding='unicode')
             xml_lines.append(f"    {child_str}")
         
-        # Add items with cleaned descriptions
+        # Add items with cleaned descriptions - limit to first 4 entries
+        entry_count = 0
+        
         for item in tree.findall('.//item'):
+            # Break if we've processed the maximum number of entries
+            if entry_count >= max_entries:
+                break
+                
             item_id = item.find('guid').text
             
             # Start item tag
@@ -300,6 +316,9 @@ def download_rss():
             
             # End item tag
             xml_lines.append('    </item>')
+            
+            # Increment the entry counter
+            entry_count += 1
         
         # Close channel and rss tags
         xml_lines.append('  </channel>')
@@ -310,6 +329,7 @@ def download_rss():
             f.write('\n'.join(xml_lines))
         
         print(f'Successfully saved cleaned RSS feed to {cleaned_rss_path}')
+        print(f'Processed {entry_count} entries (limited to {max_entries})')
                 
     except requests.RequestException as e:
         print(f'Failed to fetch RSS feed: {e}')
