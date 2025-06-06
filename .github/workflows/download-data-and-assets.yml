@@ -8,6 +8,7 @@ on:
 # Explicitly set permissions for the workflow
 permissions:
   contents: write
+  actions: write
 
 jobs:
   update-feed:
