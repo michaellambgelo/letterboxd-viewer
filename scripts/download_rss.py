@@ -190,7 +190,6 @@ def clean_description(description):
 # Fetch the RSS feed
 def download_rss():
     try:
-        clean_image_directories()
         response = requests.get(url)
         response.raise_for_status()
         
@@ -239,10 +238,15 @@ def download_rss():
                     full_path = fulls_dir / f'{base_filename}_full.jpg'
                     thumb_path = thumbs_dir / f'{base_filename}_thumb.jpg'
                     
-                    # Download and create thumbnail if needed
-                    if not full_path.exists() or not thumb_path.exists():
+                    # Download and create thumbnail only if they don't exist
+                    if not full_path.exists():
                         if download_image(img_url, str(full_path)):
-                            create_thumbnail(str(full_path), str(thumb_path))
+                            # Only create thumbnail if download succeeded
+                            if not thumb_path.exists():
+                                create_thumbnail(str(full_path), str(thumb_path))
+                    elif not thumb_path.exists():
+                        # If full exists but thumb doesn't, recreate thumb
+                        create_thumbnail(str(full_path), str(thumb_path))
                 
                 # Clean the description content
                 cleaned_description = clean_description(description)
