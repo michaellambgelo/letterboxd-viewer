@@ -6,7 +6,7 @@
 -->
 <html lang="en">
 	<head>
-		<title>Michael Lamb's Letterboxd diary</title>
+		<title>Last Four Watched — Letterboxd Viewer</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/png" href="https://michaellamb.dev/img/favicon.png" />
@@ -76,6 +76,88 @@
 					opacity: 0;
 				}
 			}
+
+			/* ── Generator section ──────────────────────────────────────── */
+			#generator {
+				padding: 2rem 4rem;
+				border-bottom: 1px solid rgba(255,255,255,0.1);
+			}
+			.gen-input-row {
+				display: flex;
+				gap: 0.75rem;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+			#username-input {
+				font-size: 1rem;
+				padding: 0.6rem 1rem;
+				border: 1px solid rgba(255,255,255,0.3);
+				border-radius: 4px;
+				background: rgba(255,255,255,0.05);
+				color: #fff;
+				min-width: 220px;
+			}
+			#username-input::placeholder { color: #888; }
+			#gen-btn {
+				padding: 0.6rem 1.5rem;
+				font-size: 1rem;
+				cursor: pointer;
+				border-radius: 4px;
+				border: none;
+				background: #42a5b3;
+				color: #fff;
+				transition: background 0.2s;
+			}
+			#gen-btn:hover:not(:disabled) { background: #319faf; }
+			#gen-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+			.gen-status {
+				margin-top: 0.75rem;
+				display: flex;
+				align-items: center;
+				gap: 0.6rem;
+				font-size: 0.95rem;
+				color: #bbb;
+			}
+			.gen-status--error { color: #f88; }
+			.gen-spinner {
+				width: 16px;
+				height: 16px;
+				border: 2px solid rgba(255,255,255,0.2);
+				border-top-color: #42a5b3;
+				border-radius: 50%;
+				animation: spin 0.8s linear infinite;
+				flex-shrink: 0;
+			}
+			@keyframes spin { to { transform: rotate(360deg); } }
+
+			/* ── Export section ─────────────────────────────────────────── */
+			#export-section {
+				padding: 2rem 4rem;
+				border-top: 1px solid rgba(255,255,255,0.1);
+			}
+			#card-canvas {
+				display: block;
+				max-width: 100%;
+				border-radius: 6px;
+				box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+				margin-bottom: 1rem;
+			}
+			.export-btns {
+				display: flex;
+				gap: 0.75rem;
+				flex-wrap: wrap;
+			}
+			.export-btn {
+				padding: 0.6rem 1.5rem;
+				font-size: 0.95rem;
+				cursor: pointer;
+				border-radius: 4px;
+				border: 1px solid rgba(255,255,255,0.3);
+				background: rgba(255,255,255,0.07);
+				color: #e0e0e0;
+				transition: background 0.2s, border-color 0.2s;
+			}
+			.export-btn:hover { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.5); }
 		</style>
 		<script type="module" crossorigin src="./assets/main.tsx.ed6f4f5c.js"></script>
 		<link rel="stylesheet" href="./assets/main.css">
@@ -90,7 +172,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html"><strong>Letterboxd diary</strong> of Michael Lamb</a></h1>
+						<h1><a href="index.html"><strong>Last Four Watched</strong></a></h1>
 						<nav>
 							<ul>
 								<li><a href="#footer" class="icon solid fa-info-circle">Contact</a></li>
@@ -98,7 +180,20 @@
 						</nav>
 					</header>
 
-				<!-- Main -->
+				<!-- Generator -->
+				<section id="generator">
+					<div class="gen-input-row">
+						<input type="text" id="username-input" placeholder="Letterboxd username"
+							autocomplete="off" autocapitalize="none" spellcheck="false" />
+						<button id="gen-btn">Generate</button>
+					</div>
+					<div id="gen-status" class="gen-status" hidden>
+						<span class="gen-spinner" id="gen-spinner" hidden></span>
+						<span id="gen-status-text"></span>
+					</div>
+				</section>
+
+			<!-- Main -->
 					<div id="main">
 						{{#rss_items}}
 						<article class="thumb">
@@ -109,6 +204,15 @@
 						{{/rss_items}}
 					</div>
 
+			<!-- Export -->
+				<section id="export-section" hidden>
+					<canvas id="card-canvas"></canvas>
+					<div class="export-btns">
+						<button id="copy-btn" class="export-btn">📋 Copy image</button>
+						<button id="download-btn" class="export-btn">⬇ Download</button>
+					</div>
+				</section>
+
 				<!-- Footer -->
 					<footer id="footer" class="panel">
 						<div class="inner split">
@@ -116,7 +220,7 @@
 								<section>
 									<h2>This Letterboxd diary viewer was created by Michael Lamb</h2>
 									<p>The project was built from a template created by HTML5UP.</p>
-									<p>Codeium was used to modify the template to suit the requirements of the project.</p>
+									<p>Windsurf (formerly Codeium) was used to modify the template to suit the requirements of the project.</p>
 								</section>
 								<section>
 									<h2>Follow me on ...</h2>
@@ -165,211 +269,335 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-				// Function to format the title with line breaks
-				function formatTitle(title) {
-					// First pattern matches: film title, year, and optional rating (e.g., "Title, 2023 - ★★★★")
-					const yearPattern = /^(.*?),\s*(\d{4})(?:\s*-\s*(.+))?$/;
-					// Second pattern matches: film title and rating without year (e.g., "Title - ★★★★")
-					const noYearPattern = /^(.*?)\s+-\s+(★.+)$/;
-					
-					let match = title.match(yearPattern);
-					if (match) {
-						const [_, filmTitle, year, rating] = match;
-						let formatted = filmTitle;
-						formatted += '<br>' + year;
-						if (rating) {
-							formatted += '<br>' + rating;
-						}
-						return formatted;
+		<script>
+			// ── Configuration ─────────────────────────────────────────────────────
+			const GITHUB_OWNER  = 'michaellambgelo';
+			const GITHUB_REPO   = 'letterboxd-viewer';
+			const WORKER_URL    = ''; // Set to your Cloudflare Worker URL after deploy
+			const DEFAULT_USER  = 'michaellamb';
+			const POLL_INTERVAL = 5000;    // ms between GitHub API polls
+			const MAX_POLL_TIME = 600000;  // 10 minutes max wait
+
+			// ── State machine ──────────────────────────────────────────────────────
+			function setState(state, message) {
+				const statusEl = document.getElementById('gen-status');
+				const inputEl  = document.getElementById('username-input');
+				const btnEl    = document.getElementById('gen-btn');
+				const exportEl = document.getElementById('export-section');
+				const spinner  = document.getElementById('gen-spinner');
+				const textEl   = document.getElementById('gen-status-text');
+
+				const loading = ['triggered', 'polling', 'fetching'].includes(state);
+				statusEl.hidden  = (state === 'idle' || state === 'ready');
+				statusEl.className = 'gen-status' + (state === 'error' ? ' gen-status--error' : '');
+				spinner.hidden   = \!loading;
+				inputEl.disabled = loading;
+				btnEl.disabled   = loading;
+				textEl.textContent = message || {
+					triggered: 'Workflow queued — waiting for run to start…',
+					polling:   'Fetching your data…',
+					fetching:  'Almost there — loading results…',
+				}[state] || '';
+				if (state === 'ready') exportEl.hidden = false;
+			}
+
+			// ── GitHub Contents API ────────────────────────────────────────────────
+			async function fetchContents(path) {
+				const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`;
+				const resp = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } });
+				if (\!resp.ok) throw new Error(`Contents API ${resp.status} for ${path}`);
+				return resp.json();
+			}
+
+			async function fetchTextFile(path) {
+				const data = await fetchContents(path);
+				return atob(data.content.replace(/\n/g, ''));
+			}
+
+			async function fetchImageDataURL(path) {
+				try {
+					const data = await fetchContents(path);
+					return `data:image/jpeg;base64,${data.content.replace(/\n/g, '')}`;
+				} catch { return null; }
+			}
+
+			// ── XML parsing ──────────────────────────────────────────────────────────
+			function parseItems(xmlString) {
+				const parser = new DOMParser();
+				const xml = parser.parseFromString(xmlString, 'text/xml');
+				const items = [];
+				xml.querySelectorAll('item').forEach(itemEl => {
+					const byLocalName = tag =>
+						([...itemEl.children].find(c => c.localName === tag) || {}).textContent?.trim() || '';
+					items.push({
+						title:        itemEl.querySelector('title')?.textContent || '',
+						filmTitle:    byLocalName('filmTitle'),
+						filmYear:     byLocalName('filmYear'),
+						memberRating: parseFloat(byLocalName('memberRating')) || 0,
+						watchedDate:  byLocalName('watchedDate'),
+						description:  itemEl.querySelector('description')?.textContent || '',
+						imageUrl:     itemEl.querySelector('imageUrl')?.textContent || '',
+					});
+				});
+				return items;
+			}
+
+			// ── Helpers ────────────────────────────────────────────────────────────────
+			function formatTitle(title) {
+				const m = title.match(/^(.*?),\s*(\d{4})(?:\s*-\s*(.+))?$/);
+				if (m) {
+					let s = m[1] + '<br>' + m[2];
+					if (m[3]) s += '<br>' + m[3];
+					return s;
+				}
+				return title;
+			}
+
+			// Mirrors Python sanitize_filename (ASCII-only, matches script output)
+			function sanitizeFilename(title) {
+				return title
+					.replace(/(contains spoilers)/gi, '')
+					.replace(/contains spoilers/gi, '')
+					.trim()
+					.toLowerCase()
+					.replace(/ /g, '-')
+					.replace(/[^a-z0-9-]/g, '')
+					.replace(/-+/g, '-')
+					.replace(/^-|-$/g, '');
+			}
+
+			function starsText(rating) {
+				const full  = Math.floor(rating);
+				const half  = (rating % 1) >= 0.5 ? 1 : 0;
+				const empty = 5 - full - half;
+				return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty);
+			}
+
+			// ── Gallery rendering (Handlebars + Poptrox) ────────────────────────────────────
+			function renderGallery(username, items) {
+				const rss_items = items.map(item => {
+					const base  = sanitizeFilename(item.title);
+					const thumb = `assets/images/${username}/thumbs/${base}_thumb.jpg`;
+					const full  = `assets/images/${username}/fulls/${base}_full.jpg`;
+					return {
+						link: full,
+						title: formatTitle(item.title),
+						description: item.description,
+						image: thumb,
+						fullImage: full,
+					};
+				});
+
+				const tmpl = Handlebars.compile(document.getElementById('template').innerHTML);
+				document.getElementById('main').innerHTML = tmpl({ rss_items });
+
+				$('#main').poptrox({
+					baseZIndex: 20000,
+					caption: function($a) {
+						const $art = $a.closest('.thumb');
+						return '<div class="caption-content">' + $art.find('h2').html() +
+							'<div class="review-text">' + $art.find('.description-content').html() + '</div></div>';
+					},
+					fadeSpeed: 300,
+					onPopupClose: function() { $('body').removeClass('modal-active'); },
+					onPopupOpen:  function() { $('body').addClass('modal-active'); },
+					overlayOpacity: 0.8,
+					popupCloserText: '',
+					popupHeight: 'auto',
+					popupLoaderText: '',
+					popupSpeed: 300,
+					popupWidth: 600,
+					selector: '.thumb > a.image',
+					usePopupCaption: true,
+					usePopupCloser: true,
+					usePopupDefaultStyling: false,
+					usePopupForceClose: true,
+					usePopupLoader: true,
+					usePopupNav: true,
+					windowMargin: 50,
+				});
+
+				$('<style>').prop('type', 'text/css').html(`
+					.poptrox-popup { background: rgba(20,20,20,.95) \!important; border-radius: 8px \!important; overflow: hidden \!important; box-shadow: 0 5px 25px rgba(0,0,0,.5) \!important; }
+					.poptrox-popup .pic { padding: 20px 20px 10px \!important; }
+					.poptrox-popup .pic img { max-width: 100% \!important; border-radius: 4px \!important; }
+					.poptrox-popup .caption { padding: 0 20px 20px \!important; }
+					.caption-content { background: rgba(0,0,0,.7) \!important; padding: 15px \!important; border-radius: 4px \!important; color: #fff \!important; }
+					.caption-content h2 { margin-top: 0 \!important; color: #fff \!important; }
+					.caption-content p { margin-bottom: 0 \!important; color: #ddd \!important; }
+					.poptrox-popup .closer { top: 10px \!important; right: 10px \!important; width: 30px \!important; height: 30px \!important; color: #fff \!important; background: rgba(0,0,0,.5) \!important; border-radius: 50% \!important; }
+				`).appendTo('head');
+			}
+
+			// ── Canvas rendering ─────────────────────────────────────────────────────────────────
+			async function renderCanvas(username, items) {
+				const canvas = document.getElementById('card-canvas');
+				const ctx    = canvas.getContext('2d');
+
+				const W        = 1080, H = 480;
+				const HEADER_H = 60,  POSTER_H = 360;
+				const MARGIN   = 20;
+				const POSTER_W = Math.floor((W - MARGIN * 5) / 4);
+
+				canvas.width  = W;
+				canvas.height = H;
+
+				ctx.fillStyle = '#1a1a2e';
+				ctx.fillRect(0, 0, W, H);
+
+				ctx.fillStyle    = '#e8e8e8';
+				ctx.font         = 'bold 22px "Helvetica Neue", Arial, sans-serif';
+				ctx.textBaseline = 'middle';
+				ctx.textAlign    = 'left';
+				ctx.fillText(`@${username} — Last Four Watched`, MARGIN, HEADER_H / 2);
+
+				const dateStr = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+				ctx.fillStyle = '#888';
+				ctx.font      = '16px "Helvetica Neue", Arial, sans-serif';
+				ctx.textAlign = 'right';
+				ctx.fillText(dateStr, W - MARGIN, HEADER_H / 2);
+				ctx.textAlign = 'left';
+
+				for (let i = 0; i < Math.min(items.length, 4); i++) {
+					const x = MARGIN + i * (POSTER_W + MARGIN);
+					const y = HEADER_H;
+
+					ctx.fillStyle = '#2a2a3e';
+					ctx.fillRect(x, y, POSTER_W, POSTER_H);
+
+					const base      = sanitizeFilename(items[i].title);
+					const thumbPath = `assets/images/${username}/thumbs/${base}_thumb.jpg`;
+					const dataURL   = await fetchImageDataURL(thumbPath);
+					if (dataURL) {
+						await new Promise(resolve => {
+							const img   = new Image();
+							img.onload  = () => { ctx.drawImage(img, x, y, POSTER_W, POSTER_H); resolve(); };
+							img.onerror = resolve;
+							img.src     = dataURL;
+						});
 					}
-					
-					// Try the no-year pattern
-					match = title.match(noYearPattern);
-					if (match) {
-						const [_, filmTitle, rating] = match;
-						let formatted = filmTitle;
-						formatted += '<br>' + rating;
-						return formatted;
+
+					const infoY = HEADER_H + POSTER_H + 8;
+					ctx.fillStyle    = '#e8e8e8';
+					ctx.font         = 'bold 13px "Helvetica Neue", Arial, sans-serif';
+					ctx.textBaseline = 'top';
+					let display = items[i].filmTitle || items[i].title.replace(/,\s*\d{4}.*/, '');
+					while (ctx.measureText(display).width > POSTER_W - 4 && display.length > 1) {
+						display = display.slice(0, -1);
 					}
-					
-					return title; // Return original if no match
+					if (display.length < (items[i].filmTitle || '').length) display += '…';
+					ctx.fillText(display, x, infoY);
+
+					ctx.fillStyle = '#aaa';
+					ctx.font      = '12px "Helvetica Neue", Arial, sans-serif';
+					ctx.fillText(`${items[i].filmYear}  ${starsText(items[i].memberRating)}`, x, infoY + 18);
 				}
 
-				$.ajax({
-					type: 'GET',
-					url: 'data/cleaned_rss.xml',
-					dataType: 'xml',
-					success: function(data) {
-						var rss_items = [];
-						
-						// Debug: Show the raw XML in console
-						console.log("Loaded XML data:", data);
-						
-						$(data).find('item').each(function() {
-							// Debug: Show each item
-							console.log("Processing item:", $(this).find('title').text());
-							
-							// Extract description content directly
-							var description = $(this).find('description').html() || "";
-							
-							// Debug: Show the extracted description
-							console.log("Raw description:", description);
-							
-							// Clean up CDATA wrapper if present
-							if (description.includes('CDATA')) {
-								description = description.replace(/<!\[CDATA\[(.*?)\]\]>/s, '$1');
-							}
-							
-							// Debug: Show the cleaned description
-							console.log("Cleaned description:", description);
-							
-							var title = $(this).find('title').text();
-							
-							// Extract image URL from description - not needed for cleaned RSS
-							// as img tags have been removed, but we'll keep the code for backward compatibility
-							var imgMatch = description.match(/src="([^"]+)"/);
-							var imgUrl = imgMatch ? imgMatch[1] : null;
-							
-							// For items without image match in description, try to construct the URL from the title
-							if (!imgUrl) {
-								// Sanitize the title for image filename
-								var imgBase = title.toLowerCase()
-									.replace(/ /g, '-')
-									.replace(/[^\p{L}0-9-]/gu, '')
-									.replace(/-+/g, '-')
-									.replace(/^-|-$/g, '')
-									.replace(/½/g, '');
-								
-								// Check if this might be a movie entry by looking at the title format
-								if (title.match(/.*,\s*\d{4}/) || title.match(/.*\s+-\s+★/)) {
-									// Assume it's a movie entry and construct the image path
-									var thumbPath = 'assets/images/thumbs/' + imgBase + '_thumb.jpg';
-									
-									// Use a placeholder image URL
-									imgUrl = thumbPath;
-								}
-							}
-							
-							// Skip items without images
-							if (!imgUrl) return;
-							
-							// Sanitize the title for image filename - preserve accented characters
-							var imgBase = title.toLowerCase()
-								.replace(/ /g, '-')
-								.replace(/[^\p{L}0-9-]/gu, '')  // This regex preserves Unicode letters including accents
-								.replace(/-+/g, '-')
-								.replace(/^-|-$/g, '')
-								.replace(/½/g, '');
-							
-							// Prepare image paths
-							var thumbImage, fullImage;
-							
-							// For list entries, use the original image URL
-							if (imgUrl.includes('letterboxd-list-')) {
-								thumbImage = imgUrl;
-								fullImage = imgUrl;
-							} else {
-								// For movie entries, use our downloaded images
-								thumbImage = 'assets/images/thumbs/' + imgBase + '_thumb.jpg';
-								fullImage = 'assets/images/fulls/' + imgBase + '_full.jpg';
-							}
-							
-							var item = {
-								link: fullImage, // Link to the full-size image for the modal
-								title: formatTitle(title),
-								description: description,
-								image: thumbImage,
-								fullImage: fullImage
-							};
+				ctx.fillStyle    = '#556b8a';
+				ctx.font         = '13px "Helvetica Neue", Arial, sans-serif';
+				ctx.textAlign    = 'right';
+				ctx.textBaseline = 'bottom';
+				ctx.fillText('letterboxd.com', W - MARGIN, H - 6);
+				ctx.textAlign = 'left';
+			}
 
-							rss_items.push(item);
-						});
-						var template = Handlebars.compile($('#template').html());
-						$('#main').html(template({rss_items: rss_items}));
-						
-						// Initialize Poptrox after content is loaded
-						$('#main').poptrox({
-							baseZIndex: 20000,
-							caption: function($a) {
-								// Debug: Show the article being processed
-								var $article = $a.closest('.thumb');
-								console.log("Article for caption:", $article);
-								console.log("Description content:", $article.find('.description-content').html());
-								
-								var captionHtml = '<div class="caption-content">' + 
-									$article.find('h2').html() + 
-									'<div class="review-text">' + $article.find('.description-content').html() + '</div>' +
-									'</div>';
-								return captionHtml;
-							},
-							fadeSpeed: 300,
-							onPopupClose: function() { $('body').removeClass('modal-active'); },
-							onPopupOpen: function() { $('body').addClass('modal-active'); },
-							overlayOpacity: 0.8,
-							popupCloserText: '',
-							popupHeight: 'auto',
-							popupLoaderText: '',
-							popupSpeed: 300,
-							popupWidth: 600,
-							selector: '.thumb > a.image',
-							usePopupCaption: true,
-							usePopupCloser: true,
-							usePopupDefaultStyling: false,
-							usePopupForceClose: true,
-							usePopupLoader: true,
-							usePopupNav: true,
-							windowMargin: 50
-						});
-						
-						// Add minimal CSS for better readability
-						$('<style>')
-							.prop('type', 'text/css')
-							.html(`
-								.poptrox-popup {
-									background: rgba(20, 20, 20, 0.95) !important;
-									border-radius: 8px !important;
-									overflow: hidden !important;
-									box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5) !important;
-								}
-								.poptrox-popup .pic {
-									padding: 20px 20px 10px 20px !important;
-								}
-								.poptrox-popup .pic img {
-									max-width: 100% !important;
-									border-radius: 4px !important;
-								}
-								.poptrox-popup .caption {
-									padding: 0 20px 20px 20px !important;
-								}
-								.caption-content {
-									background: rgba(0, 0, 0, 0.7) !important;
-									padding: 15px !important;
-									border-radius: 4px !important;
-									color: #fff !important;
-								}
-								.caption-content h2 {
-									margin-top: 0 !important;
-									color: #fff !important;
-								}
-								.caption-content p {
-									margin-bottom: 0 !important;
-									color: #ddd !important;
-								}
-								.poptrox-popup .closer {
-									top: 10px !important;
-									right: 10px !important;
-									width: 30px !important;
-									height: 30px !important;
-									color: #fff !important;
-									background: rgba(0, 0, 0, 0.5) !important;
-									border-radius: 50% !important;
-								}
-							`)
-							.appendTo('head');
+			// ── Load user data ─────────────────────────────────────────────────────────────────
+			async function loadUserData(username) {
+				try {
+					setState('fetching');
+					const xmlString = await fetchTextFile(`data/users/${username}/cleaned_rss.xml`);
+					const items     = parseItems(xmlString);
+					if (\!items.length) {
+						setState('error', `No entries found for @${username}.`);
+						return;
 					}
+					renderGallery(username, items);
+					await renderCanvas(username, items);
+					setState('ready');
+				} catch (err) {
+					console.error('loadUserData:', err);
+					setState('error', `Could not load data for @${username}. ${err.message}`);
+				}
+			}
+
+			// ── Polling (GitHub Actions API, unauthenticated, public repo) ──────────────────────
+			async function pollUntilComplete(triggeredAt) {
+				const startTime = Date.now();
+				const since     = new Date(triggeredAt).getTime() - 5000;
+
+				while (Date.now() - startTime < MAX_POLL_TIME) {
+					await new Promise(r => setTimeout(r, POLL_INTERVAL));
+					try {
+						const url  = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/actions/runs?event=workflow_dispatch&per_page=10`;
+						const resp = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } });
+						if (\!resp.ok) continue;
+						const data = await resp.json();
+						const run  = (data.workflow_runs || []).find(r => new Date(r.created_at).getTime() >= since);
+						if (\!run) continue;
+
+						if (run.status === 'completed') {
+							if (run.conclusion === 'success') return true;
+							setState('error', `Workflow ended with: ${run.conclusion}`);
+							return false;
+						}
+						setState('polling', `Workflow ${run.status} (run #${run.id})…`);
+					} catch (e) { console.warn('Poll error:', e); }
+				}
+				setState('error', 'Timed out waiting for the workflow. Please try again.');
+				return false;
+			}
+
+			// ── Wire up UI ───────────────────────────────────────────────────────────────────
+			document.addEventListener('DOMContentLoaded', () => {
+
+				document.getElementById('copy-btn').addEventListener('click', async () => {
+					const canvas = document.getElementById('card-canvas');
+					try {
+						const blob = await new Promise(r => canvas.toBlob(r, 'image/png'));
+						await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+						showToast('Image copied to clipboard\!', 'success');
+					} catch { showToast('Copy failed — use Download instead.', 'error'); }
 				});
-			</script>
+
+				document.getElementById('download-btn').addEventListener('click', () => {
+					const a = document.createElement('a');
+					a.download = 'last-four-watched.png';
+					a.href = document.getElementById('card-canvas').toDataURL('image/png');
+					a.click();
+				});
+
+				document.getElementById('gen-btn').addEventListener('click', async () => {
+					const username = document.getElementById('username-input').value.trim();
+					if (\!username) { showToast('Please enter a Letterboxd username.', 'error'); return; }
+					if (\!/^[a-zA-Z0-9_-]{1,50}$/.test(username)) { showToast('Username contains invalid characters.', 'error'); return; }
+					if (\!WORKER_URL) { showToast('Worker URL not configured — see CLAUDE.md.', 'error'); return; }
+
+					setState('triggered');
+					let triggeredAt;
+					try {
+						const resp = await fetch(WORKER_URL, {
+							method: 'POST',
+							headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify({ username }),
+						});
+						if (\!resp.ok) throw new Error(`Worker returned ${resp.status}`);
+						triggeredAt = (await resp.json()).triggeredAt;
+					} catch (err) {
+						setState('error', `Failed to trigger workflow: ${err.message}`);
+						return;
+					}
+
+					const success = await pollUntilComplete(triggeredAt);
+					if (success) await loadUserData(username);
+				});
+
+				document.getElementById('username-input').addEventListener('keydown', e => {
+					if (e.key === 'Enter') document.getElementById('gen-btn').click();
+				});
+
+				loadUserData(DEFAULT_USER);
+			});
+		</script>
 			<script id="template" type="text/x-handlebars-template">
 				{{#rss_items}}
 				<article class="thumb">
