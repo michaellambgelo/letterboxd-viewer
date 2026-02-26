@@ -2,38 +2,43 @@ name: RSS Feed Update
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Runs every 6 hours
-  workflow_dispatch:  # Allows manual triggering
+    - cron: '0 */6 * * *'  # Runs every 6 hours (default username only)
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'Letterboxd username to fetch (leave blank for default)'
+        required: false
+        default: 'michaellamb'
 
 # Explicitly set permissions for the workflow
 permissions:
   contents: write
-  actions: write
+  actions: write  # Required to trigger other workflows
 
 jobs:
   update-feed:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
-        
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-          
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests pillow beautifulsoup4 lxml
-          
+
       - name: Run RSS feed download script
-        run: python scripts/download_rss.py 
-        
+        run: python scripts/download_rss.py --username "${{ github.event.inputs.username || 'michaellamb' }}"
+
       - name: Commit and push if changes exist
         id: commit-push
         run: |
@@ -45,7 +50,7 @@ jobs:
             git push
             echo "changes_pushed=true" >> $GITHUB_OUTPUT
           )
-          
+
       - name: Trigger deploy workflow
         if: steps.commit-push.outputs.changes_pushed == 'true'
         uses: actions/github-script@v6
