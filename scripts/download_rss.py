@@ -1,3 +1,4 @@
+import argparse
 import requests
 import os
 from datetime import datetime
@@ -13,14 +14,23 @@ from bs4 import BeautifulSoup
 if sys.stdout.encoding != 'utf-8':
     sys.stdout.reconfigure(encoding='utf-8')
 
+# Parse command-line arguments
+parser = argparse.ArgumentParser(description='Download Letterboxd RSS feed and assets')
+parser.add_argument('--username', default='michaellamb', help='Letterboxd username to fetch')
+args = parser.parse_args()
+
+username = args.username
+
 # URL of the RSS feed
-url = 'https://letterboxd.com/michaellamb/rss/'
+url = f'https://letterboxd.com/{username}/rss/'
 
 # Set up paths using pathlib for cross-platform compatibility
 script_dir = Path(__file__).parent
 base_dir = script_dir.parent
-data_dir = base_dir / 'data'
-images_dir = base_dir / 'assets' / 'images'
+
+# Per-user directories
+data_dir = base_dir / 'data' / 'users' / username
+images_dir = base_dir / 'assets' / 'images' / username
 thumbs_dir = images_dir / 'thumbs'
 fulls_dir = images_dir / 'fulls'
 
@@ -35,10 +45,10 @@ def download_image(url, path):
     try:
         response = requests.get(url)
         response.raise_for_status()
-        
+
         # Ensure path is a Path object
         path = Path(path)
-        
+
         # Write the image data
         path.write_bytes(response.content)
         print(f'Successfully downloaded image to {path}')
@@ -52,7 +62,7 @@ def sanitize_filename(title):
     # Remove "contains spoilers" from the title
     title = title.replace('(contains spoilers)', '').strip()
     title = title.replace('contains spoilers', '').strip()
-    
+
     # Remove special characters and convert to lowercase
     sanitized = title.lower()
     # Replace spaces with hyphens
@@ -74,17 +84,17 @@ def create_thumbnail(full_image_path, thumb_image_path, size=(600, 900)):  # 2:3
         # Ensure paths are Path objects
         full_image_path = Path(full_image_path)
         thumb_image_path = Path(thumb_image_path)
-        
+
         # Open the image
         with Image.open(full_image_path) as img:
             # Convert to RGB if necessary
             if img.mode in ('RGBA', 'P'):
                 img = img.convert('RGB')
-            
+
             # Calculate aspect ratio
             aspect = img.width / img.height
             target_aspect = 2/3  # Movie poster ratio
-            
+
             # Determine crop box
             if aspect > target_aspect:  # Image is too wide
                 new_width = int(img.height * target_aspect)
@@ -94,14 +104,14 @@ def create_thumbnail(full_image_path, thumb_image_path, size=(600, 900)):  # 2:3
                 new_height = int(img.width / target_aspect)
                 top = (img.height - new_height) // 2
                 crop_box = (0, top, img.width, top + new_height)
-            
+
             # Crop and resize
             img = img.crop(crop_box)
             img = img.resize(size, Image.Resampling.LANCZOS)
-            
+
             # Save with high quality
             img.save(thumb_image_path, 'JPEG', quality=95)
-        
+
         print(f'Created thumbnail: {thumb_image_path}')
         return True
     except Exception as e:
@@ -109,23 +119,17 @@ def create_thumbnail(full_image_path, thumb_image_path, size=(600, 900)):  # 2:3
         return False
 
 def clean_image_directories():
-    """Clean the fulls and thumbs image directories before downloading new images."""
+    """Clean the per-user fulls and thumbs image directories before downloading new images."""
     try:
-        # Define paths
-        fulls_dir = images_dir / 'fulls'
-        thumb_dir = images_dir / 'thumbs'
-        
-        # Remove and recreate full directory
         if fulls_dir.exists():
             shutil.rmtree(fulls_dir)
         fulls_dir.mkdir(exist_ok=True)
-        
-        # Remove and recreate thumbs directory
-        if thumb_dir.exists():
-            shutil.rmtree(thumb_dir)
-        thumb_dir.mkdir(exist_ok=True)
-        
-        print("Successfully cleaned image directories")
+
+        if thumbs_dir.exists():
+            shutil.rmtree(thumbs_dir)
+        thumbs_dir.mkdir(exist_ok=True)
+
+        print(f"Successfully cleaned image directories for @{username}")
     except Exception as e:
         print(f"Error cleaning image directories: {e}")
 
@@ -137,11 +141,10 @@ def clean_description(description):
     2. Removing non-renderable HTML
     3. Removing empty paragraph tags
     4. Trimming whitespace
-    5. Ensuring cleaned content appears below article content
-    
+
     Args:
         description (str): The HTML description content from the RSS feed
-        
+
     Returns:
         str: Cleaned HTML description
     """
@@ -149,24 +152,24 @@ def clean_description(description):
         # If the description is CDATA wrapped, extract the content
         if description.startswith('<![CDATA[') and description.endswith(']]>'):
             description = description[9:-3]
-        
+
         # Decode HTML entities if they exist
         if '&lt;' in description:
             from html import unescape
             description = unescape(description)
-        
+
         # Use BeautifulSoup to parse the HTML
         soup = BeautifulSoup(description, 'html.parser')
-        
+
         # Find and remove all img tags
         for img in soup.find_all('img'):
             img.decompose()
-        
+
         # Remove empty paragraph tags
         for p in soup.find_all('p'):
             if not p.get_text(strip=True):  # If paragraph is empty or contains only whitespace
                 p.decompose()
-        
+
         # Keep only renderable HTML elements (p, br, a, ul, ol, li, etc.)
         # This is a whitelist approach to ensure only safe elements remain
         allowed_tags = ['p', 'br', 'a', 'ul', 'ol', 'li', 'strong', 'em', 'b', 'i', 'span', 'div']
@@ -174,14 +177,14 @@ def clean_description(description):
             if tag.name not in allowed_tags:
                 # Replace with its text content
                 tag.replace_with(soup.new_string(tag.get_text()))
-        
+
         # Get the cleaned HTML as a string and trim whitespace
         cleaned_html = str(soup).strip()
-        
+
         # If the result is completely empty, return an empty paragraph
         if not cleaned_html or cleaned_html == "":
             return "<p>No content available</p>"
-            
+
         return cleaned_html
     except Exception as e:
         print(f"Error cleaning description: {e}")
@@ -193,118 +196,126 @@ def download_rss():
         clean_image_directories()
         response = requests.get(url)
         response.raise_for_status()
-        
-        # Save the RSS feed
+
+        # Save the raw RSS feed alongside cleaned output
         rss_path = data_dir / 'rss.xml'
         with open(rss_path, 'wb') as f:
             f.write(response.content)
         print(f'Successfully downloaded RSS feed to {rss_path}')
-        
+
         # Parse the XML
         tree = ET.fromstring(response.content)
-        
-        # Create a dictionary to store cleaned descriptions
+
+        # Create a dictionary to store cleaned descriptions and poster URLs
         cleaned_descriptions = {}
-        
+        poster_urls = {}
+
         # Find all items - limit to first 4 entries
         entry_count = 0
         max_entries = 4
-        
+
         for item in tree.findall('.//item'):
             # Break if we've processed the maximum number of entries
             if entry_count >= max_entries:
                 break
-                
+
             try:
                 # Extract description and title
                 description_elem = item.find('description')
                 description = description_elem.text
                 title = item.find('title').text
-                
+
                 # Find image URL using more robust parsing
                 img_match = re.search(r'src="([^"]+)"', description)
                 if img_match:
                     img_url = img_match.group(1)
-                    
+
                     # Get base filename
                     base_filename = sanitize_filename(title)
-                    
+
                     # Check if this is a list entry (contains "letterboxd-list-")
                     if "letterboxd-list-" in img_url:
-                        # For list entries, we'll keep the original image URL
-                        img_url = img_url
+                        # For list entries, keep the original image URL
+                        pass
                     else:
                         # For movie entries, get the highest resolution possible
-                        # Replace common resolution patterns with higher resolution
-                        img_url = img_url.replace('-0-150-', '-0-2000-')  # Increase from 150 to 2000
-                        img_url = img_url.replace('-0-230-', '-0-2000-')  # Increase from 230 to 2000
-                        img_url = img_url.replace('-0-500-', '-0-2000-')  # Increase from 500 to 2000
-                        img_url = img_url.replace('-0-1000-', '-0-2000-')  # Increase from 1000 to 2000
-                    
+                        img_url = img_url.replace('-0-150-', '-0-2000-')
+                        img_url = img_url.replace('-0-230-', '-0-2000-')
+                        img_url = img_url.replace('-0-500-', '-0-2000-')
+                        img_url = img_url.replace('-0-1000-', '-0-2000-')
+
+                    # Store the poster URL for inclusion in cleaned XML
+                    item_id = item.find('guid').text
+                    poster_urls[item_id] = img_url
+
                     # Define paths for full and thumb images
                     base_filename = base_filename.rstrip('-')  # Remove any trailing hyphens
                     full_path = fulls_dir / f'{base_filename}_full.jpg'
                     thumb_path = thumbs_dir / f'{base_filename}_thumb.jpg'
-                    
+
                     # Download and create thumbnail if needed
                     if not full_path.exists() or not thumb_path.exists():
                         if download_image(img_url, str(full_path)):
                             create_thumbnail(str(full_path), str(thumb_path))
-                
+
                 # Clean the description content
                 cleaned_description = clean_description(description)
-                
+
                 # Store the cleaned description with the item's ID
                 item_id = item.find('guid').text
                 cleaned_descriptions[item_id] = cleaned_description
-                
+
                 # Increment the entry counter
                 entry_count += 1
-                    
+
             except Exception as e:
                 print(f'Error processing item: {e}')
                 continue
-        
+
         # Save the cleaned RSS data to a new file
         cleaned_rss_path = data_dir / 'cleaned_rss.xml'
-        
+
         # Create a new XML string manually to ensure proper formatting
         xml_lines = ['<?xml version="1.0" encoding="utf-8"?>']
         xml_lines.append('<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:letterboxd="https://letterboxd.com" xmlns:tmdb="https://themoviedb.org">')
         xml_lines.append('  <channel>')
-        
+
         # Add channel metadata
         channel = tree.find('channel')
         for child in channel:
             if child.tag == 'item':
                 continue
-            
+
             # Convert element to string
             child_str = ET.tostring(child, encoding='unicode')
             xml_lines.append(f"    {child_str}")
-        
+
         # Add items with cleaned descriptions - limit to first 4 entries
         entry_count = 0
-        
+
         for item in tree.findall('.//item'):
             # Break if we've processed the maximum number of entries
             if entry_count >= max_entries:
                 break
-                
+
             item_id = item.find('guid').text
-            
+
             # Start item tag
             xml_lines.append('    <item>')
-            
+
             # Add all child elements except description
             for child in item:
                 if child.tag == 'description':
                     continue
-                
+
                 # Convert element to string
                 child_str = ET.tostring(child, encoding='unicode')
                 xml_lines.append(f"      {child_str}")
-            
+
+            # Add poster URL element so the frontend can draw canvas without relying on local paths
+            if item_id in poster_urls:
+                xml_lines.append(f'      <imageUrl>{poster_urls[item_id]}</imageUrl>')
+
             # Add description with CDATA if we have a cleaned version
             if item_id in cleaned_descriptions:
                 cleaned_desc = cleaned_descriptions[item_id]
@@ -313,24 +324,24 @@ def download_rss():
                 # Fallback to original description
                 desc = item.find('description').text
                 xml_lines.append(f'      <description>{desc}</description>')
-            
+
             # End item tag
             xml_lines.append('    </item>')
-            
+
             # Increment the entry counter
             entry_count += 1
-        
+
         # Close channel and rss tags
         xml_lines.append('  </channel>')
         xml_lines.append('</rss>')
-        
+
         # Write the XML to file
         with open(cleaned_rss_path, 'w', encoding='utf-8') as f:
             f.write('\n'.join(xml_lines))
-        
+
         print(f'Successfully saved cleaned RSS feed to {cleaned_rss_path}')
-        print(f'Processed {entry_count} entries (limited to {max_entries})')
-                
+        print(f'Processed {entry_count} entries (limited to {max_entries}) for @{username}')
+
     except requests.RequestException as e:
         print(f'Failed to fetch RSS feed: {e}')
     except ET.ParseError as e:
