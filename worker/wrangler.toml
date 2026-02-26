@@ -1,0 +1,15 @@
+name = "letterboxd-viewer-trigger"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+# Plain-text vars (non-sensitive)
+[vars]
+REPO_OWNER = "michaellambgelo"
+REPO_NAME  = "letterboxd-viewer"
+
+# GITHUB_TOKEN must be set as a secret — never commit it here:
+#   wrangler secret put GITHUB_TOKEN
+#
+# Use a fine-grained PAT scoped only to:
+#   Repository: letterboxd-viewer
+#   Permission: Actions (write)
