@@ -129,6 +129,7 @@ a:hover { color: var(--text-primary); }
 /* Heatmap */
 .heatmap-wrapper {
   overflow-x: auto;
+  overflow-y: visible;
   padding-bottom: 0.5rem;
 }
 
