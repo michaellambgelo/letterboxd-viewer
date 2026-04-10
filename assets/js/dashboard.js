@@ -53,7 +53,10 @@
     }
 
     // Determine date range: last 52 weeks from the latest date
-    const latest = dateRange.latest ? new Date(dateRange.latest + 'T00:00:00') : new Date();
+    const dataLatest = dateRange.latest ? new Date(dateRange.latest + 'T00:00:00') : new Date();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const latest = dataLatest > today ? dataLatest : today;
     const end = new Date(latest);
     // Move end to the upcoming Saturday (end of week)
     end.setDate(end.getDate() + (6 - end.getDay()));
