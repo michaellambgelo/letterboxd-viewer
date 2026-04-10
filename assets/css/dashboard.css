@@ -510,7 +510,9 @@ a:hover { color: var(--text-primary); }
   color: var(--text-primary);
   font-size: 0.875rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transform: translateX(120%);
+  /* 100% of own width + the 2rem right offset => fully off-screen even
+     when empty (120% alone leaves a sliver visible for a 0-content toast). */
+  transform: translateX(calc(100% + 2rem));
   transition: transform 0.3s ease;
   z-index: 1000;
   max-width: 350px;
