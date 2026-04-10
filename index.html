@@ -1,533 +1,198 @@
-<!DOCTYPE HTML>
-<!--
-	Multiverse by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Michael Lamb's Letterboxd diary</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/png" href="https://michaellamb.dev/img/favicon.png" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			.toast-container {
-				position: fixed;
-				bottom: 2rem;
-				right: 2rem;
-				z-index: 20000;
-				pointer-events: none;
-			}
-			
-			.toast {
-				background: rgba(36, 41, 44, 0.95);
-				color: #fff;
-				padding: 1rem 2rem;
-				border-radius: 4px;
-				margin: 0.5rem 0;
-				display: flex;
-				align-items: center;
-				gap: 1rem;
-				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-				animation: slideIn 0.3s ease-out;
-				max-width: 400px;
-				pointer-events: auto;
-				word-break: break-word;
-			}
-			
-			.toast.success {
-				border-left: 4px solid #4CAF50;
-			}
-			
-			.toast.error {
-				border-left: 4px solid #f44336;
-			}
-			
-			.toast-icon {
-				font-size: 1.2rem;
-				flex-shrink: 0;
-			}
-			
-			.toast-message {
-				flex-grow: 1;
-				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-			}
-			
-			@keyframes slideIn {
-				from {
-					transform: translateX(100%);
-					opacity: 0;
-				}
-				to {
-					transform: translateX(0);
-					opacity: 1;
-				}
-			}
-			
-			@keyframes fadeOut {
-				from {
-					transform: translateX(0);
-					opacity: 1;
-				}
-				to {
-					transform: translateX(100%);
-					opacity: 0;
-				}
-			}
-		</style>
-		<script type="module" crossorigin src="./assets/main.tsx.ed6f4f5c.js"></script>
-		<script>
-			(function () {
-			  var webSdkScript = document.createElement("script");
-		  
-			  // fetch the latest version of the Web-SDK from the CDN
-			  webSdkScript.src =
-				"https://unpkg.com/@grafana/faro-web-sdk@latest/dist/bundle/faro-web-sdk.iife.js";
-		  
-			  webSdkScript.onload = () => {
-				window.GrafanaFaroWebSdk.initializeFaro({
-				  url: "https://grafana.michaellamb.dev/faro-proxy?app=letterboxd-viewer",
-				  app: {
-					name: "letterboxd-viewer",
-					version: "1.0.0",
-					environment: "production",
-				  },
-				  
-				});
-		  
-		  
-				// Load instrumentations at the onLoad event of the web-SDK and after the above configuration.
-				// This is important because we need to ensure that the Web-SDK has been loaded and initialized before we add further instruments!
-				var webTracingScript = document.createElement("script");
-		  
-				// fetch the latest version of the Web Tracing package from the CDN
-				webTracingScript.src =
-				  "https://unpkg.com/@grafana/faro-web-tracing@latest/dist/bundle/faro-web-tracing.iife.js";
-		  
-				// Initialize, configure (if necessary) and add the the new instrumentation to the already loaded and configured Web-SDK.
-				webTracingScript.onload = () => {
-				  window.GrafanaFaroWebSdk.faro.instrumentations.add(
-					new window.GrafanaFaroWebTracing.TracingInstrumentation()
-				  );
-				};
-		  
-				// Append the Web Tracing script script tag to the HTML page
-				document.head.appendChild(webTracingScript);
-			  };
-		  
-			  // Append the Web-SDK script script tag to the HTML page
-			  document.head.appendChild(webSdkScript);
-			})();
-		  </script>		  
-		<link rel="stylesheet" href="./assets/main.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-	</head>
-	<body class="is-preload">
-		<!-- Toast Container -->
-		<div class="toast-container" id="toastContainer"></div>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>michaellamb's Letterboxd Stats</title>
+	<meta name="description" content="Personal Letterboxd viewing stats and history for michaellamb" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" />
+	<link rel="stylesheet" href="assets/css/dashboard.css" />
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+	<script>
+		(function () {
+		  var webSdkScript = document.createElement("script");
+		  webSdkScript.src =
+			"https://unpkg.com/@grafana/faro-web-sdk@latest/dist/bundle/faro-web-sdk.iife.js";
+		  webSdkScript.onload = () => {
+			window.GrafanaFaroWebSdk.initializeFaro({
+			  url: "https://grafana.michaellamb.dev/faro-proxy?app=letterboxd-viewer",
+			  app: {
+				name: "letterboxd-viewer",
+				version: "2.0.0",
+				environment: "production",
+			  },
+			});
+			var webTracingScript = document.createElement("script");
+			webTracingScript.src =
+			  "https://unpkg.com/@grafana/faro-web-tracing@latest/dist/bundle/faro-web-tracing.iife.js";
+			webTracingScript.onload = () => {
+			  window.GrafanaFaroWebSdk.faro.instrumentations.add(
+				new window.GrafanaFaroWebTracing.TracingInstrumentation()
+			  );
+			};
+			document.head.appendChild(webTracingScript);
+		  };
+		  document.head.appendChild(webSdkScript);
+		})();
+	</script>
+</head>
+<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+	<!-- Loading state -->
+	<div id="loading" class="loading">Loading stats...</div>
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html"><strong>Letterboxd diary</strong> of Michael Lamb</a></h1>
-						<nav>
-							<ul>
-								<li><a href="#footer" class="icon solid fa-info-circle">Contact</a></li>
-							</ul>
-						</nav>
-					</header>
+	<!-- Dashboard (hidden until data loads) -->
+	<div id="dashboard" hidden>
 
-				<!-- Main -->
-					<div id="main">
-						{{#rss_items}}
-						<article class="thumb">
-							<a href="{{link}}" class="image"><img src="{{image}}" alt="" /></a>
-							<h2>{{title}}</h2>
-							<p>{{description}}</p>
-						</article>
-						{{/rss_items}}
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer" class="panel">
-						<div class="inner split">
-							<div>
-								<section>
-									<h2>This Letterboxd diary viewer was created by Michael Lamb</h2>
-									<p>The project was built from a template created by HTML5UP.</p>
-									<p>Windsurf (formerly Codeium) was used to modify the template to suit the requirements of the project.</p>
-								</section>
-								<section>
-									<h2>Follow me on ...</h2>
-									<ul class="icons">
-										<li><a href="https://www.facebook.com/michaellambms/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="https://www.instagram.com/themichaellamb/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="https://github.com/michaellambgelo" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-										<li><a href="https://www.linkedin.com/in/michael-lamb-ms/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-									</ul>
-								</section>
-								<p class="copyright">
-									&copy; Letterboxd Diary Viewer. Design: <a href="http://html5up.net">HTML5 UP</a>.
-								</p>
-							</div>
-							<div>
-								<section>
-									<h2>Get in touch</h2>
-									<form id="contact-form">
-										<div class="fields">
-											<div class="field half">
-												<input type="text" name="name" id="name" placeholder="Name" required />
-											</div>
-											<div class="field half">
-												<input type="text" name="email" id="email" placeholder="Email" required />
-											</div>
-											<div class="field">
-												<textarea name="message" id="message" rows="4" placeholder="Message" required></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-							</div>
+		<!-- Profile Header -->
+		<header class="profile-header">
+			<div class="container">
+				<div class="profile-info">
+					<div class="profile-avatar"><i class="fas fa-film"></i></div>
+					<div>
+						<div class="profile-name">michaellamb</div>
+						<div class="profile-link">
+							<a href="https://letterboxd.com/michaellamb/" target="_blank" rel="noopener">letterboxd.com/michaellamb</a>
 						</div>
-					</footer>
+					</div>
+				</div>
+			</div>
+		</header>
 
+		<main class="container">
+
+			<!-- Stat Cards -->
+			<div class="stat-cards">
+				<div class="stat-card">
+					<div class="stat-value" id="stat-total">--</div>
+					<div class="stat-label">Films</div>
+				</div>
+				<div class="stat-card">
+					<div class="stat-value" id="stat-unique">--</div>
+					<div class="stat-label">Unique</div>
+				</div>
+				<div class="stat-card">
+					<div class="stat-value accent-green" id="stat-rewatches">--</div>
+					<div class="stat-label">Rewatches</div>
+				</div>
+				<div class="stat-card">
+					<div class="stat-value accent-orange" id="stat-avg-rating">--</div>
+					<div class="stat-label">Avg Rating</div>
+				</div>
 			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script>
-				// Function to format the title with line breaks
-				function formatTitle(title) {
-					// Pattern matches: film title, year, and optional rating
-					const pattern = /^(.*?),\s*(\d{4})(?:\s*-\s*(.+))?$/;
-					const match = title.match(pattern);
-					
-					if (match) {
-						const [_, filmTitle, year, rating] = match;
-						let formatted = filmTitle;
-						formatted += '<br>' + year;
-						if (rating) {
-							formatted += '<br>' + rating;
-						}
-						return formatted;
-					}
-					return title; // Return original if no match
-				}
+			<!-- Heatmap -->
+			<section class="dashboard-section">
+				<h2 class="section-title">Watching Activity</h2>
+				<div class="heatmap-wrapper">
+					<div id="heatmap-months" class="heatmap-month-labels"></div>
+					<div class="heatmap-container">
+						<div class="heatmap-labels">
+							<div class="heatmap-label"></div>
+							<div class="heatmap-label">Mon</div>
+							<div class="heatmap-label"></div>
+							<div class="heatmap-label">Wed</div>
+							<div class="heatmap-label"></div>
+							<div class="heatmap-label">Fri</div>
+							<div class="heatmap-label"></div>
+						</div>
+						<div id="heatmap-grid" class="heatmap-grid"></div>
+					</div>
+					<div class="heatmap-legend">
+						<span>Less</span>
+						<div class="heatmap-legend-cell" style="background: var(--bg-tertiary)"></div>
+						<div class="heatmap-legend-cell" style="background: #1b4332"></div>
+						<div class="heatmap-legend-cell" style="background: #2d6a4f"></div>
+						<div class="heatmap-legend-cell" style="background: #40916c"></div>
+						<div class="heatmap-legend-cell" style="background: #52b788"></div>
+						<span>More</span>
+					</div>
+				</div>
+			</section>
 
-				$.ajax({
-					type: 'GET',
-					url: 'data/cleaned_rss.xml',
-					dataType: 'xml',
-					success: function(data) {
-						var rss_items = [];
-						
-						// Debug: Show the raw XML in console
-						console.log("Loaded XML data:", data);
-						
-						$(data).find('item').each(function() {
-							// Debug: Show each item
-							console.log("Processing item:", $(this).find('title').text());
-							
-							// Extract description content directly
-							var description = $(this).find('description').html() || "";
-							
-							// Debug: Show the extracted description
-							console.log("Raw description:", description);
-							
-							// Clean up CDATA wrapper if present
-							if (description.includes('CDATA')) {
-								description = description.replace(/<!\[CDATA\[(.*?)\]\]>/s, '$1');
-							}
-							
-							// Debug: Show the cleaned description
-							console.log("Cleaned description:", description);
-							
-							var title = $(this).find('title').text();
-							
-							// Extract image URL from description - not needed for cleaned RSS
-							// as img tags have been removed, but we'll keep the code for backward compatibility
-							var imgMatch = description.match(/src="([^"]+)"/);
-							var imgUrl = imgMatch ? imgMatch[1] : null;
-							
-							// For items without image match in description, try to construct the URL from the title
-							if (!imgUrl) {
-								// Sanitize the title for image filename
-								var imgBase = title.toLowerCase()
-									.replace(/ /g, '-')
-									.replace(/[^\p{L}0-9-]/gu, '')
-									.replace(/-+/g, '-')
-									.replace(/^-|-$/g, '')
-									.replace(/½/g, '');
-								
-								// Check if this might be a movie entry by looking at the title format
-								if (title.match(/.*,\s*\d{4}/)) {
-									// Assume it's a movie entry and construct the image path
-									var thumbPath = 'assets/images/thumbs/' + imgBase + '_thumb.jpg';
-									
-									// Use a placeholder image URL
-									imgUrl = thumbPath;
-								}
-							}
-							
-							// Skip items without images
-							if (!imgUrl) return;
-							
-							// Sanitize the title for image filename - preserve accented characters
-							var imgBase = title.toLowerCase()
-								.replace(/ /g, '-')
-								.replace(/[^\p{L}0-9-]/gu, '')  // This regex preserves Unicode letters including accents
-								.replace(/-+/g, '-')
-								.replace(/^-|-$/g, '')
-								.replace(/½/g, '');
-							
-							// Prepare image paths
-							var thumbImage, fullImage;
-							
-							// For list entries, use the original image URL
-							if (imgUrl.includes('letterboxd-list-')) {
-								thumbImage = imgUrl;
-								fullImage = imgUrl;
-							} else {
-								// For movie entries, use our downloaded images
-								thumbImage = 'assets/images/thumbs/' + imgBase + '_thumb.jpg';
-								fullImage = 'assets/images/fulls/' + imgBase + '_full.jpg';
-							}
-							
-							var item = {
-								link: fullImage, // Link to the full-size image for the modal
-								title: formatTitle(title),
-								description: description,
-								image: thumbImage,
-								fullImage: fullImage
-							};
+			<!-- Charts -->
+			<section class="dashboard-section">
+				<div class="charts-row">
+					<div class="chart-card">
+						<h3>Rating Distribution</h3>
+						<div class="chart-container">
+							<canvas id="ratingsChart"></canvas>
+						</div>
+					</div>
+					<div class="chart-card">
+						<h3>Films by Decade</h3>
+						<div class="chart-container">
+							<canvas id="decadesChart"></canvas>
+						</div>
+					</div>
+				</div>
+			</section>
 
-							rss_items.push(item);
-						});
-						var template = Handlebars.compile($('#template').html());
-						$('#main').html(template({rss_items: rss_items}));
-						
-						// Initialize Poptrox after content is loaded
-						$('#main').poptrox({
-							baseZIndex: 20000,
-							caption: function($a) {
-								// Debug: Show the article being processed
-								var $article = $a.closest('.thumb');
-								console.log("Article for caption:", $article);
-								console.log("Description content:", $article.find('.description-content').html());
-								
-								var captionHtml = '<div class="caption-content">' + 
-									$article.find('h2').html() + 
-									'<div class="review-text">' + $article.find('.description-content').html() + '</div>' +
-									'</div>';
-								return captionHtml;
-							},
-							fadeSpeed: 300,
-							onPopupClose: function() { $('body').removeClass('modal-active'); },
-							onPopupOpen: function() { $('body').addClass('modal-active'); },
-							overlayOpacity: 0.8,
-							popupCloserText: '',
-							popupHeight: 'auto',
-							popupLoaderText: '',
-							popupSpeed: 300,
-							popupWidth: 600,
-							selector: '.thumb > a.image',
-							usePopupCaption: true,
-							usePopupCloser: true,
-							usePopupDefaultStyling: false,
-							usePopupForceClose: true,
-							usePopupLoader: true,
-							usePopupNav: true,
-							windowMargin: 50
-						});
-						
-						// Add minimal CSS for better readability
-						$('<style>')
-							.prop('type', 'text/css')
-							.html(`
-								.poptrox-popup {
-									background: rgba(20, 20, 20, 0.95) !important;
-									border-radius: 8px !important;
-									overflow: hidden !important;
-									box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5) !important;
-								}
-								.poptrox-popup .pic {
-									padding: 20px 20px 10px 20px !important;
-								}
-								.poptrox-popup .pic img {
-									max-width: 100% !important;
-									border-radius: 4px !important;
-								}
-								.poptrox-popup .caption {
-									padding: 0 20px 20px 20px !important;
-								}
-								.caption-content {
-									background: rgba(0, 0, 0, 0.7) !important;
-									padding: 15px !important;
-									border-radius: 4px !important;
-									color: #fff !important;
-								}
-								.caption-content h2 {
-									margin-top: 0 !important;
-									color: #fff !important;
-								}
-								.caption-content p {
-									margin-bottom: 0 !important;
-									color: #ddd !important;
-								}
-								.poptrox-popup .closer {
-									top: 10px !important;
-									right: 10px !important;
-									width: 30px !important;
-									height: 30px !important;
-									color: #fff !important;
-									background: rgba(0, 0, 0, 0.5) !important;
-									border-radius: 50% !important;
-								}
-							`)
-							.appendTo('head');
-					}
-				});
-			</script>
-			<script id="template" type="text/x-handlebars-template">
-				{{#rss_items}}
-				<article class="thumb">
-					<a href="{{fullImage}}" class="image"><img src="{{image}}" alt="" /></a>
-					<h2>{{{title}}}</h2>
-					<div class="description-content">{{{description}}}</div>
-				</article>
-				{{/rss_items}}
-			</script>
-			<script>
-				// Toast notification system
-				function showToast(message, type = 'success') {
-					const container = document.getElementById('toastContainer');
-					if (!container) {
-						console.error('Toast container not found');
-						return;
-					}
+			<!-- Most Rewatched -->
+			<section class="dashboard-section">
+				<h2 class="section-title">Most Rewatched</h2>
+				<ul id="rewatch-list" class="rewatch-list"></ul>
+			</section>
 
-					// Create toast element
-					const toast = document.createElement('div');
-					toast.className = `toast ${type}`;
-					
-					const icon = type === 'success' ? '✓' : '⚠';
-					
-					toast.innerHTML = `
-						<span class="toast-icon">${icon}</span>
-						<span class="toast-message">${message}</span>
-					`;
-					
-					// Add to container
-					container.appendChild(toast);
-					
-					// Debug log
-					console.log('Toast created:', { message, type });
-					
-					// Remove the toast after 5 seconds
-					setTimeout(() => {
-						toast.style.animation = 'fadeOut 0.3s ease-out forwards';
-						setTimeout(() => {
-							if (container.contains(toast)) {
-								container.removeChild(toast);
-							}
-						}, 300);
-					}, 5000);
-				}
+			<!-- Highest Rated -->
+			<section class="dashboard-section">
+				<h2 class="section-title">Five-Star Films</h2>
+				<div id="five-star-grid" class="five-star-grid"></div>
+			</section>
 
-				// Test toast on page load (for debugging)
-				window.addEventListener('load', () => {
-					const isLocalhost = window.location.hostname === 'localhost' || 
-						window.location.hostname === '127.0.0.1' ||
-						window.location.hostname === '';
-					
-					if (isLocalhost) {
-						console.log('Testing toast notification system...');
-						setTimeout(() => {
-							showToast('Toast notification system initialized', 'success');
-						}, 1000);
-					}
-				});
+			<!-- Recent Activity -->
+			<section class="dashboard-section">
+				<h2 class="section-title">Recent Activity</h2>
+				<ul id="activity-list" class="activity-list"></ul>
+			</section>
 
-				// Contact form submission handler
-				document.getElementById('contact-form').addEventListener('submit', async function(e) {
-					e.preventDefault();
-					
-					const submitButton = document.querySelector('input[type="submit"]');
-					submitButton.disabled = true;
-					submitButton.value = 'Sending...';
-					
-					try {
-						// Get webhook URL from global variable
-						const webhookUrl = window.DISCORD_WEBHOOK_URL;
-						console.log('Webhook URL available:', !!webhookUrl);
-						
-						if (!webhookUrl) {
-							throw new Error('Contact form is not properly configured. Please try again later.');
-						}
-						
-						// Format the message for the webhook
-						const payload = {
-							content: null,
-							embeds: [{
-								title: 'New Contact Form Submission',
-								fields: [
-									{
-										name: 'Name',
-										value: this.querySelector('input[name="name"]').value,
-										inline: true
-									},
-									{
-										name: 'Email',
-										value: this.querySelector('input[name="email"]').value,
-										inline: true
-									},
-									{
-										name: 'Message',
-										value: this.querySelector('textarea[name="message"]').value
-									}
-								],
-								color: 5814783
-							}]
-						};
+		</main>
 
-						// Send to webhook
-						const response = await fetch(webhookUrl, {
-							method: 'POST',
-							headers: {
-								'Content-Type': 'application/json'
-							},
-							body: JSON.stringify(payload)
-						});
+		<!-- Footer -->
+		<footer class="site-footer">
+			<div class="container">
+				<div class="footer-grid">
 
-						if (!response.ok) {
-							throw new Error('Failed to send message. Please try again.');
-						}
+					<!-- Boxd Card Callout -->
+					<div>
+						<div class="boxd-card-callout">
+							<h3>Boxd Card</h3>
+							<p>A Chrome extension that generates shareable image cards from your Letterboxd profile. Create cards for your last four watched, favorites, diary entries, lists, and reviews.</p>
+							<a href="https://github.com/michaellambgelo/boxd-card" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+						</div>
+					</div>
 
-						// Show success message
-						showToast('Message sent successfully! We\'ll get back to you soon.', 'success');
-						this.reset();
-					} catch (error) {
-						console.error('Error:', error);
-						showToast(error.message || 'An unexpected error occurred. Please try again.', 'error');
-					} finally {
-						submitButton.disabled = false;
-						submitButton.value = 'Send Message';
-					}
-				});
-			</script>
+					<!-- Contact / Guestbook -->
+					<div class="contact-section">
+						<h3>Guestbook</h3>
+						<form id="contact-form" class="contact-form">
+							<input type="text" name="name" placeholder="Name" required />
+							<input type="email" name="email" placeholder="Email" required />
+							<textarea name="message" rows="3" placeholder="Leave a message..." required></textarea>
+							<div class="form-actions">
+								<button type="submit" class="btn-submit">Send</button>
+								<button type="reset" class="btn-reset">Reset</button>
+							</div>
+						</form>
+					</div>
 
-	</body>
+				</div>
+
+				<!-- Social Links -->
+				<div class="social-links">
+					<a href="https://letterboxd.com/michaellamb/" target="_blank" rel="noopener" title="Letterboxd"><i class="fas fa-film"></i></a>
+					<a href="https://github.com/michaellambgelo" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+					<a href="https://discord.gg/f4MVzKMKsA" target="_blank" rel="noopener" title="Discord"><i class="fab fa-discord"></i></a>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Toast notifications -->
+	<div id="toast" class="toast"></div>
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+	<script src="assets/js/dashboard.js"></script>
+</body>
 </html>
