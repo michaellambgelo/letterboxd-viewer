@@ -117,7 +117,9 @@
         prevWeekIdx = mp.weekIndex;
       }
       monthLabels.style.display = 'grid';
-      monthLabels.style.gridTemplateColumns = `repeat(${weeks.length}, 14px)`;
+      // 12px columns + 2px gap (from CSS) == 14px per week, matching the
+      // flex .heatmap-grid below (12px cells + 2px flex gap).
+      monthLabels.style.gridTemplateColumns = `repeat(${weeks.length}, 12px)`;
     }
 
     // Render grid
