@@ -17,7 +17,7 @@
 
   async function loadStats() {
     try {
-      const res = await fetch(`${DATA_BASE}/stats.json`);
+      const res = await fetch(`${DATA_BASE}/stats.json`, { cache: 'no-store' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return await res.json();
     } catch (err) {
