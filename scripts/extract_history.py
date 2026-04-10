@@ -165,6 +165,22 @@ def main():
         if (i + 1) % 100 == 0:
             print(f'  Processed {i + 1}/{len(hashes)} commits, {len(entries)} unique entries so far')
 
+    # Also incorporate the current working-tree rss.xml so a fresh download
+    # on this run is reflected immediately (otherwise there is a 1-run lag
+    # between download_rss.py writing the file and stats.json updating).
+    working_tree_rss = data_dir / 'rss.xml'
+    if working_tree_rss.exists():
+        try:
+            xml_content = working_tree_rss.read_text(encoding='utf-8', errors='replace')
+            root = ET.fromstring(xml_content)
+            for item in root.findall('.//item'):
+                entry = parse_item(item)
+                if entry:
+                    entries[entry['guid']] = entry
+            print('Merged working-tree data/rss.xml')
+        except ET.ParseError as e:
+            print(f'  XML parse error in working-tree rss.xml: {e}', file=sys.stderr)
+
     print(f'Processed {processed} commits ({errors} errors)')
     print(f'Extracted {len(entries)} unique diary entries')
 
