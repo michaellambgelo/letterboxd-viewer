@@ -15,6 +15,11 @@
     return 'data';
   }
 
+  function formatLocalDate(d) {
+    const pad = (n) => String(n).padStart(2, '0');
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  }
+
   async function loadStats() {
     try {
       const res = await fetch(`${DATA_BASE}/stats.json`, { cache: 'no-store' });
@@ -79,7 +84,7 @@
         currentWeek = [];
       }
 
-      const dateStr = currentDate.toISOString().slice(0, 10);
+      const dateStr = formatLocalDate(currentDate);
       const count = counts[dateStr] || 0;
 
       // Track month boundaries
