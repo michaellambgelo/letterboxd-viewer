@@ -1,7 +1,7 @@
 {
-  "totalWatched": 501,
-  "uniqueFilms": 423,
-  "totalRewatches": 162,
+  "totalWatched": 502,
+  "uniqueFilms": 424,
+  "totalRewatches": 163,
   "averageRating": 3.93,
   "ratingDistribution": {
     "0.5": 0,
@@ -12,7 +12,7 @@
     "3.0": 56,
     "3.5": 97,
     "4.0": 93,
-    "4.5": 78,
+    "4.5": 79,
     "5.0": 120,
     "unrated": 9
   },
@@ -32,7 +32,7 @@
     "2026-01": 24,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 10
+    "2026-04": 11
   },
   "heatmapData": [
     {
@@ -1130,6 +1130,10 @@
     {
       "date": "2026-04-08",
       "count": 1
+    },
+    {
+      "date": "2026-04-09",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -1144,7 +1148,7 @@
     "1990s": 35,
     "2000s": 64,
     "2010s": 89,
-    "2020s": 253
+    "2020s": 254
   },
   "mostRewatched": [
     {
@@ -1209,6 +1213,18 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1274672749",
+      "filmTitle": "Kimi",
+      "filmYear": 2022,
+      "watchedDate": "2026-04-09",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 800510,
+      "link": "https://letterboxd.com/michaellamb/film/kimi/1/",
+      "title": "Kimi, 2022 - ★★★★½",
+      "reviewText": "as connected as we all are, it feels like there is such a thing as too much connection.\n\nthis film captures the intensity of that from a specific perspective, and i appreciate the immersive experience offered."
+    },
     {
       "guid": "letterboxd-entry-1273532505",
       "filmTitle": "Sinners",
@@ -1436,18 +1452,6 @@
       "link": "https://letterboxd.com/michaellamb/film/undertone-2025/",
       "title": "undertone, 2025 - ★★",
       "reviewText": "didn’t really work for me. not sure exactly what it was, but I don’t believe that I’ll be thinking about this at all"
-    },
-    {
-      "guid": "letterboxd-entry-1246676579",
-      "filmTitle": "How to Be",
-      "filmYear": 2008,
-      "watchedDate": "2026-03-20",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 19713,
-      "link": "https://letterboxd.com/michaellamb/film/how-to-be/",
-      "title": "How to Be, 2008 - ★★★½",
-      "reviewText": "I actually quite liked this"
     }
   ],
   "highestRated": [
@@ -2000,6 +2004,6 @@
   ],
   "dateRange": {
     "earliest": "2025-01-13",
-    "latest": "2026-04-08"
+    "latest": "2026-04-09"
   }
 }
