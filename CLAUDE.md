@@ -2,110 +2,82 @@
 
 ## Project Goal
 
-This project is evolving from a personal Letterboxd diary viewer into a more **app-like experience** where any user can enter their Letterboxd username to generate a **"Last Four Watched" shareable image** suitable for posting to social media or other platforms.
+Personal Letterboxd stats dashboard rendered as a static site on GitHub Pages. A Python pipeline runs on cron, walks git history of the RSS feed to build a cumulative viewing log, and pre-computes every field the frontend displays into `data/stats.json`.
 
-The `last-four-watched` branch is the primary development branch for this feature.
+Single-user (hard-coded to `michaellamb` in `scripts/download_rss.py`). The frontend is a pure static consumer of `stats.json` — no runtime computation beyond Chart.js rendering and the heatmap grid layout.
 
----
-
-## Current Architecture
-
-**Static site** deployed to GitHub Pages. No server-side runtime. Data pipeline is Python + GitHub Actions.
-
-```
-Letterboxd RSS → Python script → data/cleaned_rss.xml + assets/images/*
-                                        ↓
-                              index.html (jQuery + Handlebars)
-                                        ↓
-                              Gallery of 4 most recent films
-```
-
-Key files:
-- `scripts/download_rss.py` — fetches RSS, downloads poster images, produces `cleaned_rss.xml`
-- `index.html` — single-file frontend (Handlebars templates, jQuery, Poptrox lightbox)
-- `.github/workflows/download-data-and-assets.yml` — cron job (every 6h) that runs the Python script
-- `.github/workflows/deploy.yml` — deploys to GitHub Pages on push to main
+> **Historical note:** Earlier iterations of this repo explored a "Last Four Watched" dynamic username feature backed by a Cloudflare Worker + Canvas image export. That direction was superseded by the stats-dashboard rewrite on `main`. The shareable-card idea now lives in a separate project: [`boxd-card`](https://github.com/michaellambgelo/boxd-card) (Chrome extension, client-side DOM scrape).
 
 ---
 
-## Data Source: Letterboxd RSS
+## Architecture
 
-**All proof-of-concept work should rely on the Letterboxd RSS feed**, not the Letterboxd API.
-
-RSS endpoint (public, no auth required):
 ```
-https://letterboxd.com/{username}/rss/
+Letterboxd RSS  ──►  scripts/download_rss.py       ──►  data/rss.xml
+                                                        data/cleaned_rss.xml
+                                                             │
+                                                             ▼
+                     scripts/extract_history.py      ──►  data/viewing_history.json
+                     (walks git history of                  (cumulative diary log,
+                      data/rss.xml, dedupes by guid)         deduped by numeric ID)
+                                                             │
+                                                             ▼
+                     scripts/compute_stats.py        ──►  data/stats.json
+                                                             │
+                                                             ▼
+                     index.html + assets/js/dashboard.js
+                     (vanilla JS + Chart.js)
 ```
 
-RSS items contain:
-- `<letterboxd:filmTitle>` — film title
-- `<letterboxd:filmYear>` — release year
-- `<letterboxd:memberRating>` — star rating (float, e.g. `4.5`)
-- `<letterboxd:watchedDate>` — YYYY-MM-DD
-- `<letterboxd:rewatch>` — Yes/No
-- `<description>` — review text + poster image URL (inside CDATA)
-- `<themoviedb:movieId>` — TMDB ID (useful for supplementing data if needed)
+**Key trick:** Letterboxd's RSS feed only exposes the 50 most recent diary entries. `extract_history.py` walks every git commit that touched `data/rss.xml` and deduplicates entries by numeric ID (normalizing `letterboxd-review-XXXXX` and `letterboxd-watch-XXXXX` to the same `letterboxd-entry-XXXXX` guid). The longer the cron has been running, the deeper the history goes. The checkout in the workflow uses `fetch-depth: 0` so all commits are available.
 
-Poster image URL pattern in description HTML:
-```
-https://a.ltrbxd.com/resized/...poster-{size}.jpg
-```
-Resolution can be upgraded by replacing the size parameter (e.g. `-0-150-` → `-0-2000-`).
+## Key Files
 
----
+**Frontend (static):**
+- `index.html` — dashboard shell with stat cards, heatmap, charts, rewatched list, five-star grid, recent activity, guestbook form
+- `assets/js/dashboard.js` — all rendering logic (data loading via `fetch('data/stats.json')`, heatmap layout, Chart.js setup, contact form handler)
+- `assets/css/dashboard.css` — all styling
+- No jQuery, no Handlebars, no Poptrox, no build step
 
-## "Last Four Watched" Feature Goals
+**Pipeline (Python):**
+- `scripts/download_rss.py` — fetches `https://letterboxd.com/michaellamb/rss/`, writes raw `data/rss.xml` and `data/cleaned_rss.xml` (HTML-cleaned descriptions)
+- `scripts/extract_history.py` — walks `git log --reverse -- data/rss.xml`, parses each snapshot with `xml.etree.ElementTree`, accumulates unique entries into `data/viewing_history.json` (sorted by `watchedDate` desc)
+- `scripts/compute_stats.py` — reads `viewing_history.json`, writes `data/stats.json` with pre-computed `totalWatched`, `uniqueFilms`, `totalRewatches`, `averageRating`, `ratingDistribution`, `heatmapData`, `filmYearDistribution`, `mostRewatched`, `highestRated`, `recentActivity`, and `dateRange`
 
-### Core Goal
-Allow a visitor to enter any Letterboxd username and generate a visual card showing their 4 most recently watched films, suitable for copying/sharing.
+**Workflows:**
+- `.github/workflows/download-data-and-assets.yml` — cron `0 */6 * * *`. Runs the 3-script pipeline, commits any changed files in `data/`, and triggers `deploy.yml` via `actions/github-script`
+- `.github/workflows/deploy.yml` — publishes to GitHub Pages on push to `main`; injects `DISCORD_WEBHOOK_URL` into the built HTML
 
-### Key Behaviors
-1. **Username input** — user types a Letterboxd username into a field
-2. **RSS fetch** — client-side fetch of `https://letterboxd.com/{username}/rss/` (or proxied)
-3. **Parse first 4 film entries** — skip list entries and other non-film items
-4. **Display 4 poster images + film titles + ratings** — laid out as a shareable card
-5. **Export / copy** — user can copy the card as an image (Canvas API → clipboard or download)
+## Data contract: `stats.json`
 
-### Open Questions
+The frontend reads only these top-level keys (see `compute_stats.py` and `dashboard.js`):
 
-**CORS**: Letterboxd RSS may not allow direct browser-side `fetch()` due to CORS headers. Options:
-- A lightweight CORS proxy (e.g. a small Cloudflare Worker or Vercel Edge Function)
-- Server-side fetch triggered by user input
-- Check whether `https://letterboxd.com/{username}/rss/` actually allows cross-origin requests before building a proxy
-
-**Image CORS**: Letterboxd CDN images (`a.ltrbxd.com`) must be drawable onto a `<canvas>` without tainting it. This requires either:
-- `crossOrigin="anonymous"` on `<img>` elements (only works if the CDN sends CORS headers)
-- Proxying images through a backend or Cloudflare Worker
-
-**Letterboxd API**: A formal API exists but requires authentication. We are intentionally deferring API integration. RSS is sufficient for proof-of-concept. We will cross that bridge when the RSS approach hits a wall.
-
-### Image Generation Approach (preferred)
-Use the browser **Canvas API** to composite:
-- 4 poster thumbnails (2:3 aspect ratio, side by side or 2×2 grid)
-- Film titles and star ratings as text overlays
-- Optional: username + date watermark
-
-Export via `canvas.toBlob()` → `navigator.clipboard.write()` or `<a download>`.
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Frontend | Vanilla HTML/CSS/JS, jQuery, Handlebars |
-| Styling | SASS (compiled), responsive breakpoints |
-| Data pipeline | Python 3.10 (requests, Pillow, BeautifulSoup, lxml) |
-| Automation | GitHub Actions |
-| Hosting | GitHub Pages |
-| Monitoring | Grafana Faro SDK (removed in last-four-watched branch) |
-
----
+| Key | Shape | Used for |
+|---|---|---|
+| `totalWatched` | int | Stat card |
+| `uniqueFilms` | int | Stat card |
+| `totalRewatches` | int | Stat card |
+| `averageRating` | float | Stat card |
+| `ratingDistribution` | `{ "0.5": n, ..., "5.0": n, "unrated": n }` | Rating chart |
+| `heatmapData` | `[{ date: "YYYY-MM-DD", count: n }, ...]` | Watching activity heatmap |
+| `filmYearDistribution` | `{ "1970s": n, "1980s": n, ... }` | Decades chart |
+| `mostRewatched` | `[{ filmTitle, filmYear, count, tmdbId }, ...]` | Most rewatched list |
+| `highestRated` | `[{ filmTitle, filmYear, link, ... }, ...]` | Five-star grid |
+| `recentActivity` | `[{ filmTitle, watchedDate, memberRating, ... }, ...]` | Recent activity list |
+| `dateRange` | `{ earliest: "YYYY-MM-DD", latest: "YYYY-MM-DD" }` | Heatmap end-date anchor |
 
 ## Development Notes
 
-- The username is currently **hardcoded** to `michaellamb` in `scripts/download_rss.py` line 17. Dynamic username support requires moving RSS fetching client-side (or adding a proxy).
-- The 4-entry limit in `last-four-watched` is enforced in both the image download loop and the XML output loop in `download_rss.py`.
-- `clean_image_directories()` is called at the start of each run — image dirs are wiped and repopulated fresh every time.
-- The frontend reads `data/cleaned_rss.xml` via AJAX. For a dynamic username feature, this static file approach will need to change.
-- No npm/node build step required. The `assets/main.tsx.ed6f4f5c.js` is a pre-compiled artifact.
+- **The username is hard-coded** to `michaellamb` in the `url` assignment near the top of `scripts/download_rss.py`. To fork this for another account, edit that line and re-run the pipeline.
+- **Running the pipeline locally:**
+  ```bash
+  pip install requests beautifulsoup4 lxml
+  python3 scripts/download_rss.py
+  python3 scripts/extract_history.py
+  python3 scripts/compute_stats.py
+  ```
+- **Serving locally:** `python3 -m http.server 8000` from the repo root.
+- **Heatmap end-date anchor:** `dashboard.js` renders a 52-week window ending on the later of `dateRange.latest` or today. This means even if the cron falls behind, the grid still extends to the current week (with empty cells for missing data) rather than truncating at the last data point.
+- **Timezone caveat:** `renderHeatmap()` parses dates as local time but uses `toISOString()` for lookups, which can shift cells by 1 day for users in positive-offset timezones. Not yet fixed.
+- **Cron health matters:** if the workflow stops successfully committing updated `data/stats.json` and `data/viewing_history.json`, the site goes stale silently. When investigating "missing recent data", first check `gh run list --workflow=download-data-and-assets.yml` — the data is almost always the problem, not the frontend.
+- **Stale artifacts to ignore:** `worker/` and `docs/letterboxd-viewer-presentation.md` are leftover from the old Last Four Watched direction and are not part of the deployed site.
