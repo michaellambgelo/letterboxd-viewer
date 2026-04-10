@@ -102,6 +102,13 @@
     }
     if (currentWeek.length > 0) weeks.push(currentWeek);
 
+    // Publish week count to CSS so both grids (.heatmap-grid and
+    // .heatmap-month-labels) size themselves to `repeat(N, minmax(10px, 1fr))`.
+    container.style.setProperty('--heatmap-weeks', weeks.length);
+    if (monthLabels) {
+      monthLabels.style.setProperty('--heatmap-weeks', weeks.length);
+    }
+
     // Render month labels
     if (monthLabels) {
       monthLabels.innerHTML = '';
@@ -116,10 +123,6 @@
         monthLabels.appendChild(span);
         prevWeekIdx = mp.weekIndex;
       }
-      monthLabels.style.display = 'grid';
-      // 12px columns + 2px gap (from CSS) == 14px per week, matching the
-      // flex .heatmap-grid below (12px cells + 2px flex gap).
-      monthLabels.style.gridTemplateColumns = `repeat(${weeks.length}, 12px)`;
     }
 
     // Render grid
