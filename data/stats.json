@@ -1,6 +1,6 @@
 {
-  "totalWatched": 502,
-  "uniqueFilms": 424,
+  "totalWatched": 503,
+  "uniqueFilms": 425,
   "totalRewatches": 163,
   "averageRating": 3.93,
   "ratingDistribution": {
@@ -11,7 +11,7 @@
     "2.5": 25,
     "3.0": 56,
     "3.5": 97,
-    "4.0": 93,
+    "4.0": 94,
     "4.5": 79,
     "5.0": 120,
     "unrated": 9
@@ -32,7 +32,7 @@
     "2026-01": 24,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 11
+    "2026-04": 12
   },
   "heatmapData": [
     {
@@ -1134,6 +1134,10 @@
     {
       "date": "2026-04-09",
       "count": 1
+    },
+    {
+      "date": "2026-04-12",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -1148,7 +1152,7 @@
     "1990s": 35,
     "2000s": 64,
     "2010s": 89,
-    "2020s": 254
+    "2020s": 255
   },
   "mostRewatched": [
     {
@@ -1213,6 +1217,18 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1278897411",
+      "filmTitle": "Send Help",
+      "filmYear": 2026,
+      "watchedDate": "2026-04-12",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 1198994,
+      "link": "https://letterboxd.com/michaellamb/film/send-help/",
+      "title": "Send Help, 2026 - ★★★★",
+      "reviewText": "classic sam raimi fun"
+    },
     {
       "guid": "letterboxd-entry-1274672749",
       "filmTitle": "Kimi",
@@ -1440,18 +1456,6 @@
       "link": "https://letterboxd.com/michaellamb/film/project-hail-mary/1/",
       "title": "Project Hail Mary, 2026 - ★★★★½",
       "reviewText": "Round 2 with Ellie, Mary, Katie, and Nick"
-    },
-    {
-      "guid": "letterboxd-entry-1246096432",
-      "filmTitle": "undertone",
-      "filmYear": 2025,
-      "watchedDate": "2026-03-20",
-      "memberRating": 2.0,
-      "rewatch": false,
-      "tmdbId": 1480387,
-      "link": "https://letterboxd.com/michaellamb/film/undertone-2025/",
-      "title": "undertone, 2025 - ★★",
-      "reviewText": "didn’t really work for me. not sure exactly what it was, but I don’t believe that I’ll be thinking about this at all"
     }
   ],
   "highestRated": [
@@ -2004,6 +2008,6 @@
   ],
   "dateRange": {
     "earliest": "2025-01-13",
-    "latest": "2026-04-09"
+    "latest": "2026-04-12"
   }
 }
