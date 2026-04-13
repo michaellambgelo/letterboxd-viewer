@@ -1,17 +1,29 @@
 #!/usr/bin/env python3
-"""Extract cumulative viewing history from git commits of data/rss.xml.
+"""Build the cumulative viewing history JSON.
 
-Walks the git history for data/rss.xml, parses each snapshot, and deduplicates
-diary entries by guid to produce a single cumulative JSON file.
+Sources:
+  1. Letterboxd export archive (data/archive/<export>/) — historical baseline.
+  2. Current data/rss.xml — appends entries logged after the export date.
+
+The archive contains the user's full diary (capped only by the export's age),
+while RSS only exposes the 50 most recent entries. The merge prefers the
+archive for any entry present in both and lets RSS supply only newer entries.
+
+Merge key: (filmTitle, filmYear, watchedDate). Letterboxd allows at most one
+diary entry per (film, watchedDate), so this composite key is unique. RSS
+guids and archive boxd.it URIs cannot be matched directly without a network
+redirect, so we don't try.
 """
 
 import json
-import subprocess
+import re
 import sys
 import xml.etree.ElementTree as ET
-from pathlib import Path
-import re
+from datetime import date, timedelta
 from html import unescape
+from pathlib import Path
+
+from load_archive import get_export_date, load_diary
 
 # Namespaces used in Letterboxd RSS
 NS = {
@@ -26,46 +38,31 @@ data_dir = base_dir / 'data'
 
 
 def strip_html(html_text):
-    """Remove HTML tags and return plain text."""
     if not html_text:
         return ''
-    # Remove CDATA wrapper
     text = html_text.strip()
     if text.startswith('<![CDATA[') and text.endswith(']]>'):
         text = text[9:-3]
-    # Decode HTML entities
     if '&lt;' in text or '&amp;' in text:
         text = unescape(text)
-    # Remove img tags entirely
     text = re.sub(r'<img[^>]*/?>', '', text)
-    # Replace <br> and </p> with newlines
     text = re.sub(r'<br\s*/?>', '\n', text)
     text = re.sub(r'</p>\s*<p>', '\n\n', text)
-    # Strip remaining tags
     text = re.sub(r'<[^>]+>', '', text)
-    # Clean up whitespace
     text = re.sub(r'\n{3,}', '\n\n', text).strip()
     return text
 
 
-def parse_item(item):
-    """Parse an RSS <item> element into a diary entry dict."""
+def parse_rss_item(item):
     guid_elem = item.find('guid')
     if guid_elem is None or guid_elem.text is None:
         return None
-
     guid = guid_elem.text.strip()
-
-    # Skip list entries
     if guid.startswith('letterboxd-list-'):
         return None
-
-    # Only process review/watch entries
     if not (guid.startswith('letterboxd-review-') or guid.startswith('letterboxd-watch-')):
         return None
 
-    # Normalize guid to avoid duplicates when the same entry appears as both
-    # letterboxd-review-XXXXX and letterboxd-watch-XXXXX
     numeric_id = guid.split('-')[-1]
     guid = f'letterboxd-entry-{numeric_id}'
 
@@ -83,10 +80,8 @@ def parse_item(item):
 
     link_elem = item.find('link')
     link = link_elem.text.strip() if link_elem is not None and link_elem.text else None
-
     title_elem = item.find('title')
     title = title_elem.text.strip() if title_elem is not None and title_elem.text else None
-
     desc_elem = item.find('description')
     review_text = strip_html(desc_elem.text) if desc_elem is not None and desc_elem.text else ''
 
@@ -101,101 +96,78 @@ def parse_item(item):
         'link': link,
         'title': title,
         'reviewText': review_text,
+        'tags': [],
+        'source': 'rss',
     }
 
 
-def get_commit_hashes():
-    """Get all commit hashes that modified data/rss.xml, oldest first."""
-    result = subprocess.run(
-        ['git', 'log', '--format=%H', '--reverse', '--', 'data/rss.xml'],
-        capture_output=True, text=True, cwd=str(base_dir)
-    )
-    if result.returncode != 0:
-        print(f'Error getting git log: {result.stderr}', file=sys.stderr)
+def load_rss_entries(rss_path):
+    if not rss_path.exists():
         return []
-    return [h.strip() for h in result.stdout.strip().split('\n') if h.strip()]
+    try:
+        xml_content = rss_path.read_text(encoding='utf-8', errors='replace')
+        root = ET.fromstring(xml_content)
+    except (ET.ParseError, OSError) as e:
+        print(f'  Could not parse {rss_path}: {e}', file=sys.stderr)
+        return []
+    entries = []
+    for item in root.findall('.//item'):
+        entry = parse_rss_item(item)
+        if entry:
+            entries.append(entry)
+    return entries
 
 
-def get_file_at_commit(commit_hash, filepath):
-    """Get file contents at a specific commit."""
-    result = subprocess.run(
-        ['git', 'show', f'{commit_hash}:{filepath}'],
-        capture_output=True, text=True, cwd=str(base_dir),
-        encoding='utf-8', errors='replace'
-    )
-    if result.returncode != 0:
-        return None
-    return result.stdout
+def merge_key(entry):
+    """Composite key used to dedupe across archive + RSS."""
+    title = (entry.get('filmTitle') or '').strip().lower()
+    year = entry.get('filmYear')
+    watched = entry.get('watchedDate') or ''
+    return (title, year, watched)
 
 
 def main():
     data_dir.mkdir(parents=True, exist_ok=True)
 
-    print('Getting commit hashes...')
-    hashes = get_commit_hashes()
-    print(f'Found {len(hashes)} commits that modified data/rss.xml')
+    print('Loading archive...')
+    archive_entries = load_diary()
+    export_date = get_export_date()
+    print(f'  {len(archive_entries)} entries from archive (export date {export_date})')
 
-    if not hashes:
-        print('No commits found. Nothing to extract.')
-        return
+    print('Loading RSS...')
+    rss_entries = load_rss_entries(data_dir / 'rss.xml')
+    print(f'  {len(rss_entries)} entries in current rss.xml')
 
-    # Deduplicate by guid — process oldest first so newest version wins
-    entries = {}
-    processed = 0
-    errors = 0
+    # RSS-only entries: anything whose key isn't in the archive baseline.
+    # (Optionally cap to entries newer than export_date - 1 day to avoid
+    # accidentally re-introducing pre-export rows the user has since deleted
+    # from Letterboxd. We want the archive's deletes to win.)
+    cutoff = (export_date - timedelta(days=1)) if export_date else None
 
-    for i, commit_hash in enumerate(hashes):
-        xml_content = get_file_at_commit(commit_hash, 'data/rss.xml')
-        if xml_content is None:
-            errors += 1
+    archive_keys = {merge_key(e) for e in archive_entries}
+    merged = list(archive_entries)
+    rss_added = 0
+    for e in rss_entries:
+        if merge_key(e) in archive_keys:
             continue
+        if cutoff and e.get('watchedDate'):
+            try:
+                if date.fromisoformat(e['watchedDate']) < cutoff:
+                    continue
+            except ValueError:
+                pass
+        merged.append(e)
+        rss_added += 1
 
-        try:
-            root = ET.fromstring(xml_content)
-            for item in root.findall('.//item'):
-                entry = parse_item(item)
-                if entry:
-                    entries[entry['guid']] = entry
-            processed += 1
-        except ET.ParseError as e:
-            errors += 1
-            if i < 5 or i % 100 == 0:
-                print(f'  XML parse error at commit {commit_hash[:8]}: {e}')
+    print(f'Merged: {len(archive_entries)} archive + {rss_added} new RSS = {len(merged)} total')
 
-        if (i + 1) % 100 == 0:
-            print(f'  Processed {i + 1}/{len(hashes)} commits, {len(entries)} unique entries so far')
-
-    # Also incorporate the current working-tree rss.xml so a fresh download
-    # on this run is reflected immediately (otherwise there is a 1-run lag
-    # between download_rss.py writing the file and stats.json updating).
-    working_tree_rss = data_dir / 'rss.xml'
-    if working_tree_rss.exists():
-        try:
-            xml_content = working_tree_rss.read_text(encoding='utf-8', errors='replace')
-            root = ET.fromstring(xml_content)
-            for item in root.findall('.//item'):
-                entry = parse_item(item)
-                if entry:
-                    entries[entry['guid']] = entry
-            print('Merged working-tree data/rss.xml')
-        except ET.ParseError as e:
-            print(f'  XML parse error in working-tree rss.xml: {e}', file=sys.stderr)
-
-    print(f'Processed {processed} commits ({errors} errors)')
-    print(f'Extracted {len(entries)} unique diary entries')
-
-    # Sort by watchedDate descending (newest first), with None dates at the end
-    sorted_entries = sorted(
-        entries.values(),
-        key=lambda e: e.get('watchedDate') or '0000-00-00',
-        reverse=True,
-    )
+    merged.sort(key=lambda e: e.get('watchedDate') or '0000-00-00', reverse=True)
 
     output_path = data_dir / 'viewing_history.json'
     with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(sorted_entries, f, ensure_ascii=False, indent=2)
+        json.dump(merged, f, ensure_ascii=False, indent=2)
 
-    print(f'Saved {len(sorted_entries)} entries to {output_path}')
+    print(f'Saved {len(merged)} entries to {output_path}')
 
 
 if __name__ == '__main__':

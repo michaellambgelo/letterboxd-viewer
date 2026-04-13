@@ -35,7 +35,7 @@
     setText('stat-total', stats.totalWatched);
     setText('stat-unique', stats.uniqueFilms);
     setText('stat-rewatches', stats.totalRewatches);
-    setText('stat-avg-rating', stats.averageRating.toFixed(1));
+    setText('stat-avg-rating', (stats.averageRating || 0).toFixed(1));
   }
 
   function setText(id, value) {
@@ -165,6 +165,8 @@
   }
 
   // Charts
+  const chartInstances = {};
+
   function renderRatingChart(ratingDistribution) {
     const ctx = document.getElementById('ratingsChart');
     if (!ctx || typeof Chart === 'undefined') return;
@@ -175,7 +177,8 @@
       return ratingDistribution[key] || 0;
     });
 
-    new Chart(ctx, {
+    if (chartInstances.ratings) chartInstances.ratings.destroy();
+    chartInstances.ratings = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: labels.map(l => l.length === 1 ? l + '.0' : l),
@@ -211,7 +214,8 @@
     const labels = Object.keys(filmYearDistribution);
     const data = Object.values(filmYearDistribution);
 
-    new Chart(ctx, {
+    if (chartInstances.decades) chartInstances.decades.destroy();
+    chartInstances.decades = new Chart(ctx, {
       type: 'bar',
       data: {
         labels,
@@ -398,6 +402,112 @@
     setTimeout(() => toast.classList.remove('show'), 4000);
   }
 
+  // Per-year switching: re-render cards/heatmap/charts/rewatched/highest from a slice
+  function renderTimeSlice(slice, dateRange) {
+    renderStatCards(slice);
+    renderHeatmap(slice.heatmapData || [], dateRange);
+    renderRatingChart(slice.ratingDistribution || {});
+    renderDecadeChart(slice.filmYearDistribution || {});
+    renderRewatched(slice.mostRewatched || []);
+    renderHighestRated(slice.highestRated || []);
+  }
+
+  function initYearSelector(stats) {
+    const select = document.getElementById('year-select');
+    const summary = document.getElementById('year-summary');
+    if (!select) return;
+
+    const years = Object.keys(stats.byYear || {}).sort().reverse();
+    const opts = ['<option value="lifetime">Lifetime</option>']
+      .concat(years.map(y => `<option value="${y}">${y}</option>`));
+    select.innerHTML = opts.join('');
+
+    function activate(value) {
+      const isLifetime = value === 'lifetime';
+      const slice = isLifetime ? stats : stats.byYear[value];
+      const dateRange = isLifetime
+        ? stats.dateRange
+        : { earliest: `${value}-01-01`, latest: `${value}-12-31` };
+      renderTimeSlice(slice, dateRange);
+      // Keep watchlist count card stable across slices — it's a lifetime count
+      setText('stat-watchlist', stats.watchlist?.count ?? '--');
+      if (summary) {
+        summary.textContent = isLifetime
+          ? `${stats.dateRange.earliest} – ${stats.dateRange.latest}`
+          : `${slice.totalWatched} films logged in ${value}`;
+      }
+    }
+
+    select.addEventListener('change', e => activate(e.target.value));
+    activate('lifetime');
+  }
+
+  function renderFavorites(favorites) {
+    const section = document.getElementById('favorites-strip');
+    const list = document.getElementById('favorites-list');
+    if (!section || !list || !favorites?.length) return;
+    list.innerHTML = favorites.map(f => `
+      <a class="favorite-item" href="${escapeHtml(f.link)}" target="_blank" rel="noopener">
+        <span class="favorite-name">${escapeHtml(f.name || 'Untitled')}</span>
+        ${f.year ? `<span class="favorite-year">(${f.year})</span>` : ''}
+      </a>
+    `).join('');
+    section.removeAttribute('hidden');
+  }
+
+  function renderTagCloud(tags) {
+    const section = document.getElementById('tag-cloud-section');
+    const cloud = document.getElementById('tag-cloud');
+    if (!section || !cloud) return;
+    const entries = Object.entries(tags || {});
+    if (!entries.length) return;
+    const max = Math.max(...entries.map(([, n]) => n));
+    cloud.innerHTML = entries.map(([tag, count]) => {
+      const weight = 0.75 + (count / max) * 1.5; // 0.75rem .. 2.25rem
+      return `<span class="tag-cloud-item" style="font-size:${weight.toFixed(2)}rem" title="${count} entries">${escapeHtml(tag)}</span>`;
+    }).join(' ');
+    section.removeAttribute('hidden');
+  }
+
+  function renderLists(lists) {
+    const section = document.getElementById('lists-section');
+    const list = document.getElementById('lists-list');
+    if (!section || !list || !lists?.length) return;
+    list.innerHTML = lists.map(l => `
+      <li class="lists-item">
+        <a href="${escapeHtml(l.url || '#')}" target="_blank" rel="noopener">${escapeHtml(l.name)}</a>
+        <span class="lists-count">${l.filmCount} films</span>
+      </li>
+    `).join('');
+    section.removeAttribute('hidden');
+  }
+
+  function renderWatchlist(watchlist) {
+    const section = document.getElementById('watchlist-section');
+    const meta = document.getElementById('watchlist-meta');
+    const recent = document.getElementById('watchlist-recent');
+    if (!section || !watchlist) return;
+    if (meta) {
+      meta.textContent = watchlist.count
+        ? `${watchlist.count} films queued — oldest entry added ${watchlist.oldestAdded}.`
+        : 'Watchlist is empty.';
+    }
+    if (recent && watchlist.recentlyAdded?.length) {
+      recent.innerHTML = watchlist.recentlyAdded.map(item => `
+        <li class="activity-item">
+          <span class="activity-date">${escapeHtml(item.addedDate || '')}</span>
+          <span class="activity-film">
+            ${item.link
+              ? `<a href="${escapeHtml(item.link)}" target="_blank" rel="noopener">${escapeHtml(item.name || '')}</a>`
+              : escapeHtml(item.name || '')}
+            ${item.year ? `<span class="activity-year">(${item.year})</span>` : ''}
+          </span>
+        </li>
+      `).join('');
+    }
+    section.removeAttribute('hidden');
+  }
+
   // Init
   async function init() {
     const stats = await loadStats();
@@ -406,13 +516,18 @@
       return;
     }
 
-    renderStatCards(stats);
-    renderHeatmap(stats.heatmapData, stats.dateRange);
-    renderRatingChart(stats.ratingDistribution);
-    renderDecadeChart(stats.filmYearDistribution);
-    renderRewatched(stats.mostRewatched);
+    if (stats.archiveExportDate) setText('export-date', stats.archiveExportDate);
+
+    // Lifetime / per-year switching block
+    initYearSelector(stats);
+
+    // Sections that aren't year-scoped
     renderActivity(stats.recentActivity);
-    renderHighestRated(stats.highestRated);
+    renderFavorites(stats.favoriteFilms);
+    renderTagCloud(stats.tagCloud);
+    renderLists(stats.lists);
+    renderWatchlist(stats.watchlist);
+
     initContactForm();
 
     document.getElementById('loading')?.remove();

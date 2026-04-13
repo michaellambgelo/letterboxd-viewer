@@ -20,7 +20,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
-          fetch-depth: 0  # Full history needed for extract_history.py
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -35,7 +34,7 @@ jobs:
       - name: Run RSS feed download script
         run: python scripts/download_rss.py
 
-      - name: Extract cumulative viewing history from git
+      - name: Build viewing history (archive + RSS)
         run: python scripts/extract_history.py
 
       - name: Compute stats
