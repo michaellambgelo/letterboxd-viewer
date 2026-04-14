@@ -500,19 +500,6 @@
     section.removeAttribute('hidden');
   }
 
-  function renderLists(lists) {
-    const section = document.getElementById('lists-section');
-    const list = document.getElementById('lists-list');
-    if (!section || !list || !lists?.length) return;
-    list.innerHTML = lists.map(l => `
-      <li class="lists-item">
-        <a href="${escapeHtml(l.url || '#')}" target="_blank" rel="noopener">${escapeHtml(l.name)}</a>
-        <span class="lists-count">${l.filmCount} films</span>
-      </li>
-    `).join('');
-    section.removeAttribute('hidden');
-  }
-
   function renderWatchlist(watchlist) {
     const section = document.getElementById('watchlist-section');
     const meta = document.getElementById('watchlist-meta');
@@ -556,7 +543,6 @@
     renderActivity(stats.recentActivity);
     renderFavorites(stats.favoriteFilms);
     renderTagCloud(stats.tagCloud);
-    renderLists(stats.lists);
     renderWatchlist(stats.watchlist);
 
     initContactForm();
