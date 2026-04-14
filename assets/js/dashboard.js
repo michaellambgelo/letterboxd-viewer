@@ -449,7 +449,6 @@
         ? { scope: 'lifetime' }
         : { scope: 'year', year: Number(value) };
       renderTimeSlice(slice, dateRange, options);
-      setText('stat-watchlist', stats.watchlist?.count ?? '--');
       if (summary) {
         summary.textContent = isLifetime
           ? `${stats.dateRange.earliest} – ${stats.dateRange.latest}`
@@ -505,9 +504,10 @@
     const meta = document.getElementById('watchlist-meta');
     const recent = document.getElementById('watchlist-recent');
     if (!section || !watchlist) return;
+    setText('watchlist-count', watchlist.count ?? '--');
     if (meta) {
       meta.textContent = watchlist.count
-        ? `${watchlist.count} films queued — oldest entry added ${watchlist.oldestAdded}.`
+        ? `Oldest entry added ${watchlist.oldestAdded}.`
         : 'Watchlist is empty.';
     }
     if (recent && watchlist.recentlyAdded?.length) {

@@ -7,7 +7,7 @@
 	<meta name="description" content="Personal Letterboxd viewing stats and history for michaellamb" />
 	<link rel="icon" type="image/svg+xml" href="assets/images/letterboxd-decal-dots-rgb.svg" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" />
-	<link rel="stylesheet" href="assets/css/dashboard.css?v=2026-04-14c" />
+	<link rel="stylesheet" href="assets/css/dashboard.css?v=2026-04-14d" />
 	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 	<script>
 		(function () {
@@ -108,10 +108,6 @@
 							<div class="stat-value accent-orange" id="stat-avg-rating">--</div>
 							<div class="stat-label">Avg Rating</div>
 						</div>
-						<div class="stat-card">
-							<div class="stat-value accent-blue" id="stat-watchlist">--</div>
-							<div class="stat-label">Watchlist</div>
-						</div>
 					</div>
 
 					<!-- Heatmap -->
@@ -193,6 +189,10 @@
 			<!-- Watchlist -->
 			<section class="dashboard-section" id="watchlist-section" hidden>
 				<h2 class="section-title">Watchlist</h2>
+				<div class="watchlist-count">
+					<span class="stat-value accent-blue" id="watchlist-count">--</span>
+					<span class="stat-label">Films queued</span>
+				</div>
 				<p class="watchlist-meta" id="watchlist-meta"></p>
 				<ul id="watchlist-recent" class="activity-list"></ul>
 			</section>
@@ -244,6 +244,6 @@
 	<div id="toast" class="toast"></div>
 
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
-	<script src="assets/js/dashboard.js?v=2026-04-14c"></script>
+	<script src="assets/js/dashboard.js?v=2026-04-14d"></script>
 </body>
 </html>

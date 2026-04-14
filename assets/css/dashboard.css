@@ -760,6 +760,13 @@ a:hover { color: var(--text-primary); }
 .tag-cloud-item:hover { color: var(--accent-blue); }
 
 /* Watchlist */
+.watchlist-count {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
 .watchlist-meta {
   color: var(--text-muted);
   font-size: 0.875rem;
