@@ -44,7 +44,7 @@
   }
 
   // Heatmap
-  function renderHeatmap(heatmapData, dateRange) {
+  function renderHeatmap(heatmapData, dateRange, options) {
     const container = document.getElementById('heatmap-grid');
     const monthLabels = document.getElementById('heatmap-months');
     if (!container) return;
@@ -57,19 +57,27 @@
       if (d.count > maxCount) maxCount = d.count;
     }
 
-    // Determine date range: last 52 weeks from the latest date
-    const dataLatest = dateRange.latest ? new Date(dateRange.latest + 'T00:00:00') : new Date();
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const latest = dataLatest > today ? dataLatest : today;
-    const end = new Date(latest);
-    // Move end to the upcoming Saturday (end of week)
-    end.setDate(end.getDate() + (6 - end.getDay()));
-
-    const start = new Date(end);
-    start.setDate(start.getDate() - 52 * 7 + 1);
-    // Move start to Sunday
-    start.setDate(start.getDate() - start.getDay());
+    let start;
+    let end;
+    if (options && options.scope === 'year' && options.year) {
+      // Fixed calendar-year window: Jan 1 → Dec 31 of the selected year,
+      // padded outward to Sunday/Saturday week boundaries.
+      start = new Date(options.year, 0, 1);
+      end = new Date(options.year, 11, 31);
+      end.setDate(end.getDate() + (6 - end.getDay()));
+      start.setDate(start.getDate() - start.getDay());
+    } else {
+      // Lifetime: trailing 52 weeks, ending at/after today.
+      const dataLatest = dateRange.latest ? new Date(dateRange.latest + 'T00:00:00') : new Date();
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const latest = dataLatest > today ? dataLatest : today;
+      end = new Date(latest);
+      end.setDate(end.getDate() + (6 - end.getDay()));
+      start = new Date(end);
+      start.setDate(start.getDate() - 52 * 7 + 1);
+      start.setDate(start.getDate() - start.getDay());
+    }
 
     const weeks = [];
     const currentDate = new Date(start);
@@ -403,9 +411,9 @@
   }
 
   // Per-year switching: re-render cards/heatmap/charts/rewatched/highest from a slice
-  function renderTimeSlice(slice, dateRange) {
+  function renderTimeSlice(slice, dateRange, options) {
     renderStatCards(slice);
-    renderHeatmap(slice.heatmapData || [], dateRange);
+    renderHeatmap(slice.heatmapData || [], dateRange, options);
     renderRatingChart(slice.ratingDistribution || {});
     renderDecadeChart(slice.filmYearDistribution || {});
     renderRewatched(slice.mostRewatched || []);
@@ -428,7 +436,10 @@
       const dateRange = isLifetime
         ? stats.dateRange
         : { earliest: `${value}-01-01`, latest: `${value}-12-31` };
-      renderTimeSlice(slice, dateRange);
+      const options = isLifetime
+        ? { scope: 'lifetime' }
+        : { scope: 'year', year: Number(value) };
+      renderTimeSlice(slice, dateRange, options);
       // Keep watchlist count card stable across slices — it's a lifetime count
       setText('stat-watchlist', stats.watchlist?.count ?? '--');
       if (summary) {
