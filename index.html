@@ -7,7 +7,7 @@
 	<meta name="description" content="Personal Letterboxd viewing stats and history for michaellamb" />
 	<link rel="icon" type="image/svg+xml" href="assets/images/letterboxd-decal-dots-rgb.svg" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" />
-	<link rel="stylesheet" href="assets/css/dashboard.css?v=2026-04-14" />
+	<link rel="stylesheet" href="assets/css/dashboard.css?v=2026-04-14b" />
 	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 	<script>
 		(function () {
@@ -76,95 +76,107 @@
 				<div id="favorites-list" class="favorites-list"></div>
 			</section>
 
-			<!-- Year selector -->
-			<div class="year-selector">
-				<label for="year-select">Viewing window</label>
-				<select id="year-select" aria-label="Filter stats by year"></select>
-				<span id="year-summary" class="year-summary"></span>
+			<!-- Scoped zone: year-aware stats -->
+			<div class="scope-layout">
+				<aside class="scope-rail" aria-label="Viewing window">
+					<div class="scope-rail-label">Viewing Window</div>
+					<ol id="scope-rail-list" class="scope-rail-list"></ol>
+				</aside>
+				<div class="scope-main">
+					<!-- Mobile fallback selector -->
+					<div class="year-selector">
+						<label for="year-select">Viewing window</label>
+						<select id="year-select" aria-label="Filter stats by year"></select>
+					</div>
+					<div id="year-summary" class="scope-summary"></div>
+
+					<!-- Stat Cards -->
+					<div class="stat-cards">
+						<div class="stat-card">
+							<div class="stat-value" id="stat-total">--</div>
+							<div class="stat-label">Films</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-value" id="stat-unique">--</div>
+							<div class="stat-label">Unique</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-value accent-green" id="stat-rewatches">--</div>
+							<div class="stat-label">Rewatches</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-value accent-orange" id="stat-avg-rating">--</div>
+							<div class="stat-label">Avg Rating</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-value accent-blue" id="stat-watchlist">--</div>
+							<div class="stat-label">Watchlist</div>
+						</div>
+					</div>
+
+					<!-- Heatmap -->
+					<section class="dashboard-section">
+						<h2 class="section-title">Watching Activity</h2>
+						<div class="heatmap-wrapper">
+							<div id="heatmap-months" class="heatmap-month-labels"></div>
+							<div class="heatmap-container">
+								<div class="heatmap-labels">
+									<div class="heatmap-label"></div>
+									<div class="heatmap-label">Mon</div>
+									<div class="heatmap-label"></div>
+									<div class="heatmap-label">Wed</div>
+									<div class="heatmap-label"></div>
+									<div class="heatmap-label">Fri</div>
+									<div class="heatmap-label"></div>
+								</div>
+								<div id="heatmap-grid" class="heatmap-grid"></div>
+							</div>
+							<div class="heatmap-legend">
+								<span>Less</span>
+								<div class="heatmap-legend-cell" style="background: var(--bg-tertiary)"></div>
+								<div class="heatmap-legend-cell" style="background: #1b4332"></div>
+								<div class="heatmap-legend-cell" style="background: #2d6a4f"></div>
+								<div class="heatmap-legend-cell" style="background: #40916c"></div>
+								<div class="heatmap-legend-cell" style="background: #52b788"></div>
+								<span>More</span>
+							</div>
+						</div>
+					</section>
+
+					<!-- Charts -->
+					<section class="dashboard-section">
+						<div class="charts-row">
+							<div class="chart-card">
+								<h3>Rating Distribution</h3>
+								<div class="chart-container">
+									<canvas id="ratingsChart"></canvas>
+								</div>
+							</div>
+							<div class="chart-card">
+								<h3>Films by Decade</h3>
+								<div class="chart-container">
+									<canvas id="decadesChart"></canvas>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- Most Rewatched -->
+					<section class="dashboard-section">
+						<h2 class="section-title">Most Rewatched</h2>
+						<ul id="rewatch-list" class="rewatch-list"></ul>
+					</section>
+
+					<!-- Highest Rated -->
+					<section class="dashboard-section">
+						<h2 class="section-title">Five-Star Films</h2>
+						<div id="five-star-grid" class="five-star-grid"></div>
+					</section>
+				</div>
 			</div>
 
-			<!-- Stat Cards -->
-			<div class="stat-cards">
-				<div class="stat-card">
-					<div class="stat-value" id="stat-total">--</div>
-					<div class="stat-label">Films</div>
-				</div>
-				<div class="stat-card">
-					<div class="stat-value" id="stat-unique">--</div>
-					<div class="stat-label">Unique</div>
-				</div>
-				<div class="stat-card">
-					<div class="stat-value accent-green" id="stat-rewatches">--</div>
-					<div class="stat-label">Rewatches</div>
-				</div>
-				<div class="stat-card">
-					<div class="stat-value accent-orange" id="stat-avg-rating">--</div>
-					<div class="stat-label">Avg Rating</div>
-				</div>
-				<div class="stat-card">
-					<div class="stat-value accent-blue" id="stat-watchlist">--</div>
-					<div class="stat-label">Watchlist</div>
-				</div>
-			</div>
-
-			<!-- Heatmap -->
-			<section class="dashboard-section">
-				<h2 class="section-title">Watching Activity</h2>
-				<div class="heatmap-wrapper">
-					<div id="heatmap-months" class="heatmap-month-labels"></div>
-					<div class="heatmap-container">
-						<div class="heatmap-labels">
-							<div class="heatmap-label"></div>
-							<div class="heatmap-label">Mon</div>
-							<div class="heatmap-label"></div>
-							<div class="heatmap-label">Wed</div>
-							<div class="heatmap-label"></div>
-							<div class="heatmap-label">Fri</div>
-							<div class="heatmap-label"></div>
-						</div>
-						<div id="heatmap-grid" class="heatmap-grid"></div>
-					</div>
-					<div class="heatmap-legend">
-						<span>Less</span>
-						<div class="heatmap-legend-cell" style="background: var(--bg-tertiary)"></div>
-						<div class="heatmap-legend-cell" style="background: #1b4332"></div>
-						<div class="heatmap-legend-cell" style="background: #2d6a4f"></div>
-						<div class="heatmap-legend-cell" style="background: #40916c"></div>
-						<div class="heatmap-legend-cell" style="background: #52b788"></div>
-						<span>More</span>
-					</div>
-				</div>
-			</section>
-
-			<!-- Charts -->
-			<section class="dashboard-section">
-				<div class="charts-row">
-					<div class="chart-card">
-						<h3>Rating Distribution</h3>
-						<div class="chart-container">
-							<canvas id="ratingsChart"></canvas>
-						</div>
-					</div>
-					<div class="chart-card">
-						<h3>Films by Decade</h3>
-						<div class="chart-container">
-							<canvas id="decadesChart"></canvas>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- Most Rewatched -->
-			<section class="dashboard-section">
-				<h2 class="section-title">Most Rewatched</h2>
-				<ul id="rewatch-list" class="rewatch-list"></ul>
-			</section>
-
-			<!-- Highest Rated -->
-			<section class="dashboard-section">
-				<h2 class="section-title">Five-Star Films</h2>
-				<div id="five-star-grid" class="five-star-grid"></div>
-			</section>
+			<!-- Zone divider: end of scoped stats, start of profile -->
+			<div class="zone-divider" role="separator"><span>Profile</span></div>
 
 			<!-- Recent Activity -->
 			<section class="dashboard-section">
@@ -238,6 +250,6 @@
 	<div id="toast" class="toast"></div>
 
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
-	<script src="assets/js/dashboard.js?v=2026-04-14"></script>
+	<script src="assets/js/dashboard.js?v=2026-04-14b"></script>
 </body>
 </html>
