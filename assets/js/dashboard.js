@@ -422,13 +422,22 @@
 
   function initYearSelector(stats) {
     const select = document.getElementById('year-select');
+    const rail = document.getElementById('scope-rail-list');
     const summary = document.getElementById('year-summary');
-    if (!select) return;
+    if (!select && !rail) return;
 
     const years = Object.keys(stats.byYear || {}).sort().reverse();
-    const opts = ['<option value="lifetime">Lifetime</option>']
-      .concat(years.map(y => `<option value="${y}">${y}</option>`));
-    select.innerHTML = opts.join('');
+    const values = ['lifetime', ...years];
+    const labelFor = v => v === 'lifetime' ? 'Lifetime' : v;
+
+    if (select) {
+      select.innerHTML = values.map(v => `<option value="${v}">${labelFor(v)}</option>`).join('');
+    }
+    if (rail) {
+      rail.innerHTML = values.map(v =>
+        `<li><button type="button" data-value="${v}">${labelFor(v)}</button></li>`
+      ).join('');
+    }
 
     function activate(value) {
       const isLifetime = value === 'lifetime';
@@ -440,16 +449,27 @@
         ? { scope: 'lifetime' }
         : { scope: 'year', year: Number(value) };
       renderTimeSlice(slice, dateRange, options);
-      // Keep watchlist count card stable across slices — it's a lifetime count
       setText('stat-watchlist', stats.watchlist?.count ?? '--');
       if (summary) {
         summary.textContent = isLifetime
           ? `${stats.dateRange.earliest} – ${stats.dateRange.latest}`
           : `${slice.totalWatched} films logged in ${value}`;
       }
+      if (select && select.value !== value) select.value = value;
+      if (rail) {
+        rail.querySelectorAll('button').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.value === value);
+        });
+      }
     }
 
-    select.addEventListener('change', e => activate(e.target.value));
+    if (select) select.addEventListener('change', e => activate(e.target.value));
+    if (rail) {
+      rail.addEventListener('click', e => {
+        const btn = e.target.closest('button[data-value]');
+        if (btn) activate(btn.dataset.value);
+      });
+    }
     activate('lifetime');
   }
 

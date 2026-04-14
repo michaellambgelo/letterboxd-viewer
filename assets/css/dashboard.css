@@ -617,6 +617,104 @@ a:hover { color: var(--text-primary); }
   font-size: 0.8125rem;
 }
 
+/* Scope layout: sticky left rail + main content */
+.scope-layout {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.scope-rail {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  padding-top: 0.5rem;
+}
+
+.scope-rail-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding: 0 0.5rem 0.5rem;
+}
+
+.scope-rail-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.scope-rail-list button {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-left: 2px solid transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.875rem;
+  text-align: left;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  transition: color 0.12s, border-color 0.12s, background 0.12s;
+}
+
+.scope-rail-list button:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.scope-rail-list button.active {
+  color: var(--text-primary);
+  border-left-color: var(--accent-green);
+  font-weight: 600;
+}
+
+.scope-main { min-width: 0; }
+
+.scope-summary {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  margin: 0.5rem 0 0;
+}
+
+/* Hide mobile fallback on wide screens */
+@media (min-width: 900px) {
+  .scope-main .year-selector { display: none; }
+}
+
+/* Collapse to single column on narrow screens */
+@media (max-width: 899px) {
+  .scope-layout { grid-template-columns: 1fr; gap: 0; }
+  .scope-rail { display: none; }
+}
+
+/* Zone divider between scoped stats and profile sections */
+.zone-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3.5rem 0 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.zone-divider::before,
+.zone-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
 /* Favorites strip */
 .favorites-strip {
   margin-top: 2rem;
