@@ -759,33 +759,6 @@ a:hover { color: var(--text-primary); }
 
 .tag-cloud-item:hover { color: var(--accent-blue); }
 
-/* Lists */
-.lists-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
-}
-
-.lists-item {
-  background: var(--bg-secondary);
-  border-radius: 6px;
-  padding: 0.65rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 0.75rem;
-}
-
-.lists-item a { color: var(--text-primary); }
-.lists-item a:hover { color: var(--accent-blue); }
-
-.lists-count {
-  color: var(--text-muted);
-  font-size: 0.8125rem;
-  flex-shrink: 0;
-}
-
 /* Watchlist */
 .watchlist-meta {
   color: var(--text-muted);
@@ -800,7 +773,6 @@ a:hover { color: var(--text-primary); }
   .footer-grid { grid-template-columns: 1fr; }
   .five-star-grid { grid-template-columns: 1fr; }
   .favorites-list { grid-template-columns: repeat(2, 1fr); }
-  .lists-list { grid-template-columns: 1fr; }
   .year-summary { display: none; }
 }
 
