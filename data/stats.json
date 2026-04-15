@@ -1,11 +1,11 @@
 {
-  "totalWatched": 2434,
-  "uniqueFilms": 1748,
-  "totalRewatches": 805,
+  "totalWatched": 2438,
+  "uniqueFilms": 1752,
+  "totalRewatches": 807,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 9,
-    "1.0": 21,
+    "1.0": 22,
     "1.5": 27,
     "2.0": 104,
     "2.5": 121,
@@ -13,7 +13,7 @@
     "3.5": 366,
     "4.0": 515,
     "4.5": 355,
-    "5.0": 556,
+    "5.0": 559,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -99,7 +99,7 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 12
+    "2026-04": 16
   },
   "heatmapData": [
     {
@@ -5761,6 +5761,10 @@
     {
       "date": "2026-04-12",
       "count": 1
+    },
+    {
+      "date": "2026-04-14",
+      "count": 4
     }
   ],
   "filmYearDistribution": {
@@ -5773,9 +5777,9 @@
     "1970s": 52,
     "1980s": 82,
     "1990s": 152,
-    "2000s": 247,
-    "2010s": 711,
-    "2020s": 1098
+    "2000s": 248,
+    "2010s": 712,
+    "2020s": 1100
   },
   "mostRewatched": [
     {
@@ -5850,6 +5854,62 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1281032533",
+      "filmTitle": "Autism Is a World",
+      "filmYear": 2004,
+      "watchedDate": "2026-04-14",
+      "memberRating": 1.0,
+      "rewatch": false,
+      "tmdbId": 245006,
+      "link": "https://letterboxd.com/michaellamb/film/autism-is-a-world/",
+      "title": "Autism Is a World, 2004 - ★",
+      "reviewText": "2004 was a long time ago and bad coverage is still coverage, but woof this is wrong-headed in so many ways that can only fit the zeitgeist of the naughts.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1281031107",
+      "filmTitle": "The Librarians",
+      "filmYear": 2025,
+      "watchedDate": "2026-04-14",
+      "memberRating": 5.0,
+      "rewatch": false,
+      "tmdbId": 1400379,
+      "link": "https://letterboxd.com/michaellamb/film/the-librarians-2025/",
+      "title": "The Librarians, 2025 - ★★★★★",
+      "reviewText": "nearly had me weeping in a theater full of people",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1281030500",
+      "filmTitle": "Ex Machina",
+      "filmYear": 2015,
+      "watchedDate": "2026-04-14",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 264660,
+      "link": "https://letterboxd.com/michaellamb/film/ex-machina-2015/4/",
+      "title": "Ex Machina, 2015 - ★★★★★",
+      "reviewText": "Watched on Tuesday April 14, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1281030304",
+      "filmTitle": "Dune: Part Two",
+      "filmYear": 2024,
+      "watchedDate": "2026-04-14",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 693134,
+      "link": "https://letterboxd.com/michaellamb/film/dune-part-two/17/",
+      "title": "Dune: Part Two, 2024 - ★★★★★",
+      "reviewText": "Watched on Tuesday April 14, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "archive-dXvenZ",
       "filmTitle": "Send Help",
@@ -6123,79 +6183,30 @@
       ],
       "loggedDate": "2026-03-27",
       "source": "archive"
-    },
-    {
-      "guid": "archive-dHccNT",
-      "filmTitle": "A Streetcar Named Desire",
-      "filmYear": 1951,
-      "watchedDate": "2026-03-26",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/dHccNT",
-      "title": "A Streetcar Named Desire",
-      "reviewText": "<strong>Capital Pictures: Beguiled</strong>\r\nNight One\r\n\r\nIn partnership with the Mississippi Film Society, the Mississippi Museum of Art’s film series Capital Pictures returns with a celebration of the film adaptations of Mississippi dramatist, Tennessee Williams. Capital Pictures: Beguiled will explore William’s signature themes of sexuality, desire, and the weight of the past. \r\n\r\nI saw Mason, Marcus, Chase, and Amy at this screening.\r\n\r\n<strong>Upcoming films</strong>\r\n— Thursday, April 16, 6PM – <i>Cat on a Hot Tin Roof</i> (1958) by Richard Brooks, 1h 48m, PG\r\n— Thursday, May 14, 6PM – <i>Babydoll</i> (1956) by Elia Kazan, 1h 54m, R",
-      "tags": [
-        "msfilmsociety"
-      ],
-      "loggedDate": "2026-03-27",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-dD5ahB",
-      "filmTitle": "Coming Out with the Help of a Time Machine",
-      "filmYear": 2021,
-      "watchedDate": "2026-03-22",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/dD5ahB",
-      "title": "Coming Out with the Help of a Time Machine",
-      "reviewText": "heartfelt and sincere.\r\n\r\nit's been 5 years this month since i came out as gay.",
-      "tags": [
-        "youtube",
-        "omeleto"
-      ],
-      "loggedDate": "2026-03-23",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-dDTCIl",
-      "filmTitle": "Project Hail Mary",
-      "filmYear": 2026,
-      "watchedDate": "2026-03-22",
-      "memberRating": 4.5,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://boxd.it/dDTCIl",
-      "title": "Project Hail Mary",
-      "reviewText": "Round 2 with Ellie, Mary, Katie, and Nick",
-      "tags": [
-        "in theaters",
-        "moviepass"
-      ],
-      "loggedDate": "2026-03-23",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-dDZRZt",
-      "filmTitle": "Shame",
-      "filmYear": 2011,
-      "watchedDate": "2026-03-22",
-      "memberRating": 5.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/dDZRZt",
-      "title": "Shame",
-      "reviewText": "",
-      "tags": [
-        "hbomax"
-      ],
-      "loggedDate": "2026-03-23",
-      "source": "archive"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "The Librarians",
+      "filmYear": 2025,
+      "watchedDate": "2026-04-14",
+      "link": "https://letterboxd.com/michaellamb/film/the-librarians-2025/",
+      "tmdbId": 1400379
+    },
+    {
+      "filmTitle": "Ex Machina",
+      "filmYear": 2015,
+      "watchedDate": "2026-04-14",
+      "link": "https://letterboxd.com/michaellamb/film/ex-machina-2015/4/",
+      "tmdbId": 264660
+    },
+    {
+      "filmTitle": "Dune: Part Two",
+      "filmYear": 2024,
+      "watchedDate": "2026-04-14",
+      "link": "https://letterboxd.com/michaellamb/film/dune-part-two/17/",
+      "tmdbId": 693134
+    },
     {
       "filmTitle": "Sinners",
       "filmYear": 2025,
@@ -7949,7 +7960,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-04-12"
+    "latest": "2026-04-14"
   },
   "byYear": {
     "2017": {
@@ -14269,13 +14280,13 @@
       ]
     },
     "2026": {
-      "totalWatched": 73,
-      "uniqueFilms": 66,
-      "totalRewatches": 25,
+      "totalWatched": 77,
+      "uniqueFilms": 70,
+      "totalRewatches": 27,
       "averageRating": 4.08,
       "ratingDistribution": {
         "0.5": 0,
-        "1.0": 0,
+        "1.0": 1,
         "1.5": 0,
         "2.0": 2,
         "2.5": 6,
@@ -14283,7 +14294,7 @@
         "3.5": 14,
         "4.0": 12,
         "4.5": 14,
-        "5.0": 22,
+        "5.0": 25,
         "unrated": 0
       },
       "heatmapData": [
@@ -14490,6 +14501,10 @@
         {
           "date": "2026-04-12",
           "count": 1
+        },
+        {
+          "date": "2026-04-14",
+          "count": 4
         }
       ],
       "filmYearDistribution": {
@@ -14498,9 +14513,9 @@
         "1960s": 3,
         "1980s": 1,
         "1990s": 4,
-        "2000s": 6,
-        "2010s": 12,
-        "2020s": 44
+        "2000s": 7,
+        "2010s": 13,
+        "2020s": 46
       },
       "mostRewatched": [
         {
@@ -14540,6 +14555,24 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "The Librarians",
+          "filmYear": 2025,
+          "watchedDate": "2026-04-14",
+          "link": "https://letterboxd.com/michaellamb/film/the-librarians-2025/"
+        },
+        {
+          "filmTitle": "Ex Machina",
+          "filmYear": 2015,
+          "watchedDate": "2026-04-14",
+          "link": "https://letterboxd.com/michaellamb/film/ex-machina-2015/4/"
+        },
+        {
+          "filmTitle": "Dune: Part Two",
+          "filmYear": 2024,
+          "watchedDate": "2026-04-14",
+          "link": "https://letterboxd.com/michaellamb/film/dune-part-two/17/"
+        },
         {
           "filmTitle": "Sinners",
           "filmYear": 2025,
@@ -14581,24 +14614,6 @@
           "filmYear": 2025,
           "watchedDate": "2026-03-01",
           "link": "https://boxd.it/dmGB9l"
-        },
-        {
-          "filmTitle": "Bugonia",
-          "filmYear": 2025,
-          "watchedDate": "2026-02-21",
-          "link": "https://boxd.it/deHRYJ"
-        },
-        {
-          "filmTitle": "KPop Demon Hunters",
-          "filmYear": 2025,
-          "watchedDate": "2026-02-14",
-          "link": "https://boxd.it/d8utfZ"
-        },
-        {
-          "filmTitle": "The Handmaiden",
-          "filmYear": 2016,
-          "watchedDate": "2026-02-07",
-          "link": "https://boxd.it/d2guzf"
         }
       ]
     }
