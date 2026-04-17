@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2438,
-  "uniqueFilms": 1752,
+  "totalWatched": 2439,
+  "uniqueFilms": 1753,
   "totalRewatches": 807,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -10,7 +10,7 @@
     "2.0": 104,
     "2.5": 121,
     "3.0": 279,
-    "3.5": 366,
+    "3.5": 367,
     "4.0": 515,
     "4.5": 355,
     "5.0": 559,
@@ -99,7 +99,7 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 16
+    "2026-04": 17
   },
   "heatmapData": [
     {
@@ -5765,6 +5765,10 @@
     {
       "date": "2026-04-14",
       "count": 4
+    },
+    {
+      "date": "2026-04-16",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5775,7 +5779,7 @@
     "1950s": 18,
     "1960s": 29,
     "1970s": 52,
-    "1980s": 82,
+    "1980s": 83,
     "1990s": 152,
     "2000s": 248,
     "2010s": 712,
@@ -5855,6 +5859,20 @@
   ],
   "recentActivity": [
     {
+      "guid": "letterboxd-entry-1283169093",
+      "filmTitle": "Heroic Times",
+      "filmYear": 1983,
+      "watchedDate": "2026-04-16",
+      "memberRating": 3.5,
+      "rewatch": false,
+      "tmdbId": 244265,
+      "link": "https://letterboxd.com/michaellamb/film/heroic-times/",
+      "title": "Heroic Times, 1983 - ★★★½",
+      "reviewText": "wow, the animation here is incredible. it's sometimes what i expect and at other times it surprised me. i felt like the score and the writing were both... bleh. don't even get me started about the boring-ass voice actor narrating the whole thing. cool movie, though. fun watch.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
       "guid": "letterboxd-entry-1281032533",
       "filmTitle": "Autism Is a World",
       "filmYear": 2004,
@@ -5892,7 +5910,7 @@
       "tmdbId": 264660,
       "link": "https://letterboxd.com/michaellamb/film/ex-machina-2015/4/",
       "title": "Ex Machina, 2015 - ★★★★★",
-      "reviewText": "Watched on Tuesday April 14, 2026.",
+      "reviewText": "I hosted a round of Tech Movie Trivia featuring Ex Machina.\n\nAnswer 10 questions in 10 minutes.",
       "tags": [],
       "source": "rss"
     },
@@ -6163,23 +6181,6 @@
       "reviewText": "it ends well, and that's good enough for me.",
       "tags": [
         "crunchyroll"
-      ],
-      "loggedDate": "2026-03-27",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-dGRDZb",
-      "filmTitle": "Pose",
-      "filmYear": 2025,
-      "watchedDate": "2026-03-26",
-      "memberRating": 2.5,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/dGRDZb",
-      "title": "Pose",
-      "reviewText": "",
-      "tags": [
-        "primevideo"
       ],
       "loggedDate": "2026-03-27",
       "source": "archive"
@@ -7960,7 +7961,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-04-14"
+    "latest": "2026-04-16"
   },
   "byYear": {
     "2017": {
@@ -14280,10 +14281,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 77,
-      "uniqueFilms": 70,
+      "totalWatched": 78,
+      "uniqueFilms": 71,
       "totalRewatches": 27,
-      "averageRating": 4.08,
+      "averageRating": 4.07,
       "ratingDistribution": {
         "0.5": 0,
         "1.0": 1,
@@ -14291,7 +14292,7 @@
         "2.0": 2,
         "2.5": 6,
         "3.0": 3,
-        "3.5": 14,
+        "3.5": 15,
         "4.0": 12,
         "4.5": 14,
         "5.0": 25,
@@ -14505,13 +14506,17 @@
         {
           "date": "2026-04-14",
           "count": 4
+        },
+        {
+          "date": "2026-04-16",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
         "1890s": 1,
         "1950s": 1,
         "1960s": 3,
-        "1980s": 1,
+        "1980s": 2,
         "1990s": 4,
         "2000s": 7,
         "2010s": 13,
