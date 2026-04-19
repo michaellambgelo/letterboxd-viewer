@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2440,
-  "uniqueFilms": 1754,
+  "totalWatched": 2441,
+  "uniqueFilms": 1755,
   "totalRewatches": 807,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -11,7 +11,7 @@
     "2.5": 121,
     "3.0": 279,
     "3.5": 367,
-    "4.0": 516,
+    "4.0": 517,
     "4.5": 355,
     "5.0": 559,
     "unrated": 81
@@ -99,7 +99,7 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 18
+    "2026-04": 19
   },
   "heatmapData": [
     {
@@ -5772,7 +5772,7 @@
     },
     {
       "date": "2026-04-18",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -5784,7 +5784,7 @@
     "1960s": 29,
     "1970s": 52,
     "1980s": 83,
-    "1990s": 152,
+    "1990s": 153,
     "2000s": 248,
     "2010s": 712,
     "2020s": 1101
@@ -5862,6 +5862,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1285678657",
+      "filmTitle": "The Mummy",
+      "filmYear": 1999,
+      "watchedDate": "2026-04-18",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 564,
+      "link": "https://letterboxd.com/michaellamb/film/the-mummy-1999/",
+      "title": "The Mummy, 1999 - ★★★★",
+      "reviewText": "holy shit this is so much fun",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1284603394",
       "filmTitle": "Zootopia 2",
@@ -6167,23 +6181,6 @@
         "hulu"
       ],
       "loggedDate": "2026-04-01",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-dJvw17",
-      "filmTitle": "Perfect Blue",
-      "filmYear": 1997,
-      "watchedDate": "2026-03-29",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/dJvw17",
-      "title": "Perfect Blue",
-      "reviewText": "this was a fucking choice for a film at 7 AM on a Sunday",
-      "tags": [
-        "hbomax"
-      ],
-      "loggedDate": "2026-03-30",
       "source": "archive"
     }
   ],
@@ -14282,8 +14279,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 79,
-      "uniqueFilms": 72,
+      "totalWatched": 80,
+      "uniqueFilms": 73,
       "totalRewatches": 27,
       "averageRating": 4.07,
       "ratingDistribution": {
@@ -14294,7 +14291,7 @@
         "2.5": 6,
         "3.0": 3,
         "3.5": 15,
-        "4.0": 13,
+        "4.0": 14,
         "4.5": 14,
         "5.0": 25,
         "unrated": 0
@@ -14514,7 +14511,7 @@
         },
         {
           "date": "2026-04-18",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -14522,7 +14519,7 @@
         "1950s": 1,
         "1960s": 3,
         "1980s": 2,
-        "1990s": 4,
+        "1990s": 5,
         "2000s": 7,
         "2010s": 13,
         "2020s": 47
