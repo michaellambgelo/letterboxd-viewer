@@ -19,6 +19,7 @@ from load_archive import (
     load_likes,
     load_lists,
     load_profile,
+    load_watched,
     load_watchlist,
 )
 
@@ -41,6 +42,29 @@ def _film_key(entry):
     name = (entry.get('filmTitle') or '').strip().lower()
     year = entry.get('filmYear')
     return ('nameyear', name, year)
+
+
+def _inventory_key(name, year):
+    """Normalized (name, year) key used to union watched.csv with diary+RSS entries."""
+    return ((name or '').strip().lower(), year)
+
+
+def compute_unique_film_count(entries):
+    """Authoritative unique-films count: watched.csv inventory ∪ diary+RSS films.
+
+    watched.csv is a snapshot at archive export time; `entries` (diary+RSS) may
+    include films logged after the export that aren't in the snapshot yet. The
+    union catches both.
+    """
+    inventory = {
+        _inventory_key(f['name'], f.get('year'))
+        for f in load_watched()
+        if f.get('name')
+    }
+    for e in entries:
+        if e.get('filmTitle'):
+            inventory.add(_inventory_key(e['filmTitle'], e.get('filmYear')))
+    return len(inventory)
 
 
 def compute_stats(entries):
@@ -310,6 +334,10 @@ def main():
 
     print(f'Computing stats from {len(entries)} entries...')
     stats = compute_stats(entries)
+    # Lifetime uniqueFilms comes from watched.csv (authoritative film inventory)
+    # unioned with post-export RSS. Diary-based unique count undercounts films
+    # marked watched without a diary entry. Per-year uniqueFilms stays diary-keyed.
+    stats['uniqueFilms'] = compute_unique_film_count(entries)
     stats['byYear'] = compute_by_year(entries)
     stats['tagCloud'] = compute_tag_cloud(entries)
     stats['watchlist'] = compute_watchlist_stats()
