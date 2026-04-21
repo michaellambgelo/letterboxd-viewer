@@ -129,6 +129,27 @@ def load_diary(archive_dir=None):
     return entries
 
 
+def load_watched(archive_dir=None):
+    """Load watched.csv — the film-level inventory (one row per unique film).
+
+    Unlike diary.csv (dated watch events, rewatches on separate rows), watched.csv
+    lists every film the user has ever marked watched, with no date. This is the
+    authoritative source for `uniqueFilms` — it includes films marked watched
+    historically that were never given a diary entry.
+    """
+    archive_dir = archive_dir or _find_archive_dir()
+    if not archive_dir:
+        return []
+    return [
+        {
+            'name': r['Name'],
+            'year': _parse_year(r.get('Year')),
+            'link': r.get('Letterboxd URI') or None,
+        }
+        for r in _read_csv(archive_dir / 'watched.csv')
+    ]
+
+
 def load_watchlist(archive_dir=None):
     archive_dir = archive_dir or _find_archive_dir()
     if not archive_dir:
