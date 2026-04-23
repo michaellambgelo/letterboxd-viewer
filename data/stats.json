@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2446,
-  "uniqueFilms": 2055,
+  "totalWatched": 2447,
+  "uniqueFilms": 2056,
   "totalRewatches": 811,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -12,7 +12,7 @@
     "3.0": 279,
     "3.5": 368,
     "4.0": 517,
-    "4.5": 355,
+    "4.5": 356,
     "5.0": 563,
     "unrated": 81
   },
@@ -99,7 +99,7 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 24
+    "2026-04": 25
   },
   "heatmapData": [
     {
@@ -5784,7 +5784,7 @@
     },
     {
       "date": "2026-04-22",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -5799,7 +5799,7 @@
     "1990s": 153,
     "2000s": 249,
     "2010s": 713,
-    "2020s": 1104
+    "2020s": 1105
   },
   "mostRewatched": [
     {
@@ -5874,6 +5874,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1290330792",
+      "filmTitle": "F*ckUps Anonymous",
+      "filmYear": 2025,
+      "watchedDate": "2026-04-22",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 1642521,
+      "link": "https://letterboxd.com/michaellamb/film/fckups-anonymous/",
+      "title": "F*ckUps Anonymous, 2025 - ★★★★½",
+      "reviewText": "excellent short. watched on Omeleto via YT",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1289856777",
       "filmTitle": "Dust Bunny",
@@ -6160,23 +6174,6 @@
         "williemorris"
       ],
       "loggedDate": "2026-04-07",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-dRbvt7",
-      "filmTitle": "The Virgin Suicides",
-      "filmYear": 1999,
-      "watchedDate": "2026-04-05",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/dRbvt7",
-      "title": "The Virgin Suicides",
-      "reviewText": "<a href=\"https://www.youtube.com/watch?v=Ls_0qiFQ0ps\" target=\"_blank\">\"Why am I crying? Will I accidentally listen to 'Come Sail Away' by Styx again?\"</a>",
-      "tags": [
-        "youtube"
-      ],
-      "loggedDate": "2026-04-06",
       "source": "archive"
     }
   ],
@@ -14303,8 +14300,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 85,
-      "uniqueFilms": 78,
+      "totalWatched": 86,
+      "uniqueFilms": 79,
       "totalRewatches": 31,
       "averageRating": 4.11,
       "ratingDistribution": {
@@ -14316,7 +14313,7 @@
         "3.0": 3,
         "3.5": 16,
         "4.0": 14,
-        "4.5": 14,
+        "4.5": 15,
         "5.0": 29,
         "unrated": 0
       },
@@ -14547,7 +14544,7 @@
         },
         {
           "date": "2026-04-22",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -14558,7 +14555,7 @@
         "1990s": 5,
         "2000s": 8,
         "2010s": 14,
-        "2020s": 50
+        "2020s": 51
       },
       "mostRewatched": [
         {
