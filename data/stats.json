@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2448,
+  "totalWatched": 2449,
   "uniqueFilms": 2057,
-  "totalRewatches": 811,
+  "totalRewatches": 812,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 9,
@@ -13,7 +13,7 @@
     "3.5": 368,
     "4.0": 517,
     "4.5": 356,
-    "5.0": 564,
+    "5.0": 565,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -99,7 +99,7 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 26
+    "2026-04": 27
   },
   "heatmapData": [
     {
@@ -5788,7 +5788,7 @@
     },
     {
       "date": "2026-04-23",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -5801,7 +5801,7 @@
     "1970s": 52,
     "1980s": 83,
     "1990s": 153,
-    "2000s": 250,
+    "2000s": 251,
     "2010s": 713,
     "2020s": 1105
   },
@@ -5878,6 +5878,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1291334649",
+      "filmTitle": "In Bruges",
+      "filmYear": 2008,
+      "watchedDate": "2026-04-23",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 8321,
+      "link": "https://letterboxd.com/michaellamb/film/in-bruges/1/",
+      "title": "In Bruges, 2008 - ★★★★★",
+      "reviewText": "perfect picture. bruh — seems stupid but this is free on YouTube",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1290835020",
       "filmTitle": "Paprika",
@@ -6157,27 +6171,16 @@
       ],
       "loggedDate": "2026-04-08",
       "source": "archive"
-    },
-    {
-      "guid": "archive-dT4sS3",
-      "filmTitle": "Cool Hand Luke",
-      "filmYear": 1967,
-      "watchedDate": "2026-04-07",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://boxd.it/dT4sS3",
-      "title": "Cool Hand Luke",
-      "reviewText": "a second watch with commentary from Eric Lax",
-      "tags": [
-        "dvd",
-        "williemorris"
-      ],
-      "loggedDate": "2026-04-08",
-      "source": "archive"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "In Bruges",
+      "filmYear": 2008,
+      "watchedDate": "2026-04-23",
+      "link": "https://letterboxd.com/michaellamb/film/in-bruges/1/",
+      "tmdbId": 8321
+    },
     {
       "filmTitle": "Paprika",
       "filmYear": 2006,
@@ -14307,10 +14310,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 87,
-      "uniqueFilms": 80,
-      "totalRewatches": 31,
-      "averageRating": 4.12,
+      "totalWatched": 88,
+      "uniqueFilms": 81,
+      "totalRewatches": 32,
+      "averageRating": 4.13,
       "ratingDistribution": {
         "0.5": 0,
         "1.0": 1,
@@ -14321,7 +14324,7 @@
         "3.5": 16,
         "4.0": 14,
         "4.5": 15,
-        "5.0": 30,
+        "5.0": 31,
         "unrated": 0
       },
       "heatmapData": [
@@ -14555,7 +14558,7 @@
         },
         {
           "date": "2026-04-23",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -14564,7 +14567,7 @@
         "1960s": 3,
         "1980s": 2,
         "1990s": 5,
-        "2000s": 9,
+        "2000s": 10,
         "2010s": 14,
         "2020s": 51
       },
@@ -14606,6 +14609,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "In Bruges",
+          "filmYear": 2008,
+          "watchedDate": "2026-04-23",
+          "link": "https://letterboxd.com/michaellamb/film/in-bruges/1/"
+        },
         {
           "filmTitle": "Paprika",
           "filmYear": 2006,
@@ -14659,12 +14668,6 @@
           "filmYear": 2025,
           "watchedDate": "2026-04-08",
           "link": "https://boxd.it/dTS7Oz"
-        },
-        {
-          "filmTitle": "Cool Hand Luke",
-          "filmYear": 1967,
-          "watchedDate": "2026-04-07",
-          "link": "https://boxd.it/dT4sS3"
         }
       ]
     }
