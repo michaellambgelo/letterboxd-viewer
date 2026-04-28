@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2449,
+  "totalWatched": 2450,
   "uniqueFilms": 2057,
-  "totalRewatches": 812,
+  "totalRewatches": 813,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 9,
@@ -11,7 +11,7 @@
     "2.5": 121,
     "3.0": 279,
     "3.5": 368,
-    "4.0": 517,
+    "4.0": 518,
     "4.5": 356,
     "5.0": 565,
     "unrated": 81
@@ -99,7 +99,7 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 27
+    "2026-04": 28
   },
   "heatmapData": [
     {
@@ -5789,6 +5789,10 @@
     {
       "date": "2026-04-23",
       "count": 2
+    },
+    {
+      "date": "2026-04-28",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5800,7 +5804,7 @@
     "1960s": 29,
     "1970s": 52,
     "1980s": 83,
-    "1990s": 153,
+    "1990s": 154,
     "2000s": 251,
     "2010s": 713,
     "2020s": 1105
@@ -5878,6 +5882,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1296796492",
+      "filmTitle": "MouseHunt",
+      "filmYear": 1997,
+      "watchedDate": "2026-04-28",
+      "memberRating": 4.0,
+      "rewatch": true,
+      "tmdbId": 6283,
+      "link": "https://letterboxd.com/michaellamb/film/mousehunt/1/",
+      "title": "MouseHunt, 1997 - ★★★★",
+      "reviewText": "the little \"Hakuna Matata\" Nathan Lane delivers is always golden. breaking in the 4KUHD with Alan.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1291334649",
       "filmTitle": "In Bruges",
@@ -6150,24 +6168,6 @@
       "reviewText": "",
       "tags": [
         "youtube"
-      ],
-      "loggedDate": "2026-04-08",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-dSZVmb",
-      "filmTitle": "You Got Gold: A Celebration of John Prine",
-      "filmYear": 2025,
-      "watchedDate": "2026-04-07",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/dSZVmb",
-      "title": "You Got Gold: A Celebration of John Prine",
-      "reviewText": "I am grateful that the name of the person speaking always appeared next to them, even if it wasn’t the first time they appeared on screen. It was helpful and now I know I love Bonnie Raitt, Tyler Childers, and Brandi Carlile \r\n\r\nThanks Mississippi Film Society for this screening!",
-      "tags": [
-        "in theaters",
-        "msfilmsociety"
       ],
       "loggedDate": "2026-04-08",
       "source": "archive"
@@ -7990,7 +7990,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-04-23"
+    "latest": "2026-04-28"
   },
   "byYear": {
     "2017": {
@@ -14310,9 +14310,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 88,
-      "uniqueFilms": 81,
-      "totalRewatches": 32,
+      "totalWatched": 89,
+      "uniqueFilms": 82,
+      "totalRewatches": 33,
       "averageRating": 4.13,
       "ratingDistribution": {
         "0.5": 0,
@@ -14322,7 +14322,7 @@
         "2.5": 6,
         "3.0": 3,
         "3.5": 16,
-        "4.0": 14,
+        "4.0": 15,
         "4.5": 15,
         "5.0": 31,
         "unrated": 0
@@ -14559,6 +14559,10 @@
         {
           "date": "2026-04-23",
           "count": 2
+        },
+        {
+          "date": "2026-04-28",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14566,7 +14570,7 @@
         "1950s": 1,
         "1960s": 3,
         "1980s": 2,
-        "1990s": 5,
+        "1990s": 6,
         "2000s": 10,
         "2010s": 14,
         "2020s": 51
