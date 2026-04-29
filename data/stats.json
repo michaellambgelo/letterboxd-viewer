@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2450,
-  "uniqueFilms": 2057,
+  "totalWatched": 2451,
+  "uniqueFilms": 2058,
   "totalRewatches": 813,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -12,7 +12,7 @@
     "3.0": 279,
     "3.5": 368,
     "4.0": 518,
-    "4.5": 356,
+    "4.5": 357,
     "5.0": 565,
     "unrated": 81
   },
@@ -99,7 +99,7 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 28
+    "2026-04": 29
   },
   "heatmapData": [
     {
@@ -5792,7 +5792,7 @@
     },
     {
       "date": "2026-04-28",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -5807,7 +5807,7 @@
     "1990s": 154,
     "2000s": 251,
     "2010s": 713,
-    "2020s": 1105
+    "2020s": 1106
   },
   "mostRewatched": [
     {
@@ -5882,6 +5882,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1297253079",
+      "filmTitle": "Joybubbles",
+      "filmYear": 2026,
+      "watchedDate": "2026-04-28",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 1596308,
+      "link": "https://letterboxd.com/michaellamb/film/joybubbles/",
+      "title": "Joybubbles, 2026 - ★★★★½",
+      "reviewText": "this was awesome. thanks to the Mississippi Film Society for bringing this from Sundance.\n\nwatched with Alan. we talked with Zach, Kaeley, and Lydia afterward.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1296796492",
       "filmTitle": "MouseHunt",
@@ -6153,23 +6167,6 @@
         "moviesanywhere"
       ],
       "loggedDate": "2026-04-09",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-dSJYcV",
-      "filmTitle": "Discord Mods Are The Worst...",
-      "filmYear": 2026,
-      "watchedDate": "2026-04-07",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/dSJYcV",
-      "title": "Discord Mods Are The Worst...",
-      "reviewText": "",
-      "tags": [
-        "youtube"
-      ],
-      "loggedDate": "2026-04-08",
       "source": "archive"
     }
   ],
@@ -14310,8 +14307,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 89,
-      "uniqueFilms": 82,
+      "totalWatched": 90,
+      "uniqueFilms": 83,
       "totalRewatches": 33,
       "averageRating": 4.13,
       "ratingDistribution": {
@@ -14323,7 +14320,7 @@
         "3.0": 3,
         "3.5": 16,
         "4.0": 15,
-        "4.5": 15,
+        "4.5": 16,
         "5.0": 31,
         "unrated": 0
       },
@@ -14562,7 +14559,7 @@
         },
         {
           "date": "2026-04-28",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -14573,7 +14570,7 @@
         "1990s": 6,
         "2000s": 10,
         "2010s": 14,
-        "2020s": 51
+        "2020s": 52
       },
       "mostRewatched": [
         {
