@@ -1,8 +1,8 @@
 {
-  "totalWatched": 2453,
-  "uniqueFilms": 2060,
+  "totalWatched": 2454,
+  "uniqueFilms": 2061,
   "totalRewatches": 813,
-  "averageRating": 3.88,
+  "averageRating": 3.89,
   "ratingDistribution": {
     "0.5": 9,
     "1.0": 22,
@@ -13,7 +13,7 @@
     "3.5": 368,
     "4.0": 519,
     "4.5": 358,
-    "5.0": 565,
+    "5.0": 566,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -99,7 +99,8 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 31
+    "2026-04": 31,
+    "2026-05": 1
   },
   "heatmapData": [
     {
@@ -5797,6 +5798,10 @@
     {
       "date": "2026-04-30",
       "count": 2
+    },
+    {
+      "date": "2026-05-01",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5810,7 +5815,7 @@
     "1980s": 83,
     "1990s": 154,
     "2000s": 251,
-    "2010s": 713,
+    "2010s": 714,
     "2020s": 1108
   },
   "mostRewatched": [
@@ -5886,6 +5891,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1299810483",
+      "filmTitle": "Detachment",
+      "filmYear": 2011,
+      "watchedDate": "2026-05-01",
+      "memberRating": 5.0,
+      "rewatch": false,
+      "tmdbId": 74308,
+      "link": "https://letterboxd.com/michaellamb/film/detachment/",
+      "title": "Detachment, 2011 - ★★★★★",
+      "reviewText": "bleak",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1299415838",
       "filmTitle": "Portland Is the New Portland",
@@ -6151,24 +6170,16 @@
       "reviewText": "Watched on Tuesday April 14, 2026.",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "archive-dXvenZ",
-      "filmTitle": "Send Help",
-      "filmYear": 2026,
-      "watchedDate": "2026-04-12",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/dXvenZ",
-      "title": "Send Help",
-      "reviewText": "classic sam raimi fun",
-      "tags": [],
-      "loggedDate": "2026-04-13",
-      "source": "archive"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Detachment",
+      "filmYear": 2011,
+      "watchedDate": "2026-05-01",
+      "link": "https://letterboxd.com/michaellamb/film/detachment/",
+      "tmdbId": 74308
+    },
     {
       "filmTitle": "In Bruges",
       "filmYear": 2008,
@@ -7985,7 +7996,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-04-30"
+    "latest": "2026-05-01"
   },
   "byYear": {
     "2017": {
@@ -14305,10 +14316,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 92,
-      "uniqueFilms": 85,
+      "totalWatched": 93,
+      "uniqueFilms": 86,
       "totalRewatches": 33,
-      "averageRating": 4.14,
+      "averageRating": 4.15,
       "ratingDistribution": {
         "0.5": 0,
         "1.0": 1,
@@ -14319,7 +14330,7 @@
         "3.5": 16,
         "4.0": 16,
         "4.5": 17,
-        "5.0": 31,
+        "5.0": 32,
         "unrated": 0
       },
       "heatmapData": [
@@ -14562,6 +14573,10 @@
         {
           "date": "2026-04-30",
           "count": 2
+        },
+        {
+          "date": "2026-05-01",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14571,7 +14586,7 @@
         "1980s": 2,
         "1990s": 6,
         "2000s": 10,
-        "2010s": 14,
+        "2010s": 15,
         "2020s": 54
       },
       "mostRewatched": [
@@ -14612,6 +14627,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Detachment",
+          "filmYear": 2011,
+          "watchedDate": "2026-05-01",
+          "link": "https://letterboxd.com/michaellamb/film/detachment/"
+        },
         {
           "filmTitle": "In Bruges",
           "filmYear": 2008,
@@ -14665,12 +14686,6 @@
           "filmYear": 2024,
           "watchedDate": "2026-04-14",
           "link": "https://letterboxd.com/michaellamb/film/dune-part-two/17/"
-        },
-        {
-          "filmTitle": "Sinners",
-          "filmYear": 2025,
-          "watchedDate": "2026-04-08",
-          "link": "https://boxd.it/dTS7Oz"
         }
       ]
     }
