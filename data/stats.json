@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2451,
-  "uniqueFilms": 2058,
+  "totalWatched": 2453,
+  "uniqueFilms": 2060,
   "totalRewatches": 813,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -11,8 +11,8 @@
     "2.5": 121,
     "3.0": 279,
     "3.5": 368,
-    "4.0": 518,
-    "4.5": 357,
+    "4.0": 519,
+    "4.5": 358,
     "5.0": 565,
     "unrated": 81
   },
@@ -99,7 +99,7 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 29
+    "2026-04": 31
   },
   "heatmapData": [
     {
@@ -5793,6 +5793,10 @@
     {
       "date": "2026-04-28",
       "count": 2
+    },
+    {
+      "date": "2026-04-30",
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -5807,7 +5811,7 @@
     "1990s": 154,
     "2000s": 251,
     "2010s": 713,
-    "2020s": 1106
+    "2020s": 1108
   },
   "mostRewatched": [
     {
@@ -5882,6 +5886,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1299415838",
+      "filmTitle": "Portland Is the New Portland",
+      "filmYear": 2024,
+      "watchedDate": "2026-04-30",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 1337006,
+      "link": "https://letterboxd.com/michaellamb/film/portland-is-the-new-portland/",
+      "title": "Portland Is the New Portland, 2024 - ★★★★",
+      "reviewText": "Xavier Dolan's Mommy",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1299371091",
+      "filmTitle": "The Outfit",
+      "filmYear": 2022,
+      "watchedDate": "2026-04-30",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 799876,
+      "link": "https://letterboxd.com/michaellamb/film/the-outfit-2022/",
+      "title": "The Outfit, 2022 - ★★★★½",
+      "reviewText": "quite the picture! well-crafted in so many regards \n\nrecommended by Jennie",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1297253079",
       "filmTitle": "Joybubbles",
@@ -6133,40 +6165,6 @@
       "reviewText": "classic sam raimi fun",
       "tags": [],
       "loggedDate": "2026-04-13",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-dUDY6T",
-      "filmTitle": "Kimi",
-      "filmYear": 2022,
-      "watchedDate": "2026-04-09",
-      "memberRating": 4.5,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://boxd.it/dUDY6T",
-      "title": "Kimi",
-      "reviewText": "as connected as we all are, it feels like there is such a thing as <em>too much</em> connection.\r\n\r\nthis film captures the intensity of that from a specific perspective, and i appreciate the immersive experience offered.",
-      "tags": [
-        "hbomax"
-      ],
-      "loggedDate": "2026-04-10",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-dTS7Oz",
-      "filmTitle": "Sinners",
-      "filmYear": 2025,
-      "watchedDate": "2026-04-08",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://boxd.it/dTS7Oz",
-      "title": "Sinners",
-      "reviewText": "Sammie at the edge of his life said “that was the best day of my life” and he was reckoning with the night that followed, probably all this time.  I think the Stack mid-credits ending means Sammie went to his grave with some kind of peace about the events of October 16, 1932. I truly believe so.",
-      "tags": [
-        "moviesanywhere"
-      ],
-      "loggedDate": "2026-04-09",
       "source": "archive"
     }
   ],
@@ -7987,7 +7985,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-04-28"
+    "latest": "2026-04-30"
   },
   "byYear": {
     "2017": {
@@ -14307,10 +14305,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 90,
-      "uniqueFilms": 83,
+      "totalWatched": 92,
+      "uniqueFilms": 85,
       "totalRewatches": 33,
-      "averageRating": 4.13,
+      "averageRating": 4.14,
       "ratingDistribution": {
         "0.5": 0,
         "1.0": 1,
@@ -14319,8 +14317,8 @@
         "2.5": 6,
         "3.0": 3,
         "3.5": 16,
-        "4.0": 15,
-        "4.5": 16,
+        "4.0": 16,
+        "4.5": 17,
         "5.0": 31,
         "unrated": 0
       },
@@ -14560,6 +14558,10 @@
         {
           "date": "2026-04-28",
           "count": 2
+        },
+        {
+          "date": "2026-04-30",
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -14570,7 +14572,7 @@
         "1990s": 6,
         "2000s": 10,
         "2010s": 14,
-        "2020s": 52
+        "2020s": 54
       },
       "mostRewatched": [
         {

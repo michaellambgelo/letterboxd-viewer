@@ -1,5 +1,33 @@
 [
   {
+    "guid": "letterboxd-entry-1299415838",
+    "filmTitle": "Portland Is the New Portland",
+    "filmYear": 2024,
+    "watchedDate": "2026-04-30",
+    "memberRating": 4.0,
+    "rewatch": false,
+    "tmdbId": 1337006,
+    "link": "https://letterboxd.com/michaellamb/film/portland-is-the-new-portland/",
+    "title": "Portland Is the New Portland, 2024 - ★★★★",
+    "reviewText": "Xavier Dolan's Mommy",
+    "tags": [],
+    "source": "rss"
+  },
+  {
+    "guid": "letterboxd-entry-1299371091",
+    "filmTitle": "The Outfit",
+    "filmYear": 2022,
+    "watchedDate": "2026-04-30",
+    "memberRating": 4.5,
+    "rewatch": false,
+    "tmdbId": 799876,
+    "link": "https://letterboxd.com/michaellamb/film/the-outfit-2022/",
+    "title": "The Outfit, 2022 - ★★★★½",
+    "reviewText": "quite the picture! well-crafted in so many regards \n\nrecommended by Jennie",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1297253079",
     "filmTitle": "Joybubbles",
     "filmYear": 2026,
