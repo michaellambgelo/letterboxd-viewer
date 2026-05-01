@@ -1,4 +1,9 @@
-# Letterboxd Viewer [![Deploy to GitHub Pages](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/deploy.yml/badge.svg)](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/deploy.yml) [![RSS Feed Update](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/download-data-and-assets.yml/badge.svg?event=schedule)](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/download-data-and-assets.yml)
+# Letterboxd Viewer
+
+[![Status](https://status.michaellamb.dev/api/badge/11/status)](https://status.michaellamb.dev)
+[![Uptime 30d](https://status.michaellamb.dev/api/badge/11/uptime/720?style=flat)](https://status.michaellamb.dev)
+[![Deploy to GitHub Pages](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/deploy.yml/badge.svg)](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/deploy.yml)
+[![RSS Feed Update](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/download-data-and-assets.yml/badge.svg?event=schedule)](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/download-data-and-assets.yml)
 
 A personal Letterboxd stats dashboard rendered as a static site on GitHub Pages. A Python pipeline runs on a cron schedule, merges a Letterboxd export archive (historical baseline) with the public RSS feed (delta for new entries), and pre-computes every field the frontend displays into `data/stats.json`.
 
