@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2455,
-  "uniqueFilms": 2062,
-  "totalRewatches": 813,
+  "totalWatched": 2457,
+  "uniqueFilms": 2063,
+  "totalRewatches": 814,
   "averageRating": 3.89,
   "ratingDistribution": {
     "0.5": 9,
@@ -11,8 +11,8 @@
     "2.5": 121,
     "3.0": 279,
     "3.5": 368,
-    "4.0": 520,
-    "4.5": 358,
+    "4.0": 521,
+    "4.5": 359,
     "5.0": 566,
     "unrated": 81
   },
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 2
+    "2026-05": 4
   },
   "heatmapData": [
     {
@@ -5801,7 +5801,7 @@
     },
     {
       "date": "2026-05-01",
-      "count": 2
+      "count": 4
     }
   ],
   "filmYearDistribution": {
@@ -5815,8 +5815,8 @@
     "1980s": 83,
     "1990s": 154,
     "2000s": 251,
-    "2010s": 714,
-    "2020s": 1109
+    "2010s": 715,
+    "2020s": 1110
   },
   "mostRewatched": [
     {
@@ -5891,6 +5891,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1300676909",
+      "filmTitle": "Memory Project",
+      "filmYear": 2026,
+      "watchedDate": "2026-05-01",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 1436182,
+      "link": "https://letterboxd.com/michaellamb/film/memory-project/",
+      "title": "Memory Project, 2026 - ★★★★",
+      "reviewText": "The Mligram Experiment was such a captivating story to me. I was studying for my Computer Ethics course at the time, so it felt like a complementary read, thematically.\n\nThis short film caused me to re-live much of the emotions I felt learning about how the experiments worked. I found it effective. \n\nWathced via Omeleto on YouTube",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1300589854",
+      "filmTitle": "Interstellar",
+      "filmYear": 2014,
+      "watchedDate": "2026-05-01",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 157336,
+      "link": "https://letterboxd.com/michaellamb/film/interstellar/2/",
+      "title": "Interstellar, 2014 - ★★★★½",
+      "reviewText": "the moment Cooper stops to look at the ships while on Cooper Station — it is already necessary for him to leave.\n\nthe daughter who loved him enough to know — do not go gentle into that good night — sends her father away to another planet.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1300174855",
       "filmTitle": "The Drama",
@@ -6140,34 +6168,6 @@
       "link": "https://letterboxd.com/michaellamb/film/autism-is-a-world/",
       "title": "Autism Is a World, 2004 - ★",
       "reviewText": "2004 was a long time ago and bad coverage is still coverage, but woof this is wrong-headed in so many ways that can only fit the zeitgeist of the naughts.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1281031107",
-      "filmTitle": "The Librarians",
-      "filmYear": 2025,
-      "watchedDate": "2026-04-14",
-      "memberRating": 5.0,
-      "rewatch": false,
-      "tmdbId": 1400379,
-      "link": "https://letterboxd.com/michaellamb/film/the-librarians-2025/",
-      "title": "The Librarians, 2025 - ★★★★★",
-      "reviewText": "nearly had me weeping in a theater full of people",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1281030500",
-      "filmTitle": "Ex Machina",
-      "filmYear": 2015,
-      "watchedDate": "2026-04-14",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 264660,
-      "link": "https://letterboxd.com/michaellamb/film/ex-machina-2015/4/",
-      "title": "Ex Machina, 2015 - ★★★★★",
-      "reviewText": "I hosted a round of Tech Movie Trivia featuring Ex Machina.\n\nAnswer 10 questions in 10 minutes.",
       "tags": [],
       "source": "rss"
     }
@@ -14316,10 +14316,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 94,
-      "uniqueFilms": 87,
-      "totalRewatches": 33,
-      "averageRating": 4.14,
+      "totalWatched": 96,
+      "uniqueFilms": 89,
+      "totalRewatches": 34,
+      "averageRating": 4.15,
       "ratingDistribution": {
         "0.5": 0,
         "1.0": 1,
@@ -14328,8 +14328,8 @@
         "2.5": 6,
         "3.0": 3,
         "3.5": 16,
-        "4.0": 17,
-        "4.5": 17,
+        "4.0": 18,
+        "4.5": 18,
         "5.0": 32,
         "unrated": 0
       },
@@ -14576,7 +14576,7 @@
         },
         {
           "date": "2026-05-01",
-          "count": 2
+          "count": 4
         }
       ],
       "filmYearDistribution": {
@@ -14586,8 +14586,8 @@
         "1980s": 2,
         "1990s": 6,
         "2000s": 10,
-        "2010s": 15,
-        "2020s": 55
+        "2010s": 16,
+        "2020s": 56
       },
       "mostRewatched": [
         {
