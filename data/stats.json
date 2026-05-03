@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2457,
+  "totalWatched": 2458,
   "uniqueFilms": 2063,
-  "totalRewatches": 814,
+  "totalRewatches": 815,
   "averageRating": 3.89,
   "ratingDistribution": {
     "0.5": 9,
@@ -12,7 +12,7 @@
     "3.0": 279,
     "3.5": 368,
     "4.0": 521,
-    "4.5": 359,
+    "4.5": 360,
     "5.0": 566,
     "unrated": 81
   },
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 4
+    "2026-05": 5
   },
   "heatmapData": [
     {
@@ -5802,6 +5802,10 @@
     {
       "date": "2026-05-01",
       "count": 4
+    },
+    {
+      "date": "2026-05-02",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5816,7 +5820,7 @@
     "1990s": 154,
     "2000s": 251,
     "2010s": 715,
-    "2020s": 1110
+    "2020s": 1111
   },
   "mostRewatched": [
     {
@@ -5891,6 +5895,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1301835434",
+      "filmTitle": "Marty Supreme",
+      "filmYear": 2025,
+      "watchedDate": "2026-05-02",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 1317288,
+      "link": "https://letterboxd.com/michaellamb/film/marty-supreme/1/",
+      "title": "Marty Supreme, 2025 - ★★★★½",
+      "reviewText": "I got blue balled by a brewery buddy who bailed an hour into this film. i'm just now finishing it, 8 days later.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1300676909",
       "filmTitle": "Memory Project",
@@ -6154,20 +6172,6 @@
       "link": "https://letterboxd.com/michaellamb/film/heroic-times/",
       "title": "Heroic Times, 1983 - ★★★½",
       "reviewText": "wow, the animation here is incredible. it's sometimes what i expect and at other times it surprised me. i felt like the score and the writing were both... bleh. don't even get me started about the boring-ass voice actor narrating the whole thing. cool movie, though. fun watch.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1281032533",
-      "filmTitle": "Autism Is a World",
-      "filmYear": 2004,
-      "watchedDate": "2026-04-14",
-      "memberRating": 1.0,
-      "rewatch": false,
-      "tmdbId": 245006,
-      "link": "https://letterboxd.com/michaellamb/film/autism-is-a-world/",
-      "title": "Autism Is a World, 2004 - ★",
-      "reviewText": "2004 was a long time ago and bad coverage is still coverage, but woof this is wrong-headed in so many ways that can only fit the zeitgeist of the naughts.",
       "tags": [],
       "source": "rss"
     }
@@ -7996,7 +8000,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-01"
+    "latest": "2026-05-02"
   },
   "byYear": {
     "2017": {
@@ -14316,9 +14320,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 96,
-      "uniqueFilms": 89,
-      "totalRewatches": 34,
+      "totalWatched": 97,
+      "uniqueFilms": 90,
+      "totalRewatches": 35,
       "averageRating": 4.15,
       "ratingDistribution": {
         "0.5": 0,
@@ -14329,7 +14333,7 @@
         "3.0": 3,
         "3.5": 16,
         "4.0": 18,
-        "4.5": 18,
+        "4.5": 19,
         "5.0": 32,
         "unrated": 0
       },
@@ -14577,6 +14581,10 @@
         {
           "date": "2026-05-01",
           "count": 4
+        },
+        {
+          "date": "2026-05-02",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14587,7 +14595,7 @@
         "1990s": 6,
         "2000s": 10,
         "2010s": 16,
-        "2020s": 56
+        "2020s": 57
       },
       "mostRewatched": [
         {
