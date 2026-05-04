@@ -1,10 +1,10 @@
 {
-  "totalWatched": 2459,
-  "uniqueFilms": 2064,
+  "totalWatched": 2460,
+  "uniqueFilms": 2065,
   "totalRewatches": 815,
-  "averageRating": 3.89,
+  "averageRating": 3.88,
   "ratingDistribution": {
-    "0.5": 9,
+    "0.5": 10,
     "1.0": 22,
     "1.5": 27,
     "2.0": 104,
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 6
+    "2026-05": 7
   },
   "heatmapData": [
     {
@@ -5806,6 +5806,10 @@
     {
       "date": "2026-05-02",
       "count": 2
+    },
+    {
+      "date": "2026-05-03",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5820,7 +5824,7 @@
     "1990s": 154,
     "2000s": 251,
     "2010s": 715,
-    "2020s": 1112
+    "2020s": 1113
   },
   "mostRewatched": [
     {
@@ -5895,6 +5899,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1303739104",
+      "filmTitle": "Lazarus: The Awakening",
+      "filmYear": 2026,
+      "watchedDate": "2026-05-03",
+      "memberRating": 0.5,
+      "rewatch": false,
+      "tmdbId": 1617412,
+      "link": "https://letterboxd.com/michaellamb/film/lazarus-the-awakening/",
+      "title": "Lazarus: The Awakening, 2026 - ½",
+      "reviewText": "hard pass",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1302054710",
       "filmTitle": "The Devil Wears Prada 2",
@@ -6158,20 +6176,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-mummy-1999/",
       "title": "The Mummy, 1999 - ★★★★",
       "reviewText": "holy shit this is so much fun",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1284603394",
-      "filmTitle": "Zootopia 2",
-      "filmYear": 2025,
-      "watchedDate": "2026-04-18",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 1084242,
-      "link": "https://letterboxd.com/michaellamb/film/zootopia-2/",
-      "title": "Zootopia 2, 2025 - ★★★★",
-      "reviewText": "pretty great\n\nZootopia is for everyone",
       "tags": [],
       "source": "rss"
     }
@@ -8000,7 +8004,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-02"
+    "latest": "2026-05-03"
   },
   "byYear": {
     "2017": {
@@ -14320,12 +14324,12 @@
       ]
     },
     "2026": {
-      "totalWatched": 98,
-      "uniqueFilms": 91,
+      "totalWatched": 99,
+      "uniqueFilms": 92,
       "totalRewatches": 35,
-      "averageRating": 4.15,
+      "averageRating": 4.11,
       "ratingDistribution": {
-        "0.5": 0,
+        "0.5": 1,
         "1.0": 1,
         "1.5": 0,
         "2.0": 2,
@@ -14585,6 +14589,10 @@
         {
           "date": "2026-05-02",
           "count": 2
+        },
+        {
+          "date": "2026-05-03",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14595,7 +14603,7 @@
         "1990s": 6,
         "2000s": 10,
         "2010s": 16,
-        "2020s": 58
+        "2020s": 59
       },
       "mostRewatched": [
         {
