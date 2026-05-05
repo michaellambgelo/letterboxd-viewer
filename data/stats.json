@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2460,
-  "uniqueFilms": 2065,
+  "totalWatched": 2461,
+  "uniqueFilms": 2066,
   "totalRewatches": 815,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -9,7 +9,7 @@
     "1.5": 27,
     "2.0": 104,
     "2.5": 121,
-    "3.0": 279,
+    "3.0": 280,
     "3.5": 368,
     "4.0": 522,
     "4.5": 360,
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 7
+    "2026-05": 8
   },
   "heatmapData": [
     {
@@ -5810,6 +5810,10 @@
     {
       "date": "2026-05-03",
       "count": 1
+    },
+    {
+      "date": "2026-05-04",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5899,6 +5903,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1304935727",
+      "filmTitle": "Souvenir Drunk",
+      "filmYear": null,
+      "watchedDate": "2026-05-04",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 1688310,
+      "link": "https://letterboxd.com/michaellamb/film/souvenir-drunk/",
+      "title": "Souvenir Drunk - ★★★",
+      "reviewText": "Watched on Monday May 4, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1303739104",
       "filmTitle": "Lazarus: The Awakening",
@@ -6162,20 +6180,6 @@
       "link": "https://letterboxd.com/michaellamb/film/wake-up-dead-man/3/",
       "title": "Wake Up Dead Man, 2025 - ★★★★★",
       "reviewText": "worth every minute of runtime",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1285678657",
-      "filmTitle": "The Mummy",
-      "filmYear": 1999,
-      "watchedDate": "2026-04-18",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 564,
-      "link": "https://letterboxd.com/michaellamb/film/the-mummy-1999/",
-      "title": "The Mummy, 1999 - ★★★★",
-      "reviewText": "holy shit this is so much fun",
       "tags": [],
       "source": "rss"
     }
@@ -8004,7 +8008,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-03"
+    "latest": "2026-05-04"
   },
   "byYear": {
     "2017": {
@@ -14324,17 +14328,17 @@
       ]
     },
     "2026": {
-      "totalWatched": 99,
-      "uniqueFilms": 92,
+      "totalWatched": 100,
+      "uniqueFilms": 93,
       "totalRewatches": 35,
-      "averageRating": 4.11,
+      "averageRating": 4.1,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
         "1.5": 0,
         "2.0": 2,
         "2.5": 6,
-        "3.0": 3,
+        "3.0": 4,
         "3.5": 16,
         "4.0": 19,
         "4.5": 19,
@@ -14592,6 +14596,10 @@
         },
         {
           "date": "2026-05-03",
+          "count": 1
+        },
+        {
+          "date": "2026-05-04",
           "count": 1
         }
       ],
