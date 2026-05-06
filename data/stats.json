@@ -5832,7 +5832,7 @@
     "1990s": 155,
     "2000s": 251,
     "2010s": 715,
-    "2020s": 1113
+    "2020s": 1114
   },
   "mostRewatched": [
     {
@@ -5924,13 +5924,13 @@
     {
       "guid": "letterboxd-entry-1304935727",
       "filmTitle": "Souvenir Drunk",
-      "filmYear": null,
+      "filmYear": 2024,
       "watchedDate": "2026-05-04",
       "memberRating": 3.0,
       "rewatch": false,
       "tmdbId": 1688310,
       "link": "https://letterboxd.com/michaellamb/film/souvenir-drunk/",
-      "title": "Souvenir Drunk - ★★★",
+      "title": "Souvenir Drunk, 2024 - ★★★",
       "reviewText": "Watched on Monday May 4, 2026.",
       "tags": [],
       "source": "rss"
@@ -14626,7 +14626,7 @@
         "1990s": 7,
         "2000s": 10,
         "2010s": 16,
-        "2020s": 59
+        "2020s": 60
       },
       "mostRewatched": [
         {
