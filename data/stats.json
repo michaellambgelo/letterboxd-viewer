@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2461,
+  "totalWatched": 2462,
   "uniqueFilms": 2066,
-  "totalRewatches": 815,
+  "totalRewatches": 816,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
@@ -13,7 +13,7 @@
     "3.5": 368,
     "4.0": 522,
     "4.5": 360,
-    "5.0": 566,
+    "5.0": 567,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 8
+    "2026-05": 9
   },
   "heatmapData": [
     {
@@ -5814,6 +5814,10 @@
     {
       "date": "2026-05-04",
       "count": 1
+    },
+    {
+      "date": "2026-05-05",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5825,7 +5829,7 @@
     "1960s": 29,
     "1970s": 52,
     "1980s": 83,
-    "1990s": 154,
+    "1990s": 155,
     "2000s": 251,
     "2010s": 715,
     "2020s": 1113
@@ -5903,6 +5907,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1305718364",
+      "filmTitle": "The Truman Show",
+      "filmYear": 1998,
+      "watchedDate": "2026-05-05",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 37165,
+      "link": "https://letterboxd.com/michaellamb/film/the-truman-show/6/",
+      "title": "The Truman Show, 1998 - ★★★★★",
+      "reviewText": "you never had a camera inside my head",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1304935727",
       "filmTitle": "Souvenir Drunk",
@@ -6168,23 +6186,16 @@
       "reviewText": "it struck me on this rewatch how Anthony is in the final frame and not Ms. Leena\n\nrewatched because it was uploaded to Omeleto",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1287469422",
-      "filmTitle": "Wake Up Dead Man",
-      "filmYear": 2025,
-      "watchedDate": "2026-04-20",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 812583,
-      "link": "https://letterboxd.com/michaellamb/film/wake-up-dead-man/3/",
-      "title": "Wake Up Dead Man, 2025 - ★★★★★",
-      "reviewText": "worth every minute of runtime",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "The Truman Show",
+      "filmYear": 1998,
+      "watchedDate": "2026-05-05",
+      "link": "https://letterboxd.com/michaellamb/film/the-truman-show/6/",
+      "tmdbId": 37165
+    },
     {
       "filmTitle": "Detachment",
       "filmYear": 2011,
@@ -8008,7 +8019,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-04"
+    "latest": "2026-05-05"
   },
   "byYear": {
     "2017": {
@@ -14328,10 +14339,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 100,
-      "uniqueFilms": 93,
-      "totalRewatches": 35,
-      "averageRating": 4.1,
+      "totalWatched": 101,
+      "uniqueFilms": 94,
+      "totalRewatches": 36,
+      "averageRating": 4.11,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
@@ -14342,7 +14353,7 @@
         "3.5": 16,
         "4.0": 19,
         "4.5": 19,
-        "5.0": 32,
+        "5.0": 33,
         "unrated": 0
       },
       "heatmapData": [
@@ -14601,6 +14612,10 @@
         {
           "date": "2026-05-04",
           "count": 1
+        },
+        {
+          "date": "2026-05-05",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14608,7 +14623,7 @@
         "1950s": 1,
         "1960s": 3,
         "1980s": 2,
-        "1990s": 6,
+        "1990s": 7,
         "2000s": 10,
         "2010s": 16,
         "2020s": 59
@@ -14651,6 +14666,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "The Truman Show",
+          "filmYear": 1998,
+          "watchedDate": "2026-05-05",
+          "link": "https://letterboxd.com/michaellamb/film/the-truman-show/6/"
+        },
         {
           "filmTitle": "Detachment",
           "filmYear": 2011,
@@ -14704,12 +14725,6 @@
           "filmYear": 2015,
           "watchedDate": "2026-04-14",
           "link": "https://letterboxd.com/michaellamb/film/ex-machina-2015/4/"
-        },
-        {
-          "filmTitle": "Dune: Part Two",
-          "filmYear": 2024,
-          "watchedDate": "2026-04-14",
-          "link": "https://letterboxd.com/michaellamb/film/dune-part-two/17/"
         }
       ]
     }
