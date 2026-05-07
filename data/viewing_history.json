@@ -1,5 +1,33 @@
 [
   {
+    "guid": "letterboxd-entry-1307416101",
+    "filmTitle": "The Passenger",
+    "filmYear": 2023,
+    "watchedDate": "2026-05-07",
+    "memberRating": 3.5,
+    "rewatch": false,
+    "tmdbId": 957314,
+    "link": "https://letterboxd.com/michaellamb/film/the-passenger-2023/",
+    "title": "The Passenger, 2023 - ★★★½",
+    "reviewText": "queer",
+    "tags": [],
+    "source": "rss"
+  },
+  {
+    "guid": "letterboxd-entry-1307416839",
+    "filmTitle": "Gary",
+    "filmYear": 2026,
+    "watchedDate": "2026-05-06",
+    "memberRating": 4.0,
+    "rewatch": false,
+    "tmdbId": 1688652,
+    "link": "https://letterboxd.com/michaellamb/film/gary-2026/",
+    "title": "Gary, 2026 - ★★★★",
+    "reviewText": "holy shit this is on Letterboxd",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1305718364",
     "filmTitle": "The Truman Show",
     "filmYear": 1998,
