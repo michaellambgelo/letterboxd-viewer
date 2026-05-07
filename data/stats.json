@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2462,
-  "uniqueFilms": 2066,
+  "totalWatched": 2464,
+  "uniqueFilms": 2068,
   "totalRewatches": 816,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -10,8 +10,8 @@
     "2.0": 104,
     "2.5": 121,
     "3.0": 280,
-    "3.5": 368,
-    "4.0": 522,
+    "3.5": 369,
+    "4.0": 523,
     "4.5": 360,
     "5.0": 567,
     "unrated": 81
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 9
+    "2026-05": 11
   },
   "heatmapData": [
     {
@@ -5818,6 +5818,14 @@
     {
       "date": "2026-05-05",
       "count": 1
+    },
+    {
+      "date": "2026-05-06",
+      "count": 1
+    },
+    {
+      "date": "2026-05-07",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5832,7 +5840,7 @@
     "1990s": 155,
     "2000s": 251,
     "2010s": 715,
-    "2020s": 1114
+    "2020s": 1116
   },
   "mostRewatched": [
     {
@@ -5907,6 +5915,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1307416101",
+      "filmTitle": "The Passenger",
+      "filmYear": 2023,
+      "watchedDate": "2026-05-07",
+      "memberRating": 3.5,
+      "rewatch": false,
+      "tmdbId": 957314,
+      "link": "https://letterboxd.com/michaellamb/film/the-passenger-2023/",
+      "title": "The Passenger, 2023 - ★★★½",
+      "reviewText": "queer",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1307416839",
+      "filmTitle": "Gary",
+      "filmYear": 2026,
+      "watchedDate": "2026-05-06",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 1688652,
+      "link": "https://letterboxd.com/michaellamb/film/gary-2026/",
+      "title": "Gary, 2026 - ★★★★",
+      "reviewText": "holy shit this is on Letterboxd",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1305718364",
       "filmTitle": "The Truman Show",
@@ -6156,34 +6192,6 @@
       "link": "https://letterboxd.com/michaellamb/film/spirited-away/3/",
       "title": "Spirited Away, 2001 - ★★★★★",
       "reviewText": "Sometimes I think to myself about how I’d like to listen to the soundtrack of Spirited Away so I put the movie on and inevitably sit down and watch the whole thing. \n\nEvery. Single. Time.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1289061083",
-      "filmTitle": "Inception",
-      "filmYear": 2010,
-      "watchedDate": "2026-04-21",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 27205,
-      "link": "https://letterboxd.com/michaellamb/film/inception/2/",
-      "title": "Inception, 2010 - ★★★★★",
-      "reviewText": "isn't it pretty cool that for two and a half hours basically nothing happens",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1288735463",
-      "filmTitle": "1, 2, 3, All Eyes On Me",
-      "filmYear": 2020,
-      "watchedDate": "2026-04-21",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 754398,
-      "link": "https://letterboxd.com/michaellamb/film/1-2-3-all-eyes-on-me/3/",
-      "title": "1, 2, 3, All Eyes On Me, 2020 - ★★★★★",
-      "reviewText": "it struck me on this rewatch how Anthony is in the final frame and not Ms. Leena\n\nrewatched because it was uploaded to Omeleto",
       "tags": [],
       "source": "rss"
     }
@@ -8019,7 +8027,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-05"
+    "latest": "2026-05-07"
   },
   "byYear": {
     "2017": {
@@ -14339,10 +14347,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 101,
-      "uniqueFilms": 94,
+      "totalWatched": 103,
+      "uniqueFilms": 96,
       "totalRewatches": 36,
-      "averageRating": 4.11,
+      "averageRating": 4.1,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
@@ -14350,8 +14358,8 @@
         "2.0": 2,
         "2.5": 6,
         "3.0": 4,
-        "3.5": 16,
-        "4.0": 19,
+        "3.5": 17,
+        "4.0": 20,
         "4.5": 19,
         "5.0": 33,
         "unrated": 0
@@ -14616,6 +14624,14 @@
         {
           "date": "2026-05-05",
           "count": 1
+        },
+        {
+          "date": "2026-05-06",
+          "count": 1
+        },
+        {
+          "date": "2026-05-07",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14626,7 +14642,7 @@
         "1990s": 7,
         "2000s": 10,
         "2010s": 16,
-        "2020s": 60
+        "2020s": 62
       },
       "mostRewatched": [
         {
