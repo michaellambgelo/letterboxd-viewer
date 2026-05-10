@@ -1,8 +1,8 @@
 {
-  "totalWatched": 2465,
+  "totalWatched": 2467,
   "uniqueFilms": 2068,
-  "totalRewatches": 816,
-  "averageRating": 3.88,
+  "totalRewatches": 818,
+  "averageRating": 3.89,
   "ratingDistribution": {
     "0.5": 10,
     "1.0": 22,
@@ -12,8 +12,8 @@
     "3.0": 280,
     "3.5": 369,
     "4.0": 524,
-    "4.5": 360,
-    "5.0": 567,
+    "4.5": 361,
+    "5.0": 568,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 12
+    "2026-05": 14
   },
   "heatmapData": [
     {
@@ -5830,6 +5830,10 @@
     {
       "date": "2026-05-08",
       "count": 1
+    },
+    {
+      "date": "2026-05-09",
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -5842,9 +5846,9 @@
     "1970s": 52,
     "1980s": 83,
     "1990s": 156,
-    "2000s": 251,
+    "2000s": 252,
     "2010s": 715,
-    "2020s": 1116
+    "2020s": 1117
   },
   "mostRewatched": [
     {
@@ -5919,6 +5923,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1310486892",
+      "filmTitle": "Hot Rod",
+      "filmYear": 2007,
+      "watchedDate": "2026-05-09",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 10074,
+      "link": "https://letterboxd.com/michaellamb/film/hot-rod/7/",
+      "title": "Hot Rod, 2007 - ★★★★½",
+      "reviewText": "you guys, the bathroom here is nutsdave is me",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1310474951",
+      "filmTitle": "28 Years Later: The Bone Temple",
+      "filmYear": 2026,
+      "watchedDate": "2026-05-09",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 1272837,
+      "link": "https://letterboxd.com/michaellamb/film/28-years-later-the-bone-temple/4/",
+      "title": "28 Years Later: The Bone Temple, 2026 - ★★★★★",
+      "reviewText": "\"do we help them?\"\n\n\"of course we do.\"\n\nabsolutely rips",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1308255277",
       "filmTitle": "The Silence of the Lambs",
@@ -6170,37 +6202,16 @@
       "reviewText": "i love movies!\n\nwatched for free on YouTube",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1290330792",
-      "filmTitle": "F*ckUps Anonymous",
-      "filmYear": 2025,
-      "watchedDate": "2026-04-22",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": 1642521,
-      "link": "https://letterboxd.com/michaellamb/film/fckups-anonymous/",
-      "title": "F*ckUps Anonymous, 2025 - ★★★★½",
-      "reviewText": "excellent short. watched on Omeleto via YT",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1289856777",
-      "filmTitle": "Dust Bunny",
-      "filmYear": 2025,
-      "watchedDate": "2026-04-22",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 1043197,
-      "link": "https://letterboxd.com/michaellamb/film/dust-bunny/",
-      "title": "Dust Bunny, 2025 - ★★★½",
-      "reviewText": "i had a great time. specifically wanted to mention i laughed out loud at the Nosferatu homage",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "28 Years Later: The Bone Temple",
+      "filmYear": 2026,
+      "watchedDate": "2026-05-09",
+      "link": "https://letterboxd.com/michaellamb/film/28-years-later-the-bone-temple/4/",
+      "tmdbId": 1272837
+    },
     {
       "filmTitle": "The Truman Show",
       "filmYear": 1998,
@@ -8031,7 +8042,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-08"
+    "latest": "2026-05-09"
   },
   "byYear": {
     "2017": {
@@ -14351,10 +14362,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 104,
-      "uniqueFilms": 97,
-      "totalRewatches": 36,
-      "averageRating": 4.1,
+      "totalWatched": 106,
+      "uniqueFilms": 99,
+      "totalRewatches": 38,
+      "averageRating": 4.11,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
@@ -14364,8 +14375,8 @@
         "3.0": 4,
         "3.5": 17,
         "4.0": 21,
-        "4.5": 19,
-        "5.0": 33,
+        "4.5": 20,
+        "5.0": 34,
         "unrated": 0
       },
       "heatmapData": [
@@ -14640,6 +14651,10 @@
         {
           "date": "2026-05-08",
           "count": 1
+        },
+        {
+          "date": "2026-05-09",
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -14648,9 +14663,9 @@
         "1960s": 3,
         "1980s": 2,
         "1990s": 8,
-        "2000s": 10,
+        "2000s": 11,
         "2010s": 16,
-        "2020s": 62
+        "2020s": 63
       },
       "mostRewatched": [
         {
@@ -14690,6 +14705,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "28 Years Later: The Bone Temple",
+          "filmYear": 2026,
+          "watchedDate": "2026-05-09",
+          "link": "https://letterboxd.com/michaellamb/film/28-years-later-the-bone-temple/4/"
+        },
         {
           "filmTitle": "The Truman Show",
           "filmYear": 1998,
@@ -14743,12 +14764,6 @@
           "filmYear": 2025,
           "watchedDate": "2026-04-14",
           "link": "https://letterboxd.com/michaellamb/film/the-librarians-2025/"
-        },
-        {
-          "filmTitle": "Ex Machina",
-          "filmYear": 2015,
-          "watchedDate": "2026-04-14",
-          "link": "https://letterboxd.com/michaellamb/film/ex-machina-2015/4/"
         }
       ]
     }
