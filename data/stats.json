@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2467,
-  "uniqueFilms": 2068,
+  "totalWatched": 2468,
+  "uniqueFilms": 2069,
   "totalRewatches": 818,
   "averageRating": 3.89,
   "ratingDistribution": {
@@ -11,7 +11,7 @@
     "2.5": 121,
     "3.0": 280,
     "3.5": 369,
-    "4.0": 524,
+    "4.0": 525,
     "4.5": 361,
     "5.0": 568,
     "unrated": 81
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 14
+    "2026-05": 15
   },
   "heatmapData": [
     {
@@ -5834,6 +5834,10 @@
     {
       "date": "2026-05-09",
       "count": 2
+    },
+    {
+      "date": "2026-05-10",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5848,7 +5852,7 @@
     "1990s": 156,
     "2000s": 252,
     "2010s": 715,
-    "2020s": 1117
+    "2020s": 1118
   },
   "mostRewatched": [
     {
@@ -5923,6 +5927,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1311883670",
+      "filmTitle": "A Son's Wedding",
+      "filmYear": 2024,
+      "watchedDate": "2026-05-10",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 1660180,
+      "link": "https://letterboxd.com/michaellamb/film/a-sons-wedding/",
+      "title": "A Son's Wedding, 2024 - ★★★★",
+      "reviewText": "dripping in ennui but ultimately sweet \n\nhappy Mother’s Day",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1310486892",
       "filmTitle": "Hot Rod",
@@ -6186,20 +6204,6 @@
       "link": "https://letterboxd.com/michaellamb/film/in-bruges/1/",
       "title": "In Bruges, 2008 - ★★★★★",
       "reviewText": "perfect picture. bruh — seems stupid but this is free on YouTube",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1290835020",
-      "filmTitle": "Paprika",
-      "filmYear": 2006,
-      "watchedDate": "2026-04-23",
-      "memberRating": 5.0,
-      "rewatch": false,
-      "tmdbId": 4977,
-      "link": "https://letterboxd.com/michaellamb/film/paprika-2006/",
-      "title": "Paprika, 2006 - ★★★★★",
-      "reviewText": "i love movies!\n\nwatched for free on YouTube",
       "tags": [],
       "source": "rss"
     }
@@ -8042,7 +8046,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-09"
+    "latest": "2026-05-10"
   },
   "byYear": {
     "2017": {
@@ -14362,8 +14366,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 106,
-      "uniqueFilms": 99,
+      "totalWatched": 107,
+      "uniqueFilms": 100,
       "totalRewatches": 38,
       "averageRating": 4.11,
       "ratingDistribution": {
@@ -14374,7 +14378,7 @@
         "2.5": 6,
         "3.0": 4,
         "3.5": 17,
-        "4.0": 21,
+        "4.0": 22,
         "4.5": 20,
         "5.0": 34,
         "unrated": 0
@@ -14655,6 +14659,10 @@
         {
           "date": "2026-05-09",
           "count": 2
+        },
+        {
+          "date": "2026-05-10",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14665,7 +14673,7 @@
         "1990s": 8,
         "2000s": 11,
         "2010s": 16,
-        "2020s": 63
+        "2020s": 64
       },
       "mostRewatched": [
         {
