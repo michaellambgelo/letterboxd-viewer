@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2468,
-  "uniqueFilms": 2069,
+  "totalWatched": 2469,
+  "uniqueFilms": 2070,
   "totalRewatches": 818,
   "averageRating": 3.89,
   "ratingDistribution": {
@@ -10,7 +10,7 @@
     "2.0": 104,
     "2.5": 121,
     "3.0": 280,
-    "3.5": 369,
+    "3.5": 370,
     "4.0": 525,
     "4.5": 361,
     "5.0": 568,
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 15
+    "2026-05": 16
   },
   "heatmapData": [
     {
@@ -5838,6 +5838,10 @@
     {
       "date": "2026-05-10",
       "count": 1
+    },
+    {
+      "date": "2026-05-11",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5848,7 +5852,7 @@
     "1950s": 18,
     "1960s": 29,
     "1970s": 52,
-    "1980s": 83,
+    "1980s": 84,
     "1990s": 156,
     "2000s": 252,
     "2010s": 715,
@@ -5927,6 +5931,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1313002620",
+      "filmTitle": "Short Circuit",
+      "filmYear": 1986,
+      "watchedDate": "2026-05-11",
+      "memberRating": 3.5,
+      "rewatch": false,
+      "tmdbId": 2605,
+      "link": "https://letterboxd.com/michaellamb/film/short-circuit/",
+      "title": "Short Circuit, 1986 - ★★★½",
+      "reviewText": "\"Jerk of the world\"I haven't seen this since I was a kid and I remember loving it — I think I understand why now. Number 5 learns about death and feels anxious about it. Infinitely relatable.\n\nBut it's what he learns after that feeling that makes his story so compelling.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1311883670",
       "filmTitle": "A Son's Wedding",
@@ -6190,20 +6208,6 @@
       "link": "https://letterboxd.com/michaellamb/film/mousehunt/1/",
       "title": "MouseHunt, 1997 - ★★★★",
       "reviewText": "the little \"Hakuna Matata\" Nathan Lane delivers is always golden. breaking in the 4KUHD with Alan.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1291334649",
-      "filmTitle": "In Bruges",
-      "filmYear": 2008,
-      "watchedDate": "2026-04-23",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 8321,
-      "link": "https://letterboxd.com/michaellamb/film/in-bruges/1/",
-      "title": "In Bruges, 2008 - ★★★★★",
-      "reviewText": "perfect picture. bruh — seems stupid but this is free on YouTube",
       "tags": [],
       "source": "rss"
     }
@@ -8046,7 +8050,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-10"
+    "latest": "2026-05-11"
   },
   "byYear": {
     "2017": {
@@ -14366,8 +14370,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 107,
-      "uniqueFilms": 100,
+      "totalWatched": 108,
+      "uniqueFilms": 101,
       "totalRewatches": 38,
       "averageRating": 4.11,
       "ratingDistribution": {
@@ -14377,7 +14381,7 @@
         "2.0": 2,
         "2.5": 6,
         "3.0": 4,
-        "3.5": 17,
+        "3.5": 18,
         "4.0": 22,
         "4.5": 20,
         "5.0": 34,
@@ -14663,13 +14667,17 @@
         {
           "date": "2026-05-10",
           "count": 1
+        },
+        {
+          "date": "2026-05-11",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
         "1890s": 1,
         "1950s": 1,
         "1960s": 3,
-        "1980s": 2,
+        "1980s": 3,
         "1990s": 8,
         "2000s": 11,
         "2010s": 16,
