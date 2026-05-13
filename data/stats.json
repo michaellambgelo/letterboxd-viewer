@@ -1,18 +1,18 @@
 {
-  "totalWatched": 2469,
-  "uniqueFilms": 2070,
+  "totalWatched": 2471,
+  "uniqueFilms": 2072,
   "totalRewatches": 818,
-  "averageRating": 3.89,
+  "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
     "1.0": 22,
     "1.5": 27,
     "2.0": 104,
     "2.5": 121,
-    "3.0": 280,
+    "3.0": 281,
     "3.5": 370,
     "4.0": 525,
-    "4.5": 361,
+    "4.5": 362,
     "5.0": 568,
     "unrated": 81
   },
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 16
+    "2026-05": 18
   },
   "heatmapData": [
     {
@@ -5842,6 +5842,14 @@
     {
       "date": "2026-05-11",
       "count": 1
+    },
+    {
+      "date": "2026-05-12",
+      "count": 1
+    },
+    {
+      "date": "2026-05-13",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5855,8 +5863,8 @@
     "1980s": 84,
     "1990s": 156,
     "2000s": 252,
-    "2010s": 715,
-    "2020s": 1118
+    "2010s": 716,
+    "2020s": 1119
   },
   "mostRewatched": [
     {
@@ -5931,6 +5939,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1314159948",
+      "filmTitle": "Would You Like to Try Again?",
+      "filmYear": 2019,
+      "watchedDate": "2026-05-13",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 733065,
+      "link": "https://letterboxd.com/michaellamb/film/would-you-like-to-try-again/",
+      "title": "Would You Like to Try Again?, 2019 - ★★★",
+      "reviewText": "Watched on Wednesday May 13, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1313997311",
+      "filmTitle": "The Sheep Detectives",
+      "filmYear": 2026,
+      "watchedDate": "2026-05-12",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 1301421,
+      "link": "https://letterboxd.com/michaellamb/film/the-sheep-detectives/",
+      "title": "The Sheep Detectives, 2026 - ★★★★½",
+      "reviewText": "Really wonderful and charming. I went with Mary and then Ben and Elizabeth crashed our friend date and joined us. \n\nThe sheep are the stars, and the animation felt really good. I loved all the jokes referencing children’s nursery rhymes, and generally I found the humor to work for me.\n\nI wish I had a little more Hugh Jackman but it’s still impressive how effective he was at getting me acquainted and in love with the sheep — though probably the hardest thing for me to believe is that a man with those biceps is a vegetarian. \n\nGreat film.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1313002620",
       "filmTitle": "Short Circuit",
@@ -6180,34 +6216,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-outfit-2022/",
       "title": "The Outfit, 2022 - ★★★★½",
       "reviewText": "quite the picture! well-crafted in so many regards \n\nrecommended by Jennie",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1297253079",
-      "filmTitle": "Joybubbles",
-      "filmYear": 2026,
-      "watchedDate": "2026-04-28",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": 1596308,
-      "link": "https://letterboxd.com/michaellamb/film/joybubbles/",
-      "title": "Joybubbles, 2026 - ★★★★½",
-      "reviewText": "this was awesome. thanks to the Mississippi Film Society for bringing this from Sundance.\n\nwatched with Alan. we talked with Zach, Kaeley, and Lydia afterward.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1296796492",
-      "filmTitle": "MouseHunt",
-      "filmYear": 1997,
-      "watchedDate": "2026-04-28",
-      "memberRating": 4.0,
-      "rewatch": true,
-      "tmdbId": 6283,
-      "link": "https://letterboxd.com/michaellamb/film/mousehunt/1/",
-      "title": "MouseHunt, 1997 - ★★★★",
-      "reviewText": "the little \"Hakuna Matata\" Nathan Lane delivers is always golden. breaking in the 4KUHD with Alan.",
       "tags": [],
       "source": "rss"
     }
@@ -8050,7 +8058,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-11"
+    "latest": "2026-05-13"
   },
   "byYear": {
     "2017": {
@@ -14370,20 +14378,20 @@
       ]
     },
     "2026": {
-      "totalWatched": 108,
-      "uniqueFilms": 101,
+      "totalWatched": 110,
+      "uniqueFilms": 103,
       "totalRewatches": 38,
-      "averageRating": 4.11,
+      "averageRating": 4.1,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
         "1.5": 0,
         "2.0": 2,
         "2.5": 6,
-        "3.0": 4,
+        "3.0": 5,
         "3.5": 18,
         "4.0": 22,
-        "4.5": 20,
+        "4.5": 21,
         "5.0": 34,
         "unrated": 0
       },
@@ -14671,6 +14679,14 @@
         {
           "date": "2026-05-11",
           "count": 1
+        },
+        {
+          "date": "2026-05-12",
+          "count": 1
+        },
+        {
+          "date": "2026-05-13",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14680,8 +14696,8 @@
         "1980s": 3,
         "1990s": 8,
         "2000s": 11,
-        "2010s": 16,
-        "2020s": 64
+        "2010s": 17,
+        "2020s": 65
       },
       "mostRewatched": [
         {
