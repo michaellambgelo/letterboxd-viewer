@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2473,
-  "uniqueFilms": 2074,
+  "totalWatched": 2474,
+  "uniqueFilms": 2075,
   "totalRewatches": 818,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -8,7 +8,7 @@
     "1.0": 22,
     "1.5": 27,
     "2.0": 105,
-    "2.5": 121,
+    "2.5": 122,
     "3.0": 282,
     "3.5": 370,
     "4.0": 525,
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 20
+    "2026-05": 21
   },
   "heatmapData": [
     {
@@ -5857,7 +5857,7 @@
     },
     {
       "date": "2026-05-15",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -5947,6 +5947,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1316612953",
+      "filmTitle": "Treadmill",
+      "filmYear": null,
+      "watchedDate": "2026-05-15",
+      "memberRating": 2.5,
+      "rewatch": false,
+      "tmdbId": 1240891,
+      "link": "https://letterboxd.com/michaellamb/film/treadmill-1/",
+      "title": "Treadmill - ★★½",
+      "reviewText": "Watched on Friday May 15, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1316529642",
       "filmTitle": "Atropia",
@@ -6210,20 +6224,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-drama/",
       "title": "The Drama, 2026 - ★★★★",
       "reviewText": "Watched on Friday May 1, 2026.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1299810483",
-      "filmTitle": "Detachment",
-      "filmYear": 2011,
-      "watchedDate": "2026-05-01",
-      "memberRating": 5.0,
-      "rewatch": false,
-      "tmdbId": 74308,
-      "link": "https://letterboxd.com/michaellamb/film/detachment/",
-      "title": "Detachment, 2011 - ★★★★★",
-      "reviewText": "bleak",
       "tags": [],
       "source": "rss"
     }
@@ -14386,16 +14386,16 @@
       ]
     },
     "2026": {
-      "totalWatched": 112,
-      "uniqueFilms": 105,
+      "totalWatched": 113,
+      "uniqueFilms": 106,
       "totalRewatches": 38,
-      "averageRating": 4.07,
+      "averageRating": 4.06,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
         "1.5": 0,
         "2.0": 3,
-        "2.5": 6,
+        "2.5": 7,
         "3.0": 6,
         "3.5": 18,
         "4.0": 22,
@@ -14702,7 +14702,7 @@
         },
         {
           "date": "2026-05-15",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
