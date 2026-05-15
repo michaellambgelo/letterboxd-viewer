@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2472,
-  "uniqueFilms": 2073,
+  "totalWatched": 2473,
+  "uniqueFilms": 2074,
   "totalRewatches": 818,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -9,7 +9,7 @@
     "1.5": 27,
     "2.0": 105,
     "2.5": 121,
-    "3.0": 281,
+    "3.0": 282,
     "3.5": 370,
     "4.0": 525,
     "4.5": 362,
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 19
+    "2026-05": 20
   },
   "heatmapData": [
     {
@@ -5854,6 +5854,10 @@
     {
       "date": "2026-05-14",
       "count": 1
+    },
+    {
+      "date": "2026-05-15",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5868,7 +5872,7 @@
     "1990s": 156,
     "2000s": 252,
     "2010s": 716,
-    "2020s": 1120
+    "2020s": 1121
   },
   "mostRewatched": [
     {
@@ -5943,6 +5947,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1316529642",
+      "filmTitle": "Atropia",
+      "filmYear": 2025,
+      "watchedDate": "2026-05-15",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 1239288,
+      "link": "https://letterboxd.com/michaellamb/film/atropia/",
+      "title": "Atropia, 2025 - ★★★",
+      "reviewText": "what is this movie",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1316214409",
       "filmTitle": "Wuthering Heights",
@@ -6206,20 +6224,6 @@
       "link": "https://letterboxd.com/michaellamb/film/detachment/",
       "title": "Detachment, 2011 - ★★★★★",
       "reviewText": "bleak",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1299415838",
-      "filmTitle": "Portland Is the New Portland",
-      "filmYear": 2024,
-      "watchedDate": "2026-04-30",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 1337006,
-      "link": "https://letterboxd.com/michaellamb/film/portland-is-the-new-portland/",
-      "title": "Portland Is the New Portland, 2024 - ★★★★",
-      "reviewText": "Xavier Dolan's Mommy",
       "tags": [],
       "source": "rss"
     }
@@ -8062,7 +8066,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-14"
+    "latest": "2026-05-15"
   },
   "byYear": {
     "2017": {
@@ -14382,17 +14386,17 @@
       ]
     },
     "2026": {
-      "totalWatched": 111,
-      "uniqueFilms": 104,
+      "totalWatched": 112,
+      "uniqueFilms": 105,
       "totalRewatches": 38,
-      "averageRating": 4.08,
+      "averageRating": 4.07,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
         "1.5": 0,
         "2.0": 3,
         "2.5": 6,
-        "3.0": 5,
+        "3.0": 6,
         "3.5": 18,
         "4.0": 22,
         "4.5": 21,
@@ -14695,6 +14699,10 @@
         {
           "date": "2026-05-14",
           "count": 1
+        },
+        {
+          "date": "2026-05-15",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14705,7 +14713,7 @@
         "1990s": 8,
         "2000s": 11,
         "2010s": 17,
-        "2020s": 66
+        "2020s": 67
       },
       "mostRewatched": [
         {
