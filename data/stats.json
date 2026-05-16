@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2474,
-  "uniqueFilms": 2075,
+  "totalWatched": 2475,
+  "uniqueFilms": 2076,
   "totalRewatches": 818,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -11,7 +11,7 @@
     "2.5": 122,
     "3.0": 282,
     "3.5": 370,
-    "4.0": 525,
+    "4.0": 526,
     "4.5": 362,
     "5.0": 568,
     "unrated": 81
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 21
+    "2026-05": 22
   },
   "heatmapData": [
     {
@@ -5857,7 +5857,7 @@
     },
     {
       "date": "2026-05-15",
-      "count": 2
+      "count": 3
     }
   ],
   "filmYearDistribution": {
@@ -5872,7 +5872,7 @@
     "1990s": 156,
     "2000s": 252,
     "2010s": 716,
-    "2020s": 1121
+    "2020s": 1122
   },
   "mostRewatched": [
     {
@@ -5947,6 +5947,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1317487770",
+      "filmTitle": "Lurker",
+      "filmYear": 2025,
+      "watchedDate": "2026-05-15",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 1264573,
+      "link": "https://letterboxd.com/michaellamb/film/lurker-2025/",
+      "title": "Lurker, 2025 - ★★★★",
+      "reviewText": "oooh that ending scratched such a specific itch",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1316612953",
       "filmTitle": "Treadmill",
@@ -6210,20 +6224,6 @@
       "link": "https://letterboxd.com/michaellamb/film/interstellar/2/",
       "title": "Interstellar, 2014 - ★★★★½",
       "reviewText": "the moment Cooper stops to look at the ships while on Cooper Station — it is already necessary for him to leave.\n\nthe daughter who loved him enough to know — do not go gentle into that good night — sends her father away to another planet.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1300174855",
-      "filmTitle": "The Drama",
-      "filmYear": 2026,
-      "watchedDate": "2026-05-01",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 1325734,
-      "link": "https://letterboxd.com/michaellamb/film/the-drama/",
-      "title": "The Drama, 2026 - ★★★★",
-      "reviewText": "Watched on Friday May 1, 2026.",
       "tags": [],
       "source": "rss"
     }
@@ -14386,8 +14386,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 113,
-      "uniqueFilms": 106,
+      "totalWatched": 114,
+      "uniqueFilms": 107,
       "totalRewatches": 38,
       "averageRating": 4.06,
       "ratingDistribution": {
@@ -14398,7 +14398,7 @@
         "2.5": 7,
         "3.0": 6,
         "3.5": 18,
-        "4.0": 22,
+        "4.0": 23,
         "4.5": 21,
         "5.0": 34,
         "unrated": 0
@@ -14702,7 +14702,7 @@
         },
         {
           "date": "2026-05-15",
-          "count": 2
+          "count": 3
         }
       ],
       "filmYearDistribution": {
@@ -14713,7 +14713,7 @@
         "1990s": 8,
         "2000s": 11,
         "2010s": 17,
-        "2020s": 67
+        "2020s": 68
       },
       "mostRewatched": [
         {
