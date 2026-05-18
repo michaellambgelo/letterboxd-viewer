@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2476,
-  "uniqueFilms": 2076,
-  "totalRewatches": 819,
+  "totalWatched": 2478,
+  "uniqueFilms": 2077,
+  "totalRewatches": 820,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
@@ -12,8 +12,8 @@
     "3.0": 282,
     "3.5": 370,
     "4.0": 527,
-    "4.5": 362,
-    "5.0": 568,
+    "4.5": 363,
+    "5.0": 569,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 23
+    "2026-05": 25
   },
   "heatmapData": [
     {
@@ -5862,6 +5862,10 @@
     {
       "date": "2026-05-16",
       "count": 1
+    },
+    {
+      "date": "2026-05-17",
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -5871,12 +5875,12 @@
     "1940s": 17,
     "1950s": 18,
     "1960s": 29,
-    "1970s": 52,
+    "1970s": 53,
     "1980s": 84,
     "1990s": 156,
     "2000s": 252,
     "2010s": 716,
-    "2020s": 1123
+    "2020s": 1124
   },
   "mostRewatched": [
     {
@@ -5951,6 +5955,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1320326864",
+      "filmTitle": "The Fabelmans",
+      "filmYear": 2022,
+      "watchedDate": "2026-05-17",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 804095,
+      "link": "https://letterboxd.com/michaellamb/film/the-fabelmans/4/",
+      "title": "The Fabelmans, 2022 - ★★★★★",
+      "reviewText": "i miss this",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1320159582",
+      "filmTitle": "All the President's Men",
+      "filmYear": 1976,
+      "watchedDate": "2026-05-17",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 891,
+      "link": "https://letterboxd.com/michaellamb/film/all-the-presidents-men/",
+      "title": "All the President's Men, 1976 - ★★★★½",
+      "reviewText": "actually makes me rethink The Devil Wears Prada films and their perspective on journalistic standards",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1318734558",
       "filmTitle": "Eddington",
@@ -6202,37 +6234,16 @@
       "reviewText": "well-written and lovingly crafted.\n\ni won tickets to see this from a giveaway hosted by Mississippi Film Society. Abigail joined.",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1301835434",
-      "filmTitle": "Marty Supreme",
-      "filmYear": 2025,
-      "watchedDate": "2026-05-02",
-      "memberRating": 4.5,
-      "rewatch": true,
-      "tmdbId": 1317288,
-      "link": "https://letterboxd.com/michaellamb/film/marty-supreme/1/",
-      "title": "Marty Supreme, 2025 - ★★★★½",
-      "reviewText": "I got blue balled by a brewery buddy who bailed an hour into this film. i'm just now finishing it, 8 days later.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1300676909",
-      "filmTitle": "Memory Project",
-      "filmYear": 2026,
-      "watchedDate": "2026-05-01",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 1436182,
-      "link": "https://letterboxd.com/michaellamb/film/memory-project/",
-      "title": "Memory Project, 2026 - ★★★★",
-      "reviewText": "The Mligram Experiment was such a captivating story to me. I was studying for my Computer Ethics course at the time, so it felt like a complementary read, thematically.\n\nThis short film caused me to re-live much of the emotions I felt learning about how the experiments worked. I found it effective. \n\nWathced via Omeleto on YouTube",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "The Fabelmans",
+      "filmYear": 2022,
+      "watchedDate": "2026-05-17",
+      "link": "https://letterboxd.com/michaellamb/film/the-fabelmans/4/",
+      "tmdbId": 804095
+    },
     {
       "filmTitle": "28 Years Later: The Bone Temple",
       "filmYear": 2026,
@@ -8070,7 +8081,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-16"
+    "latest": "2026-05-17"
   },
   "byYear": {
     "2017": {
@@ -14390,10 +14401,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 115,
-      "uniqueFilms": 108,
-      "totalRewatches": 39,
-      "averageRating": 4.06,
+      "totalWatched": 117,
+      "uniqueFilms": 110,
+      "totalRewatches": 40,
+      "averageRating": 4.07,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
@@ -14403,8 +14414,8 @@
         "3.0": 6,
         "3.5": 18,
         "4.0": 24,
-        "4.5": 21,
-        "5.0": 34,
+        "4.5": 22,
+        "5.0": 35,
         "unrated": 0
       },
       "heatmapData": [
@@ -14711,17 +14722,22 @@
         {
           "date": "2026-05-16",
           "count": 1
+        },
+        {
+          "date": "2026-05-17",
+          "count": 2
         }
       ],
       "filmYearDistribution": {
         "1890s": 1,
         "1950s": 1,
         "1960s": 3,
+        "1970s": 1,
         "1980s": 3,
         "1990s": 8,
         "2000s": 11,
         "2010s": 17,
-        "2020s": 69
+        "2020s": 70
       },
       "mostRewatched": [
         {
@@ -14761,6 +14777,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "The Fabelmans",
+          "filmYear": 2022,
+          "watchedDate": "2026-05-17",
+          "link": "https://letterboxd.com/michaellamb/film/the-fabelmans/4/"
+        },
         {
           "filmTitle": "28 Years Later: The Bone Temple",
           "filmYear": 2026,
@@ -14814,12 +14836,6 @@
           "filmYear": 2025,
           "watchedDate": "2026-04-20",
           "link": "https://letterboxd.com/michaellamb/film/wake-up-dead-man/3/"
-        },
-        {
-          "filmTitle": "The Librarians",
-          "filmYear": 2025,
-          "watchedDate": "2026-04-14",
-          "link": "https://letterboxd.com/michaellamb/film/the-librarians-2025/"
         }
       ]
     }
