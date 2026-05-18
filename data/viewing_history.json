@@ -1,5 +1,33 @@
 [
   {
+    "guid": "letterboxd-entry-1320326864",
+    "filmTitle": "The Fabelmans",
+    "filmYear": 2022,
+    "watchedDate": "2026-05-17",
+    "memberRating": 5.0,
+    "rewatch": true,
+    "tmdbId": 804095,
+    "link": "https://letterboxd.com/michaellamb/film/the-fabelmans/4/",
+    "title": "The Fabelmans, 2022 - ★★★★★",
+    "reviewText": "i miss this",
+    "tags": [],
+    "source": "rss"
+  },
+  {
+    "guid": "letterboxd-entry-1320159582",
+    "filmTitle": "All the President's Men",
+    "filmYear": 1976,
+    "watchedDate": "2026-05-17",
+    "memberRating": 4.5,
+    "rewatch": false,
+    "tmdbId": 891,
+    "link": "https://letterboxd.com/michaellamb/film/all-the-presidents-men/",
+    "title": "All the President's Men, 1976 - ★★★★½",
+    "reviewText": "actually makes me rethink The Devil Wears Prada films and their perspective on journalistic standards",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1318734558",
     "filmTitle": "Eddington",
     "filmYear": 2025,
