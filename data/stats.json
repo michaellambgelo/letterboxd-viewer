@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2478,
-  "uniqueFilms": 2077,
+  "totalWatched": 2479,
+  "uniqueFilms": 2078,
   "totalRewatches": 820,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -12,7 +12,7 @@
     "3.0": 282,
     "3.5": 370,
     "4.0": 527,
-    "4.5": 363,
+    "4.5": 364,
     "5.0": 569,
     "unrated": 81
   },
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 25
+    "2026-05": 26
   },
   "heatmapData": [
     {
@@ -5866,6 +5866,10 @@
     {
       "date": "2026-05-17",
       "count": 2
+    },
+    {
+      "date": "2026-05-20",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5880,7 +5884,7 @@
     "1990s": 156,
     "2000s": 252,
     "2010s": 716,
-    "2020s": 1124
+    "2020s": 1125
   },
   "mostRewatched": [
     {
@@ -5955,6 +5959,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1323579578",
+      "filmTitle": "Obsession",
+      "filmYear": 2025,
+      "watchedDate": "2026-05-20",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 1339713,
+      "link": "https://letterboxd.com/michaellamb/film/obsession-2025-2/",
+      "title": "Obsession, 2025 - ★★★★½",
+      "reviewText": "Curry Barker has such a good control of the tone during this, at times I was both horrified and amused. I want to rewatch and really pay attention to the editing because lots of little things kept adding on to the tension.\n\nAnd what a love story! It's like Romeo & Juliet \n\nAlso, to the guy in the Pop Tarts pajama bottoms next to me who said, \"I'm so confused\" at the end credits: you didn't watch the movie! You were on your phone the whole time — of course you're confused, you're trying to understand something you completely ignored.\n\nWatched with Azia, Micah, Eddie, and Mackenzie",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1320326864",
       "filmTitle": "The Fabelmans",
@@ -6218,20 +6236,6 @@
       "link": "https://letterboxd.com/michaellamb/film/lazarus-the-awakening/",
       "title": "Lazarus: The Awakening, 2026 - ½",
       "reviewText": "hard pass",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1302054710",
-      "filmTitle": "The Devil Wears Prada 2",
-      "filmYear": 2026,
-      "watchedDate": "2026-05-02",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 1314481,
-      "link": "https://letterboxd.com/michaellamb/film/the-devil-wears-prada-2/",
-      "title": "The Devil Wears Prada 2, 2026 - ★★★★",
-      "reviewText": "well-written and lovingly crafted.\n\ni won tickets to see this from a giveaway hosted by Mississippi Film Society. Abigail joined.",
       "tags": [],
       "source": "rss"
     }
@@ -8081,7 +8085,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-17"
+    "latest": "2026-05-20"
   },
   "byYear": {
     "2017": {
@@ -14401,8 +14405,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 117,
-      "uniqueFilms": 110,
+      "totalWatched": 118,
+      "uniqueFilms": 111,
       "totalRewatches": 40,
       "averageRating": 4.07,
       "ratingDistribution": {
@@ -14414,7 +14418,7 @@
         "3.0": 6,
         "3.5": 18,
         "4.0": 24,
-        "4.5": 22,
+        "4.5": 23,
         "5.0": 35,
         "unrated": 0
       },
@@ -14726,6 +14730,10 @@
         {
           "date": "2026-05-17",
           "count": 2
+        },
+        {
+          "date": "2026-05-20",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14737,7 +14745,7 @@
         "1990s": 8,
         "2000s": 11,
         "2010s": 17,
-        "2020s": 70
+        "2020s": 71
       },
       "mostRewatched": [
         {
