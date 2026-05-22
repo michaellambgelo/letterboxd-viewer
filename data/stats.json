@@ -1,19 +1,19 @@
 {
-  "totalWatched": 2479,
-  "uniqueFilms": 2078,
-  "totalRewatches": 820,
+  "totalWatched": 2482,
+  "uniqueFilms": 2080,
+  "totalRewatches": 821,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
     "1.0": 22,
     "1.5": 27,
     "2.0": 105,
-    "2.5": 122,
+    "2.5": 123,
     "3.0": 282,
     "3.5": 370,
     "4.0": 527,
-    "4.5": 364,
-    "5.0": 569,
+    "4.5": 365,
+    "5.0": 570,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 26
+    "2026-05": 29
   },
   "heatmapData": [
     {
@@ -5870,6 +5870,14 @@
     {
       "date": "2026-05-20",
       "count": 1
+    },
+    {
+      "date": "2026-05-21",
+      "count": 1
+    },
+    {
+      "date": "2026-05-22",
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -5879,9 +5887,9 @@
     "1940s": 17,
     "1950s": 18,
     "1960s": 29,
-    "1970s": 53,
+    "1970s": 55,
     "1980s": 84,
-    "1990s": 156,
+    "1990s": 157,
     "2000s": 252,
     "2010s": 716,
     "2020s": 1125
@@ -5959,6 +5967,48 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1325146818",
+      "filmTitle": "The Last Waltz",
+      "filmYear": 1978,
+      "watchedDate": "2026-05-22",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 13963,
+      "link": "https://letterboxd.com/michaellamb/film/the-last-waltz/",
+      "title": "The Last Waltz, 1978 - ★★★★½",
+      "reviewText": "This movie told me to play it loud and so I did\n\nTitle #2 in the MUBI Collection \"Martin Scorsese: The Early Years\"",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1325043963",
+      "filmTitle": "Boxcar Bertha",
+      "filmYear": 1972,
+      "watchedDate": "2026-05-22",
+      "memberRating": 2.5,
+      "rewatch": false,
+      "tmdbId": 22784,
+      "link": "https://letterboxd.com/michaellamb/film/boxcar-bertha/",
+      "title": "Boxcar Bertha, 1972 - ★★½",
+      "reviewText": "terribly sad ending",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1325043016",
+      "filmTitle": "The Truman Show",
+      "filmYear": 1998,
+      "watchedDate": "2026-05-21",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 37165,
+      "link": "https://letterboxd.com/michaellamb/film/the-truman-show/7/",
+      "title": "The Truman Show, 1998 - ★★★★★",
+      "reviewText": "Watched on Thursday May 21, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1323579578",
       "filmTitle": "Obsession",
@@ -6196,51 +6246,16 @@
       "reviewText": "holy shit this is on Letterboxd",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1305718364",
-      "filmTitle": "The Truman Show",
-      "filmYear": 1998,
-      "watchedDate": "2026-05-05",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 37165,
-      "link": "https://letterboxd.com/michaellamb/film/the-truman-show/6/",
-      "title": "The Truman Show, 1998 - ★★★★★",
-      "reviewText": "you never had a camera inside my head",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1304935727",
-      "filmTitle": "Souvenir Drunk",
-      "filmYear": 2024,
-      "watchedDate": "2026-05-04",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": 1688310,
-      "link": "https://letterboxd.com/michaellamb/film/souvenir-drunk/",
-      "title": "Souvenir Drunk, 2024 - ★★★",
-      "reviewText": "Watched on Monday May 4, 2026.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1303739104",
-      "filmTitle": "Lazarus: The Awakening",
-      "filmYear": 2026,
-      "watchedDate": "2026-05-03",
-      "memberRating": 0.5,
-      "rewatch": false,
-      "tmdbId": 1617412,
-      "link": "https://letterboxd.com/michaellamb/film/lazarus-the-awakening/",
-      "title": "Lazarus: The Awakening, 2026 - ½",
-      "reviewText": "hard pass",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "The Truman Show",
+      "filmYear": 1998,
+      "watchedDate": "2026-05-21",
+      "link": "https://letterboxd.com/michaellamb/film/the-truman-show/7/",
+      "tmdbId": 37165
+    },
     {
       "filmTitle": "The Fabelmans",
       "filmYear": 2022,
@@ -6254,13 +6269,6 @@
       "watchedDate": "2026-05-09",
       "link": "https://letterboxd.com/michaellamb/film/28-years-later-the-bone-temple/4/",
       "tmdbId": 1272837
-    },
-    {
-      "filmTitle": "The Truman Show",
-      "filmYear": 1998,
-      "watchedDate": "2026-05-05",
-      "link": "https://letterboxd.com/michaellamb/film/the-truman-show/6/",
-      "tmdbId": 37165
     },
     {
       "filmTitle": "Detachment",
@@ -8085,7 +8093,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-20"
+    "latest": "2026-05-22"
   },
   "byYear": {
     "2017": {
@@ -14405,21 +14413,21 @@
       ]
     },
     "2026": {
-      "totalWatched": 118,
-      "uniqueFilms": 111,
-      "totalRewatches": 40,
+      "totalWatched": 121,
+      "uniqueFilms": 113,
+      "totalRewatches": 41,
       "averageRating": 4.07,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
         "1.5": 0,
         "2.0": 3,
-        "2.5": 7,
+        "2.5": 8,
         "3.0": 6,
         "3.5": 18,
         "4.0": 24,
-        "4.5": 23,
-        "5.0": 35,
+        "4.5": 24,
+        "5.0": 36,
         "unrated": 0
       },
       "heatmapData": [
@@ -14734,15 +14742,23 @@
         {
           "date": "2026-05-20",
           "count": 1
+        },
+        {
+          "date": "2026-05-21",
+          "count": 1
+        },
+        {
+          "date": "2026-05-22",
+          "count": 2
         }
       ],
       "filmYearDistribution": {
         "1890s": 1,
         "1950s": 1,
         "1960s": 3,
-        "1970s": 1,
+        "1970s": 3,
         "1980s": 3,
-        "1990s": 8,
+        "1990s": 9,
         "2000s": 11,
         "2010s": 17,
         "2020s": 71
@@ -14754,6 +14770,13 @@
           "filmYear": 2026,
           "tmdbId": null,
           "link": "https://boxd.it/cFxBLT"
+        },
+        {
+          "count": 2,
+          "filmTitle": "The Truman Show",
+          "filmYear": 1998,
+          "tmdbId": 37165,
+          "link": "https://letterboxd.com/michaellamb/film/the-truman-show/6/"
         },
         {
           "count": 2,
@@ -14775,16 +14798,15 @@
           "filmYear": 2025,
           "tmdbId": null,
           "link": "https://boxd.it/cZLYxN"
-        },
-        {
-          "count": 2,
-          "filmTitle": "KPop Demon Hunters",
-          "filmYear": 2025,
-          "tmdbId": null,
-          "link": "https://boxd.it/cE7DYp"
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "The Truman Show",
+          "filmYear": 1998,
+          "watchedDate": "2026-05-21",
+          "link": "https://letterboxd.com/michaellamb/film/the-truman-show/7/"
+        },
         {
           "filmTitle": "The Fabelmans",
           "filmYear": 2022,
@@ -14796,12 +14818,6 @@
           "filmYear": 2026,
           "watchedDate": "2026-05-09",
           "link": "https://letterboxd.com/michaellamb/film/28-years-later-the-bone-temple/4/"
-        },
-        {
-          "filmTitle": "The Truman Show",
-          "filmYear": 1998,
-          "watchedDate": "2026-05-05",
-          "link": "https://letterboxd.com/michaellamb/film/the-truman-show/6/"
         },
         {
           "filmTitle": "Detachment",

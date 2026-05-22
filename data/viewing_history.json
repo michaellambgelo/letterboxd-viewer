@@ -1,5 +1,47 @@
 [
   {
+    "guid": "letterboxd-entry-1325146818",
+    "filmTitle": "The Last Waltz",
+    "filmYear": 1978,
+    "watchedDate": "2026-05-22",
+    "memberRating": 4.5,
+    "rewatch": false,
+    "tmdbId": 13963,
+    "link": "https://letterboxd.com/michaellamb/film/the-last-waltz/",
+    "title": "The Last Waltz, 1978 - ★★★★½",
+    "reviewText": "This movie told me to play it loud and so I did\n\nTitle #2 in the MUBI Collection \"Martin Scorsese: The Early Years\"",
+    "tags": [],
+    "source": "rss"
+  },
+  {
+    "guid": "letterboxd-entry-1325043963",
+    "filmTitle": "Boxcar Bertha",
+    "filmYear": 1972,
+    "watchedDate": "2026-05-22",
+    "memberRating": 2.5,
+    "rewatch": false,
+    "tmdbId": 22784,
+    "link": "https://letterboxd.com/michaellamb/film/boxcar-bertha/",
+    "title": "Boxcar Bertha, 1972 - ★★½",
+    "reviewText": "terribly sad ending",
+    "tags": [],
+    "source": "rss"
+  },
+  {
+    "guid": "letterboxd-entry-1325043016",
+    "filmTitle": "The Truman Show",
+    "filmYear": 1998,
+    "watchedDate": "2026-05-21",
+    "memberRating": 5.0,
+    "rewatch": true,
+    "tmdbId": 37165,
+    "link": "https://letterboxd.com/michaellamb/film/the-truman-show/7/",
+    "title": "The Truman Show, 1998 - ★★★★★",
+    "reviewText": "Watched on Thursday May 21, 2026.",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1323579578",
     "filmTitle": "Obsession",
     "filmYear": 2025,
