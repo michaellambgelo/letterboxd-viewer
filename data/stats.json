@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2482,
-  "uniqueFilms": 2080,
+  "totalWatched": 2483,
+  "uniqueFilms": 2081,
   "totalRewatches": 821,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -8,7 +8,7 @@
     "1.0": 22,
     "1.5": 27,
     "2.0": 105,
-    "2.5": 123,
+    "2.5": 124,
     "3.0": 282,
     "3.5": 370,
     "4.0": 527,
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 29
+    "2026-05": 30
   },
   "heatmapData": [
     {
@@ -5878,6 +5878,10 @@
     {
       "date": "2026-05-22",
       "count": 2
+    },
+    {
+      "date": "2026-05-23",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5892,7 +5896,7 @@
     "1990s": 157,
     "2000s": 252,
     "2010s": 716,
-    "2020s": 1125
+    "2020s": 1126
   },
   "mostRewatched": [
     {
@@ -5967,6 +5971,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1326703859",
+      "filmTitle": "In the Grey",
+      "filmYear": 2026,
+      "watchedDate": "2026-05-23",
+      "memberRating": 2.5,
+      "rewatch": false,
+      "tmdbId": 1122573,
+      "link": "https://letterboxd.com/michaellamb/film/in-the-grey-2026/",
+      "title": "In the Grey, 2026 - ★★½",
+      "reviewText": "Henry Cavill looks good so that’s one reason to watch this\n\nThe writing is pretty shitty but the action is fun\n\nWatch this movie if you want to forget it",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1325146818",
       "filmTitle": "The Last Waltz",
@@ -6230,20 +6248,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-passenger-2023/",
       "title": "The Passenger, 2023 - ★★★½",
       "reviewText": "queer",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1307416839",
-      "filmTitle": "Gary",
-      "filmYear": 2026,
-      "watchedDate": "2026-05-06",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 1688652,
-      "link": "https://letterboxd.com/michaellamb/film/gary-2026/",
-      "title": "Gary, 2026 - ★★★★",
-      "reviewText": "holy shit this is on Letterboxd",
       "tags": [],
       "source": "rss"
     }
@@ -8093,7 +8097,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-22"
+    "latest": "2026-05-23"
   },
   "byYear": {
     "2017": {
@@ -14413,16 +14417,16 @@
       ]
     },
     "2026": {
-      "totalWatched": 121,
-      "uniqueFilms": 113,
+      "totalWatched": 122,
+      "uniqueFilms": 114,
       "totalRewatches": 41,
-      "averageRating": 4.07,
+      "averageRating": 4.06,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
         "1.5": 0,
         "2.0": 3,
-        "2.5": 8,
+        "2.5": 9,
         "3.0": 6,
         "3.5": 18,
         "4.0": 24,
@@ -14750,6 +14754,10 @@
         {
           "date": "2026-05-22",
           "count": 2
+        },
+        {
+          "date": "2026-05-23",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14761,7 +14769,7 @@
         "1990s": 9,
         "2000s": 11,
         "2010s": 17,
-        "2020s": 71
+        "2020s": 72
       },
       "mostRewatched": [
         {
