@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2483,
+  "totalWatched": 2484,
   "uniqueFilms": 2081,
-  "totalRewatches": 821,
+  "totalRewatches": 822,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
@@ -13,7 +13,7 @@
     "3.5": 370,
     "4.0": 527,
     "4.5": 365,
-    "5.0": 570,
+    "5.0": 571,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -100,7 +100,7 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 31,
-    "2026-05": 30
+    "2026-05": 31
   },
   "heatmapData": [
     {
@@ -5881,7 +5881,7 @@
     },
     {
       "date": "2026-05-23",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -5896,7 +5896,7 @@
     "1990s": 157,
     "2000s": 252,
     "2010s": 716,
-    "2020s": 1126
+    "2020s": 1127
   },
   "mostRewatched": [
     {
@@ -5971,6 +5971,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1327058765",
+      "filmTitle": "Wake Up Dead Man",
+      "filmYear": 2025,
+      "watchedDate": "2026-05-23",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 812583,
+      "link": "https://letterboxd.com/michaellamb/film/wake-up-dead-man/4/",
+      "title": "Wake Up Dead Man, 2025 - ★★★★★",
+      "reviewText": "So I've done the past hour doing exactly that, and now I'll put down this pen and hand it to you, and I guess wait, while you read my story of the murder of Monsignor Jefferson WicksThis quote coming from Father Jud just after the hour turns on the runtime is 👌🏻 chef's kiss",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1326703859",
       "filmTitle": "In the Grey",
@@ -6236,23 +6250,16 @@
       "reviewText": "do not watch this on YouTube — not only does it look like shit, they've shredded it to bits.",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1307416101",
-      "filmTitle": "The Passenger",
-      "filmYear": 2023,
-      "watchedDate": "2026-05-07",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 957314,
-      "link": "https://letterboxd.com/michaellamb/film/the-passenger-2023/",
-      "title": "The Passenger, 2023 - ★★★½",
-      "reviewText": "queer",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Wake Up Dead Man",
+      "filmYear": 2025,
+      "watchedDate": "2026-05-23",
+      "link": "https://letterboxd.com/michaellamb/film/wake-up-dead-man/4/",
+      "tmdbId": 812583
+    },
     {
       "filmTitle": "The Truman Show",
       "filmYear": 1998,
@@ -6315,13 +6322,6 @@
       "watchedDate": "2026-04-21",
       "link": "https://letterboxd.com/michaellamb/film/1-2-3-all-eyes-on-me/3/",
       "tmdbId": 754398
-    },
-    {
-      "filmTitle": "Wake Up Dead Man",
-      "filmYear": 2025,
-      "watchedDate": "2026-04-20",
-      "link": "https://letterboxd.com/michaellamb/film/wake-up-dead-man/3/",
-      "tmdbId": 812583
     },
     {
       "filmTitle": "The Librarians",
@@ -14417,10 +14417,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 122,
+      "totalWatched": 123,
       "uniqueFilms": 114,
-      "totalRewatches": 41,
-      "averageRating": 4.06,
+      "totalRewatches": 42,
+      "averageRating": 4.07,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
@@ -14431,7 +14431,7 @@
         "3.5": 18,
         "4.0": 24,
         "4.5": 24,
-        "5.0": 36,
+        "5.0": 37,
         "unrated": 0
       },
       "heatmapData": [
@@ -14757,7 +14757,7 @@
         },
         {
           "date": "2026-05-23",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -14769,7 +14769,7 @@
         "1990s": 9,
         "2000s": 11,
         "2010s": 17,
-        "2020s": 72
+        "2020s": 73
       },
       "mostRewatched": [
         {
@@ -14778,6 +14778,13 @@
           "filmYear": 2026,
           "tmdbId": null,
           "link": "https://boxd.it/cFxBLT"
+        },
+        {
+          "count": 2,
+          "filmTitle": "Wake Up Dead Man",
+          "filmYear": 2025,
+          "tmdbId": 812583,
+          "link": "https://letterboxd.com/michaellamb/film/wake-up-dead-man/3/"
         },
         {
           "count": 2,
@@ -14799,16 +14806,15 @@
           "filmYear": 2026,
           "tmdbId": null,
           "link": "https://boxd.it/dyCznF"
-        },
-        {
-          "count": 2,
-          "filmTitle": "Hamnet",
-          "filmYear": 2025,
-          "tmdbId": null,
-          "link": "https://boxd.it/cZLYxN"
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Wake Up Dead Man",
+          "filmYear": 2025,
+          "watchedDate": "2026-05-23",
+          "link": "https://letterboxd.com/michaellamb/film/wake-up-dead-man/4/"
+        },
         {
           "filmTitle": "The Truman Show",
           "filmYear": 1998,
@@ -14862,12 +14868,6 @@
           "filmYear": 2020,
           "watchedDate": "2026-04-21",
           "link": "https://letterboxd.com/michaellamb/film/1-2-3-all-eyes-on-me/3/"
-        },
-        {
-          "filmTitle": "Wake Up Dead Man",
-          "filmYear": 2025,
-          "watchedDate": "2026-04-20",
-          "link": "https://letterboxd.com/michaellamb/film/wake-up-dead-man/3/"
         }
       ]
     }
