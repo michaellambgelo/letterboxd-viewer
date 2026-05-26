@@ -1,7 +1,7 @@
 {
   "totalWatched": 2484,
-  "uniqueFilms": 2081,
-  "totalRewatches": 822,
+  "uniqueFilms": 2082,
+  "totalRewatches": 821,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
@@ -12,8 +12,8 @@
     "3.0": 282,
     "3.5": 370,
     "4.0": 527,
-    "4.5": 365,
-    "5.0": 571,
+    "4.5": 366,
+    "5.0": 570,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -99,8 +99,8 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 31,
-    "2026-05": 31
+    "2026-04": 30,
+    "2026-05": 32
   },
   "heatmapData": [
     {
@@ -5765,7 +5765,7 @@
     },
     {
       "date": "2026-04-14",
-      "count": 4
+      "count": 3
     },
     {
       "date": "2026-04-16",
@@ -5882,6 +5882,10 @@
     {
       "date": "2026-05-23",
       "count": 2
+    },
+    {
+      "date": "2026-05-25",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5971,6 +5975,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1329573640",
+      "filmTitle": "I Love Boosters",
+      "filmYear": 2026,
+      "watchedDate": "2026-05-25",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 1227877,
+      "link": "https://letterboxd.com/michaellamb/film/i-love-boosters/",
+      "title": "I Love Boosters, 2026 - ★★★★½",
+      "reviewText": "outrageous color and ridiculously fun\n\na little less substantial than Sorry to Bother You but it absolutely commits to the style, and I loved the style",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1327058765",
       "filmTitle": "Wake Up Dead Man",
@@ -6236,20 +6254,6 @@
       "reviewText": "\"do we help them?\"\n\n\"of course we do.\"\n\nabsolutely rips",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1308255277",
-      "filmTitle": "The Silence of the Lambs",
-      "filmYear": 1991,
-      "watchedDate": "2026-05-08",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 274,
-      "link": "https://letterboxd.com/michaellamb/film/the-silence-of-the-lambs/",
-      "title": "The Silence of the Lambs, 1991 - ★★★★",
-      "reviewText": "do not watch this on YouTube — not only does it look like shit, they've shredded it to bits.",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
@@ -6336,13 +6340,6 @@
       "watchedDate": "2026-04-14",
       "link": "https://letterboxd.com/michaellamb/film/ex-machina-2015/4/",
       "tmdbId": 264660
-    },
-    {
-      "filmTitle": "Dune: Part Two",
-      "filmYear": 2024,
-      "watchedDate": "2026-04-14",
-      "link": "https://letterboxd.com/michaellamb/film/dune-part-two/17/",
-      "tmdbId": 693134
     },
     {
       "filmTitle": "Sinners",
@@ -8097,7 +8094,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-23"
+    "latest": "2026-05-25"
   },
   "byYear": {
     "2017": {
@@ -14419,8 +14416,8 @@
     "2026": {
       "totalWatched": 123,
       "uniqueFilms": 114,
-      "totalRewatches": 42,
-      "averageRating": 4.07,
+      "totalRewatches": 41,
+      "averageRating": 4.06,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
@@ -14430,8 +14427,8 @@
         "3.0": 6,
         "3.5": 18,
         "4.0": 24,
-        "4.5": 24,
-        "5.0": 37,
+        "4.5": 25,
+        "5.0": 36,
         "unrated": 0
       },
       "heatmapData": [
@@ -14641,7 +14638,7 @@
         },
         {
           "date": "2026-04-14",
-          "count": 4
+          "count": 3
         },
         {
           "date": "2026-04-16",
@@ -14758,6 +14755,10 @@
         {
           "date": "2026-05-23",
           "count": 2
+        },
+        {
+          "date": "2026-05-25",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
