@@ -1,7 +1,7 @@
 {
   "totalWatched": 2484,
-  "uniqueFilms": 2082,
-  "totalRewatches": 821,
+  "uniqueFilms": 2083,
+  "totalRewatches": 820,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
@@ -10,10 +10,10 @@
     "2.0": 105,
     "2.5": 124,
     "3.0": 282,
-    "3.5": 370,
+    "3.5": 371,
     "4.0": 527,
     "4.5": 366,
-    "5.0": 570,
+    "5.0": 569,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -99,8 +99,8 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 30,
-    "2026-05": 32
+    "2026-04": 29,
+    "2026-05": 33
   },
   "heatmapData": [
     {
@@ -5765,7 +5765,7 @@
     },
     {
       "date": "2026-04-14",
-      "count": 3
+      "count": 2
     },
     {
       "date": "2026-04-16",
@@ -5886,6 +5886,10 @@
     {
       "date": "2026-05-25",
       "count": 1
+    },
+    {
+      "date": "2026-05-28",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5899,8 +5903,8 @@
     "1980s": 84,
     "1990s": 157,
     "2000s": 252,
-    "2010s": 716,
-    "2020s": 1127
+    "2010s": 715,
+    "2020s": 1128
   },
   "mostRewatched": [
     {
@@ -5975,6 +5979,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1333408548",
+      "filmTitle": "Backrooms",
+      "filmYear": 2026,
+      "watchedDate": "2026-05-28",
+      "memberRating": 3.5,
+      "rewatch": false,
+      "tmdbId": 1083381,
+      "link": "https://letterboxd.com/michaellamb/film/backrooms-2026/",
+      "title": "Backrooms, 2026 - ★★★½",
+      "reviewText": "I won't say I'm entirely disappointed but it does feel like an extended Kane Pixels YouTube upload but with the most minimalist plot conceived for it. I would have loved if the ending was actually the opening of the final act -- and then just went NUTS.\n\nBut instead it only felt liminal. \n\nA one-note atmosphere is fine for a short; I needed to hear at least three notes to strike a chord. \n\nWatched with Ryan.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1329573640",
       "filmTitle": "I Love Boosters",
@@ -6240,20 +6258,6 @@
       "reviewText": "you guys, the bathroom here is nutsdave is me",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1310474951",
-      "filmTitle": "28 Years Later: The Bone Temple",
-      "filmYear": 2026,
-      "watchedDate": "2026-05-09",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 1272837,
-      "link": "https://letterboxd.com/michaellamb/film/28-years-later-the-bone-temple/4/",
-      "title": "28 Years Later: The Bone Temple, 2026 - ★★★★★",
-      "reviewText": "\"do we help them?\"\n\n\"of course we do.\"\n\nabsolutely rips",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
@@ -6333,13 +6337,6 @@
       "watchedDate": "2026-04-14",
       "link": "https://letterboxd.com/michaellamb/film/the-librarians-2025/",
       "tmdbId": 1400379
-    },
-    {
-      "filmTitle": "Ex Machina",
-      "filmYear": 2015,
-      "watchedDate": "2026-04-14",
-      "link": "https://letterboxd.com/michaellamb/film/ex-machina-2015/4/",
-      "tmdbId": 264660
     },
     {
       "filmTitle": "Sinners",
@@ -8094,7 +8091,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-05-25"
+    "latest": "2026-05-28"
   },
   "byYear": {
     "2017": {
@@ -14416,8 +14413,8 @@
     "2026": {
       "totalWatched": 123,
       "uniqueFilms": 114,
-      "totalRewatches": 41,
-      "averageRating": 4.06,
+      "totalRewatches": 40,
+      "averageRating": 4.05,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
@@ -14425,10 +14422,10 @@
         "2.0": 3,
         "2.5": 9,
         "3.0": 6,
-        "3.5": 18,
+        "3.5": 19,
         "4.0": 24,
         "4.5": 25,
-        "5.0": 36,
+        "5.0": 35,
         "unrated": 0
       },
       "heatmapData": [
@@ -14638,7 +14635,7 @@
         },
         {
           "date": "2026-04-14",
-          "count": 3
+          "count": 2
         },
         {
           "date": "2026-04-16",
@@ -14759,6 +14756,10 @@
         {
           "date": "2026-05-25",
           "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14769,8 +14770,8 @@
         "1980s": 3,
         "1990s": 9,
         "2000s": 11,
-        "2010s": 17,
-        "2020s": 73
+        "2010s": 16,
+        "2020s": 74
       },
       "mostRewatched": [
         {
