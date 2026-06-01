@@ -10,8 +10,8 @@
     "2.0": 105,
     "2.5": 124,
     "3.0": 283,
-    "3.5": 370,
-    "4.0": 528,
+    "3.5": 371,
+    "4.0": 527,
     "4.5": 366,
     "5.0": 569,
     "unrated": 81
@@ -99,8 +99,8 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 26,
-    "2026-05": 36
+    "2026-04": 25,
+    "2026-05": 37
   },
   "heatmapData": [
     {
@@ -5765,7 +5765,7 @@
     },
     {
       "date": "2026-04-18",
-      "count": 2
+      "count": 1
     },
     {
       "date": "2026-04-20",
@@ -5889,7 +5889,7 @@
     },
     {
       "date": "2026-05-31",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -5979,6 +5979,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1337761472",
+      "filmTitle": "Is God Is",
+      "filmYear": 2026,
+      "watchedDate": "2026-05-31",
+      "memberRating": 3.5,
+      "rewatch": false,
+      "tmdbId": 1380316,
+      "link": "https://letterboxd.com/michaellamb/film/is-god-is/",
+      "title": "Is God Is, 2026 - ★★★½",
+      "reviewText": "I love a good revenge story\n\nWatched with Bear",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1337405688",
       "filmTitle": "The Super Mario Galaxy Movie",
@@ -6242,20 +6256,6 @@
       "link": "https://letterboxd.com/michaellamb/film/would-you-like-to-try-again/",
       "title": "Would You Like to Try Again?, 2019 - ★★★",
       "reviewText": "Watched on Wednesday May 13, 2026.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1313997311",
-      "filmTitle": "The Sheep Detectives",
-      "filmYear": 2026,
-      "watchedDate": "2026-05-12",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": 1301421,
-      "link": "https://letterboxd.com/michaellamb/film/the-sheep-detectives/",
-      "title": "The Sheep Detectives, 2026 - ★★★★½",
-      "reviewText": "Really wonderful and charming. I went with Mary and then Ben and Elizabeth crashed our friend date and joined us. \n\nThe sheep are the stars, and the animation felt really good. I loved all the jokes referencing children’s nursery rhymes, and generally I found the humor to work for me.\n\nI wish I had a little more Hugh Jackman but it’s still impressive how effective he was at getting me acquainted and in love with the sheep — though probably the hardest thing for me to believe is that a man with those biceps is a vegetarian. \n\nGreat film.",
       "tags": [],
       "source": "rss"
     }
@@ -14422,8 +14422,8 @@
         "2.0": 3,
         "2.5": 9,
         "3.0": 7,
-        "3.5": 18,
-        "4.0": 25,
+        "3.5": 19,
+        "4.0": 24,
         "4.5": 25,
         "5.0": 35,
         "unrated": 0
@@ -14635,7 +14635,7 @@
         },
         {
           "date": "2026-04-18",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2026-04-20",
@@ -14759,7 +14759,7 @@
         },
         {
           "date": "2026-05-31",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
