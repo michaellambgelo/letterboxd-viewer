@@ -1,5 +1,33 @@
 [
   {
+    "guid": "letterboxd-entry-1339640380",
+    "filmTitle": "The Whale",
+    "filmYear": 2022,
+    "watchedDate": "2026-06-02",
+    "memberRating": 3.5,
+    "rewatch": true,
+    "tmdbId": 785084,
+    "link": "https://letterboxd.com/michaellamb/film/the-whale-2022/5/",
+    "title": "The Whale, 2022 - ★★★½",
+    "reviewText": "Okay, I think I can finally admit this film is good\n\nIt's free on YouTube",
+    "tags": [],
+    "source": "rss"
+  },
+  {
+    "guid": "letterboxd-entry-1339524138",
+    "filmTitle": "The Immortal",
+    "filmYear": 2019,
+    "watchedDate": "2026-06-02",
+    "memberRating": 3.0,
+    "rewatch": false,
+    "tmdbId": 419447,
+    "link": "https://letterboxd.com/michaellamb/film/the-immortal-2019-1/",
+    "title": "The Immortal, 2019 - ★★★",
+    "reviewText": "Watched on Tuesday June 2, 2026.",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1338818134",
     "filmTitle": "The History of Sound",
     "filmYear": 2025,
@@ -668,34 +696,6 @@
     "link": "https://letterboxd.com/michaellamb/film/inception/2/",
     "title": "Inception, 2010 - ★★★★★",
     "reviewText": "isn't it pretty cool that for two and a half hours basically nothing happens",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1288735463",
-    "filmTitle": "1, 2, 3, All Eyes On Me",
-    "filmYear": 2020,
-    "watchedDate": "2026-04-21",
-    "memberRating": 5.0,
-    "rewatch": true,
-    "tmdbId": 754398,
-    "link": "https://letterboxd.com/michaellamb/film/1-2-3-all-eyes-on-me/3/",
-    "title": "1, 2, 3, All Eyes On Me, 2020 - ★★★★★",
-    "reviewText": "it struck me on this rewatch how Anthony is in the final frame and not Ms. Leena\n\nrewatched because it was uploaded to Omeleto",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1287469422",
-    "filmTitle": "Wake Up Dead Man",
-    "filmYear": 2025,
-    "watchedDate": "2026-04-20",
-    "memberRating": 5.0,
-    "rewatch": true,
-    "tmdbId": 812583,
-    "link": "https://letterboxd.com/michaellamb/film/wake-up-dead-man/3/",
-    "title": "Wake Up Dead Man, 2025 - ★★★★★",
-    "reviewText": "worth every minute of runtime",
     "tags": [],
     "source": "rss"
   },

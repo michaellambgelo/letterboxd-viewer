@@ -1,7 +1,7 @@
 {
   "totalWatched": 2484,
-  "uniqueFilms": 2082,
-  "totalRewatches": 821,
+  "uniqueFilms": 2083,
+  "totalRewatches": 820,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
@@ -9,11 +9,11 @@
     "1.5": 27,
     "2.0": 105,
     "2.5": 124,
-    "3.0": 283,
-    "3.5": 371,
+    "3.0": 284,
+    "3.5": 372,
     "4.0": 527,
     "4.5": 366,
-    "5.0": 569,
+    "5.0": 567,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -99,9 +99,9 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 24,
+    "2026-04": 22,
     "2026-05": 37,
-    "2026-06": 1
+    "2026-06": 3
   },
   "heatmapData": [
     {
@@ -5765,12 +5765,8 @@
       "count": 1
     },
     {
-      "date": "2026-04-20",
-      "count": 1
-    },
-    {
       "date": "2026-04-21",
-      "count": 3
+      "count": 2
     },
     {
       "date": "2026-04-22",
@@ -5891,6 +5887,10 @@
     {
       "date": "2026-06-01",
       "count": 1
+    },
+    {
+      "date": "2026-06-02",
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -5904,8 +5904,8 @@
     "1980s": 83,
     "1990s": 157,
     "2000s": 251,
-    "2010s": 715,
-    "2020s": 1129
+    "2010s": 716,
+    "2020s": 1128
   },
   "mostRewatched": [
     {
@@ -5980,6 +5980,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1339640380",
+      "filmTitle": "The Whale",
+      "filmYear": 2022,
+      "watchedDate": "2026-06-02",
+      "memberRating": 3.5,
+      "rewatch": true,
+      "tmdbId": 785084,
+      "link": "https://letterboxd.com/michaellamb/film/the-whale-2022/5/",
+      "title": "The Whale, 2022 - ★★★½",
+      "reviewText": "Okay, I think I can finally admit this film is good\n\nIt's free on YouTube",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1339524138",
+      "filmTitle": "The Immortal",
+      "filmYear": 2019,
+      "watchedDate": "2026-06-02",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 419447,
+      "link": "https://letterboxd.com/michaellamb/film/the-immortal-2019-1/",
+      "title": "The Immortal, 2019 - ★★★",
+      "reviewText": "Watched on Tuesday June 2, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1338818134",
       "filmTitle": "The History of Sound",
@@ -6231,34 +6259,6 @@
       "reviewText": "Watched on Friday May 15, 2026.",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1316529642",
-      "filmTitle": "Atropia",
-      "filmYear": 2025,
-      "watchedDate": "2026-05-15",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": 1239288,
-      "link": "https://letterboxd.com/michaellamb/film/atropia/",
-      "title": "Atropia, 2025 - ★★★",
-      "reviewText": "what is this movie",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1316214409",
-      "filmTitle": "Wuthering Heights",
-      "filmYear": 2026,
-      "watchedDate": "2026-05-14",
-      "memberRating": 2.0,
-      "rewatch": false,
-      "tmdbId": 1316092,
-      "link": "https://letterboxd.com/michaellamb/film/wuthering-heights-2026/",
-      "title": "Wuthering Heights, 2026 - ★★",
-      "reviewText": "it was long and i got so bored i fell asleep for five minutes or so and did not care",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
@@ -6331,13 +6331,6 @@
       "watchedDate": "2026-04-21",
       "link": "https://letterboxd.com/michaellamb/film/inception/2/",
       "tmdbId": 27205
-    },
-    {
-      "filmTitle": "1, 2, 3, All Eyes On Me",
-      "filmYear": 2020,
-      "watchedDate": "2026-04-21",
-      "link": "https://letterboxd.com/michaellamb/film/1-2-3-all-eyes-on-me/3/",
-      "tmdbId": 754398
     },
     {
       "filmTitle": "Sinners",
@@ -8092,7 +8085,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-06-01"
+    "latest": "2026-06-02"
   },
   "byYear": {
     "2017": {
@@ -14413,20 +14406,20 @@
     },
     "2026": {
       "totalWatched": 123,
-      "uniqueFilms": 114,
-      "totalRewatches": 41,
-      "averageRating": 4.07,
+      "uniqueFilms": 115,
+      "totalRewatches": 40,
+      "averageRating": 4.04,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 0,
         "1.5": 0,
         "2.0": 3,
         "2.5": 9,
-        "3.0": 7,
-        "3.5": 19,
+        "3.0": 8,
+        "3.5": 20,
         "4.0": 24,
         "4.5": 25,
-        "5.0": 35,
+        "5.0": 33,
         "unrated": 0
       },
       "heatmapData": [
@@ -14635,12 +14628,8 @@
           "count": 1
         },
         {
-          "date": "2026-04-20",
-          "count": 1
-        },
-        {
           "date": "2026-04-21",
-          "count": 3
+          "count": 2
         },
         {
           "date": "2026-04-22",
@@ -14761,6 +14750,10 @@
         {
           "date": "2026-06-01",
           "count": 1
+        },
+        {
+          "date": "2026-06-02",
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -14771,8 +14764,8 @@
         "1980s": 2,
         "1990s": 9,
         "2000s": 10,
-        "2010s": 16,
-        "2020s": 75
+        "2010s": 17,
+        "2020s": 74
       },
       "mostRewatched": [
         {
@@ -14781,13 +14774,6 @@
           "filmYear": 2026,
           "tmdbId": null,
           "link": "https://boxd.it/cFxBLT"
-        },
-        {
-          "count": 2,
-          "filmTitle": "Wake Up Dead Man",
-          "filmYear": 2025,
-          "tmdbId": 812583,
-          "link": "https://letterboxd.com/michaellamb/film/wake-up-dead-man/3/"
         },
         {
           "count": 2,
@@ -14809,6 +14795,13 @@
           "filmYear": 2026,
           "tmdbId": null,
           "link": "https://boxd.it/dyCznF"
+        },
+        {
+          "count": 2,
+          "filmTitle": "Hamnet",
+          "filmYear": 2025,
+          "tmdbId": null,
+          "link": "https://boxd.it/cZLYxN"
         }
       ],
       "highestRated": [
