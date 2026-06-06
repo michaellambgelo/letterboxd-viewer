@@ -8,9 +8,9 @@
     "1.0": 21,
     "1.5": 27,
     "2.0": 105,
-    "2.5": 124,
+    "2.5": 125,
     "3.0": 284,
-    "3.5": 373,
+    "3.5": 372,
     "4.0": 527,
     "4.5": 366,
     "5.0": 566,
@@ -99,9 +99,9 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 20,
+    "2026-04": 19,
     "2026-05": 37,
-    "2026-06": 5
+    "2026-06": 6
   },
   "heatmapData": [
     {
@@ -5766,7 +5766,7 @@
     },
     {
       "date": "2026-04-22",
-      "count": 2
+      "count": 1
     },
     {
       "date": "2026-04-23",
@@ -5891,6 +5891,10 @@
     {
       "date": "2026-06-04",
       "count": 1
+    },
+    {
+      "date": "2026-06-05",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5980,6 +5984,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1344067675",
+      "filmTitle": "A Murder at the End of the World",
+      "filmYear": 2023,
+      "watchedDate": "2026-06-05",
+      "memberRating": 2.5,
+      "rewatch": false,
+      "tmdbId": null,
+      "link": "https://letterboxd.com/michaellamb/film/a-murder-at-the-end-of-the-world/",
+      "title": "A Murder at the End of the World, 2023 - ★★½",
+      "reviewText": "I liked a good bit of this but struggled to really believe it.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1342701047",
       "filmTitle": "Dune: Part Two",
@@ -6243,20 +6261,6 @@
       "link": "https://letterboxd.com/michaellamb/film/all-the-presidents-men/",
       "title": "All the President's Men, 1976 - ★★★★½",
       "reviewText": "actually makes me rethink The Devil Wears Prada films and their perspective on journalistic standards",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1318734558",
-      "filmTitle": "Eddington",
-      "filmYear": 2025,
-      "watchedDate": "2026-05-16",
-      "memberRating": 4.0,
-      "rewatch": true,
-      "tmdbId": 648878,
-      "link": "https://letterboxd.com/michaellamb/film/eddington/1/",
-      "title": "Eddington, 2025 - ★★★★",
-      "reviewText": "first time rewatching since my theater experience.\n\nthere were some moments that had me laughing out loud.\n\ngreat filmmaking.",
       "tags": [],
       "source": "rss"
     }
@@ -8078,7 +8082,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-06-04"
+    "latest": "2026-06-05"
   },
   "byYear": {
     "2017": {
@@ -14407,9 +14411,9 @@
         "1.0": 0,
         "1.5": 0,
         "2.0": 3,
-        "2.5": 9,
+        "2.5": 10,
         "3.0": 8,
-        "3.5": 21,
+        "3.5": 20,
         "4.0": 24,
         "4.5": 25,
         "5.0": 32,
@@ -14622,7 +14626,7 @@
         },
         {
           "date": "2026-04-22",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2026-04-23",
@@ -14746,6 +14750,10 @@
         },
         {
           "date": "2026-06-04",
+          "count": 1
+        },
+        {
+          "date": "2026-06-05",
           "count": 1
         }
       ],
