@@ -1,7 +1,7 @@
 {
   "totalWatched": 2484,
-  "uniqueFilms": 2084,
-  "totalRewatches": 819,
+  "uniqueFilms": 2083,
+  "totalRewatches": 820,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
@@ -11,9 +11,9 @@
     "2.5": 125,
     "3.0": 284,
     "3.5": 372,
-    "4.0": 527,
+    "4.0": 528,
     "4.5": 366,
-    "5.0": 566,
+    "5.0": 565,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -99,9 +99,9 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 19,
+    "2026-04": 17,
     "2026-05": 37,
-    "2026-06": 6
+    "2026-06": 8
   },
   "heatmapData": [
     {
@@ -5765,12 +5765,8 @@
       "count": 1
     },
     {
-      "date": "2026-04-22",
-      "count": 1
-    },
-    {
       "date": "2026-04-23",
-      "count": 2
+      "count": 1
     },
     {
       "date": "2026-04-28",
@@ -5895,6 +5891,10 @@
     {
       "date": "2026-06-05",
       "count": 1
+    },
+    {
+      "date": "2026-06-07",
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -5905,9 +5905,9 @@
     "1950s": 18,
     "1960s": 29,
     "1970s": 55,
-    "1980s": 83,
+    "1980s": 84,
     "1990s": 157,
-    "2000s": 250,
+    "2000s": 249,
     "2010s": 715,
     "2020s": 1130
   },
@@ -5984,6 +5984,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1346613656",
+      "filmTitle": "Steel Magnolias",
+      "filmYear": 1989,
+      "watchedDate": "2026-06-07",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 10860,
+      "link": "https://letterboxd.com/michaellamb/film/steel-magnolias/",
+      "title": "Steel Magnolias, 1989 - ★★★★",
+      "reviewText": "“Drum, eat shit and die.”\n\nI loved so many moments in this. \nFantastic performances all around.\nI needed about 5 minutes taken off the end.\n\nSally Field was the throughline for me — I understood the emotional weight of the plot based on her character. \n\nI laughed and I cried. This is why I love the movies.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1346350209",
+      "filmTitle": "Obsession",
+      "filmYear": 2025,
+      "watchedDate": "2026-06-07",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 1339713,
+      "link": "https://letterboxd.com/michaellamb/film/obsession-2025-2/1/",
+      "title": "Obsession, 2025 - ★★★★½",
+      "reviewText": "Inde Navarette’s beautiful face will haunt my nightmares tonight \n\nWatched with Ryan and Andy",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1344067675",
       "filmTitle": "A Murder at the End of the World",
@@ -6235,34 +6263,6 @@
       "reviewText": "Curry Barker has such a good control of the tone during this, at times I was both horrified and amused. I want to rewatch and really pay attention to the editing because lots of little things kept adding on to the tension.\n\nAnd what a love story! It's like Romeo & Juliet 💀\n\nAlso, to the guy in the Pop Tarts pajama bottoms next to me who said, \"I'm so confused\" at the end credits: you didn't watch the movie! You were on your phone the whole time — of course you're confused, you're trying to understand something you completely ignored.\n\nWatched with Azia, Micah, Eddie, and Mackenzie",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1320326864",
-      "filmTitle": "The Fabelmans",
-      "filmYear": 2022,
-      "watchedDate": "2026-05-17",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 804095,
-      "link": "https://letterboxd.com/michaellamb/film/the-fabelmans/4/",
-      "title": "The Fabelmans, 2022 - ★★★★★",
-      "reviewText": "i miss this",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1320159582",
-      "filmTitle": "All the President's Men",
-      "filmYear": 1976,
-      "watchedDate": "2026-05-17",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": 891,
-      "link": "https://letterboxd.com/michaellamb/film/all-the-presidents-men/",
-      "title": "All the President's Men, 1976 - ★★★★½",
-      "reviewText": "actually makes me rethink The Devil Wears Prada films and their perspective on journalistic standards",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
@@ -6321,13 +6321,6 @@
       "watchedDate": "2026-04-23",
       "link": "https://letterboxd.com/michaellamb/film/in-bruges/1/",
       "tmdbId": 8321
-    },
-    {
-      "filmTitle": "Paprika",
-      "filmYear": 2006,
-      "watchedDate": "2026-04-23",
-      "link": "https://letterboxd.com/michaellamb/film/paprika-2006/",
-      "tmdbId": 4977
     },
     {
       "filmTitle": "Sinners",
@@ -8082,7 +8075,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-06-05"
+    "latest": "2026-06-07"
   },
   "byYear": {
     "2017": {
@@ -14403,9 +14396,9 @@
     },
     "2026": {
       "totalWatched": 123,
-      "uniqueFilms": 115,
-      "totalRewatches": 39,
-      "averageRating": 4.02,
+      "uniqueFilms": 114,
+      "totalRewatches": 40,
+      "averageRating": 4.01,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 0,
@@ -14414,9 +14407,9 @@
         "2.5": 10,
         "3.0": 8,
         "3.5": 20,
-        "4.0": 24,
+        "4.0": 25,
         "4.5": 25,
-        "5.0": 32,
+        "5.0": 31,
         "unrated": 0
       },
       "heatmapData": [
@@ -14625,12 +14618,8 @@
           "count": 1
         },
         {
-          "date": "2026-04-22",
-          "count": 1
-        },
-        {
           "date": "2026-04-23",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2026-04-28",
@@ -14755,6 +14744,10 @@
         {
           "date": "2026-06-05",
           "count": 1
+        },
+        {
+          "date": "2026-06-07",
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -14762,9 +14755,9 @@
         "1950s": 1,
         "1960s": 3,
         "1970s": 3,
-        "1980s": 2,
+        "1980s": 3,
         "1990s": 9,
-        "2000s": 9,
+        "2000s": 8,
         "2010s": 16,
         "2020s": 76
       },
@@ -14775,6 +14768,13 @@
           "filmYear": 2026,
           "tmdbId": null,
           "link": "https://boxd.it/cFxBLT"
+        },
+        {
+          "count": 2,
+          "filmTitle": "Obsession",
+          "filmYear": 2025,
+          "tmdbId": 1339713,
+          "link": "https://letterboxd.com/michaellamb/film/obsession-2025-2/"
         },
         {
           "count": 2,
@@ -14796,13 +14796,6 @@
           "filmYear": 2026,
           "tmdbId": null,
           "link": "https://boxd.it/dyCznF"
-        },
-        {
-          "count": 2,
-          "filmTitle": "Hamnet",
-          "filmYear": 2025,
-          "tmdbId": null,
-          "link": "https://boxd.it/cZLYxN"
         }
       ],
       "highestRated": [
@@ -14855,16 +14848,16 @@
           "link": "https://letterboxd.com/michaellamb/film/in-bruges/1/"
         },
         {
-          "filmTitle": "Paprika",
-          "filmYear": 2006,
-          "watchedDate": "2026-04-23",
-          "link": "https://letterboxd.com/michaellamb/film/paprika-2006/"
-        },
-        {
           "filmTitle": "Sinners",
           "filmYear": 2025,
           "watchedDate": "2026-04-08",
           "link": "https://boxd.it/dTS7Oz"
+        },
+        {
+          "filmTitle": "Cool Hand Luke",
+          "filmYear": 1967,
+          "watchedDate": "2026-04-07",
+          "link": "https://boxd.it/dT4sS3"
         }
       ]
     }
