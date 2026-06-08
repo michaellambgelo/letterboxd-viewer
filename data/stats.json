@@ -11,9 +11,9 @@
     "2.5": 125,
     "3.0": 284,
     "3.5": 372,
-    "4.0": 528,
+    "4.0": 529,
     "4.5": 366,
-    "5.0": 565,
+    "5.0": 564,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -99,9 +99,9 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 17,
+    "2026-04": 16,
     "2026-05": 37,
-    "2026-06": 8
+    "2026-06": 9
   },
   "heatmapData": [
     {
@@ -5765,10 +5765,6 @@
       "count": 1
     },
     {
-      "date": "2026-04-23",
-      "count": 1
-    },
-    {
       "date": "2026-04-28",
       "count": 2
     },
@@ -5894,7 +5890,7 @@
     },
     {
       "date": "2026-06-07",
-      "count": 2
+      "count": 3
     }
   ],
   "filmYearDistribution": {
@@ -5907,9 +5903,9 @@
     "1970s": 55,
     "1980s": 84,
     "1990s": 157,
-    "2000s": 249,
+    "2000s": 248,
     "2010s": 715,
-    "2020s": 1130
+    "2020s": 1131
   },
   "mostRewatched": [
     {
@@ -5984,6 +5980,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1346992108",
+      "filmTitle": "The Drama",
+      "filmYear": 2026,
+      "watchedDate": "2026-06-07",
+      "memberRating": 4.0,
+      "rewatch": true,
+      "tmdbId": 1325734,
+      "link": "https://letterboxd.com/michaellamb/film/the-drama/1/",
+      "title": "The Drama, 2026 - ★★★★",
+      "reviewText": "This sticks a solid 4 for me but I do wonder if the theme of performative nature could be explored more\n\nWatched with Jennie",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1346613656",
       "filmTitle": "Steel Magnolias",
@@ -6249,20 +6259,6 @@
       "reviewText": "Watched on Thursday May 21, 2026.",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1323579578",
-      "filmTitle": "Obsession",
-      "filmYear": 2025,
-      "watchedDate": "2026-05-20",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": 1339713,
-      "link": "https://letterboxd.com/michaellamb/film/obsession-2025-2/",
-      "title": "Obsession, 2025 - ★★★★½",
-      "reviewText": "Curry Barker has such a good control of the tone during this, at times I was both horrified and amused. I want to rewatch and really pay attention to the editing because lots of little things kept adding on to the tension.\n\nAnd what a love story! It's like Romeo & Juliet 💀\n\nAlso, to the guy in the Pop Tarts pajama bottoms next to me who said, \"I'm so confused\" at the end credits: you didn't watch the movie! You were on your phone the whole time — of course you're confused, you're trying to understand something you completely ignored.\n\nWatched with Azia, Micah, Eddie, and Mackenzie",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
@@ -6314,13 +6310,6 @@
       "watchedDate": "2026-05-01",
       "link": "https://letterboxd.com/michaellamb/film/detachment/",
       "tmdbId": 74308
-    },
-    {
-      "filmTitle": "In Bruges",
-      "filmYear": 2008,
-      "watchedDate": "2026-04-23",
-      "link": "https://letterboxd.com/michaellamb/film/in-bruges/1/",
-      "tmdbId": 8321
     },
     {
       "filmTitle": "Sinners",
@@ -14396,9 +14385,9 @@
     },
     "2026": {
       "totalWatched": 123,
-      "uniqueFilms": 114,
+      "uniqueFilms": 113,
       "totalRewatches": 40,
-      "averageRating": 4.01,
+      "averageRating": 4.0,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 0,
@@ -14407,9 +14396,9 @@
         "2.5": 10,
         "3.0": 8,
         "3.5": 20,
-        "4.0": 25,
+        "4.0": 26,
         "4.5": 25,
-        "5.0": 31,
+        "5.0": 30,
         "unrated": 0
       },
       "heatmapData": [
@@ -14618,10 +14607,6 @@
           "count": 1
         },
         {
-          "date": "2026-04-23",
-          "count": 1
-        },
-        {
           "date": "2026-04-28",
           "count": 2
         },
@@ -14747,7 +14732,7 @@
         },
         {
           "date": "2026-06-07",
-          "count": 2
+          "count": 3
         }
       ],
       "filmYearDistribution": {
@@ -14757,9 +14742,9 @@
         "1970s": 3,
         "1980s": 3,
         "1990s": 9,
-        "2000s": 8,
+        "2000s": 7,
         "2010s": 16,
-        "2020s": 76
+        "2020s": 77
       },
       "mostRewatched": [
         {
@@ -14768,6 +14753,13 @@
           "filmYear": 2026,
           "tmdbId": null,
           "link": "https://boxd.it/cFxBLT"
+        },
+        {
+          "count": 2,
+          "filmTitle": "The Drama",
+          "filmYear": 2026,
+          "tmdbId": 1325734,
+          "link": "https://letterboxd.com/michaellamb/film/the-drama/"
         },
         {
           "count": 2,
@@ -14789,13 +14781,6 @@
           "filmYear": 1967,
           "tmdbId": null,
           "link": "https://boxd.it/dSadZV"
-        },
-        {
-          "count": 2,
-          "filmTitle": "Project Hail Mary",
-          "filmYear": 2026,
-          "tmdbId": null,
-          "link": "https://boxd.it/dyCznF"
         }
       ],
       "highestRated": [
@@ -14842,12 +14827,6 @@
           "link": "https://letterboxd.com/michaellamb/film/detachment/"
         },
         {
-          "filmTitle": "In Bruges",
-          "filmYear": 2008,
-          "watchedDate": "2026-04-23",
-          "link": "https://letterboxd.com/michaellamb/film/in-bruges/1/"
-        },
-        {
           "filmTitle": "Sinners",
           "filmYear": 2025,
           "watchedDate": "2026-04-08",
@@ -14858,6 +14837,12 @@
           "filmYear": 1967,
           "watchedDate": "2026-04-07",
           "link": "https://boxd.it/dT4sS3"
+        },
+        {
+          "filmTitle": "Kill Bill: Vol. 1",
+          "filmYear": 2003,
+          "watchedDate": "2026-04-03",
+          "link": "https://boxd.it/dOzZwV"
         }
       ]
     }
