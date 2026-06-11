@@ -9,11 +9,11 @@
     "1.5": 27,
     "2.0": 105,
     "2.5": 125,
-    "3.0": 284,
+    "3.0": 285,
     "3.5": 372,
-    "4.0": 529,
-    "4.5": 366,
-    "5.0": 564,
+    "4.0": 528,
+    "4.5": 365,
+    "5.0": 565,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -99,9 +99,9 @@
     "2026-01": 21,
     "2026-02": 19,
     "2026-03": 21,
-    "2026-04": 16,
+    "2026-04": 14,
     "2026-05": 37,
-    "2026-06": 9
+    "2026-06": 11
   },
   "heatmapData": [
     {
@@ -5765,10 +5765,6 @@
       "count": 1
     },
     {
-      "date": "2026-04-28",
-      "count": 2
-    },
-    {
       "date": "2026-04-30",
       "count": 2
     },
@@ -5891,6 +5887,14 @@
     {
       "date": "2026-06-07",
       "count": 3
+    },
+    {
+      "date": "2026-06-10",
+      "count": 1
+    },
+    {
+      "date": "2026-06-11",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5902,9 +5906,9 @@
     "1960s": 29,
     "1970s": 55,
     "1980s": 84,
-    "1990s": 157,
+    "1990s": 156,
     "2000s": 248,
-    "2010s": 715,
+    "2010s": 716,
     "2020s": 1131
   },
   "mostRewatched": [
@@ -5980,6 +5984,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1350932016",
+      "filmTitle": "Master of the Universe",
+      "filmYear": 2026,
+      "watchedDate": "2026-06-11",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 1698856,
+      "link": "https://letterboxd.com/michaellamb/film/master-of-the-universe-2026/",
+      "title": "Master of the Universe, 2026 - ★★★",
+      "reviewText": "good fun and hot actors",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1350932260",
+      "filmTitle": "Blade Runner 2049",
+      "filmYear": 2017,
+      "watchedDate": "2026-06-10",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 335984,
+      "link": "https://letterboxd.com/michaellamb/film/blade-runner-2049/7/",
+      "title": "Blade Runner 2049, 2017 - ★★★★★",
+      "reviewText": "6.10.21",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1346992108",
       "filmTitle": "The Drama",
@@ -6231,37 +6263,16 @@
       "reviewText": "This movie told me to play it loud and so I did\n\nTitle #2 in the MUBI Collection \"Martin Scorsese: The Early Years\"",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1325043963",
-      "filmTitle": "Boxcar Bertha",
-      "filmYear": 1972,
-      "watchedDate": "2026-05-22",
-      "memberRating": 2.5,
-      "rewatch": false,
-      "tmdbId": 22784,
-      "link": "https://letterboxd.com/michaellamb/film/boxcar-bertha/",
-      "title": "Boxcar Bertha, 1972 - ★★½",
-      "reviewText": "terribly sad ending\n\nTitle #1 in the MUBI Collection \"Martin Scorsese: The Early Years\"",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1325043016",
-      "filmTitle": "The Truman Show",
-      "filmYear": 1998,
-      "watchedDate": "2026-05-21",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 37165,
-      "link": "https://letterboxd.com/michaellamb/film/the-truman-show/7/",
-      "title": "The Truman Show, 1998 - ★★★★★",
-      "reviewText": "Watched on Thursday May 21, 2026.",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Blade Runner 2049",
+      "filmYear": 2017,
+      "watchedDate": "2026-06-10",
+      "link": "https://letterboxd.com/michaellamb/film/blade-runner-2049/7/",
+      "tmdbId": 335984
+    },
     {
       "filmTitle": "Dune: Part Two",
       "filmYear": 2024,
@@ -8064,7 +8075,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-06-07"
+    "latest": "2026-06-11"
   },
   "byYear": {
     "2017": {
@@ -14394,11 +14405,11 @@
         "1.5": 0,
         "2.0": 3,
         "2.5": 10,
-        "3.0": 8,
+        "3.0": 9,
         "3.5": 20,
-        "4.0": 26,
-        "4.5": 25,
-        "5.0": 30,
+        "4.0": 25,
+        "4.5": 24,
+        "5.0": 31,
         "unrated": 0
       },
       "heatmapData": [
@@ -14607,10 +14618,6 @@
           "count": 1
         },
         {
-          "date": "2026-04-28",
-          "count": 2
-        },
-        {
           "date": "2026-04-30",
           "count": 2
         },
@@ -14733,6 +14740,14 @@
         {
           "date": "2026-06-07",
           "count": 3
+        },
+        {
+          "date": "2026-06-10",
+          "count": 1
+        },
+        {
+          "date": "2026-06-11",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14741,9 +14756,9 @@
         "1960s": 3,
         "1970s": 3,
         "1980s": 3,
-        "1990s": 9,
+        "1990s": 8,
         "2000s": 7,
-        "2010s": 16,
+        "2010s": 17,
         "2020s": 77
       },
       "mostRewatched": [
@@ -14784,6 +14799,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Blade Runner 2049",
+          "filmYear": 2017,
+          "watchedDate": "2026-06-10",
+          "link": "https://letterboxd.com/michaellamb/film/blade-runner-2049/7/"
+        },
         {
           "filmTitle": "Dune: Part Two",
           "filmYear": 2024,
@@ -14837,12 +14858,6 @@
           "filmYear": 1967,
           "watchedDate": "2026-04-07",
           "link": "https://boxd.it/dT4sS3"
-        },
-        {
-          "filmTitle": "Kill Bill: Vol. 1",
-          "filmYear": 2003,
-          "watchedDate": "2026-04-03",
-          "link": "https://boxd.it/dOzZwV"
         }
       ]
     }

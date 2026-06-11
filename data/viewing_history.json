@@ -1,5 +1,33 @@
 [
   {
+    "guid": "letterboxd-entry-1350932016",
+    "filmTitle": "Master of the Universe",
+    "filmYear": 2026,
+    "watchedDate": "2026-06-11",
+    "memberRating": 3.0,
+    "rewatch": false,
+    "tmdbId": 1698856,
+    "link": "https://letterboxd.com/michaellamb/film/master-of-the-universe-2026/",
+    "title": "Master of the Universe, 2026 - ★★★",
+    "reviewText": "good fun and hot actors",
+    "tags": [],
+    "source": "rss"
+  },
+  {
+    "guid": "letterboxd-entry-1350932260",
+    "filmTitle": "Blade Runner 2049",
+    "filmYear": 2017,
+    "watchedDate": "2026-06-10",
+    "memberRating": 5.0,
+    "rewatch": true,
+    "tmdbId": 335984,
+    "link": "https://letterboxd.com/michaellamb/film/blade-runner-2049/7/",
+    "title": "Blade Runner 2049, 2017 - ★★★★★",
+    "reviewText": "6.10.21",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1346992108",
     "filmTitle": "The Drama",
     "filmYear": 2026,
@@ -668,34 +696,6 @@
     "link": "https://letterboxd.com/michaellamb/film/the-outfit-2022/",
     "title": "The Outfit, 2022 - ★★★★½",
     "reviewText": "quite the picture! well-crafted in so many regards \n\nrecommended by Jennie",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1297253079",
-    "filmTitle": "Joybubbles",
-    "filmYear": 2026,
-    "watchedDate": "2026-04-28",
-    "memberRating": 4.5,
-    "rewatch": false,
-    "tmdbId": 1596308,
-    "link": "https://letterboxd.com/michaellamb/film/joybubbles/",
-    "title": "Joybubbles, 2026 - ★★★★½",
-    "reviewText": "this was awesome. thanks to the Mississippi Film Society for bringing this from Sundance.\n\nwatched with Alan. we talked with Zach, Kaeley, and Lydia afterward.",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1296796492",
-    "filmTitle": "MouseHunt",
-    "filmYear": 1997,
-    "watchedDate": "2026-04-28",
-    "memberRating": 4.0,
-    "rewatch": true,
-    "tmdbId": 6283,
-    "link": "https://letterboxd.com/michaellamb/film/mousehunt/1/",
-    "title": "MouseHunt, 1997 - ★★★★",
-    "reviewText": "the little \"Hakuna Matata\" Nathan Lane delivers is always golden. breaking in the 4KUHD with Alan.",
     "tags": [],
     "source": "rss"
   },
