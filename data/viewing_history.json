@@ -1,5 +1,19 @@
 [
   {
+    "guid": "letterboxd-entry-1354845918",
+    "filmTitle": "The Naked Gun",
+    "filmYear": 2025,
+    "watchedDate": "2026-06-13",
+    "memberRating": 3.5,
+    "rewatch": false,
+    "tmdbId": 1035259,
+    "link": "https://letterboxd.com/michaellamb/film/the-naked-gun/",
+    "title": "The Naked Gun, 2025 - ★★★½",
+    "reviewText": "My dad asked me for \"dinner and a movie\" so I took him out for a steak dinner and then we watched this action/comedy. This was not a bad pick! \n\nWatched with dad",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1351885026",
     "filmTitle": "Disclosure Day",
     "filmYear": 2026,
@@ -682,20 +696,6 @@
     "link": "https://letterboxd.com/michaellamb/film/detachment/",
     "title": "Detachment, 2011 - ★★★★★",
     "reviewText": "bleak",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1299415838",
-    "filmTitle": "Portland Is the New Portland",
-    "filmYear": 2024,
-    "watchedDate": "2026-04-30",
-    "memberRating": 4.0,
-    "rewatch": false,
-    "tmdbId": 1337006,
-    "link": "https://letterboxd.com/michaellamb/film/portland-is-the-new-portland/",
-    "title": "Portland Is the New Portland, 2024 - ★★★★",
-    "reviewText": "Xavier Dolan's Mommy",
     "tags": [],
     "source": "rss"
   },
