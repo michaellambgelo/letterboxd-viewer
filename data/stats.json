@@ -1,7 +1,7 @@
 {
   "totalWatched": 2484,
   "uniqueFilms": 2083,
-  "totalRewatches": 820,
+  "totalRewatches": 821,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
@@ -11,9 +11,9 @@
     "2.5": 125,
     "3.0": 286,
     "3.5": 374,
-    "4.0": 527,
+    "4.0": 526,
     "4.5": 364,
-    "5.0": 564,
+    "5.0": 565,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -100,8 +100,8 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 12,
-    "2026-05": 36,
-    "2026-06": 14
+    "2026-05": 35,
+    "2026-06": 15
   },
   "heatmapData": [
     {
@@ -5766,7 +5766,7 @@
     },
     {
       "date": "2026-05-01",
-      "count": 3
+      "count": 2
     },
     {
       "date": "2026-05-02",
@@ -5899,6 +5899,10 @@
     {
       "date": "2026-06-16",
       "count": 1
+    },
+    {
+      "date": "2026-06-19",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5988,6 +5992,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1361648343",
+      "filmTitle": "Aftersun",
+      "filmYear": 2022,
+      "watchedDate": "2026-06-19",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 965150,
+      "link": "https://letterboxd.com/michaellamb/film/aftersun/16/",
+      "title": "Aftersun, 2022 - ★★★★★",
+      "reviewText": "I miss.., too many people",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1358206606",
       "filmTitle": "Lee Cronin's The Mummy",
@@ -6253,23 +6271,16 @@
       "reviewText": "I won't say I'm entirely disappointed but it does feel like an extended Kane Pixels YouTube upload just with the most minimalist plot conceived for it. I would have loved if the ending was actually the opening of the final act -- and then really went NUTS.\n\nBut instead it only felt liminal. \n\nA one-note atmosphere is fine for a short; I needed to hear at least three notes to strike a chord. \n\nWatched with Ryan.",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1329573640",
-      "filmTitle": "I Love Boosters",
-      "filmYear": 2026,
-      "watchedDate": "2026-05-25",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": 1227877,
-      "link": "https://letterboxd.com/michaellamb/film/i-love-boosters/",
-      "title": "I Love Boosters, 2026 - ★★★★½",
-      "reviewText": "outrageous color and ridiculously fun\n\na little less substantial than Sorry to Bother You but it absolutely commits to the style, and I loved the style",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Aftersun",
+      "filmYear": 2022,
+      "watchedDate": "2026-06-19",
+      "link": "https://letterboxd.com/michaellamb/film/aftersun/16/",
+      "tmdbId": 965150
+    },
     {
       "filmTitle": "Blade Runner 2049",
       "filmYear": 2017,
@@ -8072,7 +8083,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-06-16"
+    "latest": "2026-06-19"
   },
   "byYear": {
     "2017": {
@@ -14393,9 +14404,9 @@
     },
     "2026": {
       "totalWatched": 123,
-      "uniqueFilms": 113,
-      "totalRewatches": 40,
-      "averageRating": 3.97,
+      "uniqueFilms": 114,
+      "totalRewatches": 41,
+      "averageRating": 3.98,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 0,
@@ -14404,9 +14415,9 @@
         "2.5": 10,
         "3.0": 10,
         "3.5": 22,
-        "4.0": 24,
+        "4.0": 23,
         "4.5": 23,
-        "5.0": 30,
+        "5.0": 31,
         "unrated": 0
       },
       "heatmapData": [
@@ -14616,7 +14627,7 @@
         },
         {
           "date": "2026-05-01",
-          "count": 3
+          "count": 2
         },
         {
           "date": "2026-05-02",
@@ -14749,6 +14760,10 @@
         {
           "date": "2026-06-16",
           "count": 1
+        },
+        {
+          "date": "2026-06-19",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14772,13 +14787,6 @@
         },
         {
           "count": 2,
-          "filmTitle": "The Drama",
-          "filmYear": 2026,
-          "tmdbId": 1325734,
-          "link": "https://letterboxd.com/michaellamb/film/the-drama/"
-        },
-        {
-          "count": 2,
           "filmTitle": "Obsession",
           "filmYear": 2025,
           "tmdbId": 1339713,
@@ -14797,9 +14805,22 @@
           "filmYear": 1967,
           "tmdbId": null,
           "link": "https://boxd.it/dSadZV"
+        },
+        {
+          "count": 2,
+          "filmTitle": "Project Hail Mary",
+          "filmYear": 2026,
+          "tmdbId": null,
+          "link": "https://boxd.it/dyCznF"
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Aftersun",
+          "filmYear": 2022,
+          "watchedDate": "2026-06-19",
+          "link": "https://letterboxd.com/michaellamb/film/aftersun/16/"
+        },
         {
           "filmTitle": "Blade Runner 2049",
           "filmYear": 2017,
@@ -14853,12 +14874,6 @@
           "filmYear": 1967,
           "watchedDate": "2026-04-07",
           "link": "https://boxd.it/dT4sS3"
-        },
-        {
-          "filmTitle": "Kill Bill: Vol. 1",
-          "filmYear": 2003,
-          "watchedDate": "2026-04-03",
-          "link": "https://boxd.it/dOzZwV"
         }
       ]
     }
