@@ -11,8 +11,8 @@
     "2.5": 125,
     "3.0": 286,
     "3.5": 374,
-    "4.0": 526,
-    "4.5": 363,
+    "4.0": 525,
+    "4.5": 364,
     "5.0": 566,
     "unrated": 81
   },
@@ -100,8 +100,8 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 12,
-    "2026-05": 34,
-    "2026-06": 16
+    "2026-05": 33,
+    "2026-06": 17
   },
   "heatmapData": [
     {
@@ -5765,10 +5765,6 @@
       "count": 1
     },
     {
-      "date": "2026-05-01",
-      "count": 1
-    },
-    {
       "date": "2026-05-02",
       "count": 2
     },
@@ -5906,7 +5902,7 @@
     },
     {
       "date": "2026-06-22",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -5996,6 +5992,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1365933457",
+      "filmTitle": "Leviticus",
+      "filmYear": 2026,
+      "watchedDate": "2026-06-22",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 1564614,
+      "link": "https://letterboxd.com/michaellamb/film/leviticus-2026/",
+      "title": "Leviticus, 2026 - ★★★★½",
+      "reviewText": "fantastic pacing and a visceral metaphor for conversion therapy",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1365610828",
       "filmTitle": "Andor: A Disney+ Day Special Look",
@@ -6259,20 +6269,6 @@
       "link": "https://letterboxd.com/michaellamb/film/fallen-angels/",
       "title": "Fallen Angels, 1995 - ★★★★★",
       "reviewText": "\"They say women are made of water. So are some men. Most people fall in love for the first time as teenagers. I guess I'm a late bloomer. Maybe I am too picky. On May 30, 1995, I finally fell in love for the first time. It was raining that night.\"watched so i could do the thing where you log a movie just because it calls out a specific date in an iconic line\"the night's full of weirdos\"masturbation is such a healthy way to process your feelings — I am pro-masturbation scenes in movies",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1336009291",
-      "filmTitle": "Flower",
-      "filmYear": null,
-      "watchedDate": "2026-05-30",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 1705343,
-      "link": "https://letterboxd.com/michaellamb/film/flower-3/",
-      "title": "Flower - ★★★★",
-      "reviewText": "Watched on Saturday May 30, 2026.",
       "tags": [],
       "source": "rss"
     }
@@ -14426,8 +14422,8 @@
         "2.5": 10,
         "3.0": 10,
         "3.5": 22,
-        "4.0": 23,
-        "4.5": 22,
+        "4.0": 22,
+        "4.5": 23,
         "5.0": 32,
         "unrated": 0
       },
@@ -14637,10 +14633,6 @@
           "count": 1
         },
         {
-          "date": "2026-05-01",
-          "count": 1
-        },
-        {
           "date": "2026-05-02",
           "count": 2
         },
@@ -14778,7 +14770,7 @@
         },
         {
           "date": "2026-06-22",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
