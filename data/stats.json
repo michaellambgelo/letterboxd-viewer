@@ -1,7 +1,7 @@
 {
   "totalWatched": 2484,
-  "uniqueFilms": 2083,
-  "totalRewatches": 821,
+  "uniqueFilms": 2084,
+  "totalRewatches": 820,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
@@ -12,8 +12,8 @@
     "3.0": 286,
     "3.5": 374,
     "4.0": 526,
-    "4.5": 364,
-    "5.0": 565,
+    "4.5": 363,
+    "5.0": 566,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -100,8 +100,8 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 12,
-    "2026-05": 35,
-    "2026-06": 15
+    "2026-05": 34,
+    "2026-06": 16
   },
   "heatmapData": [
     {
@@ -5766,7 +5766,7 @@
     },
     {
       "date": "2026-05-01",
-      "count": 2
+      "count": 1
     },
     {
       "date": "2026-05-02",
@@ -5903,6 +5903,10 @@
     {
       "date": "2026-06-19",
       "count": 1
+    },
+    {
+      "date": "2026-06-22",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5916,8 +5920,8 @@
     "1980s": 84,
     "1990s": 156,
     "2000s": 248,
-    "2010s": 715,
-    "2020s": 1132
+    "2010s": 714,
+    "2020s": 1133
   },
   "mostRewatched": [
     {
@@ -5992,6 +5996,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1365610828",
+      "filmTitle": "Andor: A Disney+ Day Special Look",
+      "filmYear": 2022,
+      "watchedDate": "2026-06-22",
+      "memberRating": 5.0,
+      "rewatch": false,
+      "tmdbId": 1022100,
+      "link": "https://letterboxd.com/michaellamb/film/andor-a-disney-day-special-look/",
+      "title": "Andor: A Disney+ Day Special Look, 2022 - ★★★★★",
+      "reviewText": "I'm using this to rate the series — finally, after my fourth rewatch.\n\nI turned this on while my dad was visiting and he got sucked into it. We watched the first two arcs in season 1. I've just now finished the entire series again, and it's just so impactful because of its emphasis on the women of the galaxy.\n\nSo many sci-fi writers get away with shallow representations of women and I really appreciate well-written characters, so a prestige drama set in the Star Wars universe with spy/thriller elements sounds like a dream, and add a cherry on top for women like Bix Kaleen, Mon Mothma, Vel, Dedra, and the character who kicked off the events of this series: Maarva Andor.\n\nI love this show so much — it only gets better on rewatch.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1361648343",
       "filmTitle": "Aftersun",
@@ -6257,23 +6275,16 @@
       "reviewText": "Watched on Saturday May 30, 2026.",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1333408548",
-      "filmTitle": "Backrooms",
-      "filmYear": 2026,
-      "watchedDate": "2026-05-28",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 1083381,
-      "link": "https://letterboxd.com/michaellamb/film/backrooms-2026/",
-      "title": "Backrooms, 2026 - ★★★½",
-      "reviewText": "I won't say I'm entirely disappointed but it does feel like an extended Kane Pixels YouTube upload just with the most minimalist plot conceived for it. I would have loved if the ending was actually the opening of the final act -- and then really went NUTS.\n\nBut instead it only felt liminal. \n\nA one-note atmosphere is fine for a short; I needed to hear at least three notes to strike a chord. \n\nWatched with Ryan.",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Andor: A Disney+ Day Special Look",
+      "filmYear": 2022,
+      "watchedDate": "2026-06-22",
+      "link": "https://letterboxd.com/michaellamb/film/andor-a-disney-day-special-look/",
+      "tmdbId": 1022100
+    },
     {
       "filmTitle": "Aftersun",
       "filmYear": 2022,
@@ -8083,7 +8094,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-06-19"
+    "latest": "2026-06-22"
   },
   "byYear": {
     "2017": {
@@ -14405,7 +14416,7 @@
     "2026": {
       "totalWatched": 123,
       "uniqueFilms": 114,
-      "totalRewatches": 41,
+      "totalRewatches": 40,
       "averageRating": 3.98,
       "ratingDistribution": {
         "0.5": 1,
@@ -14416,8 +14427,8 @@
         "3.0": 10,
         "3.5": 22,
         "4.0": 23,
-        "4.5": 23,
-        "5.0": 31,
+        "4.5": 22,
+        "5.0": 32,
         "unrated": 0
       },
       "heatmapData": [
@@ -14627,7 +14638,7 @@
         },
         {
           "date": "2026-05-01",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2026-05-02",
@@ -14764,6 +14775,10 @@
         {
           "date": "2026-06-19",
           "count": 1
+        },
+        {
+          "date": "2026-06-22",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14774,8 +14789,8 @@
         "1980s": 3,
         "1990s": 8,
         "2000s": 7,
-        "2010s": 16,
-        "2020s": 78
+        "2010s": 15,
+        "2020s": 79
       },
       "mostRewatched": [
         {
@@ -14815,6 +14830,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Andor: A Disney+ Day Special Look",
+          "filmYear": 2022,
+          "watchedDate": "2026-06-22",
+          "link": "https://letterboxd.com/michaellamb/film/andor-a-disney-day-special-look/"
+        },
         {
           "filmTitle": "Aftersun",
           "filmYear": 2022,
@@ -14868,12 +14889,6 @@
           "filmYear": 2025,
           "watchedDate": "2026-04-08",
           "link": "https://boxd.it/dTS7Oz"
-        },
-        {
-          "filmTitle": "Cool Hand Luke",
-          "filmYear": 1967,
-          "watchedDate": "2026-04-07",
-          "link": "https://boxd.it/dT4sS3"
         }
       ]
     }
