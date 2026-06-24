@@ -1,7 +1,7 @@
 {
   "totalWatched": 2484,
-  "uniqueFilms": 2084,
-  "totalRewatches": 820,
+  "uniqueFilms": 2085,
+  "totalRewatches": 819,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
@@ -11,8 +11,8 @@
     "2.5": 125,
     "3.0": 286,
     "3.5": 374,
-    "4.0": 525,
-    "4.5": 364,
+    "4.0": 526,
+    "4.5": 363,
     "5.0": 566,
     "unrated": 81
   },
@@ -100,8 +100,8 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 12,
-    "2026-05": 33,
-    "2026-06": 17
+    "2026-05": 32,
+    "2026-06": 18
   },
   "heatmapData": [
     {
@@ -5766,7 +5766,7 @@
     },
     {
       "date": "2026-05-02",
-      "count": 2
+      "count": 1
     },
     {
       "date": "2026-05-03",
@@ -5903,6 +5903,10 @@
     {
       "date": "2026-06-22",
       "count": 2
+    },
+    {
+      "date": "2026-06-24",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5916,8 +5920,8 @@
     "1980s": 84,
     "1990s": 156,
     "2000s": 248,
-    "2010s": 714,
-    "2020s": 1133
+    "2010s": 715,
+    "2020s": 1132
   },
   "mostRewatched": [
     {
@@ -5992,6 +5996,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1367735246",
+      "filmTitle": "Undefeated",
+      "filmYear": 2011,
+      "watchedDate": "2026-06-24",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 82620,
+      "link": "https://letterboxd.com/michaellamb/film/undefeated-2011/",
+      "title": "Undefeated, 2011 - ★★★★",
+      "reviewText": "recommended by Jack. really great stuff.\n\nregrettably, a Weinstein Company production.\n\nwatched for free on YouTube",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1365933457",
       "filmTitle": "Leviticus",
@@ -6255,20 +6273,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-super-mario-galaxy-movie/",
       "title": "The Super Mario Galaxy Movie, 2026 - ★★★",
       "reviewText": "we've had two princesses, yes. but what about third princess?",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1336121567",
-      "filmTitle": "Fallen Angels",
-      "filmYear": 1995,
-      "watchedDate": "2026-05-30",
-      "memberRating": 5.0,
-      "rewatch": false,
-      "tmdbId": 11220,
-      "link": "https://letterboxd.com/michaellamb/film/fallen-angels/",
-      "title": "Fallen Angels, 1995 - ★★★★★",
-      "reviewText": "\"They say women are made of water. So are some men. Most people fall in love for the first time as teenagers. I guess I'm a late bloomer. Maybe I am too picky. On May 30, 1995, I finally fell in love for the first time. It was raining that night.\"watched so i could do the thing where you log a movie just because it calls out a specific date in an iconic line\"the night's full of weirdos\"masturbation is such a healthy way to process your feelings — I am pro-masturbation scenes in movies",
       "tags": [],
       "source": "rss"
     }
@@ -8090,7 +8094,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-06-22"
+    "latest": "2026-06-24"
   },
   "byYear": {
     "2017": {
@@ -14412,7 +14416,7 @@
     "2026": {
       "totalWatched": 123,
       "uniqueFilms": 114,
-      "totalRewatches": 40,
+      "totalRewatches": 39,
       "averageRating": 3.98,
       "ratingDistribution": {
         "0.5": 1,
@@ -14422,8 +14426,8 @@
         "2.5": 10,
         "3.0": 10,
         "3.5": 22,
-        "4.0": 22,
-        "4.5": 23,
+        "4.0": 23,
+        "4.5": 22,
         "5.0": 32,
         "unrated": 0
       },
@@ -14634,7 +14638,7 @@
         },
         {
           "date": "2026-05-02",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2026-05-03",
@@ -14771,6 +14775,10 @@
         {
           "date": "2026-06-22",
           "count": 2
+        },
+        {
+          "date": "2026-06-24",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14781,8 +14789,8 @@
         "1980s": 3,
         "1990s": 8,
         "2000s": 7,
-        "2010s": 15,
-        "2020s": 79
+        "2010s": 16,
+        "2020s": 78
       },
       "mostRewatched": [
         {
