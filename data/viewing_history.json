@@ -1,5 +1,19 @@
 [
   {
+    "guid": "letterboxd-entry-1370880932",
+    "filmTitle": "Midsommar",
+    "filmYear": 2019,
+    "watchedDate": "2026-06-26",
+    "memberRating": 5.0,
+    "rewatch": true,
+    "tmdbId": 530385,
+    "link": "https://letterboxd.com/michaellamb/film/midsommar/51/",
+    "title": "Midsommar, 2019 - ★★★★★",
+    "reviewText": "this is my official #50th time logging this film",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1367735246",
     "filmTitle": "Undefeated",
     "filmYear": 2011,
@@ -682,20 +696,6 @@
     "link": "https://letterboxd.com/michaellamb/film/lazarus-the-awakening/",
     "title": "Lazarus: The Awakening, 2026 - ½",
     "reviewText": "hard pass",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1302054710",
-    "filmTitle": "The Devil Wears Prada 2",
-    "filmYear": 2026,
-    "watchedDate": "2026-05-02",
-    "memberRating": 4.0,
-    "rewatch": false,
-    "tmdbId": 1314481,
-    "link": "https://letterboxd.com/michaellamb/film/the-devil-wears-prada-2/",
-    "title": "The Devil Wears Prada 2, 2026 - ★★★★",
-    "reviewText": "well-written and lovingly crafted.\n\ni won tickets to see this from a giveaway hosted by Mississippi Film Society. Abigail joined.",
     "tags": [],
     "source": "rss"
   },
