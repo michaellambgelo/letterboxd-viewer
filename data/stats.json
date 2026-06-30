@@ -1,7 +1,7 @@
 {
   "totalWatched": 2484,
-  "uniqueFilms": 2084,
-  "totalRewatches": 820,
+  "uniqueFilms": 2083,
+  "totalRewatches": 821,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 9,
@@ -9,11 +9,11 @@
     "1.5": 27,
     "2.0": 105,
     "2.5": 125,
-    "3.0": 286,
+    "3.0": 285,
     "3.5": 374,
     "4.0": 525,
     "4.5": 364,
-    "5.0": 567,
+    "5.0": 568,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -100,8 +100,8 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 12,
-    "2026-05": 30,
-    "2026-06": 20
+    "2026-05": 29,
+    "2026-06": 21
   },
   "heatmapData": [
     {
@@ -5765,10 +5765,6 @@
       "count": 1
     },
     {
-      "date": "2026-05-04",
-      "count": 1
-    },
-    {
       "date": "2026-05-05",
       "count": 1
     },
@@ -5907,6 +5903,10 @@
     {
       "date": "2026-06-27",
       "count": 1
+    },
+    {
+      "date": "2026-06-29",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5996,6 +5996,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1375113831",
+      "filmTitle": "Oppenheimer",
+      "filmYear": 2023,
+      "watchedDate": "2026-06-29",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 872585,
+      "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/15/",
+      "title": "Oppenheimer, 2023 - ★★★★★",
+      "reviewText": "Watched on Monday June 29, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1371889070",
       "filmTitle": "Supergirl",
@@ -6261,23 +6275,16 @@
       "reviewText": "Watched on Tuesday June 2, 2026.",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1338818134",
-      "filmTitle": "The History of Sound",
-      "filmYear": 2025,
-      "watchedDate": "2026-06-01",
-      "memberRating": 4.0,
-      "rewatch": true,
-      "tmdbId": 891584,
-      "link": "https://letterboxd.com/michaellamb/film/the-history-of-sound/1/",
-      "title": "The History of Sound, 2025 - ★★★★",
-      "reviewText": "i love folk music. i love paul mescal & josh o'connor. i love sam amidon. \n\ni hope that my 4-star rating indicates that this is an excellent film worth taking the time to watch, regardless your personal interest in folk music, this film shows a queer love story that is complicated, historic, and true.\n\nhappy pride month, from me to you 🏳️‍🌈",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Oppenheimer",
+      "filmYear": 2023,
+      "watchedDate": "2026-06-29",
+      "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/15/",
+      "tmdbId": 872585
+    },
     {
       "filmTitle": "Midsommar",
       "filmYear": 2019,
@@ -8101,7 +8108,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-06-27"
+    "latest": "2026-06-29"
   },
   "byYear": {
     "2017": {
@@ -14423,19 +14430,19 @@
     "2026": {
       "totalWatched": 123,
       "uniqueFilms": 114,
-      "totalRewatches": 40,
-      "averageRating": 4.02,
+      "totalRewatches": 41,
+      "averageRating": 4.04,
       "ratingDistribution": {
         "0.5": 0,
         "1.0": 0,
         "1.5": 0,
         "2.0": 3,
         "2.5": 10,
-        "3.0": 10,
+        "3.0": 9,
         "3.5": 22,
         "4.0": 22,
         "4.5": 23,
-        "5.0": 33,
+        "5.0": 34,
         "unrated": 0
       },
       "heatmapData": [
@@ -14644,10 +14651,6 @@
           "count": 1
         },
         {
-          "date": "2026-05-04",
-          "count": 1
-        },
-        {
           "date": "2026-05-05",
           "count": 1
         },
@@ -14786,6 +14789,10 @@
         {
           "date": "2026-06-27",
           "count": 1
+        },
+        {
+          "date": "2026-06-29",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14837,6 +14844,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Oppenheimer",
+          "filmYear": 2023,
+          "watchedDate": "2026-06-29",
+          "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/15/"
+        },
         {
           "filmTitle": "Midsommar",
           "filmYear": 2019,
@@ -14890,12 +14903,6 @@
           "filmYear": 2022,
           "watchedDate": "2026-05-17",
           "link": "https://letterboxd.com/michaellamb/film/the-fabelmans/4/"
-        },
-        {
-          "filmTitle": "28 Years Later: The Bone Temple",
-          "filmYear": 2026,
-          "watchedDate": "2026-05-09",
-          "link": "https://letterboxd.com/michaellamb/film/28-years-later-the-bone-temple/4/"
         }
       ]
     }
