@@ -1,19 +1,19 @@
 {
   "totalWatched": 2484,
-  "uniqueFilms": 2083,
-  "totalRewatches": 821,
+  "uniqueFilms": 2084,
+  "totalRewatches": 820,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 9,
     "1.0": 21,
     "1.5": 27,
     "2.0": 105,
-    "2.5": 125,
+    "2.5": 126,
     "3.0": 285,
     "3.5": 374,
     "4.0": 525,
     "4.5": 364,
-    "5.0": 568,
+    "5.0": 567,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -100,8 +100,9 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 12,
-    "2026-05": 29,
-    "2026-06": 21
+    "2026-05": 28,
+    "2026-06": 21,
+    "2026-07": 1
   },
   "heatmapData": [
     {
@@ -5765,10 +5766,6 @@
       "count": 1
     },
     {
-      "date": "2026-05-05",
-      "count": 1
-    },
-    {
       "date": "2026-05-06",
       "count": 1
     },
@@ -5907,6 +5904,10 @@
     {
       "date": "2026-06-29",
       "count": 1
+    },
+    {
+      "date": "2026-07-02",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5918,10 +5919,10 @@
     "1960s": 29,
     "1970s": 55,
     "1980s": 84,
-    "1990s": 156,
+    "1990s": 155,
     "2000s": 248,
     "2010s": 716,
-    "2020s": 1131
+    "2020s": 1132
   },
   "mostRewatched": [
     {
@@ -5996,6 +5997,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1378934939",
+      "filmTitle": "Freakier Friday",
+      "filmYear": 2025,
+      "watchedDate": "2026-07-02",
+      "memberRating": 2.5,
+      "rewatch": false,
+      "tmdbId": 1125257,
+      "link": "https://letterboxd.com/michaellamb/film/freakier-friday/",
+      "title": "Freakier Friday, 2025 - ★★½",
+      "reviewText": "Watched on Thursday July 2, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1375113831",
       "filmTitle": "Oppenheimer",
@@ -6259,20 +6274,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-whale-2022/5/",
       "title": "The Whale, 2022 - ★★★½",
       "reviewText": "Okay, I think I can finally admit this film is good\n\nIt's free on YouTube",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1339524138",
-      "filmTitle": "The Immortal",
-      "filmYear": 2019,
-      "watchedDate": "2026-06-02",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": 419447,
-      "link": "https://letterboxd.com/michaellamb/film/the-immortal-2019-1/",
-      "title": "The Immortal, 2019 - ★★★",
-      "reviewText": "Watched on Tuesday June 2, 2026.",
       "tags": [],
       "source": "rss"
     }
@@ -8108,7 +8109,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-06-29"
+    "latest": "2026-07-02"
   },
   "byYear": {
     "2017": {
@@ -14429,20 +14430,20 @@
     },
     "2026": {
       "totalWatched": 123,
-      "uniqueFilms": 114,
-      "totalRewatches": 41,
-      "averageRating": 4.04,
+      "uniqueFilms": 115,
+      "totalRewatches": 40,
+      "averageRating": 4.02,
       "ratingDistribution": {
         "0.5": 0,
         "1.0": 0,
         "1.5": 0,
         "2.0": 3,
-        "2.5": 10,
+        "2.5": 11,
         "3.0": 9,
         "3.5": 22,
         "4.0": 22,
         "4.5": 23,
-        "5.0": 34,
+        "5.0": 33,
         "unrated": 0
       },
       "heatmapData": [
@@ -14651,10 +14652,6 @@
           "count": 1
         },
         {
-          "date": "2026-05-05",
-          "count": 1
-        },
-        {
           "date": "2026-05-06",
           "count": 1
         },
@@ -14793,6 +14790,10 @@
         {
           "date": "2026-06-29",
           "count": 1
+        },
+        {
+          "date": "2026-07-02",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14801,10 +14802,10 @@
         "1960s": 3,
         "1970s": 3,
         "1980s": 3,
-        "1990s": 8,
+        "1990s": 7,
         "2000s": 7,
         "2010s": 17,
-        "2020s": 77
+        "2020s": 78
       },
       "mostRewatched": [
         {
@@ -14823,13 +14824,6 @@
         },
         {
           "count": 2,
-          "filmTitle": "The Truman Show",
-          "filmYear": 1998,
-          "tmdbId": 37165,
-          "link": "https://letterboxd.com/michaellamb/film/the-truman-show/6/"
-        },
-        {
-          "count": 2,
           "filmTitle": "Cool Hand Luke",
           "filmYear": 1967,
           "tmdbId": null,
@@ -14841,6 +14835,13 @@
           "filmYear": 2026,
           "tmdbId": null,
           "link": "https://boxd.it/dyCznF"
+        },
+        {
+          "count": 2,
+          "filmTitle": "Hamnet",
+          "filmYear": 2025,
+          "tmdbId": null,
+          "link": "https://boxd.it/cZLYxN"
         }
       ],
       "highestRated": [

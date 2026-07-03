@@ -1,5 +1,19 @@
 [
   {
+    "guid": "letterboxd-entry-1378934939",
+    "filmTitle": "Freakier Friday",
+    "filmYear": 2025,
+    "watchedDate": "2026-07-02",
+    "memberRating": 2.5,
+    "rewatch": false,
+    "tmdbId": 1125257,
+    "link": "https://letterboxd.com/michaellamb/film/freakier-friday/",
+    "title": "Freakier Friday, 2025 - ★★½",
+    "reviewText": "Watched on Thursday July 2, 2026.",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1375113831",
     "filmTitle": "Oppenheimer",
     "filmYear": 2023,
@@ -682,20 +696,6 @@
     "link": "https://letterboxd.com/michaellamb/film/gary-2026/",
     "title": "Gary, 2026 - ★★★★",
     "reviewText": "holy shit this is on Letterboxd",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1305718364",
-    "filmTitle": "The Truman Show",
-    "filmYear": 1998,
-    "watchedDate": "2026-05-05",
-    "memberRating": 5.0,
-    "rewatch": true,
-    "tmdbId": 37165,
-    "link": "https://letterboxd.com/michaellamb/film/the-truman-show/6/",
-    "title": "The Truman Show, 1998 - ★★★★★",
-    "reviewText": "you never had a camera inside my head",
     "tags": [],
     "source": "rss"
   },
