@@ -1,7 +1,7 @@
 {
   "totalWatched": 2484,
-  "uniqueFilms": 2084,
-  "totalRewatches": 820,
+  "uniqueFilms": 2083,
+  "totalRewatches": 821,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 9,
@@ -10,9 +10,9 @@
     "2.0": 105,
     "2.5": 126,
     "3.0": 285,
-    "3.5": 374,
+    "3.5": 373,
     "4.0": 525,
-    "4.5": 364,
+    "4.5": 365,
     "5.0": 567,
     "unrated": 81
   },
@@ -100,9 +100,9 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 12,
-    "2026-05": 28,
+    "2026-05": 27,
     "2026-06": 21,
-    "2026-07": 1
+    "2026-07": 2
   },
   "heatmapData": [
     {
@@ -5770,10 +5770,6 @@
       "count": 1
     },
     {
-      "date": "2026-05-07",
-      "count": 1
-    },
-    {
       "date": "2026-05-08",
       "count": 1
     },
@@ -5907,7 +5903,7 @@
     },
     {
       "date": "2026-07-02",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -5997,6 +5993,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1379142059",
+      "filmTitle": "Everything Everywhere All at Once",
+      "filmYear": 2022,
+      "watchedDate": "2026-07-02",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 545611,
+      "link": "https://letterboxd.com/michaellamb/film/everything-everywhere-all-at-once/4/",
+      "title": "Everything Everywhere All at Once, 2022 - ★★★★½",
+      "reviewText": "i've watched two Jamie Lee Curtis performances today and one of them is better than the other. find the context clues to figure it out!",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1378934939",
       "filmTitle": "Freakier Friday",
@@ -6260,20 +6270,6 @@
       "link": "https://letterboxd.com/michaellamb/film/power-ballad/",
       "title": "Power Ballad, 2026 - ★★★½",
       "reviewText": "Fantastic music comedy with the pals \n\nWatched with Eddie, Mack, Micah, and Jeana",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1339640380",
-      "filmTitle": "The Whale",
-      "filmYear": 2022,
-      "watchedDate": "2026-06-02",
-      "memberRating": 3.5,
-      "rewatch": true,
-      "tmdbId": 785084,
-      "link": "https://letterboxd.com/michaellamb/film/the-whale-2022/5/",
-      "title": "The Whale, 2022 - ★★★½",
-      "reviewText": "Okay, I think I can finally admit this film is good\n\nIt's free on YouTube",
       "tags": [],
       "source": "rss"
     }
@@ -14431,7 +14427,7 @@
     "2026": {
       "totalWatched": 123,
       "uniqueFilms": 115,
-      "totalRewatches": 40,
+      "totalRewatches": 41,
       "averageRating": 4.02,
       "ratingDistribution": {
         "0.5": 0,
@@ -14440,9 +14436,9 @@
         "2.0": 3,
         "2.5": 11,
         "3.0": 9,
-        "3.5": 22,
+        "3.5": 21,
         "4.0": 22,
-        "4.5": 23,
+        "4.5": 24,
         "5.0": 33,
         "unrated": 0
       },
@@ -14656,10 +14652,6 @@
           "count": 1
         },
         {
-          "date": "2026-05-07",
-          "count": 1
-        },
-        {
           "date": "2026-05-08",
           "count": 1
         },
@@ -14793,7 +14785,7 @@
         },
         {
           "date": "2026-07-02",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
