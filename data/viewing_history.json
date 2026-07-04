@@ -1,5 +1,19 @@
 [
   {
+    "guid": "letterboxd-entry-1380196194",
+    "filmTitle": "Spider-Man: Homecoming",
+    "filmYear": 2017,
+    "watchedDate": "2026-07-03",
+    "memberRating": 2.5,
+    "rewatch": false,
+    "tmdbId": 315635,
+    "link": "https://letterboxd.com/michaellamb/film/spider-man-homecoming/",
+    "title": "Spider-Man: Homecoming, 2017 - ★★½",
+    "reviewText": "this operates well enough but at the end I was only sold on a series of Spider-Man movies and somehow not a Spider-Man story\n\nwatched with Jennie",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1379142059",
     "filmTitle": "Everything Everywhere All at Once",
     "filmYear": 2022,
@@ -682,20 +696,6 @@
     "link": "https://letterboxd.com/michaellamb/film/the-silence-of-the-lambs/",
     "title": "The Silence of the Lambs, 1991 - ★★★★",
     "reviewText": "do not watch this on YouTube — not only does it look like shit, they've shredded it to bits.",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1307416839",
-    "filmTitle": "Gary",
-    "filmYear": 2026,
-    "watchedDate": "2026-05-06",
-    "memberRating": 4.0,
-    "rewatch": false,
-    "tmdbId": 1688652,
-    "link": "https://letterboxd.com/michaellamb/film/gary-2026/",
-    "title": "Gary, 2026 - ★★★★",
-    "reviewText": "holy shit this is on Letterboxd",
     "tags": [],
     "source": "rss"
   },
