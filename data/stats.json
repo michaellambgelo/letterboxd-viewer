@@ -1,7 +1,7 @@
 {
   "totalWatched": 2484,
-  "uniqueFilms": 2085,
-  "totalRewatches": 820,
+  "uniqueFilms": 2084,
+  "totalRewatches": 821,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 9,
@@ -10,8 +10,8 @@
     "2.0": 105,
     "2.5": 128,
     "3.0": 285,
-    "3.5": 373,
-    "4.0": 522,
+    "3.5": 372,
+    "4.0": 523,
     "4.5": 364,
     "5.0": 569,
     "unrated": 81
@@ -100,9 +100,9 @@
     "2026-02": 19,
     "2026-03": 21,
     "2026-04": 12,
-    "2026-05": 22,
+    "2026-05": 21,
     "2026-06": 21,
-    "2026-07": 7
+    "2026-07": 8
   },
   "heatmapData": [
     {
@@ -5766,10 +5766,6 @@
       "count": 1
     },
     {
-      "date": "2026-05-11",
-      "count": 1
-    },
-    {
       "date": "2026-05-12",
       "count": 1
     },
@@ -5896,6 +5892,10 @@
     {
       "date": "2026-07-04",
       "count": 3
+    },
+    {
+      "date": "2026-07-08",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5906,11 +5906,11 @@
     "1950s": 18,
     "1960s": 30,
     "1970s": 57,
-    "1980s": 84,
+    "1980s": 83,
     "1990s": 154,
     "2000s": 247,
     "2010s": 717,
-    "2020s": 1130
+    "2020s": 1131
   },
   "mostRewatched": [
     {
@@ -5985,6 +5985,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1387106233",
+      "filmTitle": "Give",
+      "filmYear": 2023,
+      "watchedDate": "2026-07-08",
+      "memberRating": 4.0,
+      "rewatch": true,
+      "tmdbId": 817471,
+      "link": "https://letterboxd.com/michaellamb/film/give-2023/1/",
+      "title": "Give, 2023 - ★★★★",
+      "reviewText": "I'm revisiting this for the first time years after watching it and I fully endorse the 4-star rating for this excellent short film I gave it in 2024.\n\nI noticed camera choices that were rich with intention -- sequences which flowed so well in my initial watch that knowing what to expect was the only way I could observe the intention.\n\nI had a lovely conversation with the filmmaker, Kenya Gillespie. Watch it now on YouTube",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1382235424",
       "filmTitle": "The Cube",
@@ -6248,20 +6262,6 @@
       "link": "https://letterboxd.com/michaellamb/film/master-of-the-universe-2026/",
       "title": "Master of the Universe, 2026 - ★★★",
       "reviewText": "good fun and hot actors\n\nI will be seated for a sequel",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1346992108",
-      "filmTitle": "The Drama",
-      "filmYear": 2026,
-      "watchedDate": "2026-06-07",
-      "memberRating": 4.0,
-      "rewatch": true,
-      "tmdbId": 1325734,
-      "link": "https://letterboxd.com/michaellamb/film/the-drama/1/",
-      "title": "The Drama, 2026 - ★★★★",
-      "reviewText": "This sticks a solid 4 for me but I do wonder if the theme of performative nature could be explored more\n\nWatched with Jennie",
       "tags": [],
       "source": "rss"
     }
@@ -8111,7 +8111,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-07-04"
+    "latest": "2026-07-08"
   },
   "byYear": {
     "2017": {
@@ -14433,8 +14433,8 @@
     "2026": {
       "totalWatched": 123,
       "uniqueFilms": 115,
-      "totalRewatches": 40,
-      "averageRating": 4.01,
+      "totalRewatches": 41,
+      "averageRating": 4.02,
       "ratingDistribution": {
         "0.5": 0,
         "1.0": 0,
@@ -14442,8 +14442,8 @@
         "2.0": 3,
         "2.5": 13,
         "3.0": 9,
-        "3.5": 21,
-        "4.0": 19,
+        "3.5": 20,
+        "4.0": 20,
         "4.5": 23,
         "5.0": 35,
         "unrated": 0
@@ -14654,10 +14654,6 @@
           "count": 1
         },
         {
-          "date": "2026-05-11",
-          "count": 1
-        },
-        {
           "date": "2026-05-12",
           "count": 1
         },
@@ -14784,6 +14780,10 @@
         {
           "date": "2026-07-04",
           "count": 3
+        },
+        {
+          "date": "2026-07-08",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14791,11 +14791,11 @@
         "1950s": 1,
         "1960s": 4,
         "1970s": 5,
-        "1980s": 3,
+        "1980s": 2,
         "1990s": 6,
         "2000s": 6,
         "2010s": 18,
-        "2020s": 76
+        "2020s": 77
       },
       "mostRewatched": [
         {
