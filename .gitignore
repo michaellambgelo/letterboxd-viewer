@@ -5,3 +5,9 @@ config.json
 __pycache__/
 *.py[cod]
 *$py.class
+
+# macOS
+.DS_Store
+
+# Letterboxd export: self-deleted content, never read by any script.
+data/archive/*/deleted/
