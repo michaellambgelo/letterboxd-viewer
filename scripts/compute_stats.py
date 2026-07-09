@@ -18,6 +18,7 @@ from load_archive import (
     get_export_date,
     load_likes,
     load_lists,
+    load_orphaned,
     load_profile,
     load_watched,
     load_watchlist,
@@ -306,6 +307,44 @@ def compute_favorite_films():
     return out
 
 
+def compute_orphaned_films():
+    """Films the user logged that Letterboxd has since removed (export `orphaned/`).
+
+    Deduped to unique films by (title, year), keeping the most-recent watch's
+    metadata plus a `logCount` of how many times it was logged. Sorted by most
+    recently watched. These are surfaced in a dedicated dashboard section and are
+    intentionally NOT part of the main lifetime stats (the export already keeps
+    them out of the main diary/watched CSVs).
+    """
+    entries = load_orphaned()
+    by_film = {}
+    for e in entries:
+        key = (str(e.get('filmTitle') or '').strip().lower(), e.get('filmYear'))
+        existing = by_film.get(key)
+        if existing is None:
+            by_film[key] = {
+                'filmTitle': e.get('filmTitle'),
+                'filmYear': e.get('filmYear'),
+                'watchedDate': e.get('watchedDate'),
+                'memberRating': e.get('memberRating'),
+                'reviewText': e.get('reviewText') or '',
+                'tags': e.get('tags') or [],
+                'logCount': 1,
+            }
+        else:
+            existing['logCount'] += 1
+            # Keep the most-recent watch's rating/review/date.
+            if (e.get('watchedDate') or '') > (existing['watchedDate'] or ''):
+                existing['watchedDate'] = e.get('watchedDate')
+                existing['memberRating'] = e.get('memberRating')
+                existing['reviewText'] = e.get('reviewText') or ''
+                existing['tags'] = e.get('tags') or []
+
+    films = list(by_film.values())
+    films.sort(key=lambda f: f.get('watchedDate') or '', reverse=True)
+    return films
+
+
 def compute_lists_summary():
     lists = load_lists()
     lists.sort(key=lambda x: (-(x.get('filmCount') or 0), x.get('name') or ''))
@@ -344,6 +383,7 @@ def main():
     stats['likedFilms'] = compute_liked_films()
     stats['favoriteFilms'] = compute_favorite_films()
     stats['lists'] = compute_lists_summary()
+    stats['orphanedFilms'] = compute_orphaned_films()
     stats['profile'] = {
         k: v for k, v in load_profile().items()
         if k in ('username', 'givenName', 'location', 'website', 'bio', 'dateJoined')
@@ -366,6 +406,7 @@ def main():
     print(f'  Liked films: {len(stats["likedFilms"])}')
     print(f'  Favorites: {len(stats["favoriteFilms"])}')
     print(f'  Lists: {len(stats["lists"])}')
+    print(f'  Orphaned (removed) films: {len(stats["orphanedFilms"])}')
     print(f'  Tags: {len(stats["tagCloud"])}')
 
 
