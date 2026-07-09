@@ -5,7 +5,12 @@ Fetches the RSS feed, cleans HTML descriptions (removes images, non-renderable
 tags), and outputs both raw and cleaned XML files.
 """
 
-import requests
+try:
+    import requests
+except Exception:
+    requests = None
+    from urllib import request as _urllib_request
+    from urllib import error as _urllib_error
 import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -54,11 +59,18 @@ def clean_description(description):
 
 def download_rss():
     try:
-        response = requests.get(url)
-        response.raise_for_status()
+        if requests is not None:
+            response = requests.get(url)
+            response.raise_for_status()
+            content = response.content
+        else:
+            with _urllib_request.urlopen(url) as resp:
+                if resp.status >= 400:
+                    raise _urllib_error.HTTPError(url, resp.status, resp.reason, resp.getheaders(), None)
+                content = resp.read()
 
         rss_path = data_dir / 'rss.xml'
-        rss_path.write_bytes(response.content)
+        rss_path.write_bytes(content)
         print(f'Downloaded RSS feed to {rss_path}')
 
         tree = ET.fromstring(response.content)
@@ -106,7 +118,9 @@ def download_rss():
         cleaned_path.write_text('\n'.join(xml_lines), encoding='utf-8')
         print(f'Saved cleaned RSS to {cleaned_path}')
 
-    except requests.RequestException as e:
+    except _urllib_error.URLError as e:
+        print(f'Failed to fetch RSS feed: {e}')
+    except requests and requests.RequestException as e:
         print(f'Failed to fetch RSS feed: {e}')
     except ET.ParseError as e:
         print(f'Failed to parse RSS feed: {e}')

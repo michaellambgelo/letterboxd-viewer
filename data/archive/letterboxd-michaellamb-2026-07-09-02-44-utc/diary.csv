@@ -172,7 +172,7 @@ Date,Name,Year,Letterboxd URI,Rating,Rewatch,Tags,Watched Date
 2021-02-14,It's Okay,2020,https://boxd.it/1EXtXR,4,,magnoliaiff,2021-02-13
 2021-02-14,The Quiet,2019,https://boxd.it/1EXClH,3.5,,magnoliaiff,2021-02-13
 2021-02-15,The Pervert's Guide to Cinema,2005,https://boxd.it/1F3Zjh,,,,2021-02-14
-2021-02-16,Beyond The Sky,2018,https://boxd.it/1FhkP5,2,,,2021-02-15
+2021-02-16,Beyond the Sky,2018,https://boxd.it/1FhkP5,2,,,2021-02-15
 2021-02-17,Gabby!,2020,https://boxd.it/1Fm9yx,4,,magnoliaiff,2021-02-16
 2021-02-17,Blocks,2020,https://boxd.it/1Fmoab,3.5,,magnoliaiff,2021-02-16
 2021-02-17,Boys & Toys,2020,https://boxd.it/1FmzaV,2.5,,magnoliaiff,2021-02-16
@@ -989,7 +989,7 @@ Date,Name,Year,Letterboxd URI,Rating,Rewatch,Tags,Watched Date
 2023-01-17,Skinamarink,2022,https://boxd.it/3IyXe5,1.5,,in theaters,2023-01-16
 2023-01-17,Two Birds,2017,https://boxd.it/3ICY5B,0.5,,"youtube, alter",2023-01-16
 2023-01-17,On the Count of Three,2021,https://boxd.it/3IFx1t,5,Yes,googleplay,2023-01-16
-2023-01-18,A Family Affair,2022,https://boxd.it/3IWe5b,3.5,,"youtube, alter",2023-01-17
+2023-01-18,A Family Affair,2020,https://boxd.it/3IWe5b,3.5,,"youtube, alter",2023-01-17
 2023-01-19,Don't Stare,2017,https://boxd.it/3J3Nbx,1,,youtube,2023-01-18
 2023-01-19,Indiana Jones and the Temple of Doom,1984,https://boxd.it/3J7Lnp,4,,primevideo,2023-01-18
 2023-01-19,The Smiling Man,2015,https://boxd.it/3JgNnp,3,,"youtube, alter",2023-01-18
@@ -1120,7 +1120,7 @@ Date,Name,Year,Letterboxd URI,Rating,Rewatch,Tags,Watched Date
 2023-04-23,Beau Is Afraid,2023,https://boxd.it/49Khvv,4,,"in theaters, moviepass",2023-04-22
 2023-04-25,Corpus Christi,2019,https://boxd.it/4aaklF,5,Yes,"mubi, fellas",2023-04-24
 2023-04-28,Guy Ritchie's The Covenant,2023,https://boxd.it/4b1coH,4,,in theaters,2023-04-27
-2023-04-28,Behind the Scenes With Jane Campion,2022,https://boxd.it/4b2XyL,3.5,,lecinemaclub,2023-04-28
+2023-04-28,Behind the Scenes with Jane Campion,2022,https://boxd.it/4b2XyL,3.5,,lecinemaclub,2023-04-28
 2023-05-01,Sisu,2022,https://boxd.it/4bONpZ,3,,"in theaters, moviepass",2023-04-30
 2023-05-01,Beau Is Afraid,2023,https://boxd.it/4bU15T,4,Yes,"jawnmizzles, in theaters",2023-04-30
 2023-05-02,House,1977,https://boxd.it/4cdCOz,5,,hbomax,2023-05-02
@@ -1527,7 +1527,6 @@ Date,Name,Year,Letterboxd URI,Rating,Rewatch,Tags,Watched Date
 2024-03-23,Rising Hope,,https://boxd.it/66PrpB,4.5,Yes,"in theaters, off2024",2024-03-22
 2024-03-23,Living Reality,2024,https://boxd.it/66QQjZ,3,Yes,"in theaters, off2024",2024-03-22
 2024-03-23,kāua - we (you and i),2023,https://boxd.it/66QSlj,3,,"in theaters, off2024",2024-03-22
-2024-03-23,Can We Really Know Anything About Carrots?,,https://boxd.it/66StUx,2.5,,"in theaters, off2024",2024-03-22
 2024-03-23,Another Sinking Sun,2023,https://boxd.it/66SwDz,4,Yes,"in theaters, off2024",2024-03-22
 2024-03-23,"I'm Sorry, I'm Late",,https://boxd.it/66Sxpt,3,,"in theaters, off2024",2024-03-22
 2024-03-23,Tooth,2023,https://boxd.it/66YkNz,3.5,,"in theaters, off2024",2024-03-22
@@ -1945,7 +1944,7 @@ Date,Name,Year,Letterboxd URI,Rating,Rewatch,Tags,Watched Date
 2025-01-17,Nightcrawler,2014,https://boxd.it/8vr5Ab,5,Yes,garbage,2025-01-16
 2025-01-19,The Civil War on Drugs,2011,https://boxd.it/8wykDH,4.5,,"youtube, garbage",2025-01-18
 2025-01-20,Munchausen,2013,https://boxd.it/8xmnGT,3,Yes,youtube,2025-01-19
-2025-01-21,O.C.D. (Obsessor Coercio Deus),2025,https://boxd.it/8yakV7,4,,youtube,2025-01-20
+2025-01-21,O.C.D. (Obsessor Coercio Deus),2024,https://boxd.it/8yakV7,4,,youtube,2025-01-20
 2025-01-21,Shrek,2001,https://boxd.it/8ypww9,5,Yes,4k,2025-01-20
 2025-01-21,The Thaw,2023,https://boxd.it/8yw89p,3,,"youtube, alter",2025-01-20
 2025-01-21,Shortage,2023,https://boxd.it/8yMjhr,2,,"youtube, omeleto",2025-01-21
@@ -2427,9 +2426,94 @@ Date,Name,Year,Letterboxd URI,Rating,Rewatch,Tags,Watched Date
 2026-04-06,The Virgin Suicides,1999,https://boxd.it/dRbvt7,4,,youtube,2026-04-05
 2026-04-06,Coming Home in the Dark,2021,https://boxd.it/dRjY4L,3,,primevideo,2026-04-05
 2026-04-07,Cool Hand Luke,1967,https://boxd.it/dSadZV,5,Yes,"dvd, williemorris",2026-04-06
-2026-04-08,Discord Mods Are The Worst...,2026,https://boxd.it/dSJYcV,3.5,,youtube,2026-04-07
 2026-04-08,You Got Gold: A Celebration of John Prine,2025,https://boxd.it/dSZVmb,4.5,,"in theaters, msfilmsociety",2026-04-07
 2026-04-08,Cool Hand Luke,1967,https://boxd.it/dT4sS3,5,Yes,"dvd, williemorris",2026-04-07
 2026-04-09,Sinners,2025,https://boxd.it/dTS7Oz,5,Yes,moviesanywhere,2026-04-08
 2026-04-10,Kimi,2022,https://boxd.it/dUDY6T,4.5,Yes,hbomax,2026-04-09
 2026-04-13,Send Help,2026,https://boxd.it/dXvenZ,4,,,2026-04-12
+2026-04-15,Dune: Part Two,2024,https://boxd.it/dYWJ0Z,5,Yes,4k,2026-04-14
+2026-04-15,Ex Machina,2015,https://boxd.it/dYWJwB,5,Yes,hbomax,2026-04-14
+2026-04-15,The Librarians,2025,https://boxd.it/dYWL6v,5,,"in theaters, msfilmsociety",2026-04-14
+2026-04-15,Autism Is a World,2004,https://boxd.it/dYWOOv,1,,"williemorris, dvd",2026-04-14
+2026-04-17,Heroic Times,1983,https://boxd.it/e0osYX,3.5,,tubi,2026-04-16
+2026-04-19,Zootopia 2,2025,https://boxd.it/e1mEfP,4,,disney+,2026-04-18
+2026-04-19,The Mummy,1999,https://boxd.it/e25Lvl,4,,4k,2026-04-18
+2026-04-21,Wake Up Dead Man,2025,https://boxd.it/e3iU6p,5,Yes,,2026-04-20
+2026-04-22,"1, 2, 3, All Eyes On Me",2020,https://boxd.it/e4a1Ez,5,Yes,"omeleto, youtube",2026-04-21
+2026-04-22,Inception,2010,https://boxd.it/e4nGJV,5,Yes,hbomax,2026-04-21
+2026-04-22,Spirited Away,2001,https://boxd.it/e4wxEZ,5,Yes,bluray,2026-04-21
+2026-04-23,Dust Bunny,2025,https://boxd.it/e4V4HF,3.5,,hbomax,2026-04-22
+2026-04-23,F*ckUps Anonymous,2025,https://boxd.it/e5eXPH,4.5,,"youtube, omeleto",2026-04-22
+2026-04-24,Paprika,2006,https://boxd.it/e5A7yN,5,,youtube,2026-04-23
+2026-04-24,In Bruges,2008,https://boxd.it/e5V5k7,5,Yes,youtube,2026-04-23
+2026-04-29,MouseHunt,1997,https://boxd.it/e9Cg4x,4,Yes,4k,2026-04-28
+2026-04-29,Joybubbles,2026,https://boxd.it/e9VpRB,4.5,,msfilmsociety,2026-04-28
+2026-05-01,The Outfit,2022,https://boxd.it/ebmhMr,4.5,,primevideo,2026-04-30
+2026-05-01,Portland Is the New Portland,2024,https://boxd.it/eboabH,4,,"youtube, omeleto",2026-04-30
+2026-05-02,Detachment,2011,https://boxd.it/ebEIQ7,5,,youtube,2026-05-01
+2026-05-02,The Drama,2026,https://boxd.it/ebU0JN,4,,"in theaters, moviepass",2026-05-01
+2026-05-02,Interstellar,2014,https://boxd.it/ecbql7,4.5,Yes,primevideo,2026-05-01
+2026-05-02,Memory Project,2026,https://boxd.it/ecf4Of,4,,"omeleto, youtube",2026-05-01
+2026-05-03,Marty Supreme,2025,https://boxd.it/ed1GF7,4.5,Yes,hbomax,2026-05-02
+2026-05-03,The Devil Wears Prada 2,2026,https://boxd.it/edaT6d,4,,in theaters,2026-05-02
+2026-05-04,Lazarus: The Awakening,2026,https://boxd.it/eejyYF,0.5,,tubi,2026-05-03
+2026-05-05,Souvenir Drunk,2024,https://boxd.it/ef7LWn,3,,"youtube, omeleto",2026-05-04
+2026-05-06,The Truman Show,1998,https://boxd.it/efEBW9,5,Yes,youtube,2026-05-05
+2026-05-08,Gary,2026,https://boxd.it/egNSrJ,4,,"disney+, hulu",2026-05-06
+2026-05-08,The Passenger,2023,https://boxd.it/egNQwH,3.5,,primevideo,2026-05-07
+2026-05-09,The Silence of the Lambs,1991,https://boxd.it/ehn3BF,4,,youtube,2026-05-08
+2026-05-10,28 Years Later: The Bone Temple,2026,https://boxd.it/eiSbZB,5,Yes,,2026-05-09
+2026-05-10,Hot Rod,2007,https://boxd.it/eiSH3z,4.5,Yes,primevideo,2026-05-09
+2026-05-11,A Son's Wedding,2024,https://boxd.it/ejPiIl,4,,"youtube, omeleto",2026-05-10
+2026-05-12,Short Circuit,1986,https://boxd.it/ekAfC9,3.5,,youtube,2026-05-11
+2026-05-13,The Sheep Detectives,2026,https://boxd.it/elfZgb,4.5,,"in theaters, merry",2026-05-12
+2026-05-13,Would You Like to Try Again?,2019,https://boxd.it/elmOlX,3,,"youtube, dust",2026-05-13
+2026-05-15,Wuthering Heights,2026,https://boxd.it/emL0WD,2,,hbomax,2026-05-14
+2026-05-16,Atropia,2025,https://boxd.it/emYf0F,3,,mubi,2026-05-15
+2026-05-16,Treadmill,,https://boxd.it/en1JJV,2.5,,"youtube, omeleto",2026-05-15
+2026-05-16,Lurker,2025,https://boxd.it/enCrxr,4,,hbomax,2026-05-15
+2026-05-17,Eddington,2025,https://boxd.it/eosL0h,4,Yes,bluray,2026-05-16
+2026-05-18,All the President's Men,1976,https://boxd.it/epqy8R,4.5,,4k,2026-05-17
+2026-05-18,The Fabelmans,2022,https://boxd.it/epxzjP,5,Yes,moviesanywhere,2026-05-17
+2026-05-21,Obsession,2025,https://boxd.it/erK377,4.5,,"in theaters, moviepass, eduardo",2026-05-20
+2026-05-23,The Truman Show,1998,https://boxd.it/esJsbv,5,Yes,youtube,2026-05-21
+2026-05-23,Boxcar Bertha,1972,https://boxd.it/esJuEf,2.5,,mubi,2026-05-22
+2026-05-23,The Last Waltz,1978,https://boxd.it/esNOdL,4.5,,mubi,2026-05-22
+2026-05-24,In the Grey,2026,https://boxd.it/etR8Np,2.5,,"in theaters, moviepass",2026-05-23
+2026-05-24,Wake Up Dead Man,2025,https://boxd.it/eu624j,5,Yes,,2026-05-23
+2026-05-26,I Love Boosters,2026,https://boxd.it/evNypj,4.5,,"in theaters, moviepass",2026-05-25
+2026-05-29,Backrooms,2026,https://boxd.it/eyosKR,3.5,,"in theaters, moviepass, ryanparker",2026-05-28
+2026-05-31,Flower,,https://boxd.it/eA9Atx,4,,msfilmsociety,2026-05-30
+2026-05-31,Fallen Angels,1995,https://boxd.it/eAeiyz,5,,hbomax,2026-05-30
+2026-06-01,The Super Mario Galaxy Movie,2026,https://boxd.it/eB6b8R,3,,,2026-05-31
+2026-06-01,Is God Is,2026,https://boxd.it/eBl6Hn,3.5,,"in theaters, moviepass, bearlee",2026-05-31
+2026-06-02,The History of Sound,2025,https://boxd.it/eC3ryJ,4,Yes,mubi,2026-06-01
+2026-06-03,The Immortal,2019,https://boxd.it/eCx4cl,3,,"dust, youtube",2026-06-02
+2026-06-03,The Whale,2022,https://boxd.it/eCBWB3,3.5,Yes,youtube,2026-06-02
+2026-06-03,Power Ballad,2026,https://boxd.it/eCUPHB,3.5,,"in theaters, msfilmsociety, eduardo",2026-06-02
+2026-06-05,Dune: Part Two,2024,https://boxd.it/eEGmN1,5,Yes,4k,2026-06-04
+2026-06-06,A Murder at the End of the World,2023,https://boxd.it/eFBI0T,2.5,,"disney+, hulu",2026-06-05
+2026-06-08,Obsession,2025,https://boxd.it/eH9tVx,4.5,Yes,"in theaters, moviepass, ryanparker",2026-06-07
+2026-06-08,Steel Magnolias,1989,https://boxd.it/eHkxgZ,4,,"netflix, ryanparker",2026-06-07
+2026-06-08,The Drama,2026,https://boxd.it/eHApND,4,Yes,jsyd,2026-06-07
+2026-06-11,Master of the Universe,2026,https://boxd.it/eKfJiF,3,,"in theaters, moviepass",2026-06-10
+2026-06-11,Blade Runner 2049,2017,https://boxd.it/eKfJW1,5,Yes,4k,2026-06-10
+2026-06-12,Disclosure Day,2026,https://boxd.it/eKTIvX,3.5,,"in theaters, imax, ryanparker",2026-06-11
+2026-06-15,The Naked Gun,2025,https://boxd.it/eMTX9b,3.5,,primevideo,2026-06-13
+2026-06-17,Lee Cronin's The Mummy,2026,https://boxd.it/ePaXPD,3,,,2026-06-16
+2026-06-20,Aftersun,2022,https://boxd.it/eRvnmv,5,Yes,bluray,2026-06-19
+2026-06-23,Andor: A Disney+ Day Special Look,2022,https://boxd.it/eUbDAZ,5,,disney+,2026-06-22
+2026-06-23,Leviticus,2026,https://boxd.it/eUpaTV,4.5,,"in theaters, moviepass",2026-06-22
+2026-06-25,Undefeated,2011,https://boxd.it/eVCMb3,4,,youtube,2026-06-24
+2026-06-27,Midsommar,2019,https://boxd.it/eXKLxL,5,Yes,youtube,2026-06-26
+2026-06-28,Supergirl,2026,https://boxd.it/eYr4aF,4.5,,"in theaters, imax",2026-06-27
+2026-06-30,Oppenheimer,2023,https://boxd.it/f0Cnfp,5,Yes,moviesanywhere,2026-06-29
+2026-07-03,Freakier Friday,2025,https://boxd.it/f3cHH9,2.5,,"williemorris, dvd",2026-07-02
+2026-07-03,Everything Everywhere All at Once,2022,https://boxd.it/f3lovB,4.5,Yes,youtube,2026-07-02
+2026-07-04,Spider-Man: Homecoming,2017,https://boxd.it/f43CNn,2.5,,jsyd,2026-07-03
+2026-07-04,Double Blind,2023,https://boxd.it/f4ippR,2.5,,youtube,2026-07-03
+2026-07-05,The Muppet Movie,1979,https://boxd.it/f4KWrR,5,,disney+,2026-07-04
+2026-07-05,Jaws,1975,https://boxd.it/f5oJWn,5,Yes,ryanparker,2026-07-04
+2026-07-05,The Cube,1969,https://boxd.it/f5rbLr,5,,youtube,2026-07-04
+2026-07-09,Give,2023,https://boxd.it/f8JyXN,4,Yes,"youtube, dekkoo",2026-07-08
+2026-07-09,The Great Muppet Caper,1981,https://boxd.it/f8XbG3,4,,disney+,2026-07-08

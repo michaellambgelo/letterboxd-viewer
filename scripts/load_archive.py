@@ -129,6 +129,59 @@ def load_diary(archive_dir=None):
     return entries
 
 
+def load_orphaned(archive_dir=None):
+    """Load the export's native `orphaned/` folder — films removed from Letterboxd.
+
+    A Letterboxd export separates diary entries whose film has since been removed
+    from Letterboxd's database into `orphaned/diary.csv` (with review text/tags in
+    `orphaned/reviews.csv`). These rows carry an empty `Letterboxd URI` because the
+    film page no longer exists, and they are absent from the main `diary.csv`, so
+    they never reach the main stats. This surfaces them for a dedicated section.
+
+    Returns rows shaped like `load_diary` (minus a resolvable link). Empty list if
+    the `orphaned/` folder is absent (older exports without any removed titles).
+    """
+    archive_dir = archive_dir or _find_archive_dir()
+    if not archive_dir:
+        return []
+
+    orphaned_dir = archive_dir / 'orphaned'
+
+    reviews_by_key = {}
+    for r in _read_csv(orphaned_dir / 'reviews.csv'):
+        key = (r['Name'], r['Year'], r['Watched Date'])
+        reviews_by_key[key] = {
+            'review': r.get('Review', '').strip(),
+            'tags': _split_tags(r.get('Tags', '')),
+        }
+
+    entries = []
+    for row in _read_csv(orphaned_dir / 'diary.csv'):
+        name = row['Name']
+        year_str = row['Year']
+        watched_date = row['Watched Date'] or row.get('Date')
+
+        review_match = reviews_by_key.get((name, year_str, watched_date), {})
+        tags = _split_tags(row.get('Tags', '')) or review_match.get('tags', [])
+
+        entries.append({
+            'guid': f'archive-orphaned-{name}-{watched_date}',
+            'filmTitle': name,
+            'filmYear': _parse_year(year_str),
+            'watchedDate': watched_date,
+            'memberRating': _parse_rating(row.get('Rating')),
+            'rewatch': row.get('Rewatch', '').strip().lower() == 'yes',
+            'tmdbId': None,
+            'link': None,
+            'title': name,
+            'reviewText': review_match.get('review', ''),
+            'tags': tags,
+            'loggedDate': row.get('Date') or None,
+            'source': 'archive-orphaned',
+        })
+    return entries
+
+
 def load_watched(archive_dir=None):
     """Load watched.csv — the film-level inventory (one row per unique film).
 

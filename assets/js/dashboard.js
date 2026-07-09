@@ -526,6 +526,35 @@
     section.removeAttribute('hidden');
   }
 
+  // Films the user logged that Letterboxd has since removed (no live page to link to)
+  function renderOrphaned(orphanedFilms) {
+    const section = document.getElementById('orphaned-section');
+    const list = document.getElementById('orphaned-list');
+    if (!section || !list || !orphanedFilms?.length) return;
+
+    list.innerHTML = orphanedFilms.map(film => {
+      const date = film.watchedDate
+        ? new Date(film.watchedDate + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+        : '';
+      const stars = film.memberRating ? ratingToStars(film.memberRating) : '';
+      const rewatched = film.logCount > 1 ? `<span class="activity-rewatch">logged ${film.logCount}×</span>` : '';
+
+      return `
+        <li class="activity-item">
+          <span class="activity-date">${date}</span>
+          <span class="activity-film">
+            ${escapeHtml(film.filmTitle || '')}
+            ${film.filmYear ? `<span class="activity-year">(${film.filmYear})</span>` : ''}
+            ${rewatched}
+          </span>
+          <span class="activity-rating">${stars}</span>
+        </li>
+      `;
+    }).join('');
+
+    section.removeAttribute('hidden');
+  }
+
   // Init
   async function init() {
     const stats = await loadStats();
@@ -544,6 +573,7 @@
     renderFavorites(stats.favoriteFilms);
     renderTagCloud(stats.tagCloud);
     renderWatchlist(stats.watchlist);
+    renderOrphaned(stats.orphanedFilms);
 
     initContactForm();
 
