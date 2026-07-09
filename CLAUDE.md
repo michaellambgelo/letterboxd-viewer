@@ -81,6 +81,7 @@ The frontend reads only these top-level keys (see `compute_stats.py` and `dashbo
 | `lists` | `[{ name, slug, url, filmCount, tags, description }, ...]` | Lists section |
 | `tagCloud` | `{ tag: count, ... }` | Tag cloud |
 | `profile` | `{ username, givenName, location, website, bio, dateJoined }` | (header future-use) |
+| `orphanedFilms` | `[{ filmTitle, filmYear, watchedDate, memberRating, reviewText, tags, logCount }, ...]` | "Logged Films Removed from Letterboxd" section |
 | `archiveExportDate` | `"YYYY-MM-DD"` | Disclaimer text |
 
 ## Development Notes
@@ -98,4 +99,5 @@ The frontend reads only these top-level keys (see `compute_stats.py` and `dashbo
 - **Timezone caveat:** `renderHeatmap()` parses dates as local time but uses `toISOString()` for lookups, which can shift cells by 1 day for users in positive-offset timezones. Not yet fixed.
 - **Cron health matters:** if the workflow stops successfully committing updated `data/stats.json` and `data/viewing_history.json`, the site goes stale silently. When investigating "missing recent data", first check `gh run list --workflow=download-data-and-assets.yml` — the data is almost always the problem, not the frontend.
 - **Refreshing the archive:** export from Letterboxd, drop the new `letterboxd-michaellamb-YYYY-MM-DD-HH-MM-utc/` folder under `data/archive/`, optionally delete the older one, and re-run `extract_history.py` + `compute_stats.py`. The loader picks the lexicographically newest folder.
+- **Orphaned (removed) films:** a Letterboxd export natively ships an `orphaned/` subfolder (`diary.csv`, `reviews.csv`, `comments.csv`) holding entries whose film was later **removed from Letterboxd's database** — these rows have an empty `Letterboxd URI` and are kept *out* of the main `diary.csv`/`watched.csv`, so they never enter the main stats. `load_archive.load_orphaned()` reads that folder and `compute_stats.compute_orphaned_films()` emits `orphanedFilms` for the "Logged Films Removed from Letterboxd" section (dedicated, not counted in lifetime totals). RSS can't reveal removals (it's a ~50-item recent window), so the export is the only source. The sibling `deleted/` subfolder (entries the user deleted, valid URIs) is intentionally unused. The archive CSVs aren't committed by the cron workflow — commit a re-exported archive folder by hand so the cron's `compute_stats.py` re-reads it.
 - **Stale artifacts to ignore:** `worker/` and `docs/letterboxd-viewer-presentation.md` are leftover from the old Last Four Watched direction and are not part of the deployed site.

@@ -51,7 +51,7 @@ Date,Name,Year,Letterboxd URI
 2020-03-16,The Lord of the Rings: The Two Towers,2002,https://boxd.it/2b5E
 2020-03-16,Star Wars,1977,https://boxd.it/72s
 2020-03-16,The Lion King,1994,https://boxd.it/201Q
-2020-03-16,Kill Bill: The Whole Bloody Affair,2006,https://boxd.it/eCrQ
+2020-03-16,Kill Bill: The Whole Bloody Affair,2004,https://boxd.it/eCrQ
 2020-03-16,Won't You Be My Neighbor?,2018,https://boxd.it/hDPU
 2020-03-16,Eternal Sunshine of the Spotless Mind,2004,https://boxd.it/6YK
 2020-03-16,Samurai Champloo,2004,https://boxd.it/o8go
@@ -763,7 +763,7 @@ Date,Name,Year,Letterboxd URI
 2023-01-15,Home Education,2016,https://boxd.it/gDvI
 2023-01-16,The Whale,2022,https://boxd.it/tw4c
 2023-01-17,Dreams,1990,https://boxd.it/1ROu
-2023-01-18,A Family Affair,2022,https://boxd.it/zLkc
+2023-01-18,A Family Affair,2020,https://boxd.it/zLkc
 2023-01-19,Indiana Jones and the Temple of Doom,1984,https://boxd.it/2bb8
 2023-01-22,House of Darkness,2022,https://boxd.it/zzlW
 2023-01-23,Happy Gilmore,1996,https://boxd.it/1Yey
@@ -826,7 +826,7 @@ Date,Name,Year,Letterboxd URI
 2023-04-22,Evil Dead Rise,2023,https://boxd.it/qIvo
 2023-04-23,Beau Is Afraid,2023,https://boxd.it/u2gE
 2023-04-28,Guy Ritchie's The Covenant,2023,https://boxd.it/xjcK
-2023-04-28,Behind the Scenes With Jane Campion,2022,https://boxd.it/z7r8
+2023-04-28,Behind the Scenes with Jane Campion,2022,https://boxd.it/z7r8
 2023-05-02,House,1977,https://boxd.it/1vsm
 2023-05-03,MouseHunt,1997,https://boxd.it/21PM
 2023-05-07,The Young Girls Turn 25,1993,https://boxd.it/61IY
@@ -1236,7 +1236,7 @@ Date,Name,Year,Letterboxd URI
 2025-01-15,Salvatore,2017,https://boxd.it/iKNS
 2025-01-15,Nosferatu the Vampyre,1979,https://boxd.it/21J0
 2025-01-19,The Civil War on Drugs,2011,https://boxd.it/5w7C
-2025-01-21,O.C.D. (Obsessor Coercio Deus),2025,https://boxd.it/KZcI
+2025-01-21,O.C.D. (Obsessor Coercio Deus),2024,https://boxd.it/KZcI
 2025-01-21,The Thaw,2023,https://boxd.it/IeFk
 2025-01-22,Kedi,2016,https://boxd.it/dHxM
 2025-01-23,Tuesday,2015,https://boxd.it/AJsU
@@ -1495,6 +1495,58 @@ Date,Name,Year,Letterboxd URI
 2026-03-30,Perfect Blue,1997,https://boxd.it/1W7A
 2026-04-01,California King,2025,https://boxd.it/xBKq
 2026-04-06,The Virgin Suicides,1999,https://boxd.it/28JG
-2026-04-08,Discord Mods Are The Worst...,2026,https://boxd.it/125MQ
 2026-04-08,You Got Gold: A Celebration of John Prine,2025,https://boxd.it/XKWW
 2026-04-13,Send Help,2026,https://boxd.it/JuhA
+2026-04-15,The Librarians,2025,https://boxd.it/RSom
+2026-04-17,Heroic Times,1983,https://boxd.it/7aSK
+2026-04-19,Zootopia 2,2025,https://boxd.it/F0vO
+2026-04-19,The Mummy,1999,https://boxd.it/2a7a
+2026-04-23,Dust Bunny,2025,https://boxd.it/DtBW
+2026-04-23,F*ckUps Anonymous,2025,https://boxd.it/11f4M
+2026-04-24,Paprika,2006,https://boxd.it/23wW
+2026-04-29,Joybubbles,2026,https://boxd.it/ZsVU
+2026-05-01,The Outfit,2022,https://boxd.it/u6Eq
+2026-05-01,Portland Is the New Portland,2024,https://boxd.it/PFXa
+2026-05-02,Detachment,2011,https://boxd.it/2BiY
+2026-05-02,The Drama,2026,https://boxd.it/OA2w
+2026-05-02,Memory Project,2026,https://boxd.it/T8JC
+2026-05-03,The Devil Wears Prada 2,2026,https://boxd.it/Oags
+2026-05-05,Souvenir Drunk,2024,https://boxd.it/134fy
+2026-05-08,The Passenger,2023,https://boxd.it/A8Zs
+2026-05-08,Gary,2026,https://boxd.it/135jm
+2026-05-09,The Silence of the Lambs,1991,https://boxd.it/2aHW
+2026-05-11,A Son's Wedding,2024,https://boxd.it/11WG0
+2026-05-12,Short Circuit,1986,https://boxd.it/26zY
+2026-05-13,The Sheep Detectives,2026,https://boxd.it/NDSe
+2026-05-13,Would You Like to Try Again?,2019,https://boxd.it/ruyK
+2026-05-16,Atropia,2025,https://boxd.it/L5Km
+2026-05-16,Lurker,2025,https://boxd.it/McHG
+2026-05-17,Eddington,2025,https://boxd.it/o6MC
+2026-05-18,All the President's Men,1976,https://boxd.it/29lU
+2026-05-21,Obsession,2025,https://boxd.it/PNqo
+2026-05-23,Boxcar Bertha,1972,https://boxd.it/1A58
+2026-05-23,The Last Waltz,1978,https://boxd.it/1P1U
+2026-05-24,In the Grey,2026,https://boxd.it/Grji
+2026-05-26,I Love Boosters,2026,https://boxd.it/KBIU
+2026-05-29,Backrooms,2026,https://boxd.it/EY6W
+2026-05-31,Flower,,https://boxd.it/13IoU
+2026-05-31,Fallen Angels,1995,https://boxd.it/1UkW
+2026-06-01,The Super Mario Galaxy Movie,2026,https://boxd.it/KzPa
+2026-06-01,Is God Is,2026,https://boxd.it/R80o
+2026-06-03,Power Ballad,2026,https://boxd.it/MZy4
+2026-06-06,A Murder at the End of the World,2023,https://boxd.it/JIma
+2026-06-08,Steel Magnolias,1989,https://boxd.it/1Vd8
+2026-06-11,Master of the Universe,2026,https://boxd.it/13shS
+2026-06-12,Disclosure Day,2026,https://boxd.it/MDJY
+2026-06-15,The Naked Gun,2025,https://boxd.it/Da9k
+2026-06-17,Lee Cronin's The Mummy,2026,https://boxd.it/NM9C
+2026-06-23,Andor: A Disney+ Day Special Look,2022,https://boxd.it/CDne
+2026-06-23,Leviticus,2026,https://boxd.it/YjUw
+2026-06-25,Undefeated,2011,https://boxd.it/2TKQ
+2026-06-28,Supergirl,2026,https://boxd.it/ESyU
+2026-07-03,Freakier Friday,2025,https://boxd.it/GxwW
+2026-07-04,Spider-Man: Homecoming,2017,https://boxd.it/aboM
+2026-07-04,Double Blind,2023,https://boxd.it/H8ky
+2026-07-05,The Muppet Movie,1979,https://boxd.it/1UrS
+2026-07-05,The Cube,1969,https://boxd.it/18qW
+2026-07-09,The Great Muppet Caper,1981,https://boxd.it/1N9i

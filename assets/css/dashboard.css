@@ -773,6 +773,15 @@ a:hover { color: var(--text-primary); }
   margin-bottom: 1rem;
 }
 
+/* Orphaned films (removed from Letterboxd) */
+.orphaned-note {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-top: -0.75rem;
+  margin-bottom: 1.25rem;
+  max-width: 55ch;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .stat-cards { grid-template-columns: repeat(2, 1fr); }
