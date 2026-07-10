@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2518,
-  "uniqueFilms": 2103,
+  "totalWatched": 2519,
+  "uniqueFilms": 2104,
   "totalRewatches": 834,
   "averageRating": 3.89,
   "ratingDistribution": {
@@ -14,7 +14,7 @@
     "4.0": 534,
     "4.5": 370,
     "5.0": 581,
-    "unrated": 81
+    "unrated": 82
   },
   "filmsByMonth": {
     "2017-08": 1,
@@ -102,7 +102,7 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 9
+    "2026-07": 10
   },
   "heatmapData": [
     {
@@ -5976,6 +5976,10 @@
     {
       "date": "2026-07-08",
       "count": 2
+    },
+    {
+      "date": "2026-07-09",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5988,7 +5992,7 @@
     "1970s": 57,
     "1980s": 86,
     "1990s": 158,
-    "2000s": 252,
+    "2000s": 253,
     "2010s": 721,
     "2020s": 1150
   },
@@ -6065,6 +6069,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1389166933",
+      "filmTitle": "The Imaginarium of Doctor Parnassus",
+      "filmYear": 2009,
+      "watchedDate": "2026-07-09",
+      "memberRating": null,
+      "rewatch": false,
+      "tmdbId": 8054,
+      "link": "https://letterboxd.com/michaellamb/film/the-imaginarium-of-doctor-parnassus/",
+      "title": "The Imaginarium of Doctor Parnassus, 2009",
+      "reviewText": "i respect a lot of the performances i saw but i think i just do not like terry gilliam. something about his movies is very off for me",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "archive-f8JyXN",
       "filmTitle": "Give",
@@ -6390,24 +6408,6 @@
         "ryanparker"
       ],
       "loggedDate": "2026-06-12",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-eKfJiF",
-      "filmTitle": "Master of the Universe",
-      "filmYear": 2026,
-      "watchedDate": "2026-06-10",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/eKfJiF",
-      "title": "Master of the Universe",
-      "reviewText": "good fun and hot actors\r\n\r\nI will be seated for a sequel",
-      "tags": [
-        "in theaters",
-        "moviepass"
-      ],
-      "loggedDate": "2026-06-11",
       "source": "archive"
     }
   ],
@@ -8214,7 +8214,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-07-08"
+    "latest": "2026-07-09"
   },
   "byYear": {
     "2017": {
@@ -14534,8 +14534,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 158,
-      "uniqueFilms": 144,
+      "totalWatched": 159,
+      "uniqueFilms": 145,
       "totalRewatches": 54,
       "averageRating": 4.05,
       "ratingDistribution": {
@@ -14549,7 +14549,7 @@
         "4.0": 31,
         "4.5": 29,
         "5.0": 47,
-        "unrated": 0
+        "unrated": 1
       },
       "heatmapData": [
         {
@@ -14967,6 +14967,10 @@
         {
           "date": "2026-07-08",
           "count": 2
+        },
+        {
+          "date": "2026-07-09",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14976,7 +14980,7 @@
         "1970s": 5,
         "1980s": 5,
         "1990s": 10,
-        "2000s": 11,
+        "2000s": 12,
         "2010s": 22,
         "2020s": 96
       },
