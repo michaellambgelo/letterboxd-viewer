@@ -1,12 +1,12 @@
 {
-  "totalWatched": 2520,
-  "uniqueFilms": 2104,
+  "totalWatched": 2521,
+  "uniqueFilms": 2105,
   "totalRewatches": 835,
   "averageRating": 3.89,
   "ratingDistribution": {
     "0.5": 10,
     "1.0": 22,
-    "1.5": 27,
+    "1.5": 28,
     "2.0": 105,
     "2.5": 127,
     "3.0": 286,
@@ -102,7 +102,7 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 11
+    "2026-07": 12
   },
   "heatmapData": [
     {
@@ -5984,6 +5984,10 @@
     {
       "date": "2026-07-13",
       "count": 1
+    },
+    {
+      "date": "2026-07-15",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -5998,7 +6002,7 @@
     "1990s": 159,
     "2000s": 253,
     "2010s": 721,
-    "2020s": 1150
+    "2020s": 1151
   },
   "mostRewatched": [
     {
@@ -6073,6 +6077,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1397301320",
+      "filmTitle": "Shelby Oaks",
+      "filmYear": 2024,
+      "watchedDate": "2026-07-15",
+      "memberRating": 1.5,
+      "rewatch": false,
+      "tmdbId": 937941,
+      "link": "https://letterboxd.com/michaellamb/film/shelby-oaks/",
+      "title": "Shelby Oaks, 2024 - ★½",
+      "reviewText": "boring as shit",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1395124902",
       "filmTitle": "Jurassic Park",
@@ -6390,23 +6408,6 @@
       "reviewText": "spoopy and goopy and boopy and floopy",
       "tags": [],
       "loggedDate": "2026-06-17",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-eMTX9b",
-      "filmTitle": "The Naked Gun",
-      "filmYear": 2025,
-      "watchedDate": "2026-06-13",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/eMTX9b",
-      "title": "The Naked Gun",
-      "reviewText": "My dad asked me for \"dinner and a movie\" so I took him out for a steak dinner and then we watched this action/comedy. This was not a bad pick! \r\n\r\nWatched with dad",
-      "tags": [
-        "primevideo"
-      ],
-      "loggedDate": "2026-06-15",
       "source": "archive"
     }
   ],
@@ -8213,7 +8214,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-07-13"
+    "latest": "2026-07-15"
   },
   "byYear": {
     "2017": {
@@ -14533,14 +14534,14 @@
       ]
     },
     "2026": {
-      "totalWatched": 160,
-      "uniqueFilms": 146,
+      "totalWatched": 161,
+      "uniqueFilms": 147,
       "totalRewatches": 55,
-      "averageRating": 4.05,
+      "averageRating": 4.04,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
-        "1.5": 0,
+        "1.5": 1,
         "2.0": 3,
         "2.5": 13,
         "3.0": 10,
@@ -14974,6 +14975,10 @@
         {
           "date": "2026-07-13",
           "count": 1
+        },
+        {
+          "date": "2026-07-15",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14985,7 +14990,7 @@
         "1990s": 11,
         "2000s": 12,
         "2010s": 22,
-        "2020s": 96
+        "2020s": 97
       },
       "mostRewatched": [
         {
