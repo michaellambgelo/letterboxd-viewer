@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2526,
-  "uniqueFilms": 2108,
+  "totalWatched": 2527,
+  "uniqueFilms": 2109,
   "totalRewatches": 837,
   "averageRating": 3.89,
   "ratingDistribution": {
@@ -13,7 +13,7 @@
     "3.5": 377,
     "4.0": 534,
     "4.5": 374,
-    "5.0": 581,
+    "5.0": 582,
     "unrated": 82
   },
   "filmsByMonth": {
@@ -102,7 +102,7 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 17
+    "2026-07": 18
   },
   "heatmapData": [
     {
@@ -6000,6 +6000,10 @@
     {
       "date": "2026-07-18",
       "count": 1
+    },
+    {
+      "date": "2026-07-20",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6011,7 +6015,7 @@
     "1960s": 30,
     "1970s": 57,
     "1980s": 86,
-    "1990s": 159,
+    "1990s": 160,
     "2000s": 254,
     "2010s": 721,
     "2020s": 1155
@@ -6089,6 +6093,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1405580857",
+      "filmTitle": "Strange Days",
+      "filmYear": 1995,
+      "watchedDate": "2026-07-20",
+      "memberRating": 5.0,
+      "rewatch": false,
+      "tmdbId": 281,
+      "link": "https://letterboxd.com/michaellamb/film/strange-days/",
+      "title": "Strange Days, 1995 - ★★★★★",
+      "reviewText": "holy shit this is bleak but insanely great",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1403216512",
       "filmTitle": "The Odyssey",
@@ -6390,26 +6408,16 @@
       ],
       "loggedDate": "2026-06-28",
       "source": "archive"
-    },
-    {
-      "guid": "archive-eXKLxL",
-      "filmTitle": "Midsommar",
-      "filmYear": 2019,
-      "watchedDate": "2026-06-26",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://boxd.it/eXKLxL",
-      "title": "Midsommar",
-      "reviewText": "this is my official #50th time logging this film",
-      "tags": [
-        "youtube"
-      ],
-      "loggedDate": "2026-06-27",
-      "source": "archive"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Strange Days",
+      "filmYear": 1995,
+      "watchedDate": "2026-07-20",
+      "link": "https://letterboxd.com/michaellamb/film/strange-days/",
+      "tmdbId": 281
+    },
     {
       "filmTitle": "The Muppet Movie",
       "filmYear": 1979,
@@ -8212,7 +8220,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-07-18"
+    "latest": "2026-07-20"
   },
   "byYear": {
     "2017": {
@@ -14532,10 +14540,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 166,
-      "uniqueFilms": 150,
+      "totalWatched": 167,
+      "uniqueFilms": 151,
       "totalRewatches": 57,
-      "averageRating": 4.04,
+      "averageRating": 4.05,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
@@ -14546,7 +14554,7 @@
         "3.5": 25,
         "4.0": 31,
         "4.5": 33,
-        "5.0": 47,
+        "5.0": 48,
         "unrated": 1
       },
       "heatmapData": [
@@ -14989,6 +14997,10 @@
         {
           "date": "2026-07-18",
           "count": 1
+        },
+        {
+          "date": "2026-07-20",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -14997,7 +15009,7 @@
         "1960s": 4,
         "1970s": 5,
         "1980s": 5,
-        "1990s": 11,
+        "1990s": 12,
         "2000s": 13,
         "2010s": 22,
         "2020s": 101
@@ -15040,6 +15052,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Strange Days",
+          "filmYear": 1995,
+          "watchedDate": "2026-07-20",
+          "link": "https://letterboxd.com/michaellamb/film/strange-days/"
+        },
         {
           "filmTitle": "The Muppet Movie",
           "filmYear": 1979,
@@ -15093,12 +15111,6 @@
           "filmYear": 2024,
           "watchedDate": "2026-06-04",
           "link": "https://boxd.it/eEGmN1"
-        },
-        {
-          "filmTitle": "Fallen Angels",
-          "filmYear": 1995,
-          "watchedDate": "2026-05-30",
-          "link": "https://boxd.it/eAeiyz"
         }
       ]
     }
