@@ -22,7 +22,8 @@
  * `Cf-Access-Jwt-Assertion` signature rather than trusting the edge.
  *
  * Endpoints:
- *   GET    /rolodex                              public
+ *   GET    /rolodex/stream                       public — NDJSON, progressive
+ *   GET    /rolodex                              public — whole payload at once
  *   GET    /health                               public
  *   GET    /admin                                Access — CRUD UI
  *   GET    /admin/api/profiles                   Access
@@ -454,22 +455,38 @@ async function mapWithLimit(items, limit, fn) {
   return results;
 }
 
-async function enrich(profile, env, ctx) {
-  const [watches, avatar] = await Promise.all([
-    loadWatches(profile.username, env, ctx),
-    loadAvatar(profile.username, env, ctx),
-  ]);
+/**
+ * The curated half of a card: everything already in KV, so it costs one read
+ * and no network. Streamed up front so the page can draw every card before a
+ * single feed has resolved.
+ */
+function baseProfile(profile) {
   return {
     username: profile.username,
     displayName: profile.displayName || profile.username,
     note: profile.note || '',
     tags: profile.tags || [],
     profileUrl: `https://letterboxd.com/${profile.username}/`,
+  };
+}
+
+/** The fetched half: what the feed and profile page supply. */
+async function enrichmentFor(profile, env, ctx) {
+  const [watches, avatar] = await Promise.all([
+    loadWatches(profile.username, env, ctx),
+    loadAvatar(profile.username, env, ctx),
+  ]);
+  return {
+    username: profile.username,
     avatar,
     films: watches.films || [],
     fetchedAt: watches.fetchedAt || null,
     stale: Boolean(watches.stale),
   };
+}
+
+async function enrich(profile, env, ctx) {
+  return { ...baseProfile(profile), ...(await enrichmentFor(profile, env, ctx)) };
 }
 
 /* -------------------------------------------------------------------------- */
@@ -486,6 +503,74 @@ async function enrich(profile, env, ctx) {
  * spike is the per-profile `caches.default` entry in loadWatches(), where each
  * feed is fetched at most once per RSS_TTL regardless of visitor count.
  */
+/**
+ * NDJSON stream: one JSON object per line.
+ *
+ *   {"type":"meta","count":N,"profiles":[…]}   the curated list, from KV alone
+ *   {"type":"profile","username":…,"films":…}  one per profile, as it resolves
+ *
+ * Profiles are emitted in completion order, not display order — the client
+ * matches them to the cards it already drew from the meta line by username, so
+ * a slow feed delays only its own card rather than the whole page.
+ *
+ * The Response is returned immediately with an open stream; the work runs
+ * detached under waitUntil so nothing is buffered up front.
+ */
+function streamRolodex(request, env, ctx) {
+  const { readable, writable } = new TransformStream();
+  const writer = writable.getWriter();
+  const encoder = new TextEncoder();
+  const write = (obj) => writer.write(encoder.encode(JSON.stringify(obj) + '\n'));
+
+  ctx.waitUntil(
+    (async () => {
+      try {
+        const profiles = await readProfiles(env);
+        await write({
+          type: 'meta',
+          updatedAt: new Date().toISOString(),
+          count: profiles.length,
+          profiles: profiles.map(baseProfile),
+        });
+
+        await mapWithLimit(profiles, CONCURRENCY, async (profile) => {
+          try {
+            await write({ type: 'profile', ...(await enrichmentFor(profile, env, ctx)) });
+          } catch (err) {
+            // One bad profile must not abort the stream — emit an empty, stale
+            // entry so the client stops waiting on that card.
+            console.error(`rolodex: stream entry failed for ${profile.username}`, err);
+            await write({
+              type: 'profile',
+              username: profile.username,
+              avatar: null,
+              films: [],
+              fetchedAt: null,
+              stale: true,
+            }).catch(() => {});
+          }
+        });
+      } catch (err) {
+        console.error('rolodex: stream failed', err);
+        await write({ type: 'error', message: 'stream failed' }).catch(() => {});
+      } finally {
+        await writer.close().catch(() => {});
+      }
+    })()
+  );
+
+  return new Response(readable, {
+    headers: {
+      'Content-Type': 'application/x-ndjson; charset=utf-8',
+      // A progressive response must not be stored or buffered by anything in
+      // front of it, or the whole point is lost.
+      'Cache-Control': 'no-store',
+      'X-Accel-Buffering': 'no',
+      ...corsHeaders(request),
+    },
+  });
+}
+
 async function getRolodex(request, env, ctx) {
   const profiles = await readProfiles(env);
   const enriched = await mapWithLimit(profiles, CONCURRENCY, (p) => enrich(p, env, ctx));
@@ -634,6 +719,11 @@ async function route(request, env, ctx) {
       console.error('health: KV check failed', err);
       return json({ ok: false, kv: 'error' }, 503);
     }
+  }
+
+  if (pathname === '/rolodex/stream') {
+    if (request.method !== 'GET') return json({ error: 'method not allowed' }, 405);
+    return streamRolodex(request, env, ctx);
   }
 
   if (pathname === '/rolodex') {
