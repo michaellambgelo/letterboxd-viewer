@@ -47,7 +47,7 @@ Letterboxd RSS  ──►  scripts/download_rss.py  ──►  data/rss.xml
 - `assets/js/dashboard.js` — all rendering logic (data loading via `fetch('data/stats.json')`, heatmap layout, Chart.js setup, contact form handler)
 - `assets/js/rolodex.js` — rolodex card rendering, reads the Worker's `/rolodex`
 - `assets/js/util.js` — shared helpers (`escapeHtml`, `ratingToStars`, `formatShortDate`, `safeUrl`) on `window.LBV`; **loaded before** dashboard.js/rolodex.js on both pages
-- `assets/js/nav.js` — the hamburger menu, rendered into `<div data-site-nav>` on both pages so the markup lives in one file
+- `assets/js/nav.js` — the hamburger menu, rendered into `<div data-site-nav>` on both pages so the markup lives in one file. Hrefs are **extension-less and relative** (`./`, `rolodex`): GitHub Pages resolves `/rolodex` to `rolodex.html`, and staying relative keeps them working under the `/letterboxd-viewer/` base path. `currentPage()` strips any `.html` before matching `LINKS[].page`, so the active link is right whether you arrive at `/`, `/rolodex`, or `/rolodex.html`. **`python3 -m http.server` does not resolve extension-less paths** — use `npx serve` for local preview or the nav links 404
 - `assets/css/dashboard.css` — all styling for both pages
 - No jQuery, no Handlebars, no Poptrox, no build step
 

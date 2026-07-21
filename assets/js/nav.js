@@ -9,12 +9,16 @@
 (function () {
   'use strict';
 
+  // Hrefs are extension-less: GitHub Pages resolves /rolodex to rolodex.html.
+  // They stay relative rather than root-absolute so they also work under the
+  // /letterboxd-viewer/ base path that michaellambgelo.github.io still serves.
+  //
   // Icon names are Font Awesome 5.15.4 (the vendored
   // assets/css/fontawesome-all.min.css) — FA6 names like fa-chart-simple or
   // fa-xmark render as blank boxes here.
   const LINKS = [
-    { href: 'index.html', label: 'Stats', icon: 'fa-chart-bar' },
-    { href: 'rolodex.html', label: 'Rolodex', icon: 'fa-address-book' },
+    { href: './', page: 'index', label: 'Stats', icon: 'fa-chart-bar' },
+    { href: 'rolodex', page: 'rolodex', label: 'Rolodex', icon: 'fa-address-book' },
     {
       href: 'https://letterboxd.com/michaellamb/',
       label: 'Letterboxd',
@@ -23,9 +27,15 @@
     },
   ];
 
+  /**
+   * Identity of the page being viewed, matched against LINKS[].page rather than
+   * the href — the two no longer look alike. Tolerates every form the same page
+   * can be reached by: "/", "/index", "/index.html", "/rolodex", "/rolodex.html",
+   * and each of those under a base path.
+   */
   function currentPage() {
-    const file = window.location.pathname.split('/').pop();
-    return file === '' ? 'index.html' : file;
+    const last = window.location.pathname.split('/').pop();
+    return last ? last.replace(/\.html$/, '') : 'index';
   }
 
   function init() {
@@ -43,7 +53,7 @@
       <nav id="site-nav-panel" class="site-nav-panel" aria-labelledby="site-nav-toggle" hidden>
         <ul>
           ${LINKS.map((link) => {
-            const active = !link.external && link.href === here;
+            const active = !link.external && link.page === here;
             return `
               <li>
                 <a href="${link.href}"${link.external ? ' target="_blank" rel="noopener"' : ''}${
