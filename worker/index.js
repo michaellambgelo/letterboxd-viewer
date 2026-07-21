@@ -53,7 +53,11 @@ const USERNAME_RE = /^[a-z0-9_]{1,32}$/;
 const UA =
   'letterboxd-viewer-rolodex/1.0 (+https://github.com/michaellambgelo/letterboxd-viewer)';
 
+// letterboxd.michaellamb.dev is the canonical site origin — the GitHub Pages
+// default (michaellambgelo.github.io/letterboxd-viewer/) 301s to it, so that
+// entry is only a fallback in case the custom domain is ever removed.
 const ALLOWED_ORIGINS = [
+  'https://letterboxd.michaellamb.dev',
   'https://michaellambgelo.github.io',
   'http://localhost:8000',
   'http://127.0.0.1:8000',
@@ -65,12 +69,20 @@ const ALLOWED_ORIGINS = [
 
 function corsHeaders(request) {
   const origin = request.headers.get('Origin');
-  if (!origin || !ALLOWED_ORIGINS.includes(origin)) return {};
+
+  // `Vary: Origin` goes on EVERY response, including refused and origin-less
+  // ones. Emitting it only on allowed responses is a cache-poisoning bug: a
+  // shared cache stores the header-free copy from an origin-less request (a
+  // curl, a crawler) under an unvaried key and then replays it to real browser
+  // requests, which see a 200 with no Access-Control-Allow-Origin.
+  const base = { Vary: 'Origin' };
+  if (!origin || !ALLOWED_ORIGINS.includes(origin)) return base;
+
   return {
+    ...base,
     'Access-Control-Allow-Origin': origin,
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
-    Vary: 'Origin',
   };
 }
 
@@ -432,10 +444,14 @@ async function enrich(profile, env, ctx) {
 /* -------------------------------------------------------------------------- */
 
 /**
- * The Cache-Control below is for browsers; Cloudflare does not edge-cache a
- * Worker response on its own. What actually shields letterboxd.com from a
- * traffic spike is the per-profile `caches.default` entry in loadWatches() —
- * each feed is fetched at most once per RSS_TTL regardless of visitor count.
+ * `private` is deliberate. On a custom domain, Cloudflare's CDN *will* cache a
+ * Worker response marked `public` — and since this response varies by Origin,
+ * a shared cache is a liability here (see corsHeaders). Browsers still get the
+ * 5-minute cache; shared caches are kept out of it entirely.
+ *
+ * Nothing is lost by that: what actually shields letterboxd.com from a traffic
+ * spike is the per-profile `caches.default` entry in loadWatches(), where each
+ * feed is fetched at most once per RSS_TTL regardless of visitor count.
  */
 async function getRolodex(request, env, ctx) {
   const profiles = await readProfiles(env);
@@ -444,7 +460,7 @@ async function getRolodex(request, env, ctx) {
     { updatedAt: new Date().toISOString(), count: enriched.length, profiles: enriched },
     200,
     {
-      'Cache-Control': `public, max-age=${AGGREGATE_TTL}`,
+      'Cache-Control': `private, max-age=${AGGREGATE_TTL}`,
       ...corsHeaders(request),
     }
   );
@@ -940,4 +956,4 @@ function renderAdminPage() {
 </html>`;
 }
 
-export { parseFeed, decodeEntities, normalizeUsername, mapWithLimit };
+export { parseFeed, decodeEntities, normalizeUsername, mapWithLimit, corsHeaders };
