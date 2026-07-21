@@ -48,7 +48,7 @@ Both values are non-secret (they identify, they don't authorize), so they live i
 
 ```toml
 [vars]
-ACCESS_TEAM_DOMAIN = "<your-team>.cloudflareaccess.com"
+ACCESS_TEAM_DOMAIN = "michaellamb.cloudflareaccess.com"
 ACCESS_AUD = "<application audience tag from step 3.5>"
 ```
 

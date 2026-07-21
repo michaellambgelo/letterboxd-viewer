@@ -12,8 +12,8 @@ port = 8788
 #   npx wrangler kv namespace create ROLODEX --preview
 [[kv_namespaces]]
 binding = "ROLODEX"
-id = "REPLACE_WITH_KV_ID"
-preview_id = "REPLACE_WITH_KV_PREVIEW_ID"
+id = "cd3cc5a85bdd4565aadbe996ef7f937c"
+preview_id = "432dcadaad684af89ddcef6577393cef"
 
 # Cloudflare Access, path-scoped to /admin only.
 #
@@ -32,8 +32,8 @@ preview_id = "REPLACE_WITH_KV_PREVIEW_ID"
 # dev needs it because wrangler rewrites request.url to the custom domain below,
 # leaving no reliable way to detect a local run from inside the Worker.
 [vars]
-ACCESS_TEAM_DOMAIN = "REPLACE_WITH_TEAM.cloudflareaccess.com"
-ACCESS_AUD = "REPLACE_WITH_APPLICATION_AUDIENCE_TAG"
+ACCESS_TEAM_DOMAIN = "michaellamb.cloudflareaccess.com"
+ACCESS_AUD = "5f3a9d86e42cb9858ab043e674a988347eac7a9860998e5a28f2bb7bf0677d80"
 
 # Custom domain so the Access application has a hostname to attach to.
 [[routes]]
