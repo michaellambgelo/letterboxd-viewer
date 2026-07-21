@@ -7,7 +7,7 @@
 	<meta name="description" content="A curated rolodex of Letterboxd profiles I follow, with each person's last four watched" />
 	<link rel="icon" type="image/svg+xml" href="assets/images/letterboxd-decal-dots-rgb.svg" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" />
-	<link rel="stylesheet" href="assets/css/dashboard.css?v=2026-07-21a" />
+	<link rel="stylesheet" href="assets/css/dashboard.css?v=2026-07-21b" />
 	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 	<script>
 		(function () {
@@ -70,7 +70,25 @@
 				The Rolodex
 				<span class="section-count" id="rolodex-count"></span>
 			</h2>
-			<div id="rolodex-list" class="rolodex-list"></div>
+
+			<div class="rolodex-layout">
+				<aside class="rolodex-rail" aria-label="Jump to letter">
+					<div class="scope-rail-label">Jump to</div>
+					<div id="rolodex-alphabet" class="rolodex-alphabet"></div>
+				</aside>
+
+				<div class="rolodex-main">
+					<div class="rolodex-search">
+						<label class="visually-hidden" for="rolodex-filter">Filter profiles</label>
+						<i class="fas fa-search" aria-hidden="true"></i>
+						<input type="search" id="rolodex-filter" autocomplete="off"
+						       placeholder="Filter by name, handle, or note&hellip;" />
+						<button type="button" id="rolodex-filter-clear" hidden aria-label="Clear filter">&times;</button>
+					</div>
+					<p id="rolodex-status" class="rolodex-filter-status" role="status" aria-live="polite"></p>
+					<div id="rolodex-list" class="rolodex-list"></div>
+				</div>
+			</div>
 		</section>
 
 	</main>
@@ -86,8 +104,8 @@
 		</div>
 	</footer>
 
-	<script src="assets/js/util.js?v=2026-07-21a"></script>
-	<script src="assets/js/nav.js?v=2026-07-21a"></script>
-	<script src="assets/js/rolodex.js?v=2026-07-21a"></script>
+	<script src="assets/js/util.js?v=2026-07-21b"></script>
+	<script src="assets/js/nav.js?v=2026-07-21b"></script>
+	<script src="assets/js/rolodex.js?v=2026-07-21b"></script>
 </body>
 </html>

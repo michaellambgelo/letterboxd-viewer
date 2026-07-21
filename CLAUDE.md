@@ -129,6 +129,18 @@ made `boxd-card` a Chrome extension.) Everything must be fetched server-side.
   ~0.17s, last profile at ~1.15s warm. Nothing in front of the Worker buffers
   the stream (`Cache-Control: no-store`, `X-Accel-Buffering: no`) — verified,
   since buffering would silently defeat the whole design.
+- **Page navigation: a filter box and an A-Z rail.** Both work off `data-search`
+  and `data-letter`, stamped onto each card in `cardShell()` from the **meta
+  line** — so filtering is live before any feed resolves and never races the
+  streamed fill. (Searching film titles *would* race, since those arrive later.)
+  The full A-Z always renders; letters with no match are genuinely `disabled`,
+  recomputed against the *filtered* set so a jump can't land on a hidden card.
+  Layout reuses the dashboard's `.scope-layout` sticky-rail idea; below 900px the
+  rail becomes a horizontal strip, which needs `min-width: 0` on the rail — grid
+  items default to `min-width: auto` and the nowrap strip would otherwise drag
+  the layout past the viewport and defeat its own `overflow-x`. Letter jumps are
+  intentionally instant: the page runs to ~12,000px and a smooth scroll took
+  ~1.5s of unreadable animation.
 - **Feed cache expiry is synchronized, not rolling.** All per-profile
   `caches.default` entries get filled by whichever request finds them empty, so
   they expire together ~15min later and the next visitor pays the full cold cost
