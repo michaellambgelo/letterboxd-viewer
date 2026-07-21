@@ -8,8 +8,9 @@
  * cannot fetch a friend's feed directly.
  *
  * KV (binding ROLODEX):
- *   rolodex:v1          ordered array of curated entries — one key, so reorder
- *                       is atomic and GET /rolodex is a single read
+ *   rolodex:v1          array of curated entries in one key, so GET /rolodex is
+ *                       a single read. Display order is not stored — it is
+ *                       derived on read, alphabetically by first name.
  *   snapshot:<user>     last successful last-four payload, no TTL (serve-stale)
  *   avatar:<user>       resolved og:image URL, 24h TTL ('' = known to have none)
  *
@@ -28,7 +29,6 @@
  *   POST   /admin/api/profiles                   Access — { username, displayName?, note?, tags? }
  *   PUT    /admin/api/profiles/{username}        Access
  *   DELETE /admin/api/profiles/{username}        Access
- *   POST   /admin/api/profiles/{username}/move   Access — { direction: "up"|"down" }
  *   POST   /admin/api/preview                    Access — { username } uncached probe
  */
 
@@ -234,9 +234,42 @@ async function requireAdmin(request, env) {
 /* Curated list (KV)                                                          */
 /* -------------------------------------------------------------------------- */
 
+const COLLATOR = new Intl.Collator('en', { sensitivity: 'base', numeric: true });
+
+/** The label a card shows: display name if set, otherwise the handle. */
+function displayLabel(profile) {
+  return (profile.displayName || profile.username || '').trim();
+}
+
+/** "Michael Lamb" -> "Michael"; a bare handle is its own first name. */
+function firstName(profile) {
+  const label = displayLabel(profile);
+  return label.split(/\s+/)[0] || label;
+}
+
+/**
+ * Rolodex order is alphabetical by first name, with the full label and then the
+ * handle as tie-breakers so two people named Michael sort by surname and the
+ * result is stable rather than dependent on insertion order.
+ */
+function byFirstName(a, b) {
+  return (
+    COLLATOR.compare(firstName(a), firstName(b)) ||
+    COLLATOR.compare(displayLabel(a), displayLabel(b)) ||
+    COLLATOR.compare(a.username || '', b.username || '')
+  );
+}
+
+/**
+ * Order is derived on read, never stored. Sorting here rather than on write
+ * means entries already in KV — and anything written by an older deploy — are
+ * normalized with no migration, and every consumer (public endpoint and admin
+ * list alike) sees the same order.
+ */
 async function readProfiles(env) {
   const raw = await env.ROLODEX.get(ROLODEX_KEY, 'json');
-  return Array.isArray(raw) ? raw : [];
+  const profiles = Array.isArray(raw) ? raw : [];
+  return profiles.sort(byFirstName);
 }
 
 async function writeProfiles(env, profiles) {
@@ -531,29 +564,6 @@ async function deleteProfile(username, env) {
   return new Response(null, { status: 204 });
 }
 
-async function moveProfile(username, request, env) {
-  let payload;
-  try {
-    payload = await request.json();
-  } catch {
-    return json({ error: 'invalid JSON body' }, 400);
-  }
-
-  const delta = payload.direction === 'up' ? -1 : payload.direction === 'down' ? 1 : null;
-  if (delta === null) return json({ error: 'direction must be "up" or "down"' }, 400);
-
-  const profiles = await readProfiles(env);
-  const index = profiles.findIndex((p) => p.username === username);
-  if (index === -1) return json({ error: 'not found' }, 404);
-
-  const target = index + delta;
-  if (target < 0 || target >= profiles.length) return json(profiles); // already at the edge
-
-  [profiles[index], profiles[target]] = [profiles[target], profiles[index]];
-  await writeProfiles(env, profiles);
-  return json(profiles);
-}
-
 /** Uncached probe so the admin can confirm a handle exists before saving it. */
 async function previewProfile(request, env, ctx) {
   let payload;
@@ -595,11 +605,6 @@ async function routeAdminApi(request, env, ctx, pathname) {
     const segments = rest.slice('profiles/'.length).split('/');
     const username = normalizeUsername(decodeURIComponent(segments[0]));
     if (!username) return json({ error: 'invalid username' }, 400);
-
-    if (segments[1] === 'move') {
-      if (request.method !== 'POST') return json({ error: 'method not allowed' }, 405);
-      return moveProfile(username, request, env);
-    }
     if (segments.length > 1) return json({ error: 'not found' }, 404);
 
     if (request.method === 'PUT') return updateProfile(username, request, env);
@@ -740,7 +745,9 @@ function renderAdminPage() {
 <body>
 <div class="wrap">
   <h1>Rolodex admin</h1>
-  <p class="sub">Curated Letterboxd profiles for the public rolodex page.</p>
+  <p class="sub">Curated Letterboxd profiles for the public rolodex page.
+     Sorted automatically by first name — display order isn't stored, so
+     renaming someone moves their card.</p>
 
   <fieldset>
     <legend id="form-legend">Add a profile</legend>
@@ -829,7 +836,7 @@ function renderAdminPage() {
       el('list').innerHTML = '<p class="empty">No profiles yet.</p>';
       return;
     }
-    el('list').innerHTML = profiles.map(function (p, i) {
+    el('list').innerHTML = profiles.map(function (p) {
       return '<div class="entry">' +
         '<div class="meta">' +
           '<div class="name">' + escapeHtml(p.displayName || p.username) + '</div>' +
@@ -842,10 +849,6 @@ function renderAdminPage() {
             : '') +
         '</div>' +
         '<div class="controls">' +
-          '<button class="icon" data-move="up" data-user="' + escapeHtml(p.username) + '"' +
-            (i === 0 ? ' disabled' : '') + ' title="Move up">&uarr;</button>' +
-          '<button class="icon" data-move="down" data-user="' + escapeHtml(p.username) + '"' +
-            (i === profiles.length - 1 ? ' disabled' : '') + ' title="Move down">&darr;</button>' +
           '<button class="icon" data-edit="' + escapeHtml(p.username) + '" title="Edit">Edit</button>' +
           '<button class="icon danger" data-delete="' + escapeHtml(p.username) + '" title="Remove">&times;</button>' +
         '</div>' +
@@ -858,14 +861,7 @@ function renderAdminPage() {
     if (!button) return;
 
     try {
-      if (button.dataset.move) {
-        var moved = await api('/profiles/' + button.dataset.user + '/move', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ direction: button.dataset.move })
-        });
-        render(moved);
-      } else if (button.dataset.delete) {
+      if (button.dataset.delete) {
         var username = button.dataset.delete;
         if (!confirm('Remove @' + username + ' from the rolodex?')) return;
         await api('/profiles/' + username, { method: 'DELETE' });
@@ -956,4 +952,12 @@ function renderAdminPage() {
 </html>`;
 }
 
-export { parseFeed, decodeEntities, normalizeUsername, mapWithLimit, corsHeaders };
+export {
+  parseFeed,
+  decodeEntities,
+  normalizeUsername,
+  mapWithLimit,
+  corsHeaders,
+  byFirstName,
+  firstName,
+};

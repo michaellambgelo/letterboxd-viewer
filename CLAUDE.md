@@ -119,10 +119,15 @@ made `boxd-card` a Chrome extension.) Everything must be fetched server-side.
 - `worker/index.js` — Worker at `rolodex.michaellamb.dev`. KV is the source of
   truth for the curation; the Worker is also a live read-through proxy for each
   profile's feed, so cards are fresh within minutes rather than waiting on cron.
-- **KV keys:** `rolodex:v1` is one ordered array — the whole curated list in a
-  single key, so reordering is atomic and `GET /rolodex` is one read. (Contrast
-  `now-store`, which is key-per-entry only because it needs per-key TTLs.)
-  `snapshot:<user>` and `avatar:<user>` are derived caches, safe to delete.
+- **KV keys:** `rolodex:v1` is the whole curated list in a single key, so
+  `GET /rolodex` is one read. (Contrast `now-store`, which is key-per-entry only
+  because it needs per-key TTLs.) `snapshot:<user>` and `avatar:<user>` are
+  derived caches, safe to delete.
+- **Display order is derived, never stored.** `readProfiles()` sorts by first
+  name (`byFirstName`, `Intl.Collator` — case- and accent-insensitive, tie-broken
+  on full label then handle) on every read, so the public page and the admin list
+  can't disagree and no migration is needed when the rule changes. There is
+  deliberately no manual reorder: renaming someone is what moves their card.
 - **Resilience:** every successful feed fetch writes `snapshot:<user>`. If
   Letterboxd is unreachable or a feed stops parsing, that profile serves its last
   known-good four flagged `stale: true` rather than failing the whole response.
