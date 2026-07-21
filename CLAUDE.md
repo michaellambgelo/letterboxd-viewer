@@ -119,6 +119,22 @@ made `boxd-card` a Chrome extension.) Everything must be fetched server-side.
 - `worker/index.js` — Worker at `rolodex.michaellamb.dev`. KV is the source of
   truth for the curation; the Worker is also a live read-through proxy for each
   profile's feed, so cards are fresh within minutes rather than waiting on cron.
+- **The page loads over an NDJSON stream** (`GET /rolodex/stream`). Line 1 is a
+  `meta` object carrying the whole curated list — one KV read, no network — so
+  every card renders with its name/note/tags before any feed resolves. Then one
+  `profile` line per person **in completion order**, matched to its card by
+  username; a slow feed delays one card, not the page. `GET /rolodex` still
+  returns the whole payload at once and is both the client's fallback and the
+  convenient thing to curl. Measured in production at 63 profiles: meta at
+  ~0.17s, last profile at ~1.15s warm. Nothing in front of the Worker buffers
+  the stream (`Cache-Control: no-store`, `X-Accel-Buffering: no`) — verified,
+  since buffering would silently defeat the whole design.
+- **Feed cache expiry is synchronized, not rolling.** All per-profile
+  `caches.default` entries get filled by whichever request finds them empty, so
+  they expire together ~15min later and the next visitor pays the full cold cost
+  (~4-6s at 63 profiles). Streaming is what makes that acceptable; if it ever
+  stops being so, serve `snapshot:<user>` immediately and refresh under
+  `ctx.waitUntil` (stale-while-revalidate) rather than raising `CONCURRENCY`.
 - **KV keys:** `rolodex:v1` is the whole curated list in a single key, so
   `GET /rolodex` is one read. (Contrast `now-store`, which is key-per-entry only
   because it needs per-key TTLs.) `snapshot:<user>` and `avatar:<user>` are

@@ -1041,6 +1041,14 @@ a.rolodex-film:hover .rolodex-film-title { color: var(--text-primary); }
 /* Loading skeleton */
 .rolodex-card.is-loading { animation: rolodex-pulse 1.4s ease-in-out infinite; }
 
+/* A card drawn from the streamed curated list, still awaiting its feed: the
+   name/note/tags are real and stay solid, only the posters pulse. */
+.rolodex-poster.is-skeleton { animation: rolodex-pulse 1.4s ease-in-out infinite; }
+
+/* Reserve the height the filled meta will occupy (clamped title + star row) so
+   sixty-odd cards don't each jolt as their films land. */
+.rolodex-card.is-pending .rolodex-film-meta { min-height: 3rem; }
+
 .skeleton-line {
   height: 0.75rem;
   border-radius: 4px;
@@ -1054,7 +1062,8 @@ a.rolodex-film:hover .rolodex-film-title { color: var(--text-primary); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rolodex-card.is-loading { animation: none; opacity: 0.5; }
+  .rolodex-card.is-loading,
+  .rolodex-poster.is-skeleton { animation: none; opacity: 0.5; }
 }
 
 @media (min-width: 700px) {
