@@ -19,6 +19,8 @@ import {
   normalizeUsername,
   mapWithLimit,
   corsHeaders,
+  byFirstName,
+  firstName,
 } from './index.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -165,6 +167,69 @@ test('corsHeaders always sets Vary: Origin, allowed or not', () => {
   ]) {
     assert.equal(headers.Vary, 'Origin');
   }
+});
+
+const sorted = (profiles) => [...profiles].sort(byFirstName).map((p) => p.displayName || p.username);
+
+test('firstName takes the leading token, or the handle when unnamed', () => {
+  assert.equal(firstName({ displayName: 'Michael Lamb', username: 'michaellamb' }), 'Michael');
+  assert.equal(firstName({ displayName: '', username: 'claymerc' }), 'claymerc');
+  assert.equal(firstName({ displayName: 'Cher', username: 'cher' }), 'Cher');
+  assert.equal(firstName({ displayName: '  Ada   Lovelace ', username: 'ada' }), 'Ada');
+});
+
+test('byFirstName orders alphabetically by first name', () => {
+  assert.deepEqual(
+    sorted([
+      { displayName: 'Zoe', username: 'z' },
+      { displayName: 'Adam Smith', username: 'a' },
+      { displayName: 'michael lamb', username: 'm' },
+      { displayName: 'Brenda', username: 'b' },
+    ]),
+    ['Adam Smith', 'Brenda', 'michael lamb', 'Zoe']
+  );
+});
+
+test('byFirstName is case- and accent-insensitive, not ASCII-ordered', () => {
+  // A naive `<` comparison would put every capitalized name before "aaron".
+  assert.deepEqual(
+    sorted([
+      { displayName: 'Zach', username: 'z' },
+      { displayName: 'aaron', username: 'a' },
+      { displayName: 'Émile', username: 'e' },
+      { displayName: 'Bob', username: 'b' },
+    ]),
+    ['aaron', 'Bob', 'Émile', 'Zach']
+  );
+});
+
+test('byFirstName tie-breaks on surname, then handle', () => {
+  assert.deepEqual(
+    sorted([
+      { displayName: 'Michael Lamb', username: 'mlamb' },
+      { displayName: 'Michael Adams', username: 'madams' },
+      { displayName: 'Michael', username: 'zzz' },
+      { displayName: 'Michael', username: 'aaa' },
+    ]),
+    ['Michael', 'Michael', 'Michael Adams', 'Michael Lamb']
+  );
+  // The two bare "Michael"s break the tie on handle, so the order is stable.
+  const bare = [...[
+    { displayName: 'Michael', username: 'zzz' },
+    { displayName: 'Michael', username: 'aaa' },
+  ]].sort(byFirstName);
+  assert.deepEqual(bare.map((p) => p.username), ['aaa', 'zzz']);
+});
+
+test('byFirstName falls back to the handle for unnamed entries', () => {
+  assert.deepEqual(
+    sorted([
+      { displayName: 'Bob', username: 'bob' },
+      { displayName: '', username: 'claymerc' },
+      { displayName: 'Alice', username: 'alice' },
+    ]),
+    ['Alice', 'Bob', 'claymerc']
+  );
 });
 
 // Smoke test against the checked-in production feed, when present: proves the
