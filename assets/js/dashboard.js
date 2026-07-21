@@ -3,6 +3,9 @@
 (function () {
   'use strict';
 
+  // Shared with the rolodex page — see assets/js/util.js, loaded before this.
+  const { escapeHtml, ratingToStars } = window.LBV;
+
   const DATA_BASE = getDataBasePath();
 
   function getDataBasePath() {
@@ -326,19 +329,6 @@
         <div class="five-star-stars">${ratingToStars(5.0)}</div>
       </div>
     `).join('');
-  }
-
-  // Helpers
-  function ratingToStars(rating) {
-    const full = Math.floor(rating);
-    const half = rating % 1 >= 0.5;
-    return '\u2605'.repeat(full) + (half ? '\u00BD' : '');
-  }
-
-  function escapeHtml(str) {
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
   }
 
   // Contact Form (Discord webhook)
