@@ -24,6 +24,10 @@
   const cards = new Map();
   const pending = new Set();
 
+  const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  const OTHER_LETTER = '#'; // anything not starting A-Z
+  const letterButtons = new Map();
+
   /**
    * The `?api=` override exists for `wrangler dev`, and is honored only on
    * localhost — on the deployed site it would let a crafted link point the page
@@ -66,6 +70,12 @@
       </article>`.repeat(PLACEHOLDER_COUNT);
   }
 
+  /** Bucket a profile under A-Z, or '#' for anything that doesn't start a-z. */
+  function letterFor(profile) {
+    const first = (profile.displayName || profile.username || '').trim().charAt(0).toUpperCase();
+    return ALPHABET.includes(first) ? first : OTHER_LETTER;
+  }
+
   /** A card with everything the curated list knows, awaiting its feed. */
   function cardShell(profile) {
     const name = escapeHtml(profile.displayName || profile.username);
@@ -75,6 +85,17 @@
 
     const article = document.createElement('article');
     article.className = 'rolodex-card is-pending';
+    article.dataset.letter = letterFor(profile);
+    // Everything searchable comes from the meta line, so filtering works before
+    // a single feed has resolved — no race with the streamed fill.
+    article.dataset.search = [
+      profile.displayName || '',
+      profile.username || '',
+      profile.note || '',
+      (profile.tags || []).join(' '),
+    ]
+      .join(' ')
+      .toLowerCase();
     article.innerHTML = `
       <div class="rolodex-head">
         <div class="rolodex-avatar" aria-hidden="true" data-avatar>
@@ -174,6 +195,92 @@
     if (el) el.textContent = `${n} ${n === 1 ? 'profile' : 'profiles'}`;
   }
 
+  /* ----------------------------------------------------- filter + alphabet */
+
+  /**
+   * The full A-Z is always rendered, even for letters nobody falls under: a
+   * fixed set of targets doesn't reflow as profiles are added, and a disabled
+   * letter says "nobody here" where a missing one would just look arbitrary.
+   * `disabled` is the real attribute, so keyboard and screen-reader users skip
+   * them rather than landing on dead buttons.
+   */
+  function buildAlphabet() {
+    const host = document.getElementById('rolodex-alphabet');
+    if (!host) return;
+    host.innerHTML = '';
+    letterButtons.clear();
+
+    for (const letter of ALPHABET.concat(OTHER_LETTER)) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'rolodex-letter';
+      button.textContent = letter;
+      button.dataset.letter = letter;
+      button.disabled = true;
+      button.setAttribute('aria-label', `Jump to ${letter === OTHER_LETTER ? 'other' : letter}`);
+      // '#' only earns a slot if something actually sorts under it.
+      if (letter === OTHER_LETTER) button.hidden = true;
+      letterButtons.set(letter, button);
+      host.appendChild(button);
+    }
+
+    host.addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-letter]');
+      if (!button || button.disabled) return;
+      jumpToLetter(button.dataset.letter);
+    });
+  }
+
+  function jumpToLetter(letter) {
+    for (const card of cards.values()) {
+      if (card.dataset.letter === letter && !card.hidden) {
+        // Deliberately instant. The page runs to ~12,000px, and a smooth scroll
+        // across that took ~1.5s of animation you can't read anything during —
+        // index jumps should land immediately, as they do in a contacts list.
+        // The rail is sticky, so it stays put and keeps the context.
+        card.scrollIntoView({ block: 'start' });
+        return;
+      }
+    }
+  }
+
+  /**
+   * Single pass over the cards: show/hide by query, and recompute which letters
+   * are reachable. Letters are disabled against the *filtered* set, so jumping
+   * can never land on a hidden card.
+   */
+  function applyFilter() {
+    const input = document.getElementById('rolodex-filter');
+    const query = (input ? input.value : '').trim().toLowerCase();
+
+    const reachable = new Set();
+    let visible = 0;
+
+    for (const card of cards.values()) {
+      const match = !query || (card.dataset.search || '').includes(query);
+      card.hidden = !match;
+      if (match) {
+        visible += 1;
+        reachable.add(card.dataset.letter);
+      }
+    }
+
+    for (const [letter, button] of letterButtons) {
+      button.disabled = !reachable.has(letter);
+      if (letter === OTHER_LETTER) button.hidden = !reachable.has(letter);
+    }
+
+    const clear = document.getElementById('rolodex-filter-clear');
+    if (clear) clear.hidden = !query;
+
+    const status = document.getElementById('rolodex-status');
+    if (status) {
+      if (!query) status.textContent = '';
+      else if (!visible) status.textContent = `No profiles match “${query}”.`;
+      else status.textContent = `${visible} of ${cards.size} profiles match “${query}”.`;
+    }
+  }
+
   /** Draw every card from the curated list, before any feed has resolved. */
   function applyMeta(meta) {
     const list = listEl();
@@ -198,6 +305,9 @@
     }
     list.appendChild(frag);
     setCount(profiles.length);
+    // Meta can land after someone has already typed, so reconcile rather than
+    // assuming the filter is empty.
+    applyFilter();
   }
 
   function applyProfile(data) {
@@ -269,7 +379,36 @@
     settlePending();
   }
 
+  function initControls() {
+    buildAlphabet();
+
+    const input = document.getElementById('rolodex-filter');
+    const clear = document.getElementById('rolodex-filter-clear');
+
+    // 63 cards is a trivial pass, so filter on every keystroke — a debounce
+    // would only add lag.
+    if (input) {
+      input.addEventListener('input', applyFilter);
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && input.value) {
+          input.value = '';
+          applyFilter();
+        }
+      });
+    }
+
+    if (clear) {
+      clear.addEventListener('click', () => {
+        if (!input) return;
+        input.value = '';
+        applyFilter();
+        input.focus();
+      });
+    }
+  }
+
   async function init() {
+    initControls();
     renderPlaceholders();
     const base = apiBase();
 
