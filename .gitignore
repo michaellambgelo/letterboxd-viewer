@@ -9,5 +9,9 @@ __pycache__/
 # macOS
 .DS_Store
 
+# Node / Cloudflare Worker (worker/)
+node_modules/
+.wrangler/
+
 # Letterboxd export: self-deleted content, never read by any script.
 data/archive/*/deleted/
