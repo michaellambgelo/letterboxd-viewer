@@ -13,7 +13,13 @@ import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
-import { parseFeed, decodeEntities, normalizeUsername, mapWithLimit } from './index.js';
+import {
+  parseFeed,
+  decodeEntities,
+  normalizeUsername,
+  mapWithLimit,
+  corsHeaders,
+} from './index.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const fixture = readFileSync(join(here, 'fixtures', 'feed.xml'), 'utf8');
@@ -111,6 +117,54 @@ test('mapWithLimit preserves order and respects the ceiling', async () => {
 
 test('mapWithLimit handles an empty list without hanging', async () => {
   assert.deepEqual(await mapWithLimit([], 6, async () => 1), []);
+});
+
+const withOrigin = (origin) =>
+  corsHeaders(new Request('https://rolodex.michaellamb.dev/rolodex', { headers: { Origin: origin } }));
+
+// Regression: the allowlist originally held only the GitHub Pages default
+// origin, but that 301s to the custom domain — so every real browser request
+// arrived from letterboxd.michaellamb.dev and was refused.
+test('corsHeaders allows the canonical site origin', () => {
+  assert.equal(
+    withOrigin('https://letterboxd.michaellamb.dev')['Access-Control-Allow-Origin'],
+    'https://letterboxd.michaellamb.dev'
+  );
+});
+
+test('corsHeaders allows the Pages fallback and local dev origins', () => {
+  for (const origin of [
+    'https://michaellambgelo.github.io',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+  ]) {
+    assert.equal(withOrigin(origin)['Access-Control-Allow-Origin'], origin, origin);
+  }
+});
+
+test('corsHeaders refuses unknown origins and same-origin requests', () => {
+  const refused = { Vary: 'Origin' };
+  assert.deepEqual(withOrigin('https://evil.example'), refused);
+  // Near-misses that must not pass: a suffix match would wrongly allow these.
+  assert.deepEqual(withOrigin('https://letterboxd.michaellamb.dev.evil.example'), refused);
+  assert.deepEqual(withOrigin('http://letterboxd.michaellamb.dev'), refused, 'scheme must match');
+  assert.deepEqual(
+    corsHeaders(new Request('https://rolodex.michaellamb.dev/rolodex')),
+    refused,
+    'no Origin header -> no ACAO'
+  );
+});
+
+// Regression: emitting Vary only on allowed responses let a shared cache store
+// the header-free copy from an origin-less request and replay it to browsers.
+test('corsHeaders always sets Vary: Origin, allowed or not', () => {
+  for (const headers of [
+    withOrigin('https://letterboxd.michaellamb.dev'),
+    withOrigin('https://evil.example'),
+    corsHeaders(new Request('https://rolodex.michaellamb.dev/rolodex')),
+  ]) {
+    assert.equal(headers.Vary, 'Origin');
+  }
 });
 
 // Smoke test against the checked-in production feed, when present: proves the
