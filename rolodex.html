@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Rolodex — michaellamb's Letterboxd</title>
+	<meta name="description" content="A curated rolodex of Letterboxd profiles I follow, with each person's last four watched" />
+	<link rel="icon" type="image/svg+xml" href="assets/images/letterboxd-decal-dots-rgb.svg" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" />
+	<link rel="stylesheet" href="assets/css/dashboard.css?v=2026-07-20a" />
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+	<script>
+		(function () {
+		  var webSdkScript = document.createElement("script");
+		  webSdkScript.src =
+			"https://unpkg.com/@grafana/faro-web-sdk@^1.4.0/dist/bundle/faro-web-sdk.iife.js";
+		  webSdkScript.onload = () => {
+			window.GrafanaFaroWebSdk.initializeFaro({
+			  url: "https://grafana.michaellamb.dev/faro-proxy?app=letterboxd-viewer",
+			  app: {
+				name: "letterboxd-viewer",
+				version: "2.0.0",
+				environment: "production",
+			  },
+			});
+			var webTracingScript = document.createElement("script");
+			webTracingScript.src =
+			  "https://unpkg.com/@grafana/faro-web-tracing@^1.4.0/dist/bundle/faro-web-tracing.iife.js";
+			webTracingScript.onload = () => {
+			  window.GrafanaFaroWebSdk.faro.instrumentations.add(
+				new window.GrafanaFaroWebTracing.TracingInstrumentation()
+			  );
+			};
+			document.head.appendChild(webTracingScript);
+		  };
+		  document.head.appendChild(webSdkScript);
+		})();
+	</script>
+</head>
+<body>
+
+	<!-- Profile Header -->
+	<header class="profile-header">
+		<div class="container">
+			<div data-site-nav></div>
+			<div class="profile-info">
+				<div class="profile-avatar"><img src="assets/images/letterboxd-decal-dots-rgb.svg" alt="Letterboxd decal" width="64" height="64" /></div>
+				<div>
+					<div class="profile-name">Rolodex</div>
+					<div class="profile-link">
+						<a href="index.html">&larr; back to stats</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="container">
+
+		<!-- Intro -->
+		<aside class="disclaimer" role="note">
+			<i class="fas fa-address-book" aria-hidden="true"></i>
+			<p>
+				A hand-picked shortlist of the Letterboxd members I actually keep up with &mdash; friends, and a few people whose taste I trust. Each card shows that person's last four logged films, read live from their public RSS feed. Nothing here is affiliated with or endorsed by Letterboxd.
+			</p>
+		</aside>
+
+		<section class="dashboard-section">
+			<h2 class="section-title">
+				The Rolodex
+				<span class="section-count" id="rolodex-count"></span>
+			</h2>
+			<div id="rolodex-list" class="rolodex-list"></div>
+		</section>
+
+	</main>
+
+	<!-- Footer -->
+	<footer class="site-footer site-footer--minimal">
+		<div class="container">
+			<div class="social-links">
+				<a href="https://letterboxd.com/michaellamb/" target="_blank" rel="noopener" title="Letterboxd"><img src="assets/images/letterboxd-decal-dots-rgb.svg" alt="Letterboxd" class="social-icon-img" width="20" height="20" /></a>
+				<a href="https://github.com/michaellambgelo" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+				<a href="https://discord.com/invite/4p3vbjCgqv" target="_blank" rel="noopener" title="Discord"><i class="fab fa-discord"></i></a>
+			</div>
+		</div>
+	</footer>
+
+	<script src="assets/js/util.js?v=2026-07-20a"></script>
+	<script src="assets/js/nav.js?v=2026-07-20a"></script>
+	<script src="assets/js/rolodex.js?v=2026-07-20a"></script>
+</body>
+</html>

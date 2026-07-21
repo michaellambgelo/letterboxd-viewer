@@ -1,15 +1,42 @@
-name = "letterboxd-viewer-trigger"
+name = "letterboxd-rolodex"
 main = "index.js"
-compatibility_date = "2024-01-01"
+# Pinned to what the installed wrangler (4.28.1) actually supports; anything
+# later just warns and falls back. Nothing here needs newer runtime features.
+compatibility_date = "2025-08-03"
 
-# Plain-text vars (non-sensitive)
-[vars]
-REPO_OWNER = "michaellambgelo"
-REPO_NAME  = "letterboxd-viewer"
+[dev]
+port = 8788
 
-# GITHUB_TOKEN must be set as a secret — never commit it here:
-#   wrangler secret put GITHUB_TOKEN
+# Curated rolodex + derived caches. Create the namespaces and paste the ids:
+#   npx wrangler kv namespace create ROLODEX
+#   npx wrangler kv namespace create ROLODEX --preview
+[[kv_namespaces]]
+binding = "ROLODEX"
+id = "REPLACE_WITH_KV_ID"
+preview_id = "REPLACE_WITH_KV_PREVIEW_ID"
+
+# Cloudflare Access, path-scoped to /admin only.
 #
-# Use a fine-grained PAT scoped only to:
-#   Repository: letterboxd-viewer
-#   Permission: Actions (write)
+# Unlike the sibling `now-store` Worker — where an Access application gates the
+# entire hostname — this host is mixed: GET /rolodex must stay public for the
+# GitHub Pages site. The Access app therefore covers
+# `rolodex.michaellamb.dev/admin` (which includes /admin/*), and the Worker
+# additionally verifies the signed `Cf-Access-Jwt-Assertion` itself so a missing
+# or misconfigured Access app can't silently expose the write API.
+#
+# ACCESS_AUD is the Application Audience (AUD) tag shown on the Access
+# application's overview page in Zero Trust.
+#
+# There is deliberately no ADMIN_DEV_BYPASS var here: `npm run dev` passes it on
+# the command line so it can never be committed as `true` and deployed. Local
+# dev needs it because wrangler rewrites request.url to the custom domain below,
+# leaving no reliable way to detect a local run from inside the Worker.
+[vars]
+ACCESS_TEAM_DOMAIN = "REPLACE_WITH_TEAM.cloudflareaccess.com"
+ACCESS_AUD = "REPLACE_WITH_APPLICATION_AUDIENCE_TAG"
+
+# Custom domain so the Access application has a hostname to attach to.
+[[routes]]
+pattern = "rolodex.michaellamb.dev"
+zone_name = "michaellamb.dev"
+custom_domain = true

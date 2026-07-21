@@ -43,8 +43,12 @@ Letterboxd RSS  ──►  scripts/download_rss.py  ──►  data/rss.xml
 
 **Frontend (static):**
 - `index.html` — dashboard shell with stat cards, heatmap, charts, rewatched list, five-star grid, recent activity, guestbook form
+- `rolodex.html` — the curated-profiles page (see **Rolodex** below)
 - `assets/js/dashboard.js` — all rendering logic (data loading via `fetch('data/stats.json')`, heatmap layout, Chart.js setup, contact form handler)
-- `assets/css/dashboard.css` — all styling
+- `assets/js/rolodex.js` — rolodex card rendering, reads the Worker's `/rolodex`
+- `assets/js/util.js` — shared helpers (`escapeHtml`, `ratingToStars`, `formatShortDate`, `safeUrl`) on `window.LBV`; **loaded before** dashboard.js/rolodex.js on both pages
+- `assets/js/nav.js` — the hamburger menu, rendered into `<div data-site-nav>` on both pages so the markup lives in one file
+- `assets/css/dashboard.css` — all styling for both pages
 - No jQuery, no Handlebars, no Poptrox, no build step
 
 **Pipeline (Python):**
@@ -100,4 +104,38 @@ The frontend reads only these top-level keys (see `compute_stats.py` and `dashbo
 - **Cron health matters:** if the workflow stops successfully committing updated `data/stats.json` and `data/viewing_history.json`, the site goes stale silently. When investigating "missing recent data", first check `gh run list --workflow=download-data-and-assets.yml` — the data is almost always the problem, not the frontend.
 - **Refreshing the archive:** export from Letterboxd, drop the new `letterboxd-michaellamb-YYYY-MM-DD-HH-MM-utc/` folder under `data/archive/`, optionally delete the older one, and re-run `extract_history.py` + `compute_stats.py`. The loader picks the lexicographically newest folder.
 - **Orphaned (removed) films:** a Letterboxd export natively ships an `orphaned/` subfolder (`diary.csv`, `reviews.csv`, `comments.csv`) holding entries whose film was later **removed from Letterboxd's database** — these rows have an empty `Letterboxd URI` and are kept *out* of the main `diary.csv`/`watched.csv`, so they never enter the main stats. `load_archive.load_orphaned()` reads that folder and `compute_stats.compute_orphaned_films()` emits `orphanedFilms` for the "Logged Films Removed from Letterboxd" section (dedicated, not counted in lifetime totals). RSS can't reveal removals (it's a ~50-item recent window), so the export is the only source. The sibling `deleted/` subfolder (entries the user deleted, valid URIs) is intentionally unused. The archive CSVs aren't committed by the cron workflow — commit a re-exported archive folder by hand so the cron's `compute_stats.py` re-reads it.
-- **Stale artifacts to ignore:** `worker/` and `docs/letterboxd-viewer-presentation.md` are leftover from the old Last Four Watched direction and are not part of the deployed site.
+- **Stale artifacts to ignore:** `docs/letterboxd-viewer-presentation.md` is leftover from the old Last Four Watched direction and is not part of the deployed site. (`worker/` used to be listed here too — it is now live; see **Rolodex**.)
+
+## Rolodex (`rolodex.html` + `worker/`)
+
+A second page: a curated shortlist of Letterboxd members, each card showing that
+person's **Last Four Watched**. Entirely separate from the stats pipeline —
+`scripts/*.py`, `stats.json`, and both workflows are untouched by it.
+
+**Why there is a Worker at all:** letterboxd.com serves RSS with **no CORS
+headers**, so the browser cannot fetch anyone's feed directly. (Same wall that
+made `boxd-card` a Chrome extension.) Everything must be fetched server-side.
+
+- `worker/index.js` — Worker at `rolodex.michaellamb.dev`. KV is the source of
+  truth for the curation; the Worker is also a live read-through proxy for each
+  profile's feed, so cards are fresh within minutes rather than waiting on cron.
+- **KV keys:** `rolodex:v1` is one ordered array — the whole curated list in a
+  single key, so reordering is atomic and `GET /rolodex` is one read. (Contrast
+  `now-store`, which is key-per-entry only because it needs per-key TTLs.)
+  `snapshot:<user>` and `avatar:<user>` are derived caches, safe to delete.
+- **Resilience:** every successful feed fetch writes `snapshot:<user>`. If
+  Letterboxd is unreachable or a feed stops parsing, that profile serves its last
+  known-good four flagged `stale: true` rather than failing the whole response.
+- **Parsing gotcha:** a member's RSS also contains `letterboxd-list-*` items for
+  published lists. Only diary entries carry `<letterboxd:watchedDate>` — filter on
+  that or a list renders as a bogus film. Titles need entity-decoding.
+- **Auth:** Cloudflare Access is **path-scoped to `/admin`**, not the whole
+  hostname, because `GET /rolodex` must stay public. The Worker independently
+  verifies the `Cf-Access-Jwt-Assertion` signature, so a missing Access app fails
+  closed. Local dev uses `npm run dev`, which passes `ADMIN_DEV_BYPASS` on the
+  command line — never committed as a var.
+- `worker/SETUP.md` is the one-time runbook (KV, deploy, Access, verification).
+- `worker/test.mjs` — `npm test`, no dependencies. Covers the regex feed parser
+  against a fixture plus a smoke test against the committed `data/rss.xml`.
+- **Icons are Font Awesome 5.15.4** (vendored). FA6 names (`fa-xmark`,
+  `fa-chart-simple`) render as blank boxes.
