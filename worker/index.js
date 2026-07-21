@@ -707,6 +707,12 @@ function renderAdminPage() {
     font: inherit; font-size: .9375rem;
   }
   input[type=text]:focus { outline: none; border-color: var(--accent-blue); }
+  /* The username field is disabled while editing — make that visible at a
+     glance rather than only discoverable by clicking into it. */
+  input[type=text]:disabled {
+    opacity: 0.55; cursor: not-allowed;
+    background: var(--bg-secondary); border-style: dashed;
+  }
   .row { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1.25rem; }
   button {
     padding: .5rem .875rem; border-radius: 4px; border: 1px solid var(--border);
@@ -717,6 +723,17 @@ function renderAdminPage() {
   button:disabled { opacity: .5; cursor: default; }
   button.primary { background: var(--accent-green); border-color: var(--accent-green); color: #05140a; font-weight: 600; }
   button.danger:hover { border-color: var(--danger); color: var(--danger); }
+  /* Scoped to the edit form so the list's small × buttons keep their
+     quieter hover-only treatment. */
+  #btn-delete { color: var(--danger); margin-left: auto; }
+  #btn-delete:hover:not(:disabled) {
+    border-color: var(--danger); background: rgba(244, 67, 54, 0.12); color: var(--danger);
+  }
+  .field-hint {
+    font-size: 0.75rem; color: var(--text-muted);
+    margin-top: 0.375rem; max-width: 46ch;
+  }
+  .field-hint[hidden] { display: none; }
   .icon { padding: .25rem .5rem; font-size: .8125rem; }
   .entry {
     display: flex; align-items: flex-start; gap: .875rem; padding: .875rem;
@@ -753,6 +770,10 @@ function renderAdminPage() {
     <legend id="form-legend">Add a profile</legend>
     <label for="f-username">Letterboxd username or profile URL</label>
     <input type="text" id="f-username" placeholder="michaellamb" autocomplete="off" />
+    <p class="field-hint" id="username-hint" hidden>
+      The username is this entry's key, so it can't be edited. To fix a typo,
+      delete this entry and add it again.
+    </p>
     <label for="f-display">Display name</label>
     <input type="text" id="f-display" placeholder="Michael" autocomplete="off" />
     <label for="f-note">Note</label>
@@ -763,6 +784,7 @@ function renderAdminPage() {
       <button type="button" id="btn-preview">Preview feed</button>
       <button type="button" class="primary" id="btn-save">Save</button>
       <button type="button" id="btn-cancel" hidden>Cancel edit</button>
+      <button type="button" id="btn-delete" hidden>Delete entry</button>
     </div>
     <div class="status" id="status"></div>
     <div class="preview" id="preview"></div>
@@ -810,6 +832,8 @@ function renderAdminPage() {
     el('f-username').disabled = false;
     el('form-legend').textContent = 'Add a profile';
     el('btn-cancel').hidden = true;
+    el('btn-delete').hidden = true;
+    el('username-hint').hidden = true;
     el('preview').innerHTML = '';
     setStatus('');
   }
@@ -879,6 +903,8 @@ function renderAdminPage() {
         el('f-tags').value = (profile.tags || []).join(', ');
         el('form-legend').textContent = 'Editing @' + profile.username;
         el('btn-cancel').hidden = false;
+        el('btn-delete').hidden = false;
+        el('username-hint').hidden = false;
         setStatus('');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
@@ -944,6 +970,26 @@ function renderAdminPage() {
   });
 
   el('btn-cancel').addEventListener('click', resetForm);
+
+  // Delete the entry being edited. The username is the KV key and so can't be
+  // changed by an edit — this is the one-step path for fixing a wrong handle
+  // without hunting for the row again.
+  el('btn-delete').addEventListener('click', async function () {
+    if (!editing) return;
+    var username = editing;
+    if (!confirm('Remove @' + username + ' from the rolodex?')) return;
+    el('btn-delete').disabled = true;
+    try {
+      await api('/profiles/' + username, { method: 'DELETE' });
+      resetForm();
+      setStatus('Removed @' + username + '. Add it again with the corrected username.', 'ok');
+      load();
+    } catch (err) {
+      setStatus(err.message, 'error');
+    } finally {
+      el('btn-delete').disabled = false;
+    }
+  });
 
   load();
 })();
