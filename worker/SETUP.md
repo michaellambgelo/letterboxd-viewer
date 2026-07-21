@@ -96,9 +96,15 @@ no reliable way to detect a local run on its own.
 To point the local static site at the local Worker:
 
 ```bash
-cd ~/Workspace/letterboxd-viewer && python3 -m http.server 8000
-open 'http://localhost:8000/rolodex.html?api=http://localhost:8788'
+cd ~/Workspace/letterboxd-viewer && npx serve -p 8000
+open 'http://localhost:8000/rolodex?api=http://localhost:8788'
 ```
+
+**Use `npx serve`, not `python3 -m http.server`.** Navigation hrefs are
+extension-less (`/rolodex`), which GitHub Pages resolves to `rolodex.html` but
+Python's `http.server` does not — under it `/rolodex` 404s and the in-page nav
+links appear broken even though the deployed site is fine. Port 8000 matters
+either way: it's the origin on the Worker's CORS allowlist.
 
 The `?api=` override is honored **only** on localhost — on the deployed site it
 would let a crafted link repoint the page at an attacker-controlled JSON source.
