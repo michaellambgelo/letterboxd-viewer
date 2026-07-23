@@ -1,5 +1,19 @@
 [
   {
+    "guid": "letterboxd-entry-1410610708",
+    "filmTitle": "Fried Green Tomatoes",
+    "filmYear": 1991,
+    "watchedDate": "2026-07-23",
+    "memberRating": 4.5,
+    "rewatch": false,
+    "tmdbId": 1633,
+    "link": "https://letterboxd.com/michaellamb/film/fried-green-tomatoes/",
+    "title": "Fried Green Tomatoes, 1991 - ★★★★½",
+    "reviewText": "love it!",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1409786021",
     "filmTitle": "Tuner",
     "filmYear": 2025,
@@ -9,7 +23,7 @@
     "tmdbId": 1340206,
     "link": "https://letterboxd.com/michaellamb/film/tuner/",
     "title": "Tuner, 2025 - ★★★★★",
-    "reviewText": "absolutely fantastic \n\nI love movies about art and crime!",
+    "reviewText": "insanely good\n\nI love movies about art and crime!",
     "tags": [],
     "source": "rss"
   },

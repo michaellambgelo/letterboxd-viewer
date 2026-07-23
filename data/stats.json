@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2530,
-  "uniqueFilms": 2111,
+  "totalWatched": 2531,
+  "uniqueFilms": 2112,
   "totalRewatches": 838,
   "averageRating": 3.89,
   "ratingDistribution": {
@@ -12,7 +12,7 @@
     "3.0": 286,
     "3.5": 377,
     "4.0": 535,
-    "4.5": 374,
+    "4.5": 375,
     "5.0": 584,
     "unrated": 82
   },
@@ -102,7 +102,7 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 21
+    "2026-07": 22
   },
   "heatmapData": [
     {
@@ -6012,6 +6012,10 @@
     {
       "date": "2026-07-22",
       "count": 1
+    },
+    {
+      "date": "2026-07-23",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6023,7 +6027,7 @@
     "1960s": 30,
     "1970s": 57,
     "1980s": 86,
-    "1990s": 160,
+    "1990s": 161,
     "2000s": 254,
     "2010s": 721,
     "2020s": 1158
@@ -6102,6 +6106,20 @@
   ],
   "recentActivity": [
     {
+      "guid": "letterboxd-entry-1410610708",
+      "filmTitle": "Fried Green Tomatoes",
+      "filmYear": 1991,
+      "watchedDate": "2026-07-23",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 1633,
+      "link": "https://letterboxd.com/michaellamb/film/fried-green-tomatoes/",
+      "title": "Fried Green Tomatoes, 1991 - ★★★★½",
+      "reviewText": "love it!",
+      "tags": [],
+      "source": "rss"
+    },
+    {
       "guid": "letterboxd-entry-1409786021",
       "filmTitle": "Tuner",
       "filmYear": 2025,
@@ -6111,7 +6129,7 @@
       "tmdbId": 1340206,
       "link": "https://letterboxd.com/michaellamb/film/tuner/",
       "title": "Tuner, 2025 - ★★★★★",
-      "reviewText": "absolutely fantastic \n\nI love movies about art and crime!",
+      "reviewText": "insanely good\n\nI love movies about art and crime!",
       "tags": [],
       "source": "rss"
     },
@@ -6387,24 +6405,6 @@
         "youtube"
       ],
       "loggedDate": "2026-07-04",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-f3cHH9",
-      "filmTitle": "Freakier Friday",
-      "filmYear": 2025,
-      "watchedDate": "2026-07-02",
-      "memberRating": 2.5,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/f3cHH9",
-      "title": "Freakier Friday",
-      "reviewText": "",
-      "tags": [
-        "williemorris",
-        "dvd"
-      ],
-      "loggedDate": "2026-07-03",
       "source": "archive"
     }
   ],
@@ -8232,7 +8232,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-07-22"
+    "latest": "2026-07-23"
   },
   "byYear": {
     "2017": {
@@ -14552,8 +14552,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 170,
-      "uniqueFilms": 154,
+      "totalWatched": 171,
+      "uniqueFilms": 155,
       "totalRewatches": 58,
       "averageRating": 4.06,
       "ratingDistribution": {
@@ -14565,7 +14565,7 @@
         "3.0": 10,
         "3.5": 25,
         "4.0": 32,
-        "4.5": 33,
+        "4.5": 34,
         "5.0": 50,
         "unrated": 1
       },
@@ -15021,6 +15021,10 @@
         {
           "date": "2026-07-22",
           "count": 1
+        },
+        {
+          "date": "2026-07-23",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15029,7 +15033,7 @@
         "1960s": 4,
         "1970s": 5,
         "1980s": 5,
-        "1990s": 12,
+        "1990s": 13,
         "2000s": 13,
         "2010s": 22,
         "2020s": 104
