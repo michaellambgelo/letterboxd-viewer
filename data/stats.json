@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2529,
-  "uniqueFilms": 2110,
+  "totalWatched": 2530,
+  "uniqueFilms": 2111,
   "totalRewatches": 838,
   "averageRating": 3.89,
   "ratingDistribution": {
@@ -13,7 +13,7 @@
     "3.5": 377,
     "4.0": 535,
     "4.5": 374,
-    "5.0": 583,
+    "5.0": 584,
     "unrated": 82
   },
   "filmsByMonth": {
@@ -102,7 +102,7 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 20
+    "2026-07": 21
   },
   "heatmapData": [
     {
@@ -6008,6 +6008,10 @@
     {
       "date": "2026-07-21",
       "count": 1
+    },
+    {
+      "date": "2026-07-22",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6022,7 +6026,7 @@
     "1990s": 160,
     "2000s": 254,
     "2010s": 721,
-    "2020s": 1157
+    "2020s": 1158
   },
   "mostRewatched": [
     {
@@ -6097,6 +6101,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1409786021",
+      "filmTitle": "Tuner",
+      "filmYear": 2025,
+      "watchedDate": "2026-07-22",
+      "memberRating": 5.0,
+      "rewatch": false,
+      "tmdbId": 1340206,
+      "link": "https://letterboxd.com/michaellamb/film/tuner/",
+      "title": "Tuner, 2025 - ★★★★★",
+      "reviewText": "absolutely fantastic \n\nI love movies about art and crime!",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1407930132",
       "filmTitle": "Tony",
@@ -6388,26 +6406,16 @@
       ],
       "loggedDate": "2026-07-03",
       "source": "archive"
-    },
-    {
-      "guid": "archive-f3lovB",
-      "filmTitle": "Everything Everywhere All at Once",
-      "filmYear": 2022,
-      "watchedDate": "2026-07-02",
-      "memberRating": 4.5,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://boxd.it/f3lovB",
-      "title": "Everything Everywhere All at Once",
-      "reviewText": "i've watched two Jamie Lee Curtis performances today and one of them is better than the other. find the context clues to figure it out!",
-      "tags": [
-        "youtube"
-      ],
-      "loggedDate": "2026-07-03",
-      "source": "archive"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Tuner",
+      "filmYear": 2025,
+      "watchedDate": "2026-07-22",
+      "link": "https://letterboxd.com/michaellamb/film/tuner/",
+      "tmdbId": 1340206
+    },
     {
       "filmTitle": "Bugonia",
       "filmYear": 2025,
@@ -8224,7 +8232,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-07-21"
+    "latest": "2026-07-22"
   },
   "byYear": {
     "2017": {
@@ -14544,10 +14552,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 169,
-      "uniqueFilms": 153,
+      "totalWatched": 170,
+      "uniqueFilms": 154,
       "totalRewatches": 58,
-      "averageRating": 4.05,
+      "averageRating": 4.06,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
@@ -14558,7 +14566,7 @@
         "3.5": 25,
         "4.0": 32,
         "4.5": 33,
-        "5.0": 49,
+        "5.0": 50,
         "unrated": 1
       },
       "heatmapData": [
@@ -15009,6 +15017,10 @@
         {
           "date": "2026-07-21",
           "count": 1
+        },
+        {
+          "date": "2026-07-22",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15020,7 +15032,7 @@
         "1990s": 12,
         "2000s": 13,
         "2010s": 22,
-        "2020s": 103
+        "2020s": 104
       },
       "mostRewatched": [
         {
@@ -15060,6 +15072,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Tuner",
+          "filmYear": 2025,
+          "watchedDate": "2026-07-22",
+          "link": "https://letterboxd.com/michaellamb/film/tuner/"
+        },
         {
           "filmTitle": "Bugonia",
           "filmYear": 2025,
@@ -15113,12 +15131,6 @@
           "filmYear": 2022,
           "watchedDate": "2026-06-19",
           "link": "https://boxd.it/eRvnmv"
-        },
-        {
-          "filmTitle": "Blade Runner 2049",
-          "filmYear": 2017,
-          "watchedDate": "2026-06-10",
-          "link": "https://boxd.it/eKfJW1"
         }
       ]
     }
