@@ -13,6 +13,7 @@
  *                       derived on read, alphabetically by first name.
  *   snapshot:<user>     last successful last-four payload, no TTL (serve-stale)
  *   avatar:<user>       resolved og:image URL, 24h TTL ('' = known to have none)
+ *   stats:live:v1       last successful /stats/live payload, no TTL (serve-stale)
  *
  * Auth: unlike the sibling `now-store` Worker — where Cloudflare Access gates
  * the entire hostname — this host is deliberately MIXED. `/rolodex` must stay
@@ -24,6 +25,8 @@
  * Endpoints:
  *   GET    /rolodex/stream                       public — NDJSON, progressive
  *   GET    /rolodex                              public — whole payload at once
+ *   GET    /stats/live                           public — the dashboard owner's
+ *                                                whole recent feed + avatar
  *   GET    /health                               public
  *   GET    /admin                                Access — CRUD UI
  *   GET    /admin/api/profiles                   Access
@@ -41,6 +44,12 @@ const AGGREGATE_TTL = 300; // 5min on the public /rolodex response
 const AVATAR_TTL = 86400; // 24h — avatars change rarely
 const CONCURRENCY = 6; // never fan 30 requests at Letterboxd at once
 const MAX_PROFILES = 200;
+
+// /stats/live serves the dashboard owner's own feed — the live enrichment
+// layer on index.html. Same hard-coded single-user stance as the Python
+// pipeline (scripts/download_rss.py).
+const STATS_USERNAME = 'michaellamb';
+const STATS_SNAPSHOT_KEY = 'stats:live:v1';
 
 const MAX_DISPLAY_NAME = 60;
 const MAX_NOTE = 280;
@@ -326,11 +335,35 @@ function tagText(block, name) {
 }
 
 /**
+ * The review body is the description minus the poster paragraph, flattened to
+ * plain text — paragraph/blockquote/br boundaries become newlines so the
+ * client can render it with `white-space: pre-line` and never touch HTML.
+ */
+function extractReview(description) {
+  const text = description
+    .replace(/^\s*<!\[CDATA\[/, '')
+    .replace(/\]\]>\s*$/, '')
+    .replace(/<p>\s*<img[^>]*\/?>\s*<\/p>/i, '')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/(?:p|blockquote)>/gi, '\n')
+    .replace(/<[^>]+>/g, '');
+  const cleaned = decodeEntities(text)
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{2,}/g, '\n\n')
+    .trim();
+  return cleaned || null;
+}
+
+/**
  * Workers have no DOMParser, so parse the (machine-generated, stable) feed with
  * targeted regexes — the same fields scripts/extract_history.py reads via
  * ElementTree.
+ *
+ * The default shape is what a rolodex card renders (capped at LAST_N). The
+ * `extended` option is for /stats/live: no cap, plus `liked` and — for
+ * `letterboxd-review-*` items only — the plain-text `review` body.
  */
-function parseFeed(xml) {
+function parseFeed(xml, { limit = LAST_N, extended = false } = {}) {
   const blocks = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((m) => m[1]);
   const films = [];
 
@@ -346,7 +379,7 @@ function parseFeed(xml) {
     const rating = tagText(block, 'letterboxd:memberRating');
     const year = tagText(block, 'letterboxd:filmYear');
 
-    films.push({
+    const film = {
       title: decodeEntities(tagText(block, 'letterboxd:filmTitle')) || 'Untitled',
       year: year ? Number(year) : null,
       rating: rating ? Number(rating) : null,
@@ -355,21 +388,30 @@ function parseFeed(xml) {
       link: decodeEntities(tagText(block, 'link')),
       poster: posterMatch ? decodeEntities(posterMatch[1]) : null,
       tmdbId: tagText(block, 'tmdb:movieId') || tagText(block, 'tmdb:tvId') || null,
-    });
+    };
 
-    if (films.length >= LAST_N) break;
+    if (extended) {
+      // Plain `letterboxd-watch-*` items also carry a description, but it is
+      // just "Watched on <date>." — only review guids hold an actual review.
+      const guid = tagText(block, 'guid') || '';
+      film.liked = tagText(block, 'letterboxd:memberLike') === 'Yes';
+      film.review = guid.startsWith('letterboxd-review-') ? extractReview(description) : null;
+    }
+
+    films.push(film);
+    if (films.length >= limit) break;
   }
 
   return films;
 }
 
-async function fetchWatches(username) {
+async function fetchWatches(username, parseOptions) {
   const res = await fetch(`https://letterboxd.com/${username}/rss/`, {
     headers: { 'User-Agent': UA, Accept: 'application/rss+xml, application/xml' },
   });
   if (!res.ok) throw new Error(`RSS ${res.status} for ${username}`);
   const xml = await res.text();
-  return { films: parseFeed(xml), fetchedAt: new Date().toISOString() };
+  return { films: parseFeed(xml, parseOptions), fetchedAt: new Date().toISOString() };
 }
 
 /**
@@ -571,6 +613,71 @@ function streamRolodex(request, env, ctx) {
   });
 }
 
+/**
+ * The dashboard owner's whole recent feed + avatar — the live enrichment layer
+ * on index.html. The static data/stats.json stays canonical; this only adds
+ * what the 6-hour cron can't: freshness, posters, review text, like flags.
+ *
+ * Same read-through-then-snapshot shape as loadWatches, but cached under its
+ * own key: the rolodex cache for this same username stores only the parsed
+ * last four, without the extended fields.
+ */
+async function getStatsLive(request, env, ctx) {
+  const cacheKey = new Request('https://rolodex.internal/stats-live');
+  const cache = caches.default;
+
+  let payload;
+  const hit = await cache.match(cacheKey);
+  if (hit) {
+    payload = { ...(await hit.json()), stale: false };
+  } else {
+    try {
+      const [watches, avatar] = await Promise.all([
+        fetchWatches(STATS_USERNAME, { limit: Infinity, extended: true }),
+        loadAvatar(STATS_USERNAME, env, ctx),
+      ]);
+      payload = {
+        username: STATS_USERNAME,
+        profileUrl: `https://letterboxd.com/${STATS_USERNAME}/`,
+        avatar,
+        films: watches.films,
+        fetchedAt: watches.fetchedAt,
+        stale: false,
+      };
+      ctx.waitUntil(
+        cache.put(
+          cacheKey,
+          new Response(JSON.stringify(payload), {
+            headers: {
+              'Content-Type': 'application/json',
+              'Cache-Control': `max-age=${RSS_TTL}`,
+            },
+          })
+        )
+      );
+      ctx.waitUntil(env.ROLODEX.put(STATS_SNAPSHOT_KEY, JSON.stringify(payload)));
+    } catch (err) {
+      console.error('stats: live feed failed', err);
+      const snapshot = await env.ROLODEX.get(STATS_SNAPSHOT_KEY, 'json');
+      payload = snapshot
+        ? { ...snapshot, stale: true }
+        : {
+            username: STATS_USERNAME,
+            profileUrl: `https://letterboxd.com/${STATS_USERNAME}/`,
+            avatar: null,
+            films: [],
+            fetchedAt: null,
+            stale: true,
+          };
+    }
+  }
+
+  return json(payload, 200, {
+    'Cache-Control': `private, max-age=${AGGREGATE_TTL}`,
+    ...corsHeaders(request),
+  });
+}
+
 async function getRolodex(request, env, ctx) {
   const profiles = await readProfiles(env);
   const enriched = await mapWithLimit(profiles, CONCURRENCY, (p) => enrich(p, env, ctx));
@@ -729,6 +836,11 @@ async function route(request, env, ctx) {
   if (pathname === '/rolodex') {
     if (request.method !== 'GET') return json({ error: 'method not allowed' }, 405);
     return getRolodex(request, env, ctx);
+  }
+
+  if (pathname === '/stats/live') {
+    if (request.method !== 'GET') return json({ error: 'method not allowed' }, 405);
+    return getStatsLive(request, env, ctx);
   }
 
   if (pathname === '/admin' || pathname.startsWith('/admin/')) {
@@ -1090,6 +1202,7 @@ function renderAdminPage() {
 
 export {
   parseFeed,
+  extractReview,
   decodeEntities,
   normalizeUsername,
   mapWithLimit,

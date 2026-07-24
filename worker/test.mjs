@@ -15,6 +15,7 @@ import { dirname, join } from 'node:path';
 
 import {
   parseFeed,
+  extractReview,
   decodeEntities,
   normalizeUsername,
   mapWithLimit,
@@ -73,6 +74,71 @@ test('parseFeed tolerates unrated entries, tv ids and missing posters', () => {
 
 test('parseFeed returns nothing for a feed with no diary entries', () => {
   assert.deepEqual(parseFeed('<rss><channel></channel></rss>'), []);
+});
+
+// /stats/live parses the same feed uncapped and with the extended fields.
+const extendedItem = (guid, description, like = 'Yes') => `
+  <item>
+    <title>Some Film, 2020 - ★★★★</title>
+    <link>https://letterboxd.com/testmember/film/some-film/</link>
+    <guid isPermaLink="false">${guid}</guid>
+    <letterboxd:watchedDate>2026-07-20</letterboxd:watchedDate>
+    <letterboxd:rewatch>No</letterboxd:rewatch>
+    <letterboxd:filmTitle>Some Film</letterboxd:filmTitle>
+    <letterboxd:filmYear>2020</letterboxd:filmYear>
+    <letterboxd:memberRating>4.0</letterboxd:memberRating>
+    <letterboxd:memberLike>${like}</letterboxd:memberLike>
+    <tmdb:movieId>111</tmdb:movieId>
+    <description><![CDATA[ ${description} ]]></description>
+  </item>`;
+
+test('extended parse lifts the last-four cap', () => {
+  const films = parseFeed(fixture, { limit: Infinity, extended: true });
+  assert.ok(films.length > 4, 'the fifth diary entry must survive without the cap');
+  assert.ok(films.some((f) => f.title === 'Jaws'));
+});
+
+test('extended parse extracts review text from review guids only', () => {
+  const review = extendedItem(
+    'letterboxd-review-1',
+    '<p><img src="https://a.ltrbxd.com/resized/p.jpg"/></p> <p>insanely good</p><p>watched with Jeana &amp; Micah</p>'
+  );
+  const watch = extendedItem(
+    'letterboxd-watch-2',
+    '<p><img src="https://a.ltrbxd.com/resized/p.jpg"/></p> <p>Watched on Monday July 20, 2026.</p>'
+  );
+  const [reviewed, watched] = parseFeed(`<rss>${review}${watch}</rss>`, {
+    limit: Infinity,
+    extended: true,
+  });
+  assert.equal(reviewed.review, 'insanely good\nwatched with Jeana & Micah');
+  assert.equal(reviewed.liked, true);
+  assert.equal(watched.review, null, 'a plain watch has no review, only "Watched on …"');
+});
+
+test('extended parse maps memberLike to a boolean', () => {
+  const [film] = parseFeed(`<rss>${extendedItem('letterboxd-watch-3', '<p>x</p>', 'No')}</rss>`, {
+    extended: true,
+  });
+  assert.equal(film.liked, false);
+});
+
+test('default parse carries no extended fields', () => {
+  const [film] = parseFeed(fixture);
+  assert.ok(!('review' in film));
+  assert.ok(!('liked' in film));
+});
+
+test('extractReview flattens markup to newline-separated plain text', () => {
+  const body =
+    '<p><img src="https://a.ltrbxd.com/resized/p.jpg"/></p> ' +
+    '<blockquote><p>"Quoted line"</p></blockquote>' +
+    '<p>first<br />second</p><p>with a <a href="https://example.com">link</a> and <em>emphasis</em></p>';
+  assert.equal(
+    extractReview(body),
+    '"Quoted line"\n\nfirst\nsecond\nwith a link and emphasis'
+  );
+  assert.equal(extractReview('<p><img src="https://a.ltrbxd.com/p.jpg"/></p>'), null);
 });
 
 test('decodeEntities handles named, decimal and hex references', () => {
