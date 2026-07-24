@@ -4,7 +4,7 @@
   'use strict';
 
   // Shared with the rolodex page — see assets/js/util.js, loaded before this.
-  const { escapeHtml, ratingToStars } = window.LBV;
+  const { escapeHtml, ratingToStars, formatShortDate, safeUrl } = window.LBV;
 
   const DATA_BASE = getDataBasePath();
 
@@ -33,6 +33,199 @@
       return null;
     }
   }
+
+  /* ------------------------------------------------------ live enrichment */
+  // The rolodex Worker's GET /stats/live: the whole recent RSS feed (posters,
+  // review text, like flags) plus the profile avatar, ~15min fresh vs the
+  // 6-hour cron behind stats.json. Purely additive — stats.json stays
+  // canonical and every live render degrades to the static version when the
+  // Worker is unreachable.
+
+  const LIVE_API = (function () {
+    // Same ?api= override rule as rolodex.js: honored only on localhost, so a
+    // crafted link can't point the deployed page at another JSON source.
+    const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+    const override = isLocal && new URLSearchParams(window.location.search).get('api');
+    return (override || 'https://rolodex.michaellamb.dev').replace(/\/+$/, '');
+  })();
+
+  async function loadLive() {
+    try {
+      const res = await fetch(`${LIVE_API}/stats/live`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const live = await res.json();
+      return Array.isArray(live.films) ? live : null;
+    } catch (err) {
+      console.warn('Live enrichment unavailable:', err);
+      return null;
+    }
+  }
+
+  // "+N since last update" is only meaningful against the lifetime numbers, so
+  // the year-selector reports its scope here and the chip re-evaluates.
+  const liveState = { delta: 0, isLifetime: true };
+
+  function applyLiveDelta() {
+    const el = document.getElementById('stat-total-delta');
+    if (!el) return;
+    const show = liveState.isLifetime && liveState.delta > 0;
+    el.hidden = !show;
+    if (show) el.textContent = `+${liveState.delta} since last update`;
+  }
+
+  // Live entries not yet in stats.json. recentActivity holds the 20 newest
+  // pre-computed entries, so anything the cron hasn't seen is at or above its
+  // newest date and missing from the (filmTitle, watchedDate) set — the same
+  // composite key the Python pipeline dedupes on.
+  function computeLiveDelta(films, stats) {
+    const recent = stats.recentActivity || [];
+    if (!recent.length) return 0;
+    const seen = new Set(recent.map((e) => `${e.filmTitle}|${e.watchedDate}`));
+    const floor = recent[0].watchedDate || '';
+    return films.filter(
+      (f) => f.watchedDate && f.watchedDate >= floor && !seen.has(`${f.title}|${f.watchedDate}`)
+    ).length;
+  }
+
+  function renderLiveAvatar(live) {
+    const img = document.getElementById('profile-avatar-img');
+    const url = safeUrl(live.avatar);
+    if (img && url) {
+      img.src = url;
+      img.alt = `${live.username} on Letterboxd`;
+    }
+  }
+
+  function renderLiveBadge(live) {
+    const badge = document.getElementById('activity-live-badge');
+    if (!badge) return;
+    let ago = '';
+    if (live.fetchedAt) {
+      const mins = Math.max(0, Math.round((Date.now() - new Date(live.fetchedAt).getTime()) / 60000));
+      ago = mins < 1 ? 'just now' : mins < 60 ? `${mins}m ago` : `${Math.round(mins / 60)}h ago`;
+    }
+    badge.textContent = live.stale ? 'cached' : `live${ago ? ' · ' + ago : ''}`;
+    badge.classList.toggle('stale', Boolean(live.stale));
+    badge.hidden = false;
+  }
+
+  // Date strings compare as strings — YYYY-MM-DD never becomes a Date here.
+  function renderLiveCounts(films) {
+    const el = document.getElementById('live-counts');
+    if (!el) return;
+    const today = new Date();
+    const weekAgo = new Date(today);
+    weekAgo.setDate(today.getDate() - 6);
+    const weekFloor = formatLocalDate(weekAgo);
+    const monthPrefix = formatLocalDate(today).slice(0, 7);
+    let week = 0;
+    let month = 0;
+    for (const f of films) {
+      if (!f.watchedDate) continue;
+      if (f.watchedDate >= weekFloor) week++;
+      if (f.watchedDate.startsWith(monthPrefix)) month++;
+    }
+    el.textContent = `${week} in the past 7 days · ${month} this month`;
+    el.hidden = false;
+  }
+
+  // Same rows as renderActivity, but from the live feed: fresher, and with the
+  // poster art the RSS description carries.
+  function renderLiveActivity(films) {
+    const list = document.getElementById('activity-list');
+    if (!list) return;
+
+    list.innerHTML = films.slice(0, 20).map((film) => {
+      const poster = safeUrl(film.poster);
+      const link = safeUrl(film.link);
+      const stars = film.rating ? ratingToStars(film.rating) : '';
+      const rewatch = film.rewatch ? '<span class="activity-rewatch">rewatched</span>' : '';
+      const like = film.liked ? ' <span class="activity-like" title="Liked">♥</span>' : '';
+
+      return `
+        <li class="activity-item has-poster">
+          <span class="activity-date">${formatShortDate(film.watchedDate)}</span>
+          ${poster
+            ? `<img class="activity-poster" src="${escapeHtml(poster)}" alt="" loading="lazy" />`
+            : '<span class="activity-poster"></span>'}
+          <span class="activity-film">
+            ${link
+              ? `<a href="${escapeHtml(link)}" target="_blank" rel="noopener">${escapeHtml(film.title)}</a>`
+              : escapeHtml(film.title)}
+            ${film.year ? `<span class="activity-year">(${film.year})</span>` : ''}
+            ${rewatch}
+          </span>
+          <span class="activity-rating">${stars}${like}</span>
+        </li>
+      `;
+    }).join('');
+  }
+
+  function renderLiveReviews(films) {
+    const section = document.getElementById('reviews-section');
+    const list = document.getElementById('reviews-list');
+    if (!section || !list) return;
+
+    const reviews = films.filter((f) => f.review).slice(0, 4);
+    if (!reviews.length) return;
+
+    list.innerHTML = reviews.map((film) => {
+      const poster = safeUrl(film.poster);
+      const link = safeUrl(film.link);
+      const stars = film.rating ? ratingToStars(film.rating) : '';
+      const like = film.liked ? ' <span class="activity-like" title="Liked">♥</span>' : '';
+      const title = link
+        ? `<a href="${escapeHtml(link)}" target="_blank" rel="noopener">${escapeHtml(film.title)}</a>`
+        : escapeHtml(film.title);
+
+      return `
+        <li class="review-item">
+          ${poster ? `<img class="review-poster" src="${escapeHtml(poster)}" alt="" loading="lazy" />` : ''}
+          <div class="review-body">
+            <div class="review-heading">
+              ${title}
+              ${film.year ? `<span class="activity-year">(${film.year})</span>` : ''}
+              <span class="review-rating">${stars}${like}</span>
+            </div>
+            <div class="review-date">${formatShortDate(film.watchedDate, { month: 'short', day: 'numeric', year: 'numeric' })}${film.rewatch ? ' · rewatch' : ''}</div>
+            <p class="review-text">${escapeHtml(film.review)}</p>
+            ${link ? `<a class="review-more" href="${escapeHtml(link)}" target="_blank" rel="noopener">Read on Letterboxd</a>` : ''}
+          </div>
+        </li>
+      `;
+    }).join('');
+    section.removeAttribute('hidden');
+  }
+
+  function applyLive(live, stats) {
+    if (!live) return;
+    renderLiveAvatar(live);
+    if (!live.films.length) return;
+    renderLiveActivity(live.films);
+    renderLiveReviews(live.films);
+    renderLiveCounts(live.films);
+    renderLiveBadge(live);
+    liveState.delta = computeLiveDelta(live.films, stats);
+    applyLiveDelta();
+  }
+
+  // The static half of the header — stats.json's `profile` block, rendered
+  // whether or not the Worker responds.
+  function renderProfile(profile) {
+    if (!profile) return;
+    if (profile.givenName) setText('profile-name', profile.givenName);
+    const meta = document.getElementById('profile-meta');
+    if (!meta) return;
+    const parts = [];
+    if (profile.location) parts.push(profile.location);
+    if (profile.dateJoined) parts.push(`on Letterboxd since ${String(profile.dateJoined).slice(0, 4)}`);
+    if (parts.length) {
+      meta.textContent = parts.join(' · ');
+      meta.hidden = false;
+    }
+  }
+
+  /* --------------------------------------------------------- static render */
 
   function renderStatCards(stats) {
     setText('stat-total', stats.totalWatched);
@@ -450,6 +643,8 @@
           btn.classList.toggle('active', btn.dataset.value === value);
         });
       }
+      liveState.isLifetime = isLifetime;
+      applyLiveDelta();
     }
 
     if (select) select.addEventListener('change', e => activate(e.target.value));
@@ -547,6 +742,7 @@
 
   // Init
   async function init() {
+    const livePromise = loadLive(); // in flight while the static render happens
     const stats = await loadStats();
     if (!stats) {
       document.getElementById('loading')?.remove();
@@ -554,6 +750,8 @@
     }
 
     if (stats.archiveExportDate) setText('export-date', stats.archiveExportDate);
+
+    renderProfile(stats.profile);
 
     // Lifetime / per-year switching block
     initYearSelector(stats);
@@ -569,6 +767,10 @@
 
     document.getElementById('loading')?.remove();
     document.getElementById('dashboard')?.removeAttribute('hidden');
+
+    // Layer the live data over the fully-rendered static page — a slow or
+    // failed Worker call never blocks or breaks the dashboard.
+    applyLive(await livePromise, stats);
   }
 
   if (document.readyState === 'loading') {

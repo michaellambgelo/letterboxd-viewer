@@ -4,7 +4,7 @@
 
 Personal Letterboxd stats dashboard rendered as a static site on GitHub Pages. A Python pipeline runs on cron, merges a Letterboxd export archive (historical baseline) with the public RSS feed (delta for new entries), and pre-computes every field the frontend displays into `data/stats.json`.
 
-Single-user (hard-coded to `michaellamb` in `scripts/download_rss.py`). The frontend is a pure static consumer of `stats.json` — no runtime computation beyond Chart.js rendering, the heatmap grid layout, and the year-selector swap.
+Single-user (hard-coded to `michaellamb` in `scripts/download_rss.py`). The frontend is a static consumer of `stats.json`, plus an optional **live enrichment layer** fetched from the rolodex Worker's `GET /stats/live` (see **Live enrichment** below) — the static render is complete on its own and every live render degrades to it when the Worker is unreachable.
 
 > **Historical note:** Earlier iterations of this repo explored a "Last Four Watched" dynamic username feature backed by a Cloudflare Worker + Canvas image export. That direction was superseded by the stats-dashboard rewrite on `main`. The shareable-card idea now lives in a separate project: [`boxd-card`](https://github.com/michaellambgelo/boxd-card) (Chrome extension, client-side DOM scrape).
 
@@ -84,7 +84,7 @@ The frontend reads only these top-level keys (see `compute_stats.py` and `dashbo
 | `likedFilms` | `[{ name, year, link, likedDate }, ...]` | (currently unused on frontend) |
 | `lists` | `[{ name, slug, url, filmCount, tags, description }, ...]` | Lists section |
 | `tagCloud` | `{ tag: count, ... }` | Tag cloud |
-| `profile` | `{ username, givenName, location, website, bio, dateJoined }` | (header future-use) |
+| `profile` | `{ username, givenName, location, website, bio, dateJoined }` | Profile header (name + location + joined year; avatar comes from `/stats/live`) |
 | `orphanedFilms` | `[{ filmTitle, filmYear, watchedDate, memberRating, reviewText, tags, logCount }, ...]` | "Logged Films Removed from Letterboxd" section |
 | `archiveExportDate` | `"YYYY-MM-DD"` | Disclaimer text |
 
@@ -105,6 +105,41 @@ The frontend reads only these top-level keys (see `compute_stats.py` and `dashbo
 - **Refreshing the archive:** export from Letterboxd, drop the new `letterboxd-michaellamb-YYYY-MM-DD-HH-MM-utc/` folder under `data/archive/`, optionally delete the older one, and re-run `extract_history.py` + `compute_stats.py`. The loader picks the lexicographically newest folder.
 - **Orphaned (removed) films:** a Letterboxd export natively ships an `orphaned/` subfolder (`diary.csv`, `reviews.csv`, `comments.csv`) holding entries whose film was later **removed from Letterboxd's database** — these rows have an empty `Letterboxd URI` and are kept *out* of the main `diary.csv`/`watched.csv`, so they never enter the main stats. `load_archive.load_orphaned()` reads that folder and `compute_stats.compute_orphaned_films()` emits `orphanedFilms` for the "Logged Films Removed from Letterboxd" section (dedicated, not counted in lifetime totals). RSS can't reveal removals (it's a ~50-item recent window), so the export is the only source. The sibling `deleted/` subfolder (entries the user deleted, valid URIs) is intentionally unused. The archive CSVs aren't committed by the cron workflow — commit a re-exported archive folder by hand so the cron's `compute_stats.py` re-reads it.
 - **Stale artifacts to ignore:** `docs/letterboxd-viewer-presentation.md` is leftover from the old Last Four Watched direction and is not part of the deployed site. (`worker/` used to be listed here too — it is now live; see **Rolodex**.)
+
+## Live enrichment (`GET /stats/live` on the rolodex Worker)
+
+The dashboard layers live data from the Worker over the static render. The
+endpoint returns the owner's **whole** recent RSS feed (~50 items, uncapped)
+parsed in extended mode — every rolodex film field plus `liked`
+(`letterboxd:memberLike`) and, for `letterboxd-review-*` guids only, `review`:
+the description flattened to plain text (paragraph/blockquote/br → newlines,
+CDATA and tags stripped) so the client renders it with `white-space: pre-line`
+and never touches review HTML. Joined with the profile avatar (same
+`avatar:<user>` KV cache the rolodex uses). Cached 15 min in `caches.default`
+under its own key (the rolodex cache for the same username holds only the
+parsed last four), with a no-TTL KV snapshot (`stats:live:v1`) served
+`stale: true` when Letterboxd is unreachable. Username is hard-coded
+(`STATS_USERNAME`), mirroring the pipeline.
+
+What the frontend does with it (all in `dashboard.js`, kicked off before the
+`stats.json` fetch and applied after the static render — a slow or failed
+Worker call never blocks or breaks the page):
+
+- **Profile header**: live avatar swaps in over the decal; name/location/joined
+  come from `stats.json`'s `profile` block and render even without the Worker.
+- **Recent Activity**: re-rendered from the live feed with posters, like
+  hearts, and a "live · Nm ago" badge (`cached` when `stale`), plus a
+  past-7-days / this-month count line.
+- **Latest Reviews**: a section that only exists when live data arrives —
+  poster, stars, plain-text review clamped to 6 lines, "Read on Letterboxd".
+- **"+N since last update"** on the Logs stat card: live entries not yet in
+  `stats.json`, computed against `recentActivity` on the same
+  `(filmTitle, watchedDate)` composite key the pipeline dedupes on. Lifetime
+  scope only — the year selector hides it via `liveState`.
+
+Local dev: same `?api=` override as rolodex.js, honored only on localhost
+(`http://localhost:8000/index.html?api=http://localhost:8787` against
+`npm run dev` in `worker/`).
 
 ## Rolodex (`rolodex.html` + `worker/`)
 

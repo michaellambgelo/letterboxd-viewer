@@ -7,7 +7,7 @@
 	<meta name="description" content="Personal Letterboxd viewing stats and history for michaellamb" />
 	<link rel="icon" type="image/svg+xml" href="assets/images/letterboxd-decal-dots-rgb.svg" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" />
-	<link rel="stylesheet" href="assets/css/dashboard.css?v=2026-07-21b" />
+	<link rel="stylesheet" href="assets/css/dashboard.css?v=2026-07-24" />
 	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 	<script>
 		(function () {
@@ -50,12 +50,13 @@
 			<div class="container">
 				<div data-site-nav></div>
 				<div class="profile-info">
-					<div class="profile-avatar"><img src="assets/images/letterboxd-decal-dots-rgb.svg" alt="Letterboxd decal" width="64" height="64" /></div>
+					<div class="profile-avatar"><img id="profile-avatar-img" src="assets/images/letterboxd-decal-dots-rgb.svg" alt="Letterboxd decal" width="64" height="64" /></div>
 					<div>
-						<div class="profile-name">michaellamb</div>
+						<div class="profile-name" id="profile-name">michaellamb</div>
 						<div class="profile-link">
 							<a href="https://letterboxd.com/michaellamb/" target="_blank" rel="noopener">letterboxd.com/michaellamb</a>
 						</div>
+						<div class="profile-meta" id="profile-meta" hidden></div>
 					</div>
 				</div>
 			</div>
@@ -96,6 +97,7 @@
 						<div class="stat-card">
 							<div class="stat-value" id="stat-total">--</div>
 							<div class="stat-label">Logs</div>
+							<div class="stat-delta" id="stat-total-delta" hidden></div>
 						</div>
 						<div class="stat-card">
 							<div class="stat-value" id="stat-unique">--</div>
@@ -177,8 +179,15 @@
 
 			<!-- Recent Activity -->
 			<section class="dashboard-section">
-				<h2 class="section-title">Recent Activity</h2>
+				<h2 class="section-title">Recent Activity <span class="live-badge" id="activity-live-badge" hidden></span></h2>
+				<p class="live-counts" id="live-counts" hidden></p>
 				<ul id="activity-list" class="activity-list"></ul>
+			</section>
+
+			<!-- Latest Reviews (live via the rolodex Worker; hidden if unreachable) -->
+			<section class="dashboard-section" id="reviews-section" hidden>
+				<h2 class="section-title">Latest Reviews</h2>
+				<ul id="reviews-list" class="reviews-list"></ul>
 			</section>
 
 			<!-- Tag cloud -->
@@ -252,8 +261,8 @@
 	<div id="toast" class="toast"></div>
 
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
-	<script src="assets/js/util.js?v=2026-07-21b"></script>
-	<script src="assets/js/nav.js?v=2026-07-21b"></script>
-	<script src="assets/js/dashboard.js?v=2026-07-21b"></script>
+	<script src="assets/js/util.js?v=2026-07-24"></script>
+	<script src="assets/js/nav.js?v=2026-07-24"></script>
+	<script src="assets/js/dashboard.js?v=2026-07-24"></script>
 </body>
 </html>
