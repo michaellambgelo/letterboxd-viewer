@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2534,
+  "totalWatched": 2535,
   "uniqueFilms": 2115,
-  "totalRewatches": 839,
+  "totalRewatches": 840,
   "averageRating": 3.89,
   "ratingDistribution": {
     "0.5": 10,
@@ -13,7 +13,7 @@
     "3.5": 378,
     "4.0": 535,
     "4.5": 376,
-    "5.0": 585,
+    "5.0": 586,
     "unrated": 82
   },
   "filmsByMonth": {
@@ -102,7 +102,7 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 25
+    "2026-07": 26
   },
   "heatmapData": [
     {
@@ -6023,7 +6023,7 @@
     },
     {
       "date": "2026-07-25",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6038,7 +6038,7 @@
     "1990s": 162,
     "2000s": 254,
     "2010s": 721,
-    "2020s": 1159
+    "2020s": 1160
   },
   "mostRewatched": [
     {
@@ -6113,6 +6113,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1415090830",
+      "filmTitle": "Oppenheimer",
+      "filmYear": 2023,
+      "watchedDate": "2026-07-25",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 872585,
+      "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/16/",
+      "title": "Oppenheimer, 2023 - ★★★★★",
+      "reviewText": "i still find this ending pretty upsetting, but that's one of the reasons i am also compelled by it. i'm the type of guy to come home from a party and finish this film with an hour and a half of runtime left.\n\nrewatched to soak myself in some Nolan before I find time to go see The Odyssey again.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1413529338",
       "filmTitle": "The Muppet Christmas Carol",
@@ -6388,26 +6402,16 @@
       ],
       "loggedDate": "2026-07-05",
       "source": "archive"
-    },
-    {
-      "guid": "archive-f5oJWn",
-      "filmTitle": "Jaws",
-      "filmYear": 1975,
-      "watchedDate": "2026-07-04",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://boxd.it/f5oJWn",
-      "title": "Jaws",
-      "reviewText": "Pool party at the Parkers\r\n\r\nI don’t want to spend the brain power logging specific attendees but it was a great time",
-      "tags": [
-        "ryanparker"
-      ],
-      "loggedDate": "2026-07-05",
-      "source": "archive"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Oppenheimer",
+      "filmYear": 2023,
+      "watchedDate": "2026-07-25",
+      "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/16/",
+      "tmdbId": 872585
+    },
     {
       "filmTitle": "The Muppet Christmas Carol",
       "filmYear": 1992,
@@ -14558,10 +14562,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 174,
-      "uniqueFilms": 158,
-      "totalRewatches": 59,
-      "averageRating": 4.06,
+      "totalWatched": 175,
+      "uniqueFilms": 159,
+      "totalRewatches": 60,
+      "averageRating": 4.07,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
@@ -14572,7 +14576,7 @@
         "3.5": 26,
         "4.0": 32,
         "4.5": 35,
-        "5.0": 51,
+        "5.0": 52,
         "unrated": 1
       },
       "heatmapData": [
@@ -15038,7 +15042,7 @@
         },
         {
           "date": "2026-07-25",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15050,7 +15054,7 @@
         "1990s": 14,
         "2000s": 13,
         "2010s": 22,
-        "2020s": 105
+        "2020s": 106
       },
       "mostRewatched": [
         {
@@ -15090,6 +15094,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Oppenheimer",
+          "filmYear": 2023,
+          "watchedDate": "2026-07-25",
+          "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/16/"
+        },
         {
           "filmTitle": "The Muppet Christmas Carol",
           "filmYear": 1992,
@@ -15143,12 +15153,6 @@
           "filmYear": 2019,
           "watchedDate": "2026-06-26",
           "link": "https://boxd.it/eXKLxL"
-        },
-        {
-          "filmTitle": "Andor: A Disney+ Day Special Look",
-          "filmYear": 2022,
-          "watchedDate": "2026-06-22",
-          "link": "https://boxd.it/eUbDAZ"
         }
       ]
     }
