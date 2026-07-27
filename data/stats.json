@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2537,
-  "uniqueFilms": 2116,
+  "totalWatched": 2538,
+  "uniqueFilms": 2117,
   "totalRewatches": 841,
   "averageRating": 3.89,
   "ratingDistribution": {
@@ -11,7 +11,7 @@
     "2.5": 127,
     "3.0": 286,
     "3.5": 378,
-    "4.0": 535,
+    "4.0": 536,
     "4.5": 377,
     "5.0": 587,
     "unrated": 82
@@ -102,7 +102,7 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 28
+    "2026-07": 29
   },
   "heatmapData": [
     {
@@ -6028,6 +6028,10 @@
     {
       "date": "2026-07-26",
       "count": 2
+    },
+    {
+      "date": "2026-07-27",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6039,7 +6043,7 @@
     "1960s": 30,
     "1970s": 57,
     "1980s": 87,
-    "1990s": 162,
+    "1990s": 163,
     "2000s": 254,
     "2010s": 722,
     "2020s": 1161
@@ -6117,6 +6121,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1417857938",
+      "filmTitle": "Muppet Treasure Island",
+      "filmYear": 1996,
+      "watchedDate": "2026-07-27",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 10874,
+      "link": "https://letterboxd.com/michaellamb/film/muppet-treasure-island/",
+      "title": "Muppet Treasure Island, 1996 - ★★★★",
+      "reviewText": "Watched on Monday July 27, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1417156549",
       "filmTitle": "Midsommar",
@@ -6382,24 +6400,6 @@
       "reviewText": "i respect a lot of the performances i saw but i think i just do not like terry gilliam. something about his movies is very off for me, although i see it as quite human work. Gilliam is accomplished as a filmmaker, even if I don’t like what he accomplished",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "archive-f8JyXN",
-      "filmTitle": "Give",
-      "filmYear": 2023,
-      "watchedDate": "2026-07-08",
-      "memberRating": 4.0,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://boxd.it/f8JyXN",
-      "title": "Give",
-      "reviewText": "I'm revisiting this for the first time years after watching it and I fully endorse the 4-star rating for this excellent short film I gave it in 2024.\r\n\r\nI noticed camera choices that were rich with intention -- sequences which flowed so well in my initial watch that knowing what to expect was the only way I could observe the intention.\r\n\r\n<a href=\"https://www.youtube.com/watch?v=oB71miCkW-A\" target=\"_blank\">I had a lovely conversation with the filmmaker, Kenya Gillespie. Watch it now on YouTube</a>",
-      "tags": [
-        "youtube",
-        "dekkoo"
-      ],
-      "loggedDate": "2026-07-09",
-      "source": "archive"
     }
   ],
   "highestRated": [
@@ -8247,7 +8247,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-07-26"
+    "latest": "2026-07-27"
   },
   "byYear": {
     "2017": {
@@ -14567,8 +14567,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 177,
-      "uniqueFilms": 161,
+      "totalWatched": 178,
+      "uniqueFilms": 162,
       "totalRewatches": 61,
       "averageRating": 4.08,
       "ratingDistribution": {
@@ -14579,7 +14579,7 @@
         "2.5": 13,
         "3.0": 10,
         "3.5": 26,
-        "4.0": 32,
+        "4.0": 33,
         "4.5": 36,
         "5.0": 53,
         "unrated": 1
@@ -15052,6 +15052,10 @@
         {
           "date": "2026-07-26",
           "count": 2
+        },
+        {
+          "date": "2026-07-27",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15060,7 +15064,7 @@
         "1960s": 4,
         "1970s": 5,
         "1980s": 6,
-        "1990s": 14,
+        "1990s": 15,
         "2000s": 13,
         "2010s": 23,
         "2020s": 107
