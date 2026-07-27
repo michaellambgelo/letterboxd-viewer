@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2536,
+  "totalWatched": 2537,
   "uniqueFilms": 2116,
-  "totalRewatches": 840,
+  "totalRewatches": 841,
   "averageRating": 3.89,
   "ratingDistribution": {
     "0.5": 10,
@@ -13,7 +13,7 @@
     "3.5": 378,
     "4.0": 535,
     "4.5": 377,
-    "5.0": 586,
+    "5.0": 587,
     "unrated": 82
   },
   "filmsByMonth": {
@@ -102,7 +102,7 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 27
+    "2026-07": 28
   },
   "heatmapData": [
     {
@@ -6027,7 +6027,7 @@
     },
     {
       "date": "2026-07-26",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6041,7 +6041,7 @@
     "1980s": 87,
     "1990s": 162,
     "2000s": 254,
-    "2010s": 721,
+    "2010s": 722,
     "2020s": 1161
   },
   "mostRewatched": [
@@ -6117,6 +6117,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1417156549",
+      "filmTitle": "Midsommar",
+      "filmYear": 2019,
+      "watchedDate": "2026-07-26",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 530385,
+      "link": "https://letterboxd.com/michaellamb/film/midsommar/52/",
+      "title": "Midsommar, 2019 - ★★★★★ (contains spoilers)",
+      "reviewText": "This review may contain spoilers.\n\nThe Rotvälta long take starts with Mark in tow with Josh, approaching Pelle in the garden. The camera only cuts to join Mark as Father Ulf is sprinting toward him, so we can \"catch up\" with him after he leaves the frame and the suspense is built.\n\nThe juxtaposition of American and Swedish concepts of what is sacred and what is profane is something the film is interested in, and this ends up as the most comedic sequence of the entire runtime. I remember Ulf's hysteria made theater audiences laugh out loud.\n\nThe image looks like shit on HBO Max. Anytime there's darkness or black, it's all rectangles. Really wish there was something we could do about these awful, ass streaming services... like make the executives jump off a cliff. Or burn them in a custom teddy bear suit. Or turn them into a Yuletide tree. Or give them the Blood Eagle. Or just straight up hit them upside the head with a hammer.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1415798149",
       "filmTitle": "Wasteman",
@@ -6386,26 +6400,16 @@
       ],
       "loggedDate": "2026-07-09",
       "source": "archive"
-    },
-    {
-      "guid": "archive-f8XbG3",
-      "filmTitle": "The Great Muppet Caper",
-      "filmYear": 1981,
-      "watchedDate": "2026-07-08",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/f8XbG3",
-      "title": "The Great Muppet Caper",
-      "reviewText": "",
-      "tags": [
-        "disney+"
-      ],
-      "loggedDate": "2026-07-09",
-      "source": "archive"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Midsommar",
+      "filmYear": 2019,
+      "watchedDate": "2026-07-26",
+      "link": "https://letterboxd.com/michaellamb/film/midsommar/52/",
+      "tmdbId": 530385
+    },
     {
       "filmTitle": "Oppenheimer",
       "filmYear": 2023,
@@ -14563,10 +14567,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 176,
-      "uniqueFilms": 160,
-      "totalRewatches": 60,
-      "averageRating": 4.07,
+      "totalWatched": 177,
+      "uniqueFilms": 161,
+      "totalRewatches": 61,
+      "averageRating": 4.08,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
@@ -14577,7 +14581,7 @@
         "3.5": 26,
         "4.0": 32,
         "4.5": 36,
-        "5.0": 52,
+        "5.0": 53,
         "unrated": 1
       },
       "heatmapData": [
@@ -15047,7 +15051,7 @@
         },
         {
           "date": "2026-07-26",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15058,7 +15062,7 @@
         "1980s": 6,
         "1990s": 14,
         "2000s": 13,
-        "2010s": 22,
+        "2010s": 23,
         "2020s": 107
       },
       "mostRewatched": [
@@ -15099,6 +15103,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Midsommar",
+          "filmYear": 2019,
+          "watchedDate": "2026-07-26",
+          "link": "https://letterboxd.com/michaellamb/film/midsommar/52/"
+        },
         {
           "filmTitle": "Oppenheimer",
           "filmYear": 2023,
@@ -15152,12 +15162,6 @@
           "filmYear": 2023,
           "watchedDate": "2026-06-29",
           "link": "https://boxd.it/f0Cnfp"
-        },
-        {
-          "filmTitle": "Midsommar",
-          "filmYear": 2019,
-          "watchedDate": "2026-06-26",
-          "link": "https://boxd.it/eXKLxL"
         }
       ]
     }
