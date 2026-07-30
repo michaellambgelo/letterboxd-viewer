@@ -9,12 +9,12 @@
     "1.5": 28,
     "2.0": 105,
     "2.5": 128,
-    "3.0": 287,
+    "3.0": 286,
     "3.5": 379,
     "4.0": 537,
     "4.5": 376,
     "5.0": 587,
-    "unrated": 82
+    "unrated": 83
   },
   "filmsByMonth": {
     "2017-08": 1,
@@ -6035,7 +6035,11 @@
     },
     {
       "date": "2026-07-28",
-      "count": 3
+      "count": 2
+    },
+    {
+      "date": "2026-07-29",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6050,7 +6054,7 @@
     "1990s": 163,
     "2000s": 254,
     "2010s": 723,
-    "2020s": 1162
+    "2020s": 1163
   },
   "mostRewatched": [
     {
@@ -6126,16 +6130,16 @@
   ],
   "recentActivity": [
     {
-      "guid": "letterboxd-entry-1420642680",
-      "filmTitle": "Rob Roy",
-      "filmYear": null,
-      "watchedDate": "2026-07-28",
-      "memberRating": 3.0,
+      "guid": "letterboxd-entry-1422431837",
+      "filmTitle": "Spider-Man: Brand New Day",
+      "filmYear": 2026,
+      "watchedDate": "2026-07-29",
+      "memberRating": null,
       "rewatch": false,
-      "tmdbId": 1735579,
-      "link": "https://letterboxd.com/michaellamb/film/rob-roy-1/",
-      "title": "Rob Roy - ★★★",
-      "reviewText": "Watched on Tuesday July 28, 2026.",
+      "tmdbId": 969681,
+      "link": "https://letterboxd.com/michaellamb/film/spider-man-brand-new-day/",
+      "title": "Spider-Man: Brand New Day, 2026",
+      "reviewText": "Watched on Wednesday July 29, 2026.",
       "tags": [],
       "source": "rss"
     },
@@ -8251,7 +8255,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-07-28"
+    "latest": "2026-07-29"
   },
   "byYear": {
     "2017": {
@@ -14581,12 +14585,12 @@
         "1.5": 1,
         "2.0": 3,
         "2.5": 14,
-        "3.0": 11,
+        "3.0": 10,
         "3.5": 27,
         "4.0": 34,
         "4.5": 35,
         "5.0": 53,
-        "unrated": 1
+        "unrated": 2
       },
       "heatmapData": [
         {
@@ -15063,7 +15067,11 @@
         },
         {
           "date": "2026-07-28",
-          "count": 3
+          "count": 2
+        },
+        {
+          "date": "2026-07-29",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15075,7 +15083,7 @@
         "1990s": 15,
         "2000s": 13,
         "2010s": 24,
-        "2020s": 108
+        "2020s": 109
       },
       "mostRewatched": [
         {
