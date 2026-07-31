@@ -1,5 +1,33 @@
 [
   {
+    "guid": "letterboxd-entry-1423703772",
+    "filmTitle": "Ben-Hur",
+    "filmYear": 1959,
+    "watchedDate": "2026-07-30",
+    "memberRating": 4.5,
+    "rewatch": false,
+    "tmdbId": 665,
+    "link": "https://letterboxd.com/michaellamb/film/ben-hur-1959/",
+    "title": "Ben-Hur, 1959 - ★★★★½",
+    "reviewText": "Nolan's The Odyssey surpasses this in many ways",
+    "tags": [],
+    "source": "rss"
+  },
+  {
+    "guid": "letterboxd-entry-1423701530",
+    "filmTitle": "Rob Roy",
+    "filmYear": null,
+    "watchedDate": "2026-07-29",
+    "memberRating": 3.0,
+    "rewatch": false,
+    "tmdbId": 1735579,
+    "link": "https://letterboxd.com/michaellamb/film/rob-roy-1/1/",
+    "title": "Rob Roy - ★★★",
+    "reviewText": "Watched on Wednesday July 29, 2026.",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1422431837",
     "filmTitle": "Spider-Man: Brand New Day",
     "filmYear": 2026,

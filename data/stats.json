@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2541,
-  "uniqueFilms": 2118,
+  "totalWatched": 2543,
+  "uniqueFilms": 2120,
   "totalRewatches": 842,
   "averageRating": 3.89,
   "ratingDistribution": {
@@ -9,10 +9,10 @@
     "1.5": 28,
     "2.0": 105,
     "2.5": 128,
-    "3.0": 286,
+    "3.0": 287,
     "3.5": 379,
     "4.0": 537,
-    "4.5": 376,
+    "4.5": 377,
     "5.0": 587,
     "unrated": 83
   },
@@ -102,7 +102,7 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 32
+    "2026-07": 34
   },
   "heatmapData": [
     {
@@ -6039,6 +6039,10 @@
     },
     {
       "date": "2026-07-29",
+      "count": 2
+    },
+    {
+      "date": "2026-07-30",
       "count": 1
     }
   ],
@@ -6047,7 +6051,7 @@
     "1920s": 4,
     "1930s": 7,
     "1940s": 17,
-    "1950s": 18,
+    "1950s": 19,
     "1960s": 30,
     "1970s": 57,
     "1980s": 87,
@@ -6129,6 +6133,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1423703772",
+      "filmTitle": "Ben-Hur",
+      "filmYear": 1959,
+      "watchedDate": "2026-07-30",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 665,
+      "link": "https://letterboxd.com/michaellamb/film/ben-hur-1959/",
+      "title": "Ben-Hur, 1959 - ★★★★½",
+      "reviewText": "Nolan's The Odyssey surpasses this in many ways",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1423701530",
+      "filmTitle": "Rob Roy",
+      "filmYear": null,
+      "watchedDate": "2026-07-29",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 1735579,
+      "link": "https://letterboxd.com/michaellamb/film/rob-roy-1/1/",
+      "title": "Rob Roy - ★★★",
+      "reviewText": "Watched on Wednesday July 29, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1422431837",
       "filmTitle": "Spider-Man: Brand New Day",
@@ -6378,34 +6410,6 @@
       "link": "https://letterboxd.com/michaellamb/film/coffee-shop-names/",
       "title": "Coffee Shop Names, 2020 - ★★★½",
       "reviewText": "danny pudi do more short films",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1399479088",
-      "filmTitle": "The Odyssey",
-      "filmYear": 2026,
-      "watchedDate": "2026-07-16",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": 1368337,
-      "link": "https://letterboxd.com/michaellamb/film/the-odyssey-2026/",
-      "title": "The Odyssey, 2026 - ★★★★½",
-      "reviewText": "\"Benny Safdie was in this movie?\"— me, watching the end credits of Nolan's The Odyssey\n\nI would never have guessed that Agamemnon was played by Benny fucking Safdie. It was pretty cool the way Nolan used the character to show Odysseus' discipline to war through the visual motif of the camera following Agamemnon into battle.\n\nSo many great performances but Robert Pattinson has the most fun. Charlize Theron, Anne Hathaway, Zendaya, Lupito N'yongo, and holy shit Samantha Morton — all of them enraptured me in the precious little screen time they steal from Matt Damon's glorious abs.\n\nOnly a few things stood out to me as leaving me wanting: the riddle of \"Nobody\" with Polyphemus was omitted; the sirens are depicted but we don't see any sailors who abandoned ship meet their end; the Scylla and Charybdis fight felt like something the movie was trying to get out of the way more than anything. And PENELOPE'S trick! COME ON! This is one of those times where I want another 15-20 minutes of runtime\n\nABSOLUTELY LOVED the score and the use of Travis Scott as a bard. I learned today by way of James Blake's social media that he had a part in the score and I told myself I'd recognize it and believe you me I knew it from the chord progression just before his velvety voice filled up the auditorium.\n\nI was moved by this epic.\n\nwith Drake, Logan, Eric, Mary, and Jennie. Vinny took the photo.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1399117822",
-      "filmTitle": "Insomnia",
-      "filmYear": 2002,
-      "watchedDate": "2026-07-16",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 320,
-      "link": "https://letterboxd.com/michaellamb/film/insomnia-2002/",
-      "title": "Insomnia, 2002 - ★★★½",
-      "reviewText": "there will come a day when I have no new Nolan movies to log... but it is not this day!\n\nI get to log another new Nolan later tonight",
       "tags": [],
       "source": "rss"
     }
@@ -8255,7 +8259,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-07-29"
+    "latest": "2026-07-30"
   },
   "byYear": {
     "2017": {
@@ -14575,8 +14579,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 181,
-      "uniqueFilms": 165,
+      "totalWatched": 183,
+      "uniqueFilms": 167,
       "totalRewatches": 62,
       "averageRating": 4.06,
       "ratingDistribution": {
@@ -14585,10 +14589,10 @@
         "1.5": 1,
         "2.0": 3,
         "2.5": 14,
-        "3.0": 10,
+        "3.0": 11,
         "3.5": 27,
         "4.0": 34,
-        "4.5": 35,
+        "4.5": 36,
         "5.0": 53,
         "unrated": 2
       },
@@ -15071,12 +15075,16 @@
         },
         {
           "date": "2026-07-29",
+          "count": 2
+        },
+        {
+          "date": "2026-07-30",
           "count": 1
         }
       ],
       "filmYearDistribution": {
         "1890s": 1,
-        "1950s": 1,
+        "1950s": 2,
         "1960s": 4,
         "1970s": 5,
         "1980s": 6,
