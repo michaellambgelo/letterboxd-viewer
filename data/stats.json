@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2543,
+  "totalWatched": 2544,
   "uniqueFilms": 2120,
-  "totalRewatches": 842,
+  "totalRewatches": 843,
   "averageRating": 3.89,
   "ratingDistribution": {
     "0.5": 10,
@@ -10,11 +10,11 @@
     "2.0": 105,
     "2.5": 128,
     "3.0": 287,
-    "3.5": 379,
+    "3.5": 381,
     "4.0": 537,
     "4.5": 377,
     "5.0": 587,
-    "unrated": 83
+    "unrated": 82
   },
   "filmsByMonth": {
     "2017-08": 1,
@@ -102,7 +102,7 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 34
+    "2026-07": 35
   },
   "heatmapData": [
     {
@@ -6043,7 +6043,7 @@
     },
     {
       "date": "2026-07-30",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6058,7 +6058,7 @@
     "1990s": 163,
     "2000s": 254,
     "2010s": 723,
-    "2020s": 1163
+    "2020s": 1164
   },
   "mostRewatched": [
     {
@@ -6134,6 +6134,20 @@
   ],
   "recentActivity": [
     {
+      "guid": "letterboxd-entry-1424159185",
+      "filmTitle": "Spider-Man: Brand New Day",
+      "filmYear": 2026,
+      "watchedDate": "2026-07-30",
+      "memberRating": 3.5,
+      "rewatch": true,
+      "tmdbId": 969681,
+      "link": "https://letterboxd.com/michaellamb/film/spider-man-brand-new-day/1/",
+      "title": "Spider-Man: Brand New Day, 2026 - ★★★½",
+      "reviewText": "Watched with Micah, Jeana, Drake, Logan, Faith, Mary & Eric",
+      "tags": [],
+      "source": "rss"
+    },
+    {
       "guid": "letterboxd-entry-1423703772",
       "filmTitle": "Ben-Hur",
       "filmYear": 1959,
@@ -6143,7 +6157,7 @@
       "tmdbId": 665,
       "link": "https://letterboxd.com/michaellamb/film/ben-hur-1959/",
       "title": "Ben-Hur, 1959 - ★★★★½",
-      "reviewText": "Nolan's The Odyssey surpasses this in many ways",
+      "reviewText": "Nolan&#039;s The Odyssey surpasses this in many ways, and yet it feels like they are in dialogue with each other.\n\nI feel as though I can appreciate a film as awesome and epic as Ben-Hur with a better sense of the scale involved in the filmmaking process after having waited 3 years for Nolan&#039;s vision to reach my eyeballs.",
       "tags": [],
       "source": "rss"
     },
@@ -6166,11 +6180,11 @@
       "filmTitle": "Spider-Man: Brand New Day",
       "filmYear": 2026,
       "watchedDate": "2026-07-29",
-      "memberRating": null,
+      "memberRating": 3.5,
       "rewatch": false,
       "tmdbId": 969681,
       "link": "https://letterboxd.com/michaellamb/film/spider-man-brand-new-day/",
-      "title": "Spider-Man: Brand New Day, 2026",
+      "title": "Spider-Man: Brand New Day, 2026 - ★★★½",
       "reviewText": "Watched on Wednesday July 29, 2026.",
       "tags": [],
       "source": "rss"
@@ -6185,7 +6199,7 @@
       "tmdbId": 634649,
       "link": "https://letterboxd.com/michaellamb/film/spider-man-no-way-home/2/",
       "title": "Spider-Man: No Way Home, 2021 - ★★½ (contains spoilers)",
-      "reviewText": "This review may contain spoilers.\n\nMay's death sequence is so good because Tom Holland and Marisa Tomei sell it but the writing before and after does not earn it. Especially for the tour de force acting put on by the likes of Alfred Molina, Willem Dafoe, Andrew Garfield, and Tobey Maguire — the whole reversal of the Spider-Man origin story for Tom Holland's iteration still just doesn't sit well with me. I can't get over that, and this film was made in spite of that.\n\nA slight departure from the two previous movies. Really gets bogged down in the multiversal exposition.\n\nWatched with Jennie",
+      "reviewText": "This review may contain spoilers.\n\nMay&#039;s death sequence is so good because Tom Holland and Marisa Tomei sell it but the writing before and after does not earn it. Especially for the tour de force acting put on by the likes of Alfred Molina, Willem Dafoe, Andrew Garfield, and Tobey Maguire — the whole reversal of the Spider-Man origin story for Tom Holland&#039;s iteration still just doesn&#039;t sit well with me. I can&#039;t get over that, and this film was made in spite of that.\n\nA slight departure from the two previous movies. Really gets bogged down in the multiversal exposition.\n\nWatched with Jennie",
       "tags": [],
       "source": "rss"
     },
@@ -6199,7 +6213,7 @@
       "tmdbId": 429617,
       "link": "https://letterboxd.com/michaellamb/film/spider-man-far-from-home/",
       "title": "Spider-Man: Far From Home, 2019 - ★★★½ (contains spoilers)",
-      "reviewText": "This review may contain spoilers.\n\nA catalog of thoughts\n- \"Tingle tingle kooloo limpah!\"\n- \"You have kind eyes. MJ's eyes\"\n- so these big Mysterio encounters are like a 4DX experience? \n- Brad may be a hottie but he's a dummy, Peter wouldn't feel so threatened if he knew that\n- Ned's got a huge dart hanging out of his neck and his chaperone fails to notice\n- \"Bitch, please. You've been to space\"\n- couples that text each other right next to each other 🤮\n- LOOK AT THE BABY MOUNTAIN GOATS — I would be just as disappointed Professor Cligoris\n- the people-pleaser in Ned doesn't allow him to tell his girlfriend that a Ferris wheel is the worst idea in the world with an imminent elemental attack\n- \"I need a vacation from my vacation\" \n- the whole misinformation plot line is actually pretty coherent. reminds me why this is my favorite of the Home trilogy\n- MJ so sweet — she sees Spider-Man and just wants to hug him and know if he's okay\n- \"I wasn't just watching you because I thought you were Spider-Man\" is so relatable — I loved Tom Holland in The Odyssey and also The Devil All The Time which is an underrated Netflix flick\n- mid-credits scene is so on point, thematically\n\nwatched with Jennie",
+      "reviewText": "This review may contain spoilers.\n\nA catalog of thoughts\n- &quot;Tingle tingle kooloo limpah!&quot;\n- &quot;You have kind eyes. MJ&#039;s eyes&quot;\n- so these big Mysterio encounters are like a 4DX experience? \n- Brad may be a hottie but he&#039;s a dummy, Peter wouldn&#039;t feel so threatened if he knew that\n- Ned&#039;s got a huge dart hanging out of his neck and his chaperone fails to notice\n- &quot;Bitch, please. You&#039;ve been to space&quot;\n- couples that text each other right next to each other 🤮\n- LOOK AT THE BABY MOUNTAIN GOATS — I would be just as disappointed Professor Cligoris\n- the people-pleaser in Ned doesn&#039;t allow him to tell his girlfriend that a Ferris wheel is the worst idea in the world with an imminent elemental attack\n- &quot;I need a vacation from my vacation&quot; \n- the whole misinformation plot line is actually pretty coherent. reminds me why this is my favorite of the Home trilogy\n- MJ so sweet — she sees Spider-Man and just wants to hug him and know if he&#039;s okay\n- &quot;I wasn&#039;t just watching you because I thought you were Spider-Man&quot; is so relatable — I loved Tom Holland in The Odyssey and also The Devil All The Time which is an underrated Netflix flick\n- mid-credits scene is so on point, thematically\n\nwatched with Jennie",
       "tags": [],
       "source": "rss"
     },
@@ -6227,7 +6241,7 @@
       "tmdbId": 530385,
       "link": "https://letterboxd.com/michaellamb/film/midsommar/52/",
       "title": "Midsommar, 2019 - ★★★★★ (contains spoilers)",
-      "reviewText": "This review may contain spoilers.\n\nThe Rotvälta long take starts with Mark in tow with Josh, approaching Pelle in the garden. The camera only cuts to join Mark as Father Ulf is sprinting toward him, so we can catch up with him long after he has left the frame and the suspense is built. It’s truly something to watch. \n\nThe juxtaposition of American and Swedish concepts of what is sacred and what is profane is something the film is interested in, and this ends up as the most comedic sequence of the entire runtime. I remember Ulf's hysteria made theater audiences laugh out loud.\n\nThe image looks like shit on HBO Max. Anytime there's darkness or black, it's all rectangles. Really wish there was something we could do about these awful, ass streaming services... like make the executives jump off a cliff. Or burn them in a custom teddy bear suit. Or turn them into a Yuletide tree. Or give them the Blood Eagle. Or just straight up hit them upside the head with a hammer.",
+      "reviewText": "This review may contain spoilers.\n\nThe Rotvälta long take starts with Mark in tow with Josh, approaching Pelle in the garden. The camera only cuts to join Mark as Father Ulf is sprinting toward him, so we can catch up with him long after he has left the frame and the suspense is built. It’s truly something to watch. \n\nThe juxtaposition of American and Swedish concepts of what is sacred and what is profane is something the film is interested in, and this ends up as the most comedic sequence of the entire runtime. I remember Ulf&#039;s hysteria made theater audiences laugh out loud.\n\nThe image looks like shit on HBO Max. Anytime there&#039;s darkness or black, it&#039;s all rectangles. Really wish there was something we could do about these awful, ass streaming services... like make the executives jump off a cliff. Or burn them in a custom teddy bear suit. Or turn them into a Yuletide tree. Or give them the Blood Eagle. Or just straight up hit them upside the head with a hammer.",
       "tags": [],
       "source": "rss"
     },
@@ -6241,7 +6255,7 @@
       "tmdbId": 1307373,
       "link": "https://letterboxd.com/michaellamb/film/wasteman/",
       "title": "Wasteman, 2025 - ★★★★½ (contains spoilers)",
-      "reviewText": "This review may contain spoilers.\n\nthat score during the riot scene gave me chills\nlove the soundtrack\none win for MUBI is that it doesn't autoplay something else 10 seconds after the credits roll",
+      "reviewText": "This review may contain spoilers.\n\nthat score during the riot scene gave me chills\nlove the soundtrack\none win for MUBI is that it doesn&#039;t autoplay something else 10 seconds after the credits roll",
       "tags": [],
       "source": "rss"
     },
@@ -6255,7 +6269,7 @@
       "tmdbId": 872585,
       "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/16/",
       "title": "Oppenheimer, 2023 - ★★★★★",
-      "reviewText": "i still find this ending pretty upsetting, but that's one of the reasons i am also compelled by it. i'm the type of guy to come home from a party and finish this film with an hour and a half of runtime left.\n\nrewatched to soak myself in some Nolan before I find time to go see The Odyssey again.",
+      "reviewText": "i still find this ending pretty upsetting, but that&#039;s one of the reasons i am also compelled by it. i&#039;m the type of guy to come home from a party and finish this film with an hour and a half of runtime left.\n\nrewatched to soak myself in some Nolan before I find time to go see The Odyssey again.",
       "tags": [],
       "source": "rss"
     },
@@ -6353,7 +6367,7 @@
       "tmdbId": 701387,
       "link": "https://letterboxd.com/michaellamb/film/bugonia/1/",
       "title": "Bugonia, 2025 - ★★★★★",
-      "reviewText": "i feel like it's weird to say i love the ending because of what it is but it's true\n\nborrowed from the Willie Morris library",
+      "reviewText": "i feel like it&#039;s weird to say i love the ending because of what it is but it&#039;s true\n\nborrowed from the Willie Morris library",
       "tags": [],
       "source": "rss"
     },
@@ -6395,21 +6409,7 @@
       "tmdbId": 1368337,
       "link": "https://letterboxd.com/michaellamb/film/the-odyssey-2026/1/",
       "title": "The Odyssey, 2026 - ★★★★½",
-      "reviewText": "round #2 because that's how I roll\n\nwatched with Jon-Nolan and Aidan at the Capri",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1399501740",
-      "filmTitle": "Coffee Shop Names",
-      "filmYear": 2020,
-      "watchedDate": "2026-07-16",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 703531,
-      "link": "https://letterboxd.com/michaellamb/film/coffee-shop-names/",
-      "title": "Coffee Shop Names, 2020 - ★★★½",
-      "reviewText": "danny pudi do more short films",
+      "reviewText": "round #2 because that&#039;s how I roll\n\nwatched with Jon-Nolan and Aidan at the Capri",
       "tags": [],
       "source": "rss"
     }
@@ -14579,10 +14579,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 183,
+      "totalWatched": 184,
       "uniqueFilms": 167,
-      "totalRewatches": 62,
-      "averageRating": 4.06,
+      "totalRewatches": 63,
+      "averageRating": 4.05,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
@@ -14590,11 +14590,11 @@
         "2.0": 3,
         "2.5": 14,
         "3.0": 11,
-        "3.5": 27,
+        "3.5": 29,
         "4.0": 34,
         "4.5": 36,
         "5.0": 53,
-        "unrated": 2
+        "unrated": 1
       },
       "heatmapData": [
         {
@@ -15079,7 +15079,7 @@
         },
         {
           "date": "2026-07-30",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15091,7 +15091,7 @@
         "1990s": 15,
         "2000s": 13,
         "2010s": 24,
-        "2020s": 109
+        "2020s": 110
       },
       "mostRewatched": [
         {
@@ -15110,6 +15110,13 @@
         },
         {
           "count": 2,
+          "filmTitle": "Spider-Man: Brand New Day",
+          "filmYear": 2026,
+          "tmdbId": 969681,
+          "link": "https://letterboxd.com/michaellamb/film/spider-man-brand-new-day/"
+        },
+        {
+          "count": 2,
           "filmTitle": "Midsommar",
           "filmYear": 2019,
           "tmdbId": null,
@@ -15121,13 +15128,6 @@
           "filmYear": 2025,
           "tmdbId": null,
           "link": "https://boxd.it/erK377"
-        },
-        {
-          "count": 2,
-          "filmTitle": "The Drama",
-          "filmYear": 2026,
-          "tmdbId": null,
-          "link": "https://boxd.it/ebU0JN"
         }
       ],
       "highestRated": [
