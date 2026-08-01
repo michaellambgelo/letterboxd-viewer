@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2545,
-  "uniqueFilms": 2120,
+  "totalWatched": 2546,
+  "uniqueFilms": 2121,
   "totalRewatches": 844,
   "averageRating": 3.89,
   "ratingDistribution": {
@@ -13,7 +13,7 @@
     "3.5": 381,
     "4.0": 537,
     "4.5": 378,
-    "5.0": 587,
+    "5.0": 588,
     "unrated": 82
   },
   "filmsByMonth": {
@@ -102,7 +102,7 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 36
+    "2026-07": 37
   },
   "heatmapData": [
     {
@@ -6047,7 +6047,7 @@
     },
     {
       "date": "2026-07-31",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6055,7 +6055,7 @@
     "1920s": 4,
     "1930s": 7,
     "1940s": 17,
-    "1950s": 19,
+    "1950s": 20,
     "1960s": 30,
     "1970s": 57,
     "1980s": 87,
@@ -6137,6 +6137,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1426191224",
+      "filmTitle": "Ikiru",
+      "filmYear": 1952,
+      "watchedDate": "2026-07-31",
+      "memberRating": 5.0,
+      "rewatch": false,
+      "tmdbId": 3782,
+      "link": "https://letterboxd.com/michaellamb/film/ikiru/",
+      "title": "Ikiru, 1952 - ★★★★★",
+      "reviewText": "bruh what a day i&#039;ve had. first The Sheep Detectives and now Ikiru — I have so much on my mind. \n\nmy mom and my sister Shelby locked in on this one. Shelby picked it out.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1425386251",
       "filmTitle": "The Sheep Detectives",
@@ -6402,23 +6416,16 @@
       "reviewText": "holy shit this is bleak but insanely great",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1403216512",
-      "filmTitle": "The Odyssey",
-      "filmYear": 2026,
-      "watchedDate": "2026-07-18",
-      "memberRating": 4.5,
-      "rewatch": true,
-      "tmdbId": 1368337,
-      "link": "https://letterboxd.com/michaellamb/film/the-odyssey-2026/2/",
-      "title": "The Odyssey, 2026 - ★★★★½",
-      "reviewText": "elemental and deeply human art\n\nthird round; with McKinley and Jon-Nolan",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Ikiru",
+      "filmYear": 1952,
+      "watchedDate": "2026-07-31",
+      "link": "https://letterboxd.com/michaellamb/film/ikiru/",
+      "tmdbId": 3782
+    },
     {
       "filmTitle": "Midsommar",
       "filmYear": 2019,
@@ -14583,10 +14590,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 185,
-      "uniqueFilms": 168,
+      "totalWatched": 186,
+      "uniqueFilms": 169,
       "totalRewatches": 64,
-      "averageRating": 4.05,
+      "averageRating": 4.06,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 1,
@@ -14597,7 +14604,7 @@
         "3.5": 29,
         "4.0": 34,
         "4.5": 37,
-        "5.0": 53,
+        "5.0": 54,
         "unrated": 1
       },
       "heatmapData": [
@@ -15087,12 +15094,12 @@
         },
         {
           "date": "2026-07-31",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
         "1890s": 1,
-        "1950s": 2,
+        "1950s": 3,
         "1960s": 4,
         "1970s": 5,
         "1980s": 6,
@@ -15139,6 +15146,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Ikiru",
+          "filmYear": 1952,
+          "watchedDate": "2026-07-31",
+          "link": "https://letterboxd.com/michaellamb/film/ikiru/"
+        },
         {
           "filmTitle": "Midsommar",
           "filmYear": 2019,
@@ -15192,12 +15205,6 @@
           "filmYear": 1969,
           "watchedDate": "2026-07-04",
           "link": "https://boxd.it/f5rbLr"
-        },
-        {
-          "filmTitle": "Oppenheimer",
-          "filmYear": 2023,
-          "watchedDate": "2026-06-29",
-          "link": "https://boxd.it/f0Cnfp"
         }
       ]
     }
