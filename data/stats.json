@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2544,
+  "totalWatched": 2545,
   "uniqueFilms": 2120,
-  "totalRewatches": 843,
+  "totalRewatches": 844,
   "averageRating": 3.89,
   "ratingDistribution": {
     "0.5": 10,
@@ -12,7 +12,7 @@
     "3.0": 287,
     "3.5": 381,
     "4.0": 537,
-    "4.5": 377,
+    "4.5": 378,
     "5.0": 587,
     "unrated": 82
   },
@@ -102,7 +102,7 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 35
+    "2026-07": 36
   },
   "heatmapData": [
     {
@@ -6044,6 +6044,10 @@
     {
       "date": "2026-07-30",
       "count": 2
+    },
+    {
+      "date": "2026-07-31",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6058,7 +6062,7 @@
     "1990s": 163,
     "2000s": 254,
     "2010s": 723,
-    "2020s": 1164
+    "2020s": 1165
   },
   "mostRewatched": [
     {
@@ -6133,6 +6137,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1425386251",
+      "filmTitle": "The Sheep Detectives",
+      "filmYear": 2026,
+      "watchedDate": "2026-07-31",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 1301421,
+      "link": "https://letterboxd.com/michaellamb/film/the-sheep-detectives/1/",
+      "title": "The Sheep Detectives, 2026 - ★★★★½ (contains spoilers)",
+      "reviewText": "This review may contain spoilers.\n\ndespite my mother being the first person to tell me about the existence of this film, she is apparently not the least bit interested in actually watching it. i paid for her to go see it for Mother&#039;s day but she just gave the tickets to others. i put it on this afternoon while she&#039;s visiting and she just walked out the front door right as Sebastian died.\n\nwhen she first told me about it, it sounded like family-cringe that would be missable. my mom doesn&#039;t know me very well, nor does she know how to sell movies, because she could have mentioned Hugh Jackman at any point in time and I would have been on board immediately.\n\nanyway, just goes to show that sometimes the movie you think is perfectly engineered for a specific person doesn&#039;t always connect. i thought my mom&#039;s obsession with murder mysteries and her love for lamb imagery and the fact that this is basically The Land Before Time meets Knives Out would make this an instant classic to her but I was wrong.\n\nit&#039;s so ridiculously good and i&#039;m glad i finally saw it again. both this and Brand New Day have endings that make me happy.\n\nWatched with Shelby",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1424159185",
       "filmTitle": "Spider-Man: Brand New Day",
@@ -6396,20 +6414,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-odyssey-2026/2/",
       "title": "The Odyssey, 2026 - ★★★★½",
       "reviewText": "elemental and deeply human art\n\nthird round; with McKinley and Jon-Nolan",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1401288733",
-      "filmTitle": "The Odyssey",
-      "filmYear": 2026,
-      "watchedDate": "2026-07-17",
-      "memberRating": 4.5,
-      "rewatch": true,
-      "tmdbId": 1368337,
-      "link": "https://letterboxd.com/michaellamb/film/the-odyssey-2026/1/",
-      "title": "The Odyssey, 2026 - ★★★★½",
-      "reviewText": "round #2 because that&#039;s how I roll\n\nwatched with Jon-Nolan and Aidan at the Capri",
       "tags": [],
       "source": "rss"
     }
@@ -8259,7 +8263,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-07-30"
+    "latest": "2026-07-31"
   },
   "byYear": {
     "2017": {
@@ -14579,9 +14583,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 184,
-      "uniqueFilms": 167,
-      "totalRewatches": 63,
+      "totalWatched": 185,
+      "uniqueFilms": 168,
+      "totalRewatches": 64,
       "averageRating": 4.05,
       "ratingDistribution": {
         "0.5": 1,
@@ -14592,7 +14596,7 @@
         "3.0": 11,
         "3.5": 29,
         "4.0": 34,
-        "4.5": 36,
+        "4.5": 37,
         "5.0": 53,
         "unrated": 1
       },
@@ -15080,6 +15084,10 @@
         {
           "date": "2026-07-30",
           "count": 2
+        },
+        {
+          "date": "2026-07-31",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15091,7 +15099,7 @@
         "1990s": 15,
         "2000s": 13,
         "2010s": 24,
-        "2020s": 110
+        "2020s": 111
       },
       "mostRewatched": [
         {
