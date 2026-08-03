@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2546,
-  "uniqueFilms": 2121,
+  "totalWatched": 2547,
+  "uniqueFilms": 2122,
   "totalRewatches": 844,
   "averageRating": 3.89,
   "ratingDistribution": {
@@ -11,7 +11,7 @@
     "2.5": 128,
     "3.0": 287,
     "3.5": 381,
-    "4.0": 537,
+    "4.0": 538,
     "4.5": 378,
     "5.0": 588,
     "unrated": 82
@@ -102,7 +102,8 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 37
+    "2026-07": 37,
+    "2026-08": 1
   },
   "heatmapData": [
     {
@@ -6048,6 +6049,10 @@
     {
       "date": "2026-07-31",
       "count": 2
+    },
+    {
+      "date": "2026-08-03",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6062,7 +6067,7 @@
     "1990s": 163,
     "2000s": 254,
     "2010s": 723,
-    "2020s": 1165
+    "2020s": 1166
   },
   "mostRewatched": [
     {
@@ -6137,6 +6142,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1431409130",
+      "filmTitle": "Dreams",
+      "filmYear": 2025,
+      "watchedDate": "2026-08-03",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 1134463,
+      "link": "https://letterboxd.com/michaellamb/film/dreams-2025/",
+      "title": "Dreams, 2025 - ★★★★",
+      "reviewText": "Jessica Chastain is terrifying and the American attitude toward the immigrant is well-represented in her performance",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1426191224",
       "filmTitle": "Ikiru",
@@ -6400,20 +6419,6 @@
       "link": "https://letterboxd.com/michaellamb/film/bugonia/1/",
       "title": "Bugonia, 2025 - ★★★★★",
       "reviewText": "i feel like it&#039;s weird to say i love the ending because of what it is but it&#039;s true\n\nborrowed from the Willie Morris library",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1405580857",
-      "filmTitle": "Strange Days",
-      "filmYear": 1995,
-      "watchedDate": "2026-07-20",
-      "memberRating": 5.0,
-      "rewatch": false,
-      "tmdbId": 281,
-      "link": "https://letterboxd.com/michaellamb/film/strange-days/",
-      "title": "Strange Days, 1995 - ★★★★★",
-      "reviewText": "holy shit this is bleak but insanely great",
       "tags": [],
       "source": "rss"
     }
@@ -8270,7 +8275,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-07-31"
+    "latest": "2026-08-03"
   },
   "byYear": {
     "2017": {
@@ -14590,8 +14595,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 186,
-      "uniqueFilms": 169,
+      "totalWatched": 187,
+      "uniqueFilms": 170,
       "totalRewatches": 64,
       "averageRating": 4.06,
       "ratingDistribution": {
@@ -14602,7 +14607,7 @@
         "2.5": 14,
         "3.0": 11,
         "3.5": 29,
-        "4.0": 34,
+        "4.0": 35,
         "4.5": 37,
         "5.0": 54,
         "unrated": 1
@@ -15095,6 +15100,10 @@
         {
           "date": "2026-07-31",
           "count": 2
+        },
+        {
+          "date": "2026-08-03",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15106,7 +15115,7 @@
         "1990s": 15,
         "2000s": 13,
         "2010s": 24,
-        "2020s": 111
+        "2020s": 112
       },
       "mostRewatched": [
         {
