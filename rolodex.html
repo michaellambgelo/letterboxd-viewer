@@ -7,7 +7,7 @@
 	<meta name="description" content="A curated rolodex of Letterboxd profiles I follow, with each person's last four watched" />
 	<link rel="icon" type="image/svg+xml" href="assets/images/letterboxd-decal-dots-rgb.svg" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" />
-	<link rel="stylesheet" href="assets/css/dashboard.css?v=2026-08-06a" />
+	<link rel="stylesheet" href="assets/css/dashboard.css?v=2026-08-06b" />
 	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 	<script>
 		(function () {
@@ -103,8 +103,36 @@
 	</main>
 
 	<!-- Footer -->
-	<footer class="site-footer site-footer--minimal">
+	<footer class="site-footer">
 		<div class="container">
+			<div class="footer-grid">
+
+				<!-- Boxd Card Callout -->
+				<div>
+					<div class="boxd-card-callout">
+						<h3>Boxd Card</h3>
+						<p>A Chrome extension that generates shareable image cards from your Letterboxd profile. Create cards for your last four watched, favorites, diary entries, lists, and reviews.</p>
+						<a href="https://boxd-card.com" class="btn" target="_blank" rel="noopener">Find out more</a>
+					</div>
+				</div>
+
+				<!-- Contact / Guestbook -->
+				<div class="contact-section">
+					<h3>Guestbook</h3>
+					<form id="contact-form" class="contact-form">
+						<input type="text" name="name" placeholder="Name" required />
+						<input type="email" name="email" placeholder="Email" required />
+						<textarea name="message" rows="3" placeholder="Leave a message..." required></textarea>
+						<div class="form-actions">
+							<button type="submit" class="btn-submit">Send</button>
+							<button type="reset" class="btn-reset">Reset</button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+
+			<!-- Social Links -->
 			<div class="social-links">
 				<a href="https://letterboxd.com/michaellamb/" target="_blank" rel="noopener" title="Letterboxd"><img src="assets/images/letterboxd-decal-dots-rgb.svg" alt="Letterboxd" class="social-icon-img" width="20" height="20" /></a>
 				<a href="https://github.com/michaellambgelo" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
@@ -113,8 +141,12 @@
 		</div>
 	</footer>
 
+	<!-- Toast notifications -->
+	<div id="toast" class="toast"></div>
+
 	<script src="assets/js/util.js?v=2026-07-21b"></script>
 	<script src="assets/js/nav.js?v=2026-07-21b"></script>
+	<script src="assets/js/guestbook.js?v=2026-08-06b"></script>
 	<script src="assets/js/rolodex.js?v=2026-08-06a"></script>
 </body>
 </html>
