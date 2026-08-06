@@ -176,6 +176,17 @@ made `boxd-card` a Chrome extension.) Everything must be fetched server-side.
   the layout past the viewport and defeat its own `overflow-x`. Letter jumps are
   intentionally instant: the page runs to ~12,000px and a smooth scroll took
   ~1.5s of unreadable animation.
+- **Sorting: a `<select>` next to the filter box** (A–Z default, recently
+  active, least recently active, highest rated), persisted in
+  `localStorage['rolodex:sort']`. All client-side in `rolodex.js`: `applySort()`
+  re-appends the existing card nodes (grid order = DOM order, no re-render).
+  Film-derived keys stream in per card, so film-based sorts apply on selection
+  with whatever has landed and re-apply once at stream end — never per card,
+  which would make cards jump. Profiles with no diary entries sink in every
+  direction; ties break on the same first-name collation as the Worker's
+  `byFirstName`. Non-A–Z sorts hide the rail *and* collapse its 150px grid
+  column (`.rolodex-layout--no-rail`), or cards would auto-place into the empty
+  track.
 - **Feed cache expiry is synchronized, not rolling.** All per-profile
   `caches.default` entries get filled by whichever request finds them empty, so
   they expire together ~15min later and the next visitor pays the full cold cost

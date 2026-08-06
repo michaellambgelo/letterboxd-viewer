@@ -24,6 +24,18 @@
   const cards = new Map();
   const pending = new Set();
 
+  // username -> the keys applySort() orders by. `order` (the server's A-Z
+  // index) and the name fields come from the meta line; the film-derived keys
+  // stay null until that profile's feed resolves, so film-based sorts are only
+  // final once the stream settles.
+  const sortKeys = new Map();
+  const SORTS = new Set(['az', 'recent', 'quiet', 'rated']);
+  const SORT_STORAGE = 'rolodex:sort';
+  let currentSort = 'az';
+
+  // Mirrors the Worker's byFirstName collator so tie-breaks agree with the A-Z order.
+  const nameCollator = new Intl.Collator('en', { sensitivity: 'base', numeric: true });
+
   const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   const OTHER_LETTER = '#'; // anything not starting A-Z
   const letterButtons = new Map();
@@ -244,6 +256,61 @@
     }
   }
 
+  /* ------------------------------------------------------------------ sort */
+
+  function byName(a, b) {
+    return (
+      nameCollator.compare(a.first, b.first) ||
+      nameCollator.compare(a.label, b.label) ||
+      nameCollator.compare(a.username, b.username)
+    );
+  }
+
+  // Rated sort buckets: profiles with rated films, then films-but-no-ratings,
+  // then no films at all.
+  function ratedRank(keys) {
+    if (keys.avgRating !== null) return 0;
+    return keys.hasFilms ? 1 : 2;
+  }
+
+  // Profiles with no diary entries sink in every direction — "least recently
+  // active" means "went quiet", not "never posted". YYYY-MM-DD compares fine
+  // as a string.
+  const COMPARATORS = {
+    az: (a, b) => a.order - b.order,
+    recent: (a, b) =>
+      (a.lastWatched === null) - (b.lastWatched === null) ||
+      (a.lastWatched === b.lastWatched ? byName(a, b) : a.lastWatched < b.lastWatched ? 1 : -1),
+    quiet: (a, b) =>
+      (a.lastWatched === null) - (b.lastWatched === null) ||
+      (a.lastWatched === b.lastWatched ? byName(a, b) : a.lastWatched < b.lastWatched ? -1 : 1),
+    rated: (a, b) =>
+      ratedRank(a) - ratedRank(b) || (b.avgRating || 0) - (a.avgRating || 0) || byName(a, b),
+  };
+
+  /**
+   * Reorder the cards in place — `append` moves existing nodes, so a re-sort
+   * costs no re-render and no image state. The A-Z rail only makes sense over
+   * alphabetical order, so any other sort hides it (and collapses its grid
+   * column). Filtering is orthogonal: it only toggles `hidden`.
+   */
+  function applySort() {
+    const list = listEl();
+    if (list && cards.size) {
+      const compare = COMPARATORS[currentSort] || COMPARATORS.az;
+      const ordered = [...cards.entries()]
+        .sort(([a], [b]) => compare(sortKeys.get(a), sortKeys.get(b)))
+        .map(([, card]) => card);
+      list.append(...ordered);
+    }
+
+    const alphabetical = currentSort === 'az';
+    const rail = document.querySelector('.rolodex-rail');
+    if (rail) rail.hidden = !alphabetical;
+    const layout = document.querySelector('.rolodex-layout');
+    if (layout) layout.classList.toggle('rolodex-layout--no-rail', !alphabetical);
+  }
+
   /**
    * Single pass over the cards: show/hide by query, and recompute which letters
    * are reachable. Letters are disabled against the *filtered* set, so jumping
@@ -289,6 +356,7 @@
 
     cards.clear();
     pending.clear();
+    sortKeys.clear();
     list.innerHTML = '';
 
     if (!profiles.length) {
@@ -297,12 +365,22 @@
     }
 
     const frag = document.createDocumentFragment();
-    for (const profile of profiles) {
+    profiles.forEach((profile, index) => {
       const card = cardShell(profile);
       cards.set(profile.username, card);
       pending.add(profile.username);
+      const label = (profile.displayName || profile.username || '').trim();
+      sortKeys.set(profile.username, {
+        order: index,
+        label,
+        first: label.split(/\s+/)[0] || label,
+        username: profile.username || '',
+        lastWatched: null,
+        avgRating: null,
+        hasFilms: false,
+      });
       frag.appendChild(card);
-    }
+    });
     list.appendChild(frag);
     setCount(profiles.length);
     // Meta can land after someone has already typed, so reconcile rather than
@@ -315,6 +393,20 @@
     if (!card) return;
     pending.delete(data.username);
     fillCard(card, data);
+
+    // Record film-derived sort keys, but don't re-sort per card — mid-stream
+    // reordering makes cards jump under the cursor. The stream's end applies
+    // the final order once.
+    const keys = sortKeys.get(data.username);
+    if (keys) {
+      const films = Array.isArray(data.films) ? data.films : [];
+      keys.hasFilms = films.length > 0;
+      keys.lastWatched = (films[0] && films[0].watchedDate) || null;
+      const ratings = films.map((f) => f.rating).filter((r) => typeof r === 'number');
+      keys.avgRating = ratings.length
+        ? ratings.reduce((sum, r) => sum + r, 0) / ratings.length
+        : null;
+    }
   }
 
   /** Anything still unresolved when the stream ends is not coming. */
@@ -365,6 +457,8 @@
     if (!sawMeta) throw new Error('stream ended before any data');
 
     settlePending();
+    // Film-based sorts could only be provisional while feeds were streaming in.
+    if (currentSort !== 'az') applySort();
   }
 
   /** All-at-once path: older browsers, or if the stream fails outright. */
@@ -377,6 +471,7 @@
     applyMeta({ profiles });
     for (const profile of profiles) applyProfile(profile);
     settlePending();
+    if (currentSort !== 'az') applySort();
   }
 
   function initControls() {
@@ -404,6 +499,35 @@
         applyFilter();
         input.focus();
       });
+    }
+
+    const sort = document.getElementById('rolodex-sort');
+    if (sort) {
+      let stored = null;
+      try {
+        stored = localStorage.getItem(SORT_STORAGE);
+      } catch (err) {
+        /* private mode — sort just won't persist */
+      }
+      if (stored && SORTS.has(stored)) {
+        currentSort = stored;
+        sort.value = stored;
+      }
+
+      sort.addEventListener('change', () => {
+        currentSort = SORTS.has(sort.value) ? sort.value : 'az';
+        try {
+          localStorage.setItem(SORT_STORAGE, currentSort);
+        } catch (err) {
+          /* private mode */
+        }
+        // Applies immediately with whatever film data has landed; if the
+        // stream is still running, its end re-sorts with the full set.
+        applySort();
+      });
+
+      // A restored non-A-Z sort should hide the rail before any cards exist.
+      if (currentSort !== 'az') applySort();
     }
   }
 
