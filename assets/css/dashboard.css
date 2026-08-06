@@ -891,6 +891,11 @@ a:hover { color: var(--text-primary); }
   gap: 1.5rem;
 }
 
+/* Non-alphabetical sorts hide the rail; collapse its column too, or the cards
+   would auto-place into the empty 150px track. */
+.rolodex-rail[hidden] { display: none; }
+.rolodex-layout--no-rail { grid-template-columns: 1fr; gap: 0; }
+
 .rolodex-rail {
   position: sticky;
   top: 1rem;
@@ -946,11 +951,36 @@ a:hover { color: var(--text-primary); }
 
 .rolodex-main { min-width: 0; }
 
+.rolodex-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
 .rolodex-search {
   position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 0.75rem;
+  /* Grows to fill the row, wraps above the sort select when squeezed. */
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+
+#rolodex-sort {
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+#rolodex-sort:focus-visible {
+  outline: none;
+  border-color: var(--accent-blue);
 }
 
 .rolodex-search i {
