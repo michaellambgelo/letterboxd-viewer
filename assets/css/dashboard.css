@@ -782,14 +782,6 @@ a:hover { color: var(--text-primary); }
   max-width: 55ch;
 }
 
-/* Footer with no .footer-grid above the social row (rolodex page): the divider
-   that separates the two would otherwise float over 2rem of nothing. */
-.site-footer--minimal .social-links {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: none;
-}
-
 /* Site nav (hamburger, top right of the header) */
 .profile-header .container { position: relative; }
 
