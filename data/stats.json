@@ -1,10 +1,10 @@
 {
-  "totalWatched": 2548,
-  "uniqueFilms": 2123,
+  "totalWatched": 2550,
+  "uniqueFilms": 2125,
   "totalRewatches": 844,
   "averageRating": 3.89,
   "ratingDistribution": {
-    "0.5": 10,
+    "0.5": 11,
     "1.0": 22,
     "1.5": 28,
     "2.0": 105,
@@ -12,7 +12,7 @@
     "3.0": 288,
     "3.5": 381,
     "4.0": 538,
-    "4.5": 378,
+    "4.5": 379,
     "5.0": 588,
     "unrated": 82
   },
@@ -103,7 +103,7 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 37,
-    "2026-08": 2
+    "2026-08": 4
   },
   "heatmapData": [
     {
@@ -6057,6 +6057,10 @@
     {
       "date": "2026-08-04",
       "count": 1
+    },
+    {
+      "date": "2026-08-06",
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6071,7 +6075,7 @@
     "1990s": 163,
     "2000s": 254,
     "2010s": 723,
-    "2020s": 1167
+    "2020s": 1169
   },
   "mostRewatched": [
     {
@@ -6146,6 +6150,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1437004586",
+      "filmTitle": "Animal Farm",
+      "filmYear": 2025,
+      "watchedDate": "2026-08-06",
+      "memberRating": 0.5,
+      "rewatch": false,
+      "tmdbId": 539745,
+      "link": "https://letterboxd.com/michaellamb/film/animal-farm-2025/",
+      "title": "Animal Farm, 2025 - ½",
+      "reviewText": "Watched on Thursday August 6, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1436736163",
+      "filmTitle": "The Long Walk",
+      "filmYear": 2025,
+      "watchedDate": "2026-08-06",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 604079,
+      "link": "https://letterboxd.com/michaellamb/film/the-long-walk-2025/",
+      "title": "The Long Walk, 2025 - ★★★★½",
+      "reviewText": "it&#039;s just so incredibly sad. like, really sad!",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1434253681",
       "filmTitle": "The Mandalorian and Grogu",
@@ -6395,34 +6427,6 @@
       "link": "https://letterboxd.com/michaellamb/film/fried-green-tomatoes/",
       "title": "Fried Green Tomatoes, 1991 - ★★★★½",
       "reviewText": "love it!",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1409786021",
-      "filmTitle": "Tuner",
-      "filmYear": 2025,
-      "watchedDate": "2026-07-22",
-      "memberRating": 5.0,
-      "rewatch": false,
-      "tmdbId": 1340206,
-      "link": "https://letterboxd.com/michaellamb/film/tuner/",
-      "title": "Tuner, 2025 - ★★★★★",
-      "reviewText": "insanely good\n\nI love movies about art and crime!",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1407930132",
-      "filmTitle": "Tony",
-      "filmYear": 2026,
-      "watchedDate": "2026-07-21",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 1329016,
-      "link": "https://letterboxd.com/michaellamb/film/tony-2026/",
-      "title": "Tony, 2026 - ★★★★",
-      "reviewText": "thank you mississippi film society and Capri theater\n\nwatched with Jon-Nolan, Aidan, Jeana & Micah, William, Corey & Jacque, Trey Malone, Ryan, and Morgan",
       "tags": [],
       "source": "rss"
     }
@@ -8279,7 +8283,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-08-04"
+    "latest": "2026-08-06"
   },
   "byYear": {
     "2017": {
@@ -14599,12 +14603,12 @@
       ]
     },
     "2026": {
-      "totalWatched": 188,
-      "uniqueFilms": 171,
+      "totalWatched": 190,
+      "uniqueFilms": 173,
       "totalRewatches": 64,
-      "averageRating": 4.05,
+      "averageRating": 4.04,
       "ratingDistribution": {
-        "0.5": 1,
+        "0.5": 2,
         "1.0": 1,
         "1.5": 1,
         "2.0": 3,
@@ -14612,7 +14616,7 @@
         "3.0": 12,
         "3.5": 29,
         "4.0": 35,
-        "4.5": 37,
+        "4.5": 38,
         "5.0": 54,
         "unrated": 1
       },
@@ -15112,6 +15116,10 @@
         {
           "date": "2026-08-04",
           "count": 1
+        },
+        {
+          "date": "2026-08-06",
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15123,7 +15131,7 @@
         "1990s": 15,
         "2000s": 13,
         "2010s": 24,
-        "2020s": 113
+        "2020s": 115
       },
       "mostRewatched": [
         {
