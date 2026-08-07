@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2551,
+  "totalWatched": 2552,
   "uniqueFilms": 2126,
-  "totalRewatches": 844,
+  "totalRewatches": 845,
   "averageRating": 3.89,
   "ratingDistribution": {
     "0.5": 11,
@@ -13,7 +13,7 @@
     "3.5": 381,
     "4.0": 538,
     "4.5": 379,
-    "5.0": 588,
+    "5.0": 589,
     "unrated": 82
   },
   "filmsByMonth": {
@@ -103,7 +103,7 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 37,
-    "2026-08": 5
+    "2026-08": 6
   },
   "heatmapData": [
     {
@@ -6061,6 +6061,10 @@
     {
       "date": "2026-08-06",
       "count": 3
+    },
+    {
+      "date": "2026-08-07",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6073,7 +6077,7 @@
     "1970s": 57,
     "1980s": 87,
     "1990s": 163,
-    "2000s": 254,
+    "2000s": 255,
     "2010s": 723,
     "2020s": 1170
   },
@@ -6150,6 +6154,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1438315153",
+      "filmTitle": "The Lord of the Rings: The Two Towers",
+      "filmYear": 2002,
+      "watchedDate": "2026-08-07",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 121,
+      "link": "https://letterboxd.com/michaellamb/film/the-lord-of-the-rings-the-two-towers/3/",
+      "title": "The Lord of the Rings: The Two Towers, 2002 - ★★★★★",
+      "reviewText": "I needed to wash my eyeballs with some good Andy Serkis after learning what bad Andy Serkis is like",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1437602290",
       "filmTitle": "Deep Water",
@@ -6415,23 +6433,16 @@
       "reviewText": "this one went some places!",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1412594258",
-      "filmTitle": "The Invite",
-      "filmYear": 2026,
-      "watchedDate": "2026-07-24",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 950028,
-      "link": "https://letterboxd.com/michaellamb/film/the-invite-2026/",
-      "title": "The Invite, 2026 - ★★★½",
-      "reviewText": "are straight people okay\n\nthis was less interesting than The Drama but not not entertaining",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "The Lord of the Rings: The Two Towers",
+      "filmYear": 2002,
+      "watchedDate": "2026-08-07",
+      "link": "https://letterboxd.com/michaellamb/film/the-lord-of-the-rings-the-two-towers/3/",
+      "tmdbId": 121
+    },
     {
       "filmTitle": "Ikiru",
       "filmYear": 1952,
@@ -8283,7 +8294,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-08-06"
+    "latest": "2026-08-07"
   },
   "byYear": {
     "2017": {
@@ -14603,9 +14614,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 191,
-      "uniqueFilms": 174,
-      "totalRewatches": 64,
+      "totalWatched": 192,
+      "uniqueFilms": 175,
+      "totalRewatches": 65,
       "averageRating": 4.03,
       "ratingDistribution": {
         "0.5": 2,
@@ -14617,7 +14628,7 @@
         "3.5": 29,
         "4.0": 35,
         "4.5": 38,
-        "5.0": 54,
+        "5.0": 55,
         "unrated": 1
       },
       "heatmapData": [
@@ -15120,6 +15131,10 @@
         {
           "date": "2026-08-06",
           "count": 3
+        },
+        {
+          "date": "2026-08-07",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15129,7 +15144,7 @@
         "1970s": 5,
         "1980s": 6,
         "1990s": 15,
-        "2000s": 13,
+        "2000s": 14,
         "2010s": 24,
         "2020s": 116
       },
@@ -15171,6 +15186,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "The Lord of the Rings: The Two Towers",
+          "filmYear": 2002,
+          "watchedDate": "2026-08-07",
+          "link": "https://letterboxd.com/michaellamb/film/the-lord-of-the-rings-the-two-towers/3/"
+        },
         {
           "filmTitle": "Ikiru",
           "filmYear": 1952,
@@ -15224,12 +15245,6 @@
           "filmYear": 1975,
           "watchedDate": "2026-07-04",
           "link": "https://boxd.it/f5oJWn"
-        },
-        {
-          "filmTitle": "The Cube",
-          "filmYear": 1969,
-          "watchedDate": "2026-07-04",
-          "link": "https://boxd.it/f5rbLr"
         }
       ]
     }
