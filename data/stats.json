@@ -1,13 +1,13 @@
 {
-  "totalWatched": 2550,
-  "uniqueFilms": 2125,
+  "totalWatched": 2551,
+  "uniqueFilms": 2126,
   "totalRewatches": 844,
   "averageRating": 3.89,
   "ratingDistribution": {
     "0.5": 11,
     "1.0": 22,
     "1.5": 28,
-    "2.0": 105,
+    "2.0": 106,
     "2.5": 128,
     "3.0": 288,
     "3.5": 381,
@@ -103,7 +103,7 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 37,
-    "2026-08": 4
+    "2026-08": 5
   },
   "heatmapData": [
     {
@@ -6060,7 +6060,7 @@
     },
     {
       "date": "2026-08-06",
-      "count": 2
+      "count": 3
     }
   ],
   "filmYearDistribution": {
@@ -6075,7 +6075,7 @@
     "1990s": 163,
     "2000s": 254,
     "2010s": 723,
-    "2020s": 1169
+    "2020s": 1170
   },
   "mostRewatched": [
     {
@@ -6150,6 +6150,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1437602290",
+      "filmTitle": "Deep Water",
+      "filmYear": 2026,
+      "watchedDate": "2026-08-06",
+      "memberRating": 2.0,
+      "rewatch": false,
+      "tmdbId": 1127384,
+      "link": "https://letterboxd.com/michaellamb/film/deep-water-2026/",
+      "title": "Deep Water, 2026 - ★★",
+      "reviewText": "Watched with Ryan and Amy",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1437004586",
       "filmTitle": "Animal Farm",
@@ -6413,20 +6427,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-invite-2026/",
       "title": "The Invite, 2026 - ★★★½",
       "reviewText": "are straight people okay\n\nthis was less interesting than The Drama but not not entertaining",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1410610708",
-      "filmTitle": "Fried Green Tomatoes",
-      "filmYear": 1991,
-      "watchedDate": "2026-07-23",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": 1633,
-      "link": "https://letterboxd.com/michaellamb/film/fried-green-tomatoes/",
-      "title": "Fried Green Tomatoes, 1991 - ★★★★½",
-      "reviewText": "love it!",
       "tags": [],
       "source": "rss"
     }
@@ -14603,15 +14603,15 @@
       ]
     },
     "2026": {
-      "totalWatched": 190,
-      "uniqueFilms": 173,
+      "totalWatched": 191,
+      "uniqueFilms": 174,
       "totalRewatches": 64,
-      "averageRating": 4.04,
+      "averageRating": 4.03,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 1,
         "1.5": 1,
-        "2.0": 3,
+        "2.0": 4,
         "2.5": 14,
         "3.0": 12,
         "3.5": 29,
@@ -15119,7 +15119,7 @@
         },
         {
           "date": "2026-08-06",
-          "count": 2
+          "count": 3
         }
       ],
       "filmYearDistribution": {
@@ -15131,7 +15131,7 @@
         "1990s": 15,
         "2000s": 13,
         "2010s": 24,
-        "2020s": 115
+        "2020s": 116
       },
       "mostRewatched": [
         {
