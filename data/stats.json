@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2552,
+  "totalWatched": 2554,
   "uniqueFilms": 2126,
-  "totalRewatches": 845,
+  "totalRewatches": 847,
   "averageRating": 3.89,
   "ratingDistribution": {
     "0.5": 11,
@@ -9,9 +9,9 @@
     "1.5": 28,
     "2.0": 106,
     "2.5": 128,
-    "3.0": 288,
+    "3.0": 289,
     "3.5": 381,
-    "4.0": 538,
+    "4.0": 539,
     "4.5": 379,
     "5.0": 589,
     "unrated": 82
@@ -103,7 +103,7 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 37,
-    "2026-08": 6
+    "2026-08": 8
   },
   "heatmapData": [
     {
@@ -6065,6 +6065,10 @@
     {
       "date": "2026-08-07",
       "count": 1
+    },
+    {
+      "date": "2026-08-09",
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6077,8 +6081,8 @@
     "1970s": 57,
     "1980s": 87,
     "1990s": 163,
-    "2000s": 255,
-    "2010s": 723,
+    "2000s": 256,
+    "2010s": 724,
     "2020s": 1170
   },
   "mostRewatched": [
@@ -6154,6 +6158,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1441815678",
+      "filmTitle": "Across the Universe",
+      "filmYear": 2007,
+      "watchedDate": "2026-08-09",
+      "memberRating": 3.0,
+      "rewatch": true,
+      "tmdbId": 4688,
+      "link": "https://letterboxd.com/michaellamb/film/across-the-universe/1/",
+      "title": "Across the Universe, 2007 - ★★★",
+      "reviewText": "why the CGI sequence for the &quot;New York City&quot; arrival? why not just use some actual cinematography?? \n\ni&#039;m still ultimately grateful i watched this with colleagues during my bible college career",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1441782794",
+      "filmTitle": "Hereditary",
+      "filmYear": 2018,
+      "watchedDate": "2026-08-09",
+      "memberRating": 4.0,
+      "rewatch": true,
+      "tmdbId": 493922,
+      "link": "https://letterboxd.com/michaellamb/film/hereditary/14/",
+      "title": "Hereditary, 2018 - ★★★★",
+      "reviewText": "this rewatch was necessitated by a recent recommendation to a work superior. i mentioned how i was so terrified by the overall narrative that once the credits rolled i essentially ran out of the theater.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1438315153",
       "filmTitle": "The Lord of the Rings: The Two Towers",
@@ -6403,34 +6435,6 @@
       "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/16/",
       "title": "Oppenheimer, 2023 - ★★★★★",
       "reviewText": "i still find this ending pretty upsetting, but that&#039;s one of the reasons i am also compelled by it. i&#039;m the type of guy to come home from a party and finish this film with an hour and a half of runtime left.\n\nrewatched to soak myself in some Nolan before I find time to go see The Odyssey again.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1413529338",
-      "filmTitle": "The Muppet Christmas Carol",
-      "filmYear": 1992,
-      "watchedDate": "2026-07-25",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 10437,
-      "link": "https://letterboxd.com/michaellamb/film/the-muppet-christmas-carol/",
-      "title": "The Muppet Christmas Carol, 1992 - ★★★★★",
-      "reviewText": "Michael Caine is phenomenal\n\nHappy Xmas in July!",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1412954595",
-      "filmTitle": "The Muppets Take Manhattan",
-      "filmYear": 1984,
-      "watchedDate": "2026-07-24",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 11899,
-      "link": "https://letterboxd.com/michaellamb/film/the-muppets-take-manhattan/",
-      "title": "The Muppets Take Manhattan, 1984 - ★★★★",
-      "reviewText": "this one went some places!",
       "tags": [],
       "source": "rss"
     }
@@ -8294,7 +8298,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-08-07"
+    "latest": "2026-08-09"
   },
   "byYear": {
     "2017": {
@@ -14614,9 +14618,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 192,
-      "uniqueFilms": 175,
-      "totalRewatches": 65,
+      "totalWatched": 194,
+      "uniqueFilms": 177,
+      "totalRewatches": 67,
       "averageRating": 4.03,
       "ratingDistribution": {
         "0.5": 2,
@@ -14624,9 +14628,9 @@
         "1.5": 1,
         "2.0": 4,
         "2.5": 14,
-        "3.0": 12,
+        "3.0": 13,
         "3.5": 29,
-        "4.0": 35,
+        "4.0": 36,
         "4.5": 38,
         "5.0": 55,
         "unrated": 1
@@ -15135,6 +15139,10 @@
         {
           "date": "2026-08-07",
           "count": 1
+        },
+        {
+          "date": "2026-08-09",
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15144,8 +15152,8 @@
         "1970s": 5,
         "1980s": 6,
         "1990s": 15,
-        "2000s": 14,
-        "2010s": 24,
+        "2000s": 15,
+        "2010s": 25,
         "2020s": 116
       },
       "mostRewatched": [
