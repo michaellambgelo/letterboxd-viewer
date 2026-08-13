@@ -1,11 +1,11 @@
 {
-  "totalWatched": 2556,
-  "uniqueFilms": 2128,
+  "totalWatched": 2557,
+  "uniqueFilms": 2129,
   "totalRewatches": 847,
   "averageRating": 3.89,
   "ratingDistribution": {
     "0.5": 11,
-    "1.0": 22,
+    "1.0": 23,
     "1.5": 28,
     "2.0": 106,
     "2.5": 129,
@@ -103,7 +103,7 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 37,
-    "2026-08": 10
+    "2026-08": 11
   },
   "heatmapData": [
     {
@@ -6073,6 +6073,10 @@
     {
       "date": "2026-08-10",
       "count": 2
+    },
+    {
+      "date": "2026-08-12",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6087,7 +6091,7 @@
     "1990s": 163,
     "2000s": 256,
     "2010s": 724,
-    "2020s": 1172
+    "2020s": 1173
   },
   "mostRewatched": [
     {
@@ -6162,6 +6166,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1447840252",
+      "filmTitle": "The Strangers: Chapter 2",
+      "filmYear": 2025,
+      "watchedDate": "2026-08-12",
+      "memberRating": 1.0,
+      "rewatch": false,
+      "tmdbId": 1010756,
+      "link": "https://letterboxd.com/michaellamb/film/the-strangers-chapter-2/",
+      "title": "The Strangers: Chapter 2, 2025 - ★",
+      "reviewText": "not sure why i watch these, but chapter 3 will probably be logged soon. it&#039;s available at Willie Morris library.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1444918114",
       "filmTitle": "Clown in a Cornfield",
@@ -6425,20 +6443,6 @@
       "link": "https://letterboxd.com/michaellamb/film/muppet-treasure-island/",
       "title": "Muppet Treasure Island, 1996 - ★★★★",
       "reviewText": "Watched on Monday July 27, 2026.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1417156549",
-      "filmTitle": "Midsommar",
-      "filmYear": 2019,
-      "watchedDate": "2026-07-26",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 530385,
-      "link": "https://letterboxd.com/michaellamb/film/midsommar/52/",
-      "title": "Midsommar, 2019 - ★★★★★ (contains spoilers)",
-      "reviewText": "This review may contain spoilers.\n\nThe Rotvälta long take starts with Mark in tow with Josh, approaching Pelle in the garden. The camera only cuts to join Mark as Father Ulf is sprinting toward him, so we can catch up with him long after he has left the frame and the suspense is built. It’s truly something to watch. \n\nThe juxtaposition of American and Swedish concepts of what is sacred and what is profane is something the film is interested in, and this ends up as the most comedic sequence of the entire runtime. I remember Ulf&#039;s hysteria made theater audiences laugh out loud.\n\nThe image looks like shit on HBO Max. Anytime there&#039;s darkness or black, it&#039;s all rectangles. Really wish there was something we could do about these awful, ass streaming services... like make the executives jump off a cliff. Or burn them in a custom teddy bear suit. Or turn them into a Yuletide tree. Or give them the Blood Eagle. Or just straight up hit them upside the head with a hammer.",
       "tags": [],
       "source": "rss"
     }
@@ -8302,7 +8306,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-08-10"
+    "latest": "2026-08-12"
   },
   "byYear": {
     "2017": {
@@ -14622,13 +14626,13 @@
       ]
     },
     "2026": {
-      "totalWatched": 196,
-      "uniqueFilms": 179,
+      "totalWatched": 197,
+      "uniqueFilms": 180,
       "totalRewatches": 67,
-      "averageRating": 4.02,
+      "averageRating": 4.01,
       "ratingDistribution": {
         "0.5": 2,
-        "1.0": 1,
+        "1.0": 2,
         "1.5": 1,
         "2.0": 4,
         "2.5": 15,
@@ -15151,6 +15155,10 @@
         {
           "date": "2026-08-10",
           "count": 2
+        },
+        {
+          "date": "2026-08-12",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15162,7 +15170,7 @@
         "1990s": 15,
         "2000s": 15,
         "2010s": 25,
-        "2020s": 118
+        "2020s": 119
       },
       "mostRewatched": [
         {
