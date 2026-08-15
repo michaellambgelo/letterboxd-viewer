@@ -1,13 +1,13 @@
 {
-  "totalWatched": 2557,
-  "uniqueFilms": 2129,
+  "totalWatched": 2558,
+  "uniqueFilms": 2130,
   "totalRewatches": 847,
-  "averageRating": 3.89,
+  "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
     "1.0": 23,
     "1.5": 28,
-    "2.0": 106,
+    "2.0": 107,
     "2.5": 129,
     "3.0": 289,
     "3.5": 381,
@@ -103,7 +103,7 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 37,
-    "2026-08": 11
+    "2026-08": 12
   },
   "heatmapData": [
     {
@@ -6077,6 +6077,10 @@
     {
       "date": "2026-08-12",
       "count": 1
+    },
+    {
+      "date": "2026-08-14",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6091,7 +6095,7 @@
     "1990s": 163,
     "2000s": 256,
     "2010s": 724,
-    "2020s": 1173
+    "2020s": 1174
   },
   "mostRewatched": [
     {
@@ -6166,6 +6170,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1450750704",
+      "filmTitle": "The Monkey",
+      "filmYear": 2025,
+      "watchedDate": "2026-08-14",
+      "memberRating": 2.0,
+      "rewatch": false,
+      "tmdbId": 1124620,
+      "link": "https://letterboxd.com/michaellamb/film/the-monkey-2025/",
+      "title": "The Monkey, 2025 - ★★",
+      "reviewText": "Actively makes me rethink Longlegs as a good movie which is not a green flag for a movie",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1447840252",
       "filmTitle": "The Strangers: Chapter 2",
@@ -6429,20 +6447,6 @@
       "link": "https://letterboxd.com/michaellamb/film/spider-man-far-from-home/",
       "title": "Spider-Man: Far From Home, 2019 - ★★★½ (contains spoilers)",
       "reviewText": "This review may contain spoilers.\n\nA catalog of thoughts\n- &quot;Tingle tingle kooloo limpah!&quot;\n- &quot;You have kind eyes. MJ&#039;s eyes&quot;\n- so these big Mysterio encounters are like a 4DX experience? \n- Brad may be a hottie but he&#039;s a dummy, Peter wouldn&#039;t feel so threatened if he knew that\n- Ned&#039;s got a huge dart hanging out of his neck and his chaperone fails to notice\n- &quot;Bitch, please. You&#039;ve been to space&quot;\n- couples that text each other right next to each other 🤮\n- LOOK AT THE BABY MOUNTAIN GOATS — I would be just as disappointed Professor Cligoris\n- the people-pleaser in Ned doesn&#039;t allow him to tell his girlfriend that a Ferris wheel is the worst idea in the world with an imminent elemental attack\n- &quot;I need a vacation from my vacation&quot; \n- the whole misinformation plot line is actually pretty coherent. reminds me why this is my favorite of the Home trilogy\n- MJ so sweet — she sees Spider-Man and just wants to hug him and know if he&#039;s okay\n- &quot;I wasn&#039;t just watching you because I thought you were Spider-Man&quot; is so relatable — I loved Tom Holland in The Odyssey and also The Devil All The Time which is an underrated Netflix flick\n- mid-credits scene is so on point, thematically\n\nwatched with Jennie",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1417857938",
-      "filmTitle": "Muppet Treasure Island",
-      "filmYear": 1996,
-      "watchedDate": "2026-07-27",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 10874,
-      "link": "https://letterboxd.com/michaellamb/film/muppet-treasure-island/",
-      "title": "Muppet Treasure Island, 1996 - ★★★★",
-      "reviewText": "Watched on Monday July 27, 2026.",
       "tags": [],
       "source": "rss"
     }
@@ -8306,7 +8310,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-08-12"
+    "latest": "2026-08-14"
   },
   "byYear": {
     "2017": {
@@ -14626,15 +14630,15 @@
       ]
     },
     "2026": {
-      "totalWatched": 197,
-      "uniqueFilms": 180,
+      "totalWatched": 198,
+      "uniqueFilms": 181,
       "totalRewatches": 67,
-      "averageRating": 4.01,
+      "averageRating": 3.99,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 2,
         "1.5": 1,
-        "2.0": 4,
+        "2.0": 5,
         "2.5": 15,
         "3.0": 13,
         "3.5": 29,
@@ -15159,6 +15163,10 @@
         {
           "date": "2026-08-12",
           "count": 1
+        },
+        {
+          "date": "2026-08-14",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15170,7 +15178,7 @@
         "1990s": 15,
         "2000s": 15,
         "2010s": 25,
-        "2020s": 119
+        "2020s": 120
       },
       "mostRewatched": [
         {
