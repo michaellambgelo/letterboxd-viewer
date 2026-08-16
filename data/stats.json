@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2559,
-  "uniqueFilms": 2130,
+  "totalWatched": 2560,
+  "uniqueFilms": 2131,
   "totalRewatches": 848,
   "averageRating": 3.89,
   "ratingDistribution": {
@@ -12,7 +12,7 @@
     "3.0": 289,
     "3.5": 381,
     "4.0": 539,
-    "4.5": 380,
+    "4.5": 381,
     "5.0": 590,
     "unrated": 82
   },
@@ -103,7 +103,7 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 37,
-    "2026-08": 13
+    "2026-08": 14
   },
   "heatmapData": [
     {
@@ -6084,7 +6084,7 @@
     },
     {
       "date": "2026-08-15",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6097,7 +6097,7 @@
     "1970s": 57,
     "1980s": 87,
     "1990s": 163,
-    "2000s": 256,
+    "2000s": 257,
     "2010s": 724,
     "2020s": 1175
   },
@@ -6174,6 +6174,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1452537439",
+      "filmTitle": "Amores Perros",
+      "filmYear": 2000,
+      "watchedDate": "2026-08-15",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 55,
+      "link": "https://letterboxd.com/michaellamb/film/amores-perros/",
+      "title": "Amores Perros, 2000 - ★★★★½",
+      "reviewText": "FOR LUCIANO because we are also what we have lostbeautiful double feature with Hamnet\n\nthe sound design is incredibly anxiety-inducing. the version I watched on MUBI was the Criterion edition which apparently included foley and other background sound enhancements which I will say were effective in my experience.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1452445565",
       "filmTitle": "Hamnet",
@@ -6437,20 +6451,6 @@
       "link": "https://letterboxd.com/michaellamb/film/spider-man-brand-new-day/",
       "title": "Spider-Man: Brand New Day, 2026 - ★★★½",
       "reviewText": "Watched on Wednesday July 29, 2026.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1420596396",
-      "filmTitle": "Spider-Man: No Way Home",
-      "filmYear": 2021,
-      "watchedDate": "2026-07-28",
-      "memberRating": 2.5,
-      "rewatch": true,
-      "tmdbId": 634649,
-      "link": "https://letterboxd.com/michaellamb/film/spider-man-no-way-home/2/",
-      "title": "Spider-Man: No Way Home, 2021 - ★★½ (contains spoilers)",
-      "reviewText": "This review may contain spoilers.\n\nMay&#039;s death sequence is so good because Tom Holland and Marisa Tomei sell it but the writing before and after does not earn it. Especially for the tour de force acting put on by the likes of Alfred Molina, Willem Dafoe, Andrew Garfield, and Tobey Maguire — the whole reversal of the Spider-Man origin story for Tom Holland&#039;s iteration still just doesn&#039;t sit well with me. I can&#039;t get over that, and this film was made in spite of that.\n\nA slight departure from the two previous movies. Really gets bogged down in the multiversal exposition.\n\nWatched with Jennie",
       "tags": [],
       "source": "rss"
     }
@@ -14641,8 +14641,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 199,
-      "uniqueFilms": 182,
+      "totalWatched": 200,
+      "uniqueFilms": 183,
       "totalRewatches": 68,
       "averageRating": 4.0,
       "ratingDistribution": {
@@ -14654,7 +14654,7 @@
         "3.0": 13,
         "3.5": 29,
         "4.0": 36,
-        "4.5": 39,
+        "4.5": 40,
         "5.0": 56,
         "unrated": 1
       },
@@ -15181,7 +15181,7 @@
         },
         {
           "date": "2026-08-15",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15191,7 +15191,7 @@
         "1970s": 5,
         "1980s": 6,
         "1990s": 15,
-        "2000s": 15,
+        "2000s": 16,
         "2010s": 25,
         "2020s": 121
       },
