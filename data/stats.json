@@ -1,8 +1,8 @@
 {
-  "totalWatched": 2558,
+  "totalWatched": 2559,
   "uniqueFilms": 2130,
-  "totalRewatches": 847,
-  "averageRating": 3.88,
+  "totalRewatches": 848,
+  "averageRating": 3.89,
   "ratingDistribution": {
     "0.5": 11,
     "1.0": 23,
@@ -13,7 +13,7 @@
     "3.5": 381,
     "4.0": 539,
     "4.5": 380,
-    "5.0": 589,
+    "5.0": 590,
     "unrated": 82
   },
   "filmsByMonth": {
@@ -103,7 +103,7 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 37,
-    "2026-08": 12
+    "2026-08": 13
   },
   "heatmapData": [
     {
@@ -6081,6 +6081,10 @@
     {
       "date": "2026-08-14",
       "count": 1
+    },
+    {
+      "date": "2026-08-15",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6095,7 +6099,7 @@
     "1990s": 163,
     "2000s": 256,
     "2010s": 724,
-    "2020s": 1174
+    "2020s": 1175
   },
   "mostRewatched": [
     {
@@ -6170,6 +6174,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1452445565",
+      "filmTitle": "Hamnet",
+      "filmYear": 2025,
+      "watchedDate": "2026-08-15",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 858024,
+      "link": "https://letterboxd.com/michaellamb/film/hamnet/4/",
+      "title": "Hamnet, 2025 - ★★★★★",
+      "reviewText": "this was so necessary to revisit. what a beautiful movie, and i feel so conflicted thinking that Paul Mescal is perhaps miscast, yet the juxtaposition of his acting being lesser than is perhaps what lends this the emotional throughline that makes the film so effective. those Jupe brothers playing the roles that they do centers the film on Agnes, and Will is more like an objective observer subjectively operating as a storyteller within the story. i don&#039;t really know any other actor i would believe when i see them sitting in a room crying about something if it isn&#039;t Paul Mescal, so I&#039;m still unable to knock the film for its casting decisions because it just works.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1450750704",
       "filmTitle": "The Monkey",
@@ -6435,23 +6453,16 @@
       "reviewText": "This review may contain spoilers.\n\nMay&#039;s death sequence is so good because Tom Holland and Marisa Tomei sell it but the writing before and after does not earn it. Especially for the tour de force acting put on by the likes of Alfred Molina, Willem Dafoe, Andrew Garfield, and Tobey Maguire — the whole reversal of the Spider-Man origin story for Tom Holland&#039;s iteration still just doesn&#039;t sit well with me. I can&#039;t get over that, and this film was made in spite of that.\n\nA slight departure from the two previous movies. Really gets bogged down in the multiversal exposition.\n\nWatched with Jennie",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1420387115",
-      "filmTitle": "Spider-Man: Far From Home",
-      "filmYear": 2019,
-      "watchedDate": "2026-07-28",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 429617,
-      "link": "https://letterboxd.com/michaellamb/film/spider-man-far-from-home/",
-      "title": "Spider-Man: Far From Home, 2019 - ★★★½ (contains spoilers)",
-      "reviewText": "This review may contain spoilers.\n\nA catalog of thoughts\n- &quot;Tingle tingle kooloo limpah!&quot;\n- &quot;You have kind eyes. MJ&#039;s eyes&quot;\n- so these big Mysterio encounters are like a 4DX experience? \n- Brad may be a hottie but he&#039;s a dummy, Peter wouldn&#039;t feel so threatened if he knew that\n- Ned&#039;s got a huge dart hanging out of his neck and his chaperone fails to notice\n- &quot;Bitch, please. You&#039;ve been to space&quot;\n- couples that text each other right next to each other 🤮\n- LOOK AT THE BABY MOUNTAIN GOATS — I would be just as disappointed Professor Cligoris\n- the people-pleaser in Ned doesn&#039;t allow him to tell his girlfriend that a Ferris wheel is the worst idea in the world with an imminent elemental attack\n- &quot;I need a vacation from my vacation&quot; \n- the whole misinformation plot line is actually pretty coherent. reminds me why this is my favorite of the Home trilogy\n- MJ so sweet — she sees Spider-Man and just wants to hug him and know if he&#039;s okay\n- &quot;I wasn&#039;t just watching you because I thought you were Spider-Man&quot; is so relatable — I loved Tom Holland in The Odyssey and also The Devil All The Time which is an underrated Netflix flick\n- mid-credits scene is so on point, thematically\n\nwatched with Jennie",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Hamnet",
+      "filmYear": 2025,
+      "watchedDate": "2026-08-15",
+      "link": "https://letterboxd.com/michaellamb/film/hamnet/4/",
+      "tmdbId": 858024
+    },
     {
       "filmTitle": "The Lord of the Rings: The Two Towers",
       "filmYear": 2002,
@@ -8310,7 +8321,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-08-14"
+    "latest": "2026-08-15"
   },
   "byYear": {
     "2017": {
@@ -14630,10 +14641,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 198,
-      "uniqueFilms": 181,
-      "totalRewatches": 67,
-      "averageRating": 3.99,
+      "totalWatched": 199,
+      "uniqueFilms": 182,
+      "totalRewatches": 68,
+      "averageRating": 4.0,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 2,
@@ -14644,7 +14655,7 @@
         "3.5": 29,
         "4.0": 36,
         "4.5": 39,
-        "5.0": 55,
+        "5.0": 56,
         "unrated": 1
       },
       "heatmapData": [
@@ -15167,6 +15178,10 @@
         {
           "date": "2026-08-14",
           "count": 1
+        },
+        {
+          "date": "2026-08-15",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15178,7 +15193,7 @@
         "1990s": 15,
         "2000s": 15,
         "2010s": 25,
-        "2020s": 120
+        "2020s": 121
       },
       "mostRewatched": [
         {
@@ -15218,6 +15233,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Hamnet",
+          "filmYear": 2025,
+          "watchedDate": "2026-08-15",
+          "link": "https://letterboxd.com/michaellamb/film/hamnet/4/"
+        },
         {
           "filmTitle": "The Lord of the Rings: The Two Towers",
           "filmYear": 2002,
@@ -15271,12 +15292,6 @@
           "filmYear": 1979,
           "watchedDate": "2026-07-04",
           "link": "https://boxd.it/f4KWrR"
-        },
-        {
-          "filmTitle": "Jaws",
-          "filmYear": 1975,
-          "watchedDate": "2026-07-04",
-          "link": "https://boxd.it/f5oJWn"
         }
       ]
     }
