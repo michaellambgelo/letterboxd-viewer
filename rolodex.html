@@ -12,8 +12,11 @@
 	<script>
 		(function () {
 		  var webSdkScript = document.createElement("script");
+		  webSdkScript.integrity =
+			"sha384-AitrXVjbrKDuMxgQcS6OFQOJwzOB2TN/2ZBd2QOGo57UCKtiLVbVtsXRcCrClWoL";
+		  webSdkScript.crossOrigin = "anonymous";
 		  webSdkScript.src =
-			"https://unpkg.com/@grafana/faro-web-sdk@^1.4.0/dist/bundle/faro-web-sdk.iife.js";
+			"https://unpkg.com/@grafana/faro-web-sdk@1.19.0/dist/bundle/faro-web-sdk.iife.js";
 		  webSdkScript.onload = () => {
 			window.GrafanaFaroWebSdk.initializeFaro({
 			  url: "https://grafana.michaellamb.dev/faro-proxy?app=letterboxd-viewer",
@@ -24,8 +27,11 @@
 			  },
 			});
 			var webTracingScript = document.createElement("script");
+			webTracingScript.integrity =
+			  "sha384-g27gE4olnCLQ4CYZOJj3V1CulsIi0U3yuGtvk7v76tU2gWdNM1eQYiVPCIi0T9md";
+			webTracingScript.crossOrigin = "anonymous";
 			webTracingScript.src =
-			  "https://unpkg.com/@grafana/faro-web-tracing@^1.4.0/dist/bundle/faro-web-tracing.iife.js";
+			  "https://unpkg.com/@grafana/faro-web-tracing@1.19.0/dist/bundle/faro-web-tracing.iife.js";
 			webTracingScript.onload = () => {
 			  window.GrafanaFaroWebSdk.faro.instrumentations.add(
 				new window.GrafanaFaroWebTracing.TracingInstrumentation()
