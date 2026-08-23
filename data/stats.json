@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2560,
-  "uniqueFilms": 2131,
+  "totalWatched": 2561,
+  "uniqueFilms": 2132,
   "totalRewatches": 848,
   "averageRating": 3.89,
   "ratingDistribution": {
@@ -10,7 +10,7 @@
     "2.0": 107,
     "2.5": 129,
     "3.0": 289,
-    "3.5": 381,
+    "3.5": 382,
     "4.0": 539,
     "4.5": 381,
     "5.0": 590,
@@ -103,7 +103,7 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 37,
-    "2026-08": 14
+    "2026-08": 15
   },
   "heatmapData": [
     {
@@ -6085,6 +6085,10 @@
     {
       "date": "2026-08-15",
       "count": 2
+    },
+    {
+      "date": "2026-08-22",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6096,7 +6100,7 @@
     "1960s": 30,
     "1970s": 57,
     "1980s": 87,
-    "1990s": 163,
+    "1990s": 164,
     "2000s": 257,
     "2010s": 724,
     "2020s": 1175
@@ -6174,6 +6178,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1464027827",
+      "filmTitle": "Blade",
+      "filmYear": 1998,
+      "watchedDate": "2026-08-22",
+      "memberRating": 3.5,
+      "rewatch": false,
+      "tmdbId": 36647,
+      "link": "https://letterboxd.com/michaellamb/film/blade/",
+      "title": "Blade, 1998 - ★★★½",
+      "reviewText": "fantastic kickboxing vampire movie",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1452537439",
       "filmTitle": "Amores Perros",
@@ -6436,20 +6454,6 @@
       "tmdbId": 1735579,
       "link": "https://letterboxd.com/michaellamb/film/rob-roy-1/1/",
       "title": "Rob Roy - ★★★",
-      "reviewText": "Watched on Wednesday July 29, 2026.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1422431837",
-      "filmTitle": "Spider-Man: Brand New Day",
-      "filmYear": 2026,
-      "watchedDate": "2026-07-29",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 969681,
-      "link": "https://letterboxd.com/michaellamb/film/spider-man-brand-new-day/",
-      "title": "Spider-Man: Brand New Day, 2026 - ★★★½",
       "reviewText": "Watched on Wednesday July 29, 2026.",
       "tags": [],
       "source": "rss"
@@ -8321,7 +8325,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-08-15"
+    "latest": "2026-08-22"
   },
   "byYear": {
     "2017": {
@@ -14641,8 +14645,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 200,
-      "uniqueFilms": 183,
+      "totalWatched": 201,
+      "uniqueFilms": 184,
       "totalRewatches": 68,
       "averageRating": 4.0,
       "ratingDistribution": {
@@ -14652,7 +14656,7 @@
         "2.0": 5,
         "2.5": 15,
         "3.0": 13,
-        "3.5": 29,
+        "3.5": 30,
         "4.0": 36,
         "4.5": 40,
         "5.0": 56,
@@ -15182,6 +15186,10 @@
         {
           "date": "2026-08-15",
           "count": 2
+        },
+        {
+          "date": "2026-08-22",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15190,7 +15198,7 @@
         "1960s": 4,
         "1970s": 5,
         "1980s": 6,
-        "1990s": 15,
+        "1990s": 16,
         "2000s": 16,
         "2010s": 25,
         "2020s": 121
