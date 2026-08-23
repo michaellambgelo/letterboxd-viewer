@@ -1,5 +1,5 @@
 {
-  "totalWatched": 2561,
+  "totalWatched": 2562,
   "uniqueFilms": 2132,
   "totalRewatches": 848,
   "averageRating": 3.89,
@@ -12,7 +12,7 @@
     "3.0": 289,
     "3.5": 382,
     "4.0": 539,
-    "4.5": 381,
+    "4.5": 382,
     "5.0": 590,
     "unrated": 82
   },
@@ -103,7 +103,7 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 37,
-    "2026-08": 15
+    "2026-08": 16
   },
   "heatmapData": [
     {
@@ -6088,7 +6088,7 @@
     },
     {
       "date": "2026-08-22",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6102,7 +6102,7 @@
     "1980s": 87,
     "1990s": 164,
     "2000s": 257,
-    "2010s": 724,
+    "2010s": 725,
     "2020s": 1175
   },
   "mostRewatched": [
@@ -6178,6 +6178,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1464180092",
+      "filmTitle": "Her",
+      "filmYear": 2013,
+      "watchedDate": "2026-08-22",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 152601,
+      "link": "https://letterboxd.com/michaellamb/film/her/",
+      "title": "Her, 2013 - ★★★★½ (contains spoilers)",
+      "reviewText": "This review may contain spoilers.\n\nHoly fucking shit it’s Portia Doubleday! \n\nI’m just starting season 3 of MR ROBOT and her character is just about to start losing her mind — what a lovely contrast to see her play a character who is there at the beginning of her role! Her scene obviously reminds me of BR:2049 with the Joi body-double scene, \n\nDon’t fall in love with your computer, folks. I am not speaking from experience: I believe this movie. \n\nBreak-in viewing of the Blu-ray",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1464027827",
       "filmTitle": "Blade",
@@ -6441,20 +6455,6 @@
       "link": "https://letterboxd.com/michaellamb/film/ben-hur-1959/",
       "title": "Ben-Hur, 1959 - ★★★★½",
       "reviewText": "Nolan&#039;s The Odyssey surpasses this in many ways, and yet it feels like they are in dialogue with each other.\n\nI feel as though I can appreciate a film as awesome and epic as Ben-Hur with a better sense of the scale involved in the filmmaking process after having waited 3 years for Nolan&#039;s vision to reach my eyeballs.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1423701530",
-      "filmTitle": "Rob Roy",
-      "filmYear": null,
-      "watchedDate": "2026-07-29",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": 1735579,
-      "link": "https://letterboxd.com/michaellamb/film/rob-roy-1/1/",
-      "title": "Rob Roy - ★★★",
-      "reviewText": "Watched on Wednesday July 29, 2026.",
       "tags": [],
       "source": "rss"
     }
@@ -14645,8 +14645,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 201,
-      "uniqueFilms": 184,
+      "totalWatched": 202,
+      "uniqueFilms": 185,
       "totalRewatches": 68,
       "averageRating": 4.0,
       "ratingDistribution": {
@@ -14658,7 +14658,7 @@
         "3.0": 13,
         "3.5": 30,
         "4.0": 36,
-        "4.5": 40,
+        "4.5": 41,
         "5.0": 56,
         "unrated": 1
       },
@@ -15189,7 +15189,7 @@
         },
         {
           "date": "2026-08-22",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15200,7 +15200,7 @@
         "1980s": 6,
         "1990s": 16,
         "2000s": 16,
-        "2010s": 25,
+        "2010s": 26,
         "2020s": 121
       },
       "mostRewatched": [
