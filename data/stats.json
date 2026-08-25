@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2563,
-  "uniqueFilms": 2133,
+  "totalWatched": 2564,
+  "uniqueFilms": 2134,
   "totalRewatches": 848,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -12,7 +12,7 @@
     "3.0": 289,
     "3.5": 382,
     "4.0": 539,
-    "4.5": 382,
+    "4.5": 383,
     "5.0": 590,
     "unrated": 82
   },
@@ -103,7 +103,7 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 37,
-    "2026-08": 17
+    "2026-08": 18
   },
   "heatmapData": [
     {
@@ -6093,6 +6093,10 @@
     {
       "date": "2026-08-23",
       "count": 1
+    },
+    {
+      "date": "2026-08-24",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6107,7 +6111,7 @@
     "1990s": 164,
     "2000s": 257,
     "2010s": 726,
-    "2020s": 1175
+    "2020s": 1176
   },
   "mostRewatched": [
     {
@@ -6182,6 +6186,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1467057545",
+      "filmTitle": "Teenage Sex and Death at Camp Miasma",
+      "filmYear": 2026,
+      "watchedDate": "2026-08-24",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 1240889,
+      "link": "https://letterboxd.com/michaellamb/film/teenage-sex-and-death-at-camp-miasma/",
+      "title": "Teenage Sex and Death at Camp Miasma, 2026 - ★★★★½",
+      "reviewText": "I maybe saw him maybe 3 times on screen but all I could think about was bisexual Thor. \n\nThis operates on a few levels and it clicked for me at the right time. Gillian Anderson plays this so exquisitely. Hannah Einbinder is also excellent, and has added Kris to the vast catalog of characters in a movie that just need to get laid.\n\nWatched with Ryan.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1465828301",
       "filmTitle": "Escape from Tomorrow",
@@ -6445,20 +6463,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-sheep-detectives/1/",
       "title": "The Sheep Detectives, 2026 - ★★★★½ (contains spoilers)",
       "reviewText": "This review may contain spoilers.\n\ndespite my mother being the first person to tell me about the existence of this film, she is apparently not the least bit interested in actually watching it. i paid for her to go see it for Mother&#039;s day but she just gave the tickets to others. i put it on this afternoon while she&#039;s visiting and she just walked out the front door right as Sebastian died.\n\nwhen she first told me about it, it sounded like family-cringe that would be missable. my mom doesn&#039;t know me very well, nor does she know how to sell movies, because she could have mentioned Hugh Jackman at any point in time and I would have been on board immediately.\n\nanyway, just goes to show that sometimes the movie you think is perfectly engineered for a specific person doesn&#039;t always connect. i thought my mom&#039;s obsession with murder mysteries and her love for lamb imagery and the fact that this is basically The Land Before Time meets Knives Out would make this an instant classic to her but I was wrong.\n\nit&#039;s so ridiculously good and i&#039;m glad i finally saw it again. both this and Brand New Day have endings that make me happy.\n\nWatched with Shelby",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1424159185",
-      "filmTitle": "Spider-Man: Brand New Day",
-      "filmYear": 2026,
-      "watchedDate": "2026-07-30",
-      "memberRating": 3.5,
-      "rewatch": true,
-      "tmdbId": 969681,
-      "link": "https://letterboxd.com/michaellamb/film/spider-man-brand-new-day/1/",
-      "title": "Spider-Man: Brand New Day, 2026 - ★★★½",
-      "reviewText": "Watched with Micah, Jeana, Drake, Logan, Faith, Mary & Eric",
       "tags": [],
       "source": "rss"
     }
@@ -8329,7 +8333,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-08-23"
+    "latest": "2026-08-24"
   },
   "byYear": {
     "2017": {
@@ -14649,8 +14653,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 203,
-      "uniqueFilms": 186,
+      "totalWatched": 204,
+      "uniqueFilms": 187,
       "totalRewatches": 68,
       "averageRating": 3.99,
       "ratingDistribution": {
@@ -14662,7 +14666,7 @@
         "3.0": 13,
         "3.5": 30,
         "4.0": 36,
-        "4.5": 41,
+        "4.5": 42,
         "5.0": 56,
         "unrated": 1
       },
@@ -15198,6 +15202,10 @@
         {
           "date": "2026-08-23",
           "count": 1
+        },
+        {
+          "date": "2026-08-24",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15209,7 +15217,7 @@
         "1990s": 16,
         "2000s": 16,
         "2010s": 27,
-        "2020s": 121
+        "2020s": 122
       },
       "mostRewatched": [
         {
