@@ -1,12 +1,12 @@
 {
-  "totalWatched": 2565,
-  "uniqueFilms": 2135,
+  "totalWatched": 2566,
+  "uniqueFilms": 2136,
   "totalRewatches": 848,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
     "1.0": 24,
-    "1.5": 28,
+    "1.5": 29,
     "2.0": 107,
     "2.5": 129,
     "3.0": 290,
@@ -103,7 +103,7 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 37,
-    "2026-08": 19
+    "2026-08": 20
   },
   "heatmapData": [
     {
@@ -6101,6 +6101,10 @@
     {
       "date": "2026-08-26",
       "count": 1
+    },
+    {
+      "date": "2026-08-28",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6115,7 +6119,7 @@
     "1990s": 164,
     "2000s": 257,
     "2010s": 726,
-    "2020s": 1177
+    "2020s": 1178
   },
   "mostRewatched": [
     {
@@ -6191,6 +6195,20 @@
   ],
   "recentActivity": [
     {
+      "guid": "letterboxd-entry-1471986225",
+      "filmTitle": "Grand Theft Auto VI: An Extended Look",
+      "filmYear": 2026,
+      "watchedDate": "2026-08-28",
+      "memberRating": 1.5,
+      "rewatch": false,
+      "tmdbId": 1744462,
+      "link": "https://letterboxd.com/michaellamb/film/grand-theft-auto-vi-an-extended-look/",
+      "title": "Grand Theft Auto VI: An Extended Look, 2026 - ★½",
+      "reviewText": "why the fuck is this on Letterboxd",
+      "tags": [],
+      "source": "rss"
+    },
+    {
       "guid": "letterboxd-entry-1469881678",
       "filmTitle": "Mother Mary",
       "filmYear": 2026,
@@ -6242,7 +6260,7 @@
       "tmdbId": 152601,
       "link": "https://letterboxd.com/michaellamb/film/her/",
       "title": "Her, 2013 - ★★★★½ (contains spoilers)",
-      "reviewText": "This review may contain spoilers.\n\nHoly fucking shit it’s Portia Doubleday! \n\nI’m just starting season 3 of MR ROBOT and her character is just about to start losing her mind — what a lovely contrast to see her play a character who is there at the beginning of her role! Her scene obviously reminds me of BR:2049 with the Joi body-double scene, \n\nDon’t fall in love with your computer, folks. I am not speaking from experience: I believe this movie. \n\nBreak-in viewing of the Blu-ray",
+      "reviewText": "This review may contain spoilers.\n\nHoly fucking shit it’s Portia Doubleday! \n\nI’m just starting season 3 of MR ROBOT and her character is about to start losing her mind — what a lovely contrast to see her play a character who is already there at the beginning of her role! Her scene obviously reminds me of BR:2049 with the Joi body-double scene, but WAY more emotionally damaging, \n\nDon’t fall in love with your computer, folks. I am not speaking from experience: I believe this movie. \n\nBreak-in viewing of the Blu-ray",
       "tags": [],
       "source": "rss"
     },
@@ -6453,20 +6471,6 @@
       "link": "https://letterboxd.com/michaellamb/film/dreams-2025/",
       "title": "Dreams, 2025 - ★★★★",
       "reviewText": "Jessica Chastain is terrifying and the American attitude toward the immigrant is well-represented in her performance",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1426191224",
-      "filmTitle": "Ikiru",
-      "filmYear": 1952,
-      "watchedDate": "2026-07-31",
-      "memberRating": 5.0,
-      "rewatch": false,
-      "tmdbId": 3782,
-      "link": "https://letterboxd.com/michaellamb/film/ikiru/",
-      "title": "Ikiru, 1952 - ★★★★★",
-      "reviewText": "bruh what a day i&#039;ve had. first The Sheep Detectives and now Ikiru — I have so much on my mind. \n\nmy mom and my sister Shelby locked in on this one. Shelby picked it out.",
       "tags": [],
       "source": "rss"
     }
@@ -8337,7 +8341,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-08-26"
+    "latest": "2026-08-28"
   },
   "byYear": {
     "2017": {
@@ -14657,14 +14661,14 @@
       ]
     },
     "2026": {
-      "totalWatched": 205,
-      "uniqueFilms": 188,
+      "totalWatched": 206,
+      "uniqueFilms": 189,
       "totalRewatches": 68,
-      "averageRating": 3.99,
+      "averageRating": 3.97,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 3,
-        "1.5": 1,
+        "1.5": 2,
         "2.0": 5,
         "2.5": 15,
         "3.0": 14,
@@ -15214,6 +15218,10 @@
         {
           "date": "2026-08-26",
           "count": 1
+        },
+        {
+          "date": "2026-08-28",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15225,7 +15233,7 @@
         "1990s": 16,
         "2000s": 16,
         "2010s": 27,
-        "2020s": 123
+        "2020s": 124
       },
       "mostRewatched": [
         {
