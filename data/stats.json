@@ -1,7 +1,7 @@
 {
   "totalWatched": 2567,
-  "uniqueFilms": 2137,
-  "totalRewatches": 848,
+  "uniqueFilms": 2136,
+  "totalRewatches": 849,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -9,12 +9,12 @@
     "1.5": 29,
     "2.0": 107,
     "2.5": 129,
-    "3.0": 290,
+    "3.0": 291,
     "3.5": 382,
     "4.0": 540,
     "4.5": 383,
     "5.0": 590,
-    "unrated": 82
+    "unrated": 81
   },
   "filmsByMonth": {
     "2017-08": 1,
@@ -102,8 +102,8 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 37,
-    "2026-08": 21
+    "2026-07": 36,
+    "2026-08": 22
   },
   "heatmapData": [
     {
@@ -5979,10 +5979,6 @@
       "count": 2
     },
     {
-      "date": "2026-07-09",
-      "count": 1
-    },
-    {
       "date": "2026-07-13",
       "count": 1
     },
@@ -6104,7 +6100,7 @@
     },
     {
       "date": "2026-08-28",
-      "count": 2
+      "count": 3
     }
   ],
   "filmYearDistribution": {
@@ -6117,9 +6113,9 @@
     "1970s": 57,
     "1980s": 87,
     "1990s": 164,
-    "2000s": 257,
+    "2000s": 256,
     "2010s": 726,
-    "2020s": 1179
+    "2020s": 1180
   },
   "mostRewatched": [
     {
@@ -6194,6 +6190,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1472887157",
+      "filmTitle": "Disclosure Day",
+      "filmYear": 2026,
+      "watchedDate": "2026-08-28",
+      "memberRating": 3.0,
+      "rewatch": true,
+      "tmdbId": 1275779,
+      "link": "https://letterboxd.com/michaellamb/film/disclosure-day/1/",
+      "title": "Disclosure Day, 2026 - ★★★",
+      "reviewText": "okay, so, i&#039;ve been getting asked about this film in particular a lot more recently (a handful of times in the past 48 hours alone) so it seems the rewatch i owe this film is now due, and here we are.\n\ni am dropping this film from 3.5 to 3.0 stars. For me, the difference is simple: I no longer recommend watching this film. 3 stars is a fine score but my standard for recommendation is 3.5, and there are more necessary Spielberg works than this. \n\nthe nuumerous flaws exist for reasons I don&#039;t care to pontificate on, but the critical mind is something i intentionally embody during a rewatch and it is simply more unavoidable while the film is available on VOD. it is entertaining, it is charming, and it is Spielberg, but it is him phoning home.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1472207944",
       "filmTitle": "Coyote vs. Acme",
@@ -6457,20 +6467,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-long-walk-2025/",
       "title": "The Long Walk, 2025 - ★★★★½",
       "reviewText": "it&#039;s just so incredibly sad. like, really sad!",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1434253681",
-      "filmTitle": "The Mandalorian and Grogu",
-      "filmYear": 2026,
-      "watchedDate": "2026-08-04",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": 1228710,
-      "link": "https://letterboxd.com/michaellamb/film/the-mandalorian-and-grogu/",
-      "title": "The Mandalorian and Grogu, 2026 - ★★★",
-      "reviewText": "&quot;Things went sideways.&quot;\n\nI&#039;ll say. Cutting to title cards and then immediately invoking Apocalypse Now before having a too long, boring walking sequence is certainly a choice for opening your film. The score is trying everything it can to get me to be excited but it just did not work for me.\n\nThis is a movie starring Pedro Pascal? Is that a spoiler?",
       "tags": [],
       "source": "rss"
     }
@@ -14663,7 +14659,7 @@
     "2026": {
       "totalWatched": 207,
       "uniqueFilms": 190,
-      "totalRewatches": 68,
+      "totalRewatches": 69,
       "averageRating": 3.97,
       "ratingDistribution": {
         "0.5": 2,
@@ -14671,12 +14667,12 @@
         "1.5": 2,
         "2.0": 5,
         "2.5": 15,
-        "3.0": 14,
+        "3.0": 15,
         "3.5": 30,
         "4.0": 37,
         "4.5": 42,
         "5.0": 56,
-        "unrated": 1
+        "unrated": 0
       },
       "heatmapData": [
         {
@@ -15096,10 +15092,6 @@
           "count": 2
         },
         {
-          "date": "2026-07-09",
-          "count": 1
-        },
-        {
           "date": "2026-07-13",
           "count": 1
         },
@@ -15221,7 +15213,7 @@
         },
         {
           "date": "2026-08-28",
-          "count": 2
+          "count": 3
         }
       ],
       "filmYearDistribution": {
@@ -15231,9 +15223,9 @@
         "1970s": 5,
         "1980s": 6,
         "1990s": 16,
-        "2000s": 16,
+        "2000s": 15,
         "2010s": 27,
-        "2020s": 125
+        "2020s": 126
       },
       "mostRewatched": [
         {
