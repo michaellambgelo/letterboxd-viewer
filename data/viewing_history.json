@@ -1,5 +1,19 @@
 [
   {
+    "guid": "letterboxd-entry-1476364260",
+    "filmTitle": "Buddy",
+    "filmYear": 2026,
+    "watchedDate": "2026-08-30",
+    "memberRating": 4.0,
+    "rewatch": false,
+    "tmdbId": 1514026,
+    "link": "https://letterboxd.com/michaellamb/film/buddy-2026/",
+    "title": "Buddy, 2026 - ★★★★",
+    "reviewText": "I&#039;m considering this as part of my annual Thanksgiving film programming, an event where I subject my family to films I believe they should watch regardless of their actual interest in it. The tight runtime of 96 minutes feels really good and the pacing was overall excellent — I will say the unresolved nature of lots of the plot threads begs for a sequel and I WANT ONE SO BAD. \n\nThis was hilarious and so much fun. Watched with Bear and Angel.",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1472887157",
     "filmTitle": "Disclosure Day",
     "filmYear": 2026,
@@ -668,20 +682,6 @@
     "link": "https://letterboxd.com/michaellamb/film/shelby-oaks/",
     "title": "Shelby Oaks, 2024 - ★½",
     "reviewText": "boring as shit",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1395124902",
-    "filmTitle": "Jurassic Park",
-    "filmYear": 1993,
-    "watchedDate": "2026-07-13",
-    "memberRating": 4.5,
-    "rewatch": true,
-    "tmdbId": 329,
-    "link": "https://letterboxd.com/michaellamb/film/jurassic-park/4/",
-    "title": "Jurassic Park, 1993 - ★★★★½",
-    "reviewText": "Thankful to have been alive for the great Dr Alan Grant \n\n“He left us. He left us!”\n“But that’s not what I’m gonna do.” \n\nRIP Sam Neill\n\nI credit this character and this film for my love of science fiction",
     "tags": [],
     "source": "rss"
   },
