@@ -1,17 +1,17 @@
 {
   "totalWatched": 2567,
-  "uniqueFilms": 2137,
-  "totalRewatches": 848,
+  "uniqueFilms": 2136,
+  "totalRewatches": 851,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
     "1.0": 24,
-    "1.5": 29,
+    "1.5": 28,
     "2.0": 107,
     "2.5": 129,
-    "3.0": 291,
-    "3.5": 382,
-    "4.0": 541,
+    "3.0": 292,
+    "3.5": 381,
+    "4.0": 542,
     "4.5": 382,
     "5.0": 590,
     "unrated": 81
@@ -102,8 +102,9 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 35,
-    "2026-08": 23
+    "2026-07": 32,
+    "2026-08": 23,
+    "2026-09": 3
   },
   "heatmapData": [
     {
@@ -5979,12 +5980,8 @@
       "count": 2
     },
     {
-      "date": "2026-07-15",
-      "count": 1
-    },
-    {
       "date": "2026-07-16",
-      "count": 3
+      "count": 1
     },
     {
       "date": "2026-07-17",
@@ -6101,6 +6098,14 @@
     {
       "date": "2026-08-30",
       "count": 1
+    },
+    {
+      "date": "2026-09-01",
+      "count": 2
+    },
+    {
+      "date": "2026-09-02",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6113,9 +6118,9 @@
     "1970s": 57,
     "1980s": 87,
     "1990s": 163,
-    "2000s": 256,
+    "2000s": 255,
     "2010s": 726,
-    "2020s": 1181
+    "2020s": 1182
   },
   "mostRewatched": [
     {
@@ -6190,6 +6195,48 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1479264984",
+      "filmTitle": "How to Make a Killing",
+      "filmYear": 2026,
+      "watchedDate": "2026-09-02",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 467905,
+      "link": "https://letterboxd.com/michaellamb/film/how-to-make-a-killing-2026/",
+      "title": "How to Make a Killing, 2026 - ★★★",
+      "reviewText": "i think some folks hate-watched this and i get it. at the same time, i don&#039;t hate seeing Glen Powell or Margaret Qualley on my screen.\n\ni pretty much knew what this was in the first 10 seconds, but I&#039;m glad I stuck around for the whole thing. I&#039;ll probably never watch it again.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1479166203",
+      "filmTitle": "Buddy",
+      "filmYear": 2026,
+      "watchedDate": "2026-09-01",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 1514026,
+      "link": "https://letterboxd.com/michaellamb/film/buddy-2026/1/",
+      "title": "Buddy, 2026 - ★★★★½ (contains spoilers)",
+      "reviewText": "This review may contain spoilers.\n\nIf this film is about Buddy, the sequels will follow Benny and Bobby. I think Benny might have been the unicorn at the bottom of the Worry Well. \n\nThe domestic interior drama is played so well — a husband who doesn’t listen to his wife could be overdone but it is used effectively and really makes Grace’s journey to the Park meaningful. \n\nThis was a fun double-feature night at the theater. Theater rewatch with Jon Nolan and Ben",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1479003731",
+      "filmTitle": "Coyote vs. Acme",
+      "filmYear": 2026,
+      "watchedDate": "2026-09-01",
+      "memberRating": 4.0,
+      "rewatch": true,
+      "tmdbId": 1204680,
+      "link": "https://letterboxd.com/michaellamb/film/coyote-vs-acme/1/",
+      "title": "Coyote vs. Acme, 2026 - ★★★★",
+      "reviewText": "Theater rewatch with Jon Nolan, Faith, Eric, Mary, Ben, Elizabeth, Anna, and Drake",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1476364260",
       "filmTitle": "Buddy",
@@ -6294,7 +6341,7 @@
       "filmYear": 2013,
       "watchedDate": "2026-08-22",
       "memberRating": 4.5,
-      "rewatch": false,
+      "rewatch": true,
       "tmdbId": 152601,
       "link": "https://letterboxd.com/michaellamb/film/her/",
       "title": "Her, 2013 - ★★★★½ (contains spoilers)",
@@ -6425,48 +6472,6 @@
       "link": "https://letterboxd.com/michaellamb/film/hereditary/14/",
       "title": "Hereditary, 2018 - ★★★★",
       "reviewText": "this rewatch was necessitated by a recent recommendation to a work superior. i mentioned how i was so terrified by the overall narrative that once the credits rolled i essentially ran out of the theater.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1438315153",
-      "filmTitle": "The Lord of the Rings: The Two Towers",
-      "filmYear": 2002,
-      "watchedDate": "2026-08-07",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 121,
-      "link": "https://letterboxd.com/michaellamb/film/the-lord-of-the-rings-the-two-towers/3/",
-      "title": "The Lord of the Rings: The Two Towers, 2002 - ★★★★★",
-      "reviewText": "I needed to wash my eyeballs with some good Andy Serkis after learning what bad Andy Serkis is like (refer to a recent half-star rated film)",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1437602290",
-      "filmTitle": "Deep Water",
-      "filmYear": 2026,
-      "watchedDate": "2026-08-06",
-      "memberRating": 2.0,
-      "rewatch": false,
-      "tmdbId": 1127384,
-      "link": "https://letterboxd.com/michaellamb/film/deep-water-2026/",
-      "title": "Deep Water, 2026 - ★★",
-      "reviewText": "Watched with Ryan and Amy",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1437004586",
-      "filmTitle": "Animal Farm",
-      "filmYear": 2025,
-      "watchedDate": "2026-08-06",
-      "memberRating": 0.5,
-      "rewatch": false,
-      "tmdbId": 539745,
-      "link": "https://letterboxd.com/michaellamb/film/animal-farm-2025/",
-      "title": "Animal Farm, 2025 - ½",
-      "reviewText": "Watched on Thursday August 6, 2026.",
       "tags": [],
       "source": "rss"
     }
@@ -8337,7 +8342,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-08-30"
+    "latest": "2026-09-02"
   },
   "byYear": {
     "2017": {
@@ -14658,18 +14663,18 @@
     },
     "2026": {
       "totalWatched": 207,
-      "uniqueFilms": 190,
-      "totalRewatches": 68,
-      "averageRating": 3.97,
+      "uniqueFilms": 189,
+      "totalRewatches": 71,
+      "averageRating": 3.98,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 3,
-        "1.5": 2,
+        "1.5": 1,
         "2.0": 5,
         "2.5": 15,
-        "3.0": 15,
-        "3.5": 30,
-        "4.0": 38,
+        "3.0": 16,
+        "3.5": 29,
+        "4.0": 39,
         "4.5": 41,
         "5.0": 56,
         "unrated": 0
@@ -15092,12 +15097,8 @@
           "count": 2
         },
         {
-          "date": "2026-07-15",
-          "count": 1
-        },
-        {
           "date": "2026-07-16",
-          "count": 3
+          "count": 1
         },
         {
           "date": "2026-07-17",
@@ -15214,6 +15215,14 @@
         {
           "date": "2026-08-30",
           "count": 1
+        },
+        {
+          "date": "2026-09-01",
+          "count": 2
+        },
+        {
+          "date": "2026-09-02",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15223,9 +15232,9 @@
         "1970s": 5,
         "1980s": 6,
         "1990s": 15,
-        "2000s": 15,
+        "2000s": 14,
         "2010s": 27,
-        "2020s": 127
+        "2020s": 128
       },
       "mostRewatched": [
         {
@@ -15236,11 +15245,18 @@
           "link": "https://boxd.it/cFxBLT"
         },
         {
-          "count": 3,
-          "filmTitle": "The Odyssey",
+          "count": 2,
+          "filmTitle": "Buddy",
           "filmYear": 2026,
-          "tmdbId": 1368337,
-          "link": "https://letterboxd.com/michaellamb/film/the-odyssey-2026/"
+          "tmdbId": 1514026,
+          "link": "https://letterboxd.com/michaellamb/film/buddy-2026/"
+        },
+        {
+          "count": 2,
+          "filmTitle": "Coyote vs. Acme",
+          "filmYear": 2026,
+          "tmdbId": 1204680,
+          "link": "https://letterboxd.com/michaellamb/film/coyote-vs-acme/"
         },
         {
           "count": 2,
@@ -15251,17 +15267,10 @@
         },
         {
           "count": 2,
-          "filmTitle": "Midsommar",
-          "filmYear": 2019,
-          "tmdbId": null,
-          "link": "https://boxd.it/cuSEKd"
-        },
-        {
-          "count": 2,
-          "filmTitle": "Obsession",
-          "filmYear": 2025,
-          "tmdbId": null,
-          "link": "https://boxd.it/erK377"
+          "filmTitle": "The Odyssey",
+          "filmYear": 2026,
+          "tmdbId": 1368337,
+          "link": "https://letterboxd.com/michaellamb/film/the-odyssey-2026/1/"
         }
       ],
       "highestRated": [
