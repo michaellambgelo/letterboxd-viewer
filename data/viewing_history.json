@@ -1,5 +1,33 @@
 [
   {
+    "guid": "letterboxd-entry-1479737459",
+    "filmTitle": "Smart House",
+    "filmYear": 1999,
+    "watchedDate": "2026-09-02",
+    "memberRating": 4.0,
+    "rewatch": false,
+    "tmdbId": 35215,
+    "link": "https://letterboxd.com/michaellamb/film/smart-house/",
+    "title": "Smart House, 1999 - ★★★★",
+    "reviewText": "82 minutes of the best the 90s Disney Original writing you can find",
+    "tags": [],
+    "source": "rss"
+  },
+  {
+    "guid": "letterboxd-entry-1479660598",
+    "filmTitle": "The Scooby-Doo Project",
+    "filmYear": 1999,
+    "watchedDate": "2026-09-02",
+    "memberRating": 5.0,
+    "rewatch": false,
+    "tmdbId": 423336,
+    "link": "https://letterboxd.com/michaellamb/film/the-scooby-doo-project/",
+    "title": "The Scooby-Doo Project, 1999 - ★★★★★",
+    "reviewText": "I remember this happening",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1479264984",
     "filmTitle": "How to Make a Killing",
     "filmYear": 2026,
@@ -9,7 +37,7 @@
     "tmdbId": 467905,
     "link": "https://letterboxd.com/michaellamb/film/how-to-make-a-killing-2026/",
     "title": "How to Make a Killing, 2026 - ★★★",
-    "reviewText": "i think some folks hate-watched this and i get it. at the same time, i don&#039;t hate seeing Glen Powell or Margaret Qualley on my screen.\n\ni pretty much knew what this was in the first 10 seconds, but I&#039;m glad I stuck around for the whole thing. I&#039;ll probably never watch it again.",
+    "reviewText": "i think some folks hate-watched this and i get it. at the same time, i don&#039;t hate seeing Glen Powell or Margaret Qualley on my screen.\n\ni pretty much knew what this was in the first 10 seconds, but I&#039;m glad I stuck around for the whole thing. the ending being what it is earns this film 3 solid stars. I&#039;ll probably never watch it again.",
     "tags": [],
     "source": "rss"
   },
@@ -654,34 +682,6 @@
     "link": "https://letterboxd.com/michaellamb/film/the-odyssey-2026/2/",
     "title": "The Odyssey, 2026 - ★★★★½",
     "reviewText": "elemental and deeply human art\n\nthird round; with McKinley and Jon-Nolan",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1401288733",
-    "filmTitle": "The Odyssey",
-    "filmYear": 2026,
-    "watchedDate": "2026-07-17",
-    "memberRating": 4.5,
-    "rewatch": true,
-    "tmdbId": 1368337,
-    "link": "https://letterboxd.com/michaellamb/film/the-odyssey-2026/1/",
-    "title": "The Odyssey, 2026 - ★★★★½",
-    "reviewText": "round #2 because that&#039;s how I roll\n\nwatched with Jon-Nolan and Aidan at the Capri",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1399501740",
-    "filmTitle": "Coffee Shop Names",
-    "filmYear": 2020,
-    "watchedDate": "2026-07-16",
-    "memberRating": 3.5,
-    "rewatch": false,
-    "tmdbId": 703531,
-    "link": "https://letterboxd.com/michaellamb/film/coffee-shop-names/",
-    "title": "Coffee Shop Names, 2020 - ★★★½",
-    "reviewText": "danny pudi do more short films",
     "tags": [],
     "source": "rss"
   },
