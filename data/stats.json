@@ -102,9 +102,9 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 28,
+    "2026-07": 27,
     "2026-08": 23,
-    "2026-09": 7
+    "2026-09": 8
   },
   "heatmapData": [
     {
@@ -5980,10 +5980,6 @@
       "count": 2
     },
     {
-      "date": "2026-07-20",
-      "count": 1
-    },
-    {
       "date": "2026-07-21",
       "count": 1
     },
@@ -6102,6 +6098,10 @@
     {
       "date": "2026-09-04",
       "count": 1
+    },
+    {
+      "date": "2026-09-05",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6112,11 +6112,11 @@
     "1950s": 20,
     "1960s": 30,
     "1970s": 57,
-    "1980s": 87,
+    "1980s": 88,
     "1990s": 165,
     "2000s": 256,
     "2010s": 726,
-    "2020s": 1179
+    "2020s": 1178
   },
   "mostRewatched": [
     {
@@ -6191,6 +6191,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1484094601",
+      "filmTitle": "Akira",
+      "filmYear": 1988,
+      "watchedDate": "2026-09-05",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 149,
+      "link": "https://letterboxd.com/michaellamb/film/akira/1/",
+      "title": "Akira, 1988 - ★★★★★",
+      "reviewText": "I’ll write more thoughts later but this was crazy to see on the big screen.\n\nwatched with Jon-Nolan and Lindsay\n---\nOk, so this was my first time seeing this film in a theater and I honestly couldn&#039;t tell you whether this was really 4K but it still looked and felt so damn good! The absolute SCALE of Neo Tokyo and its destruction was so beautifully devastating.\n\nAnother fantastic aspect was the surround sound experience — it legitimately creeped me out. So great! The music is absolutely incredible and worth hearing in a room dedicated to sight and sound. \n\nI might go back and see it in theaters again.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1482914313",
       "filmTitle": "DragonHeart: A New Beginning",
@@ -6456,23 +6470,16 @@
       "reviewText": "Actively makes me rethink my positive rating of Longlegs. May be a first for me, that a movie makes me think a different movie is now worse by association",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1447840252",
-      "filmTitle": "The Strangers: Chapter 2",
-      "filmYear": 2025,
-      "watchedDate": "2026-08-12",
-      "memberRating": 1.0,
-      "rewatch": false,
-      "tmdbId": 1010756,
-      "link": "https://letterboxd.com/michaellamb/film/the-strangers-chapter-2/",
-      "title": "The Strangers: Chapter 2, 2025 - ★",
-      "reviewText": "not sure why i watch these, but chapter 3 will probably be logged soon. it&#039;s available at Willie Morris library.",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Akira",
+      "filmYear": 1988,
+      "watchedDate": "2026-09-05",
+      "link": "https://letterboxd.com/michaellamb/film/akira/1/",
+      "tmdbId": 149
+    },
     {
       "filmTitle": "The Scooby-Doo Project",
       "filmYear": 1999,
@@ -6528,13 +6535,6 @@
       "watchedDate": "2026-07-22",
       "link": "https://letterboxd.com/michaellamb/film/tuner/",
       "tmdbId": 1340206
-    },
-    {
-      "filmTitle": "Bugonia",
-      "filmYear": 2025,
-      "watchedDate": "2026-07-20",
-      "link": "https://letterboxd.com/michaellamb/film/bugonia/1/",
-      "tmdbId": 701387
     },
     {
       "filmTitle": "The Muppet Movie",
@@ -8338,7 +8338,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-09-04"
+    "latest": "2026-09-05"
   },
   "byYear": {
     "2017": {
@@ -15093,10 +15093,6 @@
           "count": 2
         },
         {
-          "date": "2026-07-20",
-          "count": 1
-        },
-        {
           "date": "2026-07-21",
           "count": 1
         },
@@ -15215,6 +15211,10 @@
         {
           "date": "2026-09-04",
           "count": 1
+        },
+        {
+          "date": "2026-09-05",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15222,11 +15222,11 @@
         "1950s": 3,
         "1960s": 4,
         "1970s": 5,
-        "1980s": 6,
+        "1980s": 7,
         "1990s": 17,
         "2000s": 15,
         "2010s": 27,
-        "2020s": 125
+        "2020s": 124
       },
       "mostRewatched": [
         {
@@ -15266,6 +15266,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Akira",
+          "filmYear": 1988,
+          "watchedDate": "2026-09-05",
+          "link": "https://letterboxd.com/michaellamb/film/akira/1/"
+        },
         {
           "filmTitle": "The Scooby-Doo Project",
           "filmYear": 1999,
@@ -15313,12 +15319,6 @@
           "filmYear": 2025,
           "watchedDate": "2026-07-22",
           "link": "https://letterboxd.com/michaellamb/film/tuner/"
-        },
-        {
-          "filmTitle": "Bugonia",
-          "filmYear": 2025,
-          "watchedDate": "2026-07-20",
-          "link": "https://letterboxd.com/michaellamb/film/bugonia/1/"
         },
         {
           "filmTitle": "The Muppet Movie",
