@@ -9,11 +9,11 @@
     "1.5": 28,
     "2.0": 109,
     "2.5": 129,
-    "3.0": 292,
+    "3.0": 293,
     "3.5": 380,
     "4.0": 543,
     "4.5": 380,
-    "5.0": 590,
+    "5.0": 589,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -102,9 +102,9 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 26,
+    "2026-07": 25,
     "2026-08": 23,
-    "2026-09": 9
+    "2026-09": 10
   },
   "heatmapData": [
     {
@@ -5980,10 +5980,6 @@
       "count": 2
     },
     {
-      "date": "2026-07-22",
-      "count": 1
-    },
-    {
       "date": "2026-07-23",
       "count": 1
     },
@@ -6098,6 +6094,10 @@
     {
       "date": "2026-09-05",
       "count": 2
+    },
+    {
+      "date": "2026-09-07",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6111,8 +6111,8 @@
     "1980s": 88,
     "1990s": 165,
     "2000s": 256,
-    "2010s": 727,
-    "2020s": 1177
+    "2010s": 728,
+    "2020s": 1176
   },
   "mostRewatched": [
     {
@@ -6187,6 +6187,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1486861299",
+      "filmTitle": "Dragonheart: Battle for the Heartfire",
+      "filmYear": 2017,
+      "watchedDate": "2026-09-07",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 451644,
+      "link": "https://letterboxd.com/michaellamb/film/dragonheart-battle-for-the-heartfire/",
+      "title": "Dragonheart: Battle for the Heartfire, 2017 - ★★★",
+      "reviewText": "How refreshing to finally have a good story with a decent production value! I loved the castle and I cried right at the end. \n\nThis was edited by Chuck Norris! But maybe not the Chuck Norris you think of first? It&#039;s hard to tell based on IMDb, but the action was great!",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1484586278",
       "filmTitle": "Dragonheart 3: The Sorcerer's Curse",
@@ -6452,20 +6466,6 @@
       "reviewText": "FOR LUCIANO because we are also what we have lostbeautiful double feature with Hamnet\n\nthe sound design is incredibly anxiety-inducing. the version I watched on MUBI was the Criterion edition which apparently included foley and other background sound enhancements which I will say were effective in my experience.",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1452445565",
-      "filmTitle": "Hamnet",
-      "filmYear": 2025,
-      "watchedDate": "2026-08-15",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 858024,
-      "link": "https://letterboxd.com/michaellamb/film/hamnet/4/",
-      "title": "Hamnet, 2025 - ★★★★★",
-      "reviewText": "this was so necessary to revisit. what a beautiful movie, and i feel so conflicted thinking that Paul Mescal is perhaps miscast, yet the juxtaposition of his acting being lesser than is perhaps what lends this the emotional throughline that makes the film so effective. those Jupe brothers playing the roles that they do centers the film on Agnes, and Will is more like an objective observer subjectively operating as a storyteller within the story. i don&#039;t really know any other actor i would believe when i see them sitting in a room crying about something if it isn&#039;t Paul Mescal, so I&#039;m still unable to knock the film for its casting decisions because it just works.",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
@@ -6524,13 +6524,6 @@
       "watchedDate": "2026-07-25",
       "link": "https://letterboxd.com/michaellamb/film/the-muppet-christmas-carol/",
       "tmdbId": 10437
-    },
-    {
-      "filmTitle": "Tuner",
-      "filmYear": 2025,
-      "watchedDate": "2026-07-22",
-      "link": "https://letterboxd.com/michaellamb/film/tuner/",
-      "tmdbId": 1340206
     },
     {
       "filmTitle": "The Muppet Movie",
@@ -8334,7 +8327,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-09-05"
+    "latest": "2026-09-07"
   },
   "byYear": {
     "2017": {
@@ -14657,18 +14650,18 @@
       "totalWatched": 207,
       "uniqueFilms": 190,
       "totalRewatches": 69,
-      "averageRating": 3.95,
+      "averageRating": 3.94,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 3,
         "1.5": 1,
         "2.0": 7,
         "2.5": 15,
-        "3.0": 16,
+        "3.0": 17,
         "3.5": 28,
         "4.0": 40,
         "4.5": 39,
-        "5.0": 56,
+        "5.0": 55,
         "unrated": 0
       },
       "heatmapData": [
@@ -15089,10 +15082,6 @@
           "count": 2
         },
         {
-          "date": "2026-07-22",
-          "count": 1
-        },
-        {
           "date": "2026-07-23",
           "count": 1
         },
@@ -15207,6 +15196,10 @@
         {
           "date": "2026-09-05",
           "count": 2
+        },
+        {
+          "date": "2026-09-07",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15217,8 +15210,8 @@
         "1980s": 7,
         "1990s": 17,
         "2000s": 15,
-        "2010s": 28,
-        "2020s": 123
+        "2010s": 29,
+        "2020s": 122
       },
       "mostRewatched": [
         {
@@ -15307,16 +15300,16 @@
           "link": "https://letterboxd.com/michaellamb/film/the-muppet-christmas-carol/"
         },
         {
-          "filmTitle": "Tuner",
-          "filmYear": 2025,
-          "watchedDate": "2026-07-22",
-          "link": "https://letterboxd.com/michaellamb/film/tuner/"
-        },
-        {
           "filmTitle": "The Muppet Movie",
           "filmYear": 1979,
           "watchedDate": "2026-07-04",
           "link": "https://boxd.it/f4KWrR"
+        },
+        {
+          "filmTitle": "Jaws",
+          "filmYear": 1975,
+          "watchedDate": "2026-07-04",
+          "link": "https://boxd.it/f5oJWn"
         }
       ]
     }
