@@ -8,11 +8,11 @@
     "1.0": 24,
     "1.5": 28,
     "2.0": 109,
-    "2.5": 129,
-    "3.0": 293,
+    "2.5": 130,
+    "3.0": 294,
     "3.5": 380,
-    "4.0": 543,
-    "4.5": 380,
+    "4.0": 542,
+    "4.5": 379,
     "5.0": 589,
     "unrated": 81
   },
@@ -102,9 +102,9 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 25,
+    "2026-07": 22,
     "2026-08": 23,
-    "2026-09": 10
+    "2026-09": 13
   },
   "heatmapData": [
     {
@@ -5980,14 +5980,6 @@
       "count": 2
     },
     {
-      "date": "2026-07-23",
-      "count": 1
-    },
-    {
-      "date": "2026-07-24",
-      "count": 2
-    },
-    {
       "date": "2026-07-25",
       "count": 2
     },
@@ -6097,7 +6089,7 @@
     },
     {
       "date": "2026-09-07",
-      "count": 1
+      "count": 4
     }
   ],
   "filmYearDistribution": {
@@ -6108,11 +6100,11 @@
     "1950s": 20,
     "1960s": 30,
     "1970s": 57,
-    "1980s": 88,
-    "1990s": 165,
+    "1980s": 87,
+    "1990s": 164,
     "2000s": 256,
     "2010s": 728,
-    "2020s": 1176
+    "2020s": 1178
   },
   "mostRewatched": [
     {
@@ -6187,6 +6179,48 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1487658292",
+      "filmTitle": "Good Boy",
+      "filmYear": 2026,
+      "watchedDate": "2026-09-07",
+      "memberRating": 2.5,
+      "rewatch": false,
+      "tmdbId": 1487650,
+      "link": "https://letterboxd.com/michaellamb/film/good-boy-2026/",
+      "title": "Good Boy, 2026 - ★★½",
+      "reviewText": "Watched on Monday September 7, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1487618560",
+      "filmTitle": "Anesthesia",
+      "filmYear": 2026,
+      "watchedDate": "2026-09-07",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 1533690,
+      "link": "https://letterboxd.com/michaellamb/film/anesthesia-2026/",
+      "title": "Anesthesia, 2026 - ★★★",
+      "reviewText": "Watched on Monday September 7, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1487586584",
+      "filmTitle": "Dragonheart: Vengeance",
+      "filmYear": 2020,
+      "watchedDate": "2026-09-07",
+      "memberRating": 3.5,
+      "rewatch": false,
+      "tmdbId": 666750,
+      "link": "https://letterboxd.com/michaellamb/film/dragonheart-vengeance/",
+      "title": "Dragonheart: Vengeance, 2020 - ★★★½",
+      "reviewText": "The most Tolkien-esque this franchise has gotten -- and I loved it. The last few minutes had me smiling like a goober.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1486861299",
       "filmTitle": "Dragonheart: Battle for the Heartfire",
@@ -6422,48 +6456,6 @@
       "link": "https://letterboxd.com/michaellamb/film/escape-from-tomorrow/",
       "title": "Escape from Tomorrow, 2013 - ★",
       "reviewText": "uhhh weird story to tell and the gimmicky filmmaking concept was really oversold to me. green screen and ADR all over the place, which is fine for capturing some sequences except i saw every bit of it and just did not care about the story it was telling. jim suxx and the &quot;horror&quot; elements of this weren&#039;t balanced enough to earn how horny it was.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1464180092",
-      "filmTitle": "Her",
-      "filmYear": 2013,
-      "watchedDate": "2026-08-22",
-      "memberRating": 4.5,
-      "rewatch": true,
-      "tmdbId": 152601,
-      "link": "https://letterboxd.com/michaellamb/film/her/",
-      "title": "Her, 2013 - ★★★★½ (contains spoilers)",
-      "reviewText": "This review may contain spoilers.\n\nHoly fucking shit it’s Portia Doubleday! \n\nI’m just starting season 3 of MR ROBOT and her character is about to start losing her mind — what a lovely contrast to see her play a character who is already there at the beginning of her role! Her scene obviously reminds me of BR:2049 with the Joi body-double scene, but WAY more emotionally damaging, \n\nDon’t fall in love with your computer, folks. I am not speaking from experience: I believe this movie. \n\nBreak-in viewing of the Blu-ray",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1464027827",
-      "filmTitle": "Blade",
-      "filmYear": 1998,
-      "watchedDate": "2026-08-22",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 36647,
-      "link": "https://letterboxd.com/michaellamb/film/blade/",
-      "title": "Blade, 1998 - ★★★½",
-      "reviewText": "fantastic kickboxing vampire movie",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1452537439",
-      "filmTitle": "Amores Perros",
-      "filmYear": 2000,
-      "watchedDate": "2026-08-15",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": 55,
-      "link": "https://letterboxd.com/michaellamb/film/amores-perros/",
-      "title": "Amores Perros, 2000 - ★★★★½",
-      "reviewText": "FOR LUCIANO because we are also what we have lostbeautiful double feature with Hamnet\n\nthe sound design is incredibly anxiety-inducing. the version I watched on MUBI was the Criterion edition which apparently included foley and other background sound enhancements which I will say were effective in my experience.",
       "tags": [],
       "source": "rss"
     }
@@ -14650,17 +14642,17 @@
       "totalWatched": 207,
       "uniqueFilms": 190,
       "totalRewatches": 69,
-      "averageRating": 3.94,
+      "averageRating": 3.93,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 3,
         "1.5": 1,
         "2.0": 7,
-        "2.5": 15,
-        "3.0": 17,
+        "2.5": 16,
+        "3.0": 18,
         "3.5": 28,
-        "4.0": 40,
-        "4.5": 39,
+        "4.0": 39,
+        "4.5": 38,
         "5.0": 55,
         "unrated": 0
       },
@@ -15082,14 +15074,6 @@
           "count": 2
         },
         {
-          "date": "2026-07-23",
-          "count": 1
-        },
-        {
-          "date": "2026-07-24",
-          "count": 2
-        },
-        {
           "date": "2026-07-25",
           "count": 2
         },
@@ -15199,7 +15183,7 @@
         },
         {
           "date": "2026-09-07",
-          "count": 1
+          "count": 4
         }
       ],
       "filmYearDistribution": {
@@ -15207,11 +15191,11 @@
         "1950s": 3,
         "1960s": 4,
         "1970s": 5,
-        "1980s": 7,
-        "1990s": 17,
+        "1980s": 6,
+        "1990s": 16,
         "2000s": 15,
         "2010s": 29,
-        "2020s": 122
+        "2020s": 124
       },
       "mostRewatched": [
         {
