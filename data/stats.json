@@ -1,6 +1,6 @@
 {
   "totalWatched": 2567,
-  "uniqueFilms": 2136,
+  "uniqueFilms": 2135,
   "totalRewatches": 849,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -12,8 +12,8 @@
     "3.0": 294,
     "3.5": 380,
     "4.0": 542,
-    "4.5": 379,
-    "5.0": 589,
+    "4.5": 380,
+    "5.0": 588,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -102,9 +102,9 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 22,
+    "2026-07": 21,
     "2026-08": 23,
-    "2026-09": 13
+    "2026-09": 14
   },
   "heatmapData": [
     {
@@ -5981,7 +5981,7 @@
     },
     {
       "date": "2026-07-25",
-      "count": 2
+      "count": 1
     },
     {
       "date": "2026-07-26",
@@ -6090,6 +6090,10 @@
     {
       "date": "2026-09-07",
       "count": 4
+    },
+    {
+      "date": "2026-09-08",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6179,6 +6183,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1488269238",
+      "filmTitle": "Hackers",
+      "filmYear": 1995,
+      "watchedDate": "2026-09-08",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 10428,
+      "link": "https://letterboxd.com/michaellamb/film/hackers/11/",
+      "title": "Hackers, 1995 - ★★★★½",
+      "reviewText": "the interfaces in this movie are nonsense but they are a fucken vibe\n\nbreak in viewing of the 4KUHD",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1487658292",
       "filmTitle": "Good Boy",
@@ -6444,20 +6462,6 @@
       "reviewText": "I maybe saw him 3 times on screen but all I could think about was bisexual Thor. \n\nThis operates on a few levels and it clicked for me at the right time. Gillian Anderson plays this so exquisitely. Hannah Einbinder is also excellent, and has added Kris to the vast catalog of characters in a movie that just need to get laid.\n\nWatched with Ryan.",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1465828301",
-      "filmTitle": "Escape from Tomorrow",
-      "filmYear": 2013,
-      "watchedDate": "2026-08-23",
-      "memberRating": 1.0,
-      "rewatch": false,
-      "tmdbId": 158752,
-      "link": "https://letterboxd.com/michaellamb/film/escape-from-tomorrow/",
-      "title": "Escape from Tomorrow, 2013 - ★",
-      "reviewText": "uhhh weird story to tell and the gimmicky filmmaking concept was really oversold to me. green screen and ADR all over the place, which is fine for capturing some sequences except i saw every bit of it and just did not care about the story it was telling. jim suxx and the &quot;horror&quot; elements of this weren&#039;t balanced enough to earn how horny it was.",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
@@ -6509,13 +6513,6 @@
       "watchedDate": "2026-07-25",
       "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/16/",
       "tmdbId": 872585
-    },
-    {
-      "filmTitle": "The Muppet Christmas Carol",
-      "filmYear": 1992,
-      "watchedDate": "2026-07-25",
-      "link": "https://letterboxd.com/michaellamb/film/the-muppet-christmas-carol/",
-      "tmdbId": 10437
     },
     {
       "filmTitle": "The Muppet Movie",
@@ -8319,7 +8316,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-09-07"
+    "latest": "2026-09-08"
   },
   "byYear": {
     "2017": {
@@ -14652,8 +14649,8 @@
         "3.0": 18,
         "3.5": 28,
         "4.0": 39,
-        "4.5": 38,
-        "5.0": 55,
+        "4.5": 39,
+        "5.0": 54,
         "unrated": 0
       },
       "heatmapData": [
@@ -15075,7 +15072,7 @@
         },
         {
           "date": "2026-07-25",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2026-07-26",
@@ -15184,6 +15181,10 @@
         {
           "date": "2026-09-07",
           "count": 4
+        },
+        {
+          "date": "2026-09-08",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15278,12 +15279,6 @@
           "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/16/"
         },
         {
-          "filmTitle": "The Muppet Christmas Carol",
-          "filmYear": 1992,
-          "watchedDate": "2026-07-25",
-          "link": "https://letterboxd.com/michaellamb/film/the-muppet-christmas-carol/"
-        },
-        {
           "filmTitle": "The Muppet Movie",
           "filmYear": 1979,
           "watchedDate": "2026-07-04",
@@ -15294,6 +15289,12 @@
           "filmYear": 1975,
           "watchedDate": "2026-07-04",
           "link": "https://boxd.it/f5oJWn"
+        },
+        {
+          "filmTitle": "The Cube",
+          "filmYear": 1969,
+          "watchedDate": "2026-07-04",
+          "link": "https://boxd.it/f5rbLr"
         }
       ]
     }
