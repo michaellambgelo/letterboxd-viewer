@@ -1,7 +1,7 @@
 {
   "totalWatched": 2568,
-  "uniqueFilms": 2137,
-  "totalRewatches": 848,
+  "uniqueFilms": 2138,
+  "totalRewatches": 847,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -10,10 +10,10 @@
     "2.0": 110,
     "2.5": 130,
     "3.0": 294,
-    "3.5": 380,
+    "3.5": 381,
     "4.0": 542,
     "4.5": 379,
-    "5.0": 587,
+    "5.0": 586,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -102,9 +102,9 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 19,
+    "2026-07": 18,
     "2026-08": 23,
-    "2026-09": 17
+    "2026-09": 18
   },
   "heatmapData": [
     {
@@ -5980,10 +5980,6 @@
       "count": 2
     },
     {
-      "date": "2026-07-26",
-      "count": 1
-    },
-    {
       "date": "2026-07-27",
       "count": 1
     },
@@ -6094,6 +6090,10 @@
     {
       "date": "2026-09-09",
       "count": 3
+    },
+    {
+      "date": "2026-09-10",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6183,6 +6183,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1490544380",
+      "filmTitle": "Reality+",
+      "filmYear": 2014,
+      "watchedDate": "2026-09-10",
+      "memberRating": 3.5,
+      "rewatch": false,
+      "tmdbId": 367181,
+      "link": "https://letterboxd.com/michaellamb/film/reality-2014-1/",
+      "title": "Reality+, 2014 - ★★★½",
+      "reviewText": "ok so The Substance but in Paris",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1490128860",
       "filmTitle": "Salem's Lot",
@@ -6448,20 +6462,6 @@
       "reviewText": "okay, so, i&#039;ve been getting asked about this film in particular a lot more recently (a handful of times in the past 48 hours alone) so it seems the rewatch i owe this film is now due, and here we are.\n\ni am dropping this film from 3.5 to 3.0 stars. For me, the difference is simple: I no longer recommend watching this film. 3 stars is a fine score but my standard for recommendation is 3.5, and there are more necessary Spielberg works than this. \n\nthe nuumerous flaws exist for reasons I don&#039;t care to pontificate on, but the critical mind is something i intentionally embody during a rewatch and it is simply more unavoidable while the film is available on VOD. it is entertaining, it is charming, and it is Spielberg, but it is him phoning home.",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1472207944",
-      "filmTitle": "Coyote vs. Acme",
-      "filmYear": 2026,
-      "watchedDate": "2026-08-28",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 1204680,
-      "link": "https://letterboxd.com/michaellamb/film/coyote-vs-acme/",
-      "title": "Coyote vs. Acme, 2026 - ★★★★ (contains spoilers)",
-      "reviewText": "This review may contain spoilers.\n\nI love movies! I watched this with my buddy Ryan. We both took the day off. I love going to the movies with friends.\n\nThis has a fun soundtrack and entertained me. The legal drama is kinda awesome in that it shows how the system is rigged but we persist in doing the things we love in spite of it.",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
@@ -6499,13 +6499,6 @@
       "watchedDate": "2026-07-31",
       "link": "https://letterboxd.com/michaellamb/film/ikiru/",
       "tmdbId": 3782
-    },
-    {
-      "filmTitle": "Midsommar",
-      "filmYear": 2019,
-      "watchedDate": "2026-07-26",
-      "link": "https://letterboxd.com/michaellamb/film/midsommar/52/",
-      "tmdbId": 530385
     },
     {
       "filmTitle": "The Muppet Movie",
@@ -8309,7 +8302,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-09-09"
+    "latest": "2026-09-10"
   },
   "byYear": {
     "2017": {
@@ -14631,8 +14624,8 @@
     "2026": {
       "totalWatched": 208,
       "uniqueFilms": 191,
-      "totalRewatches": 68,
-      "averageRating": 3.89,
+      "totalRewatches": 67,
+      "averageRating": 3.88,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 3,
@@ -14640,10 +14633,10 @@
         "2.0": 8,
         "2.5": 16,
         "3.0": 18,
-        "3.5": 28,
+        "3.5": 29,
         "4.0": 39,
         "4.5": 38,
-        "5.0": 53,
+        "5.0": 52,
         "unrated": 0
       },
       "heatmapData": [
@@ -15064,10 +15057,6 @@
           "count": 2
         },
         {
-          "date": "2026-07-26",
-          "count": 1
-        },
-        {
           "date": "2026-07-27",
           "count": 1
         },
@@ -15178,6 +15167,10 @@
         {
           "date": "2026-09-09",
           "count": 3
+        },
+        {
+          "date": "2026-09-10",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15260,12 +15253,6 @@
           "link": "https://letterboxd.com/michaellamb/film/ikiru/"
         },
         {
-          "filmTitle": "Midsommar",
-          "filmYear": 2019,
-          "watchedDate": "2026-07-26",
-          "link": "https://letterboxd.com/michaellamb/film/midsommar/52/"
-        },
-        {
           "filmTitle": "The Muppet Movie",
           "filmYear": 1979,
           "watchedDate": "2026-07-04",
@@ -15288,6 +15275,12 @@
           "filmYear": 2023,
           "watchedDate": "2026-06-29",
           "link": "https://boxd.it/f0Cnfp"
+        },
+        {
+          "filmTitle": "Midsommar",
+          "filmYear": 2019,
+          "watchedDate": "2026-06-26",
+          "link": "https://boxd.it/eXKLxL"
         }
       ]
     }
