@@ -1,19 +1,19 @@
 {
-  "totalWatched": 2567,
-  "uniqueFilms": 2135,
-  "totalRewatches": 849,
+  "totalWatched": 2568,
+  "uniqueFilms": 2137,
+  "totalRewatches": 848,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
     "1.0": 24,
-    "1.5": 28,
+    "1.5": 30,
     "2.0": 109,
     "2.5": 130,
     "3.0": 294,
     "3.5": 380,
     "4.0": 542,
     "4.5": 380,
-    "5.0": 588,
+    "5.0": 587,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -102,9 +102,9 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 21,
+    "2026-07": 20,
     "2026-08": 23,
-    "2026-09": 14
+    "2026-09": 16
   },
   "heatmapData": [
     {
@@ -5980,10 +5980,6 @@
       "count": 2
     },
     {
-      "date": "2026-07-25",
-      "count": 1
-    },
-    {
       "date": "2026-07-26",
       "count": 2
     },
@@ -6094,6 +6090,10 @@
     {
       "date": "2026-09-08",
       "count": 1
+    },
+    {
+      "date": "2026-09-09",
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6106,9 +6106,9 @@
     "1970s": 57,
     "1980s": 87,
     "1990s": 164,
-    "2000s": 256,
-    "2010s": 728,
-    "2020s": 1178
+    "2000s": 257,
+    "2010s": 729,
+    "2020s": 1177
   },
   "mostRewatched": [
     {
@@ -6183,6 +6183,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1489908101",
+      "filmTitle": "World Trade Center",
+      "filmYear": 2006,
+      "watchedDate": "2026-09-09",
+      "memberRating": 1.5,
+      "rewatch": false,
+      "tmdbId": 1852,
+      "link": "https://letterboxd.com/michaellamb/film/world-trade-center/",
+      "title": "World Trade Center, 2006 - ★½",
+      "reviewText": "Michael Shannon&#039;s character exists to perpetuate myths that support Christian Nationalism\n\nI said what I said",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1489827828",
+      "filmTitle": "Quarantine 2: Terminal",
+      "filmYear": 2011,
+      "watchedDate": "2026-09-09",
+      "memberRating": 1.5,
+      "rewatch": false,
+      "tmdbId": 59115,
+      "link": "https://letterboxd.com/michaellamb/film/quarantine-2-terminal/",
+      "title": "Quarantine 2: Terminal, 2011 - ★½",
+      "reviewText": "Watched on Wednesday September 9, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1488269238",
       "filmTitle": "Hackers",
@@ -6434,34 +6462,6 @@
       "reviewText": "why the fuck is this on Letterboxd",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1469881678",
-      "filmTitle": "Mother Mary",
-      "filmYear": 2026,
-      "watchedDate": "2026-08-26",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": 1102883,
-      "link": "https://letterboxd.com/michaellamb/film/mother-mary-2026/",
-      "title": "Mother Mary, 2026 - ★★★",
-      "reviewText": "Hey, Sam? I&#039;m sorry. I&#039;m sorry. I&#039;m sorry.Heartfelt performances, compelling visuals, fun music, though the metaphors sometimes lost me",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1467057545",
-      "filmTitle": "Teenage Sex and Death at Camp Miasma",
-      "filmYear": 2026,
-      "watchedDate": "2026-08-24",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": 1240889,
-      "link": "https://letterboxd.com/michaellamb/film/teenage-sex-and-death-at-camp-miasma/",
-      "title": "Teenage Sex and Death at Camp Miasma, 2026 - ★★★★½",
-      "reviewText": "I maybe saw him 3 times on screen but all I could think about was bisexual Thor. \n\nThis operates on a few levels and it clicked for me at the right time. Gillian Anderson plays this so exquisitely. Hannah Einbinder is also excellent, and has added Kris to the vast catalog of characters in a movie that just need to get laid.\n\nWatched with Ryan.",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
@@ -6506,13 +6506,6 @@
       "watchedDate": "2026-07-26",
       "link": "https://letterboxd.com/michaellamb/film/midsommar/52/",
       "tmdbId": 530385
-    },
-    {
-      "filmTitle": "Oppenheimer",
-      "filmYear": 2023,
-      "watchedDate": "2026-07-25",
-      "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/16/",
-      "tmdbId": 872585
     },
     {
       "filmTitle": "The Muppet Movie",
@@ -8316,7 +8309,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-09-08"
+    "latest": "2026-09-09"
   },
   "byYear": {
     "2017": {
@@ -14636,21 +14629,21 @@
       ]
     },
     "2026": {
-      "totalWatched": 207,
-      "uniqueFilms": 190,
-      "totalRewatches": 69,
-      "averageRating": 3.93,
+      "totalWatched": 208,
+      "uniqueFilms": 191,
+      "totalRewatches": 68,
+      "averageRating": 3.9,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 3,
-        "1.5": 1,
+        "1.5": 3,
         "2.0": 7,
         "2.5": 16,
         "3.0": 18,
         "3.5": 28,
         "4.0": 39,
         "4.5": 39,
-        "5.0": 54,
+        "5.0": 53,
         "unrated": 0
       },
       "heatmapData": [
@@ -15071,10 +15064,6 @@
           "count": 2
         },
         {
-          "date": "2026-07-25",
-          "count": 1
-        },
-        {
           "date": "2026-07-26",
           "count": 2
         },
@@ -15185,6 +15174,10 @@
         {
           "date": "2026-09-08",
           "count": 1
+        },
+        {
+          "date": "2026-09-09",
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15194,9 +15187,9 @@
         "1970s": 5,
         "1980s": 6,
         "1990s": 16,
-        "2000s": 15,
-        "2010s": 29,
-        "2020s": 124
+        "2000s": 16,
+        "2010s": 30,
+        "2020s": 123
       },
       "mostRewatched": [
         {
@@ -15273,12 +15266,6 @@
           "link": "https://letterboxd.com/michaellamb/film/midsommar/52/"
         },
         {
-          "filmTitle": "Oppenheimer",
-          "filmYear": 2023,
-          "watchedDate": "2026-07-25",
-          "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/16/"
-        },
-        {
           "filmTitle": "The Muppet Movie",
           "filmYear": 1979,
           "watchedDate": "2026-07-04",
@@ -15295,6 +15282,12 @@
           "filmYear": 1969,
           "watchedDate": "2026-07-04",
           "link": "https://boxd.it/f5rbLr"
+        },
+        {
+          "filmTitle": "Oppenheimer",
+          "filmYear": 2023,
+          "watchedDate": "2026-06-29",
+          "link": "https://boxd.it/f0Cnfp"
         }
       ]
     }
