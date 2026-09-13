@@ -1,5 +1,19 @@
 [
   {
+    "guid": "letterboxd-entry-1494487486",
+    "filmTitle": "Blackifier",
+    "filmYear": 2022,
+    "watchedDate": "2026-09-13",
+    "memberRating": 3.0,
+    "rewatch": false,
+    "tmdbId": 1049577,
+    "link": "https://letterboxd.com/michaellamb/film/blackifier/",
+    "title": "Blackifier, 2022 - ★★★",
+    "reviewText": "billed as a horror. is a comedy. this happens so often.",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1493896252",
     "filmTitle": "Prisoners",
     "filmYear": 2013,
@@ -681,20 +695,6 @@
     "tmdbId": 1735579,
     "link": "https://letterboxd.com/michaellamb/film/rob-roy-1/1/",
     "title": "Rob Roy - ★★★",
-    "reviewText": "Watched on Wednesday July 29, 2026.",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1422431837",
-    "filmTitle": "Spider-Man: Brand New Day",
-    "filmYear": 2026,
-    "watchedDate": "2026-07-29",
-    "memberRating": 3.5,
-    "rewatch": false,
-    "tmdbId": 969681,
-    "link": "https://letterboxd.com/michaellamb/film/spider-man-brand-new-day/",
-    "title": "Spider-Man: Brand New Day, 2026 - ★★★½",
     "reviewText": "Watched on Wednesday July 29, 2026.",
     "tags": [],
     "source": "rss"
