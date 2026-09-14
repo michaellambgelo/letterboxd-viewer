@@ -1,7 +1,7 @@
 {
   "totalWatched": 2568,
   "uniqueFilms": 2140,
-  "totalRewatches": 848,
+  "totalRewatches": 847,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -9,9 +9,9 @@
     "1.5": 30,
     "2.0": 110,
     "2.5": 130,
-    "3.0": 295,
+    "3.0": 294,
     "3.5": 379,
-    "4.0": 542,
+    "4.0": 543,
     "4.5": 380,
     "5.0": 586,
     "unrated": 81
@@ -102,9 +102,9 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 13,
+    "2026-07": 11,
     "2026-08": 23,
-    "2026-09": 23
+    "2026-09": 25
   },
   "heatmapData": [
     {
@@ -5980,10 +5980,6 @@
       "count": 2
     },
     {
-      "date": "2026-07-30",
-      "count": 2
-    },
-    {
       "date": "2026-07-31",
       "count": 2
     },
@@ -6093,7 +6089,7 @@
     },
     {
       "date": "2026-09-13",
-      "count": 2
+      "count": 4
     }
   ],
   "filmYearDistribution": {
@@ -6101,14 +6097,14 @@
     "1920s": 4,
     "1930s": 7,
     "1940s": 17,
-    "1950s": 20,
-    "1960s": 30,
+    "1950s": 19,
+    "1960s": 32,
     "1970s": 57,
     "1980s": 88,
     "1990s": 164,
     "2000s": 257,
     "2010s": 729,
-    "2020s": 1177
+    "2020s": 1176
   },
   "mostRewatched": [
     {
@@ -6184,6 +6180,34 @@
   ],
   "recentActivity": [
     {
+      "guid": "letterboxd-entry-1495375802",
+      "filmTitle": "A Fistful of Dollars",
+      "filmYear": 1964,
+      "watchedDate": "2026-09-13",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 391,
+      "link": "https://letterboxd.com/michaellamb/film/a-fistful-of-dollars/",
+      "title": "A Fistful of Dollars, 1964 - ★★★★",
+      "reviewText": "I prefer the moral stakes of Yojimbo but the pacing in this was better. Clint Eastwood is stupid hot. \n\nThis was the second half of the Men With No Names double feature organized by Morgan. Watched with Morgan, Lydia, and Jon-Nolan.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1495098609",
+      "filmTitle": "Yojimbo",
+      "filmYear": 1961,
+      "watchedDate": "2026-09-13",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 11878,
+      "link": "https://letterboxd.com/michaellamb/film/yojimbo/",
+      "title": "Yojimbo, 1961 - ★★★★½",
+      "reviewText": "Treated to a screening in a theater thanks to Morgan Sumner. This is first in a double feature he’s calling Men With No Names\n\nWatched with Morgan, Ryan, Brady, and Jon-Nolan",
+      "tags": [],
+      "source": "rss"
+    },
+    {
       "guid": "letterboxd-entry-1494816165",
       "filmTitle": "FernGully: The Last Rainforest",
       "filmYear": 1992,
@@ -6244,11 +6268,11 @@
       "filmTitle": "Hope",
       "filmYear": 2026,
       "watchedDate": "2026-09-10",
-      "memberRating": 3.0,
+      "memberRating": 3.5,
       "rewatch": false,
       "tmdbId": 1058424,
       "link": "https://letterboxd.com/michaellamb/film/hope-2026/",
-      "title": "Hope, 2026 - ★★★",
+      "title": "Hope, 2026 - ★★★½",
       "reviewText": "I really want to give this four stars because the whole film is nuts and there’s great filmmaking happening here but I was actively frustrated at some points. Still, awesome action and world building.\n\nWatched with Ryan and Brandon",
       "tags": [],
       "source": "rss"
@@ -6432,34 +6456,6 @@
       "link": "https://letterboxd.com/michaellamb/film/dragonheart/",
       "title": "DragonHeart, 1996 - ★★★★",
       "reviewText": "Watched on Thursday September 3, 2026.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1479737459",
-      "filmTitle": "Smart House",
-      "filmYear": 1999,
-      "watchedDate": "2026-09-02",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 35215,
-      "link": "https://letterboxd.com/michaellamb/film/smart-house/",
-      "title": "Smart House, 1999 - ★★★★",
-      "reviewText": "82 minutes of the best the 90s Disney Original writing you can find",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1479660598",
-      "filmTitle": "The Scooby-Doo Project",
-      "filmYear": 1999,
-      "watchedDate": "2026-09-02",
-      "memberRating": 5.0,
-      "rewatch": false,
-      "tmdbId": 423336,
-      "link": "https://letterboxd.com/michaellamb/film/the-scooby-doo-project/",
-      "title": "The Scooby-Doo Project, 1999 - ★★★★★",
-      "reviewText": "I remember this happening",
       "tags": [],
       "source": "rss"
     }
@@ -14624,17 +14620,17 @@
     "2026": {
       "totalWatched": 208,
       "uniqueFilms": 192,
-      "totalRewatches": 68,
-      "averageRating": 3.88,
+      "totalRewatches": 67,
+      "averageRating": 3.89,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 3,
         "1.5": 3,
         "2.0": 8,
         "2.5": 16,
-        "3.0": 19,
+        "3.0": 18,
         "3.5": 27,
-        "4.0": 39,
+        "4.0": 40,
         "4.5": 39,
         "5.0": 52,
         "unrated": 0
@@ -15057,10 +15053,6 @@
           "count": 2
         },
         {
-          "date": "2026-07-30",
-          "count": 2
-        },
-        {
           "date": "2026-07-31",
           "count": 2
         },
@@ -15170,19 +15162,19 @@
         },
         {
           "date": "2026-09-13",
-          "count": 2
+          "count": 4
         }
       ],
       "filmYearDistribution": {
         "1890s": 1,
-        "1950s": 3,
-        "1960s": 4,
+        "1950s": 2,
+        "1960s": 6,
         "1970s": 5,
         "1980s": 7,
         "1990s": 16,
         "2000s": 16,
         "2010s": 30,
-        "2020s": 123
+        "2020s": 122
       },
       "mostRewatched": [
         {
