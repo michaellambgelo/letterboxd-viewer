@@ -11,8 +11,8 @@
     "2.5": 130,
     "3.0": 294,
     "3.5": 379,
-    "4.0": 543,
-    "4.5": 379,
+    "4.0": 542,
+    "4.5": 380,
     "5.0": 587,
     "unrated": 81
   },
@@ -103,8 +103,8 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 9,
-    "2026-08": 23,
-    "2026-09": 27
+    "2026-08": 22,
+    "2026-09": 28
   },
   "heatmapData": [
     {
@@ -5980,10 +5980,6 @@
       "count": 2
     },
     {
-      "date": "2026-08-03",
-      "count": 1
-    },
-    {
       "date": "2026-08-04",
       "count": 1
     },
@@ -6090,6 +6086,10 @@
     {
       "date": "2026-09-14",
       "count": 2
+    },
+    {
+      "date": "2026-09-17",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6179,6 +6179,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1500189571",
+      "filmTitle": "Resident Evil",
+      "filmYear": 2026,
+      "watchedDate": "2026-09-17",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 1423191,
+      "link": "https://letterboxd.com/michaellamb/film/resident-evil-2026/",
+      "title": "Resident Evil, 2026 - ★★★★½",
+      "reviewText": "hell yeah!\n\nthis movie is fucking LOUD — please protect your ears!",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1496793674",
       "filmTitle": "Dune: Part Two",
@@ -6442,20 +6456,6 @@
       "link": "https://letterboxd.com/michaellamb/film/dragonheart-3-the-sorcerers-curse/",
       "title": "Dragonheart 3: The Sorcerer's Curse, 2015 - ★★",
       "reviewText": "pretty bad!\n\nTamzin Merchant was awful — anytime she handled a sword or a bow it was obvious they rushed shooting and she had zero practice. if they did have practice and they took their time, then that&#039;s worse.\n\nI just wanted Lorne and Gareth to kiss the whole time.\n\nBen Kingsley was okay.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1484094601",
-      "filmTitle": "Akira",
-      "filmYear": 1988,
-      "watchedDate": "2026-09-05",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 149,
-      "link": "https://letterboxd.com/michaellamb/film/akira/1/",
-      "title": "Akira, 1988 - ★★★★★",
-      "reviewText": "I’ll write more thoughts later but this was crazy to see on the big screen.\n\nwatched with Jon-Nolan and Lindsay\n---\nOk, so this was my first time seeing this film in a theater and I honestly couldn&#039;t tell you whether this was really 4K but it still looked and felt so damn good! The absolute SCALE of Neo Tokyo and its destruction was so beautifully devastating.\n\nAnother fantastic aspect was the surround sound experience — it legitimately creeped me out. So great! The music is absolutely incredible and worth hearing in a room dedicated to sight and sound. \n\nI might go back and see it in theaters again.",
       "tags": [],
       "source": "rss"
     }
@@ -8305,7 +8305,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-09-14"
+    "latest": "2026-09-17"
   },
   "byYear": {
     "2017": {
@@ -14637,8 +14637,8 @@
         "2.5": 16,
         "3.0": 18,
         "3.5": 27,
-        "4.0": 40,
-        "4.5": 38,
+        "4.0": 39,
+        "4.5": 39,
         "5.0": 53,
         "unrated": 0
       },
@@ -15060,10 +15060,6 @@
           "count": 2
         },
         {
-          "date": "2026-08-03",
-          "count": 1
-        },
-        {
           "date": "2026-08-04",
           "count": 1
         },
@@ -15170,6 +15166,10 @@
         {
           "date": "2026-09-14",
           "count": 2
+        },
+        {
+          "date": "2026-09-17",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
