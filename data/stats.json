@@ -9,10 +9,10 @@
     "1.5": 30,
     "2.0": 110,
     "2.5": 130,
-    "3.0": 293,
+    "3.0": 294,
     "3.5": 379,
     "4.0": 542,
-    "4.5": 381,
+    "4.5": 380,
     "5.0": 587,
     "unrated": 81
   },
@@ -103,8 +103,8 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 9,
-    "2026-08": 21,
-    "2026-09": 29
+    "2026-08": 20,
+    "2026-09": 30
   },
   "heatmapData": [
     {
@@ -5981,7 +5981,7 @@
     },
     {
       "date": "2026-08-06",
-      "count": 3
+      "count": 2
     },
     {
       "date": "2026-08-07",
@@ -6090,6 +6090,10 @@
     {
       "date": "2026-09-18",
       "count": 1
+    },
+    {
+      "date": "2026-09-20",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6179,6 +6183,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1503740400",
+      "filmTitle": "Knotted",
+      "filmYear": 2026,
+      "watchedDate": "2026-09-20",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 1466831,
+      "link": "https://letterboxd.com/michaellamb/film/knotted-2026/",
+      "title": "Knotted, 2026 - ★★★",
+      "reviewText": "Watched on Sunday September 20, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1501093112",
       "filmTitle": "Revenge",
@@ -6442,20 +6460,6 @@
       "link": "https://letterboxd.com/michaellamb/film/dragonheart-vengeance/",
       "title": "Dragonheart: Vengeance, 2020 - ★★★½",
       "reviewText": "The most Tolkien-esque this franchise has gotten -- and I loved it. The last few minutes had me smiling like a goober.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1486861299",
-      "filmTitle": "Dragonheart: Battle for the Heartfire",
-      "filmYear": 2017,
-      "watchedDate": "2026-09-07",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": 451644,
-      "link": "https://letterboxd.com/michaellamb/film/dragonheart-battle-for-the-heartfire/",
-      "title": "Dragonheart: Battle for the Heartfire, 2017 - ★★★",
-      "reviewText": "How refreshing to finally have a good story with a decent production value! I loved the castle and I cried right at the end. \n\nThis was edited by Chuck Norris! But maybe not the Chuck Norris you think of first? It&#039;s hard to tell based on IMDb, but the action was great!",
       "tags": [],
       "source": "rss"
     }
@@ -8305,7 +8309,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-09-18"
+    "latest": "2026-09-20"
   },
   "byYear": {
     "2017": {
@@ -14628,17 +14632,17 @@
       "totalWatched": 208,
       "uniqueFilms": 192,
       "totalRewatches": 68,
-      "averageRating": 3.9,
+      "averageRating": 3.89,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 3,
         "1.5": 3,
         "2.0": 8,
         "2.5": 16,
-        "3.0": 17,
+        "3.0": 18,
         "3.5": 27,
         "4.0": 39,
-        "4.5": 40,
+        "4.5": 39,
         "5.0": 53,
         "unrated": 0
       },
@@ -15061,7 +15065,7 @@
         },
         {
           "date": "2026-08-06",
-          "count": 3
+          "count": 2
         },
         {
           "date": "2026-08-07",
@@ -15169,6 +15173,10 @@
         },
         {
           "date": "2026-09-18",
+          "count": 1
+        },
+        {
+          "date": "2026-09-20",
           "count": 1
         }
       ],
