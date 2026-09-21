@@ -1,5 +1,19 @@
 [
   {
+    "guid": "letterboxd-entry-1504617990",
+    "filmTitle": "Theo Anthony Makes a Stool",
+    "filmYear": 2022,
+    "watchedDate": "2026-09-20",
+    "memberRating": 4.0,
+    "rewatch": false,
+    "tmdbId": 1049746,
+    "link": "https://letterboxd.com/michaellamb/film/theo-anthony-makes-a-stool/",
+    "title": "Theo Anthony Makes a Stool, 2022 - ★★★★",
+    "reviewText": "i want to make shit like this with my friends",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1503740400",
     "filmTitle": "Knotted",
     "filmYear": 2026,
@@ -682,20 +696,6 @@
     "link": "https://letterboxd.com/michaellamb/film/deep-water-2026/",
     "title": "Deep Water, 2026 - ★★",
     "reviewText": "Watched with Ryan and Amy",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1437004586",
-    "filmTitle": "Animal Farm",
-    "filmYear": 2025,
-    "watchedDate": "2026-08-06",
-    "memberRating": 0.5,
-    "rewatch": false,
-    "tmdbId": 539745,
-    "link": "https://letterboxd.com/michaellamb/film/animal-farm-2025/",
-    "title": "Animal Farm, 2025 - ½",
-    "reviewText": "Watched on Thursday August 6, 2026.",
     "tags": [],
     "source": "rss"
   },
