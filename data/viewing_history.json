@@ -1,5 +1,19 @@
 [
   {
+    "guid": "letterboxd-entry-1505444046",
+    "filmTitle": "Mean Girls",
+    "filmYear": 2004,
+    "watchedDate": "2026-09-21",
+    "memberRating": 4.0,
+    "rewatch": true,
+    "tmdbId": 10625,
+    "link": "https://letterboxd.com/michaellamb/film/mean-girls/5/",
+    "title": "Mean Girls, 2004 - ★★★★",
+    "reviewText": "prepare for October 3rd",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1504617990",
     "filmTitle": "Theo Anthony Makes a Stool",
     "filmYear": 2022,
@@ -682,20 +696,6 @@
     "link": "https://letterboxd.com/michaellamb/film/the-lord-of-the-rings-the-two-towers/3/",
     "title": "The Lord of the Rings: The Two Towers, 2002 - ★★★★★",
     "reviewText": "I needed to wash my eyeballs with some good Andy Serkis after learning what bad Andy Serkis is like (refer to a recent half-star rated film)",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1437602290",
-    "filmTitle": "Deep Water",
-    "filmYear": 2026,
-    "watchedDate": "2026-08-06",
-    "memberRating": 2.0,
-    "rewatch": false,
-    "tmdbId": 1127384,
-    "link": "https://letterboxd.com/michaellamb/film/deep-water-2026/",
-    "title": "Deep Water, 2026 - ★★",
-    "reviewText": "Watched with Ryan and Amy",
     "tags": [],
     "source": "rss"
   },

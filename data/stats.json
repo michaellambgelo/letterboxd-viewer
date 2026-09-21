@@ -1,17 +1,17 @@
 {
   "totalWatched": 2568,
-  "uniqueFilms": 2139,
-  "totalRewatches": 848,
+  "uniqueFilms": 2138,
+  "totalRewatches": 849,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
     "1.0": 24,
     "1.5": 30,
-    "2.0": 110,
+    "2.0": 109,
     "2.5": 130,
     "3.0": 294,
     "3.5": 379,
-    "4.0": 543,
+    "4.0": 544,
     "4.5": 380,
     "5.0": 587,
     "unrated": 81
@@ -103,8 +103,8 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 9,
-    "2026-08": 19,
-    "2026-09": 31
+    "2026-08": 18,
+    "2026-09": 32
   },
   "heatmapData": [
     {
@@ -5980,10 +5980,6 @@
       "count": 2
     },
     {
-      "date": "2026-08-06",
-      "count": 1
-    },
-    {
       "date": "2026-08-07",
       "count": 1
     },
@@ -6094,6 +6090,10 @@
     {
       "date": "2026-09-20",
       "count": 2
+    },
+    {
+      "date": "2026-09-21",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6106,9 +6106,9 @@
     "1970s": 57,
     "1980s": 88,
     "1990s": 164,
-    "2000s": 257,
+    "2000s": 258,
     "2010s": 730,
-    "2020s": 1176
+    "2020s": 1175
   },
   "mostRewatched": [
     {
@@ -6183,6 +6183,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1505444046",
+      "filmTitle": "Mean Girls",
+      "filmYear": 2004,
+      "watchedDate": "2026-09-21",
+      "memberRating": 4.0,
+      "rewatch": true,
+      "tmdbId": 10625,
+      "link": "https://letterboxd.com/michaellamb/film/mean-girls/5/",
+      "title": "Mean Girls, 2004 - ★★★★",
+      "reviewText": "prepare for October 3rd",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1504617990",
       "filmTitle": "Theo Anthony Makes a Stool",
@@ -6445,20 +6459,6 @@
       "tmdbId": 1487650,
       "link": "https://letterboxd.com/michaellamb/film/good-boy-2026/",
       "title": "Good Boy, 2026 - ★★½",
-      "reviewText": "Watched on Monday September 7, 2026.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1487618560",
-      "filmTitle": "Anesthesia",
-      "filmYear": 2026,
-      "watchedDate": "2026-09-07",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": 1533690,
-      "link": "https://letterboxd.com/michaellamb/film/anesthesia-2026/",
-      "title": "Anesthesia, 2026 - ★★★",
       "reviewText": "Watched on Monday September 7, 2026.",
       "tags": [],
       "source": "rss"
@@ -8309,7 +8309,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-09-20"
+    "latest": "2026-09-21"
   },
   "byYear": {
     "2017": {
@@ -14631,17 +14631,17 @@
     "2026": {
       "totalWatched": 208,
       "uniqueFilms": 192,
-      "totalRewatches": 68,
-      "averageRating": 3.91,
+      "totalRewatches": 69,
+      "averageRating": 3.92,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 3,
         "1.5": 3,
-        "2.0": 8,
+        "2.0": 7,
         "2.5": 16,
         "3.0": 18,
         "3.5": 27,
-        "4.0": 40,
+        "4.0": 41,
         "4.5": 39,
         "5.0": 53,
         "unrated": 0
@@ -15064,10 +15064,6 @@
           "count": 2
         },
         {
-          "date": "2026-08-06",
-          "count": 1
-        },
-        {
           "date": "2026-08-07",
           "count": 1
         },
@@ -15178,6 +15174,10 @@
         {
           "date": "2026-09-20",
           "count": 2
+        },
+        {
+          "date": "2026-09-21",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15187,9 +15187,9 @@
         "1970s": 5,
         "1980s": 7,
         "1990s": 16,
-        "2000s": 16,
+        "2000s": 17,
         "2010s": 31,
-        "2020s": 122
+        "2020s": 121
       },
       "mostRewatched": [
         {
