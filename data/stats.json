@@ -5,12 +5,12 @@
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
-    "1.0": 25,
+    "1.0": 24,
     "1.5": 30,
     "2.0": 109,
-    "2.5": 130,
-    "3.0": 294,
-    "3.5": 379,
+    "2.5": 129,
+    "3.0": 295,
+    "3.5": 380,
     "4.0": 545,
     "4.5": 379,
     "5.0": 586,
@@ -103,8 +103,8 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 9,
-    "2026-08": 14,
-    "2026-09": 36
+    "2026-08": 12,
+    "2026-09": 38
   },
   "heatmapData": [
     {
@@ -5980,14 +5980,6 @@
       "count": 2
     },
     {
-      "date": "2026-08-10",
-      "count": 1
-    },
-    {
-      "date": "2026-08-12",
-      "count": 1
-    },
-    {
       "date": "2026-08-14",
       "count": 1
     },
@@ -6089,7 +6081,7 @@
     },
     {
       "date": "2026-09-22",
-      "count": 3
+      "count": 5
     }
   ],
   "filmYearDistribution": {
@@ -6103,8 +6095,8 @@
     "1980s": 88,
     "1990s": 164,
     "2000s": 257,
-    "2010s": 730,
-    "2020s": 1176
+    "2010s": 732,
+    "2020s": 1174
   },
   "mostRewatched": [
     {
@@ -6179,6 +6171,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1506826976",
+      "filmTitle": "Batman: The Killing Joke",
+      "filmYear": 2016,
+      "watchedDate": "2026-09-22",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 382322,
+      "link": "https://letterboxd.com/michaellamb/film/batman-the-killing-joke-2016/",
+      "title": "Batman: The Killing Joke, 2016 - ★★★",
+      "reviewText": "Watched on Tuesday September 22, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1506815882",
+      "filmTitle": "Batman: The Dark Knight Returns, Part 2",
+      "filmYear": 2013,
+      "watchedDate": "2026-09-22",
+      "memberRating": 3.5,
+      "rewatch": false,
+      "tmdbId": 142061,
+      "link": "https://letterboxd.com/michaellamb/film/batman-the-dark-knight-returns-part-2/",
+      "title": "Batman: The Dark Knight Returns, Part 2, 2013 - ★★★½",
+      "reviewText": "Watched on Tuesday September 22, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1506523621",
       "filmTitle": "Batman: The Dark Knight Returns, Part 1",
@@ -6428,34 +6448,6 @@
       "link": "https://letterboxd.com/michaellamb/film/hope-2026/",
       "title": "Hope, 2026 - ★★★½",
       "reviewText": "I really want to give this four stars because the whole film is nuts and there’s great filmmaking happening here but I was actively frustrated at some points. Still, awesome action and world building.\n\nWatched with Ryan and Brandon",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1490544380",
-      "filmTitle": "Reality+",
-      "filmYear": 2014,
-      "watchedDate": "2026-09-10",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 367181,
-      "link": "https://letterboxd.com/michaellamb/film/reality-2014-1/",
-      "title": "Reality+, 2014 - ★★★½",
-      "reviewText": "ok so The Substance but in Paris",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1490128860",
-      "filmTitle": "Salem's Lot",
-      "filmYear": 2024,
-      "watchedDate": "2026-09-09",
-      "memberRating": 2.0,
-      "rewatch": false,
-      "tmdbId": 748230,
-      "link": "https://letterboxd.com/michaellamb/film/salems-lot-2024/",
-      "title": "Salem's Lot, 2024 - ★★",
-      "reviewText": "Watched on Wednesday September 9, 2026.",
       "tags": [],
       "source": "rss"
     }
@@ -14621,15 +14613,15 @@
       "totalWatched": 208,
       "uniqueFilms": 192,
       "totalRewatches": 67,
-      "averageRating": 3.9,
+      "averageRating": 3.91,
       "ratingDistribution": {
         "0.5": 1,
-        "1.0": 4,
+        "1.0": 3,
         "1.5": 3,
         "2.0": 7,
-        "2.5": 16,
-        "3.0": 18,
-        "3.5": 27,
+        "2.5": 15,
+        "3.0": 19,
+        "3.5": 28,
         "4.0": 42,
         "4.5": 38,
         "5.0": 52,
@@ -15053,14 +15045,6 @@
           "count": 2
         },
         {
-          "date": "2026-08-10",
-          "count": 1
-        },
-        {
-          "date": "2026-08-12",
-          "count": 1
-        },
-        {
           "date": "2026-08-14",
           "count": 1
         },
@@ -15162,7 +15146,7 @@
         },
         {
           "date": "2026-09-22",
-          "count": 3
+          "count": 5
         }
       ],
       "filmYearDistribution": {
@@ -15173,8 +15157,8 @@
         "1980s": 7,
         "1990s": 16,
         "2000s": 16,
-        "2010s": 31,
-        "2020s": 122
+        "2010s": 33,
+        "2020s": 120
       },
       "mostRewatched": [
         {
