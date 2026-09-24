@@ -1,5 +1,19 @@
 [
   {
+    "guid": "letterboxd-entry-1508408023",
+    "filmTitle": "Batman: Year One",
+    "filmYear": 2011,
+    "watchedDate": "2026-09-23",
+    "memberRating": 3.5,
+    "rewatch": false,
+    "tmdbId": 69735,
+    "link": "https://letterboxd.com/michaellamb/film/batman-year-one/",
+    "title": "Batman: Year One, 2011 - ★★★½",
+    "reviewText": "Watched on Wednesday September 23, 2026.",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1507870541",
     "filmTitle": "The Little Prince",
     "filmYear": 2015,
@@ -682,20 +696,6 @@
     "link": "https://letterboxd.com/michaellamb/film/her/",
     "title": "Her, 2013 - ★★★★½ (contains spoilers)",
     "reviewText": "This review may contain spoilers.\n\nHoly fucking shit it’s Portia Doubleday! \n\nI’m just starting season 3 of MR ROBOT and her character is about to start losing her mind — what a lovely contrast to see her play a character who is already there at the beginning of her role! Her scene obviously reminds me of BR:2049 with the Joi body-double scene, but WAY more emotionally damaging, \n\nDon’t fall in love with your computer, folks. I am not speaking from experience: I believe this movie. \n\nBreak-in viewing of the Blu-ray",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1464027827",
-    "filmTitle": "Blade",
-    "filmYear": 1998,
-    "watchedDate": "2026-08-22",
-    "memberRating": 3.5,
-    "rewatch": false,
-    "tmdbId": 36647,
-    "link": "https://letterboxd.com/michaellamb/film/blade/",
-    "title": "Blade, 1998 - ★★★½",
-    "reviewText": "fantastic kickboxing vampire movie",
     "tags": [],
     "source": "rss"
   },
