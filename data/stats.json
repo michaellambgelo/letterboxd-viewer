@@ -1,17 +1,17 @@
 {
   "totalWatched": 2568,
-  "uniqueFilms": 2140,
-  "totalRewatches": 847,
+  "uniqueFilms": 2139,
+  "totalRewatches": 848,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
-    "1.0": 24,
+    "1.0": 23,
     "1.5": 30,
     "2.0": 108,
     "2.5": 129,
     "3.0": 296,
     "3.5": 380,
-    "4.0": 546,
+    "4.0": 547,
     "4.5": 378,
     "5.0": 586,
     "unrated": 81
@@ -103,8 +103,8 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 9,
-    "2026-08": 8,
-    "2026-09": 42
+    "2026-08": 6,
+    "2026-09": 44
   },
   "heatmapData": [
     {
@@ -5980,14 +5980,6 @@
       "count": 2
     },
     {
-      "date": "2026-08-22",
-      "count": 1
-    },
-    {
-      "date": "2026-08-23",
-      "count": 1
-    },
-    {
       "date": "2026-08-24",
       "count": 1
     },
@@ -6078,6 +6070,10 @@
     {
       "date": "2026-09-23",
       "count": 3
+    },
+    {
+      "date": "2026-09-25",
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6088,11 +6084,11 @@
     "1950s": 18,
     "1960s": 32,
     "1970s": 57,
-    "1980s": 88,
+    "1980s": 89,
     "1990s": 163,
     "2000s": 256,
-    "2010s": 734,
-    "2020s": 1174
+    "2010s": 732,
+    "2020s": 1175
   },
   "mostRewatched": [
     {
@@ -6167,6 +6163,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1510313543",
+      "filmTitle": "Resident Evil",
+      "filmYear": 2026,
+      "watchedDate": "2026-09-25",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 1423191,
+      "link": "https://letterboxd.com/michaellamb/film/resident-evil-2026/1/",
+      "title": "Resident Evil, 2026 - ★★★★½",
+      "reviewText": "Rewatch with Shelby. Her first time ever in IMAX! She loved it",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1510139821",
+      "filmTitle": "Steel Magnolias",
+      "filmYear": 1989,
+      "watchedDate": "2026-09-25",
+      "memberRating": 4.0,
+      "rewatch": true,
+      "tmdbId": 10860,
+      "link": "https://letterboxd.com/michaellamb/film/steel-magnolias/1/",
+      "title": "Steel Magnolias, 1989 - ★★★★",
+      "reviewText": "This is the day the internet decided to dub Dolly Parton day. I should probably watch the namesake film, but I wanted a good cry. \n\nWatched with my mom and Shelby",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1508408023",
       "filmTitle": "Batman: Year One",
@@ -6416,34 +6440,6 @@
       "link": "https://letterboxd.com/michaellamb/film/a-fistful-of-dollars/",
       "title": "A Fistful of Dollars, 1964 - ★★★★",
       "reviewText": "I prefer the moral stakes of Yojimbo but the pacing in this was better. Clint Eastwood is stupid hot. \n\nThis was the second half of the Men With No Names double feature organized by Morgan. Watched with Morgan, Lydia, and Jon-Nolan.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1495098609",
-      "filmTitle": "Yojimbo",
-      "filmYear": 1961,
-      "watchedDate": "2026-09-13",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": 11878,
-      "link": "https://letterboxd.com/michaellamb/film/yojimbo/",
-      "title": "Yojimbo, 1961 - ★★★★½",
-      "reviewText": "Treated to a screening in a theater thanks to Morgan Sumner. This is first in a double feature he’s calling Men With No Names\n\nWatched with Morgan, Ryan, Brady, and Jon-Nolan",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1494816165",
-      "filmTitle": "FernGully: The Last Rainforest",
-      "filmYear": 1992,
-      "watchedDate": "2026-09-13",
-      "memberRating": 4.0,
-      "rewatch": true,
-      "tmdbId": 13225,
-      "link": "https://letterboxd.com/michaellamb/film/ferngully-the-last-rainforest/",
-      "title": "FernGully: The Last Rainforest, 1992 - ★★★★",
-      "reviewText": "Watched on Sunday September 13, 2026.",
       "tags": [],
       "source": "rss"
     }
@@ -8286,7 +8282,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-09-23"
+    "latest": "2026-09-25"
   },
   "byYear": {
     "2017": {
@@ -14607,18 +14603,18 @@
     },
     "2026": {
       "totalWatched": 208,
-      "uniqueFilms": 192,
-      "totalRewatches": 67,
-      "averageRating": 3.91,
+      "uniqueFilms": 191,
+      "totalRewatches": 68,
+      "averageRating": 3.93,
       "ratingDistribution": {
         "0.5": 1,
-        "1.0": 3,
+        "1.0": 2,
         "1.5": 3,
         "2.0": 6,
         "2.5": 15,
         "3.0": 20,
         "3.5": 28,
-        "4.0": 43,
+        "4.0": 44,
         "4.5": 37,
         "5.0": 52,
         "unrated": 0
@@ -15041,14 +15037,6 @@
           "count": 2
         },
         {
-          "date": "2026-08-22",
-          "count": 1
-        },
-        {
-          "date": "2026-08-23",
-          "count": 1
-        },
-        {
           "date": "2026-08-24",
           "count": 1
         },
@@ -15139,6 +15127,10 @@
         {
           "date": "2026-09-23",
           "count": 3
+        },
+        {
+          "date": "2026-09-25",
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15146,11 +15138,11 @@
         "1950s": 1,
         "1960s": 6,
         "1970s": 5,
-        "1980s": 7,
+        "1980s": 8,
         "1990s": 15,
         "2000s": 15,
-        "2010s": 35,
-        "2020s": 120
+        "2010s": 33,
+        "2020s": 121
       },
       "mostRewatched": [
         {
@@ -15159,6 +15151,13 @@
           "filmYear": 2026,
           "tmdbId": null,
           "link": "https://boxd.it/cFxBLT"
+        },
+        {
+          "count": 2,
+          "filmTitle": "Resident Evil",
+          "filmYear": 2026,
+          "tmdbId": 1423191,
+          "link": "https://letterboxd.com/michaellamb/film/resident-evil-2026/"
         },
         {
           "count": 2,
@@ -15180,13 +15179,6 @@
           "filmYear": 2019,
           "tmdbId": null,
           "link": "https://boxd.it/cuSEKd"
-        },
-        {
-          "count": 2,
-          "filmTitle": "Obsession",
-          "filmYear": 2025,
-          "tmdbId": null,
-          "link": "https://boxd.it/erK377"
         }
       ],
       "highestRated": [
