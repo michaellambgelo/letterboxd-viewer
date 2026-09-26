@@ -1,7 +1,7 @@
 {
   "totalWatched": 2568,
-  "uniqueFilms": 2139,
-  "totalRewatches": 848,
+  "uniqueFilms": 2138,
+  "totalRewatches": 849,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
@@ -12,8 +12,8 @@
     "3.0": 296,
     "3.5": 380,
     "4.0": 547,
-    "4.5": 378,
-    "5.0": 586,
+    "4.5": 377,
+    "5.0": 587,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -103,8 +103,8 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 9,
-    "2026-08": 6,
-    "2026-09": 44
+    "2026-08": 5,
+    "2026-09": 45
   },
   "heatmapData": [
     {
@@ -5980,10 +5980,6 @@
       "count": 2
     },
     {
-      "date": "2026-08-24",
-      "count": 1
-    },
-    {
       "date": "2026-08-26",
       "count": 1
     },
@@ -6073,7 +6069,7 @@
     },
     {
       "date": "2026-09-25",
-      "count": 2
+      "count": 3
     }
   ],
   "filmYearDistribution": {
@@ -6085,10 +6081,10 @@
     "1960s": 32,
     "1970s": 57,
     "1980s": 89,
-    "1990s": 163,
+    "1990s": 164,
     "2000s": 256,
     "2010s": 732,
-    "2020s": 1175
+    "2020s": 1174
   },
   "mostRewatched": [
     {
@@ -6163,6 +6159,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1510590346",
+      "filmTitle": "The Truman Show",
+      "filmYear": 1998,
+      "watchedDate": "2026-09-25",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 37165,
+      "link": "https://letterboxd.com/michaellamb/film/the-truman-show/8/",
+      "title": "The Truman Show, 1998 - ★★★★★",
+      "reviewText": "Today was the first time my mom watched The Truman Show",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1510313543",
       "filmTitle": "Resident Evil",
@@ -6428,23 +6438,16 @@
       "reviewText": "will the bagpipes come back in part 3?",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1495375802",
-      "filmTitle": "A Fistful of Dollars",
-      "filmYear": 1964,
-      "watchedDate": "2026-09-13",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 391,
-      "link": "https://letterboxd.com/michaellamb/film/a-fistful-of-dollars/",
-      "title": "A Fistful of Dollars, 1964 - ★★★★",
-      "reviewText": "I prefer the moral stakes of Yojimbo but the pacing in this was better. Clint Eastwood is stupid hot. \n\nThis was the second half of the Men With No Names double feature organized by Morgan. Watched with Morgan, Lydia, and Jon-Nolan.",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "The Truman Show",
+      "filmYear": 1998,
+      "watchedDate": "2026-09-25",
+      "link": "https://letterboxd.com/michaellamb/film/the-truman-show/8/",
+      "tmdbId": 37165
+    },
     {
       "filmTitle": "Superman",
       "filmYear": 2025,
@@ -14604,7 +14607,7 @@
     "2026": {
       "totalWatched": 208,
       "uniqueFilms": 191,
-      "totalRewatches": 68,
+      "totalRewatches": 69,
       "averageRating": 3.93,
       "ratingDistribution": {
         "0.5": 1,
@@ -14615,8 +14618,8 @@
         "3.0": 20,
         "3.5": 28,
         "4.0": 44,
-        "4.5": 37,
-        "5.0": 52,
+        "4.5": 36,
+        "5.0": 53,
         "unrated": 0
       },
       "heatmapData": [
@@ -15037,10 +15040,6 @@
           "count": 2
         },
         {
-          "date": "2026-08-24",
-          "count": 1
-        },
-        {
           "date": "2026-08-26",
           "count": 1
         },
@@ -15130,7 +15129,7 @@
         },
         {
           "date": "2026-09-25",
-          "count": 2
+          "count": 3
         }
       ],
       "filmYearDistribution": {
@@ -15139,10 +15138,10 @@
         "1960s": 6,
         "1970s": 5,
         "1980s": 8,
-        "1990s": 15,
+        "1990s": 16,
         "2000s": 15,
         "2010s": 33,
-        "2020s": 121
+        "2020s": 120
       },
       "mostRewatched": [
         {
@@ -15182,6 +15181,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "The Truman Show",
+          "filmYear": 1998,
+          "watchedDate": "2026-09-25",
+          "link": "https://letterboxd.com/michaellamb/film/the-truman-show/8/"
+        },
         {
           "filmTitle": "Superman",
           "filmYear": 2025,
@@ -15235,12 +15240,6 @@
           "filmYear": 2023,
           "watchedDate": "2026-06-29",
           "link": "https://boxd.it/f0Cnfp"
-        },
-        {
-          "filmTitle": "Midsommar",
-          "filmYear": 2019,
-          "watchedDate": "2026-06-26",
-          "link": "https://boxd.it/eXKLxL"
         }
       ]
     }
