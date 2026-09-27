@@ -1,18 +1,18 @@
 {
   "totalWatched": 2568,
-  "uniqueFilms": 2137,
-  "totalRewatches": 850,
+  "uniqueFilms": 2136,
+  "totalRewatches": 851,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
     "1.0": 23,
-    "1.5": 30,
+    "1.5": 29,
     "2.0": 108,
     "2.5": 129,
     "3.0": 295,
     "3.5": 380,
     "4.0": 547,
-    "4.5": 377,
+    "4.5": 378,
     "5.0": 588,
     "unrated": 81
   },
@@ -103,8 +103,8 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 9,
-    "2026-08": 4,
-    "2026-09": 46
+    "2026-08": 3,
+    "2026-09": 47
   },
   "heatmapData": [
     {
@@ -5981,7 +5981,7 @@
     },
     {
       "date": "2026-08-28",
-      "count": 3
+      "count": 2
     },
     {
       "date": "2026-08-30",
@@ -6066,6 +6066,10 @@
     {
       "date": "2026-09-25",
       "count": 4
+    },
+    {
+      "date": "2026-09-26",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6079,8 +6083,8 @@
     "1980s": 89,
     "1990s": 164,
     "2000s": 256,
-    "2010s": 732,
-    "2020s": 1174
+    "2010s": 733,
+    "2020s": 1173
   },
   "mostRewatched": [
     {
@@ -6155,6 +6159,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1512690763",
+      "filmTitle": "Her",
+      "filmYear": 2013,
+      "watchedDate": "2026-09-26",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 152601,
+      "link": "https://letterboxd.com/michaellamb/film/her/1/",
+      "title": "Her, 2013 - ★★★★½",
+      "reviewText": "i haven&#039;t watched Primetime yet but i did show this to my mom after she expressed concern that i might fall for an AI dating relationship and i turned this on saying it was a cautionary tale that i believed and she didn&#039;t need to have that specific concern about me",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1510921853",
       "filmTitle": "Hamnet",
@@ -6418,20 +6436,6 @@
       "link": "https://letterboxd.com/michaellamb/film/resident-evil-2026/",
       "title": "Resident Evil, 2026 - ★★★★½",
       "reviewText": "hell yeah!\n\nthis movie is fucking LOUD — please protect your ears!\n\nwatched with Matthew and Ryan",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1496793674",
-      "filmTitle": "Dune: Part Two",
-      "filmYear": 2024,
-      "watchedDate": "2026-09-14",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 693134,
-      "link": "https://letterboxd.com/michaellamb/film/dune-part-two/19/",
-      "title": "Dune: Part Two, 2024 - ★★★★★",
-      "reviewText": "I understand why there aren&#039;t any yet I wish there were bagpipes... but this is still so fucken awesome",
       "tags": [],
       "source": "rss"
     }
@@ -8288,7 +8292,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-09-25"
+    "latest": "2026-09-26"
   },
   "byYear": {
     "2017": {
@@ -14610,18 +14614,18 @@
     "2026": {
       "totalWatched": 208,
       "uniqueFilms": 191,
-      "totalRewatches": 70,
-      "averageRating": 3.94,
+      "totalRewatches": 71,
+      "averageRating": 3.95,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 2,
-        "1.5": 3,
+        "1.5": 2,
         "2.0": 6,
         "2.5": 15,
         "3.0": 19,
         "3.5": 28,
         "4.0": 44,
-        "4.5": 36,
+        "4.5": 37,
         "5.0": 54,
         "unrated": 0
       },
@@ -15044,7 +15048,7 @@
         },
         {
           "date": "2026-08-28",
-          "count": 3
+          "count": 2
         },
         {
           "date": "2026-08-30",
@@ -15129,6 +15133,10 @@
         {
           "date": "2026-09-25",
           "count": 4
+        },
+        {
+          "date": "2026-09-26",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15139,8 +15147,8 @@
         "1980s": 8,
         "1990s": 16,
         "2000s": 15,
-        "2010s": 33,
-        "2020s": 120
+        "2010s": 34,
+        "2020s": 119
       },
       "mostRewatched": [
         {
