@@ -1,7 +1,7 @@
 {
   "totalWatched": 2568,
-  "uniqueFilms": 2136,
-  "totalRewatches": 852,
+  "uniqueFilms": 2137,
+  "totalRewatches": 851,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 10,
@@ -9,9 +9,9 @@
     "1.5": 29,
     "2.0": 108,
     "2.5": 129,
-    "3.0": 295,
+    "3.0": 294,
     "3.5": 380,
-    "4.0": 547,
+    "4.0": 548,
     "4.5": 378,
     "5.0": 588,
     "unrated": 81
@@ -103,8 +103,8 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 9,
-    "2026-08": 2,
-    "2026-09": 48
+    "2026-08": 1,
+    "2026-09": 49
   },
   "heatmapData": [
     {
@@ -5980,10 +5980,6 @@
       "count": 2
     },
     {
-      "date": "2026-08-28",
-      "count": 1
-    },
-    {
       "date": "2026-08-30",
       "count": 1
     },
@@ -6074,6 +6070,10 @@
     {
       "date": "2026-09-27",
       "count": 1
+    },
+    {
+      "date": "2026-09-28",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6163,6 +6163,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1515231494",
+      "filmTitle": "Primetime",
+      "filmYear": 2026,
+      "watchedDate": "2026-09-28",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 1375441,
+      "link": "https://letterboxd.com/michaellamb/film/primetime-2026/",
+      "title": "Primetime, 2026 - ★★★★ (contains spoilers)",
+      "reviewText": "This review may contain spoilers.\n\ntruly sensational — the ending question stuck with me. \n\n&quot;are you an actor?&quot;\n\nI wondered if Dan was holding back the thought: &quot;I might be a murderer.&quot;\n\nPattinson is great but holy shit Merritt Wever in that rallying moment sent shivers down my spine.\n\nTo Catch a Predator was such a toxic idea and this film explores it as a phenomenon among the people who worked on it. really cool sequences and the soundtrack has some microtonal shifting that felt representative of the metastasizing dread in the story.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1514182467",
       "filmTitle": "The Social Network",
@@ -6426,20 +6440,6 @@
       "link": "https://letterboxd.com/michaellamb/film/knotted-2026/",
       "title": "Knotted, 2026 - ★★★",
       "reviewText": "Watched on Sunday September 20, 2026.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1501093112",
-      "filmTitle": "Revenge",
-      "filmYear": 2017,
-      "watchedDate": "2026-09-18",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": 467938,
-      "link": "https://letterboxd.com/michaellamb/film/revenge-2017/",
-      "title": "Revenge, 2017 - ★★★★½",
-      "reviewText": "all gas",
       "tags": [],
       "source": "rss"
     }
@@ -8296,7 +8296,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-09-27"
+    "latest": "2026-09-28"
   },
   "byYear": {
     "2017": {
@@ -14618,17 +14618,17 @@
     "2026": {
       "totalWatched": 208,
       "uniqueFilms": 192,
-      "totalRewatches": 72,
-      "averageRating": 3.95,
+      "totalRewatches": 71,
+      "averageRating": 3.96,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 2,
         "1.5": 2,
         "2.0": 6,
         "2.5": 15,
-        "3.0": 19,
+        "3.0": 18,
         "3.5": 28,
-        "4.0": 44,
+        "4.0": 45,
         "4.5": 37,
         "5.0": 54,
         "unrated": 0
@@ -15051,10 +15051,6 @@
           "count": 2
         },
         {
-          "date": "2026-08-28",
-          "count": 1
-        },
-        {
           "date": "2026-08-30",
           "count": 1
         },
@@ -15144,6 +15140,10 @@
         },
         {
           "date": "2026-09-27",
+          "count": 1
+        },
+        {
+          "date": "2026-09-28",
           "count": 1
         }
       ],
