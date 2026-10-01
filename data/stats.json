@@ -1,6 +1,6 @@
 {
   "totalWatched": 2568,
-  "uniqueFilms": 2138,
+  "uniqueFilms": 2137,
   "totalRewatches": 850,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -12,8 +12,8 @@
     "3.0": 295,
     "3.5": 380,
     "4.0": 546,
-    "4.5": 378,
-    "5.0": 589,
+    "4.5": 377,
+    "5.0": 590,
     "unrated": 81
   },
   "filmsByMonth": {
@@ -103,7 +103,8 @@
     "2026-05": 37,
     "2026-06": 21,
     "2026-07": 9,
-    "2026-09": 50
+    "2026-09": 49,
+    "2026-10": 1
   },
   "heatmapData": [
     {
@@ -5979,10 +5980,6 @@
       "count": 2
     },
     {
-      "date": "2026-09-01",
-      "count": 1
-    },
-    {
       "date": "2026-09-02",
       "count": 3
     },
@@ -6073,6 +6070,10 @@
     {
       "date": "2026-09-29",
       "count": 1
+    },
+    {
+      "date": "2026-10-01",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6162,6 +6163,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1518824515",
+      "filmTitle": "The Green Knight",
+      "filmYear": 2021,
+      "watchedDate": "2026-10-01",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 559907,
+      "link": "https://letterboxd.com/michaellamb/film/the-green-knight/13/",
+      "title": "The Green Knight, 2021 - ★★★★★",
+      "reviewText": "starting off October with a double feature of The Green Knight and The Witch: \nKate Dickie and Ralph Ineson are mommy and daddy.\n\nin the chapter &quot;A Meeting with St. Winifred,&quot; Gawain encounters a young woman who claims to have lost her head. She recounts the tale of a lord, who &quot;came seeking shelter, like thee. Perhaps he was thee.&quot;\n\nGawain denies the suggestion and she continues, saying that the lord wanted to lay with her but she fought him off. Then, he returned at night and though she tried to get away, he chopped off her head and threw it in the spring.\n\nGawain dives into the water and fetches her skull.\nSomething about his placing her skull with the rest of her bones feels so weighty and meaningful. \n\nThe way this film centers women in a traditionally Arthurian tale is lovely and necessary today. \n\nFollowing Winifred&#039;s chapter, the characters in &quot;An Exchange of Winnings&quot; feature The Lord (Joel Edgerton) and The Lady (Alicia Vikander&#039;s double-duty role) where Gawain’s knightly virtue is again tested in his relation to a woman. The many failures of Gawain stem from his fear of missing out on an opportunity to have great songs and works written about him, and how he feels inadequate for the moment.\n\n&quot;What else ought there be?&quot;\n\nThe men in Gawain&#039;s life don&#039;t seem to spend much time with him, until The Lord, and this intimacy Gawain appears to reject. Even the King&#039;s role in this story is one of a regretful man, spending a Christmas night in his old age with a nephew he doesn&#039;t know.\n\nWhen Gawain finally resolves himself, the film decides that we no longer need to know what he does: we are simply invited to wonder who he decided to be after his encounter with the Green Knight.\n\nBreak-in viewing of the A24 Collector&#039;s Edition 4KUHD.\n\nI learned in a featurette that the costumes were all vegan",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1517167691",
       "filmTitle": "Hell House LLC",
@@ -6427,23 +6442,16 @@
       "reviewText": "okay, then. i guess it&#039;s over.\n\nborrowed from the Willie Morris library.",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1505444046",
-      "filmTitle": "Mean Girls",
-      "filmYear": 2004,
-      "watchedDate": "2026-09-21",
-      "memberRating": 4.0,
-      "rewatch": true,
-      "tmdbId": 10625,
-      "link": "https://letterboxd.com/michaellamb/film/mean-girls/5/",
-      "title": "Mean Girls, 2004 - ★★★★",
-      "reviewText": "prepare for October 3rd",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "The Green Knight",
+      "filmYear": 2021,
+      "watchedDate": "2026-10-01",
+      "link": "https://letterboxd.com/michaellamb/film/the-green-knight/13/",
+      "tmdbId": 559907
+    },
     {
       "filmTitle": "Blue Film",
       "filmYear": 2025,
@@ -8302,7 +8310,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-09-29"
+    "latest": "2026-10-01"
   },
   "byYear": {
     "2017": {
@@ -14635,8 +14643,8 @@
         "3.0": 19,
         "3.5": 28,
         "4.0": 43,
-        "4.5": 37,
-        "5.0": 55,
+        "4.5": 36,
+        "5.0": 56,
         "unrated": 0
       },
       "heatmapData": [
@@ -15057,10 +15065,6 @@
           "count": 2
         },
         {
-          "date": "2026-09-01",
-          "count": 1
-        },
-        {
           "date": "2026-09-02",
           "count": 3
         },
@@ -15151,6 +15155,10 @@
         {
           "date": "2026-09-29",
           "count": 1
+        },
+        {
+          "date": "2026-10-01",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15202,6 +15210,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "The Green Knight",
+          "filmYear": 2021,
+          "watchedDate": "2026-10-01",
+          "link": "https://letterboxd.com/michaellamb/film/the-green-knight/13/"
+        },
         {
           "filmTitle": "Blue Film",
           "filmYear": 2025,
@@ -15255,12 +15269,6 @@
           "filmYear": 1979,
           "watchedDate": "2026-07-04",
           "link": "https://boxd.it/f4KWrR"
-        },
-        {
-          "filmTitle": "Jaws",
-          "filmYear": 1975,
-          "watchedDate": "2026-07-04",
-          "link": "https://boxd.it/f5oJWn"
         }
       ]
     }
