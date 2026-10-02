@@ -1,5 +1,19 @@
 [
   {
+    "guid": "letterboxd-entry-1520200053",
+    "filmTitle": "You're Next",
+    "filmYear": 2011,
+    "watchedDate": "2026-10-02",
+    "memberRating": 4.0,
+    "rewatch": false,
+    "tmdbId": 83899,
+    "link": "https://letterboxd.com/michaellamb/film/youre-next/",
+    "title": "You're Next, 2011 - ★★★★",
+    "reviewText": "thank you Dead Meat",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1519699130",
     "filmTitle": "Midnight Mass",
     "filmYear": 2021,
@@ -682,20 +696,6 @@
     "link": "https://letterboxd.com/michaellamb/film/dragonheart/",
     "title": "DragonHeart, 1996 - ★★★★",
     "reviewText": "Watched on Thursday September 3, 2026.",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1479737459",
-    "filmTitle": "Smart House",
-    "filmYear": 1999,
-    "watchedDate": "2026-09-02",
-    "memberRating": 4.0,
-    "rewatch": false,
-    "tmdbId": 35215,
-    "link": "https://letterboxd.com/michaellamb/film/smart-house/",
-    "title": "Smart House, 1999 - ★★★★",
-    "reviewText": "82 minutes of the best the 90s Disney Original writing you can find",
     "tags": [],
     "source": "rss"
   },
