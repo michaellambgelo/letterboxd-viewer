@@ -1,5 +1,19 @@
 [
   {
+    "guid": "letterboxd-entry-1519699130",
+    "filmTitle": "Midnight Mass",
+    "filmYear": 2021,
+    "watchedDate": "2026-10-01",
+    "memberRating": 4.5,
+    "rewatch": true,
+    "tmdbId": null,
+    "link": "https://letterboxd.com/michaellamb/film/midnight-mass-2021/4/",
+    "title": "Midnight Mass, 2021 - ★★★★½",
+    "reviewText": "crazy to think this was only released 5 years ago. another Oct 1 entry!",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1519251700",
     "filmTitle": "The Witch",
     "filmYear": 2015,
@@ -682,20 +696,6 @@
     "link": "https://letterboxd.com/michaellamb/film/smart-house/",
     "title": "Smart House, 1999 - ★★★★",
     "reviewText": "82 minutes of the best the 90s Disney Original writing you can find",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1479660598",
-    "filmTitle": "The Scooby-Doo Project",
-    "filmYear": 1999,
-    "watchedDate": "2026-09-02",
-    "memberRating": 5.0,
-    "rewatch": false,
-    "tmdbId": 423336,
-    "link": "https://letterboxd.com/michaellamb/film/the-scooby-doo-project/",
-    "title": "The Scooby-Doo Project, 1999 - ★★★★★",
-    "reviewText": "I remember this happening",
     "tags": [],
     "source": "rss"
   },
