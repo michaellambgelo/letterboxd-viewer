@@ -54,7 +54,7 @@ Letterboxd RSS  ──►  scripts/download_rss.py  ──►  data/rss.xml
 **Pipeline (Python):**
 - `scripts/load_archive.py` — CSV loader for the export. `load_diary()` returns rows shaped like the RSS parser; also provides `load_watchlist`, `load_likes`, `load_lists`, `load_profile`, `load_ratings`, `get_export_date`.
 - `scripts/download_rss.py` — fetches `https://letterboxd.com/michaellamb/rss/`, writes raw `data/rss.xml` and `data/cleaned_rss.xml` (HTML-cleaned descriptions)
-- `scripts/extract_history.py` — merges archive baseline + working-tree `data/rss.xml` deltas, writes `data/viewing_history.json` (sorted by `watchedDate` desc)
+- `scripts/extract_history.py` — merges archive baseline + working-tree `data/rss.xml` deltas **+ RSS-sourced entries carried forward from the previous `viewing_history.json`**, writes `data/viewing_history.json` (sorted by `watchedDate` desc). The carry-forward is load-bearing: RSS is a ~50-entry sliding window, so without it everything between the export date and the oldest item still in the feed silently vanishes (this happened — Jul 9 to Sep 3 2026 went missing). `--backfill-from-git` replays every committed `data/rss.xml` to recover entries that already scrolled out (needs `git fetch --unshallow` in a shallow clone).
 - `scripts/compute_stats.py` — reads `viewing_history.json` + archive sidecars, writes `data/stats.json` with pre-computed lifetime stats, `byYear` per-diary-year slices, `watchlist`, `likedFilms`, `favoriteFilms`, `lists`, `tagCloud`, and `archiveExportDate`
 
 **Workflows:**
