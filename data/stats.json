@@ -1,20 +1,20 @@
 {
-  "totalWatched": 2568,
-  "uniqueFilms": 2135,
-  "totalRewatches": 852,
+  "totalWatched": 2625,
+  "uniqueFilms": 2173,
+  "totalRewatches": 870,
   "averageRating": 3.88,
   "ratingDistribution": {
-    "0.5": 10,
-    "1.0": 23,
-    "1.5": 29,
-    "2.0": 108,
-    "2.5": 129,
-    "3.0": 294,
-    "3.5": 380,
-    "4.0": 547,
-    "4.5": 378,
-    "5.0": 589,
-    "unrated": 81
+    "0.5": 11,
+    "1.0": 25,
+    "1.5": 31,
+    "2.0": 110,
+    "2.5": 131,
+    "3.0": 301,
+    "3.5": 387,
+    "4.0": 556,
+    "4.5": 392,
+    "5.0": 599,
+    "unrated": 82
   },
   "filmsByMonth": {
     "2017-08": 1,
@@ -102,8 +102,9 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 9,
-    "2026-09": 46,
+    "2026-07": 38,
+    "2026-08": 23,
+    "2026-09": 51,
     "2026-10": 4
   },
   "heatmapData": [
@@ -5980,6 +5981,146 @@
       "count": 2
     },
     {
+      "date": "2026-07-09",
+      "count": 1
+    },
+    {
+      "date": "2026-07-13",
+      "count": 1
+    },
+    {
+      "date": "2026-07-15",
+      "count": 1
+    },
+    {
+      "date": "2026-07-16",
+      "count": 3
+    },
+    {
+      "date": "2026-07-17",
+      "count": 1
+    },
+    {
+      "date": "2026-07-18",
+      "count": 1
+    },
+    {
+      "date": "2026-07-20",
+      "count": 2
+    },
+    {
+      "date": "2026-07-21",
+      "count": 1
+    },
+    {
+      "date": "2026-07-22",
+      "count": 1
+    },
+    {
+      "date": "2026-07-23",
+      "count": 1
+    },
+    {
+      "date": "2026-07-24",
+      "count": 2
+    },
+    {
+      "date": "2026-07-25",
+      "count": 2
+    },
+    {
+      "date": "2026-07-26",
+      "count": 2
+    },
+    {
+      "date": "2026-07-27",
+      "count": 1
+    },
+    {
+      "date": "2026-07-28",
+      "count": 3
+    },
+    {
+      "date": "2026-07-29",
+      "count": 2
+    },
+    {
+      "date": "2026-07-30",
+      "count": 2
+    },
+    {
+      "date": "2026-07-31",
+      "count": 2
+    },
+    {
+      "date": "2026-08-03",
+      "count": 1
+    },
+    {
+      "date": "2026-08-04",
+      "count": 1
+    },
+    {
+      "date": "2026-08-06",
+      "count": 3
+    },
+    {
+      "date": "2026-08-07",
+      "count": 1
+    },
+    {
+      "date": "2026-08-09",
+      "count": 2
+    },
+    {
+      "date": "2026-08-10",
+      "count": 2
+    },
+    {
+      "date": "2026-08-12",
+      "count": 1
+    },
+    {
+      "date": "2026-08-14",
+      "count": 1
+    },
+    {
+      "date": "2026-08-15",
+      "count": 2
+    },
+    {
+      "date": "2026-08-22",
+      "count": 2
+    },
+    {
+      "date": "2026-08-23",
+      "count": 1
+    },
+    {
+      "date": "2026-08-24",
+      "count": 1
+    },
+    {
+      "date": "2026-08-26",
+      "count": 1
+    },
+    {
+      "date": "2026-08-28",
+      "count": 3
+    },
+    {
+      "date": "2026-08-30",
+      "count": 1
+    },
+    {
+      "date": "2026-09-01",
+      "count": 2
+    },
+    {
+      "date": "2026-09-02",
+      "count": 3
+    },
+    {
       "date": "2026-09-03",
       "count": 1
     },
@@ -6081,14 +6222,14 @@
     "1920s": 4,
     "1930s": 7,
     "1940s": 17,
-    "1950s": 18,
+    "1950s": 20,
     "1960s": 32,
     "1970s": 57,
-    "1980s": 89,
-    "1990s": 162,
-    "2000s": 256,
-    "2010s": 737,
-    "2020s": 1171
+    "1980s": 90,
+    "1990s": 170,
+    "2000s": 261,
+    "2010s": 742,
+    "2020s": 1205
   },
   "mostRewatched": [
     {
@@ -6178,16 +6319,16 @@
       "source": "rss"
     },
     {
-      "guid": "letterboxd-entry-1519699130",
-      "filmTitle": "Midnight Mass",
+      "guid": "letterboxd-entry-1518824515",
+      "filmTitle": "The Green Knight",
       "filmYear": 2021,
       "watchedDate": "2026-10-01",
-      "memberRating": 4.5,
+      "memberRating": 5.0,
       "rewatch": true,
-      "tmdbId": null,
-      "link": "https://letterboxd.com/michaellamb/film/midnight-mass-2021/4/",
-      "title": "Midnight Mass, 2021 - ★★★★½",
-      "reviewText": "crazy to think this was only released 5 years ago. another Oct 1 entry!",
+      "tmdbId": 559907,
+      "link": "https://letterboxd.com/michaellamb/film/the-green-knight/13/",
+      "title": "The Green Knight, 2021 - ★★★★★",
+      "reviewText": "starting off October with a double feature of The Green Knight and The Witch: \nKate Dickie and Ralph Ineson are mommy and daddy.\n\nin the chapter &quot;A Meeting with St. Winifred,&quot; Gawain encounters a young woman who claims to have lost her head. She recounts the tale of a lord, who &quot;came seeking shelter, like thee. Perhaps he was thee.&quot;\n\nGawain denies the suggestion and she continues, saying that the lord wanted to lay with her but she fought him off. Then, he returned at night and though she tried to get away, he chopped off her head and threw it in the spring.\n\nGawain dives into the water and fetches her skull.\nSomething about his placing her skull with the rest of her bones feels so weighty and meaningful. \n\nThe way this film centers women in a traditionally Arthurian tale is lovely and necessary today. \n\nFollowing Winifred&#039;s chapter, the characters in &quot;An Exchange of Winnings&quot; feature The Lord (Joel Edgerton) and The Lady (Alicia Vikander&#039;s double-duty role) where Gawain’s knightly virtue is again tested in his relation to a woman. The many failures of Gawain stem from his fear of missing out on an opportunity to have great songs and works written about him, and how he feels inadequate for the moment.\n\n&quot;What else ought there be?&quot;\n\nThe men in Gawain&#039;s life don&#039;t seem to spend much time with him, until The Lord, and this intimacy Gawain appears to reject. Even the King&#039;s role in this story is one of a regretful man, spending a Christmas night in his old age with a nephew he doesn&#039;t know.\n\nWhen Gawain finally resolves himself, the film decides that we no longer need to know what he does: we are simply invited to wonder who he decided to be after his encounter with the Green Knight.\n\nBreak-in viewing of the A24 Collector&#039;s Edition 4KUHD.\n\nI learned in a featurette that the costumes were all vegan",
       "tags": [],
       "source": "rss"
     },
@@ -6206,16 +6347,16 @@
       "source": "rss"
     },
     {
-      "guid": "letterboxd-entry-1518824515",
-      "filmTitle": "The Green Knight",
+      "guid": "letterboxd-entry-1519699130",
+      "filmTitle": "Midnight Mass",
       "filmYear": 2021,
       "watchedDate": "2026-10-01",
-      "memberRating": 5.0,
+      "memberRating": 4.5,
       "rewatch": true,
-      "tmdbId": 559907,
-      "link": "https://letterboxd.com/michaellamb/film/the-green-knight/13/",
-      "title": "The Green Knight, 2021 - ★★★★★",
-      "reviewText": "starting off October with a double feature of The Green Knight and The Witch: \nKate Dickie and Ralph Ineson are mommy and daddy.\n\nin the chapter &quot;A Meeting with St. Winifred,&quot; Gawain encounters a young woman who claims to have lost her head. She recounts the tale of a lord, who &quot;came seeking shelter, like thee. Perhaps he was thee.&quot;\n\nGawain denies the suggestion and she continues, saying that the lord wanted to lay with her but she fought him off. Then, he returned at night and though she tried to get away, he chopped off her head and threw it in the spring.\n\nGawain dives into the water and fetches her skull.\nSomething about his placing her skull with the rest of her bones feels so weighty and meaningful. \n\nThe way this film centers women in a traditionally Arthurian tale is lovely and necessary today. \n\nFollowing Winifred&#039;s chapter, the characters in &quot;An Exchange of Winnings&quot; feature The Lord (Joel Edgerton) and The Lady (Alicia Vikander&#039;s double-duty role) where Gawain’s knightly virtue is again tested in his relation to a woman. The many failures of Gawain stem from his fear of missing out on an opportunity to have great songs and works written about him, and how he feels inadequate for the moment.\n\n&quot;What else ought there be?&quot;\n\nThe men in Gawain&#039;s life don&#039;t seem to spend much time with him, until The Lord, and this intimacy Gawain appears to reject. Even the King&#039;s role in this story is one of a regretful man, spending a Christmas night in his old age with a nephew he doesn&#039;t know.\n\nWhen Gawain finally resolves himself, the film decides that we no longer need to know what he does: we are simply invited to wonder who he decided to be after his encounter with the Green Knight.\n\nBreak-in viewing of the A24 Collector&#039;s Edition 4KUHD.\n\nI learned in a featurette that the costumes were all vegan",
+      "tmdbId": null,
+      "link": "https://letterboxd.com/michaellamb/film/midnight-mass-2021/4/",
+      "title": "Midnight Mass, 2021 - ★★★★½",
+      "reviewText": "crazy to think this was only released 5 years ago. another Oct 1 entry!",
       "tags": [],
       "source": "rss"
     },
@@ -6234,20 +6375,6 @@
       "source": "rss"
     },
     {
-      "guid": "letterboxd-entry-1515781336",
-      "filmTitle": "Blue Film",
-      "filmYear": 2025,
-      "watchedDate": "2026-09-28",
-      "memberRating": 5.0,
-      "rewatch": false,
-      "tmdbId": 1398655,
-      "link": "https://letterboxd.com/michaellamb/film/blue-film-2025/",
-      "title": "Blue Film, 2025 - ★★★★★",
-      "reviewText": "the most heartbreaking credits.\n\nmy first rental from the Letterboxd Video Store.\n\ni saw a friend in town tonight who has been living in Egypt for years and told her I was going home to relax. then i rented this movie.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
       "guid": "letterboxd-entry-1515231494",
       "filmTitle": "Primetime",
       "filmYear": 2026,
@@ -6258,6 +6385,20 @@
       "link": "https://letterboxd.com/michaellamb/film/primetime-2026/",
       "title": "Primetime, 2026 - ★★★★ (contains spoilers)",
       "reviewText": "This review may contain spoilers.\n\ntruly sensational — the ending question stuck with me. \n\n&quot;are you an actor?&quot;\n\nI wondered if Dan was holding back the thought: &quot;I might be a murderer.&quot;\n\nPattinson is great but holy shit Merritt Wever in that rallying moment sent shivers down my spine.\n\nTo Catch a Predator was such a toxic idea and this film explores it as a phenomenon among the people who worked on it. really cool visual sequences and the soundtrack has some microtonal shifting that felt representative of the metastasizing dread in the story.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1515781336",
+      "filmTitle": "Blue Film",
+      "filmYear": 2025,
+      "watchedDate": "2026-09-28",
+      "memberRating": 5.0,
+      "rewatch": false,
+      "tmdbId": 1398655,
+      "link": "https://letterboxd.com/michaellamb/film/blue-film-2025/",
+      "title": "Blue Film, 2025 - ★★★★★",
+      "reviewText": "the most heartbreaking credits.\n\nmy first rental from the Letterboxd Video Store.\n\ni saw a friend in town tonight who has been living in Egypt for years and told her I was going home to relax. then i rented this movie.",
       "tags": [],
       "source": "rss"
     },
@@ -6290,34 +6431,6 @@
       "source": "rss"
     },
     {
-      "guid": "letterboxd-entry-1510921853",
-      "filmTitle": "Hamnet",
-      "filmYear": 2025,
-      "watchedDate": "2026-09-25",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 858024,
-      "link": "https://letterboxd.com/michaellamb/film/hamnet/5/",
-      "title": "Hamnet, 2025 - ★★★★★",
-      "reviewText": "Shelby and mom broke in the blu-ray with me",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1510590346",
-      "filmTitle": "The Truman Show",
-      "filmYear": 1998,
-      "watchedDate": "2026-09-25",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 37165,
-      "link": "https://letterboxd.com/michaellamb/film/the-truman-show/8/",
-      "title": "The Truman Show, 1998 - ★★★★★",
-      "reviewText": "Today was the first time my mom watched The Truman Show",
-      "tags": [],
-      "source": "rss"
-    },
-    {
       "guid": "letterboxd-entry-1510313543",
       "filmTitle": "Resident Evil",
       "filmYear": 2026,
@@ -6346,16 +6459,30 @@
       "source": "rss"
     },
     {
-      "guid": "letterboxd-entry-1508408023",
-      "filmTitle": "Batman: Year One",
-      "filmYear": 2011,
-      "watchedDate": "2026-09-23",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 69735,
-      "link": "https://letterboxd.com/michaellamb/film/batman-year-one/",
-      "title": "Batman: Year One, 2011 - ★★★½",
-      "reviewText": "Watched on Wednesday September 23, 2026.",
+      "guid": "letterboxd-entry-1510590346",
+      "filmTitle": "The Truman Show",
+      "filmYear": 1998,
+      "watchedDate": "2026-09-25",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 37165,
+      "link": "https://letterboxd.com/michaellamb/film/the-truman-show/8/",
+      "title": "The Truman Show, 1998 - ★★★★★",
+      "reviewText": "Today was the first time my mom watched The Truman Show",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1510921853",
+      "filmTitle": "Hamnet",
+      "filmYear": 2025,
+      "watchedDate": "2026-09-25",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 858024,
+      "link": "https://letterboxd.com/michaellamb/film/hamnet/5/",
+      "title": "Hamnet, 2025 - ★★★★★",
+      "reviewText": "Shelby and mom broke in the blu-ray with me",
       "tags": [],
       "source": "rss"
     },
@@ -6388,44 +6515,30 @@
       "source": "rss"
     },
     {
-      "guid": "letterboxd-entry-1507144095",
-      "filmTitle": "Superman",
-      "filmYear": 2025,
-      "watchedDate": "2026-09-22",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 1061474,
-      "link": "https://letterboxd.com/michaellamb/film/superman-2025/3/",
-      "title": "Superman, 2025 - ★★★★★",
-      "reviewText": "Watched on Tuesday September 22, 2026.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1506826976",
-      "filmTitle": "Batman: The Killing Joke",
-      "filmYear": 2016,
-      "watchedDate": "2026-09-22",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": 382322,
-      "link": "https://letterboxd.com/michaellamb/film/batman-the-killing-joke-2016/",
-      "title": "Batman: The Killing Joke, 2016 - ★★★",
-      "reviewText": "Watched on Tuesday September 22, 2026.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1506815882",
-      "filmTitle": "Batman: The Dark Knight Returns, Part 2",
-      "filmYear": 2013,
-      "watchedDate": "2026-09-22",
+      "guid": "letterboxd-entry-1508408023",
+      "filmTitle": "Batman: Year One",
+      "filmYear": 2011,
+      "watchedDate": "2026-09-23",
       "memberRating": 3.5,
       "rewatch": false,
-      "tmdbId": 142061,
-      "link": "https://letterboxd.com/michaellamb/film/batman-the-dark-knight-returns-part-2/",
-      "title": "Batman: The Dark Knight Returns, Part 2, 2013 - ★★★½",
-      "reviewText": "Watched on Tuesday September 22, 2026.",
+      "tmdbId": 69735,
+      "link": "https://letterboxd.com/michaellamb/film/batman-year-one/",
+      "title": "Batman: Year One, 2011 - ★★★½",
+      "reviewText": "Watched on Wednesday September 23, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1506344003",
+      "filmTitle": "Ghost in the Machine",
+      "filmYear": 2026,
+      "watchedDate": "2026-09-22",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 1596315,
+      "link": "https://letterboxd.com/michaellamb/film/ghost-in-the-machine-2026/",
+      "title": "Ghost in the Machine, 2026 - ★★★★",
+      "reviewText": "Well of course artificial intelligence is rooted in eugenics",
       "tags": [],
       "source": "rss"
     },
@@ -6439,6 +6552,34 @@
       "tmdbId": 123025,
       "link": "https://letterboxd.com/michaellamb/film/batman-the-dark-knight-returns-part-1/",
       "title": "Batman: The Dark Knight Returns, Part 1, 2012 - ★★★★",
+      "reviewText": "Watched on Tuesday September 22, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1506389017",
+      "filmTitle": "The Mist",
+      "filmYear": 2007,
+      "watchedDate": "2026-09-22",
+      "memberRating": 3.0,
+      "rewatch": true,
+      "tmdbId": 5876,
+      "link": "https://letterboxd.com/michaellamb/film/the-mist/1/",
+      "title": "The Mist, 2007 - ★★★",
+      "reviewText": "the religious psychosis is real af",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1506826976",
+      "filmTitle": "Batman: The Killing Joke",
+      "filmYear": 2016,
+      "watchedDate": "2026-09-22",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 382322,
+      "link": "https://letterboxd.com/michaellamb/film/batman-the-killing-joke-2016/",
+      "title": "Batman: The Killing Joke, 2016 - ★★★",
       "reviewText": "Watched on Tuesday September 22, 2026.",
       "tags": [],
       "source": "rss"
@@ -6460,18 +6601,18 @@
       "tmdbId": 1398655
     },
     {
-      "filmTitle": "Hamnet",
-      "filmYear": 2025,
-      "watchedDate": "2026-09-25",
-      "link": "https://letterboxd.com/michaellamb/film/hamnet/5/",
-      "tmdbId": 858024
-    },
-    {
       "filmTitle": "The Truman Show",
       "filmYear": 1998,
       "watchedDate": "2026-09-25",
       "link": "https://letterboxd.com/michaellamb/film/the-truman-show/8/",
       "tmdbId": 37165
+    },
+    {
+      "filmTitle": "Hamnet",
+      "filmYear": 2025,
+      "watchedDate": "2026-09-25",
+      "link": "https://letterboxd.com/michaellamb/film/hamnet/5/",
+      "tmdbId": 858024
     },
     {
       "filmTitle": "Superman",
@@ -6481,13 +6622,6 @@
       "tmdbId": 1061474
     },
     {
-      "filmTitle": "Dune: Part Two",
-      "filmYear": 2024,
-      "watchedDate": "2026-09-14",
-      "link": "https://letterboxd.com/michaellamb/film/dune-part-two/19/",
-      "tmdbId": 693134
-    },
-    {
       "filmTitle": "Dune",
       "filmYear": 2021,
       "watchedDate": "2026-09-14",
@@ -6495,11 +6629,81 @@
       "tmdbId": 438631
     },
     {
+      "filmTitle": "Dune: Part Two",
+      "filmYear": 2024,
+      "watchedDate": "2026-09-14",
+      "link": "https://letterboxd.com/michaellamb/film/dune-part-two/19/",
+      "tmdbId": 693134
+    },
+    {
       "filmTitle": "Akira",
       "filmYear": 1988,
       "watchedDate": "2026-09-05",
       "link": "https://letterboxd.com/michaellamb/film/akira/1/",
       "tmdbId": 149
+    },
+    {
+      "filmTitle": "The Scooby-Doo Project",
+      "filmYear": 1999,
+      "watchedDate": "2026-09-02",
+      "link": "https://letterboxd.com/michaellamb/film/the-scooby-doo-project/",
+      "tmdbId": 423336
+    },
+    {
+      "filmTitle": "The Lord of the Rings: The Two Towers",
+      "filmYear": 2002,
+      "watchedDate": "2026-08-07",
+      "link": "https://letterboxd.com/michaellamb/film/the-lord-of-the-rings-the-two-towers/3/",
+      "tmdbId": 121
+    },
+    {
+      "filmTitle": "Ikiru",
+      "filmYear": 1952,
+      "watchedDate": "2026-07-31",
+      "link": "https://letterboxd.com/michaellamb/film/ikiru/",
+      "tmdbId": 3782
+    },
+    {
+      "filmTitle": "Midsommar",
+      "filmYear": 2019,
+      "watchedDate": "2026-07-26",
+      "link": "https://letterboxd.com/michaellamb/film/midsommar/52/",
+      "tmdbId": 530385
+    },
+    {
+      "filmTitle": "The Muppet Christmas Carol",
+      "filmYear": 1992,
+      "watchedDate": "2026-07-25",
+      "link": "https://letterboxd.com/michaellamb/film/the-muppet-christmas-carol/",
+      "tmdbId": 10437
+    },
+    {
+      "filmTitle": "Oppenheimer",
+      "filmYear": 2023,
+      "watchedDate": "2026-07-25",
+      "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/16/",
+      "tmdbId": 872585
+    },
+    {
+      "filmTitle": "Tuner",
+      "filmYear": 2025,
+      "watchedDate": "2026-07-22",
+      "link": "https://letterboxd.com/michaellamb/film/tuner/",
+      "tmdbId": 1340206
+    },
+    {
+      "filmTitle": "Strange Days",
+      "filmYear": 1995,
+      "watchedDate": "2026-07-20",
+      "link": "https://letterboxd.com/michaellamb/film/strange-days/",
+      "tmdbId": 281
+    },
+    {
+      "filmTitle": "Bugonia",
+      "filmYear": 2025,
+      "watchedDate": "2026-07-20",
+      "link": "https://letterboxd.com/michaellamb/film/bugonia/1/",
+      "tmdbId": 701387
     },
     {
       "filmTitle": "The Muppet Movie",
@@ -14623,22 +14827,22 @@
       ]
     },
     "2026": {
-      "totalWatched": 208,
-      "uniqueFilms": 193,
-      "totalRewatches": 72,
-      "averageRating": 3.96,
+      "totalWatched": 265,
+      "uniqueFilms": 242,
+      "totalRewatches": 90,
+      "averageRating": 3.91,
       "ratingDistribution": {
-        "0.5": 1,
-        "1.0": 2,
-        "1.5": 2,
-        "2.0": 6,
-        "2.5": 15,
-        "3.0": 18,
-        "3.5": 28,
-        "4.0": 44,
-        "4.5": 37,
-        "5.0": 55,
-        "unrated": 0
+        "0.5": 2,
+        "1.0": 4,
+        "1.5": 4,
+        "2.0": 8,
+        "2.5": 17,
+        "3.0": 25,
+        "3.5": 35,
+        "4.0": 53,
+        "4.5": 51,
+        "5.0": 65,
+        "unrated": 1
       },
       "heatmapData": [
         {
@@ -15058,6 +15262,146 @@
           "count": 2
         },
         {
+          "date": "2026-07-09",
+          "count": 1
+        },
+        {
+          "date": "2026-07-13",
+          "count": 1
+        },
+        {
+          "date": "2026-07-15",
+          "count": 1
+        },
+        {
+          "date": "2026-07-16",
+          "count": 3
+        },
+        {
+          "date": "2026-07-17",
+          "count": 1
+        },
+        {
+          "date": "2026-07-18",
+          "count": 1
+        },
+        {
+          "date": "2026-07-20",
+          "count": 2
+        },
+        {
+          "date": "2026-07-21",
+          "count": 1
+        },
+        {
+          "date": "2026-07-22",
+          "count": 1
+        },
+        {
+          "date": "2026-07-23",
+          "count": 1
+        },
+        {
+          "date": "2026-07-24",
+          "count": 2
+        },
+        {
+          "date": "2026-07-25",
+          "count": 2
+        },
+        {
+          "date": "2026-07-26",
+          "count": 2
+        },
+        {
+          "date": "2026-07-27",
+          "count": 1
+        },
+        {
+          "date": "2026-07-28",
+          "count": 3
+        },
+        {
+          "date": "2026-07-29",
+          "count": 2
+        },
+        {
+          "date": "2026-07-30",
+          "count": 2
+        },
+        {
+          "date": "2026-07-31",
+          "count": 2
+        },
+        {
+          "date": "2026-08-03",
+          "count": 1
+        },
+        {
+          "date": "2026-08-04",
+          "count": 1
+        },
+        {
+          "date": "2026-08-06",
+          "count": 3
+        },
+        {
+          "date": "2026-08-07",
+          "count": 1
+        },
+        {
+          "date": "2026-08-09",
+          "count": 2
+        },
+        {
+          "date": "2026-08-10",
+          "count": 2
+        },
+        {
+          "date": "2026-08-12",
+          "count": 1
+        },
+        {
+          "date": "2026-08-14",
+          "count": 1
+        },
+        {
+          "date": "2026-08-15",
+          "count": 2
+        },
+        {
+          "date": "2026-08-22",
+          "count": 2
+        },
+        {
+          "date": "2026-08-23",
+          "count": 1
+        },
+        {
+          "date": "2026-08-24",
+          "count": 1
+        },
+        {
+          "date": "2026-08-26",
+          "count": 1
+        },
+        {
+          "date": "2026-08-28",
+          "count": 3
+        },
+        {
+          "date": "2026-08-30",
+          "count": 1
+        },
+        {
+          "date": "2026-09-01",
+          "count": 2
+        },
+        {
+          "date": "2026-09-02",
+          "count": 3
+        },
+        {
           "date": "2026-09-03",
           "count": 1
         },
@@ -15156,14 +15500,14 @@
       ],
       "filmYearDistribution": {
         "1890s": 1,
-        "1950s": 1,
+        "1950s": 3,
         "1960s": 6,
         "1970s": 5,
-        "1980s": 8,
-        "1990s": 14,
-        "2000s": 15,
-        "2010s": 38,
-        "2020s": 117
+        "1980s": 9,
+        "1990s": 22,
+        "2000s": 20,
+        "2010s": 43,
+        "2020s": 151
       },
       "mostRewatched": [
         {
@@ -15174,6 +15518,20 @@
           "link": "https://boxd.it/cFxBLT"
         },
         {
+          "count": 3,
+          "filmTitle": "The Odyssey",
+          "filmYear": 2026,
+          "tmdbId": 1368337,
+          "link": "https://letterboxd.com/michaellamb/film/the-odyssey-2026/"
+        },
+        {
+          "count": 2,
+          "filmTitle": "Her",
+          "filmYear": 2013,
+          "tmdbId": 152601,
+          "link": "https://letterboxd.com/michaellamb/film/her/"
+        },
+        {
           "count": 2,
           "filmTitle": "Resident Evil",
           "filmYear": 2026,
@@ -15182,24 +15540,10 @@
         },
         {
           "count": 2,
-          "filmTitle": "Midsommar",
-          "filmYear": 2019,
-          "tmdbId": null,
-          "link": "https://boxd.it/cuSEKd"
-        },
-        {
-          "count": 2,
-          "filmTitle": "Obsession",
+          "filmTitle": "Hamnet",
           "filmYear": 2025,
-          "tmdbId": null,
-          "link": "https://boxd.it/erK377"
-        },
-        {
-          "count": 2,
-          "filmTitle": "The Drama",
-          "filmYear": 2026,
-          "tmdbId": null,
-          "link": "https://boxd.it/ebU0JN"
+          "tmdbId": 858024,
+          "link": "https://letterboxd.com/michaellamb/film/hamnet/4/"
         }
       ],
       "highestRated": [
@@ -15216,16 +15560,16 @@
           "link": "https://letterboxd.com/michaellamb/film/blue-film-2025/"
         },
         {
-          "filmTitle": "Hamnet",
-          "filmYear": 2025,
-          "watchedDate": "2026-09-25",
-          "link": "https://letterboxd.com/michaellamb/film/hamnet/5/"
-        },
-        {
           "filmTitle": "The Truman Show",
           "filmYear": 1998,
           "watchedDate": "2026-09-25",
           "link": "https://letterboxd.com/michaellamb/film/the-truman-show/8/"
+        },
+        {
+          "filmTitle": "Hamnet",
+          "filmYear": 2025,
+          "watchedDate": "2026-09-25",
+          "link": "https://letterboxd.com/michaellamb/film/hamnet/5/"
         },
         {
           "filmTitle": "Superman",
@@ -15234,16 +15578,16 @@
           "link": "https://letterboxd.com/michaellamb/film/superman-2025/3/"
         },
         {
-          "filmTitle": "Dune: Part Two",
-          "filmYear": 2024,
-          "watchedDate": "2026-09-14",
-          "link": "https://letterboxd.com/michaellamb/film/dune-part-two/19/"
-        },
-        {
           "filmTitle": "Dune",
           "filmYear": 2021,
           "watchedDate": "2026-09-14",
           "link": "https://letterboxd.com/michaellamb/film/dune-2021/11/"
+        },
+        {
+          "filmTitle": "Dune: Part Two",
+          "filmYear": 2024,
+          "watchedDate": "2026-09-14",
+          "link": "https://letterboxd.com/michaellamb/film/dune-part-two/19/"
         },
         {
           "filmTitle": "Akira",
@@ -15252,16 +15596,16 @@
           "link": "https://letterboxd.com/michaellamb/film/akira/1/"
         },
         {
-          "filmTitle": "The Muppet Movie",
-          "filmYear": 1979,
-          "watchedDate": "2026-07-04",
-          "link": "https://boxd.it/f4KWrR"
+          "filmTitle": "The Scooby-Doo Project",
+          "filmYear": 1999,
+          "watchedDate": "2026-09-02",
+          "link": "https://letterboxd.com/michaellamb/film/the-scooby-doo-project/"
         },
         {
-          "filmTitle": "Jaws",
-          "filmYear": 1975,
-          "watchedDate": "2026-07-04",
-          "link": "https://boxd.it/f5oJWn"
+          "filmTitle": "The Lord of the Rings: The Two Towers",
+          "filmYear": 2002,
+          "watchedDate": "2026-08-07",
+          "link": "https://letterboxd.com/michaellamb/film/the-lord-of-the-rings-the-two-towers/3/"
         }
       ]
     }

@@ -4,6 +4,17 @@
 Sources:
   1. Letterboxd export archive (data/archive/<export>/) — historical baseline.
   2. Current data/rss.xml — appends entries logged after the export date.
+  3. RSS-sourced entries already in the previous viewing_history.json.
+
+Source 3 is what makes the history cumulative. RSS is a sliding window of the
+~50 most recent entries, so anything logged after the export date eventually
+scrolls out of it; without carrying earlier RSS entries forward, every entry
+between the export date and the oldest item still in the feed disappears.
+
+`--backfill-from-git` additionally replays every committed version of
+data/rss.xml, to recover entries that already scrolled out before carry-forward
+existed (or after viewing_history.json was lost). Needs full git history — run
+`git fetch --unshallow` first in a shallow clone.
 
 The archive contains the user's full diary (capped only by the export's age),
 while RSS only exposes the 50 most recent entries. The merge prefers the
@@ -17,6 +28,7 @@ redirect, so we don't try.
 
 import json
 import re
+import subprocess
 import sys
 import xml.etree.ElementTree as ET
 from datetime import date, timedelta
@@ -106,15 +118,62 @@ def load_rss_entries(rss_path):
         return []
     try:
         xml_content = rss_path.read_text(encoding='utf-8', errors='replace')
+    except OSError as e:
+        print(f'  Could not read {rss_path}: {e}', file=sys.stderr)
+        return []
+    return parse_rss_xml(xml_content, rss_path)
+
+
+def parse_rss_xml(xml_content, label):
+    try:
         root = ET.fromstring(xml_content)
-    except (ET.ParseError, OSError) as e:
-        print(f'  Could not parse {rss_path}: {e}', file=sys.stderr)
+    except ET.ParseError as e:
+        print(f'  Could not parse {label}: {e}', file=sys.stderr)
         return []
     entries = []
     for item in root.findall('.//item'):
         entry = parse_rss_item(item)
         if entry:
             entries.append(entry)
+    return entries
+
+
+def load_previous_rss_entries(history_path):
+    """RSS-sourced entries from the last run's viewing_history.json."""
+    if not history_path.exists():
+        return []
+    try:
+        with open(history_path, encoding='utf-8') as f:
+            previous = json.load(f)
+    except (OSError, json.JSONDecodeError) as e:
+        print(f'  Could not read {history_path}: {e}', file=sys.stderr)
+        return []
+    return [e for e in previous if e.get('source') == 'rss']
+
+
+def load_git_rss_entries():
+    """Every diary entry from every committed version of data/rss.xml, oldest
+    commit first (so later versions of the same entry win in the merge)."""
+    rss_rel = 'data/rss.xml'
+    try:
+        shas = subprocess.check_output(
+            ['git', 'log', '--reverse', '--format=%H', '--', rss_rel],
+            cwd=base_dir, text=True,
+        ).split()
+    except (OSError, subprocess.CalledProcessError) as e:
+        print(f'  git log failed: {e}', file=sys.stderr)
+        return []
+    entries = []
+    for sha in shas:
+        try:
+            xml_content = subprocess.check_output(
+                ['git', 'show', f'{sha}:{rss_rel}'],
+                cwd=base_dir, text=True, errors='replace', stderr=subprocess.DEVNULL,
+            )
+        except subprocess.CalledProcessError:
+            continue
+        entries.extend(parse_rss_xml(xml_content, f'{sha[:7]}:{rss_rel}'))
+    print(f'  {len(entries)} entries across {len(shas)} committed versions of {rss_rel}')
     return entries
 
 
@@ -134,9 +193,25 @@ def main():
     export_date = get_export_date()
     print(f'  {len(archive_entries)} entries from archive (export date {export_date})')
 
+    history_path = data_dir / 'viewing_history.json'
+
     print('Loading RSS...')
-    rss_entries = load_rss_entries(data_dir / 'rss.xml')
-    print(f'  {len(rss_entries)} entries in current rss.xml')
+    # Ordered oldest -> newest source; later duplicates overwrite earlier ones
+    # so the current feed's copy (e.g. an edited rating) wins.
+    rss_candidates = []
+    if '--backfill-from-git' in sys.argv[1:]:
+        rss_candidates.extend(load_git_rss_entries())
+    previous_rss = load_previous_rss_entries(history_path)
+    print(f'  {len(previous_rss)} RSS entries carried forward from previous history')
+    rss_candidates.extend(previous_rss)
+    current_rss = load_rss_entries(data_dir / 'rss.xml')
+    print(f'  {len(current_rss)} entries in current rss.xml')
+    rss_candidates.extend(current_rss)
+
+    rss_by_key = {}
+    for e in rss_candidates:
+        rss_by_key[merge_key(e)] = e
+    rss_entries = list(rss_by_key.values())
 
     # RSS-only entries: anything whose key isn't in the archive baseline.
     # (Optionally cap to entries newer than export_date - 1 day to avoid
@@ -163,7 +238,7 @@ def main():
 
     merged.sort(key=lambda e: e.get('watchedDate') or '0000-00-00', reverse=True)
 
-    output_path = data_dir / 'viewing_history.json'
+    output_path = history_path
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(merged, f, ensure_ascii=False, indent=2)
 
