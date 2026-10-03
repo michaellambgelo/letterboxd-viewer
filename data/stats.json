@@ -1,11 +1,11 @@
 {
-  "totalWatched": 2625,
-  "uniqueFilms": 2173,
+  "totalWatched": 2626,
+  "uniqueFilms": 2174,
   "totalRewatches": 870,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
-    "1.0": 25,
+    "1.0": 26,
     "1.5": 31,
     "2.0": 110,
     "2.5": 131,
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 4
+    "2026-10": 5
   },
   "heatmapData": [
     {
@@ -6215,6 +6215,10 @@
     {
       "date": "2026-10-02",
       "count": 1
+    },
+    {
+      "date": "2026-10-03",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6228,7 +6232,7 @@
     "1980s": 90,
     "1990s": 170,
     "2000s": 261,
-    "2010s": 742,
+    "2010s": 743,
     "2020s": 1205
   },
   "mostRewatched": [
@@ -6304,6 +6308,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1521779478",
+      "filmTitle": "The Amazing Bulk",
+      "filmYear": 2012,
+      "watchedDate": "2026-10-03",
+      "memberRating": 1.0,
+      "rewatch": false,
+      "tmdbId": 109125,
+      "link": "https://letterboxd.com/michaellamb/film/the-amazing-bulk/",
+      "title": "The Amazing Bulk, 2012 - ★",
+      "reviewText": "the filmmakers subject viewers to the most godawful cold open, then 30 minutes later in the runtime make them watch it again.\n\ni guess the misogyny is supposed to be funny?\n\ni turned this to 2x speed and it was still too long.\n\nfuck you, Parker.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1520200053",
       "filmTitle": "You're Next",
@@ -6567,20 +6585,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-mist/1/",
       "title": "The Mist, 2007 - ★★★",
       "reviewText": "the religious psychosis is real af",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1506826976",
-      "filmTitle": "Batman: The Killing Joke",
-      "filmYear": 2016,
-      "watchedDate": "2026-09-22",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": 382322,
-      "link": "https://letterboxd.com/michaellamb/film/batman-the-killing-joke-2016/",
-      "title": "Batman: The Killing Joke, 2016 - ★★★",
-      "reviewText": "Watched on Tuesday September 22, 2026.",
       "tags": [],
       "source": "rss"
     }
@@ -8507,7 +8511,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-10-02"
+    "latest": "2026-10-03"
   },
   "byYear": {
     "2017": {
@@ -14827,13 +14831,13 @@
       ]
     },
     "2026": {
-      "totalWatched": 265,
-      "uniqueFilms": 242,
+      "totalWatched": 266,
+      "uniqueFilms": 243,
       "totalRewatches": 90,
-      "averageRating": 3.91,
+      "averageRating": 3.9,
       "ratingDistribution": {
         "0.5": 2,
-        "1.0": 4,
+        "1.0": 5,
         "1.5": 4,
         "2.0": 8,
         "2.5": 17,
@@ -15496,6 +15500,10 @@
         {
           "date": "2026-10-02",
           "count": 1
+        },
+        {
+          "date": "2026-10-03",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15506,7 +15514,7 @@
         "1980s": 9,
         "1990s": 22,
         "2000s": 20,
-        "2010s": 43,
+        "2010s": 44,
         "2020s": 151
       },
       "mostRewatched": [
