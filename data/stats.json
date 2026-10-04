@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2627,
-  "uniqueFilms": 2174,
+  "totalWatched": 2628,
+  "uniqueFilms": 2175,
   "totalRewatches": 871,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -10,7 +10,7 @@
     "2.0": 110,
     "2.5": 131,
     "3.0": 301,
-    "3.5": 387,
+    "3.5": 388,
     "4.0": 556,
     "4.5": 392,
     "5.0": 600,
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 6
+    "2026-10": 7
   },
   "heatmapData": [
     {
@@ -6218,7 +6218,7 @@
     },
     {
       "date": "2026-10-03",
-      "count": 2
+      "count": 3
     }
   ],
   "filmYearDistribution": {
@@ -6233,7 +6233,7 @@
     "1990s": 170,
     "2000s": 262,
     "2010s": 743,
-    "2020s": 1205
+    "2020s": 1206
   },
   "mostRewatched": [
     {
@@ -6333,6 +6333,20 @@
       "link": "https://letterboxd.com/michaellamb/film/donnie-darko/2/",
       "title": "Donnie Darko, 2001 - ★★★★★",
       "reviewText": "I caught this in theaters for the 25th anniversary. I would have preferred to watch it last night (Oct 2) but I had to work. \n\nDrew Barrymore is so bad in this, but it&#039;s perfect?\nAlso Noah Wyle continues to be hot",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1522726808",
+      "filmTitle": "The End of Oak Street",
+      "filmYear": 2026,
+      "watchedDate": "2026-10-03",
+      "memberRating": 3.5,
+      "rewatch": false,
+      "tmdbId": 1101383,
+      "link": "https://letterboxd.com/michaellamb/film/the-end-of-oak-street/",
+      "title": "The End of Oak Street, 2026 - ★★★½",
+      "reviewText": "i fucken loved itwhere anne hath a will, anne hathawaySTARBUCK!\n\nthe Cornell memorabilia is... not great, at present",
       "tags": [],
       "source": "rss"
     },
@@ -6571,20 +6585,6 @@
       "link": "https://letterboxd.com/michaellamb/film/ghost-in-the-machine-2026/",
       "title": "Ghost in the Machine, 2026 - ★★★★",
       "reviewText": "Well of course artificial intelligence is rooted in eugenics",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1506523621",
-      "filmTitle": "Batman: The Dark Knight Returns, Part 1",
-      "filmYear": 2012,
-      "watchedDate": "2026-09-22",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 123025,
-      "link": "https://letterboxd.com/michaellamb/film/batman-the-dark-knight-returns-part-1/",
-      "title": "Batman: The Dark Knight Returns, Part 1, 2012 - ★★★★",
-      "reviewText": "Watched on Tuesday September 22, 2026.",
       "tags": [],
       "source": "rss"
     }
@@ -14838,8 +14838,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 267,
-      "uniqueFilms": 244,
+      "totalWatched": 268,
+      "uniqueFilms": 245,
       "totalRewatches": 91,
       "averageRating": 3.91,
       "ratingDistribution": {
@@ -14849,7 +14849,7 @@
         "2.0": 8,
         "2.5": 17,
         "3.0": 25,
-        "3.5": 35,
+        "3.5": 36,
         "4.0": 53,
         "4.5": 51,
         "5.0": 66,
@@ -15510,7 +15510,7 @@
         },
         {
           "date": "2026-10-03",
-          "count": 2
+          "count": 3
         }
       ],
       "filmYearDistribution": {
@@ -15522,7 +15522,7 @@
         "1990s": 22,
         "2000s": 21,
         "2010s": 44,
-        "2020s": 151
+        "2020s": 152
       },
       "mostRewatched": [
         {
