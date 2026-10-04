@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2628,
-  "uniqueFilms": 2175,
+  "totalWatched": 2629,
+  "uniqueFilms": 2176,
   "totalRewatches": 871,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -14,7 +14,7 @@
     "4.0": 556,
     "4.5": 392,
     "5.0": 600,
-    "unrated": 82
+    "unrated": 83
   },
   "filmsByMonth": {
     "2017-08": 1,
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 7
+    "2026-10": 8
   },
   "heatmapData": [
     {
@@ -6219,6 +6219,10 @@
     {
       "date": "2026-10-03",
       "count": 3
+    },
+    {
+      "date": "2026-10-04",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6233,7 +6237,7 @@
     "1990s": 170,
     "2000s": 262,
     "2010s": 743,
-    "2020s": 1206
+    "2020s": 1207
   },
   "mostRewatched": [
     {
@@ -6308,6 +6312,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1523275901",
+      "filmTitle": "Long Pork",
+      "filmYear": 2025,
+      "watchedDate": "2026-10-04",
+      "memberRating": null,
+      "rewatch": false,
+      "tmdbId": 1506316,
+      "link": "https://letterboxd.com/michaellamb/film/long-pork/",
+      "title": "Long Pork, 2025",
+      "reviewText": "Watched on Sunday October 4, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1521779478",
       "filmTitle": "The Amazing Bulk",
@@ -6571,20 +6589,6 @@
       "link": "https://letterboxd.com/michaellamb/film/batman-year-one/",
       "title": "Batman: Year One, 2011 - ★★★½",
       "reviewText": "Watched on Wednesday September 23, 2026.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1506344003",
-      "filmTitle": "Ghost in the Machine",
-      "filmYear": 2026,
-      "watchedDate": "2026-09-22",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 1596315,
-      "link": "https://letterboxd.com/michaellamb/film/ghost-in-the-machine-2026/",
-      "title": "Ghost in the Machine, 2026 - ★★★★",
-      "reviewText": "Well of course artificial intelligence is rooted in eugenics",
       "tags": [],
       "source": "rss"
     }
@@ -8518,7 +8522,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-10-03"
+    "latest": "2026-10-04"
   },
   "byYear": {
     "2017": {
@@ -14838,8 +14842,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 268,
-      "uniqueFilms": 245,
+      "totalWatched": 269,
+      "uniqueFilms": 246,
       "totalRewatches": 91,
       "averageRating": 3.91,
       "ratingDistribution": {
@@ -14853,7 +14857,7 @@
         "4.0": 53,
         "4.5": 51,
         "5.0": 66,
-        "unrated": 1
+        "unrated": 2
       },
       "heatmapData": [
         {
@@ -15511,6 +15515,10 @@
         {
           "date": "2026-10-03",
           "count": 3
+        },
+        {
+          "date": "2026-10-04",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15522,7 +15530,7 @@
         "1990s": 22,
         "2000s": 21,
         "2010s": 44,
-        "2020s": 152
+        "2020s": 153
       },
       "mostRewatched": [
         {
