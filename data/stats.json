@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2626,
+  "totalWatched": 2627,
   "uniqueFilms": 2174,
-  "totalRewatches": 870,
+  "totalRewatches": 871,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -13,7 +13,7 @@
     "3.5": 387,
     "4.0": 556,
     "4.5": 392,
-    "5.0": 599,
+    "5.0": 600,
     "unrated": 82
   },
   "filmsByMonth": {
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 5
+    "2026-10": 6
   },
   "heatmapData": [
     {
@@ -6218,7 +6218,7 @@
     },
     {
       "date": "2026-10-03",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6231,7 +6231,7 @@
     "1970s": 57,
     "1980s": 90,
     "1990s": 170,
-    "2000s": 261,
+    "2000s": 262,
     "2010s": 743,
     "2020s": 1205
   },
@@ -6319,6 +6319,20 @@
       "link": "https://letterboxd.com/michaellamb/film/the-amazing-bulk/",
       "title": "The Amazing Bulk, 2012 - ★",
       "reviewText": "the filmmakers subject viewers to the most godawful cold open, then 30 minutes later in the runtime make them watch it again.\n\ni guess the misogyny is supposed to be funny?\n\ni turned this to 2x speed and it was still too long.\n\nfuck you, Parker.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1522599944",
+      "filmTitle": "Donnie Darko",
+      "filmYear": 2001,
+      "watchedDate": "2026-10-03",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 141,
+      "link": "https://letterboxd.com/michaellamb/film/donnie-darko/2/",
+      "title": "Donnie Darko, 2001 - ★★★★★",
+      "reviewText": "I caught this in theaters for the 25th anniversary. I would have preferred to watch it last night (Oct 2) but I had to work. \n\nDrew Barrymore is so bad in this, but it&#039;s perfect?\nAlso Noah Wyle continues to be hot",
       "tags": [],
       "source": "rss"
     },
@@ -6573,23 +6587,16 @@
       "reviewText": "Watched on Tuesday September 22, 2026.",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1506389017",
-      "filmTitle": "The Mist",
-      "filmYear": 2007,
-      "watchedDate": "2026-09-22",
-      "memberRating": 3.0,
-      "rewatch": true,
-      "tmdbId": 5876,
-      "link": "https://letterboxd.com/michaellamb/film/the-mist/1/",
-      "title": "The Mist, 2007 - ★★★",
-      "reviewText": "the religious psychosis is real af",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Donnie Darko",
+      "filmYear": 2001,
+      "watchedDate": "2026-10-03",
+      "link": "https://letterboxd.com/michaellamb/film/donnie-darko/2/",
+      "tmdbId": 141
+    },
     {
       "filmTitle": "The Green Knight",
       "filmYear": 2021,
@@ -14831,10 +14838,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 266,
-      "uniqueFilms": 243,
-      "totalRewatches": 90,
-      "averageRating": 3.9,
+      "totalWatched": 267,
+      "uniqueFilms": 244,
+      "totalRewatches": 91,
+      "averageRating": 3.91,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 5,
@@ -14845,7 +14852,7 @@
         "3.5": 35,
         "4.0": 53,
         "4.5": 51,
-        "5.0": 65,
+        "5.0": 66,
         "unrated": 1
       },
       "heatmapData": [
@@ -15503,7 +15510,7 @@
         },
         {
           "date": "2026-10-03",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15513,7 +15520,7 @@
         "1970s": 5,
         "1980s": 9,
         "1990s": 22,
-        "2000s": 20,
+        "2000s": 21,
         "2010s": 44,
         "2020s": 151
       },
@@ -15555,6 +15562,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Donnie Darko",
+          "filmYear": 2001,
+          "watchedDate": "2026-10-03",
+          "link": "https://letterboxd.com/michaellamb/film/donnie-darko/2/"
+        },
         {
           "filmTitle": "The Green Knight",
           "filmYear": 2021,
@@ -15608,12 +15621,6 @@
           "filmYear": 1999,
           "watchedDate": "2026-09-02",
           "link": "https://letterboxd.com/michaellamb/film/the-scooby-doo-project/"
-        },
-        {
-          "filmTitle": "The Lord of the Rings: The Two Towers",
-          "filmYear": 2002,
-          "watchedDate": "2026-08-07",
-          "link": "https://letterboxd.com/michaellamb/film/the-lord-of-the-rings-the-two-towers/3/"
         }
       ]
     }
