@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2629,
-  "uniqueFilms": 2176,
+  "totalWatched": 2630,
+  "uniqueFilms": 2177,
   "totalRewatches": 871,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -11,7 +11,7 @@
     "2.5": 131,
     "3.0": 301,
     "3.5": 388,
-    "4.0": 556,
+    "4.0": 557,
     "4.5": 392,
     "5.0": 600,
     "unrated": 83
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 8
+    "2026-10": 9
   },
   "heatmapData": [
     {
@@ -6222,7 +6222,7 @@
     },
     {
       "date": "2026-10-04",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6237,7 +6237,7 @@
     "1990s": 170,
     "2000s": 262,
     "2010s": 743,
-    "2020s": 1207
+    "2020s": 1208
   },
   "mostRewatched": [
     {
@@ -6323,6 +6323,20 @@
       "link": "https://letterboxd.com/michaellamb/film/long-pork/",
       "title": "Long Pork, 2025",
       "reviewText": "Watched on Sunday October 4, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1524504765",
+      "filmTitle": "The Dropout",
+      "filmYear": 2022,
+      "watchedDate": "2026-10-04",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": null,
+      "link": "https://letterboxd.com/michaellamb/film/the-dropout/",
+      "title": "The Dropout, 2022 - ★★★★ (contains spoilers)",
+      "reviewText": "This review may contain spoilers. &quot;You asked Rupert Murdoch to kill a story in The Wall Street Journal for you?&quot;- from ep 7\n\nholy shit Amanda Seyfried is so fucken great, the writing is like 85% good, and the cinematography is complemented with a banging soundtrack. this is great work!\n\nalso, fuck Elizabeth Holmes! I don&#039;t fell bad for the billionaires who accidentally made her a billionaire, but I do feel terrible for the patients who trusted her and were harmed by her.",
       "tags": [],
       "source": "rss"
     },
@@ -6575,20 +6589,6 @@
       "link": "https://letterboxd.com/michaellamb/film/man-finds-tape/",
       "title": "Man Finds Tape, 2025 - ★★★",
       "reviewText": "idk i really liked it",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1508408023",
-      "filmTitle": "Batman: Year One",
-      "filmYear": 2011,
-      "watchedDate": "2026-09-23",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 69735,
-      "link": "https://letterboxd.com/michaellamb/film/batman-year-one/",
-      "title": "Batman: Year One, 2011 - ★★★½",
-      "reviewText": "Watched on Wednesday September 23, 2026.",
       "tags": [],
       "source": "rss"
     }
@@ -14842,8 +14842,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 269,
-      "uniqueFilms": 246,
+      "totalWatched": 270,
+      "uniqueFilms": 247,
       "totalRewatches": 91,
       "averageRating": 3.91,
       "ratingDistribution": {
@@ -14854,7 +14854,7 @@
         "2.5": 17,
         "3.0": 25,
         "3.5": 36,
-        "4.0": 53,
+        "4.0": 54,
         "4.5": 51,
         "5.0": 66,
         "unrated": 2
@@ -15518,7 +15518,7 @@
         },
         {
           "date": "2026-10-04",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15530,7 +15530,7 @@
         "1990s": 22,
         "2000s": 21,
         "2010s": 44,
-        "2020s": 153
+        "2020s": 154
       },
       "mostRewatched": [
         {
