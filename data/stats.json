@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2630,
-  "uniqueFilms": 2177,
+  "totalWatched": 2631,
+  "uniqueFilms": 2178,
   "totalRewatches": 871,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -12,7 +12,7 @@
     "3.0": 301,
     "3.5": 388,
     "4.0": 557,
-    "4.5": 392,
+    "4.5": 393,
     "5.0": 600,
     "unrated": 83
   },
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 9
+    "2026-10": 10
   },
   "heatmapData": [
     {
@@ -6223,6 +6223,10 @@
     {
       "date": "2026-10-04",
       "count": 2
+    },
+    {
+      "date": "2026-10-05",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6237,7 +6241,7 @@
     "1990s": 170,
     "2000s": 262,
     "2010s": 743,
-    "2020s": 1208
+    "2020s": 1209
   },
   "mostRewatched": [
     {
@@ -6312,6 +6316,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1525349854",
+      "filmTitle": "Five Star",
+      "filmYear": 2025,
+      "watchedDate": "2026-10-05",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 1470374,
+      "link": "https://letterboxd.com/michaellamb/film/five-star-2025/",
+      "title": "Five Star, 2025 - ★★★★½",
+      "reviewText": "really quite wonderful",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1523275901",
       "filmTitle": "Long Pork",
@@ -6575,20 +6593,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-little-prince-2015/",
       "title": "The Little Prince, 2015 - ★★★★",
       "reviewText": "oh my god, so wonderful and sincere. i wept!",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1507630139",
-      "filmTitle": "Man Finds Tape",
-      "filmYear": 2025,
-      "watchedDate": "2026-09-23",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": 1465986,
-      "link": "https://letterboxd.com/michaellamb/film/man-finds-tape/",
-      "title": "Man Finds Tape, 2025 - ★★★",
-      "reviewText": "idk i really liked it",
       "tags": [],
       "source": "rss"
     }
@@ -8522,7 +8526,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-10-04"
+    "latest": "2026-10-05"
   },
   "byYear": {
     "2017": {
@@ -14842,8 +14846,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 270,
-      "uniqueFilms": 247,
+      "totalWatched": 271,
+      "uniqueFilms": 248,
       "totalRewatches": 91,
       "averageRating": 3.91,
       "ratingDistribution": {
@@ -14855,7 +14859,7 @@
         "3.0": 25,
         "3.5": 36,
         "4.0": 54,
-        "4.5": 51,
+        "4.5": 52,
         "5.0": 66,
         "unrated": 2
       },
@@ -15519,6 +15523,10 @@
         {
           "date": "2026-10-04",
           "count": 2
+        },
+        {
+          "date": "2026-10-05",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15530,7 +15538,7 @@
         "1990s": 22,
         "2000s": 21,
         "2010s": 44,
-        "2020s": 154
+        "2020s": 155
       },
       "mostRewatched": [
         {
