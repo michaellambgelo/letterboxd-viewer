@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2634,
+  "totalWatched": 2635,
   "uniqueFilms": 2179,
-  "totalRewatches": 873,
+  "totalRewatches": 874,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -12,7 +12,7 @@
     "3.0": 301,
     "3.5": 388,
     "4.0": 559,
-    "4.5": 393,
+    "4.5": 394,
     "5.0": 601,
     "unrated": 83
   },
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 13
+    "2026-10": 14
   },
   "heatmapData": [
     {
@@ -6231,6 +6231,10 @@
     {
       "date": "2026-10-06",
       "count": 1
+    },
+    {
+      "date": "2026-10-07",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6245,7 +6249,7 @@
     "1990s": 171,
     "2000s": 263,
     "2010s": 743,
-    "2020s": 1210
+    "2020s": 1211
   },
   "mostRewatched": [
     {
@@ -6320,6 +6324,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1528150830",
+      "filmTitle": "Barbarian",
+      "filmYear": 2022,
+      "watchedDate": "2026-10-07",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 913290,
+      "link": "https://letterboxd.com/michaellamb/film/barbarian-2022/3/",
+      "title": "Barbarian, 2022 - ★★★★½",
+      "reviewText": "Really incredbile how tight this is. I originally thought the ending was a bit rushed, but now I think I appreciate just how much narrative pipeline Zach Cregger is able to lay down (sorry for the imagery)\n\nThis movie is so interesting and I think I need to study it\n\nBreak-in viewing of my steelbook edition (4KUHD + Blu-ray + Digital)",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1527183753",
       "filmTitle": "Digger",
@@ -6583,20 +6601,6 @@
       "link": "https://letterboxd.com/michaellamb/film/resident-evil-2026/1/",
       "title": "Resident Evil, 2026 - ★★★★½",
       "reviewText": "Rewatch with Shelby. Her first time ever in IMAX! She loved it",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1510139821",
-      "filmTitle": "Steel Magnolias",
-      "filmYear": 1989,
-      "watchedDate": "2026-09-25",
-      "memberRating": 4.0,
-      "rewatch": true,
-      "tmdbId": 10860,
-      "link": "https://letterboxd.com/michaellamb/film/steel-magnolias/1/",
-      "title": "Steel Magnolias, 1989 - ★★★★",
-      "reviewText": "This is the day the internet decided to dub Dolly Parton day. I should probably watch the namesake film, but I wanted a good cry. \n\nWatched with my mom and Shelby",
       "tags": [],
       "source": "rss"
     }
@@ -8537,7 +8541,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-10-06"
+    "latest": "2026-10-07"
   },
   "byYear": {
     "2017": {
@@ -14857,10 +14861,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 274,
-      "uniqueFilms": 251,
-      "totalRewatches": 93,
-      "averageRating": 3.91,
+      "totalWatched": 275,
+      "uniqueFilms": 252,
+      "totalRewatches": 94,
+      "averageRating": 3.92,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 5,
@@ -14870,7 +14874,7 @@
         "3.0": 25,
         "3.5": 36,
         "4.0": 56,
-        "4.5": 52,
+        "4.5": 53,
         "5.0": 67,
         "unrated": 2
       },
@@ -15542,6 +15546,10 @@
         {
           "date": "2026-10-06",
           "count": 1
+        },
+        {
+          "date": "2026-10-07",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15553,7 +15561,7 @@
         "1990s": 23,
         "2000s": 22,
         "2010s": 44,
-        "2020s": 156
+        "2020s": 157
       },
       "mostRewatched": [
         {
