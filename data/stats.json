@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2637,
-  "uniqueFilms": 2180,
+  "totalWatched": 2638,
+  "uniqueFilms": 2181,
   "totalRewatches": 875,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -9,7 +9,7 @@
     "1.5": 31,
     "2.0": 110,
     "2.5": 132,
-    "3.0": 301,
+    "3.0": 302,
     "3.5": 388,
     "4.0": 560,
     "4.5": 394,
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 16
+    "2026-10": 17
   },
   "heatmapData": [
     {
@@ -6239,6 +6239,10 @@
     {
       "date": "2026-10-08",
       "count": 1
+    },
+    {
+      "date": "2026-10-09",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6253,7 +6257,7 @@
     "1990s": 171,
     "2000s": 263,
     "2010s": 744,
-    "2020s": 1212
+    "2020s": 1213
   },
   "mostRewatched": [
     {
@@ -6328,6 +6332,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1530299517",
+      "filmTitle": "Other Mommy",
+      "filmYear": 2026,
+      "watchedDate": "2026-10-09",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 1400837,
+      "link": "https://letterboxd.com/michaellamb/film/other-mommy/",
+      "title": "Other Mommy, 2026 - ★★★",
+      "reviewText": "The guy on the row behind me shouted, “What the fuck was that?” at the last shot\n\nThis does have a lot of problems, but it also looks good. and Jessica Chastain is terrifying again",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1529654221",
       "filmTitle": "The Wolfman",
@@ -6591,20 +6609,6 @@
       "link": "https://letterboxd.com/michaellamb/film/blue-film-2025/",
       "title": "Blue Film, 2025 - ★★★★★",
       "reviewText": "the most heartbreaking credits.\n\nmy first rental from the Letterboxd Video Store.\n\ni saw a friend in town tonight who has been living in Egypt for years and told her I was going home to relax. then i rented this movie.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1514182467",
-      "filmTitle": "The Social Network",
-      "filmYear": 2010,
-      "watchedDate": "2026-09-27",
-      "memberRating": 4.0,
-      "rewatch": true,
-      "tmdbId": 37799,
-      "link": "https://letterboxd.com/michaellamb/film/the-social-network/2/",
-      "title": "The Social Network, 2010 - ★★★★",
-      "reviewText": "Watched with Shelby",
       "tags": [],
       "source": "rss"
     }
@@ -8545,7 +8549,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-10-08"
+    "latest": "2026-10-09"
   },
   "byYear": {
     "2017": {
@@ -14865,8 +14869,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 277,
-      "uniqueFilms": 254,
+      "totalWatched": 278,
+      "uniqueFilms": 255,
       "totalRewatches": 95,
       "averageRating": 3.91,
       "ratingDistribution": {
@@ -14875,7 +14879,7 @@
         "1.5": 4,
         "2.0": 8,
         "2.5": 18,
-        "3.0": 25,
+        "3.0": 26,
         "3.5": 36,
         "4.0": 57,
         "4.5": 53,
@@ -15558,6 +15562,10 @@
         {
           "date": "2026-10-08",
           "count": 1
+        },
+        {
+          "date": "2026-10-09",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15569,7 +15577,7 @@
         "1990s": 23,
         "2000s": 22,
         "2010s": 45,
-        "2020s": 158
+        "2020s": 159
       },
       "mostRewatched": [
         {
