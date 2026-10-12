@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2640,
-  "uniqueFilms": 2183,
+  "totalWatched": 2641,
+  "uniqueFilms": 2184,
   "totalRewatches": 875,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -11,7 +11,7 @@
     "2.5": 132,
     "3.0": 302,
     "3.5": 390,
-    "4.0": 560,
+    "4.0": 561,
     "4.5": 394,
     "5.0": 601,
     "unrated": 83
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 19
+    "2026-10": 20
   },
   "heatmapData": [
     {
@@ -6246,7 +6246,7 @@
     },
     {
       "date": "2026-10-11",
-      "count": 2
+      "count": 3
     }
   ],
   "filmYearDistribution": {
@@ -6260,7 +6260,7 @@
     "1980s": 90,
     "1990s": 171,
     "2000s": 263,
-    "2010s": 744,
+    "2010s": 745,
     "2020s": 1215
   },
   "mostRewatched": [
@@ -6361,6 +6361,20 @@
       "link": "https://letterboxd.com/michaellamb/film/the-social-reckoning/",
       "title": "The Social Reckoning, 2026 - ★★★½",
       "reviewText": "I enhanced my viewing experience by going into it just after episode 7 of Mike Flanagan’s Carrie (2026)\n\nThis works. It’s not boring, and it’s not attempting to be The Social Network (2010).",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1534471172",
+      "filmTitle": "Red State",
+      "filmYear": 2011,
+      "watchedDate": "2026-10-11",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 48572,
+      "link": "https://letterboxd.com/michaellamb/film/red-state/",
+      "title": "Red State, 2011 - ★★★★",
+      "reviewText": "once again, thank you Dead Meat.\n\njesus christ, can&#039;t believe this is free",
       "tags": [],
       "source": "rss"
     },
@@ -6599,20 +6613,6 @@
       "link": "https://letterboxd.com/michaellamb/film/midnight-mass-2021/4/",
       "title": "Midnight Mass, 2021 - ★★★★½",
       "reviewText": "crazy to think this was only released 5 years ago. another Oct 1 entry!",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1517167691",
-      "filmTitle": "Hell House LLC",
-      "filmYear": 2015,
-      "watchedDate": "2026-09-29",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": 359246,
-      "link": "https://letterboxd.com/michaellamb/film/hell-house-llc/",
-      "title": "Hell House LLC, 2015 - ★★★",
-      "reviewText": "Watched on Tuesday September 29, 2026.",
       "tags": [],
       "source": "rss"
     }
@@ -14873,10 +14873,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 280,
-      "uniqueFilms": 257,
+      "totalWatched": 281,
+      "uniqueFilms": 258,
       "totalRewatches": 95,
-      "averageRating": 3.9,
+      "averageRating": 3.91,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 5,
@@ -14885,7 +14885,7 @@
         "2.5": 18,
         "3.0": 26,
         "3.5": 38,
-        "4.0": 57,
+        "4.0": 58,
         "4.5": 53,
         "5.0": 67,
         "unrated": 2
@@ -15573,7 +15573,7 @@
         },
         {
           "date": "2026-10-11",
-          "count": 2
+          "count": 3
         }
       ],
       "filmYearDistribution": {
@@ -15584,7 +15584,7 @@
         "1980s": 9,
         "1990s": 23,
         "2000s": 22,
-        "2010s": 45,
+        "2010s": 46,
         "2020s": 161
       },
       "mostRewatched": [
