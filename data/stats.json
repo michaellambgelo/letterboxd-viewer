@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2641,
+  "totalWatched": 2642,
   "uniqueFilms": 2184,
-  "totalRewatches": 875,
+  "totalRewatches": 876,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -12,7 +12,7 @@
     "3.0": 302,
     "3.5": 390,
     "4.0": 561,
-    "4.5": 394,
+    "4.5": 395,
     "5.0": 601,
     "unrated": 83
   },
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 20
+    "2026-10": 21
   },
   "heatmapData": [
     {
@@ -6247,6 +6247,10 @@
     {
       "date": "2026-10-11",
       "count": 3
+    },
+    {
+      "date": "2026-10-12",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6261,7 +6265,7 @@
     "1990s": 171,
     "2000s": 263,
     "2010s": 745,
-    "2020s": 1215
+    "2020s": 1216
   },
   "mostRewatched": [
     {
@@ -6336,6 +6340,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1535360245",
+      "filmTitle": "Digger",
+      "filmYear": 2026,
+      "watchedDate": "2026-10-12",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 1248832,
+      "link": "https://letterboxd.com/michaellamb/film/digger-2026/1/",
+      "title": "Digger, 2026 - ★★★★½",
+      "reviewText": "Watched on Monday October 12, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1533613332",
       "filmTitle": "Carrie",
@@ -6599,20 +6617,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-witch-2015/3/",
       "title": "The Witch, 2015 - ★★★★",
       "reviewText": "I&#039;m nervous and excited for Werwulf. \n\nLike, this movie is where Eggers really proves himself and he only gets better. I&#039;ve not seen him miss, yet.\n\nCloses out my Mommy Kate Dickie and Daddy Ralph Ineson double feature.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1519699130",
-      "filmTitle": "Midnight Mass",
-      "filmYear": 2021,
-      "watchedDate": "2026-10-01",
-      "memberRating": 4.5,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://letterboxd.com/michaellamb/film/midnight-mass-2021/4/",
-      "title": "Midnight Mass, 2021 - ★★★★½",
-      "reviewText": "crazy to think this was only released 5 years ago. another Oct 1 entry!",
       "tags": [],
       "source": "rss"
     }
@@ -8553,7 +8557,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-10-11"
+    "latest": "2026-10-12"
   },
   "byYear": {
     "2017": {
@@ -14873,9 +14877,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 281,
+      "totalWatched": 282,
       "uniqueFilms": 258,
-      "totalRewatches": 95,
+      "totalRewatches": 96,
       "averageRating": 3.91,
       "ratingDistribution": {
         "0.5": 2,
@@ -14886,7 +14890,7 @@
         "3.0": 26,
         "3.5": 38,
         "4.0": 58,
-        "4.5": 53,
+        "4.5": 54,
         "5.0": 67,
         "unrated": 2
       },
@@ -15574,6 +15578,10 @@
         {
           "date": "2026-10-11",
           "count": 3
+        },
+        {
+          "date": "2026-10-12",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15585,7 +15593,7 @@
         "1990s": 23,
         "2000s": 22,
         "2010s": 46,
-        "2020s": 161
+        "2020s": 162
       },
       "mostRewatched": [
         {
@@ -15604,6 +15612,13 @@
         },
         {
           "count": 2,
+          "filmTitle": "Digger",
+          "filmYear": 2026,
+          "tmdbId": 1248832,
+          "link": "https://letterboxd.com/michaellamb/film/digger-2026/"
+        },
+        {
+          "count": 2,
           "filmTitle": "Her",
           "filmYear": 2013,
           "tmdbId": 152601,
@@ -15615,13 +15630,6 @@
           "filmYear": 2026,
           "tmdbId": 1423191,
           "link": "https://letterboxd.com/michaellamb/film/resident-evil-2026/"
-        },
-        {
-          "count": 2,
-          "filmTitle": "Hamnet",
-          "filmYear": 2025,
-          "tmdbId": 858024,
-          "link": "https://letterboxd.com/michaellamb/film/hamnet/4/"
         }
       ],
       "highestRated": [
