@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2642,
-  "uniqueFilms": 2184,
+  "totalWatched": 2644,
+  "uniqueFilms": 2186,
   "totalRewatches": 876,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -9,9 +9,9 @@
     "1.5": 31,
     "2.0": 110,
     "2.5": 132,
-    "3.0": 302,
+    "3.0": 303,
     "3.5": 390,
-    "4.0": 561,
+    "4.0": 562,
     "4.5": 395,
     "5.0": 601,
     "unrated": 83
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 21
+    "2026-10": 23
   },
   "heatmapData": [
     {
@@ -6250,7 +6250,7 @@
     },
     {
       "date": "2026-10-12",
-      "count": 1
+      "count": 3
     }
   ],
   "filmYearDistribution": {
@@ -6265,7 +6265,7 @@
     "1990s": 171,
     "2000s": 263,
     "2010s": 745,
-    "2020s": 1216
+    "2020s": 1218
   },
   "mostRewatched": [
     {
@@ -6349,8 +6349,36 @@
       "rewatch": true,
       "tmdbId": 1248832,
       "link": "https://letterboxd.com/michaellamb/film/digger-2026/1/",
-      "title": "Digger, 2026 - ★★★★½",
-      "reviewText": "Watched on Monday October 12, 2026.",
+      "title": "Digger, 2026 - ★★★★½ (contains spoilers)",
+      "reviewText": "This review may contain spoilers.\n\nOn this rewatch, I had (more) emotional reactions to plot events, to the point of shedding tears. The first watch definitely hit me, but knowing the full story let me dig in and notice new things. I have no idea if I&#039;m making any sense in this review, and I have checked the &quot;Contains spoilers&quot; box so if you&#039;re here, I hope you&#039;ve seen the movie already.\n\nI said in my first review that there was one sequence I would have cut. It was the fishes and loaves moment on the oil rig, but I think I misunderstood it. At a certain point, I had convinced myself that Rockwell was an atheist, and that his sudden come-to-Jesus moment in the fridge was somehow misplaced — but the thoughts that followed were about how the metanarrative was frustrating to separate from the stage production because Curtis was being critical of creative direction, so I chalked it up to that. \n\nThe play-within-a-play aspect really warped my perception of Digger/Curtis, and it was a challenge to understand him sometimes. \n\nThe prayer he leads with the staff, the circumstances of the staff explaining the problems altogether: it&#039;s all a fiction. This is the stuff that made Curtis feel cheapened as an artist, but the thing is: Digger Rockwell seemed to actually believe in a higher power. My initial reading was wrong.\n\nThe conversation with Ganesh aboard the plane is the least honest we see Digger: he won&#039;t tell Ganesh his intentions, but he will give Ganesh &quot;permission to speak the truth.&quot; The monologue which follows Ganesh&#039;s truth-telling is the most honest part of the production of Fossil Fools. It is paralleled by the most honest part of the movie: Curtis and Hannah having it out, then billionaire Kenny stepping in to provide his perspective. The connection between Rockwell and Curtis is that both are searching for something they cannot be satisfied without.\n\n---\n\nWatched with one other moviegoer at the Monday matinee.\n\nI&#039;ve been putting in some effort to convince people to see this in theaters before it leaves. \n\nIn this log entry, I&#039;ve increased my rating to 4.5 stars.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1536120807",
+      "filmTitle": "Nightfall",
+      "filmYear": 2025,
+      "watchedDate": "2026-10-12",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 1567591,
+      "link": "https://letterboxd.com/michaellamb/film/nightfall-2025/",
+      "title": "Nightfall, 2025 - ★★★★",
+      "reviewText": "Nightfall | Horror Short Film | ALTER | Starring Teri Hatcher",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1535984358",
+      "filmTitle": "Fresh Meat",
+      "filmYear": 2026,
+      "watchedDate": "2026-10-12",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 1737740,
+      "link": "https://letterboxd.com/michaellamb/film/fresh-meat-2026/",
+      "title": "Fresh Meat, 2026 - ★★★",
+      "reviewText": "Watched with Bear and Angel\n\nThis one-show screening in Pearl, MS, brought out 16 moviegoers\n\nI think it could have dropped 3 segments but there’s a lot to enjoy here \n\nI voted Jinx as my favorite short",
       "tags": [],
       "source": "rss"
     },
@@ -6589,34 +6617,6 @@
       "link": "https://letterboxd.com/michaellamb/film/youre-next/",
       "title": "You're Next, 2011 - ★★★★",
       "reviewText": "thank you Dead Meat",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1518824515",
-      "filmTitle": "The Green Knight",
-      "filmYear": 2021,
-      "watchedDate": "2026-10-01",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 559907,
-      "link": "https://letterboxd.com/michaellamb/film/the-green-knight/13/",
-      "title": "The Green Knight, 2021 - ★★★★★",
-      "reviewText": "starting off October with a double feature of The Green Knight and The Witch: \nKate Dickie and Ralph Ineson are mommy and daddy.\n\nin the chapter &quot;A Meeting with St. Winifred,&quot; Gawain encounters a young woman who claims to have lost her head. She recounts the tale of a lord, who &quot;came seeking shelter, like thee. Perhaps he was thee.&quot;\n\nGawain denies the suggestion and she continues, saying that the lord wanted to lay with her but she fought him off. Then, he returned at night and though she tried to get away, he chopped off her head and threw it in the spring.\n\nGawain dives into the water and fetches her skull.\nSomething about his placing her skull with the rest of her bones feels so weighty and meaningful. \n\nThe way this film centers women in a traditionally Arthurian tale is lovely and necessary today. \n\nFollowing Winifred&#039;s chapter, the characters in &quot;An Exchange of Winnings&quot; feature The Lord (Joel Edgerton) and The Lady (Alicia Vikander&#039;s double-duty role) where Gawain’s knightly virtue is again tested in his relation to a woman. The many failures of Gawain stem from his fear of missing out on an opportunity to have great songs and works written about him, and how he feels inadequate for the moment.\n\n&quot;What else ought there be?&quot;\n\nThe men in Gawain&#039;s life don&#039;t seem to spend much time with him, until The Lord, and this intimacy Gawain appears to reject. Even the King&#039;s role in this story is one of a regretful man, spending a Christmas night in his old age with a nephew he doesn&#039;t know.\n\nWhen Gawain finally resolves himself, the film decides that we no longer need to know what he does: we are simply invited to wonder who he decided to be after his encounter with the Green Knight.\n\nBreak-in viewing of the A24 Collector&#039;s Edition 4KUHD.\n\nI learned in a featurette that the costumes were all vegan",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1519251700",
-      "filmTitle": "The Witch",
-      "filmYear": 2015,
-      "watchedDate": "2026-10-01",
-      "memberRating": 4.0,
-      "rewatch": true,
-      "tmdbId": 310131,
-      "link": "https://letterboxd.com/michaellamb/film/the-witch-2015/3/",
-      "title": "The Witch, 2015 - ★★★★",
-      "reviewText": "I&#039;m nervous and excited for Werwulf. \n\nLike, this movie is where Eggers really proves himself and he only gets better. I&#039;ve not seen him miss, yet.\n\nCloses out my Mommy Kate Dickie and Daddy Ralph Ineson double feature.",
       "tags": [],
       "source": "rss"
     }
@@ -14877,19 +14877,19 @@
       ]
     },
     "2026": {
-      "totalWatched": 282,
-      "uniqueFilms": 258,
+      "totalWatched": 284,
+      "uniqueFilms": 260,
       "totalRewatches": 96,
-      "averageRating": 3.91,
+      "averageRating": 3.9,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 5,
         "1.5": 4,
         "2.0": 8,
         "2.5": 18,
-        "3.0": 26,
+        "3.0": 27,
         "3.5": 38,
-        "4.0": 58,
+        "4.0": 59,
         "4.5": 54,
         "5.0": 67,
         "unrated": 2
@@ -15581,7 +15581,7 @@
         },
         {
           "date": "2026-10-12",
-          "count": 1
+          "count": 3
         }
       ],
       "filmYearDistribution": {
@@ -15593,7 +15593,7 @@
         "1990s": 23,
         "2000s": 22,
         "2010s": 46,
-        "2020s": 162
+        "2020s": 164
       },
       "mostRewatched": [
         {
