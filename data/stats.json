@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2644,
-  "uniqueFilms": 2186,
+  "totalWatched": 2645,
+  "uniqueFilms": 2187,
   "totalRewatches": 876,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -13,7 +13,7 @@
     "3.5": 390,
     "4.0": 562,
     "4.5": 395,
-    "5.0": 601,
+    "5.0": 602,
     "unrated": 83
   },
   "filmsByMonth": {
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 23
+    "2026-10": 24
   },
   "heatmapData": [
     {
@@ -6251,6 +6251,10 @@
     {
       "date": "2026-10-12",
       "count": 3
+    },
+    {
+      "date": "2026-10-15",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6260,7 +6264,7 @@
     "1940s": 17,
     "1950s": 20,
     "1960s": 32,
-    "1970s": 57,
+    "1970s": 58,
     "1980s": 90,
     "1990s": 171,
     "2000s": 263,
@@ -6340,6 +6344,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1540008239",
+      "filmTitle": "Carrie",
+      "filmYear": 1976,
+      "watchedDate": "2026-10-15",
+      "memberRating": 5.0,
+      "rewatch": false,
+      "tmdbId": 7340,
+      "link": "https://letterboxd.com/michaellamb/film/carrie-1976/",
+      "title": "Carrie, 1976 - ★★★★★",
+      "reviewText": "here we are, 40 years and 3 iterations later.\n\nthis film accomplishes SO MUCH. i need to prepare to discuss the differences between this film and the latest Flanagan series.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1535360245",
       "filmTitle": "Digger",
@@ -6605,23 +6623,16 @@
       "reviewText": "i fucken loved itwhere anne hath a will, anne hathawaySTARBUCK!\n\nthe Cornell memorabilia is... not great, at present",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1520200053",
-      "filmTitle": "You're Next",
-      "filmYear": 2011,
-      "watchedDate": "2026-10-02",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 83899,
-      "link": "https://letterboxd.com/michaellamb/film/youre-next/",
-      "title": "You're Next, 2011 - ★★★★",
-      "reviewText": "thank you Dead Meat",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Carrie",
+      "filmYear": 1976,
+      "watchedDate": "2026-10-15",
+      "link": "https://letterboxd.com/michaellamb/film/carrie-1976/",
+      "tmdbId": 7340
+    },
     {
       "filmTitle": "Scream",
       "filmYear": 1996,
@@ -8557,7 +8568,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-10-12"
+    "latest": "2026-10-15"
   },
   "byYear": {
     "2017": {
@@ -14877,10 +14888,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 284,
-      "uniqueFilms": 260,
+      "totalWatched": 285,
+      "uniqueFilms": 261,
       "totalRewatches": 96,
-      "averageRating": 3.9,
+      "averageRating": 3.91,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 5,
@@ -14891,7 +14902,7 @@
         "3.5": 38,
         "4.0": 59,
         "4.5": 54,
-        "5.0": 67,
+        "5.0": 68,
         "unrated": 2
       },
       "heatmapData": [
@@ -15582,13 +15593,17 @@
         {
           "date": "2026-10-12",
           "count": 3
+        },
+        {
+          "date": "2026-10-15",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
         "1890s": 1,
         "1950s": 3,
         "1960s": 6,
-        "1970s": 5,
+        "1970s": 6,
         "1980s": 9,
         "1990s": 23,
         "2000s": 22,
@@ -15633,6 +15648,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Carrie",
+          "filmYear": 1976,
+          "watchedDate": "2026-10-15",
+          "link": "https://letterboxd.com/michaellamb/film/carrie-1976/"
+        },
         {
           "filmTitle": "Scream",
           "filmYear": 1996,
@@ -15686,12 +15707,6 @@
           "filmYear": 2024,
           "watchedDate": "2026-09-14",
           "link": "https://letterboxd.com/michaellamb/film/dune-part-two/19/"
-        },
-        {
-          "filmTitle": "Akira",
-          "filmYear": 1988,
-          "watchedDate": "2026-09-05",
-          "link": "https://letterboxd.com/michaellamb/film/akira/1/"
         }
       ]
     }
