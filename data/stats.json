@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2645,
-  "uniqueFilms": 2187,
+  "totalWatched": 2647,
+  "uniqueFilms": 2189,
   "totalRewatches": 876,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -10,8 +10,8 @@
     "2.0": 110,
     "2.5": 132,
     "3.0": 303,
-    "3.5": 390,
-    "4.0": 562,
+    "3.5": 391,
+    "4.0": 563,
     "4.5": 395,
     "5.0": 602,
     "unrated": 83
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 24
+    "2026-10": 26
   },
   "heatmapData": [
     {
@@ -6255,6 +6255,10 @@
     {
       "date": "2026-10-15",
       "count": 1
+    },
+    {
+      "date": "2026-10-16",
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6266,10 +6270,10 @@
     "1960s": 32,
     "1970s": 58,
     "1980s": 90,
-    "1990s": 171,
+    "1990s": 172,
     "2000s": 263,
     "2010s": 745,
-    "2020s": 1218
+    "2020s": 1219
   },
   "mostRewatched": [
     {
@@ -6345,6 +6349,34 @@
   ],
   "recentActivity": [
     {
+      "guid": "letterboxd-entry-1541232764",
+      "filmTitle": "Death Becomes Her",
+      "filmYear": 1992,
+      "watchedDate": "2026-10-16",
+      "memberRating": 3.5,
+      "rewatch": false,
+      "tmdbId": 9374,
+      "link": "https://letterboxd.com/michaellamb/film/death-becomes-her/",
+      "title": "Death Becomes Her, 1992 - ★★★½",
+      "reviewText": "fantastic",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1540851381",
+      "filmTitle": "Whalefall",
+      "filmYear": 2026,
+      "watchedDate": "2026-10-16",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 1255833,
+      "link": "https://letterboxd.com/michaellamb/film/whalefall/",
+      "title": "Whalefall, 2026 - ★★★★",
+      "reviewText": "I love that this was some intergenerational spiritual shit. Austin Abrams is fucking HIM.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
       "guid": "letterboxd-entry-1540008239",
       "filmTitle": "Carrie",
       "filmYear": 1976,
@@ -6354,7 +6386,7 @@
       "tmdbId": 7340,
       "link": "https://letterboxd.com/michaellamb/film/carrie-1976/",
       "title": "Carrie, 1976 - ★★★★★",
-      "reviewText": "here we are, 50 years and 3 iterations later.\n\nthis film accomplishes SO MUCH. i need to prepare to discuss the differences between this film and the latest Flanagan series.",
+      "reviewText": "here we are, 50 years and 3 iterations later. i have somehow always known the story of Carrie but this was my first time actually sitting down to view it. it&#039;s one of those American stories that seems to have been absorbed into our national mythos.\n\nthis film accomplishes SO MUCH. i need to prepare to discuss the differences between this film and the latest Flanagan series.",
       "tags": [],
       "source": "rss"
     },
@@ -6593,34 +6625,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-amazing-bulk/",
       "title": "The Amazing Bulk, 2012 - ★",
       "reviewText": "the filmmakers subject viewers to the most godawful cold open, then 30 minutes later in the runtime make them watch it again.\n\ni guess the misogyny is supposed to be funny?\n\ni turned this to 2x speed and it was still too long.\n\nfuck you, Parker.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1522599944",
-      "filmTitle": "Donnie Darko",
-      "filmYear": 2001,
-      "watchedDate": "2026-10-03",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 141,
-      "link": "https://letterboxd.com/michaellamb/film/donnie-darko/2/",
-      "title": "Donnie Darko, 2001 - ★★★★★",
-      "reviewText": "I caught this in theaters for the 25th anniversary. I would have preferred to watch it last night (Oct 2) but I had to work. \n\nDrew Barrymore is so bad in this, but it&#039;s perfect?\nAlso Noah Wyle continues to be hot",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1522726808",
-      "filmTitle": "The End of Oak Street",
-      "filmYear": 2026,
-      "watchedDate": "2026-10-03",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 1101383,
-      "link": "https://letterboxd.com/michaellamb/film/the-end-of-oak-street/",
-      "title": "The End of Oak Street, 2026 - ★★★½",
-      "reviewText": "i fucken loved itwhere anne hath a will, anne hathawaySTARBUCK!\n\nthe Cornell memorabilia is... not great, at present",
       "tags": [],
       "source": "rss"
     }
@@ -8568,7 +8572,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-10-15"
+    "latest": "2026-10-16"
   },
   "byYear": {
     "2017": {
@@ -14888,8 +14892,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 285,
-      "uniqueFilms": 261,
+      "totalWatched": 287,
+      "uniqueFilms": 263,
       "totalRewatches": 96,
       "averageRating": 3.91,
       "ratingDistribution": {
@@ -14899,8 +14903,8 @@
         "2.0": 8,
         "2.5": 18,
         "3.0": 27,
-        "3.5": 38,
-        "4.0": 59,
+        "3.5": 39,
+        "4.0": 60,
         "4.5": 54,
         "5.0": 68,
         "unrated": 2
@@ -15597,6 +15601,10 @@
         {
           "date": "2026-10-15",
           "count": 1
+        },
+        {
+          "date": "2026-10-16",
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15605,10 +15613,10 @@
         "1960s": 6,
         "1970s": 6,
         "1980s": 9,
-        "1990s": 23,
+        "1990s": 24,
         "2000s": 22,
         "2010s": 46,
-        "2020s": 164
+        "2020s": 165
       },
       "mostRewatched": [
         {
