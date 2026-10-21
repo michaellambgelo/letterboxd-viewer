@@ -1,13 +1,13 @@
 {
-  "totalWatched": 2651,
-  "uniqueFilms": 2190,
+  "totalWatched": 2653,
+  "uniqueFilms": 2192,
   "totalRewatches": 879,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
     "1.0": 26,
-    "1.5": 31,
-    "2.0": 110,
+    "1.5": 32,
+    "2.0": 111,
     "2.5": 132,
     "3.0": 303,
     "3.5": 392,
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 30
+    "2026-10": 32
   },
   "heatmapData": [
     {
@@ -6267,6 +6267,10 @@
     {
       "date": "2026-10-19",
       "count": 2
+    },
+    {
+      "date": "2026-10-20",
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6281,7 +6285,7 @@
     "1990s": 172,
     "2000s": 263,
     "2010s": 745,
-    "2020s": 1223
+    "2020s": 1225
   },
   "mostRewatched": [
     {
@@ -6356,6 +6360,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1547576382",
+      "filmTitle": "V/H/S/Mixtape",
+      "filmYear": 2026,
+      "watchedDate": "2026-10-20",
+      "memberRating": 1.5,
+      "rewatch": false,
+      "tmdbId": 1742441,
+      "link": "https://letterboxd.com/michaellamb/film/v-h-s-mixtape/",
+      "title": "V/H/S/Mixtape, 2026 - ★½",
+      "reviewText": "whatever. i hope next year is better.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1547411285",
+      "filmTitle": "V/H/S/Halloween",
+      "filmYear": 2025,
+      "watchedDate": "2026-10-20",
+      "memberRating": 2.0,
+      "rewatch": false,
+      "tmdbId": 1373445,
+      "link": "https://letterboxd.com/michaellamb/film/v-h-s-halloween/",
+      "title": "V/H/S/Halloween, 2025 - ★★",
+      "reviewText": "overall entertaining. some really funny bits at the end. i really dug the &quot;As Above, So Below&quot; segment.\n\nthis begins my annual ritual of subscribing to Shudder for exactly one month",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1545772901",
       "filmTitle": "The Northman",
@@ -6605,34 +6637,6 @@
       "link": "https://letterboxd.com/michaellamb/film/digger-2026/",
       "title": "Digger, 2026 - ★★★★",
       "reviewText": "somehow it feels right that this film is considered a flop on release.\n\n&quot;you and us OR you or us&quot; really does sum it all up in terms of how oil conglomerates tend to operate.\n\nobviously evokes Birdman but i gotta say, there is nothing to really compare to Tom Cruise here except for Tom Cruise and this is probably his career best. pretty wild performance here.\n\nJesse Plemmons has probably the most interesting character motivation here and his sparse 4 minutes of screen time are memorable.\n\ni thought it was preachy and loud and quite excellent at making sure the bullhorn is never aimed at the audience — this movie seems to know who it&#039;s talking to. no, the audience is brought into the movie — there&#039;s one shot that straight up made me feel like I was in the same room. not many movies make me feel or think this way.\n\nthere was really only one sequence i would have cut, but i&#039;ll save that commentary for a spoiler-tagged review.\n\nIMAX screening at 10 PM on a Tuesday.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1525349854",
-      "filmTitle": "Five Star",
-      "filmYear": 2025,
-      "watchedDate": "2026-10-05",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": 1470374,
-      "link": "https://letterboxd.com/michaellamb/film/five-star-2025/",
-      "title": "Five Star, 2025 - ★★★★½",
-      "reviewText": "really quite wonderful",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1525822532",
-      "filmTitle": "Scream",
-      "filmYear": 1996,
-      "watchedDate": "2026-10-05",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 4232,
-      "link": "https://letterboxd.com/michaellamb/film/scream/1/",
-      "title": "Scream, 1996 - ★★★★★",
-      "reviewText": "lol I just got the &quot;Wes Carpenter&quot; joke. this is some lightning in a bottle type shit",
       "tags": [],
       "source": "rss"
     }
@@ -8587,7 +8591,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-10-19"
+    "latest": "2026-10-20"
   },
   "byYear": {
     "2017": {
@@ -14907,15 +14911,15 @@
       ]
     },
     "2026": {
-      "totalWatched": 291,
-      "uniqueFilms": 267,
+      "totalWatched": 293,
+      "uniqueFilms": 269,
       "totalRewatches": 99,
-      "averageRating": 3.91,
+      "averageRating": 3.9,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 5,
-        "1.5": 4,
-        "2.0": 8,
+        "1.5": 5,
+        "2.0": 9,
         "2.5": 18,
         "3.0": 27,
         "3.5": 40,
@@ -15628,6 +15632,10 @@
         {
           "date": "2026-10-19",
           "count": 2
+        },
+        {
+          "date": "2026-10-20",
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15639,7 +15647,7 @@
         "1990s": 24,
         "2000s": 22,
         "2010s": 46,
-        "2020s": 169
+        "2020s": 171
       },
       "mostRewatched": [
         {
