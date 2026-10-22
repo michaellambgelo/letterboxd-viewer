@@ -1,14 +1,28 @@
 [
   {
+    "guid": "letterboxd-entry-1549042564",
+    "filmTitle": "Visitor",
+    "filmYear": null,
+    "watchedDate": "2026-10-22",
+    "memberRating": 4.0,
+    "rewatch": false,
+    "tmdbId": 1285716,
+    "link": "https://letterboxd.com/michaellamb/film/visitor-3/",
+    "title": "Visitor - ★★★★",
+    "reviewText": "i love short films\n\nVISITOR | Omeleto Sci-Fi",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1547576382",
-    "filmTitle": "V/H/S/Mixtape",
+    "filmTitle": "V/H/S/MIXTAPE",
     "filmYear": 2026,
     "watchedDate": "2026-10-20",
     "memberRating": 1.5,
     "rewatch": false,
     "tmdbId": 1742441,
     "link": "https://letterboxd.com/michaellamb/film/v-h-s-mixtape/",
-    "title": "V/H/S/Mixtape, 2026 - ★½",
+    "title": "V/H/S/MIXTAPE, 2026 - ★½",
     "reviewText": "whatever. i hope next year is better.",
     "tags": [],
     "source": "rss"
