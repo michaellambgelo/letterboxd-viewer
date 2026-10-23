@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2655,
-  "uniqueFilms": 2194,
+  "totalWatched": 2656,
+  "uniqueFilms": 2195,
   "totalRewatches": 879,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -11,7 +11,7 @@
     "2.5": 132,
     "3.0": 303,
     "3.5": 392,
-    "4.0": 565,
+    "4.0": 566,
     "4.5": 396,
     "5.0": 604,
     "unrated": 83
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 34
+    "2026-10": 35
   },
   "heatmapData": [
     {
@@ -6274,7 +6274,7 @@
     },
     {
       "date": "2026-10-22",
-      "count": 2
+      "count": 3
     }
   ],
   "filmYearDistribution": {
@@ -6289,7 +6289,7 @@
     "1990s": 172,
     "2000s": 263,
     "2010s": 745,
-    "2020s": 1226
+    "2020s": 1227
   },
   "mostRewatched": [
     {
@@ -6389,6 +6389,20 @@
       "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/",
       "title": "You Can See Everything, 2026 - ★★★★★",
       "reviewText": "it&#039;s so tangibly a Nathan Fielder experiment. i loved it and am haunted by it.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1550233837",
+      "filmTitle": "Clayface",
+      "filmYear": 2026,
+      "watchedDate": "2026-10-22",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 1400940,
+      "link": "https://letterboxd.com/michaellamb/film/clayface/",
+      "title": "Clayface, 2026 - ★★★★",
+      "reviewText": "Kinda great double feature with You Can See Everything. Identity, media, performance, manipulation, power. It’s all there \n\nJXN Film Club preview screening with Offbeat and MS Film Society at Capri Theatre",
       "tags": [],
       "source": "rss"
     },
@@ -6627,20 +6641,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-wolfman/",
       "title": "The Wolfman, 2010 - ★★½",
       "reviewText": "how do you have a stacked cast and give them nothing interesting to do?",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1528150830",
-      "filmTitle": "Barbarian",
-      "filmYear": 2022,
-      "watchedDate": "2026-10-07",
-      "memberRating": 4.5,
-      "rewatch": true,
-      "tmdbId": 913290,
-      "link": "https://letterboxd.com/michaellamb/film/barbarian-2022/3/",
-      "title": "Barbarian, 2022 - ★★★★½",
-      "reviewText": "Really incredbile how tight this is. I originally thought the ending was a bit rushed, but now I think I appreciate just how much narrative pipeline Zach Cregger is able to lay down (sorry for the imagery)\n\nThis movie is so interesting and I think I need to study it\n\nBreak-in viewing of my steelbook edition (4KUHD + Blu-ray + Digital)",
       "tags": [],
       "source": "rss"
     }
@@ -14922,8 +14922,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 295,
-      "uniqueFilms": 271,
+      "totalWatched": 296,
+      "uniqueFilms": 272,
       "totalRewatches": 99,
       "averageRating": 3.9,
       "ratingDistribution": {
@@ -14934,7 +14934,7 @@
         "2.5": 18,
         "3.0": 27,
         "3.5": 40,
-        "4.0": 62,
+        "4.0": 63,
         "4.5": 55,
         "5.0": 70,
         "unrated": 2
@@ -15650,7 +15650,7 @@
         },
         {
           "date": "2026-10-22",
-          "count": 2
+          "count": 3
         }
       ],
       "filmYearDistribution": {
@@ -15662,7 +15662,7 @@
         "1990s": 24,
         "2000s": 22,
         "2010s": 46,
-        "2020s": 172
+        "2020s": 173
       },
       "mostRewatched": [
         {
