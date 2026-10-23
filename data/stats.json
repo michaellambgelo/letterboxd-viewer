@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2654,
-  "uniqueFilms": 2193,
+  "totalWatched": 2655,
+  "uniqueFilms": 2194,
   "totalRewatches": 879,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -13,7 +13,7 @@
     "3.5": 392,
     "4.0": 565,
     "4.5": 396,
-    "5.0": 603,
+    "5.0": 604,
     "unrated": 83
   },
   "filmsByMonth": {
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 33
+    "2026-10": 34
   },
   "heatmapData": [
     {
@@ -6274,7 +6274,7 @@
     },
     {
       "date": "2026-10-22",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6289,7 +6289,7 @@
     "1990s": 172,
     "2000s": 263,
     "2010s": 745,
-    "2020s": 1225
+    "2020s": 1226
   },
   "mostRewatched": [
     {
@@ -6375,6 +6375,20 @@
       "link": "https://letterboxd.com/michaellamb/film/visitor-3/",
       "title": "Visitor - ★★★★",
       "reviewText": "i love short films\n\nVISITOR | Omeleto Sci-Fi",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1549989520",
+      "filmTitle": "You Can See Everything",
+      "filmYear": 2026,
+      "watchedDate": "2026-10-22",
+      "memberRating": 5.0,
+      "rewatch": false,
+      "tmdbId": 1765072,
+      "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/",
+      "title": "You Can See Everything, 2026 - ★★★★★",
+      "reviewText": "it&#039;s so tangibly a Nathan Fielder experiment. i loved it and am haunted by it.",
       "tags": [],
       "source": "rss"
     },
@@ -6629,23 +6643,16 @@
       "reviewText": "Really incredbile how tight this is. I originally thought the ending was a bit rushed, but now I think I appreciate just how much narrative pipeline Zach Cregger is able to lay down (sorry for the imagery)\n\nThis movie is so interesting and I think I need to study it\n\nBreak-in viewing of my steelbook edition (4KUHD + Blu-ray + Digital)",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1528366785",
-      "filmTitle": "Nope",
-      "filmYear": 2022,
-      "watchedDate": "2026-10-07",
-      "memberRating": 4.0,
-      "rewatch": true,
-      "tmdbId": 762504,
-      "link": "https://letterboxd.com/michaellamb/film/nope/2/",
-      "title": "Nope, 2022 - ★★★★",
-      "reviewText": "Better than I recall \n\nBreak-in viewing of the physical media",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "You Can See Everything",
+      "filmYear": 2026,
+      "watchedDate": "2026-10-22",
+      "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/",
+      "tmdbId": 1765072
+    },
     {
       "filmTitle": "Sinners",
       "filmYear": 2025,
@@ -14915,8 +14922,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 294,
-      "uniqueFilms": 270,
+      "totalWatched": 295,
+      "uniqueFilms": 271,
       "totalRewatches": 99,
       "averageRating": 3.9,
       "ratingDistribution": {
@@ -14929,7 +14936,7 @@
         "3.5": 40,
         "4.0": 62,
         "4.5": 55,
-        "5.0": 69,
+        "5.0": 70,
         "unrated": 2
       },
       "heatmapData": [
@@ -15643,7 +15650,7 @@
         },
         {
           "date": "2026-10-22",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15655,7 +15662,7 @@
         "1990s": 24,
         "2000s": 22,
         "2010s": 46,
-        "2020s": 171
+        "2020s": 172
       },
       "mostRewatched": [
         {
@@ -15695,6 +15702,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "You Can See Everything",
+          "filmYear": 2026,
+          "watchedDate": "2026-10-22",
+          "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/"
+        },
         {
           "filmTitle": "Sinners",
           "filmYear": 2025,
@@ -15748,12 +15761,6 @@
           "filmYear": 2025,
           "watchedDate": "2026-09-22",
           "link": "https://letterboxd.com/michaellamb/film/superman-2025/3/"
-        },
-        {
-          "filmTitle": "Dune",
-          "filmYear": 2021,
-          "watchedDate": "2026-09-14",
-          "link": "https://letterboxd.com/michaellamb/film/dune-2021/11/"
         }
       ]
     }
