@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2657,
-  "uniqueFilms": 2195,
+  "totalWatched": 2658,
+  "uniqueFilms": 2196,
   "totalRewatches": 880,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -8,7 +8,7 @@
     "1.0": 26,
     "1.5": 32,
     "2.0": 111,
-    "2.5": 132,
+    "2.5": 133,
     "3.0": 303,
     "3.5": 392,
     "4.0": 566,
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 36
+    "2026-10": 37
   },
   "heatmapData": [
     {
@@ -6279,6 +6279,10 @@
     {
       "date": "2026-10-24",
       "count": 1
+    },
+    {
+      "date": "2026-10-25",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6293,7 +6297,7 @@
     "1990s": 172,
     "2000s": 263,
     "2010s": 745,
-    "2020s": 1228
+    "2020s": 1229
   },
   "mostRewatched": [
     {
@@ -6369,6 +6373,20 @@
   ],
   "recentActivity": [
     {
+      "guid": "letterboxd-entry-1554056981",
+      "filmTitle": "Barbarians",
+      "filmYear": 2021,
+      "watchedDate": "2026-10-25",
+      "memberRating": 2.5,
+      "rewatch": false,
+      "tmdbId": 811076,
+      "link": "https://letterboxd.com/michaellamb/film/barbarians-2021/",
+      "title": "Barbarians, 2021 - ★★½",
+      "reviewText": "it&#039;s no Barbarian (2022) but it&#039;s a decent time.\n\ni can&#039;t say i was surprised by anything, but i was satisfied.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
       "guid": "letterboxd-entry-1552858025",
       "filmTitle": "You Can See Everything",
       "filmYear": 2026,
@@ -6378,7 +6396,7 @@
       "tmdbId": 1765072,
       "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/1/",
       "title": "You Can See Everything, 2026 - ★★★★★",
-      "reviewText": "Second watch. \n\nJoined by Russell, Jon Nolan, Ryan, Amy, Brandon, PJ, and Jordan",
+      "reviewText": "Second watch. \n\nJoined by Russell, Jon Nolan, Ryan, Amy, Brandon, PJ, and Jordan.\n\nI timed about 70 minutes of debrief over beers following the film with Jon Nolan, Ryan, and Amy. \n\nIf you asked 100 people to share their top 10 moments from the film, you&#039;d have 100 different lists.",
       "tags": [],
       "source": "rss"
     },
@@ -6631,20 +6649,6 @@
       "link": "https://letterboxd.com/michaellamb/film/red-state/",
       "title": "Red State, 2011 - ★★★★",
       "reviewText": "once again, thank you Dead Meat.\n\njesus christ, can&#039;t believe this is free",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1530299517",
-      "filmTitle": "Other Mommy",
-      "filmYear": 2026,
-      "watchedDate": "2026-10-09",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": 1400837,
-      "link": "https://letterboxd.com/michaellamb/film/other-mommy/",
-      "title": "Other Mommy, 2026 - ★★★",
-      "reviewText": "The guy on the row behind me shouted, “What the fuck was that?” at the last shot\n\nThis does have a lot of problems, but it also looks good. and Jessica Chastain is terrifying again",
       "tags": [],
       "source": "rss"
     }
@@ -8606,7 +8610,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-10-24"
+    "latest": "2026-10-25"
   },
   "byYear": {
     "2017": {
@@ -14926,16 +14930,16 @@
       ]
     },
     "2026": {
-      "totalWatched": 297,
-      "uniqueFilms": 272,
+      "totalWatched": 298,
+      "uniqueFilms": 273,
       "totalRewatches": 100,
-      "averageRating": 3.91,
+      "averageRating": 3.9,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 5,
         "1.5": 5,
         "2.0": 9,
-        "2.5": 18,
+        "2.5": 19,
         "3.0": 27,
         "3.5": 40,
         "4.0": 63,
@@ -15659,6 +15663,10 @@
         {
           "date": "2026-10-24",
           "count": 1
+        },
+        {
+          "date": "2026-10-25",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15670,7 +15678,7 @@
         "1990s": 24,
         "2000s": 22,
         "2010s": 46,
-        "2020s": 174
+        "2020s": 175
       },
       "mostRewatched": [
         {
