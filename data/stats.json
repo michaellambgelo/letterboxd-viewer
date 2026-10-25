@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2656,
+  "totalWatched": 2657,
   "uniqueFilms": 2195,
-  "totalRewatches": 879,
+  "totalRewatches": 880,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -13,7 +13,7 @@
     "3.5": 392,
     "4.0": 566,
     "4.5": 396,
-    "5.0": 604,
+    "5.0": 605,
     "unrated": 83
   },
   "filmsByMonth": {
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 35
+    "2026-10": 36
   },
   "heatmapData": [
     {
@@ -6275,6 +6275,10 @@
     {
       "date": "2026-10-22",
       "count": 3
+    },
+    {
+      "date": "2026-10-24",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6289,7 +6293,7 @@
     "1990s": 172,
     "2000s": 263,
     "2010s": 745,
-    "2020s": 1227
+    "2020s": 1228
   },
   "mostRewatched": [
     {
@@ -6364,6 +6368,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1552858025",
+      "filmTitle": "You Can See Everything",
+      "filmYear": 2026,
+      "watchedDate": "2026-10-24",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 1765072,
+      "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/1/",
+      "title": "You Can See Everything, 2026 - ★★★★★",
+      "reviewText": "Second watch. \n\nJoined by Russell, Jon Nolan, Ryan, Amy, Brandon, PJ, and Jordan",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1549042564",
       "filmTitle": "Visitor",
@@ -6629,28 +6647,14 @@
       "reviewText": "The guy on the row behind me shouted, “What the fuck was that?” at the last shot\n\nThis does have a lot of problems, but it also looks good. and Jessica Chastain is terrifying again",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1529654221",
-      "filmTitle": "The Wolfman",
-      "filmYear": 2010,
-      "watchedDate": "2026-10-08",
-      "memberRating": 2.5,
-      "rewatch": false,
-      "tmdbId": 7978,
-      "link": "https://letterboxd.com/michaellamb/film/the-wolfman/",
-      "title": "The Wolfman, 2010 - ★★½",
-      "reviewText": "how do you have a stacked cast and give them nothing interesting to do?",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
     {
       "filmTitle": "You Can See Everything",
       "filmYear": 2026,
-      "watchedDate": "2026-10-22",
-      "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/",
+      "watchedDate": "2026-10-24",
+      "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/1/",
       "tmdbId": 1765072
     },
     {
@@ -8602,7 +8606,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-10-22"
+    "latest": "2026-10-24"
   },
   "byYear": {
     "2017": {
@@ -14922,10 +14926,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 296,
+      "totalWatched": 297,
       "uniqueFilms": 272,
-      "totalRewatches": 99,
-      "averageRating": 3.9,
+      "totalRewatches": 100,
+      "averageRating": 3.91,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 5,
@@ -14936,7 +14940,7 @@
         "3.5": 40,
         "4.0": 63,
         "4.5": 55,
-        "5.0": 70,
+        "5.0": 71,
         "unrated": 2
       },
       "heatmapData": [
@@ -15651,6 +15655,10 @@
         {
           "date": "2026-10-22",
           "count": 3
+        },
+        {
+          "date": "2026-10-24",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15662,7 +15670,7 @@
         "1990s": 24,
         "2000s": 22,
         "2010s": 46,
-        "2020s": 173
+        "2020s": 174
       },
       "mostRewatched": [
         {
@@ -15681,6 +15689,13 @@
         },
         {
           "count": 2,
+          "filmTitle": "You Can See Everything",
+          "filmYear": 2026,
+          "tmdbId": 1765072,
+          "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/"
+        },
+        {
+          "count": 2,
           "filmTitle": "Digger",
           "filmYear": 2026,
           "tmdbId": 1248832,
@@ -15692,21 +15707,14 @@
           "filmYear": 2013,
           "tmdbId": 152601,
           "link": "https://letterboxd.com/michaellamb/film/her/"
-        },
-        {
-          "count": 2,
-          "filmTitle": "Resident Evil",
-          "filmYear": 2026,
-          "tmdbId": 1423191,
-          "link": "https://letterboxd.com/michaellamb/film/resident-evil-2026/"
         }
       ],
       "highestRated": [
         {
           "filmTitle": "You Can See Everything",
           "filmYear": 2026,
-          "watchedDate": "2026-10-22",
-          "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/"
+          "watchedDate": "2026-10-24",
+          "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/1/"
         },
         {
           "filmTitle": "Sinners",
