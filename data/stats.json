@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2658,
-  "uniqueFilms": 2196,
+  "totalWatched": 2659,
+  "uniqueFilms": 2197,
   "totalRewatches": 880,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -11,7 +11,7 @@
     "2.5": 133,
     "3.0": 303,
     "3.5": 392,
-    "4.0": 566,
+    "4.0": 567,
     "4.5": 396,
     "5.0": 605,
     "unrated": 83
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 37
+    "2026-10": 38
   },
   "heatmapData": [
     {
@@ -6283,6 +6283,10 @@
     {
       "date": "2026-10-25",
       "count": 1
+    },
+    {
+      "date": "2026-10-26",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6295,7 +6299,7 @@
     "1970s": 58,
     "1980s": 90,
     "1990s": 172,
-    "2000s": 263,
+    "2000s": 264,
     "2010s": 745,
     "2020s": 1229
   },
@@ -6372,6 +6376,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1555987779",
+      "filmTitle": "Son of Rambow",
+      "filmYear": 2007,
+      "watchedDate": "2026-10-26",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 13258,
+      "link": "https://letterboxd.com/michaellamb/film/son-of-rambow/",
+      "title": "Son of Rambow, 2007 - ★★★★",
+      "reviewText": "I love tha movies!",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1554056981",
       "filmTitle": "Barbarians",
@@ -6635,20 +6653,6 @@
       "link": "https://letterboxd.com/michaellamb/film/the-social-reckoning/",
       "title": "The Social Reckoning, 2026 - ★★★½",
       "reviewText": "I enhanced my viewing experience by going into it just after episode 7 of Mike Flanagan’s Carrie (2026)\n\nThis works. It’s not boring, and it’s not attempting to be The Social Network (2010).",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1534471172",
-      "filmTitle": "Red State",
-      "filmYear": 2011,
-      "watchedDate": "2026-10-11",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 48572,
-      "link": "https://letterboxd.com/michaellamb/film/red-state/",
-      "title": "Red State, 2011 - ★★★★",
-      "reviewText": "once again, thank you Dead Meat.\n\njesus christ, can&#039;t believe this is free",
       "tags": [],
       "source": "rss"
     }
@@ -8610,7 +8614,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-10-25"
+    "latest": "2026-10-26"
   },
   "byYear": {
     "2017": {
@@ -14930,8 +14934,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 298,
-      "uniqueFilms": 273,
+      "totalWatched": 299,
+      "uniqueFilms": 274,
       "totalRewatches": 100,
       "averageRating": 3.9,
       "ratingDistribution": {
@@ -14942,7 +14946,7 @@
         "2.5": 19,
         "3.0": 27,
         "3.5": 40,
-        "4.0": 63,
+        "4.0": 64,
         "4.5": 55,
         "5.0": 71,
         "unrated": 2
@@ -15667,6 +15671,10 @@
         {
           "date": "2026-10-25",
           "count": 1
+        },
+        {
+          "date": "2026-10-26",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15676,7 +15684,7 @@
         "1970s": 6,
         "1980s": 9,
         "1990s": 24,
-        "2000s": 22,
+        "2000s": 23,
         "2010s": 46,
         "2020s": 175
       },
