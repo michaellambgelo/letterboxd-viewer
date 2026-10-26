@@ -56,6 +56,7 @@ Letterboxd RSS  ──►  scripts/download_rss.py  ──►  data/rss.xml
 - `scripts/download_rss.py` — fetches `https://letterboxd.com/michaellamb/rss/`, writes raw `data/rss.xml` and `data/cleaned_rss.xml` (HTML-cleaned descriptions)
 - `scripts/extract_history.py` — merges archive baseline + working-tree `data/rss.xml` deltas **+ RSS-sourced entries carried forward from the previous `viewing_history.json`**, writes `data/viewing_history.json` (sorted by `watchedDate` desc). The carry-forward is load-bearing: RSS is a ~50-entry sliding window, so without it everything between the export date and the oldest item still in the feed silently vanishes (this happened — Jul 9 to Sep 3 2026 went missing). `--backfill-from-git` replays every committed `data/rss.xml` to recover entries that already scrolled out (needs `git fetch --unshallow` in a shallow clone).
 - `scripts/compute_stats.py` — reads `viewing_history.json` + archive sidecars, writes `data/stats.json` with pre-computed lifetime stats, `byYear` per-diary-year slices, `watchlist`, `likedFilms`, `favoriteFilms`, `lists`, `tagCloud`, and `archiveExportDate`
+- `scripts/test_extract_history.py` — stdlib unittest (no install): `python3 -m unittest discover -s scripts -p 'test_*.py'`. Covers RSS parsing and the archive/carry-forward/current-RSS merge in `extract_history.main()`.
 
 **Workflows:**
 - `.github/workflows/download-data-and-assets.yml` — cron `0 */6 * * *`. Runs the 3-script pipeline, commits any changed files in `data/`, and triggers `deploy.yml` via `actions/github-script`
