@@ -35,8 +35,9 @@ Letterboxd RSS  ──►  scripts/download_rss.py  ──►  data/rss.xml
                                                        ▼
                      scripts/extract_history.py  ──►  data/viewing_history.json
                      (archive baseline + RSS deltas       (full diary, deduped by
-                      newer than archive export date)      (name, year, watchedDate))
-                                                       │
+                      newer than archive export date       (name, year, watchedDate))
+                      + RSS entries carried forward  ◄──────────┘
+                      from the previous history)       │
                                                        ▼
                      scripts/compute_stats.py     ──►  data/stats.json
                      (also pulls watchlist, likes,
@@ -48,7 +49,7 @@ Letterboxd RSS  ──►  scripts/download_rss.py  ──►  data/rss.xml
                      (vanilla JS + Chart.js, year selector)
 ```
 
-The Letterboxd export under `data/archive/letterboxd-<user>-YYYY-MM-DD-HH-MM-utc/` is the historical baseline (full diary, watchlist, ratings, reviews, lists, likes, favorites). RSS only exposes the 50 most recent entries and is layered on top to capture activity logged **after** the export date. The export folder name encodes the export date — `load_archive.get_export_date()` parses it.
+The Letterboxd export under `data/archive/letterboxd-<user>-YYYY-MM-DD-HH-MM-utc/` is the historical baseline (full diary, watchlist, ratings, reviews, lists, likes, favorites). RSS only exposes the 50 most recent entries and is layered on top to capture activity logged **after** the export date. Because RSS is a sliding window, `extract_history.py` also carries forward every RSS-sourced entry from the previous `viewing_history.json`; without that, entries logged after the export date vanish once they scroll out of the feed. The export folder name encodes the export date — `load_archive.get_export_date()` parses it.
 
 Merge key: `(filmTitle, filmYear, watchedDate)`. RSS guids and archive `boxd.it` URIs cannot be matched directly without a network redirect; the composite key is unique because Letterboxd allows at most one diary entry per `(film, watchedDate)`.
 
@@ -58,7 +59,7 @@ Merge key: `(filmTitle, filmYear, watchedDate)`. RSS guids and archive `boxd.it`
 |---|---|---|
 | `scripts/download_rss.py` | `https://letterboxd.com/michaellamb/rss/` | `data/rss.xml`, `data/cleaned_rss.xml` |
 | `scripts/load_archive.py` | `data/archive/letterboxd-<user>-<date>/*.csv` | (library — used by the two scripts below) |
-| `scripts/extract_history.py` | archive baseline + `data/rss.xml` deltas | `data/viewing_history.json` |
+| `scripts/extract_history.py` | archive baseline + `data/rss.xml` deltas + RSS-sourced entries carried forward from the previous `data/viewing_history.json` | `data/viewing_history.json` |
 | `scripts/compute_stats.py` | `viewing_history.json` + archive sidecars | `data/stats.json` |
 
 `stats.json` contains every field the dashboard consumes — lifetime stat totals, rating distribution, heatmap series, decade buckets, most-rewatched/highest-rated lists, recent activity, watchlist summary, favorite films, lists, tag cloud, profile, archive export date, and a `byYear` block with per-diary-year slices for the year selector. The frontend is a pure static-file consumer — no runtime computation beyond Chart.js rendering, the heatmap grid layout, and the year-selector swap.
