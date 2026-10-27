@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2659,
-  "uniqueFilms": 2197,
+  "totalWatched": 2660,
+  "uniqueFilms": 2198,
   "totalRewatches": 880,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -10,7 +10,7 @@
     "2.0": 111,
     "2.5": 133,
     "3.0": 303,
-    "3.5": 392,
+    "3.5": 393,
     "4.0": 567,
     "4.5": 396,
     "5.0": 605,
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 38
+    "2026-10": 39
   },
   "heatmapData": [
     {
@@ -6286,7 +6286,7 @@
     },
     {
       "date": "2026-10-26",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6301,7 +6301,7 @@
     "1990s": 172,
     "2000s": 264,
     "2010s": 745,
-    "2020s": 1229
+    "2020s": 1230
   },
   "mostRewatched": [
     {
@@ -6387,6 +6387,20 @@
       "link": "https://letterboxd.com/michaellamb/film/son-of-rambow/",
       "title": "Son of Rambow, 2007 - ★★★★",
       "reviewText": "I love tha movies!",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1556522149",
+      "filmTitle": "Shift",
+      "filmYear": 2025,
+      "watchedDate": "2026-10-26",
+      "memberRating": 3.5,
+      "rewatch": false,
+      "tmdbId": 1522239,
+      "link": "https://letterboxd.com/michaellamb/film/shift-2025-1/",
+      "title": "Shift, 2025 - ★★★½",
+      "reviewText": "some pretty good vfx for a short. neat.\n\nShift | Horror Short Film | ALTER",
       "tags": [],
       "source": "rss"
     },
@@ -6639,20 +6653,6 @@
       "link": "https://letterboxd.com/michaellamb/film/carrie-2026/",
       "title": "Carrie, 2026 - ★★★½",
       "reviewText": "Bravo, Flanagan and team. I thought the fire effects were a bit cheap, but I chalk that up to budgeting and maybe a little slop.\n\nSTARBUCK!\n\nI loved Carrie. That poor girl.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1533609745",
-      "filmTitle": "The Social Reckoning",
-      "filmYear": 2026,
-      "watchedDate": "2026-10-11",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 1281331,
-      "link": "https://letterboxd.com/michaellamb/film/the-social-reckoning/",
-      "title": "The Social Reckoning, 2026 - ★★★½",
-      "reviewText": "I enhanced my viewing experience by going into it just after episode 7 of Mike Flanagan’s Carrie (2026)\n\nThis works. It’s not boring, and it’s not attempting to be The Social Network (2010).",
       "tags": [],
       "source": "rss"
     }
@@ -14934,8 +14934,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 299,
-      "uniqueFilms": 274,
+      "totalWatched": 300,
+      "uniqueFilms": 275,
       "totalRewatches": 100,
       "averageRating": 3.9,
       "ratingDistribution": {
@@ -14945,7 +14945,7 @@
         "2.0": 9,
         "2.5": 19,
         "3.0": 27,
-        "3.5": 40,
+        "3.5": 41,
         "4.0": 64,
         "4.5": 55,
         "5.0": 71,
@@ -15674,7 +15674,7 @@
         },
         {
           "date": "2026-10-26",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15686,7 +15686,7 @@
         "1990s": 24,
         "2000s": 23,
         "2010s": 46,
-        "2020s": 175
+        "2020s": 176
       },
       "mostRewatched": [
         {
