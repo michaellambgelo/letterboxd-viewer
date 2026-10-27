@@ -216,5 +216,8 @@ made `boxd-card` a Chrome extension.) Everything must be fetched server-side.
 - `worker/SETUP.md` is the one-time runbook (KV, deploy, Access, verification).
 - `worker/test.mjs` — `npm test`, no dependencies. Covers the regex feed parser
   against a fixture plus a smoke test against the committed `data/rss.xml`.
+- `scripts/test_extract_history.py` — `python -m pytest scripts/`. Covers
+  `extract_history.py`'s parsing and the archive + RSS + carry-forward merge
+  against a tmp data dir. Both suites run in `.github/workflows/tests.yml`.
 - **Icons are Font Awesome 5.15.4** (vendored). FA6 names (`fa-xmark`,
   `fa-chart-simple`) render as blank boxes.
