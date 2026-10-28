@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2660,
-  "uniqueFilms": 2198,
+  "totalWatched": 2661,
+  "uniqueFilms": 2199,
   "totalRewatches": 880,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -12,7 +12,7 @@
     "3.0": 303,
     "3.5": 393,
     "4.0": 567,
-    "4.5": 396,
+    "4.5": 397,
     "5.0": 605,
     "unrated": 83
   },
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 39
+    "2026-10": 40
   },
   "heatmapData": [
     {
@@ -6287,6 +6287,10 @@
     {
       "date": "2026-10-26",
       "count": 2
+    },
+    {
+      "date": "2026-10-27",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6301,7 +6305,7 @@
     "1990s": 172,
     "2000s": 264,
     "2010s": 745,
-    "2020s": 1230
+    "2020s": 1231
   },
   "mostRewatched": [
     {
@@ -6376,6 +6380,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1559243763",
+      "filmTitle": "Wildwood",
+      "filmYear": 2026,
+      "watchedDate": "2026-10-27",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 791523,
+      "link": "https://letterboxd.com/michaellamb/film/wildwood-2026/",
+      "title": "Wildwood, 2026 - ★★★★½",
+      "reviewText": "Really beautiful. Absolutely worth a 10 pm Tuesday screening.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1555987779",
       "filmTitle": "Son of Rambow",
@@ -6639,20 +6657,6 @@
       "link": "https://letterboxd.com/michaellamb/film/fresh-meat-2026/",
       "title": "Fresh Meat, 2026 - ★★★",
       "reviewText": "Watched with Bear and Angel\n\nThis one-show screening in Pearl, MS, brought out 16 moviegoers\n\nI think it could have dropped 3 segments but there’s a lot to enjoy here \n\nI voted Jinx as my favorite short",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1533613332",
-      "filmTitle": "Carrie",
-      "filmYear": 2026,
-      "watchedDate": "2026-10-11",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://letterboxd.com/michaellamb/film/carrie-2026/",
-      "title": "Carrie, 2026 - ★★★½",
-      "reviewText": "Bravo, Flanagan and team. I thought the fire effects were a bit cheap, but I chalk that up to budgeting and maybe a little slop.\n\nSTARBUCK!\n\nI loved Carrie. That poor girl.",
       "tags": [],
       "source": "rss"
     }
@@ -8614,7 +8618,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-10-26"
+    "latest": "2026-10-27"
   },
   "byYear": {
     "2017": {
@@ -14934,8 +14938,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 300,
-      "uniqueFilms": 275,
+      "totalWatched": 301,
+      "uniqueFilms": 276,
       "totalRewatches": 100,
       "averageRating": 3.9,
       "ratingDistribution": {
@@ -14947,7 +14951,7 @@
         "3.0": 27,
         "3.5": 41,
         "4.0": 64,
-        "4.5": 55,
+        "4.5": 56,
         "5.0": 71,
         "unrated": 2
       },
@@ -15675,6 +15679,10 @@
         {
           "date": "2026-10-26",
           "count": 2
+        },
+        {
+          "date": "2026-10-27",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15686,7 +15694,7 @@
         "1990s": 24,
         "2000s": 23,
         "2010s": 46,
-        "2020s": 176
+        "2020s": 177
       },
       "mostRewatched": [
         {
