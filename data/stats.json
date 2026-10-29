@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2661,
+  "totalWatched": 2662,
   "uniqueFilms": 2199,
-  "totalRewatches": 880,
+  "totalRewatches": 881,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -13,7 +13,7 @@
     "3.5": 393,
     "4.0": 567,
     "4.5": 397,
-    "5.0": 605,
+    "5.0": 606,
     "unrated": 83
   },
   "filmsByMonth": {
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 40
+    "2026-10": 41
   },
   "heatmapData": [
     {
@@ -6291,6 +6291,10 @@
     {
       "date": "2026-10-27",
       "count": 1
+    },
+    {
+      "date": "2026-10-28",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6305,7 +6309,7 @@
     "1990s": 172,
     "2000s": 264,
     "2010s": 745,
-    "2020s": 1231
+    "2020s": 1232
   },
   "mostRewatched": [
     {
@@ -6380,6 +6384,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1560536848",
+      "filmTitle": "KPop Demon Hunters",
+      "filmYear": 2025,
+      "watchedDate": "2026-10-28",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 803796,
+      "link": "https://letterboxd.com/michaellamb/film/kpop-demon-hunters/4/",
+      "title": "KPop Demon Hunters, 2025 - ★★★★★",
+      "reviewText": "Watched on Wednesday October 28, 2026.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1559243763",
       "filmTitle": "Wildwood",
@@ -6645,23 +6663,16 @@
       "reviewText": "Nightfall | Horror Short Film | ALTER | Starring Teri Hatcher",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1535984358",
-      "filmTitle": "Fresh Meat",
-      "filmYear": 2026,
-      "watchedDate": "2026-10-12",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": 1737740,
-      "link": "https://letterboxd.com/michaellamb/film/fresh-meat-2026/",
-      "title": "Fresh Meat, 2026 - ★★★",
-      "reviewText": "Watched with Bear and Angel\n\nThis one-show screening in Pearl, MS, brought out 16 moviegoers\n\nI think it could have dropped 3 segments but there’s a lot to enjoy here \n\nI voted Jinx as my favorite short",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "KPop Demon Hunters",
+      "filmYear": 2025,
+      "watchedDate": "2026-10-28",
+      "link": "https://letterboxd.com/michaellamb/film/kpop-demon-hunters/4/",
+      "tmdbId": 803796
+    },
     {
       "filmTitle": "You Can See Everything",
       "filmYear": 2026,
@@ -8618,7 +8629,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-10-27"
+    "latest": "2026-10-28"
   },
   "byYear": {
     "2017": {
@@ -14938,9 +14949,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 301,
-      "uniqueFilms": 276,
-      "totalRewatches": 100,
+      "totalWatched": 302,
+      "uniqueFilms": 277,
+      "totalRewatches": 101,
       "averageRating": 3.9,
       "ratingDistribution": {
         "0.5": 2,
@@ -14952,7 +14963,7 @@
         "3.5": 41,
         "4.0": 64,
         "4.5": 56,
-        "5.0": 71,
+        "5.0": 72,
         "unrated": 2
       },
       "heatmapData": [
@@ -15683,6 +15694,10 @@
         {
           "date": "2026-10-27",
           "count": 1
+        },
+        {
+          "date": "2026-10-28",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15694,7 +15709,7 @@
         "1990s": 24,
         "2000s": 23,
         "2010s": 46,
-        "2020s": 177
+        "2020s": 178
       },
       "mostRewatched": [
         {
@@ -15734,6 +15749,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "KPop Demon Hunters",
+          "filmYear": 2025,
+          "watchedDate": "2026-10-28",
+          "link": "https://letterboxd.com/michaellamb/film/kpop-demon-hunters/4/"
+        },
         {
           "filmTitle": "You Can See Everything",
           "filmYear": 2026,
@@ -15787,12 +15808,6 @@
           "filmYear": 2025,
           "watchedDate": "2026-09-25",
           "link": "https://letterboxd.com/michaellamb/film/hamnet/5/"
-        },
-        {
-          "filmTitle": "Superman",
-          "filmYear": 2025,
-          "watchedDate": "2026-09-22",
-          "link": "https://letterboxd.com/michaellamb/film/superman-2025/3/"
         }
       ]
     }
