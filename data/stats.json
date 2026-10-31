@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2665,
-  "uniqueFilms": 2201,
+  "totalWatched": 2666,
+  "uniqueFilms": 2202,
   "totalRewatches": 882,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -10,7 +10,7 @@
     "2.0": 111,
     "2.5": 133,
     "3.0": 304,
-    "3.5": 393,
+    "3.5": 394,
     "4.0": 568,
     "4.5": 397,
     "5.0": 607,
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 44
+    "2026-10": 45
   },
   "heatmapData": [
     {
@@ -6299,6 +6299,10 @@
     {
       "date": "2026-10-29",
       "count": 3
+    },
+    {
+      "date": "2026-10-30",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6313,7 +6317,7 @@
     "1990s": 172,
     "2000s": 264,
     "2010s": 746,
-    "2020s": 1232
+    "2020s": 1233
   },
   "mostRewatched": [
     {
@@ -6388,6 +6392,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1564949481",
+      "filmTitle": "Remain Calm",
+      "filmYear": 2026,
+      "watchedDate": "2026-10-30",
+      "memberRating": 3.5,
+      "rewatch": false,
+      "tmdbId": 1796809,
+      "link": "https://letterboxd.com/michaellamb/film/remain-calm-2026/",
+      "title": "Remain Calm, 2026 - ★★★½",
+      "reviewText": "zoran spotted. this was hilarious \n\nREMAIN CALM - A Horror Short starring Pauly Shore, Nick Swardson and Doug Jones",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1562116206",
       "filmTitle": "Wake in Fright",
@@ -6651,20 +6669,6 @@
       "link": "https://letterboxd.com/michaellamb/film/whalefall/",
       "title": "Whalefall, 2026 - ★★★★",
       "reviewText": "I love that this was some intergenerational spiritual shit. Austin Abrams is fucking HIM.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1541484737",
-      "filmTitle": "Sinners",
-      "filmYear": 2025,
-      "watchedDate": "2026-10-16",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 1233413,
-      "link": "https://letterboxd.com/michaellamb/film/sinners-2025/16/",
-      "title": "Sinners, 2025 - ★★★★★",
-      "reviewText": "happy Sinners day to all who celebrate",
       "tags": [],
       "source": "rss"
     }
@@ -8640,7 +8644,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-10-29"
+    "latest": "2026-10-30"
   },
   "byYear": {
     "2017": {
@@ -14960,10 +14964,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 305,
-      "uniqueFilms": 280,
+      "totalWatched": 306,
+      "uniqueFilms": 281,
       "totalRewatches": 102,
-      "averageRating": 3.91,
+      "averageRating": 3.9,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 5,
@@ -14971,7 +14975,7 @@
         "2.0": 9,
         "2.5": 19,
         "3.0": 28,
-        "3.5": 41,
+        "3.5": 42,
         "4.0": 65,
         "4.5": 56,
         "5.0": 73,
@@ -15713,6 +15717,10 @@
         {
           "date": "2026-10-29",
           "count": 3
+        },
+        {
+          "date": "2026-10-30",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15724,7 +15732,7 @@
         "1990s": 24,
         "2000s": 23,
         "2010s": 47,
-        "2020s": 178
+        "2020s": 179
       },
       "mostRewatched": [
         {
