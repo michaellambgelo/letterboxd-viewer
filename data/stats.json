@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2667,
-  "uniqueFilms": 2203,
+  "totalWatched": 2668,
+  "uniqueFilms": 2204,
   "totalRewatches": 882,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -12,7 +12,7 @@
     "3.0": 304,
     "3.5": 394,
     "4.0": 568,
-    "4.5": 398,
+    "4.5": 399,
     "5.0": 607,
     "unrated": 83
   },
@@ -105,7 +105,7 @@
     "2026-07": 38,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 46
+    "2026-10": 47
   },
   "heatmapData": [
     {
@@ -6306,7 +6306,7 @@
     },
     {
       "date": "2026-10-31",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6321,7 +6321,7 @@
     "1990s": 172,
     "2000s": 264,
     "2010s": 746,
-    "2020s": 1233
+    "2020s": 1234
   },
   "mostRewatched": [
     {
@@ -6406,6 +6406,20 @@
       "tmdbId": 1813355,
       "link": "https://letterboxd.com/michaellamb/film/it-welcome-to-derry-a-story-of-derry/",
       "title": "IT: Welcome to Derry - A Story of Derry - ★★★★½",
+      "reviewText": "absolute gas",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1566026201",
+      "filmTitle": "A Story of Derry",
+      "filmYear": 2026,
+      "watchedDate": "2026-10-31",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 1813355,
+      "link": "https://letterboxd.com/michaellamb/film/a-story-of-derry/",
+      "title": "A Story of Derry, 2026 - ★★★★½",
       "reviewText": "absolute gas",
       "tags": [],
       "source": "rss"
@@ -6659,20 +6673,6 @@
       "link": "https://letterboxd.com/michaellamb/film/wecrashed/",
       "title": "WeCrashed, 2022 - ★★★½",
       "reviewText": "i enjoyed it but would have liked it to be maybe be one or two episodes shorter. i got really tired of watching Jared Leto and i&#039;m not sorry.\n\nhonestly, i only watched this because my market doesn&#039;t have You Can See Everything yet and i&#039;ve already watched The Dropout and everything else Nathan Fielder has done and i just needed a Two Minutes Hate regarding billionaires",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1541232764",
-      "filmTitle": "Death Becomes Her",
-      "filmYear": 1992,
-      "watchedDate": "2026-10-16",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": 9374,
-      "link": "https://letterboxd.com/michaellamb/film/death-becomes-her/",
-      "title": "Death Becomes Her, 1992 - ★★★½",
-      "reviewText": "fantastic",
       "tags": [],
       "source": "rss"
     }
@@ -14968,7 +14968,7 @@
       ]
     },
     "2026": {
-      "totalWatched": 307,
+      "totalWatched": 308,
       "uniqueFilms": 282,
       "totalRewatches": 102,
       "averageRating": 3.91,
@@ -14981,7 +14981,7 @@
         "3.0": 28,
         "3.5": 42,
         "4.0": 65,
-        "4.5": 57,
+        "4.5": 58,
         "5.0": 73,
         "unrated": 2
       },
@@ -15728,7 +15728,7 @@
         },
         {
           "date": "2026-10-31",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15740,7 +15740,7 @@
         "1990s": 24,
         "2000s": 23,
         "2010s": 47,
-        "2020s": 179
+        "2020s": 180
       },
       "mostRewatched": [
         {
@@ -15759,6 +15759,13 @@
         },
         {
           "count": 2,
+          "filmTitle": "A Story of Derry",
+          "filmYear": 2026,
+          "tmdbId": 1813355,
+          "link": "https://letterboxd.com/michaellamb/film/a-story-of-derry/"
+        },
+        {
+          "count": 2,
           "filmTitle": "You Can See Everything",
           "filmYear": 2026,
           "tmdbId": 1765072,
@@ -15770,13 +15777,6 @@
           "filmYear": 2026,
           "tmdbId": 1248832,
           "link": "https://letterboxd.com/michaellamb/film/digger-2026/"
-        },
-        {
-          "count": 2,
-          "filmTitle": "Her",
-          "filmYear": 2013,
-          "tmdbId": 152601,
-          "link": "https://letterboxd.com/michaellamb/film/her/"
         }
       ],
       "highestRated": [
