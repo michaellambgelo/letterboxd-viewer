@@ -265,8 +265,26 @@ def compute_tag_cloud(entries, top=80):
     return dict(counts.most_common(top))
 
 
-def compute_watchlist_stats():
-    items = load_watchlist()
+def compute_watchlist_stats(entries):
+    """Watchlist summary: archive snapshot minus films logged since the export.
+
+    watchlist.csv is frozen at export time and RSS carries no watchlist data,
+    but Letterboxd removes a film from the watchlist when it's logged. So drop
+    any snapshot item with a post-export diary entry (source == 'rss' — only
+    rows newer than the archive survive the merge in extract_history.py).
+    Pre-export watches are left alone: those films were re-added after
+    watching and are genuinely on the watchlist per the export.
+    """
+    watched_since_export = {
+        _inventory_key(e['filmTitle'], e.get('filmYear'))
+        for e in entries
+        if e.get('source') == 'rss' and e.get('filmTitle')
+    }
+    snapshot = load_watchlist()
+    items = [
+        i for i in snapshot
+        if _inventory_key(i['name'], i.get('year')) not in watched_since_export
+    ]
     items.sort(key=lambda x: x.get('addedDate') or '', reverse=True)
     dates = [i['addedDate'] for i in items if i.get('addedDate')]
     return {
@@ -274,6 +292,7 @@ def compute_watchlist_stats():
         'oldestAdded': min(dates) if dates else None,
         'newestAdded': max(dates) if dates else None,
         'recentlyAdded': items[:10],
+        'removedSinceExport': len(snapshot) - len(items),
     }
 
 
@@ -379,7 +398,7 @@ def main():
     stats['uniqueFilms'] = compute_unique_film_count(entries)
     stats['byYear'] = compute_by_year(entries)
     stats['tagCloud'] = compute_tag_cloud(entries)
-    stats['watchlist'] = compute_watchlist_stats()
+    stats['watchlist'] = compute_watchlist_stats(entries)
     stats['likedFilms'] = compute_liked_films()
     stats['favoriteFilms'] = compute_favorite_films()
     stats['lists'] = compute_lists_summary()
@@ -402,7 +421,8 @@ def main():
     print(f'  Average rating: {stats["averageRating"]}')
     print(f'  Date range: {stats["dateRange"]["earliest"]} to {stats["dateRange"]["latest"]}')
     print(f'  Years covered: {len(stats["byYear"])}')
-    print(f'  Watchlist: {stats["watchlist"]["count"]}')
+    print(f'  Watchlist: {stats["watchlist"]["count"]} '
+          f'({stats["watchlist"]["removedSinceExport"]} logged since export)')
     print(f'  Liked films: {len(stats["likedFilms"])}')
     print(f'  Favorites: {len(stats["favoriteFilms"])}')
     print(f'  Lists: {len(stats["lists"])}')

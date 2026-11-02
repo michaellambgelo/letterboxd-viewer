@@ -79,7 +79,7 @@ The frontend reads only these top-level keys (see `compute_stats.py` and `dashbo
 | `recentActivity` | `[{ filmTitle, watchedDate, memberRating, ... }, ...]` | Recent activity list |
 | `dateRange` | `{ earliest: "YYYY-MM-DD", latest: "YYYY-MM-DD" }` | Heatmap end-date anchor |
 | `byYear` | `{ "2020": { totalWatched, uniqueFilms, ratingDistribution, heatmapData, filmYearDistribution, mostRewatched, highestRated, … }, … }` | Year-selector slice swap |
-| `watchlist` | `{ count, oldestAdded, newestAdded, recentlyAdded[] }` | Watchlist card + section |
+| `watchlist` | `{ count, oldestAdded, newestAdded, recentlyAdded[], removedSinceExport }` — export snapshot minus films with post-export (RSS) diary entries | Watchlist card + section |
 | `favoriteFilms` | `[{ link, name, year }, ...]` | Favorites strip (4 films from `profile.csv`) |
 | `likedFilms` | `[{ name, year, link, likedDate }, ...]` | (currently unused on frontend) |
 | `lists` | `[{ name, slug, url, filmCount, tags, description }, ...]` | Lists section |

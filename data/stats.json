@@ -15935,16 +15935,10 @@
     "mometu": 1
   },
   "watchlist": {
-    "count": 1557,
+    "count": 1531,
     "oldestAdded": "2020-03-16",
-    "newestAdded": "2026-07-08",
+    "newestAdded": "2026-07-07",
     "recentlyAdded": [
-      {
-        "name": "Wasteman",
-        "year": 2025,
-        "link": "https://boxd.it/NTi2",
-        "addedDate": "2026-07-08"
-      },
       {
         "name": "Rose of Nevada",
         "year": 2025,
@@ -15998,8 +15992,15 @@
         "year": 2020,
         "link": "https://boxd.it/jkMG",
         "addedDate": "2026-06-25"
+      },
+      {
+        "name": "Muriel's Wedding",
+        "year": 1994,
+        "link": "https://boxd.it/2aO4",
+        "addedDate": "2026-06-17"
       }
-    ]
+    ],
+    "removedSinceExport": 26
   },
   "likedFilms": [
     {

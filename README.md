@@ -19,7 +19,7 @@ Live site: **https://michaellambgelo.github.io/letterboxd-viewer/**
 - **Most rewatched** — top films by watch count
 - **Five-star films** — all entries rated 5.0
 - **Recent activity** — latest diary entries
-- **Watchlist** — count, oldest/newest add dates, recently added strip
+- **Watchlist** — count, oldest/newest add dates, recently added strip (export snapshot minus films logged since the export)
 - **Favorite films** — the four favorites pulled from `profile.csv`
 - **Lists** — every Letterboxd list with film count, tags, and description
 - **Tag cloud** — diary tags weighted by use
