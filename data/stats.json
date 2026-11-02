@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2672,
-  "uniqueFilms": 2206,
+  "totalWatched": 2673,
+  "uniqueFilms": 2207,
   "totalRewatches": 884,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -11,7 +11,7 @@
     "2.5": 133,
     "3.0": 305,
     "3.5": 394,
-    "4.0": 569,
+    "4.0": 570,
     "4.5": 400,
     "5.0": 608,
     "unrated": 83
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 47,
-    "2026-11": 4
+    "2026-11": 5
   },
   "heatmapData": [
     {
@@ -6312,6 +6312,10 @@
     {
       "date": "2026-11-01",
       "count": 4
+    },
+    {
+      "date": "2026-11-02",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6326,7 +6330,7 @@
     "1990s": 173,
     "2000s": 264,
     "2010s": 747,
-    "2020s": 1236
+    "2020s": 1237
   },
   "mostRewatched": [
     {
@@ -6401,6 +6405,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1568982605",
+      "filmTitle": "Exit 8",
+      "filmYear": 2025,
+      "watchedDate": "2026-11-02",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 1408208,
+      "link": "https://letterboxd.com/michaellamb/film/exit-8/",
+      "title": "Exit 8, 2025 - ★★★★",
+      "reviewText": "compare and contrast this film and Zach Cregger&#039;s Resident Evil (2026) and i think you have some good content. i thought the score was effective, especially during the flooding of the corridor. \n\nloved the ending.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1567443420",
       "filmTitle": "The Cycle",
@@ -6664,20 +6682,6 @@
       "link": "https://letterboxd.com/michaellamb/film/clayface/",
       "title": "Clayface, 2026 - ★★★★",
       "reviewText": "Kinda great double feature with You Can See Everything. Identity, media, performance, manipulation, power. It’s all there \n\nJXN Film Club preview screening with Offbeat and MS Film Society at Capri Theatre",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1547576382",
-      "filmTitle": "V/H/S/MIXTAPE",
-      "filmYear": 2026,
-      "watchedDate": "2026-10-20",
-      "memberRating": 1.5,
-      "rewatch": false,
-      "tmdbId": 1742441,
-      "link": "https://letterboxd.com/michaellamb/film/v-h-s-mixtape/",
-      "title": "V/H/S/MIXTAPE, 2026 - ★½",
-      "reviewText": "whatever. i hope next year is better.",
       "tags": [],
       "source": "rss"
     }
@@ -8653,7 +8657,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-11-01"
+    "latest": "2026-11-02"
   },
   "byYear": {
     "2017": {
@@ -14973,8 +14977,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 312,
-      "uniqueFilms": 285,
+      "totalWatched": 313,
+      "uniqueFilms": 286,
       "totalRewatches": 104,
       "averageRating": 3.91,
       "ratingDistribution": {
@@ -14985,7 +14989,7 @@
         "2.5": 19,
         "3.0": 29,
         "3.5": 42,
-        "4.0": 66,
+        "4.0": 67,
         "4.5": 59,
         "5.0": 74,
         "unrated": 2
@@ -15738,6 +15742,10 @@
         {
           "date": "2026-11-01",
           "count": 4
+        },
+        {
+          "date": "2026-11-02",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15749,7 +15757,7 @@
         "1990s": 25,
         "2000s": 23,
         "2010s": 48,
-        "2020s": 182
+        "2020s": 183
       },
       "mostRewatched": [
         {
