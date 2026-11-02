@@ -93,7 +93,7 @@ The frontend reads only these top-level keys (see `compute_stats.py` and `dashbo
 - **The username is hard-coded** to `michaellamb` in the `url` assignment near the top of `scripts/download_rss.py`. To fork this for another account, edit that line, drop a fresh export under `data/archive/`, and re-run the pipeline.
 - **Running the pipeline locally:**
   ```bash
-  pip install requests beautifulsoup4 lxml  # csv module is stdlib
+  pip install requests beautifulsoup4  # csv module is stdlib
   python3 scripts/download_rss.py
   python3 scripts/extract_history.py
   python3 scripts/compute_stats.py

@@ -79,7 +79,7 @@ Merge key: `(filmTitle, filmYear, watchedDate)`. RSS guids and archive `boxd.it`
 ```bash
 python3 -m venv scripts/venv
 source scripts/venv/bin/activate
-pip install requests beautifulsoup4 lxml   # csv is stdlib
+pip install requests beautifulsoup4   # csv is stdlib
 
 python3 scripts/download_rss.py
 python3 scripts/extract_history.py
