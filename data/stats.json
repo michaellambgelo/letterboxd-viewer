@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2674,
+  "totalWatched": 2675,
   "uniqueFilms": 2208,
-  "totalRewatches": 884,
+  "totalRewatches": 885,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -13,7 +13,7 @@
     "3.5": 394,
     "4.0": 570,
     "4.5": 400,
-    "5.0": 608,
+    "5.0": 609,
     "unrated": 83
   },
   "filmsByMonth": {
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 47,
-    "2026-11": 6
+    "2026-11": 7
   },
   "heatmapData": [
     {
@@ -6315,7 +6315,7 @@
     },
     {
       "date": "2026-11-02",
-      "count": 2
+      "count": 3
     }
   ],
   "filmYearDistribution": {
@@ -6328,7 +6328,7 @@
     "1970s": 60,
     "1980s": 90,
     "1990s": 173,
-    "2000s": 264,
+    "2000s": 265,
     "2010s": 747,
     "2020s": 1237
   },
@@ -6430,6 +6430,20 @@
       "link": "https://letterboxd.com/michaellamb/film/sweeney-todd-1928/",
       "title": "Sweeney Todd, 1928 - ★★½",
       "reviewText": "wow. pretty cool that there&#039;s a version of this on Shudder. i&#039;d read about it but this was my first time watching the silent film.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1569956067",
+      "filmTitle": "The Prestige",
+      "filmYear": 2006,
+      "watchedDate": "2026-11-02",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 1124,
+      "link": "https://letterboxd.com/michaellamb/film/the-prestige/1/",
+      "title": "The Prestige, 2006 - ★★★★★",
+      "reviewText": "It’s a really good movie. First watch on Blu-ray",
       "tags": [],
       "source": "rss"
     },
@@ -6670,23 +6684,16 @@
       "reviewText": "i love short films\n\nVISITOR | Omeleto Sci-Fi",
       "tags": [],
       "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1549989520",
-      "filmTitle": "You Can See Everything",
-      "filmYear": 2026,
-      "watchedDate": "2026-10-22",
-      "memberRating": 5.0,
-      "rewatch": false,
-      "tmdbId": 1765072,
-      "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/",
-      "title": "You Can See Everything, 2026 - ★★★★★",
-      "reviewText": "it&#039;s so tangibly a Nathan Fielder experiment. i loved it and am haunted by it.",
-      "tags": [],
-      "source": "rss"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "The Prestige",
+      "filmYear": 2006,
+      "watchedDate": "2026-11-02",
+      "link": "https://letterboxd.com/michaellamb/film/the-prestige/1/",
+      "tmdbId": 1124
+    },
     {
       "filmTitle": "You Can See Everything",
       "filmYear": 2026,
@@ -14977,9 +14984,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 314,
-      "uniqueFilms": 287,
-      "totalRewatches": 104,
+      "totalWatched": 315,
+      "uniqueFilms": 288,
+      "totalRewatches": 105,
       "averageRating": 3.91,
       "ratingDistribution": {
         "0.5": 2,
@@ -14991,7 +14998,7 @@
         "3.5": 42,
         "4.0": 67,
         "4.5": 59,
-        "5.0": 74,
+        "5.0": 75,
         "unrated": 2
       },
       "heatmapData": [
@@ -15745,7 +15752,7 @@
         },
         {
           "date": "2026-11-02",
-          "count": 2
+          "count": 3
         }
       ],
       "filmYearDistribution": {
@@ -15756,7 +15763,7 @@
         "1970s": 8,
         "1980s": 9,
         "1990s": 25,
-        "2000s": 23,
+        "2000s": 24,
         "2010s": 48,
         "2020s": 183
       },
@@ -15798,6 +15805,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "The Prestige",
+          "filmYear": 2006,
+          "watchedDate": "2026-11-02",
+          "link": "https://letterboxd.com/michaellamb/film/the-prestige/1/"
+        },
         {
           "filmTitle": "You Can See Everything",
           "filmYear": 2026,
@@ -15851,12 +15864,6 @@
           "filmYear": 2025,
           "watchedDate": "2026-09-28",
           "link": "https://letterboxd.com/michaellamb/film/blue-film-2025/"
-        },
-        {
-          "filmTitle": "The Truman Show",
-          "filmYear": 1998,
-          "watchedDate": "2026-09-25",
-          "link": "https://letterboxd.com/michaellamb/film/the-truman-show/8/"
         }
       ]
     }
