@@ -51,6 +51,7 @@ Letterboxd RSS  ──►  scripts/download_rss.py  ──►  data/rss.xml
 - `assets/js/nav.js` — the hamburger menu, rendered into `<div data-site-nav>` on every page so the markup lives in one file. Hrefs are **extension-less and relative** (`./`, `rolodex`): GitHub Pages resolves `/rolodex` to `rolodex.html`, and staying relative keeps them working under the `/letterboxd-viewer/` base path. `currentPage()` strips any `.html` before matching `LINKS[].page`, so the active link is right whether you arrive at `/`, `/rolodex`, or `/rolodex.html`. **`python3 -m http.server` does not resolve extension-less paths** — use `npx serve` for local preview or the nav links 404
 - `assets/css/dashboard.css` — all styling for every page
 - No jQuery, no Handlebars, no Poptrox, no build step
+- **Link previews:** each page's `<head>` carries Open Graph + `twitter:card` tags pointing at `assets/images/og/<page>.png` (absolute `https://letterboxd.michaellamb.dev/...` URLs). The cards are rendered by `ruby scripts/generate_og_cards.rb`, which loads the **blog's** renderer (`../michaellambgelo.github.io/scripts/generate_seo_image.rb`, needs ImageMagick) so they match the blog's SEO cards. Run by hand; scrapers cache by image URL, so a changed card needs a new filename
 
 **Pipeline (Python):**
 - `scripts/load_archive.py` — CSV loader for the export. `load_diary()` returns rows shaped like the RSS parser; also provides `load_watchlist`, `load_likes`, `load_lists`, `load_profile`, `load_ratings`, `get_export_date`.
