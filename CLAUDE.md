@@ -203,6 +203,31 @@ overlapped them), and a list with Everyone/Followers/Following/Mutual tabs
 box, a "JXN only" toggle, and a sort. The list's filter dims non-matching dots
 in the graph. Tests: `scripts/test_compute_network.py`.
 
+## Userscripts (`scripts/userscripts/`)
+
+Tampermonkey scripts that run in my logged-in browser on letterboxd.com. They
+aren't part of the site and nothing deploys them. They exist because the useful
+Letterboxd data (follow lists, the activity feed) sits behind login and the
+Cloudflare challenge. Rules for all of them: drive Letterboxd's own controls
+(Next links, "Load older activity", the Like button) at a human pace, never
+build URLs or call endpoints directly, and never crawl from scripts or CI.
+
+- `letterboxd-network-export.user.js` exports a people list as JSON for the
+  Network page (see **Network**).
+- `letterboxd-review-stack.user.js` runs on `/activity/` and turns the feed's
+  unliked reviews into a swipe stack (→/swipe right = like via the real Like
+  button, ← = dismiss, W = add to watchlist, Z = undo, Esc = close). The
+  watchlist button only appears when the poster's watch button says you haven't
+  watched the film. It drives the poster's own "⋯" menu, finds the item by its
+  text, and reopens the menu to confirm "Remove from watchlist" before showing ✓. It remembers what you've been
+  through as **contiguous activity-id ranges** in Tampermonkey storage. Ids
+  only increase and the stack walks the feed newest-first, and a range only
+  grows over the fully-decided prefix, so a still-queued review is never marked
+  seen. Once the feed's end has been reached (`feedEndId`), entering the bottom
+  range means "caught up" with no more paging. The markup it depends on is
+  listed in its header comment (read from the live feed 2026-11-03). If
+  Letterboxd changes it, that list is where to start.
+
 ## Rolodex (`rolodex.html` + `worker/`)
 
 A second page: a curated shortlist of Letterboxd members, each card showing that
