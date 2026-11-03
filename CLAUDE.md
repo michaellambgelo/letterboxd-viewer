@@ -230,6 +230,10 @@ build URLs or call endpoints directly, and never crawl from scripts or CI.
   watchlist button only appears when the poster's watch button says you haven't
   watched the film. It drives the poster's own "⋯" menu, finds the item by its
   text, and reopens the menu to confirm "Remove from watchlist" before showing ✓.
+  Watchlist state isn't in the poster markup (and `/ajax/letterboxd-metadata/` is
+  only a csrf ping), so when an unwatched film's card comes up the stack peeks
+  at that menu behind itself to show "✓ On your watchlist" up front; answers are
+  cached per film slug for the page session, and menu operations are serialized.
   Spoiler reviews are blurred only when the poster says you haven't watched the
   film (hidden while unknown). Pointer capture starts only once a horizontal
   swipe begins: capturing on pointerdown retargets taps to the card, which broke

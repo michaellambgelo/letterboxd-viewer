@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Letterboxd review stack
 // @namespace    https://michaellamb.dev/letterboxd-viewer
-// @version      1.2.0
+// @version      1.3.0
 // @description  Swipe through the reviews in your activity feed: right to like, left to dismiss. Remembers what you've already been through.
 // @match        https://letterboxd.com/activity/*
 // @run-at       document-idle
@@ -34,7 +34,11 @@
  *               behind the stack for that reason)
  *   watchlist   not in the markup until the poster's menu (span.menu-link) is
  *               opened; the item is then found by its text, "Add to watchlist"
- *               or "Remove from watchlist", wherever the menu renders
+ *               or "Remove from watchlist", wherever the menu renders. The
+ *               poster markup and /ajax/letterboxd-metadata/ (a csrf ping)
+ *               carry no watchlist state, so for an unwatched film the stack
+ *               opens the menu behind itself to read it ("peek") when the card
+ *               comes up, and remembers the answer per film for the session.
  *
  * Liking always goes through Letterboxd's own button, so their client code
  * handles CSRF and state. Nothing here calls a Letterboxd endpoint directly,
@@ -136,6 +140,7 @@
       paragraphs: body ? [...body.querySelectorAll('p')].map(text).filter(Boolean) : [],
       fullTextUrl: body?.dataset.fullTextUrl || null,
       spoiler: /may contain spoilers/i.test(text(row)) || !!row.querySelector('[class*="spoiler"]'),
+      slug: row.querySelector('.react-component.figure')?.dataset.itemSlug || null,
       posterRow: poster,
       posterSrc,
     };
@@ -203,7 +208,40 @@
     return null;
   }
 
-  async function addToWatchlist(card) {
+  // Only one poster menu may be open at a time (findWatchlistItem searches the
+  // whole document), so peeks and adds queue behind each other.
+  let menuChain = Promise.resolve();
+  function withMenu(fn) {
+    const run = menuChain.then(fn, fn);
+    menuChain = run.catch(() => {});
+    return run;
+  }
+
+  // film slug -> true (on watchlist) | false, for this page session.
+  const onWatchlist = new Map();
+
+  /** Reads watchlist state from the poster's menu without changing it.
+   *  Returns true / false, or null if the menu item couldn't be found. */
+  function peekWatchlist(card) {
+    if (card.slug && onWatchlist.has(card.slug)) return Promise.resolve(onWatchlist.get(card.slug));
+    return withMenu(async () => {
+      const item = await openMenuItem(card);
+      if (!item) return null;
+      const state = /remove from/i.test(item.textContent);
+      closeMenus();
+      if (card.slug) onWatchlist.set(card.slug, state);
+      return state;
+    });
+  }
+
+  function addToWatchlist(card) {
+    return withMenu(() => addToWatchlistNow(card)).then((r) => {
+      if (card.slug && r !== 'failed') onWatchlist.set(card.slug, true);
+      return r;
+    });
+  }
+
+  async function addToWatchlistNow(card) {
     const item = await openMenuItem(card);
     if (!item) return 'failed';
     if (/remove from/i.test(item.textContent)) { closeMenus(); return 'already'; }
@@ -472,8 +510,12 @@
               <div class="who">${c.avatar ? `<img src="${esc(c.avatar)}" alt="">` : ''}${esc(c.name)}</div>
               <div class="film">${esc(c.film)} <span>${esc(c.year)}</span></div>
               <div class="stars">${esc(c.rating)}</div>
-              <button type="button" class="wl" ${c.wl ? '' : 'hidden'} ${c.wl === 'busy' ? 'disabled' : ''}>${
-                c.wl === 'added' ? '✓ On your watchlist' : c.wl === 'already' ? '✓ Already on your watchlist' : c.wl === 'busy' ? 'Adding…' : '+ Add to watchlist (W)'
+              <button type="button" class="wl" ${c.wl ? '' : 'hidden'} ${c.wl === 'offer' ? '' : 'disabled'}>${
+                c.wl === 'added' ? '✓ Added to your watchlist'
+                  : c.wl === 'already' ? '✓ On your watchlist'
+                  : c.wl === 'busy' ? 'Adding…'
+                  : c.wl === 'checking' ? 'Checking watchlist…'
+                  : '+ Add to watchlist (W)'
               }</button>
             </div>
           </div>
@@ -514,7 +556,16 @@
         if (!state) return;
         top.watched = state;
         if (state === 'unwatched') {
-          if (!top.wl) top.wl = 'offer';
+          if (!top.wl) {
+            top.wl = 'checking';
+            peekWatchlist(top).then((on) => {
+              if (top.wl !== 'checking') return;
+              // If the menu couldn't be read, still offer the button; adding
+              // re-checks and reports "already" if it is.
+              top.wl = on ? 'already' : 'offer';
+              if (queue[0] === top) render();
+            });
+          }
           render();
         } else if (top.spoiler) {
           render(); // watched: un-blur the spoiler
