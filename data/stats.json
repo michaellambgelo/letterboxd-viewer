@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2675,
-  "uniqueFilms": 2208,
-  "totalRewatches": 885,
+  "totalWatched": 2665,
+  "uniqueFilms": 2207,
+  "totalRewatches": 880,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -9,10 +9,10 @@
     "1.5": 32,
     "2.0": 111,
     "2.5": 134,
-    "3.0": 305,
-    "3.5": 394,
-    "4.0": 570,
-    "4.5": 400,
+    "3.0": 304,
+    "3.5": 393,
+    "4.0": 569,
+    "4.5": 393,
     "5.0": 609,
     "unrated": 83
   },
@@ -71,27 +71,27 @@
     "2023-09": 26,
     "2023-10": 46,
     "2023-11": 28,
-    "2023-12": 46,
+    "2023-12": 45,
     "2024-01": 53,
     "2024-02": 42,
     "2024-03": 73,
-    "2024-04": 42,
-    "2024-05": 51,
+    "2024-04": 41,
+    "2024-05": 50,
     "2024-06": 31,
     "2024-07": 28,
-    "2024-08": 17,
+    "2024-08": 16,
     "2024-09": 27,
-    "2024-10": 40,
-    "2024-11": 50,
+    "2024-10": 39,
+    "2024-11": 49,
     "2024-12": 70,
-    "2025-01": 45,
+    "2025-01": 44,
     "2025-02": 36,
     "2025-03": 28,
     "2025-04": 49,
     "2025-05": 47,
     "2025-06": 45,
     "2025-07": 37,
-    "2025-08": 42,
+    "2025-08": 41,
     "2025-09": 22,
     "2025-10": 20,
     "2025-11": 11,
@@ -102,10 +102,10 @@
     "2026-04": 30,
     "2026-05": 37,
     "2026-06": 21,
-    "2026-07": 38,
+    "2026-07": 37,
     "2026-08": 23,
     "2026-09": 51,
-    "2026-10": 47,
+    "2026-10": 46,
     "2026-11": 7
   },
   "heatmapData": [
@@ -3567,7 +3567,7 @@
     },
     {
       "date": "2023-12-23",
-      "count": 7
+      "count": 6
     },
     {
       "date": "2023-12-24",
@@ -3963,7 +3963,7 @@
     },
     {
       "date": "2024-04-25",
-      "count": 3
+      "count": 2
     },
     {
       "date": "2024-04-26",
@@ -4047,10 +4047,6 @@
     },
     {
       "date": "2024-05-19",
-      "count": 1
-    },
-    {
-      "date": "2024-05-20",
       "count": 1
     },
     {
@@ -4274,10 +4270,6 @@
       "count": 1
     },
     {
-      "date": "2024-08-09",
-      "count": 1
-    },
-    {
       "date": "2024-08-11",
       "count": 1
     },
@@ -4403,7 +4395,7 @@
     },
     {
       "date": "2024-10-09",
-      "count": 3
+      "count": 2
     },
     {
       "date": "2024-10-13",
@@ -4532,10 +4524,6 @@
     {
       "date": "2024-11-24",
       "count": 2
-    },
-    {
-      "date": "2024-11-28",
-      "count": 1
     },
     {
       "date": "2024-11-30",
@@ -4667,7 +4655,7 @@
     },
     {
       "date": "2025-01-11",
-      "count": 2
+      "count": 1
     },
     {
       "date": "2025-01-12",
@@ -5279,7 +5267,7 @@
     },
     {
       "date": "2025-08-16",
-      "count": 2
+      "count": 1
     },
     {
       "date": "2025-08-17",
@@ -6039,7 +6027,7 @@
     },
     {
       "date": "2026-07-28",
-      "count": 3
+      "count": 2
     },
     {
       "date": "2026-07-29",
@@ -6307,7 +6295,7 @@
     },
     {
       "date": "2026-10-31",
-      "count": 2
+      "count": 1
     },
     {
       "date": "2026-11-01",
@@ -6329,23 +6317,37 @@
     "1980s": 90,
     "1990s": 173,
     "2000s": 265,
-    "2010s": 747,
-    "2020s": 1237
+    "2010s": 738,
+    "2020s": 1239
   },
   "mostRewatched": [
     {
-      "count": 50,
+      "count": 51,
       "filmTitle": "Midsommar",
       "filmYear": 2019,
       "tmdbId": null,
       "link": "https://boxd.it/15mZTN"
     },
     {
-      "count": 18,
+      "count": 19,
       "filmTitle": "Dune: Part Two",
       "filmYear": 2024,
       "tmdbId": null,
       "link": "https://boxd.it/5V7RTl"
+    },
+    {
+      "count": 17,
+      "filmTitle": "Sinners",
+      "filmYear": 2025,
+      "tmdbId": null,
+      "link": "https://boxd.it/9rluhN"
+    },
+    {
+      "count": 17,
+      "filmTitle": "Oppenheimer",
+      "filmYear": 2023,
+      "tmdbId": null,
+      "link": "https://boxd.it/4ydMNp"
     },
     {
       "count": 17,
@@ -6356,31 +6358,24 @@
     },
     {
       "count": 16,
-      "filmTitle": "Oppenheimer",
-      "filmYear": 2023,
-      "tmdbId": null,
-      "link": "https://boxd.it/4ydMNp"
-    },
-    {
-      "count": 16,
-      "filmTitle": "Sinners",
-      "filmYear": 2025,
-      "tmdbId": null,
-      "link": "https://boxd.it/9rluhN"
-    },
-    {
-      "count": 16,
       "filmTitle": "Pig",
       "filmYear": 2021,
       "tmdbId": null,
       "link": "https://boxd.it/2jCFA3"
     },
     {
-      "count": 14,
+      "count": 15,
       "filmTitle": "Hereditary",
       "filmYear": 2018,
       "tmdbId": null,
       "link": "https://boxd.it/1cbvBl"
+    },
+    {
+      "count": 14,
+      "filmTitle": "The Green Knight",
+      "filmYear": 2021,
+      "tmdbId": null,
+      "link": "https://boxd.it/21Y2FF"
     },
     {
       "count": 14,
@@ -6395,295 +6390,350 @@
       "filmYear": 2023,
       "tmdbId": null,
       "link": "https://boxd.it/49Khvv"
-    },
-    {
-      "count": 13,
-      "filmTitle": "The Green Knight",
-      "filmYear": 2021,
-      "tmdbId": null,
-      "link": "https://boxd.it/21Y2FF"
     }
   ],
   "recentActivity": [
     {
-      "guid": "letterboxd-entry-1568982605",
+      "guid": "archive-h7OUuv",
       "filmTitle": "Exit 8",
       "filmYear": 2025,
       "watchedDate": "2026-11-02",
       "memberRating": 4.0,
       "rewatch": false,
-      "tmdbId": 1408208,
-      "link": "https://letterboxd.com/michaellamb/film/exit-8/",
-      "title": "Exit 8, 2025 - ★★★★",
-      "reviewText": "compare and contrast this film and Zach Cregger&#039;s Resident Evil (2026) and i think you have some good content. i thought the score was effective, especially during the flooding of the corridor. \n\nloved the ending.",
-      "tags": [],
-      "source": "rss"
+      "tmdbId": null,
+      "link": "https://boxd.it/h7OUuv",
+      "title": "Exit 8",
+      "reviewText": "compare and contrast this film and Zach Cregger's <em>Resident Evil</em> (2026) and i think you have some good content. i thought the score was effective, especially during the flooding of the corridor. \r\n\r\nloved the ending.",
+      "tags": [
+        "shudder"
+      ],
+      "loggedDate": "2026-11-03",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1569534119",
+      "guid": "archive-h8c3en",
       "filmTitle": "Sweeney Todd",
       "filmYear": 1928,
       "watchedDate": "2026-11-02",
       "memberRating": 2.5,
       "rewatch": false,
-      "tmdbId": 439833,
-      "link": "https://letterboxd.com/michaellamb/film/sweeney-todd-1928/",
-      "title": "Sweeney Todd, 1928 - ★★½",
-      "reviewText": "wow. pretty cool that there&#039;s a version of this on Shudder. i&#039;d read about it but this was my first time watching the silent film.",
-      "tags": [],
-      "source": "rss"
+      "tmdbId": null,
+      "link": "https://boxd.it/h8c3en",
+      "title": "Sweeney Todd",
+      "reviewText": "wow. pretty cool that there's a version of this on Shudder. i'd read about it but this was my first time watching the silent film.",
+      "tags": [
+        "shudder"
+      ],
+      "loggedDate": "2026-11-03",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1569956067",
+      "guid": "archive-h8tKUv",
       "filmTitle": "The Prestige",
       "filmYear": 2006,
       "watchedDate": "2026-11-02",
       "memberRating": 5.0,
       "rewatch": true,
-      "tmdbId": 1124,
-      "link": "https://letterboxd.com/michaellamb/film/the-prestige/1/",
-      "title": "The Prestige, 2006 - ★★★★★",
+      "tmdbId": null,
+      "link": "https://boxd.it/h8tKUv",
+      "title": "The Prestige",
       "reviewText": "It’s a really good movie. First watch on Blu-ray",
-      "tags": [],
-      "source": "rss"
+      "tags": [
+        "bluray"
+      ],
+      "loggedDate": "2026-11-03",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1567443420",
+      "guid": "archive-h6MkmR",
       "filmTitle": "The Cycle",
       "filmYear": 2026,
       "watchedDate": "2026-11-01",
       "memberRating": 3.0,
       "rewatch": false,
-      "tmdbId": 1290418,
-      "link": "https://letterboxd.com/michaellamb/film/the-cycle-2026-2/",
-      "title": "The Cycle, 2026 - ★★★",
+      "tmdbId": null,
+      "link": "https://boxd.it/h6MkmR",
+      "title": "The Cycle",
       "reviewText": "a bit long for what it is. sick practical effects tho.",
-      "tags": [],
-      "source": "rss"
+      "tags": [
+        "shudder"
+      ],
+      "loggedDate": "2026-11-02",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1568435557",
-      "filmTitle": "The Web",
-      "filmYear": 2013,
+      "guid": "archive-h7de6H",
+      "filmTitle": "You Can See Everything",
+      "filmYear": 2026,
       "watchedDate": "2026-11-01",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 361839,
-      "link": "https://letterboxd.com/michaellamb/film/the-web-2013/",
-      "title": "The Web, 2013 - ★★★★",
-      "reviewText": "incredible \n\nComedy Central | Nathan For You - Exclusive - &quot;The Web&quot;",
-      "tags": [],
-      "source": "rss"
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": null,
+      "link": "https://boxd.it/h7de6H",
+      "title": "You Can See Everything",
+      "reviewText": "watched with Briar, Jeana, and Micah.\r\n\r\nthe horse fart stood out to me this time. the foley work in this film is great.",
+      "tags": [
+        "in theaters",
+        "moviepass"
+      ],
+      "loggedDate": "2026-11-02",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1568282724",
+      "guid": "archive-h7lxMt",
       "filmTitle": "Dogma",
       "filmYear": 1999,
       "watchedDate": "2026-11-01",
       "memberRating": 4.5,
       "rewatch": true,
-      "tmdbId": 1832,
-      "link": "https://letterboxd.com/michaellamb/film/dogma/1/",
-      "title": "Dogma, 1999 - ★★★★½",
-      "reviewText": "Kevin Smith can make a theologically potent film as an expression of his faith. like, not only is he capable of it, he actually fucking did it.\n\nDogma on YouTube",
-      "tags": [],
-      "source": "rss"
+      "tmdbId": null,
+      "link": "https://boxd.it/h7lxMt",
+      "title": "Dogma",
+      "reviewText": "Kevin Smith can make a theologically potent film as an expression of his faith. like, not only is he capable of it, he actually fucking did it.\r\n\r\n<a href=\"https://www.youtube.com/watch?v=mF7qqb3yMDM\" target=\"_blank\"><em>Dogma</em> on YouTube</a>",
+      "tags": [
+        "youtube"
+      ],
+      "loggedDate": "2026-11-02",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1568084499",
-      "filmTitle": "You Can See Everything",
-      "filmYear": 2026,
+      "guid": "archive-h7rXmX",
+      "filmTitle": "The Web",
+      "filmYear": 2013,
       "watchedDate": "2026-11-01",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 1765072,
-      "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/2/",
-      "title": "You Can See Everything, 2026 - ★★★★★",
-      "reviewText": "watched with Briar, Jeana, and Micah.\n\nthe horse fart stood out to me this time. the foley work in this film is great.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1566026201",
-      "filmTitle": "IT: Welcome to Derry - A Story of Derry",
-      "filmYear": null,
-      "watchedDate": "2026-10-31",
-      "memberRating": 4.5,
+      "memberRating": 4.0,
       "rewatch": false,
-      "tmdbId": 1813355,
-      "link": "https://letterboxd.com/michaellamb/film/it-welcome-to-derry-a-story-of-derry/",
-      "title": "IT: Welcome to Derry - A Story of Derry - ★★★★½",
-      "reviewText": "absolute gas",
-      "tags": [],
-      "source": "rss"
+      "tmdbId": null,
+      "link": "https://boxd.it/h7rXmX",
+      "title": "The Web",
+      "reviewText": "incredible \r\n\r\n<a href=\"https://www.youtube.com/watch?v=XD3nq0eECz4\" target=\"_blank\">Comedy Central | Nathan For You - Exclusive - \"The Web\"</a>",
+      "tags": [
+        "youtube",
+        "comedycentral"
+      ],
+      "loggedDate": "2026-11-02",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1566026201",
+      "guid": "archive-h5ORx9",
       "filmTitle": "A Story of Derry",
       "filmYear": 2026,
       "watchedDate": "2026-10-31",
       "memberRating": 4.5,
       "rewatch": false,
-      "tmdbId": 1813355,
-      "link": "https://letterboxd.com/michaellamb/film/a-story-of-derry/",
-      "title": "A Story of Derry, 2026 - ★★★★½",
+      "tmdbId": null,
+      "link": "https://boxd.it/h5ORx9",
+      "title": "A Story of Derry",
       "reviewText": "absolute gas",
-      "tags": [],
-      "source": "rss"
+      "tags": [
+        "hbomax"
+      ],
+      "loggedDate": "2026-11-01",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1564949481",
+      "guid": "archive-h55GuD",
       "filmTitle": "Remain Calm",
       "filmYear": 2026,
       "watchedDate": "2026-10-30",
       "memberRating": 3.5,
       "rewatch": false,
-      "tmdbId": 1796809,
-      "link": "https://letterboxd.com/michaellamb/film/remain-calm-2026/",
-      "title": "Remain Calm, 2026 - ★★★½",
-      "reviewText": "zoran spotted. this was hilarious \n\nREMAIN CALM - A Horror Short starring Pauly Shore, Nick Swardson and Doug Jones",
-      "tags": [],
-      "source": "rss"
+      "tmdbId": null,
+      "link": "https://boxd.it/h55GuD",
+      "title": "Remain Calm",
+      "reviewText": "zoran spotted. this was hilarious \r\n\r\n<a href=\"https://www.youtube.com/watch?v=3ETZmhzURfQ\" target=\"_blank\">REMAIN CALM - A Horror Short starring Pauly Shore, Nick Swardson and Doug Jones</a>",
+      "tags": [
+        "youtube"
+      ],
+      "loggedDate": "2026-10-31",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1562116206",
+      "guid": "archive-h3aNQN",
       "filmTitle": "Wake in Fright",
       "filmYear": 1971,
       "watchedDate": "2026-10-29",
       "memberRating": 4.0,
       "rewatch": false,
-      "tmdbId": 26405,
-      "link": "https://letterboxd.com/michaellamb/film/wake-in-fright/",
-      "title": "Wake in Fright, 1971 - ★★★★",
+      "tmdbId": null,
+      "link": "https://boxd.it/h3aNQN",
+      "title": "Wake in Fright",
       "reviewText": "great recommendation from Kyle Crockett, teacher of the year",
-      "tags": [],
-      "source": "rss"
+      "tags": [
+        "primevideo"
+      ],
+      "loggedDate": "2026-10-30",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1562432515",
-      "filmTitle": "Epithet",
-      "filmYear": 2012,
-      "watchedDate": "2026-10-29",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": 259226,
-      "link": "https://letterboxd.com/michaellamb/film/epithet/",
-      "title": "Epithet, 2012 - ★★★",
-      "reviewText": "Epithet: a short film starring Patrick Stewart\n\nRest in peace, Sir Patrick Stewart. I don&#039;t understand this short film you starred in.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1562404979",
+      "guid": "archive-h3mV55",
       "filmTitle": "Halloween",
       "filmYear": 1978,
       "watchedDate": "2026-10-29",
       "memberRating": 5.0,
       "rewatch": true,
-      "tmdbId": 948,
-      "link": "https://letterboxd.com/michaellamb/film/halloween-1978/2/",
-      "title": "Halloween, 1978 - ★★★★★",
-      "reviewText": "jxn film club outdoor garden screening. it was a perfect evening for this film!\n\ni&#039;m always rooting for Laurie",
-      "tags": [],
-      "source": "rss"
+      "tmdbId": null,
+      "link": "https://boxd.it/h3mV55",
+      "title": "Halloween",
+      "reviewText": "jxn film club outdoor garden screening. it was a perfect evening for this film!\r\n\r\ni'm always rooting for Laurie",
+      "tags": [
+        "jxnfilmclub",
+        "ryanparker"
+      ],
+      "loggedDate": "2026-10-30",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1560536848",
+      "guid": "archive-h3o4In",
+      "filmTitle": "Epithet",
+      "filmYear": 2012,
+      "watchedDate": "2026-10-29",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": null,
+      "link": "https://boxd.it/h3o4In",
+      "title": "Epithet",
+      "reviewText": "<a href=\"https://www.youtube.com/watch?v=R5QCZV0Iok4\" target=\"_blank\">Epithet: a short film starring Patrick Stewart\r\n</a>\r\n\r\nRest in peace, Sir Patrick Stewart. I don't understand this short film you starred in.",
+      "tags": [
+        "youtube"
+      ],
+      "loggedDate": "2026-10-30",
+      "source": "archive"
+    },
+    {
+      "guid": "archive-h26xdD",
       "filmTitle": "KPop Demon Hunters",
       "filmYear": 2025,
       "watchedDate": "2026-10-28",
       "memberRating": 5.0,
       "rewatch": true,
-      "tmdbId": 803796,
-      "link": "https://letterboxd.com/michaellamb/film/kpop-demon-hunters/4/",
-      "title": "KPop Demon Hunters, 2025 - ★★★★★",
-      "reviewText": "Watched on Wednesday October 28, 2026.",
+      "tmdbId": null,
+      "link": "https://boxd.it/h26xdD",
+      "title": "KPop Demon Hunters",
+      "reviewText": "",
       "tags": [],
-      "source": "rss"
+      "loggedDate": "2026-10-29",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1559243763",
+      "guid": "archive-h1ehjx",
       "filmTitle": "Wildwood",
       "filmYear": 2026,
       "watchedDate": "2026-10-27",
       "memberRating": 4.5,
       "rewatch": false,
-      "tmdbId": 791523,
-      "link": "https://letterboxd.com/michaellamb/film/wildwood-2026/",
-      "title": "Wildwood, 2026 - ★★★★½",
+      "tmdbId": null,
+      "link": "https://boxd.it/h1ehjx",
+      "title": "Wildwood",
       "reviewText": "Really beautiful. Absolutely worth a 10 pm Tuesday screening.",
-      "tags": [],
-      "source": "rss"
+      "tags": [
+        "in theaters"
+      ],
+      "loggedDate": "2026-10-28",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1555987779",
+      "guid": "archive-gZ1F0P",
       "filmTitle": "Son of Rambow",
       "filmYear": 2007,
       "watchedDate": "2026-10-26",
       "memberRating": 4.0,
       "rewatch": false,
-      "tmdbId": 13258,
-      "link": "https://letterboxd.com/michaellamb/film/son-of-rambow/",
-      "title": "Son of Rambow, 2007 - ★★★★",
+      "tmdbId": null,
+      "link": "https://boxd.it/gZ1F0P",
+      "title": "Son of Rambow",
       "reviewText": "I love tha movies!",
-      "tags": [],
-      "source": "rss"
+      "tags": [
+        "youtube"
+      ],
+      "loggedDate": "2026-10-27",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1556522149",
+      "guid": "archive-gZo59x",
       "filmTitle": "Shift",
       "filmYear": 2025,
       "watchedDate": "2026-10-26",
       "memberRating": 3.5,
       "rewatch": false,
-      "tmdbId": 1522239,
-      "link": "https://letterboxd.com/michaellamb/film/shift-2025-1/",
-      "title": "Shift, 2025 - ★★★½",
-      "reviewText": "some pretty good vfx for a short. neat.\n\nShift | Horror Short Film | ALTER",
-      "tags": [],
-      "source": "rss"
+      "tmdbId": null,
+      "link": "https://boxd.it/gZo59x",
+      "title": "Shift",
+      "reviewText": "some pretty good vfx for a short. neat.\r\n\r\n<a href=\"https://www.youtube.com/watch?v=g5-8WlCU9_M\" target=\"_blank\">Shift | Horror Short Film | ALTER</a>",
+      "tags": [
+        "youtube",
+        "alter"
+      ],
+      "loggedDate": "2026-10-27",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1554056981",
+      "guid": "archive-gXIE7N",
       "filmTitle": "Barbarians",
       "filmYear": 2021,
       "watchedDate": "2026-10-25",
       "memberRating": 2.5,
       "rewatch": false,
-      "tmdbId": 811076,
-      "link": "https://letterboxd.com/michaellamb/film/barbarians-2021/",
-      "title": "Barbarians, 2021 - ★★½",
-      "reviewText": "it&#039;s no Barbarian (2022) but it&#039;s a decent time.\n\ni can&#039;t say i was surprised by anything, but i was satisfied.",
-      "tags": [],
-      "source": "rss"
+      "tmdbId": null,
+      "link": "https://boxd.it/gXIE7N",
+      "title": "Barbarians",
+      "reviewText": "it's no <em>Barbarian (2022)</em> but it's a decent time.\r\n\r\ni can't say i was surprised by anything, but i was satisfied.",
+      "tags": [
+        "shudder"
+      ],
+      "loggedDate": "2026-10-26",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1552858025",
+      "guid": "archive-gWUl5N",
       "filmTitle": "You Can See Everything",
       "filmYear": 2026,
       "watchedDate": "2026-10-24",
       "memberRating": 5.0,
       "rewatch": true,
-      "tmdbId": 1765072,
-      "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/1/",
-      "title": "You Can See Everything, 2026 - ★★★★★",
-      "reviewText": "Second watch. \n\nJoined by Russell, Jon Nolan, Ryan, Amy, Brandon, PJ, and Jordan.\n\nI timed about 70 minutes of debrief over beers following the film with Jon Nolan, Ryan, and Amy. \n\nIf you asked 100 people to share their top 10 moments from the film, you&#039;d have 100 different lists.",
-      "tags": [],
-      "source": "rss"
+      "tmdbId": null,
+      "link": "https://boxd.it/gWUl5N",
+      "title": "You Can See Everything",
+      "reviewText": "Second watch. \r\n\r\nJoined by Russell, Jon Nolan, Ryan, Amy, Brandon, PJ, and Jordan.\r\n\r\nI timed about 70 minutes of debrief over beers following the film with Jon Nolan, Ryan, and Amy. \r\n\r\nIf you asked 100 people to share their top 10 moments from the film, you'd have 100 different lists.",
+      "tags": [
+        "in theaters"
+      ],
+      "loggedDate": "2026-10-25",
+      "source": "archive"
     },
     {
-      "guid": "letterboxd-entry-1549042564",
+      "guid": "archive-gUkfkR",
       "filmTitle": "Visitor",
       "filmYear": null,
       "watchedDate": "2026-10-22",
       "memberRating": 4.0,
       "rewatch": false,
-      "tmdbId": 1285716,
-      "link": "https://letterboxd.com/michaellamb/film/visitor-3/",
-      "title": "Visitor - ★★★★",
-      "reviewText": "i love short films\n\nVISITOR | Omeleto Sci-Fi",
-      "tags": [],
-      "source": "rss"
+      "tmdbId": null,
+      "link": "https://boxd.it/gUkfkR",
+      "title": "Visitor",
+      "reviewText": "i love short films\r\n\r\n<a href=\"https://www.youtube.com/watch?v=XhnfwiKj6KQ\" target=\"_blank\">VISITOR | Omeleto Sci-Fi</a>",
+      "tags": [
+        "youtube"
+      ],
+      "loggedDate": "2026-10-22",
+      "source": "archive"
+    },
+    {
+      "guid": "archive-gUXYNH",
+      "filmTitle": "You Can See Everything",
+      "filmYear": 2026,
+      "watchedDate": "2026-10-22",
+      "memberRating": 5.0,
+      "rewatch": false,
+      "tmdbId": null,
+      "link": "https://boxd.it/gUXYNH",
+      "title": "You Can See Everything",
+      "reviewText": "it's so tangibly a Nathan Fielder experiment. i loved it and am haunted by it.",
+      "tags": [
+        "in theaters"
+      ],
+      "loggedDate": "2026-10-23",
+      "source": "archive"
     }
   ],
   "highestRated": [
@@ -6691,176 +6741,176 @@
       "filmTitle": "The Prestige",
       "filmYear": 2006,
       "watchedDate": "2026-11-02",
-      "link": "https://letterboxd.com/michaellamb/film/the-prestige/1/",
-      "tmdbId": 1124
+      "link": "https://boxd.it/h8tKUv",
+      "tmdbId": null
     },
     {
       "filmTitle": "You Can See Everything",
       "filmYear": 2026,
       "watchedDate": "2026-11-01",
-      "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/2/",
-      "tmdbId": 1765072
+      "link": "https://boxd.it/h7de6H",
+      "tmdbId": null
     },
     {
       "filmTitle": "Halloween",
       "filmYear": 1978,
       "watchedDate": "2026-10-29",
-      "link": "https://letterboxd.com/michaellamb/film/halloween-1978/2/",
-      "tmdbId": 948
+      "link": "https://boxd.it/h3mV55",
+      "tmdbId": null
     },
     {
       "filmTitle": "KPop Demon Hunters",
       "filmYear": 2025,
       "watchedDate": "2026-10-28",
-      "link": "https://letterboxd.com/michaellamb/film/kpop-demon-hunters/4/",
-      "tmdbId": 803796
+      "link": "https://boxd.it/h26xdD",
+      "tmdbId": null
     },
     {
       "filmTitle": "Sinners",
       "filmYear": 2025,
       "watchedDate": "2026-10-16",
-      "link": "https://letterboxd.com/michaellamb/film/sinners-2025/16/",
-      "tmdbId": 1233413
+      "link": "https://boxd.it/gPd7Yv",
+      "tmdbId": null
     },
     {
       "filmTitle": "Carrie",
       "filmYear": 1976,
       "watchedDate": "2026-10-15",
-      "link": "https://letterboxd.com/michaellamb/film/carrie-1976/",
-      "tmdbId": 7340
+      "link": "https://boxd.it/gOdaVF",
+      "tmdbId": null
     },
     {
       "filmTitle": "Scream",
       "filmYear": 1996,
       "watchedDate": "2026-10-05",
-      "link": "https://letterboxd.com/michaellamb/film/scream/1/",
-      "tmdbId": 4232
+      "link": "https://boxd.it/gEBXqp",
+      "tmdbId": null
     },
     {
       "filmTitle": "Donnie Darko",
       "filmYear": 2001,
       "watchedDate": "2026-10-03",
-      "link": "https://letterboxd.com/michaellamb/film/donnie-darko/2/",
-      "tmdbId": 141
+      "link": "https://boxd.it/gCqK09",
+      "tmdbId": null
     },
     {
       "filmTitle": "The Green Knight",
       "filmYear": 2021,
       "watchedDate": "2026-10-01",
-      "link": "https://letterboxd.com/michaellamb/film/the-green-knight/13/",
-      "tmdbId": 559907
+      "link": "https://boxd.it/gzSknZ",
+      "tmdbId": null
     },
     {
       "filmTitle": "Blue Film",
       "filmYear": 2025,
       "watchedDate": "2026-09-28",
-      "link": "https://letterboxd.com/michaellamb/film/blue-film-2025/",
-      "tmdbId": 1398655
+      "link": "https://boxd.it/gxODGF",
+      "tmdbId": null
     },
     {
       "filmTitle": "The Truman Show",
       "filmYear": 1998,
       "watchedDate": "2026-09-25",
-      "link": "https://letterboxd.com/michaellamb/film/the-truman-show/8/",
-      "tmdbId": 37165
+      "link": "https://boxd.it/guiPyd",
+      "tmdbId": null
     },
     {
       "filmTitle": "Hamnet",
       "filmYear": 2025,
       "watchedDate": "2026-09-25",
-      "link": "https://letterboxd.com/michaellamb/film/hamnet/5/",
-      "tmdbId": 858024
+      "link": "https://boxd.it/guwJX5",
+      "tmdbId": null
     },
     {
       "filmTitle": "Superman",
       "filmYear": 2025,
       "watchedDate": "2026-09-22",
-      "link": "https://letterboxd.com/michaellamb/film/superman-2025/3/",
-      "tmdbId": 1061474
+      "link": "https://boxd.it/grYehh",
+      "tmdbId": null
     },
     {
       "filmTitle": "Dune",
       "filmYear": 2021,
       "watchedDate": "2026-09-14",
-      "link": "https://letterboxd.com/michaellamb/film/dune-2021/11/",
-      "tmdbId": 438631
+      "link": "https://boxd.it/gkO8h3",
+      "tmdbId": null
     },
     {
       "filmTitle": "Dune: Part Two",
       "filmYear": 2024,
       "watchedDate": "2026-09-14",
-      "link": "https://letterboxd.com/michaellamb/film/dune-part-two/19/",
-      "tmdbId": 693134
+      "link": "https://boxd.it/gkXW6x",
+      "tmdbId": null
     },
     {
       "filmTitle": "Akira",
       "filmYear": 1988,
       "watchedDate": "2026-09-05",
-      "link": "https://letterboxd.com/michaellamb/film/akira/1/",
-      "tmdbId": 149
+      "link": "https://boxd.it/gcn60X",
+      "tmdbId": null
     },
     {
       "filmTitle": "The Scooby-Doo Project",
       "filmYear": 1999,
       "watchedDate": "2026-09-02",
-      "link": "https://letterboxd.com/michaellamb/film/the-scooby-doo-project/",
-      "tmdbId": 423336
+      "link": "https://boxd.it/g9n39b",
+      "tmdbId": null
     },
     {
       "filmTitle": "The Lord of the Rings: The Two Towers",
       "filmYear": 2002,
       "watchedDate": "2026-08-07",
-      "link": "https://letterboxd.com/michaellamb/film/the-lord-of-the-rings-the-two-towers/3/",
-      "tmdbId": 121
+      "link": "https://boxd.it/fHoeL1",
+      "tmdbId": null
     },
     {
       "filmTitle": "Ikiru",
       "filmYear": 1952,
       "watchedDate": "2026-07-31",
-      "link": "https://letterboxd.com/michaellamb/film/ikiru/",
-      "tmdbId": 3782
+      "link": "https://boxd.it/fzbwSB",
+      "tmdbId": null
     },
     {
       "filmTitle": "Midsommar",
       "filmYear": 2019,
       "watchedDate": "2026-07-26",
-      "link": "https://letterboxd.com/michaellamb/film/midsommar/52/",
-      "tmdbId": 530385
+      "link": "https://boxd.it/ft4ryX",
+      "tmdbId": null
     },
     {
       "filmTitle": "The Muppet Christmas Carol",
       "filmYear": 1992,
       "watchedDate": "2026-07-25",
-      "link": "https://letterboxd.com/michaellamb/film/the-muppet-christmas-carol/",
-      "tmdbId": 10437
+      "link": "https://boxd.it/fqCfwV",
+      "tmdbId": null
     },
     {
       "filmTitle": "Oppenheimer",
       "filmYear": 2023,
       "watchedDate": "2026-07-25",
-      "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/16/",
-      "tmdbId": 872585
+      "link": "https://boxd.it/frFLGt",
+      "tmdbId": null
     },
     {
       "filmTitle": "Tuner",
       "filmYear": 2025,
       "watchedDate": "2026-07-22",
-      "link": "https://letterboxd.com/michaellamb/film/tuner/",
-      "tmdbId": 1340206
+      "link": "https://boxd.it/fo5bs7",
+      "tmdbId": null
     },
     {
       "filmTitle": "Strange Days",
       "filmYear": 1995,
       "watchedDate": "2026-07-20",
-      "link": "https://letterboxd.com/michaellamb/film/strange-days/",
-      "tmdbId": 281
+      "link": "https://boxd.it/fleJTR",
+      "tmdbId": null
     },
     {
       "filmTitle": "Bugonia",
       "filmYear": 2025,
       "watchedDate": "2026-07-20",
-      "link": "https://letterboxd.com/michaellamb/film/bugonia/1/",
-      "tmdbId": 701387
+      "link": "https://boxd.it/flPogj",
+      "tmdbId": null
     },
     {
       "filmTitle": "The Muppet Movie",
@@ -6881,20 +6931,6 @@
       "filmYear": 1969,
       "watchedDate": "2026-07-04",
       "link": "https://boxd.it/f5rbLr",
-      "tmdbId": null
-    },
-    {
-      "filmTitle": "Oppenheimer",
-      "filmYear": 2023,
-      "watchedDate": "2026-06-29",
-      "link": "https://boxd.it/f0Cnfp",
-      "tmdbId": null
-    },
-    {
-      "filmTitle": "Midsommar",
-      "filmYear": 2019,
-      "watchedDate": "2026-06-26",
-      "link": "https://boxd.it/eXKLxL",
       "tmdbId": null
     },
     {
@@ -6919,13 +6955,6 @@
       "tmdbId": null
     },
     {
-      "filmTitle": "Dune: Part Two",
-      "filmYear": 2024,
-      "watchedDate": "2026-06-04",
-      "link": "https://boxd.it/eEGmN1",
-      "tmdbId": null
-    },
-    {
       "filmTitle": "Fallen Angels",
       "filmYear": 1995,
       "watchedDate": "2026-05-30",
@@ -6937,13 +6966,6 @@
       "filmYear": 2025,
       "watchedDate": "2026-05-23",
       "link": "https://boxd.it/eu624j",
-      "tmdbId": null
-    },
-    {
-      "filmTitle": "The Truman Show",
-      "filmYear": 1998,
-      "watchedDate": "2026-05-21",
-      "link": "https://boxd.it/esJsbv",
       "tmdbId": null
     },
     {
@@ -7017,13 +7039,6 @@
       "tmdbId": null
     },
     {
-      "filmTitle": "Sinners",
-      "filmYear": 2025,
-      "watchedDate": "2026-04-08",
-      "link": "https://boxd.it/dTS7Oz",
-      "tmdbId": null
-    },
-    {
       "filmTitle": "Cool Hand Luke",
       "filmYear": 1967,
       "watchedDate": "2026-04-07",
@@ -7049,34 +7064,6 @@
       "filmYear": 2024,
       "watchedDate": "2026-03-18",
       "link": "https://boxd.it/dzLfOj",
-      "tmdbId": null
-    },
-    {
-      "filmTitle": "Dune",
-      "filmYear": 2021,
-      "watchedDate": "2026-03-18",
-      "link": "https://boxd.it/dA9OX9",
-      "tmdbId": null
-    },
-    {
-      "filmTitle": "Hamnet",
-      "filmYear": 2025,
-      "watchedDate": "2026-03-01",
-      "link": "https://boxd.it/dmGB9l",
-      "tmdbId": null
-    },
-    {
-      "filmTitle": "Bugonia",
-      "filmYear": 2025,
-      "watchedDate": "2026-02-21",
-      "link": "https://boxd.it/deHRYJ",
-      "tmdbId": null
-    },
-    {
-      "filmTitle": "KPop Demon Hunters",
-      "filmYear": 2025,
-      "watchedDate": "2026-02-14",
-      "link": "https://boxd.it/d8utfZ",
       "tmdbId": null
     },
     {
@@ -7161,13 +7148,6 @@
       "filmYear": 2023,
       "watchedDate": "2025-12-02",
       "link": "https://boxd.it/bV0y7B",
-      "tmdbId": null
-    },
-    {
-      "filmTitle": "Superman",
-      "filmYear": 2025,
-      "watchedDate": "2025-11-26",
-      "link": "https://boxd.it/bQDhuV",
       "tmdbId": null
     },
     {
@@ -7318,13 +7298,6 @@
       "tmdbId": null
     },
     {
-      "filmTitle": "The Prestige",
-      "filmYear": 2006,
-      "watchedDate": "2025-06-21",
-      "link": "https://boxd.it/a4poOv",
-      "tmdbId": null
-    },
-    {
       "filmTitle": "Princess Mononoke",
       "filmYear": 1997,
       "watchedDate": "2025-06-01",
@@ -7451,13 +7424,6 @@
       "tmdbId": null
     },
     {
-      "filmTitle": "The Lord of the Rings: The Two Towers",
-      "filmYear": 2002,
-      "watchedDate": "2025-01-26",
-      "link": "https://boxd.it/8D3Dnf",
-      "tmdbId": null
-    },
-    {
       "filmTitle": "The Lord of the Rings: The Return of the King",
       "filmYear": 2003,
       "watchedDate": "2025-01-26",
@@ -7514,13 +7480,6 @@
       "tmdbId": null
     },
     {
-      "filmTitle": "The Green Knight",
-      "filmYear": 2021,
-      "watchedDate": "2024-12-25",
-      "link": "https://boxd.it/8amLAj",
-      "tmdbId": null
-    },
-    {
       "filmTitle": "My Dinner with Andre",
       "filmYear": 1981,
       "watchedDate": "2024-12-08",
@@ -7553,13 +7512,6 @@
       "filmYear": 2010,
       "watchedDate": "2024-11-09",
       "link": "https://boxd.it/7LQGqN",
-      "tmdbId": null
-    },
-    {
-      "filmTitle": "Donnie Darko",
-      "filmYear": 2001,
-      "watchedDate": "2024-10-23",
-      "link": "https://boxd.it/7CSpgp",
       "tmdbId": null
     },
     {
@@ -7707,13 +7659,6 @@
       "filmYear": 2023,
       "watchedDate": "2024-03-04",
       "link": "https://boxd.it/5YRCKn",
-      "tmdbId": null
-    },
-    {
-      "filmTitle": "Akira",
-      "filmYear": 1988,
-      "watchedDate": "2024-02-26",
-      "link": "https://boxd.it/5VBqNP",
       "tmdbId": null
     },
     {
@@ -7955,13 +7900,6 @@
       "tmdbId": null
     },
     {
-      "filmTitle": "Scream",
-      "filmYear": 1996,
-      "watchedDate": "2023-02-05",
-      "link": "https://boxd.it/3OTXC3",
-      "tmdbId": null
-    },
-    {
       "filmTitle": "Taxi Driver",
       "filmYear": 1976,
       "watchedDate": "2023-02-03",
@@ -8088,13 +8026,6 @@
       "tmdbId": null
     },
     {
-      "filmTitle": "Halloween",
-      "filmYear": 1978,
-      "watchedDate": "2022-10-27",
-      "link": "https://boxd.it/3mXpjn",
-      "tmdbId": null
-    },
-    {
       "filmTitle": "The Prince of Egypt",
       "filmYear": 1998,
       "watchedDate": "2022-10-18",
@@ -8131,7 +8062,7 @@
     },
     {
       "filmTitle": "War and Peace",
-      "filmYear": 1965,
+      "filmYear": 1968,
       "watchedDate": "2022-09-10",
       "link": "https://boxd.it/3djmt9",
       "tmdbId": null
@@ -11611,8 +11542,8 @@
       ]
     },
     "2023": {
-      "totalWatched": 440,
-      "uniqueFilms": 361,
+      "totalWatched": 439,
+      "uniqueFilms": 360,
       "totalRewatches": 147,
       "averageRating": 3.83,
       "ratingDistribution": {
@@ -11624,7 +11555,7 @@
         "3.0": 41,
         "3.5": 65,
         "4.0": 89,
-        "4.5": 71,
+        "4.5": 70,
         "5.0": 92,
         "unrated": 20
       },
@@ -12607,7 +12538,7 @@
         },
         {
           "date": "2023-12-23",
-          "count": 7
+          "count": 6
         },
         {
           "date": "2023-12-24",
@@ -12638,7 +12569,7 @@
         "1980s": 11,
         "1990s": 34,
         "2000s": 31,
-        "2010s": 130,
+        "2010s": 129,
         "2020s": 216
       },
       "mostRewatched": [
@@ -12742,10 +12673,10 @@
       ]
     },
     "2024": {
-      "totalWatched": 524,
-      "uniqueFilms": 434,
-      "totalRewatches": 187,
-      "averageRating": 3.86,
+      "totalWatched": 519,
+      "uniqueFilms": 432,
+      "totalRewatches": 184,
+      "averageRating": 3.85,
       "ratingDistribution": {
         "0.5": 1,
         "1.0": 6,
@@ -12753,9 +12684,9 @@
         "2.0": 16,
         "2.5": 26,
         "3.0": 71,
-        "3.5": 72,
+        "3.5": 70,
         "4.0": 113,
-        "4.5": 93,
+        "4.5": 90,
         "5.0": 94,
         "unrated": 27
       },
@@ -13134,7 +13065,7 @@
         },
         {
           "date": "2024-04-25",
-          "count": 3
+          "count": 2
         },
         {
           "date": "2024-04-26",
@@ -13218,10 +13149,6 @@
         },
         {
           "date": "2024-05-19",
-          "count": 1
-        },
-        {
-          "date": "2024-05-20",
           "count": 1
         },
         {
@@ -13445,10 +13372,6 @@
           "count": 1
         },
         {
-          "date": "2024-08-09",
-          "count": 1
-        },
-        {
           "date": "2024-08-11",
           "count": 1
         },
@@ -13574,7 +13497,7 @@
         },
         {
           "date": "2024-10-09",
-          "count": 3
+          "count": 2
         },
         {
           "date": "2024-10-13",
@@ -13705,10 +13628,6 @@
           "count": 2
         },
         {
-          "date": "2024-11-28",
-          "count": 1
-        },
-        {
           "date": "2024-11-30",
           "count": 3
         },
@@ -13818,8 +13737,8 @@
         "1980s": 17,
         "1990s": 25,
         "2000s": 53,
-        "2010s": 125,
-        "2020s": 279
+        "2010s": 120,
+        "2020s": 280
       },
       "mostRewatched": [
         {
@@ -13922,10 +13841,10 @@
       ]
     },
     "2025": {
-      "totalWatched": 442,
-      "uniqueFilms": 387,
-      "totalRewatches": 144,
-      "averageRating": 3.91,
+      "totalWatched": 440,
+      "uniqueFilms": 386,
+      "totalRewatches": 142,
+      "averageRating": 3.9,
       "ratingDistribution": {
         "0.5": 0,
         "1.0": 3,
@@ -13935,7 +13854,7 @@
         "3.0": 54,
         "3.5": 86,
         "4.0": 86,
-        "4.5": 69,
+        "4.5": 67,
         "5.0": 98,
         "unrated": 9
       },
@@ -13970,7 +13889,7 @@
         },
         {
           "date": "2025-01-11",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2025-01-12",
@@ -14582,7 +14501,7 @@
         },
         {
           "date": "2025-08-16",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2025-08-17",
@@ -14880,8 +14799,8 @@
         "1980s": 17,
         "1990s": 32,
         "2000s": 59,
-        "2010s": 81,
-        "2020s": 217
+        "2010s": 78,
+        "2020s": 218
       },
       "mostRewatched": [
         {
@@ -14984,8 +14903,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 315,
-      "uniqueFilms": 288,
+      "totalWatched": 313,
+      "uniqueFilms": 276,
       "totalRewatches": 105,
       "averageRating": 3.91,
       "ratingDistribution": {
@@ -14994,10 +14913,10 @@
         "1.5": 5,
         "2.0": 9,
         "2.5": 20,
-        "3.0": 29,
-        "3.5": 42,
-        "4.0": 67,
-        "4.5": 59,
+        "3.0": 28,
+        "3.5": 43,
+        "4.0": 66,
+        "4.5": 58,
         "5.0": 75,
         "unrated": 2
       },
@@ -15476,7 +15395,7 @@
         },
         {
           "date": "2026-07-28",
-          "count": 3
+          "count": 2
         },
         {
           "date": "2026-07-29",
@@ -15744,7 +15663,7 @@
         },
         {
           "date": "2026-10-31",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2026-11-01",
@@ -15776,32 +15695,32 @@
           "link": "https://boxd.it/cFxBLT"
         },
         {
+          "count": 4,
+          "filmTitle": "Hamnet",
+          "filmYear": 2025,
+          "tmdbId": null,
+          "link": "https://boxd.it/cZLYxN"
+        },
+        {
           "count": 3,
           "filmTitle": "You Can See Everything",
           "filmYear": 2026,
-          "tmdbId": 1765072,
-          "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/"
+          "tmdbId": null,
+          "link": "https://boxd.it/gUXYNH"
         },
         {
           "count": 3,
-          "filmTitle": "The Odyssey",
-          "filmYear": 2026,
-          "tmdbId": 1368337,
-          "link": "https://letterboxd.com/michaellamb/film/the-odyssey-2026/"
+          "filmTitle": "KPop Demon Hunters",
+          "filmYear": 2025,
+          "tmdbId": null,
+          "link": "https://boxd.it/cE7DYp"
         },
         {
-          "count": 2,
-          "filmTitle": "A Story of Derry",
-          "filmYear": 2026,
-          "tmdbId": 1813355,
-          "link": "https://letterboxd.com/michaellamb/film/a-story-of-derry/"
-        },
-        {
-          "count": 2,
-          "filmTitle": "Digger",
-          "filmYear": 2026,
-          "tmdbId": 1248832,
-          "link": "https://letterboxd.com/michaellamb/film/digger-2026/"
+          "count": 3,
+          "filmTitle": "The Truman Show",
+          "filmYear": 1998,
+          "tmdbId": null,
+          "link": "https://boxd.it/efEBW9"
         }
       ],
       "highestRated": [
@@ -15809,115 +15728,116 @@
           "filmTitle": "The Prestige",
           "filmYear": 2006,
           "watchedDate": "2026-11-02",
-          "link": "https://letterboxd.com/michaellamb/film/the-prestige/1/"
+          "link": "https://boxd.it/h8tKUv"
         },
         {
           "filmTitle": "You Can See Everything",
           "filmYear": 2026,
           "watchedDate": "2026-11-01",
-          "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/2/"
+          "link": "https://boxd.it/h7de6H"
         },
         {
           "filmTitle": "Halloween",
           "filmYear": 1978,
           "watchedDate": "2026-10-29",
-          "link": "https://letterboxd.com/michaellamb/film/halloween-1978/2/"
+          "link": "https://boxd.it/h3mV55"
         },
         {
           "filmTitle": "KPop Demon Hunters",
           "filmYear": 2025,
           "watchedDate": "2026-10-28",
-          "link": "https://letterboxd.com/michaellamb/film/kpop-demon-hunters/4/"
+          "link": "https://boxd.it/h26xdD"
         },
         {
           "filmTitle": "Sinners",
           "filmYear": 2025,
           "watchedDate": "2026-10-16",
-          "link": "https://letterboxd.com/michaellamb/film/sinners-2025/16/"
+          "link": "https://boxd.it/gPd7Yv"
         },
         {
           "filmTitle": "Carrie",
           "filmYear": 1976,
           "watchedDate": "2026-10-15",
-          "link": "https://letterboxd.com/michaellamb/film/carrie-1976/"
+          "link": "https://boxd.it/gOdaVF"
         },
         {
           "filmTitle": "Scream",
           "filmYear": 1996,
           "watchedDate": "2026-10-05",
-          "link": "https://letterboxd.com/michaellamb/film/scream/1/"
+          "link": "https://boxd.it/gEBXqp"
         },
         {
           "filmTitle": "Donnie Darko",
           "filmYear": 2001,
           "watchedDate": "2026-10-03",
-          "link": "https://letterboxd.com/michaellamb/film/donnie-darko/2/"
+          "link": "https://boxd.it/gCqK09"
         },
         {
           "filmTitle": "The Green Knight",
           "filmYear": 2021,
           "watchedDate": "2026-10-01",
-          "link": "https://letterboxd.com/michaellamb/film/the-green-knight/13/"
+          "link": "https://boxd.it/gzSknZ"
         },
         {
           "filmTitle": "Blue Film",
           "filmYear": 2025,
           "watchedDate": "2026-09-28",
-          "link": "https://letterboxd.com/michaellamb/film/blue-film-2025/"
+          "link": "https://boxd.it/gxODGF"
         }
       ]
     }
   },
   "tagCloud": {
-    "youtube": 523,
-    "in theaters": 369,
-    "garbage": 278,
-    "primevideo": 205,
-    "hulu": 138,
-    "hbomax": 128,
-    "moviepass": 122,
-    "netflix": 105,
+    "youtube": 553,
+    "in theaters": 400,
+    "garbage": 277,
+    "primevideo": 210,
+    "hulu": 143,
+    "hbomax": 138,
+    "moviepass": 134,
+    "netflix": 107,
+    "disney+": 100,
     "max": 94,
-    "disney+": 91,
-    "alter": 85,
-    "mubi": 81,
-    "omeleto": 66,
-    "imax": 65,
-    "4k": 63,
+    "alter": 89,
+    "mubi": 85,
+    "4k": 74,
+    "imax": 70,
+    "omeleto": 68,
     "fellas": 50,
     "samo": 45,
+    "jxnfilmclub": 42,
     "off2024": 41,
-    "jxnfilmclub": 38,
-    "jsyd": 31,
-    "dvd": 30,
+    "dvd": 37,
+    "bluray": 35,
+    "jsyd": 34,
+    "criterion": 30,
     "dust": 30,
     "television at a bar": 29,
-    "criterion": 29,
+    "shudder": 26,
+    "merry": 26,
     "magnoliaiff": 26,
-    "merry": 24,
     "googleplay": 24,
     "markvs": 24,
     "shelby": 23,
-    "bluray": 22,
     "mj": 22,
-    "shudder": 20,
-    "tubi": 17,
+    "tubi": 18,
+    "msfilmsociety": 17,
     "lecinemaclub": 17,
     "vimeo": 17,
-    "msfilmsociety": 16,
-    "profile": 13,
+    "appletv+": 14,
+    "profile": 14,
+    "ryanparker": 13,
     "short films big names": 13,
+    "appletv": 12,
     "mattycakes": 12,
+    "moviesanywhere": 11,
     "eduardo": 11,
-    "appletv": 11,
     "cspiregaming": 11,
     "directors cut": 11,
     "big brain": 10,
-    "appletv+": 10,
     "jawnmizzles": 9,
+    "williemorris": 8,
     "lumberjake": 8,
-    "ryanparker": 7,
-    "moviesanywhere": 7,
     "lovvorn": 7,
     "heathwalt": 7,
     "metamodern": 7,
@@ -15927,7 +15847,6 @@
     "internetarchive": 5,
     "cinemarkmovieclub": 5,
     "mubi film of the day": 5,
-    "williemorris": 4,
     "lolo": 4,
     "alexisaiah": 4,
     "boppie": 4,
@@ -15938,6 +15857,7 @@
     "3d": 3,
     "plaza": 3,
     "a24 screening room": 3,
+    "deadmeat": 2,
     "crunchyroll": 2,
     "reel": 2,
     "short of the week": 2,
@@ -15945,10 +15865,9 @@
     "urban foxes": 2,
     "neon": 2,
     "peacock": 2,
-    "dekkoo": 1,
-    "bearlee": 1,
-    "libraryofcongress": 1,
-    "mometu": 1
+    "comedycentral": 1,
+    "videostore": 1,
+    "watchfree+": 1
   },
   "watchlist": {
     "count": 1586,
@@ -16018,308 +15937,308 @@
     ],
     "removedSinceExport": 0,
     "snapshotDate": "2026-11-03",
-    "snapshotSource": "watchlist-michaellamb-2026-11-03-17-26-utc.csv"
+    "snapshotSource": "letterboxd-michaellamb-2026-11-03-18-19-utc"
   },
   "likedFilms": [
     {
-      "name": "The Great Muppet Caper",
-      "year": 1981,
-      "link": "https://boxd.it/1N9i",
-      "likedDate": "2026-07-09"
-    },
-    {
-      "name": "The Muppet Movie",
-      "year": 1979,
-      "link": "https://boxd.it/1UrS",
-      "likedDate": "2026-07-05"
-    },
-    {
-      "name": "The Cube",
-      "year": 1969,
-      "link": "https://boxd.it/18qW",
-      "likedDate": "2026-07-05"
-    },
-    {
-      "name": "Spider-Man: Homecoming",
-      "year": 2017,
-      "link": "https://boxd.it/aboM",
-      "likedDate": "2026-07-04"
-    },
-    {
-      "name": "Double Blind",
-      "year": 2023,
-      "link": "https://boxd.it/H8ky",
-      "likedDate": "2026-07-04"
-    },
-    {
-      "name": "Freakier Friday",
+      "name": "Exit 8",
       "year": 2025,
-      "link": "https://boxd.it/GxwW",
-      "likedDate": "2026-07-03"
+      "link": "https://boxd.it/S9Kk",
+      "likedDate": "2026-11-03"
     },
     {
-      "name": "Supergirl",
+      "name": "The Cycle",
       "year": 2026,
-      "link": "https://boxd.it/ESyU",
-      "likedDate": "2026-06-28"
+      "link": "https://boxd.it/NeL8",
+      "likedDate": "2026-11-02"
     },
     {
-      "name": "Undefeated",
-      "year": 2011,
-      "link": "https://boxd.it/2TKQ",
-      "likedDate": "2026-06-25"
+      "name": "Dogma",
+      "year": 1999,
+      "link": "https://boxd.it/284e",
+      "likedDate": "2026-11-02"
     },
     {
-      "name": "Andor: A Disney+ Day Special Look",
-      "year": 2022,
-      "link": "https://boxd.it/CDne",
-      "likedDate": "2026-06-23"
+      "name": "The Web",
+      "year": 2013,
+      "link": "https://boxd.it/cjy0",
+      "likedDate": "2026-11-02"
     },
     {
-      "name": "Leviticus",
+      "name": "A Story of Derry",
       "year": 2026,
-      "link": "https://boxd.it/YjUw",
-      "likedDate": "2026-06-23"
+      "link": "https://boxd.it/17PMM",
+      "likedDate": "2026-11-01"
     },
     {
-      "name": "Lee Cronin's The Mummy",
+      "name": "Remain Calm",
       "year": 2026,
-      "link": "https://boxd.it/NM9C",
-      "likedDate": "2026-06-17"
+      "link": "https://boxd.it/17mxI",
+      "likedDate": "2026-10-31"
     },
     {
-      "name": "The Naked Gun",
+      "name": "Wake in Fright",
+      "year": 1971,
+      "link": "https://boxd.it/1tWk",
+      "likedDate": "2026-10-30"
+    },
+    {
+      "name": "Wildwood",
+      "year": 2026,
+      "link": "https://boxd.it/tLD2",
+      "likedDate": "2026-10-28"
+    },
+    {
+      "name": "Son of Rambow",
+      "year": 2007,
+      "link": "https://boxd.it/1Qwk",
+      "likedDate": "2026-10-27"
+    },
+    {
+      "name": "Shift",
       "year": 2025,
-      "link": "https://boxd.it/Da9k",
-      "likedDate": "2026-06-15"
+      "link": "https://boxd.it/WDyc",
+      "likedDate": "2026-10-27"
     },
     {
-      "name": "Disclosure Day",
+      "name": "Barbarians",
+      "year": 2021,
+      "link": "https://boxd.it/uxD0",
+      "likedDate": "2026-10-26"
+    },
+    {
+      "name": "You Can See Everything",
       "year": 2026,
-      "link": "https://boxd.it/MDJY",
-      "likedDate": "2026-06-12"
+      "link": "https://boxd.it/16mVo",
+      "likedDate": "2026-10-23"
     },
     {
-      "name": "Master of the Universe",
+      "name": "Clayface",
       "year": 2026,
-      "link": "https://boxd.it/13shS",
-      "likedDate": "2026-06-11"
+      "link": "https://boxd.it/RTVm",
+      "likedDate": "2026-10-23"
     },
     {
-      "name": "Steel Magnolias",
-      "year": 1989,
-      "link": "https://boxd.it/1Vd8",
-      "likedDate": "2026-06-08"
-    },
-    {
-      "name": "A Murder at the End of the World",
-      "year": 2023,
-      "link": "https://boxd.it/JIma",
-      "likedDate": "2026-06-06"
-    },
-    {
-      "name": "Power Ballad",
-      "year": 2026,
-      "link": "https://boxd.it/MZy4",
-      "likedDate": "2026-06-03"
-    },
-    {
-      "name": "The Super Mario Galaxy Movie",
-      "year": 2026,
-      "link": "https://boxd.it/KzPa",
-      "likedDate": "2026-06-01"
-    },
-    {
-      "name": "Is God Is",
-      "year": 2026,
-      "link": "https://boxd.it/R80o",
-      "likedDate": "2026-06-01"
-    },
-    {
-      "name": "Flower",
+      "name": "Visitor",
       "year": null,
-      "link": "https://boxd.it/13IoU",
-      "likedDate": "2026-05-31"
+      "link": "https://boxd.it/N28y",
+      "likedDate": "2026-10-22"
     },
     {
-      "name": "Fallen Angels",
-      "year": 1995,
-      "link": "https://boxd.it/1UkW",
-      "likedDate": "2026-05-31"
-    },
-    {
-      "name": "Backrooms",
-      "year": 2026,
-      "link": "https://boxd.it/EY6W",
-      "likedDate": "2026-05-29"
-    },
-    {
-      "name": "I Love Boosters",
-      "year": 2026,
-      "link": "https://boxd.it/KBIU",
-      "likedDate": "2026-05-26"
-    },
-    {
-      "name": "In the Grey",
-      "year": 2026,
-      "link": "https://boxd.it/Grji",
-      "likedDate": "2026-05-24"
-    },
-    {
-      "name": "Boxcar Bertha",
-      "year": 1972,
-      "link": "https://boxd.it/1A58",
-      "likedDate": "2026-05-23"
-    },
-    {
-      "name": "The Last Waltz",
-      "year": 1978,
-      "link": "https://boxd.it/1P1U",
-      "likedDate": "2026-05-23"
-    },
-    {
-      "name": "Obsession",
+      "name": "V/H/S/Halloween",
       "year": 2025,
-      "link": "https://boxd.it/PNqo",
-      "likedDate": "2026-05-21"
+      "link": "https://boxd.it/QS3Q",
+      "likedDate": "2026-10-21"
     },
     {
-      "name": "All the President's Men",
-      "year": 1976,
-      "link": "https://boxd.it/29lU",
-      "likedDate": "2026-05-18"
-    },
-    {
-      "name": "Eddington",
-      "year": 2025,
-      "link": "https://boxd.it/o6MC",
-      "likedDate": "2026-05-17"
-    },
-    {
-      "name": "Atropia",
-      "year": 2025,
-      "link": "https://boxd.it/L5Km",
-      "likedDate": "2026-05-16"
-    },
-    {
-      "name": "Lurker",
-      "year": 2025,
-      "link": "https://boxd.it/McHG",
-      "likedDate": "2026-05-16"
-    },
-    {
-      "name": "The Sheep Detectives",
-      "year": 2026,
-      "link": "https://boxd.it/NDSe",
-      "likedDate": "2026-05-13"
-    },
-    {
-      "name": "Would You Like to Try Again?",
-      "year": 2019,
-      "link": "https://boxd.it/ruyK",
-      "likedDate": "2026-05-13"
-    },
-    {
-      "name": "Short Circuit",
-      "year": 1986,
-      "link": "https://boxd.it/26zY",
-      "likedDate": "2026-05-12"
-    },
-    {
-      "name": "A Son's Wedding",
-      "year": 2024,
-      "link": "https://boxd.it/11WG0",
-      "likedDate": "2026-05-11"
-    },
-    {
-      "name": "The Silence of the Lambs",
-      "year": 1991,
-      "link": "https://boxd.it/2aHW",
-      "likedDate": "2026-05-09"
-    },
-    {
-      "name": "The Passenger",
-      "year": 2023,
-      "link": "https://boxd.it/A8Zs",
-      "likedDate": "2026-05-08"
-    },
-    {
-      "name": "Gary",
-      "year": 2026,
-      "link": "https://boxd.it/135jm",
-      "likedDate": "2026-05-08"
-    },
-    {
-      "name": "Souvenir Drunk",
-      "year": 2024,
-      "link": "https://boxd.it/134fy",
-      "likedDate": "2026-05-05"
-    },
-    {
-      "name": "The Devil Wears Prada 2",
-      "year": 2026,
-      "link": "https://boxd.it/Oags",
-      "likedDate": "2026-05-03"
-    },
-    {
-      "name": "Detachment",
-      "year": 2011,
-      "link": "https://boxd.it/2BiY",
-      "likedDate": "2026-05-02"
-    },
-    {
-      "name": "The Drama",
-      "year": 2026,
-      "link": "https://boxd.it/OA2w",
-      "likedDate": "2026-05-02"
-    },
-    {
-      "name": "Memory Project",
-      "year": 2026,
-      "link": "https://boxd.it/T8JC",
-      "likedDate": "2026-05-02"
-    },
-    {
-      "name": "The Outfit",
+      "name": "WeCrashed",
       "year": 2022,
-      "link": "https://boxd.it/u6Eq",
-      "likedDate": "2026-05-01"
+      "link": "https://boxd.it/zx6A",
+      "likedDate": "2026-10-18"
     },
     {
-      "name": "Portland Is the New Portland",
-      "year": 2024,
-      "link": "https://boxd.it/PFXa",
-      "likedDate": "2026-05-01"
-    },
-    {
-      "name": "Joybubbles",
+      "name": "Whalefall",
       "year": 2026,
-      "link": "https://boxd.it/ZsVU",
-      "likedDate": "2026-04-29"
+      "link": "https://boxd.it/LPec",
+      "likedDate": "2026-10-17"
     },
     {
-      "name": "Paprika",
-      "year": 2006,
-      "link": "https://boxd.it/23wW",
-      "likedDate": "2026-04-24"
+      "name": "Death Becomes Her",
+      "year": 1992,
+      "link": "https://boxd.it/1YQi",
+      "likedDate": "2026-10-17"
     },
     {
-      "name": "Dust Bunny",
+      "name": "Carrie",
+      "year": 1976,
+      "link": "https://boxd.it/20ZQ",
+      "likedDate": "2026-10-16"
+    },
+    {
+      "name": "Fresh Meat",
+      "year": 2026,
+      "link": "https://boxd.it/15ifw",
+      "likedDate": "2026-10-13"
+    },
+    {
+      "name": "Nightfall",
       "year": 2025,
-      "link": "https://boxd.it/DtBW",
-      "likedDate": "2026-04-23"
+      "link": "https://boxd.it/YrbY",
+      "likedDate": "2026-10-13"
     },
     {
-      "name": "F*ckUps Anonymous",
-      "year": 2025,
-      "link": "https://boxd.it/11f4M",
-      "likedDate": "2026-04-23"
+      "name": "The Social Reckoning",
+      "year": 2026,
+      "link": "https://boxd.it/MRPQ",
+      "likedDate": "2026-10-12"
     },
     {
-      "name": "Zootopia 2",
+      "name": "Carrie",
+      "year": 2026,
+      "link": "https://boxd.it/15TAQ",
+      "likedDate": "2026-10-12"
+    },
+    {
+      "name": "Red State",
+      "year": 2011,
+      "link": "https://boxd.it/I9g",
+      "likedDate": "2026-10-12"
+    },
+    {
+      "name": "Other Mommy",
+      "year": 2026,
+      "link": "https://boxd.it/RTwc",
+      "likedDate": "2026-10-10"
+    },
+    {
+      "name": "Digger",
+      "year": 2026,
+      "link": "https://boxd.it/LwDC",
+      "likedDate": "2026-10-07"
+    },
+    {
+      "name": "Five Star",
       "year": 2025,
-      "link": "https://boxd.it/F0vO",
-      "likedDate": "2026-04-19"
+      "link": "https://boxd.it/UwnM",
+      "likedDate": "2026-10-06"
+    },
+    {
+      "name": "Constantine",
+      "year": 2005,
+      "link": "https://boxd.it/2a7E",
+      "likedDate": "2026-10-06"
+    },
+    {
+      "name": "The Dropout",
+      "year": 2022,
+      "link": "https://boxd.it/zilg",
+      "likedDate": "2026-10-05"
+    },
+    {
+      "name": "The End of Oak Street",
+      "year": 2026,
+      "link": "https://boxd.it/FF9a",
+      "likedDate": "2026-10-04"
+    },
+    {
+      "name": "You're Next",
+      "year": 2011,
+      "link": "https://boxd.it/2WWK",
+      "likedDate": "2026-10-03"
+    },
+    {
+      "name": "Hell House LLC",
+      "year": 2015,
+      "link": "https://boxd.it/cdjy",
+      "likedDate": "2026-09-30"
+    },
+    {
+      "name": "Primetime",
+      "year": 2026,
+      "link": "https://boxd.it/QX5s",
+      "likedDate": "2026-09-29"
+    },
+    {
+      "name": "Man Finds Tape",
+      "year": 2025,
+      "link": "https://boxd.it/Ula8",
+      "likedDate": "2026-09-24"
+    },
+    {
+      "name": "The Little Prince",
+      "year": 2015,
+      "link": "https://boxd.it/9WbS",
+      "likedDate": "2026-09-24"
+    },
+    {
+      "name": "Batman: Year One",
+      "year": 2011,
+      "link": "https://boxd.it/2vf0",
+      "likedDate": "2026-09-24"
+    },
+    {
+      "name": "The Mist",
+      "year": 2007,
+      "link": "https://boxd.it/22r2",
+      "likedDate": "2026-09-23"
+    },
+    {
+      "name": "Batman: The Dark Knight Returns, Part 1",
+      "year": 2012,
+      "link": "https://boxd.it/43Is",
+      "likedDate": "2026-09-23"
+    },
+    {
+      "name": "Knotted",
+      "year": 2026,
+      "link": "https://boxd.it/UnJO",
+      "likedDate": "2026-09-21"
+    },
+    {
+      "name": "Theo Anthony Makes a Stool",
+      "year": 2022,
+      "link": "https://boxd.it/DIGC",
+      "likedDate": "2026-09-21"
+    },
+    {
+      "name": "Revenge",
+      "year": 2017,
+      "link": "https://boxd.it/gL9g",
+      "likedDate": "2026-09-19"
+    },
+    {
+      "name": "Resident Evil",
+      "year": 2026,
+      "link": "https://boxd.it/SEXE",
+      "likedDate": "2026-09-18"
+    },
+    {
+      "name": "Blackifier",
+      "year": 2022,
+      "link": "https://boxd.it/DJb6",
+      "likedDate": "2026-09-14"
+    },
+    {
+      "name": "FernGully: The Last Rainforest",
+      "year": 1992,
+      "link": "https://boxd.it/1Qzo",
+      "likedDate": "2026-09-14"
+    },
+    {
+      "name": "Yojimbo",
+      "year": 1961,
+      "link": "https://boxd.it/1SRY",
+      "likedDate": "2026-09-14"
+    },
+    {
+      "name": "A Fistful of Dollars",
+      "year": 1964,
+      "link": "https://boxd.it/2auo",
+      "likedDate": "2026-09-14"
+    },
+    {
+      "name": "Legend",
+      "year": 1985,
+      "link": "https://boxd.it/1SCY",
+      "likedDate": "2026-09-12"
+    },
+    {
+      "name": "Reality+",
+      "year": 2014,
+      "link": "https://boxd.it/cIEC",
+      "likedDate": "2026-09-11"
+    },
+    {
+      "name": "Hope",
+      "year": 2026,
+      "link": "https://boxd.it/E3vU",
+      "likedDate": "2026-09-11"
+    },
+    {
+      "name": "Dragonheart: Battle for the Heartfire",
+      "year": 2017,
+      "link": "https://boxd.it/g6ou",
+      "likedDate": "2026-09-08"
     }
   ],
   "favoriteFilms": [
@@ -16430,6 +16349,18 @@
       "createdDate": "2025-06-27"
     },
     {
+      "name": "My 2026 Releases Ranked",
+      "slug": "my-2026-releases-ranked",
+      "url": "https://boxd.it/WTUjw",
+      "description": "",
+      "tags": [
+        "top2026",
+        "allstats"
+      ],
+      "filmCount": 61,
+      "createdDate": "2026-08-27"
+    },
+    {
       "name": "Robert Pattinson Completionist Ranking",
       "slug": "robert-pattinson-completionist-ranking",
       "url": "https://boxd.it/dfn8K",
@@ -16439,7 +16370,7 @@
         "allstats",
         "yir2022"
       ],
-      "filmCount": 49,
+      "filmCount": 48,
       "createdDate": "2021-09-01"
     },
     {
@@ -16450,6 +16381,15 @@
       "tags": [],
       "filmCount": 44,
       "createdDate": "2022-05-30"
+    },
+    {
+      "name": "My MoviesAnywhere Collection",
+      "slug": "my-moviesanywhere-collection",
+      "url": "https://boxd.it/GlgIu",
+      "description": "<a href=\"https://moviesanywhere.com/my-movies\">MoviesAnywhere</a> collection",
+      "tags": [],
+      "filmCount": 42,
+      "createdDate": "2025-04-25"
     },
     {
       "name": "2024 Oxford Film Festival",
@@ -16463,6 +16403,15 @@
       "createdDate": "2024-03-25"
     },
     {
+      "name": "My Criterion Collection Collection",
+      "slug": "my-criterion-collection-collection",
+      "url": "https://boxd.it/GCEqS",
+      "description": "",
+      "tags": [],
+      "filmCount": 35,
+      "createdDate": "2025-05-03"
+    },
+    {
       "name": "Big Al’s Disney Movies",
       "slug": "big-als-disney-movies",
       "url": "https://boxd.it/gN0CW",
@@ -16470,15 +16419,6 @@
       "tags": [],
       "filmCount": 33,
       "createdDate": "2022-05-30"
-    },
-    {
-      "name": "My Criterion Collection Collection",
-      "slug": "my-criterion-collection-collection",
-      "url": "https://boxd.it/GCEqS",
-      "description": "",
-      "tags": [],
-      "filmCount": 30,
-      "createdDate": "2025-05-03"
     },
     {
       "name": "JXNFC: Hannah Williamson's Top 20",
@@ -16564,15 +16504,6 @@
       "createdDate": "2021-12-06"
     },
     {
-      "name": "My MoviesAnywhere Collection",
-      "slug": "my-moviesanywhere-collection",
-      "url": "https://boxd.it/GlgIu",
-      "description": "<a href=\"https://moviesanywhere.com/my-movies\">MoviesAnywhere</a> collection",
-      "tags": [],
-      "filmCount": 24,
-      "createdDate": "2025-04-25"
-    },
-    {
       "name": "JXNFC: Christina Spann's Top 20",
       "slug": "jxnfc-christina-spanns-top-20",
       "url": "https://boxd.it/fyyW8",
@@ -16616,6 +16547,15 @@
       ],
       "filmCount": 21,
       "createdDate": "2023-01-19"
+    },
+    {
+      "name": "Movies Recommended To Me",
+      "slug": "movies-recommended-to-me",
+      "url": "https://boxd.it/j03sE",
+      "description": "This list is a record of movies recommended to me, and by whom (read notes).",
+      "tags": [],
+      "filmCount": 21,
+      "createdDate": "2022-11-06"
     },
     {
       "name": "Bear's November Movie Challenge",
@@ -16832,15 +16772,6 @@
       "createdDate": "2022-04-14"
     },
     {
-      "name": "Movies Recommended To Me",
-      "slug": "movies-recommended-to-me",
-      "url": "https://boxd.it/j03sE",
-      "description": "This list is a record of movies recommended to me, and by whom (read notes).",
-      "tags": [],
-      "filmCount": 18,
-      "createdDate": "2022-11-06"
-    },
-    {
       "name": "JXNFC: Tyler Winstead's Top 20(ish)",
       "slug": "jxnfc-tyler-winsteads-top-20ish",
       "url": "https://boxd.it/aQoEk",
@@ -17039,6 +16970,17 @@
       "logCount": 1
     },
     {
+      "filmTitle": "Rob Cantor: Shia LaBeouf Live",
+      "filmYear": 2014,
+      "watchedDate": "2025-08-16",
+      "memberRating": 4.5,
+      "reviewText": "poolside",
+      "tags": [
+        "youtube"
+      ],
+      "logCount": 5
+    },
+    {
       "filmTitle": "The Rehearsal: My Controls",
       "filmYear": 2025,
       "watchedDate": "2025-05-26",
@@ -17073,6 +17015,17 @@
       "logCount": 1
     },
     {
+      "filmTitle": "Firebringer",
+      "filmYear": 2016,
+      "watchedDate": "2024-11-28",
+      "memberRating": 3.5,
+      "reviewText": "watched with Alan",
+      "tags": [
+        "youtube"
+      ],
+      "logCount": 2
+    },
+    {
       "filmTitle": "Can We Really Know Anything About Carrots?",
       "filmYear": 2023,
       "watchedDate": "2024-03-22",
@@ -17081,6 +17034,17 @@
       "tags": [
         "in theaters",
         "off2024"
+      ],
+      "logCount": 1
+    },
+    {
+      "filmTitle": "Tweet",
+      "filmYear": 2015,
+      "watchedDate": "2023-12-23",
+      "memberRating": 4.5,
+      "reviewText": "omg plot twist",
+      "tags": [
+        "youtube"
       ],
       "logCount": 1
     },
@@ -17218,9 +17182,9 @@
     "username": "michaellamb",
     "givenName": "Michael",
     "location": "Jackson, MS",
-    "website": "https://michaellamb.dev",
+    "website": "https://letterboxd.michaellamb.dev",
     "bio": "software engineer with a love for cinema",
     "dateJoined": "2019-08-06"
   },
-  "archiveExportDate": "2026-07-09"
+  "archiveExportDate": "2026-11-03"
 }

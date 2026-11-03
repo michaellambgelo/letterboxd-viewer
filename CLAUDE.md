@@ -101,9 +101,9 @@ The frontend reads only these top-level keys (see `compute_stats.py` and `dashbo
   python3 scripts/extract_history.py
   python3 scripts/compute_stats.py
   ```
-- **Serving locally:** `python3 -m http.server 8000` from the repo root.
+- **Serving locally:** `npx serve -l 8000 .` from the repo root. Not `python3 -m http.server`: it doesn't resolve extension-less paths, so the nav links (`rolodex`, `network`) 404. Port 8000 is the one the Worker's `ALLOWED_ORIGINS` permits for the live layer.
 - **Heatmap end-date anchor:** `dashboard.js` renders a 52-week window ending on the later of `dateRange.latest` or today. This means even if the cron falls behind, the grid still extends to the current week (with empty cells for missing data) rather than truncating at the last data point.
-- **Timezone caveat:** `renderHeatmap()` parses dates as local time but uses `toISOString()` for lookups, which can shift cells by 1 day for users in positive-offset timezones. Not yet fixed.
+- **Heatmap dates are local-time strings** (`formatLocalDate()`), never `toISOString()`: the UTC conversion shifted cells by a day for anyone east of Greenwich (fixed in 49453cf).
 - **Cron health matters:** if the workflow stops successfully committing updated `data/stats.json` and `data/viewing_history.json`, the site goes stale silently. When investigating "missing recent data", first check `gh run list --workflow=download-data-and-assets.yml` — the data is almost always the problem, not the frontend.
 - **Refreshing the archive:** export from Letterboxd, drop the new `letterboxd-michaellamb-YYYY-MM-DD-HH-MM-utc/` folder under `data/archive/`, optionally delete the older one, and re-run `extract_history.py` + `compute_stats.py`. The loader picks the lexicographically newest folder.
 - **Watchlist-only exports:** Letterboxd can export just the watchlist as `watchlist-<user>-YYYY-MM-DD-HH-MM-utc.csv`. Drop it straight into `data/archive/` (not inside a folder). `load_archive.load_watchlist_snapshot()` uses whichever is newer by the timestamp in the name, this file or the full archive's `watchlist.csv`, so a quick watchlist refresh doesn't need a full re-export. Like the archive, the cron doesn't commit it, so commit the CSV by hand.
