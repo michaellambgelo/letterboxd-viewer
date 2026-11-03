@@ -19,6 +19,7 @@
   const LINKS = [
     { href: './', page: 'index', label: 'Stats', icon: 'fa-chart-bar' },
     { href: 'rolodex', page: 'rolodex', label: 'Rolodex', icon: 'fa-address-book' },
+    { href: 'network', page: 'network', label: 'Network', icon: 'fa-project-diagram' },
     {
       href: 'https://letterboxd.com/michaellamb/',
       label: 'Letterboxd',

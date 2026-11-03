@@ -1,6 +1,6 @@
 /* Shared helpers for the dashboard and rolodex pages.
  *
- * Loaded before dashboard.js / rolodex.js on both pages, which pull what they
+ * Loaded before each page's own script (dashboard, rolodex, network), which pull what they
  * need off window.LBV rather than each keeping their own copy.
  */
 

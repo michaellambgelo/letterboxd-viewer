@@ -43,7 +43,7 @@ jobs:
           SCRIPT+='`; window.DISCORD_WEBHOOK_URL = DISCORD_WEBHOOK_URL;</script>'
           
           # Insert after title tag and verify — every page with the guestbook footer
-          for page in index.html rolodex.html; do
+          for page in index.html rolodex.html network.html; do
             perl -i -pe "s|</title>|\$&\n\t\t$SCRIPT|" "$page"
 
             echo "Verifying webhook URL injection in $page..."

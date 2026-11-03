@@ -46,15 +46,17 @@ Letterboxd RSS  ──►  scripts/download_rss.py  ──►  data/rss.xml
 - `rolodex.html` — the curated-profiles page (see **Rolodex** below)
 - `assets/js/dashboard.js` — all rendering logic (data loading via `fetch('data/stats.json')`, heatmap layout, Chart.js setup, contact form handler)
 - `assets/js/rolodex.js` — rolodex card rendering, reads the Worker's `/rolodex`
-- `assets/js/util.js` — shared helpers (`escapeHtml`, `ratingToStars`, `formatShortDate`, `safeUrl`) on `window.LBV`; **loaded before** dashboard.js/rolodex.js on both pages
-- `assets/js/nav.js` — the hamburger menu, rendered into `<div data-site-nav>` on both pages so the markup lives in one file. Hrefs are **extension-less and relative** (`./`, `rolodex`): GitHub Pages resolves `/rolodex` to `rolodex.html`, and staying relative keeps them working under the `/letterboxd-viewer/` base path. `currentPage()` strips any `.html` before matching `LINKS[].page`, so the active link is right whether you arrive at `/`, `/rolodex`, or `/rolodex.html`. **`python3 -m http.server` does not resolve extension-less paths** — use `npx serve` for local preview or the nav links 404
-- `assets/css/dashboard.css` — all styling for both pages
+- `network.html` + `assets/js/network.js` — the Network page (see **Network** below), reads `data/network.json`
+- `assets/js/util.js` — shared helpers (`escapeHtml`, `ratingToStars`, `formatShortDate`, `safeUrl`) on `window.LBV`; **loaded before** each page's own script on every page
+- `assets/js/nav.js` — the hamburger menu, rendered into `<div data-site-nav>` on every page so the markup lives in one file. Hrefs are **extension-less and relative** (`./`, `rolodex`): GitHub Pages resolves `/rolodex` to `rolodex.html`, and staying relative keeps them working under the `/letterboxd-viewer/` base path. `currentPage()` strips any `.html` before matching `LINKS[].page`, so the active link is right whether you arrive at `/`, `/rolodex`, or `/rolodex.html`. **`python3 -m http.server` does not resolve extension-less paths** — use `npx serve` for local preview or the nav links 404
+- `assets/css/dashboard.css` — all styling for every page
 - No jQuery, no Handlebars, no Poptrox, no build step
 
 **Pipeline (Python):**
 - `scripts/load_archive.py` — CSV loader for the export. `load_diary()` returns rows shaped like the RSS parser; also provides `load_watchlist`, `load_likes`, `load_lists`, `load_profile`, `load_ratings`, `get_export_date`.
 - `scripts/download_rss.py` — fetches `https://letterboxd.com/michaellamb/rss/`, writes raw `data/rss.xml` and `data/cleaned_rss.xml` (HTML-cleaned descriptions)
 - `scripts/extract_history.py` — merges archive baseline + working-tree `data/rss.xml` deltas **+ RSS-sourced entries carried forward from the previous `viewing_history.json`**, writes `data/viewing_history.json` (sorted by `watchedDate` desc). The carry-forward is load-bearing: RSS is a ~50-entry sliding window, so without it everything between the export date and the oldest item still in the feed silently vanishes (this happened — Jul 9 to Sep 3 2026 went missing). `--backfill-from-git` replays every committed `data/rss.xml` to recover entries that already scrolled out (needs `git fetch --unshallow` in a shallow clone).
+- `scripts/compute_network.py` — **run by hand**, not by cron; builds `data/network.json` (see **Network**)
 - `scripts/compute_stats.py` — reads `viewing_history.json` + archive sidecars, writes `data/stats.json` with pre-computed lifetime stats, `byYear` per-diary-year slices, `watchlist`, `likedFilms`, `favoriteFilms`, `lists`, `tagCloud`, and `archiveExportDate`
 
 **Workflows:**
@@ -140,6 +142,65 @@ Worker call never blocks or breaks the page):
 Local dev: same `?api=` override as rolodex.js, honored only on localhost
 (`http://localhost:8000/index.html?api=http://localhost:8787` against
 `npm run dev` in `worker/`).
+
+## Network (`network.html` + `scripts/compute_network.py`)
+
+A third page: everyone I follow on Letterboxd and everyone who follows me, with
+JXN Film Club members tagged. Static, like the stats page: no Worker and no
+Letterboxd requests except the avatar `<img>`s.
+
+**Where the data comes from:** Letterboxd has no API for this, the data export
+has no followers/following file, and logged out only page 1 of a follow list
+loads (`/page/2/` onward and every `/by/…` sort hit the Cloudflare challenge).
+So the graph comes from a **one-time export in my logged-in browser**:
+`scripts/userscripts/letterboxd-network-export.user.js` (Tampermonkey). On any
+people table it adds a button that follows the page's own "Next" link 2–4 s
+apart (it never builds URLs), adds each page's rows to the live table, and
+downloads `letterboxd-<owner>-<list>-<date>.json` (schema
+`letterboxd-network-export/1`). If a page fails it exports what it has, marked
+`complete: false`. **Don't crawl Letterboxd from scripts or CI for this.**
+
+**Refreshing (no cron, on purpose; the inputs only change when you re-export):**
+1. Run the userscript on `/michaellamb/followers/` and `/michaellamb/following/`.
+2. Drop the JSON files into `data/network/`. The newest file per (owner, list)
+   wins, so old ones can stay.
+3. `python3 scripts/compute_network.py`, then commit `data/network/` and
+   `data/network.json`. Re-run it on its own to pick up new club members.
+
+**JXN tags** come from `../jxnfilmclub/data/members.json` (`--members` to
+override), matched case-insensitively on the Letterboxd handle. **Only the
+handle is read**: member names, ids and pronouns never reach `network.json`
+(a test enforces this). This page sits outside the club's privacy policy:
+it's my own public Letterboxd graph plus a tag for people I know from the club.
+
+**Mutuals = followers ∩ following.** The export has no follow-state field on
+purpose: Letterboxd's client JS toggles the Follow/Unfollow buttons, so only
+rows on the first (hydrated) page are right. The first export had 129 wrong
+values.
+
+**Edges between people (optional):** run the userscript on another member's
+"followers you know" view. Every person listed is someone I follow who follows
+that member, so `compute_network.py` turns any export whose owner isn't me
+into edges `person -> owner`. Someone's plain followers page works the same
+way, and their **following** page gives `owner -> person` (the userscript
+button shows up on every people table, so this is handled rather than
+silently reversed). Edges only count when both ends are in my
+network. `network.js` draws them as chords and the legend gains a row; with
+no such exports `edges` is `[]` and nothing is drawn.
+
+**`network.json`:** `{ owner, generatedAt, exportedAt, counts: { followers,
+following, mutual, followerOnly, followingOnly, jxn, jxnMutual, edges },
+people: [{ handle, displayName, avatar, followers, following, filmsWatched,
+relation: "mutual"|"follower"|"following", jxn }], edges: [[from, to]] }`.
+`people` is sorted by display name.
+
+**Page:** stat tiles, a fixed radial SVG (me at the centre; rings from inner
+to outer are mutual, followers only, following only; club members drawn larger
+with a white outline, spread in name order rather than grouped, since grouping
+overlapped them), and a list with Everyone/Followers/Following/Mutual tabs
+(Followers and Following include mutuals, like Letterboxd's tabs), a filter
+box, a "JXN only" toggle, and a sort. The list's filter dims non-matching dots
+in the graph. Tests: `scripts/test_compute_network.py`.
 
 ## Rolodex (`rolodex.html` + `worker/`)
 
