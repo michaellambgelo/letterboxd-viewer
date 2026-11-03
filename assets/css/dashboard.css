@@ -1106,6 +1106,12 @@ a.rolodex-handle:hover { color: var(--accent-blue); }
   padding: 0.125rem 0.5rem;
 }
 
+.rolodex-history {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
 .rolodex-note {
   font-size: 0.875rem;
   margin-top: 0.75rem;

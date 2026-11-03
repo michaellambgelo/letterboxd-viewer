@@ -290,7 +290,8 @@ made `boxd-card` a Chrome extension.) Everything must be fetched server-side.
   intentionally instant: the page runs to ~12,000px and a smooth scroll took
   ~1.5s of unreadable animation.
 - **Sorting: a `<select>` next to the filter box** (A–Z default, recently
-  active, least recently active, highest rated), persisted in
+  active, least recently active, highest rated, most rewatched, most active in
+  30 days; the last two come from **History** below), persisted in
   `localStorage['rolodex:sort']`. All client-side in `rolodex.js`: `applySort()`
   re-appends the existing card nodes (grid order = DOM order, no re-render).
   Film-derived keys stream in per card, so film-based sorts apply on selection
@@ -306,6 +307,31 @@ made `boxd-card` a Chrome extension.) Everything must be fetched server-side.
   (~4-6s at 63 profiles). Streaming is what makes that acceptable; if it ever
   stops being so, serve `snapshot:<user>` immediately and refresh under
   `ctx.waitUntil` (stale-while-revalidate) rather than raising `CONCURRENCY`.
+- **History (`history:<user>`):** every diary entry the Worker sees in a
+  member's RSS, so sorts aren't limited to the last four. `loadWatches` now
+  parses the *whole* feed on a cache miss, merges it with `mergeHistory()`
+  (dedupe by RSS guid number first, like `extract_history.dedupe_rss`, newest
+  copy wins, first-seen day kept), writes **only when something changed**, and
+  attaches a small `history: { since, logged, rewatches, last30 }` summary to
+  the cached/snapshot payload, so enrichment costs no extra KV read. `since` is
+  the oldest watched date in the first merge and never moves earlier: counts
+  mean "seen since then", not lifetime. Capped at the newest 1,000 entries per
+  member; deleted with the profile. That's indefinite server-side retention of
+  public RSS for everyone in the rolodex; the cap and delete-on-removal are the
+  bounds. The card shows "N logged · R rewatches · X in 30 days · since <date>"
+  so the history sorts explain themselves.
+- **Cron (`0 */3 * * *`):** without it history only grows when someone visits,
+  and entries silently scroll out of the ~50-item window. Each run refreshes a
+  fixed 1/8 of the rolodex (`cronSlice`, by 3-hour slot), so every member is read
+  daily and no run makes more than ~1/8 of the feed requests. It goes through
+  `loadWatches`, so a member a visitor just loaded is a cache hit. Local test:
+  `npx wrangler dev --test-scheduled` then `curl "localhost:8788/__scheduled?cron=0+*/3+*+*+*"`.
+- **History's read-merge-write is a race, on purpose.** A page visit and the
+  cron (or two colos; `caches.default` is per-colo) can merge the same member at
+  once and one write can win. Unlike jxnfilmclub's `members:all` rule, that's
+  acceptable here: the merge is an idempotent union over a feed that's re-read
+  every fetch, so anything a lost write dropped comes back on the next fetch
+  while it's still in the window, which the daily cron guarantees.
 - **KV keys:** `rolodex:v1` is the whole curated list in a single key, so
   `GET /rolodex` is one read. (Contrast `now-store`, which is key-per-entry only
   because it needs per-key TTLs.) `snapshot:<user>` and `avatar:<user>` are

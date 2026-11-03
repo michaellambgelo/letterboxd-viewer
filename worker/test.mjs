@@ -14,6 +14,10 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 import {
+  mergeHistory,
+  summarizeHistory,
+  cronSlice,
+  entryId,
   parseFeed,
   extractReview,
   decodeEntities,
@@ -43,6 +47,7 @@ test('parseFeed skips list items and returns at most four films', () => {
 test('parseFeed maps every field a card renders', () => {
   const [first] = parseFeed(fixture);
   assert.deepEqual(first, {
+    guid: 'letterboxd-watch-1387430941',
     title: 'The Great Muppet Caper',
     year: 1981,
     rating: 4,
@@ -310,4 +315,85 @@ test('parseFeed reads the committed production feed', { skip: !existsSync(join(h
     assert.match(film.watchedDate, /^\d{4}-\d{2}-\d{2}$/);
     assert.match(film.link, /^https:\/\/letterboxd\.com\//);
   }
+});
+
+
+// --- history -----------------------------------------------------------------
+
+const film = (n, title, watchedDate, extra = {}) => ({
+  guid: `letterboxd-review-${n}`, title, year: 2020, rating: 3, rewatch: false, watchedDate, ...extra,
+});
+
+test('parseFeed keeps every diary entry with limit Infinity, each with a guid', () => {
+  const films = parseFeed(fixture, { limit: Infinity });
+  assert.ok(films.length > 4, 'the whole feed, not just the last four');
+  assert.ok(films.every((f) => f.guid), 'every entry carries its RSS guid');
+});
+
+test('entryId uses the guid number, so review and watch guids for one entry agree', () => {
+  assert.equal(entryId({ guid: 'letterboxd-review-42' }), 'e42');
+  assert.equal(entryId({ guid: 'letterboxd-watch-42' }), 'e42');
+  assert.equal(entryId({ title: 'Heat', year: 1995, watchedDate: '2026-10-01' }), 'k:heat|1995|2026-10-01');
+});
+
+test('first merge seeds history and sets since to the oldest watched date', () => {
+  const { history, changed, summary } = mergeHistory(null, [
+    film(2, 'Heat', '2026-10-05', { rewatch: true }),
+    film(1, 'Alien', '2026-09-01'),
+  ], '2026-11-03');
+  assert.equal(changed, true);
+  assert.deepEqual(history.entries.map((e) => e.t), ['Heat', 'Alien']);
+  assert.equal(history.since, '2026-09-01');
+  assert.deepEqual(summary, { since: '2026-09-01', logged: 2, rewatches: 1, last30: 1 });
+});
+
+test('a re-read of the same feed changes nothing (so nothing is written)', () => {
+  const feed = [film(1, 'Alien', '2026-09-01')];
+  const first = mergeHistory(null, feed, '2026-11-03').history;
+  const again = mergeHistory(first, feed, '2026-11-04');
+  assert.equal(again.changed, false);
+  assert.deepEqual(again.history, first);
+});
+
+test('entries that scroll out of the feed are kept; new ones are added', () => {
+  const first = mergeHistory(null, [film(1, 'Alien', '2026-09-01')], '2026-11-03').history;
+  const { history, changed } = mergeHistory(first, [film(2, 'Heat', '2026-11-02')], '2026-11-04');
+  assert.equal(changed, true);
+  assert.deepEqual(history.entries.map((e) => [e.t, e.s]), [['Heat', '2026-11-04'], ['Alien', '2026-11-03']]);
+  assert.equal(history.since, '2026-09-01', 'since never moves');
+});
+
+test('a re-titled or re-dated entry replaces its old copy and keeps its first-seen day', () => {
+  const first = mergeHistory(null, [film(7, 'IT: Welcome to Derry - A Story of Derry', '2026-10-31')], '2026-11-01').history;
+  const { history } = mergeHistory(first, [film(7, 'A Story of Derry', '2026-10-30', { rating: 4.5 })], '2026-11-03');
+  assert.equal(history.entries.length, 1);
+  assert.deepEqual([history.entries[0].t, history.entries[0].d, history.entries[0].r, history.entries[0].s],
+    ['A Story of Derry', '2026-10-30', 4.5, '2026-11-01']);
+});
+
+test('history is capped at the newest 1000 entries', () => {
+  const feed = Array.from({ length: 1005 }, (_, i) =>
+    film(i + 1, `F${i}`, `2026-01-01`.replace('01-01', `${String((i % 12) + 1).padStart(2, '0')}-${String((i % 28) + 1).padStart(2, '0')}`)));
+  const { history } = mergeHistory(null, feed, '2026-11-03');
+  assert.equal(history.entries.length, 1000);
+});
+
+test('summarizeHistory counts the last 30 days from today', () => {
+  const s = summarizeHistory({ since: '2026-01-01', entries: [
+    { d: '2026-11-03', rw: false }, { d: '2026-10-04', rw: true }, { d: '2026-10-03', rw: true },
+  ] }, '2026-11-03');
+  assert.deepEqual(s, { since: '2026-01-01', logged: 3, rewatches: 2, last30: 2 });
+});
+
+test('cronSlice covers every profile exactly once across the eight 3-hour slots', () => {
+  const profiles = Array.from({ length: 70 }, (_, i) => ({ username: `u${i}` }));
+  const day = Date.UTC(2026, 10, 3);
+  const seen = [];
+  for (let h = 0; h < 24; h += 3) {
+    const slice = cronSlice(profiles, day + h * 3600 * 1000);
+    assert.ok(slice.length <= 9, 'no run fetches more than ~1/8 of the rolodex');
+    seen.push(...slice.map((p) => p.username));
+  }
+  assert.equal(seen.length, 70);
+  assert.equal(new Set(seen).size, 70);
 });

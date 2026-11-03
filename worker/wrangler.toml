@@ -7,6 +7,12 @@ compatibility_date = "2025-08-03"
 [dev]
 port = 8788
 
+# Every 3h: refresh 1/8 of the rolodex per run (cronSlice), so every member's
+# feed is read daily and history:<user> doesn't miss entries that scroll out of
+# the ~50-item RSS window between visits.
+[triggers]
+crons = ["0 */3 * * *"]
+
 # Curated rolodex + derived caches. Create the namespaces and paste the ids:
 #   npx wrangler kv namespace create ROLODEX
 #   npx wrangler kv namespace create ROLODEX --preview

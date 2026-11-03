@@ -14,6 +14,8 @@
  *   snapshot:<user>     last successful last-four payload, no TTL (serve-stale)
  *   avatar:<user>       resolved og:image URL, 24h TTL ('' = known to have none)
  *   stats:live:v1       last successful /stats/live payload, no TTL (serve-stale)
+ *   history:<user>      { since, entries[] } every diary entry seen in that
+ *                       member's RSS since tracking began (see mergeHistory)
  *
  * Auth: unlike the sibling `now-store` Worker — where Cloudflare Access gates
  * the entire hostname — this host is deliberately MIXED. `/rolodex` must stay
@@ -34,6 +36,11 @@
  *   PUT    /admin/api/profiles/{username}        Access
  *   DELETE /admin/api/profiles/{username}        Access
  *   POST   /admin/api/preview                    Access — { username } uncached probe
+ *
+ * Cron (every 3h): refreshes one eighth of the rolodex per run, so every
+ * member's feed is read at least daily even when nobody visits. That keeps
+ * history:<user> from missing entries that scroll out of the ~50-item RSS
+ * window between visits.
  */
 
 const ROLODEX_KEY = 'rolodex:v1';
@@ -44,6 +51,8 @@ const AGGREGATE_TTL = 300; // 5min on the public /rolodex response
 const AVATAR_TTL = 86400; // 24h — avatars change rarely
 const CONCURRENCY = 6; // never fan 30 requests at Letterboxd at once
 const MAX_PROFILES = 200;
+const HISTORY_MAX = 1000; // entries kept per member (newest by watchedDate)
+const CRON_SLOTS = 8; // the rolodex is refreshed 1/8 per cron run (every 3h -> daily)
 
 // /stats/live serves the dashboard owner's own feed — the live enrichment
 // layer on index.html. Same hard-coded single-user stance as the Python
@@ -380,6 +389,7 @@ function parseFeed(xml, { limit = LAST_N, extended = false } = {}) {
     const year = tagText(block, 'letterboxd:filmYear');
 
     const film = {
+      guid: tagText(block, 'guid') || null,
       title: decodeEntities(tagText(block, 'letterboxd:filmTitle')) || 'Untitled',
       year: year ? Number(year) : null,
       rating: rating ? Number(rating) : null,
@@ -414,6 +424,112 @@ async function fetchWatches(username, parseOptions) {
   return { films: parseFeed(xml, parseOptions), fetchedAt: new Date().toISOString() };
 }
 
+/* -------------------------------------------------------------------------- */
+/* History                                                                    */
+/* -------------------------------------------------------------------------- */
+
+/** Stable id for a diary entry. The RSS guid (`letterboxd-review-N` /
+ *  `letterboxd-watch-N`) keeps its number when Letterboxd re-titles a film or
+ *  the watched date is edited, so it beats (title, year, date), the same lesson
+ *  as extract_history.dedupe_rss. Falls back to that key without a guid. */
+function entryId(film) {
+  const n = /(\d+)$/.exec(film.guid || '');
+  return n ? `e${n[1]}` : `k:${(film.title || '').toLowerCase()}|${film.year || ''}|${film.watchedDate}`;
+}
+
+/**
+ * Pure merge of a freshly parsed feed into a member's stored history.
+ *
+ * Entries are compact: { id, t (title), y (year), d (watchedDate), r (rating),
+ * rw (rewatch), s (first seen, YYYY-MM-DD) }. A feed copy replaces the stored
+ * one (ratings and dates get edited) but keeps its first-seen day. `since` is
+ * the oldest watchedDate in the *first* merge and never moves earlier, so
+ * "since" honestly means "what we've been able to see", not "joined".
+ *
+ * Returns { history, changed, summary }; callers write only when `changed`.
+ */
+function mergeHistory(existing, feedFilms, today) {
+  const prev = existing && Array.isArray(existing.entries) ? existing : null;
+  const byId = new Map((prev ? prev.entries : []).map((e) => [e.id, e]));
+  let changed = !prev;
+
+  for (const f of feedFilms) {
+    if (!f.watchedDate) continue;
+    const id = entryId(f);
+    const old = byId.get(id);
+    const next = {
+      id,
+      t: f.title,
+      y: f.year ?? null,
+      d: f.watchedDate,
+      r: f.rating ?? null,
+      rw: Boolean(f.rewatch),
+      s: old ? old.s : today,
+    };
+    if (!old || old.t !== next.t || old.y !== next.y || old.d !== next.d || old.r !== next.r || old.rw !== next.rw) {
+      byId.set(id, next);
+      changed = true;
+    }
+  }
+
+  let entries = [...byId.values()].sort((a, b) => (b.d > a.d ? 1 : b.d < a.d ? -1 : 0));
+  if (entries.length > HISTORY_MAX) {
+    entries = entries.slice(0, HISTORY_MAX);
+    changed = true;
+  }
+  const oldest = entries.length ? entries[entries.length - 1].d : today;
+  const since = prev && prev.since ? (prev.since < oldest ? prev.since : oldest) : oldest;
+  if (prev && since !== prev.since) changed = true;
+
+  const history = { since, entries };
+  return { history, changed, summary: summarizeHistory(history, today) };
+}
+
+/** What a card and the sorts need, small enough to ride along on every
+ *  payload: total logged, rewatches, and logs in the last 30 days. */
+function summarizeHistory(history, today) {
+  const entries = history.entries || [];
+  const cutoff = new Date(`${today}T00:00:00Z`);
+  cutoff.setUTCDate(cutoff.getUTCDate() - 30);
+  const since30 = cutoff.toISOString().slice(0, 10);
+  return {
+    since: history.since,
+    logged: entries.length,
+    rewatches: entries.filter((e) => e.rw).length,
+    last30: entries.filter((e) => e.d >= since30).length,
+  };
+}
+
+/**
+ * Read-merge-write of history:<user>. This *is* a race when a page visit and
+ * the cron fetch the same member at once (or two colos do: caches.default is
+ * per-colo). Unlike the members:all aggregate in jxnfilmclub, that's acceptable
+ * here: the merge is an idempotent union and the feed is re-read on every
+ * fetch, so an entry a lost write dropped comes back on the next fetch while
+ * it's still in the ~50-item window, which the daily cron guarantees.
+ */
+async function updateHistory(username, films, env, ctx) {
+  const key = `history:${username}`;
+  const today = new Date().toISOString().slice(0, 10);
+  try {
+    const existing = await env.ROLODEX.get(key, 'json');
+    const { history, changed, summary } = mergeHistory(existing, films, today);
+    if (changed) ctx.waitUntil(env.ROLODEX.put(key, JSON.stringify(history)));
+    return summary;
+  } catch (err) {
+    console.error(`rolodex: history update failed for ${username}`, err);
+    return null;
+  }
+}
+
+/** Which profiles a cron run refreshes: a fixed 1/CRON_SLOTS of the list,
+ *  rotating with the run's 3-hour slot, so each member is read daily and no
+ *  single run fetches more than ~1/8 of the rolodex. */
+function cronSlice(profiles, scheduledTime) {
+  const slot = Math.floor(scheduledTime / (3 * 3600 * 1000)) % CRON_SLOTS;
+  return profiles.filter((_, i) => i % CRON_SLOTS === slot);
+}
+
 /**
  * Read-through cache in front of a profile's feed, with a KV snapshot as the
  * floor: if Letterboxd is unreachable or the feed stops parsing, the card keeps
@@ -430,7 +546,11 @@ async function loadWatches(username, env, ctx) {
   }
 
   try {
-    const payload = await fetchWatches(username);
+    // The whole feed, not just four: every diary entry goes into history, and
+    // the card still gets only the newest LAST_N.
+    const { films: all, fetchedAt } = await fetchWatches(username, { limit: Infinity });
+    const summary = await updateHistory(username, all, env, ctx);
+    const payload = { films: all.slice(0, LAST_N), fetchedAt, history: summary };
     ctx.waitUntil(
       cache.put(
         cacheKey,
@@ -522,6 +642,7 @@ async function enrichmentFor(profile, env, ctx) {
     username: profile.username,
     avatar,
     films: watches.films || [],
+    history: watches.history || null,
     fetchedAt: watches.fetchedAt || null,
     stale: Boolean(watches.stale),
   };
@@ -752,6 +873,7 @@ async function deleteProfile(username, env) {
   await Promise.all([
     env.ROLODEX.delete(`snapshot:${username}`),
     env.ROLODEX.delete(`avatar:${username}`),
+    env.ROLODEX.delete(`history:${username}`),
   ]);
   return new Response(null, { status: 204 });
 }
@@ -867,6 +989,19 @@ export default {
       console.error('rolodex error:', err);
       return json({ error: 'internal error' }, 500);
     }
+  },
+
+  /** Keeps history accruing when nobody visits; see cronSlice. Goes through
+   *  loadWatches, so a member a visitor just loaded is a cache hit, not a
+   *  second Letterboxd request. */
+  async scheduled(event, env, ctx) {
+    const profiles = await readProfiles(env);
+    const slice = cronSlice(profiles, event.scheduledTime);
+    ctx.waitUntil(
+      mapWithLimit(slice, CONCURRENCY, (p) => loadWatches(p.username, env, ctx)).then(() =>
+        console.log(`rolodex cron: refreshed ${slice.length} of ${profiles.length}`)
+      )
+    );
   },
 };
 
@@ -1201,6 +1336,10 @@ function renderAdminPage() {
 }
 
 export {
+  mergeHistory,
+  summarizeHistory,
+  cronSlice,
+  entryId,
   parseFeed,
   extractReview,
   decodeEntities,

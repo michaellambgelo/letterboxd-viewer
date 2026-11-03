@@ -29,7 +29,7 @@
   // stay null until that profile's feed resolves, so film-based sorts are only
   // final once the stream settles.
   const sortKeys = new Map();
-  const SORTS = new Set(['az', 'recent', 'quiet', 'rated']);
+  const SORTS = new Set(['az', 'recent', 'quiet', 'rated', 'rewatched', 'active']);
   const SORT_STORAGE = 'rolodex:sort';
   let currentSort = 'az';
 
@@ -195,6 +195,20 @@
     if (staleBadge && data.stale && data.films && data.films.length) {
       staleBadge.hidden = false;
     }
+
+    // The basis for the Most rewatched / Most active sorts, shown so the order
+    // explains itself: counts are only what the Worker has seen in this
+    // member's RSS since `since`, not their whole Letterboxd history.
+    const h = data.history;
+    if (h && h.logged && !card.querySelector('.rolodex-history')) {
+      const since = formatShortDate(h.since, { month: 'short', day: 'numeric', year: 'numeric' });
+      const line = document.createElement('p');
+      line.className = 'rolodex-history';
+      line.title = 'Counted from this member’s public RSS since the rolodex started tracking it';
+      line.textContent = `${h.logged} logged · ${h.rewatches} rewatch${h.rewatches === 1 ? '' : 'es'} · ${h.last30} in 30 days${since ? ` · since ${since}` : ''}`;
+      const filmsEl = card.querySelector('[data-films], .rolodex-films, .rolodex-empty-films');
+      if (filmsEl) filmsEl.after(line); else card.appendChild(line);
+    }
   }
 
   function renderMessage(message) {
@@ -286,7 +300,17 @@
       (a.lastWatched === b.lastWatched ? byName(a, b) : a.lastWatched < b.lastWatched ? -1 : 1),
     rated: (a, b) =>
       ratedRank(a) - ratedRank(b) || (b.avgRating || 0) - (a.avgRating || 0) || byName(a, b),
+    // From the Worker's history (everything seen since tracking began, not just
+    // the last four). Profiles without history yet sink, like the others.
+    rewatched: (a, b) => byHistory(a, b, 'rewatches'),
+    active: (a, b) => byHistory(a, b, 'last30'),
   };
+
+  function byHistory(a, b, field) {
+    const av = a.history ? a.history[field] : null;
+    const bv = b.history ? b.history[field] : null;
+    return (av === null) - (bv === null) || (bv || 0) - (av || 0) || byName(a, b);
+  }
 
   /**
    * Reorder the cards in place — `append` moves existing nodes, so a re-sort
@@ -378,6 +402,7 @@
         lastWatched: null,
         avgRating: null,
         hasFilms: false,
+        history: null,
       });
       frag.appendChild(card);
     });
@@ -406,6 +431,7 @@
       keys.avgRating = ratings.length
         ? ratings.reduce((sum, r) => sum + r, 0) / ratings.length
         : null;
+      keys.history = data.history || null;
     }
   }
 
