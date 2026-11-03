@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Letterboxd review stack
 // @namespace    https://michaellamb.dev/letterboxd-viewer
-// @version      1.1.0
+// @version      1.2.0
 // @description  Swipe through the reviews in your activity feed: right to like, left to dismiss. Remembers what you've already been through.
 // @match        https://letterboxd.com/activity/*
 // @run-at       document-idle
@@ -456,6 +456,12 @@
 
     function esc(s) { const d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; }
 
+    // Blur a spoiler review unless you've watched the film or already revealed
+    // it. While the poster hasn't said either way, err on the side of hiding.
+    function hideSpoiler(c) {
+      return c.spoiler && !c.revealed && (c.watched || watchState(c)) !== 'watched';
+    }
+
     function cardHtml(c, under) {
       return `
         <div class="card${under ? ' under' : ''}" data-id="${c.id}">
@@ -471,8 +477,8 @@
               }</button>
             </div>
           </div>
-          ${c.spoiler ? '<div class="spoiler-note">May contain spoilers. Tap the text to reveal.</div>' : ''}
-          <div class="body${c.spoiler ? ' spoiler' : ''}">${c.paragraphs.map((p) => `<p>${esc(p)}</p>`).join('') || '<p><em>(no text)</em></p>'}</div>
+          ${hideSpoiler(c) ? '<div class="spoiler-note">May contain spoilers, and you haven’t logged this film. Tap the text to reveal.</div>' : ''}
+          <div class="body${hideSpoiler(c) ? ' spoiler' : ''}">${c.paragraphs.map((p) => `<p>${esc(p)}</p>`).join('') || '<p><em>(no text)</em></p>'}</div>
           ${c.reviewUrl ? `<div class="open"><a href="${esc(c.reviewUrl)}" target="_blank" rel="noopener">Open on Letterboxd ↗</a></div>` : ''}
         </div>`;
     }
@@ -501,9 +507,18 @@
       });
       // Offer the watchlist button only once the poster confirms you haven't
       // watched the film. The poster may still be loading, so check again.
+      // Watched state also decides whether a spoiler stays blurred.
       const checkWatch = () => {
-        if (top.wl || queue[0] !== top) return;
-        if (watchState(top) === 'unwatched') { top.wl = 'offer'; render(); }
+        if (queue[0] !== top || top.watched) return;
+        const state = watchState(top);
+        if (!state) return;
+        top.watched = state;
+        if (state === 'unwatched') {
+          if (!top.wl) top.wl = 'offer';
+          render();
+        } else if (top.spoiler) {
+          render(); // watched: un-blur the spoiler
+        }
       };
       checkWatch();
       setTimeout(checkWatch, 900);
@@ -522,13 +537,18 @@
 
     function bindDrag(card) {
       if (!card) return;
+      const top = queue.find((c) => String(c.id) === card.dataset.id);
       const body = card.querySelector('.body.spoiler');
-      body?.addEventListener('click', () => body.classList.remove('spoiler'));
+      // Recorded on the card itself so a later re-render doesn't blur it again.
+      body?.addEventListener('click', () => {
+        if (top) top.revealed = true;
+        body.classList.remove('spoiler');
+        card.querySelector('.spoiler-note')?.remove();
+      });
       let x0 = null, y0 = 0, dx = 0, dragging = false;
       card.addEventListener('pointerdown', (e) => {
-        if (e.target.closest('a')) return;
+        if (e.target.closest('a, button')) return;
         x0 = e.clientX; y0 = e.clientY; dx = 0; dragging = false;
-        card.setPointerCapture(e.pointerId);
       });
       card.addEventListener('pointermove', (e) => {
         if (x0 == null) return;
@@ -537,7 +557,13 @@
         // A mostly-vertical drag scrolls the review instead.
         if (!dragging && Math.abs(dx) < 8) return;
         if (!dragging && Math.abs(dy) > Math.abs(dx)) { x0 = null; return; }
-        dragging = true;
+        if (!dragging) {
+          // Capture only once it's really a swipe. Capturing on pointerdown
+          // retargets the click to the card, so taps on the spoiler text and
+          // the watchlist button never reached them.
+          dragging = true;
+          try { card.setPointerCapture(e.pointerId); } catch { /* pointer already gone */ }
+        }
         card.style.transform = `translateX(${dx}px) rotate(${dx / 20}deg)`;
         card.querySelector('.stamp.like').style.opacity = Math.max(0, Math.min(1, dx / SWIPE_PX));
         card.querySelector('.stamp.nope').style.opacity = Math.max(0, Math.min(1, -dx / SWIPE_PX));

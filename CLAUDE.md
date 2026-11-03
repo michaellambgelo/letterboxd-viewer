@@ -219,7 +219,11 @@ build URLs or call endpoints directly, and never crawl from scripts or CI.
   button, ← = dismiss, W = add to watchlist, Z = undo, Esc = close). The
   watchlist button only appears when the poster's watch button says you haven't
   watched the film. It drives the poster's own "⋯" menu, finds the item by its
-  text, and reopens the menu to confirm "Remove from watchlist" before showing ✓. It remembers what you've been
+  text, and reopens the menu to confirm "Remove from watchlist" before showing ✓.
+  Spoiler reviews are blurred only when the poster says you haven't watched the
+  film (hidden while unknown). Pointer capture starts only once a horizontal
+  swipe begins: capturing on pointerdown retargets taps to the card, which broke
+  tap-to-reveal and the watchlist button in v1.1. It remembers what you've been
   through as **contiguous activity-id ranges** in Tampermonkey storage. Ids
   only increase and the stack walks the feed newest-first, and a range only
   grows over the fully-decided prefix, so a still-queued review is never marked
