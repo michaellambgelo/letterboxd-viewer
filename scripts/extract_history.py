@@ -185,6 +185,25 @@ def merge_key(entry):
     return (title, year, watched)
 
 
+def dedupe_rss(candidates):
+    """Collapse RSS candidates (ordered oldest source first) to one per entry.
+
+    First by guid: a diary entry keeps its `letterboxd-entry-N` id when
+    Letterboxd re-titles the film or you edit the watched date, so keying only
+    on (title, year, date) kept the old copy alive in carry-forward next to the
+    new one ("IT: Welcome to Derry - A Story of Derry" vs "A Story of Derry",
+    2026-11). Then by merge_key, which still catches the same watch arriving
+    under two ids. In both passes the later (newer) copy wins.
+    """
+    by_guid = {}
+    for e in candidates:
+        by_guid[e.get('guid') or ('key',) + merge_key(e)] = e
+    by_key = {}
+    for e in by_guid.values():
+        by_key[merge_key(e)] = e
+    return list(by_key.values())
+
+
 def main():
     data_dir.mkdir(parents=True, exist_ok=True)
 
@@ -208,10 +227,7 @@ def main():
     print(f'  {len(current_rss)} entries in current rss.xml')
     rss_candidates.extend(current_rss)
 
-    rss_by_key = {}
-    for e in rss_candidates:
-        rss_by_key[merge_key(e)] = e
-    rss_entries = list(rss_by_key.values())
+    rss_entries = dedupe_rss(rss_candidates)
 
     # RSS-only entries: anything whose key isn't in the archive baseline.
     # (Optionally cap to entries newer than export_date - 1 day to avoid

@@ -276,3 +276,40 @@ def test_backfill_from_git_entries_are_merged_oldest_first(pipeline, monkeypatch
     )
     assert titles(out) == ['Heat', 'Lost']
     assert out[0]['memberRating'] == 4.0  # current feed beats git history
+
+
+# --- dedupe_rss -------------------------------------------------------------
+
+def test_retitled_entry_keeps_only_the_newest_copy(pipeline):
+    # Carried forward under the old title; the current feed has the same entry
+    # id under Letterboxd's new title. Only the new one should survive.
+    old = rss_entry('IT: Welcome to Derry - A Story of Derry', None, '2026-10-31')
+    old['guid'] = 'letterboxd-entry-1566026201'
+    out = pipeline(
+        previous=[old],
+        rss_items=[rss_item('letterboxd-watch-1566026201', 'A Story of Derry', 2026, '2026-10-31')],
+    )
+    assert titles(out) == ['A Story of Derry']
+
+
+def test_redated_entry_keeps_only_the_newest_date(pipeline):
+    old = rss_entry('Heat', 1995, '2026-10-01')
+    old['guid'] = 'letterboxd-entry-42'
+    out = pipeline(previous=[old], rss_items=[rss_item('letterboxd-review-42', 'Heat', 1995, '2026-10-02')])
+    assert [(e['filmTitle'], e['watchedDate']) for e in out] == [('Heat', '2026-10-02')]
+
+
+def test_distinct_entries_for_the_same_film_both_survive(pipeline):
+    # Two real watches (different ids, different dates) are not duplicates.
+    out = pipeline(rss_items=[
+        rss_item('letterboxd-watch-1', 'Heat', 1995, '2026-10-01'),
+        rss_item('letterboxd-watch-2', 'Heat', 1995, '2026-10-05'),
+    ])
+    assert [e['watchedDate'] for e in out] == ['2026-10-05', '2026-10-01']
+
+
+def test_dedupe_rss_without_guid_falls_back_to_merge_key():
+    a = rss_entry('Heat', 1995, '2026-10-01', rating=1.0)
+    b = rss_entry('Heat', 1995, '2026-10-01', rating=4.0)
+    a.pop('guid'); b.pop('guid')
+    assert [e['memberRating'] for e in eh.dedupe_rss([a, b])] == [4.0]
