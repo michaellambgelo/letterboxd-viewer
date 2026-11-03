@@ -15951,72 +15951,74 @@
     "mometu": 1
   },
   "watchlist": {
-    "count": 1531,
+    "count": 1586,
     "oldestAdded": "2020-03-16",
-    "newestAdded": "2026-07-07",
+    "newestAdded": "2026-11-03",
     "recentlyAdded": [
       {
-        "name": "Rose of Nevada",
-        "year": 2025,
-        "link": "https://boxd.it/RQAq",
-        "addedDate": "2026-07-07"
-      },
-      {
-        "name": "John Carter",
-        "year": 2012,
-        "link": "https://boxd.it/FQ2",
-        "addedDate": "2026-07-07"
-      },
-      {
-        "name": "Born on the Fourth of July",
-        "year": 1989,
-        "link": "https://boxd.it/26A8",
-        "addedDate": "2026-07-06"
-      },
-      {
-        "name": "Rocketman",
-        "year": 2019,
-        "link": "https://boxd.it/iehK",
-        "addedDate": "2026-07-06"
-      },
-      {
-        "name": "The Idiot",
-        "year": 1951,
-        "link": "https://boxd.it/1x0O",
-        "addedDate": "2026-07-03"
-      },
-      {
-        "name": "The Samurai and the Prisoner",
+        "name": "La Bola Negra",
         "year": 2026,
-        "link": "https://boxd.it/10t6g",
-        "addedDate": "2026-06-28"
+        "link": "https://boxd.it/SDaQ",
+        "addedDate": "2026-11-03"
       },
       {
-        "name": "The Battered Bastards of Baseball",
-        "year": 2014,
-        "link": "https://boxd.it/7low",
-        "addedDate": "2026-06-27"
+        "name": "Untitled Sixth Ari Aster Feature Film",
+        "year": null,
+        "link": "https://boxd.it/16ITa",
+        "addedDate": "2026-11-01"
       },
       {
-        "name": "Winter Kept Us Warm",
-        "year": 1965,
-        "link": "https://boxd.it/5f5Y",
-        "addedDate": "2026-06-26"
+        "name": "Scapegoat",
+        "year": null,
+        "link": "https://boxd.it/136Ra",
+        "addedDate": "2026-11-01"
       },
       {
-        "name": "Eurovision Song Contest: The Story of Fire Saga",
-        "year": 2020,
-        "link": "https://boxd.it/jkMG",
-        "addedDate": "2026-06-25"
+        "name": "Ray Gunn",
+        "year": 2026,
+        "link": "https://boxd.it/zs0M",
+        "addedDate": "2026-10-27"
       },
       {
-        "name": "Muriel's Wedding",
-        "year": 1994,
-        "link": "https://boxd.it/2aO4",
-        "addedDate": "2026-06-17"
+        "name": "Remain",
+        "year": 2026,
+        "link": "https://boxd.it/SKze",
+        "addedDate": "2026-10-25"
+      },
+      {
+        "name": "Jeanne Dielman, 23, quai du Commerce, 1080 Bruxelles",
+        "year": 1975,
+        "link": "https://boxd.it/T18",
+        "addedDate": "2026-10-24"
+      },
+      {
+        "name": "Wicker",
+        "year": 2026,
+        "link": "https://boxd.it/JlTq",
+        "addedDate": "2026-10-23"
+      },
+      {
+        "name": "Coward",
+        "year": 2026,
+        "link": "https://boxd.it/TcSy",
+        "addedDate": "2026-10-20"
+      },
+      {
+        "name": "The Town That Dreaded Sundown",
+        "year": 1976,
+        "link": "https://boxd.it/J3I",
+        "addedDate": "2026-10-18"
+      },
+      {
+        "name": "Before I Wake",
+        "year": 2016,
+        "link": "https://boxd.it/9BgC",
+        "addedDate": "2026-10-14"
       }
     ],
-    "removedSinceExport": 26
+    "removedSinceExport": 0,
+    "snapshotDate": "2026-11-03",
+    "snapshotSource": "watchlist-michaellamb-2026-11-03-17-26-utc.csv"
   },
   "likedFilms": [
     {

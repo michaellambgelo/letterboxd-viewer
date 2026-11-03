@@ -203,10 +203,7 @@ def load_watched(archive_dir=None):
     ]
 
 
-def load_watchlist(archive_dir=None):
-    archive_dir = archive_dir or _find_archive_dir()
-    if not archive_dir:
-        return []
+def _watchlist_rows(path):
     return [
         {
             'name': r['Name'],
@@ -214,8 +211,48 @@ def load_watchlist(archive_dir=None):
             'link': r.get('Letterboxd URI') or None,
             'addedDate': r.get('Date') or None,
         }
-        for r in _read_csv(archive_dir / 'watchlist.csv')
+        for r in _read_csv(path)
     ]
+
+
+def load_watchlist(archive_dir=None):
+    """The full archive's watchlist.csv. See load_watchlist_snapshot() for the
+    newest watchlist across the archive and standalone watchlist exports."""
+    archive_dir = archive_dir or _find_archive_dir()
+    if not archive_dir:
+        return []
+    return _watchlist_rows(archive_dir / 'watchlist.csv')
+
+
+_STAMP = re.compile(r'(\d{4}-\d{2}-\d{2})-(\d{2})-(\d{2})-utc')
+
+
+def load_watchlist_snapshot(root=None):
+    """Newest watchlist snapshot: the full archive's watchlist.csv, or a
+    standalone watchlist export, whichever was exported later.
+
+    Letterboxd can export the watchlist on its own as
+    `watchlist-<user>-YYYY-MM-DD-HH-MM-utc.csv`; drop it straight into
+    data/archive/. Both names carry the export timestamp, which decides.
+
+    Returns (items, export_date, source_name), or ([], None, None).
+    """
+    root = Path(root) if root else archive_root
+    if not root.exists():
+        return [], None, None
+    candidates = []
+    for p in root.iterdir():
+        m = _STAMP.search(p.name)
+        if not m:
+            continue
+        if p.is_dir() and p.name.startswith('letterboxd-') and (p / 'watchlist.csv').exists():
+            candidates.append((m.groups(), p / 'watchlist.csv', p.name))
+        elif p.is_file() and p.name.startswith('watchlist-') and p.suffix == '.csv':
+            candidates.append((m.groups(), p, p.name))
+    if not candidates:
+        return [], None, None
+    stamp, path, name = max(candidates, key=lambda c: c[0])
+    return _watchlist_rows(path), date.fromisoformat(stamp[0]), name
 
 
 def load_likes(archive_dir=None):

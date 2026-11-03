@@ -21,7 +21,7 @@ from load_archive import (
     load_orphaned,
     load_profile,
     load_watched,
-    load_watchlist,
+    load_watchlist_snapshot,
 )
 
 script_dir = Path(__file__).parent
@@ -265,24 +265,27 @@ def compute_tag_cloud(entries, top=80):
     return dict(counts.most_common(top))
 
 
-def compute_watchlist_stats(entries):
-    """Watchlist summary: archive snapshot minus films logged since the export.
+def compute_watchlist_stats(entries, snapshot=None):
+    """Watchlist summary: newest snapshot minus films logged since it.
 
-    watchlist.csv is frozen at export time and RSS carries no watchlist data,
-    but Letterboxd removes a film from the watchlist when it's logged. So drop
-    any snapshot item with a post-export diary entry (source == 'rss' — only
-    rows newer than the archive survive the merge in extract_history.py).
-    Pre-export watches are left alone: those films were re-added after
-    watching and are genuinely on the watchlist per the export.
+    The snapshot is whichever was exported later: the full archive's
+    watchlist.csv or a standalone watchlist export (load_watchlist_snapshot).
+    It's frozen at export time and RSS carries no watchlist data, but
+    Letterboxd removes a film from the watchlist when it's logged. So drop any
+    snapshot item with an RSS diary entry watched on or after the snapshot's
+    export date. Earlier watches are left alone: those films were re-added
+    after watching and are genuinely on the watchlist per the export.
     """
+    items_all, snapshot_date, source = snapshot or load_watchlist_snapshot()
+    cutoff = snapshot_date.isoformat() if snapshot_date else ''
     watched_since_export = {
         _inventory_key(e['filmTitle'], e.get('filmYear'))
         for e in entries
         if e.get('source') == 'rss' and e.get('filmTitle')
+        and (e.get('watchedDate') or '') >= cutoff
     }
-    snapshot = load_watchlist()
     items = [
-        i for i in snapshot
+        i for i in items_all
         if _inventory_key(i['name'], i.get('year')) not in watched_since_export
     ]
     items.sort(key=lambda x: x.get('addedDate') or '', reverse=True)
@@ -292,7 +295,9 @@ def compute_watchlist_stats(entries):
         'oldestAdded': min(dates) if dates else None,
         'newestAdded': max(dates) if dates else None,
         'recentlyAdded': items[:10],
-        'removedSinceExport': len(snapshot) - len(items),
+        'removedSinceExport': len(items_all) - len(items),
+        'snapshotDate': cutoff or None,
+        'snapshotSource': source,
     }
 
 

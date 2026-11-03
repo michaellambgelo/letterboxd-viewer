@@ -624,9 +624,10 @@
     if (!section || !watchlist) return;
     setText('watchlist-count', watchlist.count ?? '--');
     if (meta) {
+      const asOf = watchlist.snapshotDate ? ` As of ${watchlist.snapshotDate}.` : '';
       meta.textContent = watchlist.count
-        ? `Oldest entry added ${watchlist.oldestAdded}.`
-        : 'Watchlist is empty.';
+        ? `Oldest entry added ${watchlist.oldestAdded}.${asOf}`
+        : `Watchlist is empty.${asOf}`;
     }
     if (recent && watchlist.recentlyAdded?.length) {
       recent.innerHTML = watchlist.recentlyAdded.map(item => `
