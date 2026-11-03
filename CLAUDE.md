@@ -237,7 +237,8 @@ build URLs or call endpoints directly, and never crawl from scripts or CI.
   on letterboxd.michaellamb.dev: the newest export minus films logged since,
   written by `compute_stats.py` (and committed by the 6-hourly cron) as `[name,
   year]` pairs, matched to cards on a normalized title + year. The script caches
-  it 6 h and unions in films it added itself since that export; films added on
+  it 6 h (a failed load is retried on the next card, at most every 20 s, rather
+  than sticking until reload) and unions in films it added itself since that export; films added on
   Letterboxd directly show up after the next export. The menu is only opened to
   *add*. Its icon sits inside the poster's film link, so that click cancels the
   link's default action (v1.3 clicked the link itself and navigated away).

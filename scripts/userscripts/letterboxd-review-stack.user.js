@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Letterboxd review stack
 // @namespace    https://michaellamb.dev/letterboxd-viewer
-// @version      1.4.0
+// @version      1.4.1
 // @description  Swipe through the reviews in your activity feed: right to like, left to dismiss. Remembers what you've already been through.
 // @match        https://letterboxd.com/activity/*
 // @run-at       document-idle
@@ -245,6 +245,7 @@
 
   const WATCHLIST_URL = 'https://letterboxd.michaellamb.dev/data/watchlist.json';
   const WATCHLIST_TTL = 6 * 60 * 60 * 1000;
+  const WATCHLIST_RETRY_MS = 20000; // after a failed load, try again at most this often
 
   /** Same idea as compute_stats._inventory_key: case-, space- and
    *  quote-insensitive title plus year. */
@@ -278,18 +279,38 @@
     });
   }
 
-  let watchlistKeys = null; // Set, once loaded
+  let watchlistKeys = null; // Set: last list built (possibly empty/stale)
   let watchlistError = null; // why the last fetch failed, if it did
   let watchlistWarned = false;
-  const watchlistReady = fetchWatchlist().then((data) => {
-    const keys = new Set(data ? data.keys : []);
-    // Films added from this stack since the export the file was built from.
-    const added = GM_getValue('addedHere', {});
-    const since = data?.snapshotDate || '';
-    for (const [k, day] of Object.entries(added)) if (day >= since) keys.add(k);
-    watchlistKeys = keys;
-    return keys;
-  });
+  let watchlistOk = false; // a fresh (or in-TTL cached) list is loaded
+  let watchlistInflight = null;
+  let watchlistLastTry = 0;
+
+  /** The watchlist as a Set of film keys. Only a successful load is kept for
+   *  the page's lifetime: after a failure (e.g. the page was opened before
+   *  watchlist.json was deployed) the next card that needs it tries again,
+   *  at most every WATCHLIST_RETRY_MS, instead of staying empty until reload. */
+  function getWatchlist() {
+    if (watchlistOk) return Promise.resolve(watchlistKeys);
+    if (watchlistInflight) return watchlistInflight;
+    if (watchlistKeys && Date.now() - watchlistLastTry < WATCHLIST_RETRY_MS) return Promise.resolve(watchlistKeys);
+    watchlistLastTry = Date.now();
+    watchlistError = null;
+    watchlistInflight = fetchWatchlist().then((data) => {
+      const keys = new Set(data ? data.keys : []);
+      // Films added from this stack since the export the file was built from.
+      const added = GM_getValue('addedHere', {});
+      const since = data?.snapshotDate || '';
+      for (const [k, day] of Object.entries(added)) if (day >= since) keys.add(k);
+      watchlistKeys = keys;
+      watchlistOk = !watchlistError;
+      if (watchlistOk) watchlistWarned = false;
+      watchlistInflight = null;
+      return keys;
+    });
+    return watchlistInflight;
+  }
+  getWatchlist(); // start loading as soon as the page does
 
   function markAdded(card) {
     const k = cardKey(card);
@@ -616,14 +637,14 @@
         if (state === 'unwatched') {
           if (!top.wl) {
             top.wl = 'checking';
-            watchlistReady.then((keys) => {
+            getWatchlist().then((keys) => {
               if (top.wl !== 'checking') return;
               top.wl = keys.has(cardKey(top)) ? 'already' : 'offer';
               // Say so if the list couldn't be loaded, rather than offering
               // "Add" as if we'd checked.
-              if (watchlistError && !GM_getValue('watchlistCache', null) && !watchlistWarned) {
+              if (watchlistError && !watchlistOk && !watchlistWarned) {
                 watchlistWarned = true;
-                ui.toast(`Couldn’t load your watchlist (${watchlistError}), so “On your watchlist” can’t be shown.`);
+                ui.toast(`Couldn’t load your watchlist (${watchlistError}). Retrying on the next card.`);
               }
               if (queue[0] === top) render();
             });
