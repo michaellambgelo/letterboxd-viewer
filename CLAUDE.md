@@ -181,7 +181,9 @@ rows on the first (hydrated) page are right. The first export had 129 wrong
 values.
 
 **Edges between people (optional):** run the userscript on another member's
-"followers you know" view. Every person listed is someone I follow who follows
+"followers you know" view (`/<handle>/followers-you-know/`, list kind
+`followers-you-know`; `letterboxd-jxn-club.user.js` walks you through the club
+members). Every person listed is someone I follow who follows
 that member, so `compute_network.py` turns any export whose owner isn't me
 into edges `person -> owner`. Someone's plain followers page works the same
 way, and their **following** page gives `owner -> person` (the userscript
@@ -215,6 +217,13 @@ build URLs or call endpoints directly, and never crawl from scripts or CI.
 
 - `letterboxd-network-export.user.js` exports a people list as JSON for the
   Network page (see **Network**).
+- `letterboxd-jxn-club.user.js` adds a "JXN" panel on every letterboxd.com page:
+  the club members from the live `data/network.json` (people tagged `jxn`, fetched
+  with `GM_xmlhttpRequest` so Letterboxd's CSP can't block it, cached a day),
+  each with profile and followers-you-know links, plus Start/Next to work
+  through the not-yet-done members. Opening a member's followers-you-know page
+  marks them done (untick by hand). Its member list only changes when
+  `compute_network.py` is re-run and deployed.
 - `letterboxd-review-stack.user.js` runs on `/activity/` and turns the feed's
   unliked reviews into a swipe stack (→/swipe right = like via the real Like
   button, ← = dismiss, W = add to watchlist, Z = undo, Esc = close). The

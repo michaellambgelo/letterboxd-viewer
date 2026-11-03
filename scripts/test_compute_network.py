@@ -79,9 +79,9 @@ def test_followers_you_know_become_edges():
         ('michaellamb', 'following'): export('michaellamb', 'following', ['a', 'b', 'c']),
         # On b's profile: people I follow who follow b. 'outsider' isn't in my
         # network and 'b' itself must not self-loop.
-        ('b', 'followers/you-know'): export('b', 'followers/you-know', ['A', 'c', 'outsider', 'b']),
+        ('b', 'followers-you-know'): export('b', 'followers-you-know', ['A', 'c', 'outsider', 'b']),
         # An export for someone outside the network contributes nothing.
-        ('stranger', 'followers/you-know'): export('stranger', 'followers/you-know', ['a']),
+        ('stranger', 'followers-you-know'): export('stranger', 'followers-you-know', ['a']),
     }, jxn_handles=set())
     assert out['edges'] == [['a', 'b'], ['c', 'b']]
     assert out['counts']['edges'] == 2

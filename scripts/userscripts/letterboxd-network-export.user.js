@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Letterboxd network export
 // @namespace    https://michaellamb.dev/letterboxd-viewer
-// @version      1.1.0
+// @version      1.2.0
 // @description  Unpaginate a Letterboxd people list (followers / following / followers you know) into one page, then export it as JSON.
 // @match        https://letterboxd.com/*
 // @run-at       document-idle
@@ -85,16 +85,6 @@
   // "following", or the "you know" path.
   const listKind = pathParts.slice(1).filter((p, i, a) => !(p === 'page' || a[i - 1] === 'page')).join('/') || 'list';
 
-  // The "N people" tooltip on the Following/Followers tabs, if present, is
-  // used to check the export is complete.
-  function expectedCount() {
-    // The logged-in markup differs from the logged-out one, so check every
-    // link to this list that carries a title rather than one exact element.
-    const links = document.querySelectorAll(`a[href="/${owner}/${listKind}/"][title]`);
-    for (const a of links) { const n = num(a.getAttribute('title')); if (n != null) return n; }
-    return null;
-  }
-
   // ---- UI ----------------------------------------------------------------
 
   const btn = document.createElement('button');
@@ -167,7 +157,6 @@
     // The original pager is now misleading.
     document.querySelectorAll('.pagination').forEach((el) => { el.style.display = 'none'; });
 
-    const expected = expectedCount();
     const out = {
       schema: 'letterboxd-network-export/1',
       owner,
@@ -176,14 +165,14 @@
       exportedAt: new Date().toISOString(),
       pages,
       count: people.size,
-      expectedCount: expected,
-      complete: complete && (expected == null || expected === people.size),
+      // Complete means it followed Next until there was none.
+      complete,
       stopReason,
       people: [...people.values()],
     };
     download(out);
 
-    status(`${complete ? 'Done' : 'Partial'}: ${people.size}${expected ? ` / ${expected}` : ''} people — saved`);
+    status(`${complete ? 'Done' : 'Partial'}: ${people.size} people — saved`);
     btn.style.background = complete ? '#00c030' : '#d4532b';
     btn.style.cursor = 'default';
     if (stopReason) console.warn('[lb-network-export]', stopReason);
