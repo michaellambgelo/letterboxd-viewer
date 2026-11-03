@@ -74,3 +74,18 @@ def test_only_films_logged_since_the_snapshot_are_dropped():
     assert [i['name'] for i in stats['recentlyAdded']] == ['Untouched', 'Logged Before']
     assert stats['snapshotDate'] == '2026-11-03'
     assert stats['snapshotSource'] == 'watchlist-x.csv'
+
+
+def test_watchlist_file_is_the_current_list_as_name_year_pairs():
+    snapshot = ([
+        {'name': 'Logged After', 'year': 2026, 'link': None, 'addedDate': '2026-10-01'},
+        {'name': 'Still On', 'year': 1999, 'link': None, 'addedDate': '2026-10-03'},
+        {'name': 'No Year', 'year': None, 'link': None, 'addedDate': '2026-09-01'},
+    ], date(2026, 11, 3), 'letterboxd-x')
+    out = cs.compute_watchlist_file([entry('Logged After', 2026, '2026-11-04')], snapshot)
+    assert out == {
+        'snapshotDate': '2026-11-03',
+        'snapshotSource': 'letterboxd-x',
+        'count': 2,
+        'films': [['Still On', 1999], ['No Year', None]],
+    }

@@ -91,6 +91,8 @@ The frontend reads only these top-level keys (see `compute_stats.py` and `dashbo
 | `orphanedFilms` | `[{ filmTitle, filmYear, watchedDate, memberRating, reviewText, tags, logCount }, ...]` | "Logged Films Removed from Letterboxd" section |
 | `archiveExportDate` | `"YYYY-MM-DD"` | Disclaimer text |
 
+`data/watchlist.json` (also from `compute_stats.py`, not read by the site): `{ snapshotDate, snapshotSource, count, films: [[name, year], …] }`, the current watchlist for the review-stack userscript.
+
 ## Development Notes
 
 - **The username is hard-coded** to `michaellamb` in the `url` assignment near the top of `scripts/download_rss.py`. To fork this for another account, edit that line, drop a fresh export under `data/archive/`, and re-run the pipeline.
@@ -231,9 +233,14 @@ build URLs or call endpoints directly, and never crawl from scripts or CI.
   watched the film. It drives the poster's own "⋯" menu, finds the item by its
   text, and reopens the menu to confirm "Remove from watchlist" before showing ✓.
   Watchlist state isn't in the poster markup (and `/ajax/letterboxd-metadata/` is
-  only a csrf ping), so when an unwatched film's card comes up the stack peeks
-  at that menu behind itself to show "✓ On your watchlist" up front; answers are
-  cached per film slug for the page session, and menu operations are serialized.
+  only a csrf ping), so "✓ On your watchlist" comes from **`data/watchlist.json`**
+  on letterboxd.michaellamb.dev: the newest export minus films logged since,
+  written by `compute_stats.py` (and committed by the 6-hourly cron) as `[name,
+  year]` pairs, matched to cards on a normalized title + year. The script caches
+  it 6 h and unions in films it added itself since that export; films added on
+  Letterboxd directly show up after the next export. The menu is only opened to
+  *add*. Its icon sits inside the poster's film link, so that click cancels the
+  link's default action (v1.3 clicked the link itself and navigated away).
   Spoiler reviews are blurred only when the poster says you haven't watched the
   film (hidden while unknown). Pointer capture starts only once a horizontal
   swipe begins: capturing on pointerdown retargets taps to the card, which broke

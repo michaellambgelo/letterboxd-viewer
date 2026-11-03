@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         Letterboxd review stack
 // @namespace    https://michaellamb.dev/letterboxd-viewer
-// @version      1.3.0
+// @version      1.4.0
 // @description  Swipe through the reviews in your activity feed: right to like, left to dismiss. Remembers what you've already been through.
 // @match        https://letterboxd.com/activity/*
 // @run-at       document-idle
 // @grant        GM_getValue
 // @grant        GM_setValue
+// @grant        GM_xmlhttpRequest
+// @connect      letterboxd.michaellamb.dev
 // ==/UserScript==
 
 /*
@@ -34,11 +36,19 @@
  *               behind the stack for that reason)
  *   watchlist   not in the markup until the poster's menu (span.menu-link) is
  *               opened; the item is then found by its text, "Add to watchlist"
- *               or "Remove from watchlist", wherever the menu renders. The
- *               poster markup and /ajax/letterboxd-metadata/ (a csrf ping)
- *               carry no watchlist state, so for an unwatched film the stack
- *               opens the menu behind itself to read it ("peek") when the card
- *               comes up, and remembers the answer per film for the session.
+ *               or "Remove from watchlist", wherever the menu renders. Only
+ *               used to *add*. The menu icon sits inside the poster's film
+ *               link, so the click is guarded against navigating (v1.3 went
+ *               to the film page).
+ *
+ * Whether a film is already on the watchlist comes from my own data, not
+ * Letterboxd: letterboxd.michaellamb.dev/data/watchlist.json (the newest export
+ * minus films logged since, rebuilt by compute_stats.py every 6 h), fetched
+ * with GM_xmlhttpRequest and cached for 6 h, plus anything added from this
+ * stack since that export. The poster markup and /ajax/letterboxd-metadata/
+ * (a csrf ping) carry no watchlist state, so this is the only way to know
+ * without opening menus. Films added on Letterboxd itself after the export
+ * show as not-on-watchlist until the next export.
  *
  * Liking always goes through Letterboxd's own button, so their client code
  * handles CSRF and state. Nothing here calls a Letterboxd endpoint directly,
@@ -198,7 +208,14 @@
   async function openMenuItem(card) {
     const menu = card.row.querySelector('.react-component.figure .menu-link');
     if (!menu) return null;
-    (menu.closest('a, button') || menu).click();
+    // The icon sits inside the poster's film link. Cancel that link's default
+    // action for this one click so Letterboxd's own handler can open the menu
+    // without the page navigating to the film (what v1.3 did).
+    const link = menu.closest('a[href]');
+    const guard = (e) => e.preventDefault();
+    link?.addEventListener('click', guard, { capture: true, once: true });
+    menu.click();
+    setTimeout(() => link?.removeEventListener('click', guard, { capture: true }), 0);
     for (let i = 0; i < 20; i++) {
       await sleep(100);
       const item = findWatchlistItem();
@@ -209,7 +226,7 @@
   }
 
   // Only one poster menu may be open at a time (findWatchlistItem searches the
-  // whole document), so peeks and adds queue behind each other.
+  // whole document), so adds (and their confirming re-open) never overlap.
   let menuChain = Promise.resolve();
   function withMenu(fn) {
     const run = menuChain.then(fn, fn);
@@ -217,28 +234,69 @@
     return run;
   }
 
-  // film slug -> true (on watchlist) | false, for this page session.
-  const onWatchlist = new Map();
-
-  /** Reads watchlist state from the poster's menu without changing it.
-   *  Returns true / false, or null if the menu item couldn't be found. */
-  function peekWatchlist(card) {
-    if (card.slug && onWatchlist.has(card.slug)) return Promise.resolve(onWatchlist.get(card.slug));
-    return withMenu(async () => {
-      const item = await openMenuItem(card);
-      if (!item) return null;
-      const state = /remove from/i.test(item.textContent);
-      closeMenus();
-      if (card.slug) onWatchlist.set(card.slug, state);
-      return state;
+  function addToWatchlist(card) {
+    return withMenu(() => addToWatchlistNow(card)).then((r) => {
+      if (r !== 'failed') markAdded(card);
+      return r;
     });
   }
 
-  function addToWatchlist(card) {
-    return withMenu(() => addToWatchlistNow(card)).then((r) => {
-      if (card.slug && r !== 'failed') onWatchlist.set(card.slug, true);
-      return r;
+  // ---- my watchlist (from letterboxd.michaellamb.dev) -------------------
+
+  const WATCHLIST_URL = 'https://letterboxd.michaellamb.dev/data/watchlist.json';
+  const WATCHLIST_TTL = 6 * 60 * 60 * 1000;
+
+  /** Same idea as compute_stats._inventory_key: case-, space- and
+   *  quote-insensitive title plus year. */
+  const filmKey = (name, year) =>
+    `${String(name || '').normalize('NFKC').replace(/[‘’ʼ]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, ' ').trim().toLowerCase()}|${year || ''}`;
+  const cardKey = (card) => filmKey(card.film, Number(card.year) || '');
+
+  function fetchWatchlist() {
+    const c = GM_getValue('watchlistCache', null);
+    if (c && Date.now() - c.at < WATCHLIST_TTL) return Promise.resolve(c);
+    return new Promise((resolve) => {
+      GM_xmlhttpRequest({
+        method: 'GET',
+        url: WATCHLIST_URL,
+        timeout: 15000,
+        onload: (res) => {
+          try {
+            if (res.status !== 200) throw new Error(`HTTP ${res.status}`);
+            const data = JSON.parse(res.responseText);
+            const fresh = { at: Date.now(), snapshotDate: data.snapshotDate, keys: data.films.map(([n, y]) => filmKey(n, y)) };
+            GM_setValue('watchlistCache', fresh);
+            resolve(fresh);
+          } catch (e) {
+            watchlistError = e.message || 'bad response';
+            resolve(c); // stale beats nothing
+          }
+        },
+        onerror: () => { watchlistError = 'network error'; resolve(c); },
+        ontimeout: () => { watchlistError = 'timed out'; resolve(c); },
+      });
     });
+  }
+
+  let watchlistKeys = null; // Set, once loaded
+  let watchlistError = null; // why the last fetch failed, if it did
+  let watchlistWarned = false;
+  const watchlistReady = fetchWatchlist().then((data) => {
+    const keys = new Set(data ? data.keys : []);
+    // Films added from this stack since the export the file was built from.
+    const added = GM_getValue('addedHere', {});
+    const since = data?.snapshotDate || '';
+    for (const [k, day] of Object.entries(added)) if (day >= since) keys.add(k);
+    watchlistKeys = keys;
+    return keys;
+  });
+
+  function markAdded(card) {
+    const k = cardKey(card);
+    watchlistKeys?.add(k);
+    const added = GM_getValue('addedHere', {});
+    added[k] = new Date().toISOString().slice(0, 10);
+    GM_setValue('addedHere', added);
   }
 
   async function addToWatchlistNow(card) {
@@ -393,7 +451,7 @@
     ui.render();
     const result = await addToWatchlist(card);
     card.wl = result === 'failed' ? 'offer' : result;
-    if (result === 'failed') ui.toast('Couldn’t find the watchlist option for this film.');
+    if (result === 'failed') ui.toast('Couldn’t open the poster’s menu. Use “Open on Letterboxd” to add it.');
     busy = false;
     ui.render();
   }
@@ -558,11 +616,15 @@
         if (state === 'unwatched') {
           if (!top.wl) {
             top.wl = 'checking';
-            peekWatchlist(top).then((on) => {
+            watchlistReady.then((keys) => {
               if (top.wl !== 'checking') return;
-              // If the menu couldn't be read, still offer the button; adding
-              // re-checks and reports "already" if it is.
-              top.wl = on ? 'already' : 'offer';
+              top.wl = keys.has(cardKey(top)) ? 'already' : 'offer';
+              // Say so if the list couldn't be loaded, rather than offering
+              // "Add" as if we'd checked.
+              if (watchlistError && !GM_getValue('watchlistCache', null) && !watchlistWarned) {
+                watchlistWarned = true;
+                ui.toast(`Couldn’t load your watchlist (${watchlistError}), so “On your watchlist” can’t be shown.`);
+              }
               if (queue[0] === top) render();
             });
           }

@@ -265,8 +265,8 @@ def compute_tag_cloud(entries, top=80):
     return dict(counts.most_common(top))
 
 
-def compute_watchlist_stats(entries, snapshot=None):
-    """Watchlist summary: newest snapshot minus films logged since it.
+def current_watchlist(entries, snapshot=None):
+    """Newest watchlist snapshot minus films logged since it.
 
     The snapshot is whichever was exported later: the full archive's
     watchlist.csv or a standalone watchlist export (load_watchlist_snapshot).
@@ -275,6 +275,8 @@ def compute_watchlist_stats(entries, snapshot=None):
     snapshot item with an RSS diary entry watched on or after the snapshot's
     export date. Earlier watches are left alone: those films were re-added
     after watching and are genuinely on the watchlist per the export.
+
+    Returns (items, snapshot_items, snapshot_date, source).
     """
     items_all, snapshot_date, source = snapshot or load_watchlist_snapshot()
     cutoff = snapshot_date.isoformat() if snapshot_date else ''
@@ -289,6 +291,12 @@ def compute_watchlist_stats(entries, snapshot=None):
         if _inventory_key(i['name'], i.get('year')) not in watched_since_export
     ]
     items.sort(key=lambda x: x.get('addedDate') or '', reverse=True)
+    return items, items_all, snapshot_date, source
+
+
+def compute_watchlist_stats(entries, snapshot=None):
+    """Watchlist summary for stats.json (see current_watchlist)."""
+    items, items_all, snapshot_date, source = current_watchlist(entries, snapshot)
     dates = [i['addedDate'] for i in items if i.get('addedDate')]
     return {
         'count': len(items),
@@ -296,8 +304,25 @@ def compute_watchlist_stats(entries, snapshot=None):
         'newestAdded': max(dates) if dates else None,
         'recentlyAdded': items[:10],
         'removedSinceExport': len(items_all) - len(items),
-        'snapshotDate': cutoff or None,
+        'snapshotDate': snapshot_date.isoformat() if snapshot_date else None,
         'snapshotSource': source,
+    }
+
+
+def compute_watchlist_file(entries, snapshot=None):
+    """data/watchlist.json: the whole current watchlist, compact.
+
+    Read by scripts/userscripts/letterboxd-review-stack.user.js to show
+    "On your watchlist" on a review card without opening anything on
+    Letterboxd. Films are [name, year] pairs; the script matches them to a
+    card's title and year the same way _inventory_key does here.
+    """
+    items, _, snapshot_date, source = current_watchlist(entries, snapshot)
+    return {
+        'snapshotDate': snapshot_date.isoformat() if snapshot_date else None,
+        'snapshotSource': source,
+        'count': len(items),
+        'films': [[i['name'], i.get('year')] for i in items],
     }
 
 
@@ -418,6 +443,10 @@ def main():
     output_path = data_dir / 'stats.json'
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
+
+    watchlist_path = data_dir / 'watchlist.json'
+    with open(watchlist_path, 'w', encoding='utf-8') as f:
+        json.dump(compute_watchlist_file(entries), f, ensure_ascii=False, separators=(',', ':'))
 
     print(f'Stats saved to {output_path}')
     print(f'  Total watched: {stats["totalWatched"]}')
