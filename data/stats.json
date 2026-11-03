@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2673,
-  "uniqueFilms": 2207,
+  "totalWatched": 2674,
+  "uniqueFilms": 2208,
   "totalRewatches": 884,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -8,7 +8,7 @@
     "1.0": 26,
     "1.5": 32,
     "2.0": 111,
-    "2.5": 133,
+    "2.5": 134,
     "3.0": 305,
     "3.5": 394,
     "4.0": 570,
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 47,
-    "2026-11": 5
+    "2026-11": 6
   },
   "heatmapData": [
     {
@@ -6315,12 +6315,12 @@
     },
     {
       "date": "2026-11-02",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
     "1890s": 2,
-    "1920s": 4,
+    "1920s": 5,
     "1930s": 7,
     "1940s": 17,
     "1950s": 20,
@@ -6416,6 +6416,20 @@
       "link": "https://letterboxd.com/michaellamb/film/exit-8/",
       "title": "Exit 8, 2025 - ★★★★",
       "reviewText": "compare and contrast this film and Zach Cregger&#039;s Resident Evil (2026) and i think you have some good content. i thought the score was effective, especially during the flooding of the corridor. \n\nloved the ending.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1569534119",
+      "filmTitle": "Sweeney Todd",
+      "filmYear": 1928,
+      "watchedDate": "2026-11-02",
+      "memberRating": 2.5,
+      "rewatch": false,
+      "tmdbId": 439833,
+      "link": "https://letterboxd.com/michaellamb/film/sweeney-todd-1928/",
+      "title": "Sweeney Todd, 1928 - ★★½",
+      "reviewText": "wow. pretty cool that there&#039;s a version of this on Shudder. i&#039;d read about it but this was my first time watching the silent film.",
       "tags": [],
       "source": "rss"
     },
@@ -6668,20 +6682,6 @@
       "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/",
       "title": "You Can See Everything, 2026 - ★★★★★",
       "reviewText": "it&#039;s so tangibly a Nathan Fielder experiment. i loved it and am haunted by it.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1550233837",
-      "filmTitle": "Clayface",
-      "filmYear": 2026,
-      "watchedDate": "2026-10-22",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": 1400940,
-      "link": "https://letterboxd.com/michaellamb/film/clayface/",
-      "title": "Clayface, 2026 - ★★★★",
-      "reviewText": "Kinda great double feature with You Can See Everything. Identity, media, performance, manipulation, power. It’s all there \n\nJXN Film Club preview screening with Offbeat and MS Film Society at Capri Theatre",
       "tags": [],
       "source": "rss"
     }
@@ -14977,8 +14977,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 313,
-      "uniqueFilms": 286,
+      "totalWatched": 314,
+      "uniqueFilms": 287,
       "totalRewatches": 104,
       "averageRating": 3.91,
       "ratingDistribution": {
@@ -14986,7 +14986,7 @@
         "1.0": 5,
         "1.5": 5,
         "2.0": 9,
-        "2.5": 19,
+        "2.5": 20,
         "3.0": 29,
         "3.5": 42,
         "4.0": 67,
@@ -15745,11 +15745,12 @@
         },
         {
           "date": "2026-11-02",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
         "1890s": 1,
+        "1920s": 1,
         "1950s": 3,
         "1960s": 6,
         "1970s": 8,
