@@ -10,8 +10,13 @@
  * would otherwise never show up. Its key, UNTAGGED, has parentheses so it
  * can't collide with a real tag named "untagged".
  *
- * Selection lives in the URL hash (#tags=imax,moviepass&match=all) so a
- * filtered list can be linked.
+ * Reviews come from the same file (`reviewText`, archive text with newline
+ * breaks and a few inline tags). They're rebuilt through an allowlist in
+ * reviewHtml(), never inserted as-is: only i/em/b/strong/blockquote/br and
+ * http(s) links survive, with no attributes of their own.
+ *
+ * Selection lives in the URL hash (#tags=imax,moviepass&match=all&reviews=1)
+ * so a filtered list can be linked.
  */
 
 (function () {
@@ -26,7 +31,7 @@
   const label = (t) => (t === UNTAGGED ? 'untagged' : t);
   const hasTag = (e, t) => (t === UNTAGGED ? e.tagSet.size === 0 : e.tagSet.has(t));
 
-  const state = { selected: new Set(), match: 'any', sort: 'newest', query: '' };
+  const state = { selected: new Set(), match: 'any', sort: 'newest', query: '', reviewsOnly: false };
   let entries = [];
   let categories = [];
   let tagCounts = new Map();
@@ -42,6 +47,7 @@
     const tags = (params.get('tags') || '').split(',').map(norm).filter((t) => tagCounts.has(t));
     state.selected = new Set(tags);
     state.match = params.get('match') === 'all' ? 'all' : 'any';
+    state.reviewsOnly = params.get('reviews') === '1';
   }
 
   function writeHash() {
@@ -50,14 +56,56 @@
     const parts = [];
     if (state.selected.size) parts.push(`tags=${[...state.selected].map(encodeURIComponent).join(',')}`);
     if (state.match === 'all') parts.push('match=all');
+    if (state.reviewsOnly) parts.push('reviews=1');
     const hash = parts.join('&');
     history.replaceState(null, '', hash ? `#${hash}` : location.pathname + location.search);
   }
 
   // ---- data ----------------------------------------------------------------
 
+  // ---- reviews -------------------------------------------------------------
+
+  const KEEP = new Set(['I', 'EM', 'B', 'STRONG', 'BLOCKQUOTE']);
+  const DROP = new Set(['SCRIPT', 'STYLE', 'TEMPLATE', 'IFRAME', 'OBJECT', 'NOSCRIPT']);
+  const LONG_CHARS = 420;   // past this, the review starts folded
+  const QUOTE_CHARS = 140;  // under this, it reads as a pull quote
+
+  /** Review markup rebuilt from scratch: text escaped, a short allowlist of
+   *  inline tags re-emitted bare, links kept only when http(s). DOMParser
+   *  builds an inert document, so nothing in the source runs. */
+  function reviewHtml(src) {
+    const doc = new DOMParser().parseFromString(`<body>${src}</body>`, 'text/html');
+    const walk = (node) => [...node.childNodes].map((n) => {
+      if (n.nodeType === Node.TEXT_NODE) return escapeHtml(n.nodeValue);
+      if (n.nodeType !== Node.ELEMENT_NODE || DROP.has(n.tagName)) return '';
+      if (n.tagName === 'BR') return '\n';
+      const inner = walk(n);
+      if (KEEP.has(n.tagName)) {
+        const t = n.tagName.toLowerCase();
+        return `<${t}>${inner}</${t}>`;
+      }
+      if (n.tagName === 'A') {
+        const href = safeUrl(n.getAttribute('href'));
+        return href ? `<a href="${escapeHtml(href)}" target="_blank" rel="noopener nofollow">${inner}</a>` : inner;
+      }
+      return inner;
+    }).join('');
+    // pre-line keeps the author's breaks; three or more in a row are just slack.
+    return walk(doc.body).replace(/\r\n?/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+  }
+
+  function reviewMeta(text) {
+    const plain = String(text || '').replace(/<[^>]*>/g, '').trim();
+    const words = plain ? plain.split(/\s+/).length : 0;
+    return { reviewLength: plain.length, reviewMinutes: Math.max(1, Math.round(words / 220)) };
+  }
+
   function prepare(history, config) {
-    entries = history.map((e) => ({ ...e, tagSet: new Set((e.tags || []).map(norm).filter(Boolean)) }));
+    entries = history.map((e) => ({
+      ...e,
+      tagSet: new Set((e.tags || []).map(norm).filter(Boolean)),
+      ...reviewMeta(e.reviewText),
+    }));
 
     tagCounts = new Map();
     for (const e of entries) for (const t of e.tagSet) tagCounts.set(t, (tagCounts.get(t) || 0) + 1);
@@ -87,7 +135,7 @@
   function matching() {
     if (!state.selected.size) return [];
     const sel = [...state.selected];
-    return entries.filter((e) => (state.match === 'all'
+    return entries.filter((e) => (!state.reviewsOnly || e.reviewLength) && (state.match === 'all'
       ? sel.every((t) => hasTag(e, t))
       : sel.some((t) => hasTag(e, t))));
   }
@@ -140,6 +188,7 @@
     newest: (a, b) => b.watchedDate.localeCompare(a.watchedDate),
     oldest: (a, b) => a.watchedDate.localeCompare(b.watchedDate),
     rating: (a, b) => (b.memberRating ?? -1) - (a.memberRating ?? -1) || b.watchedDate.localeCompare(a.watchedDate),
+    review: (a, b) => b.reviewLength - a.reviewLength || b.watchedDate.localeCompare(a.watchedDate),
     title: (a, b) => a.filmTitle.localeCompare(b.filmTitle, undefined, { sensitivity: 'base' }) || a.watchedDate.localeCompare(b.watchedDate),
   };
 
@@ -152,7 +201,7 @@
           `<span class="tag-pill${state.selected.has(t) ? ' is-on' : ''}">${escapeHtml(t)}</span>`).join('')
       : `<span class="tag-pill is-untagged${state.selected.has(UNTAGGED) ? ' is-on' : ''}">untagged</span>`;
     return `
-      <li class="tag-row">
+      <li class="tag-row${e.reviewLength ? ' has-review' : ''}">
         <time class="tag-row-date" datetime="${escapeHtml(e.watchedDate)}">${escapeHtml(date)}</time>
         <div class="tag-row-film">
           ${url ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${title}</a>` : title}
@@ -161,7 +210,22 @@
           <div class="tag-row-tags">${tags}</div>
         </div>
         <span class="tag-row-rating">${e.memberRating ? ratingToStars(e.memberRating) : ''}</span>
+        ${review(e)}
       </li>`;
+  }
+
+  function review(e) {
+    if (!e.reviewLength) return '';
+    // Sanitize once per entry, on first show.
+    if (e.reviewHtml == null) e.reviewHtml = reviewHtml(e.reviewText);
+    if (!e.reviewHtml) return '';
+    const long = e.reviewLength > LONG_CHARS;
+    const kind = long ? ' is-long' : e.reviewLength < QUOTE_CHARS ? ' is-quote' : '';
+    return `
+        <figure class="tag-review${kind}">
+          <blockquote class="tag-review-body">${e.reviewHtml}</blockquote>
+          ${long ? `<button type="button" class="tag-review-more" aria-expanded="false" data-label="Keep reading · ${e.reviewMinutes} min">Keep reading · ${e.reviewMinutes} min</button>` : ''}
+        </figure>`;
   }
 
   function renderResults() {
@@ -170,6 +234,7 @@
     const rated = list.filter((e) => e.memberRating);
     const avg = rated.length ? rated.reduce((s, e) => s + e.memberRating, 0) / rated.length : null;
     const dates = list.map((e) => e.watchedDate).sort();
+    const reviews = list.filter((e) => e.reviewLength).length;
 
     $('tag-results-count').textContent = state.selected.size ? String(list.length) : '';
     $('tag-summary').innerHTML = list.length
@@ -177,12 +242,15 @@
           `<strong>${list.length}</strong> ${list.length === 1 ? 'log' : 'logs'}`,
           `<strong>${films}</strong> ${films === 1 ? 'film' : 'films'}`,
           avg != null ? `<strong>${avg.toFixed(2)}</strong> avg rating` : null,
+          reviews ? `<strong>${reviews}</strong> ${reviews === 1 ? 'review' : 'reviews'}` : null,
           `${escapeHtml(formatShortDate(dates[0], { month: 'short', year: 'numeric' }))} – ${escapeHtml(formatShortDate(dates[dates.length - 1], { month: 'short', year: 'numeric' }))}`,
         ].filter(Boolean).join('<span aria-hidden="true"> · </span>')
       : state.selected.size
         ? (state.selected.has(UNTAGGED)
           ? 'An untagged entry has no other tags, so All matches nothing here. Switch to Any.'
-          : 'No diary entries have all of those tags.')
+          : state.reviewsOnly
+            ? 'None of these have a review. Turn off Reviews only to see them.'
+            : 'No diary entries have all of those tags.')
         : '';
     $('tag-results').innerHTML = list.map(row).join('');
   }
@@ -225,7 +293,27 @@
     });
     $('tag-search').addEventListener('input', (e) => { state.query = e.target.value; renderPicker(); });
     $('tag-sort').addEventListener('change', (e) => { state.sort = e.target.value; renderResults(); });
-    window.addEventListener('hashchange', () => { readHash(); render(); });
+    $('tag-reviews-only').addEventListener('change', (e) => {
+      state.reviewsOnly = e.target.checked;
+      writeHash();
+      renderResults();
+    });
+    // Unfold in place: the reader stays where they are in the list.
+    $('tag-results').addEventListener('click', (e) => {
+      const btn = e.target.closest('.tag-review-more');
+      if (!btn) return;
+      const fig = btn.closest('.tag-review');
+      const open = fig.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.textContent = open ? 'Show less' : btn.dataset.label;
+      // Folding a long review back up can leave its row above the viewport.
+      if (!open && fig.getBoundingClientRect().top < 0) fig.closest('.tag-row').scrollIntoView({ block: 'start' });
+    });
+    window.addEventListener('hashchange', () => {
+      readHash();
+      $('tag-reviews-only').checked = state.reviewsOnly;
+      render();
+    });
   }
 
   async function init() {
@@ -246,6 +334,7 @@
     $('tags-intro-count').textContent = `${tagCounts.size - (untagged ? 1 : 0)} tags across ${tagged.toLocaleString('en-US')} diary entries` +
       (untagged ? `, plus ${untagged.toLocaleString('en-US')} untagged` : '');
     readHash();
+    $('tag-reviews-only').checked = state.reviewsOnly;
     bind();
     render();
   }

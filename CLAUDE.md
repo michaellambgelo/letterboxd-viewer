@@ -246,8 +246,19 @@ the history.
 - **Any / All** toggle (shown with 2+ tags selected). Selection and mode live in
   the hash (`#tags=in%20theaters,imax&match=all`) so a filtered list can be
   linked; `+` for spaces also parses.
-- Summary line: logs, distinct films (title + year), average rating, date span.
-  Sorts: newest, oldest, highest rated, title.
+- Summary line: logs, distinct films (title + year), average rating, review
+  count, date span. Sorts: newest, oldest, highest rated, longest review, title.
+- **Reviews** (`reviewText`) show under each entry, set to be read rather than
+  scanned: Source Serif 4 at a ~68ch measure. Under 140 characters a review is a
+  pull quote. Over 420 it starts folded (faded) and opens in place with "Keep
+  reading · N min". A "Reviews only" toggle (`&reviews=1` in the hash) hides
+  entries without one. **Review markup is never inserted as-is:** `reviewHtml()`
+  parses it into an inert DOMParser document and rebuilds it, keeping only
+  i/em/b/strong/blockquote (bare), `<br>` as a newline, and links whose href
+  passes `safeUrl` (http/https). Everything else is reduced to escaped text, and
+  script/style/iframe content is dropped. Only archive entries carry review text:
+  RSS-sourced entries (logged after the newest export) have none until the next
+  export.
 - The Person tags are my own diary tags, already public on my Letterboxd
   profile; the page adds nothing beyond what `viewing_history.json` already
   publishes.
