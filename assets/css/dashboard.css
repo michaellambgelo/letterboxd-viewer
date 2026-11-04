@@ -1739,3 +1739,128 @@ a.rolodex-film:hover .rolodex-film-title { color: var(--text-primary); }
   .tag-review.is-quote { padding-left: 1.5rem; }
   .tag-review-body { font-size: 1rem; }
 }
+
+/* ---- Rewatches page (rewatches.html + assets/js/rewatches.js) ---- */
+.rw-year { margin-top: 2rem; }
+.rw-cards { padding-top: 1rem; }
+.rw-formula {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+.rw-formula code, .rw-defs code, .disclaimer code, .rw-note code {
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  padding: 0.05em 0.3em;
+  border-radius: 3px;
+}
+.rw-note { font-size: 0.875rem; color: var(--text-muted); margin: -0.5rem 0 1rem; line-height: 1.5; }
+
+.rw-defs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+.rw-def { background: var(--bg-secondary); border-radius: 6px; padding: 0.85rem 1rem; }
+.rw-def dt { color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem; }
+.rw-def-value { color: var(--accent-green); font-variant-numeric: tabular-nums; margin-right: 0.25rem; }
+.rw-def dd { margin: 0; font-size: 0.875rem; line-height: 1.5; color: var(--text-muted); }
+
+.rw-years { list-style: none; display: grid; gap: 0.35rem; }
+.rw-year-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3.5rem 1fr 9.5rem;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 0.35rem 0.5rem;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 0.875rem;
+  text-align: left;
+  cursor: pointer;
+}
+.rw-year-row:hover { background: var(--bg-secondary); }
+.rw-year-row:focus-visible { outline: none; border-color: var(--accent-blue); }
+.rw-year-row.active { background: var(--bg-secondary); border-color: var(--accent-green); }
+.rw-year-row.sparse { opacity: 0.6; }
+.rw-year-label { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+.rw-bar { height: 0.6rem; background: var(--bg-tertiary); border-radius: 999px; overflow: hidden; }
+.rw-bar-fill { display: block; height: 100%; background: var(--accent-green); border-radius: 999px; }
+.rw-year-value { color: var(--text-primary); font-variant-numeric: tabular-nums; }
+.rw-year-detail { color: var(--text-muted); font-size: 0.8125rem; margin-left: 0.25rem; }
+
+.rw-group {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  margin: 1.5rem 0 0.5rem;
+}
+.rw-film-list { list-style: none; display: grid; gap: 0.35rem; }
+.rw-film, .rw-axis {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr) minmax(0, 42%);
+  align-items: center;
+  gap: 1rem;
+}
+.rw-film { background: var(--bg-secondary); border-radius: 6px; padding: 0.6rem 1rem; }
+.rw-film-main { min-width: 0; display: flex; flex-direction: column; gap: 0.1rem; }
+.rw-film-title { color: var(--text-primary); overflow-wrap: anywhere; }
+.rw-film-title a { color: var(--text-primary); }
+.rw-film-title a:hover { color: var(--accent-blue); }
+.rw-film-meta { font-size: 0.75rem; color: var(--text-muted); }
+
+.rw-strip {
+  position: relative;
+  display: block;
+  height: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.rw-tick {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 100%;
+  margin-left: -1px;
+  border-radius: 1px;
+  background: var(--accent-green);
+}
+.rw-tick.first { background: var(--accent-blue); height: 70%; }
+.rw-tick.dim { opacity: 0.2; }
+.rw-key { display: inline-block; width: 0.6rem; height: 0.6rem; border-radius: 2px; vertical-align: baseline; }
+.rw-key.first { background: var(--accent-blue); }
+.rw-key.rw { background: var(--accent-green); }
+
+.rw-axis { position: sticky; top: 0; z-index: 1; background: var(--bg-primary); padding: 0.4rem 1rem; }
+.rw-axis-strip { border-bottom: none; height: 1rem; }
+.rw-axis-mark {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.rw-axis-mark::before { content: "'"; }
+
+.rw-undiaried summary { cursor: pointer; color: var(--accent-blue); font-size: 0.875rem; }
+.rw-undiaried-list {
+  list-style: none;
+  columns: 3 16rem;
+  column-gap: 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+.rw-undiaried-list li { break-inside: avoid; padding: 0.15rem 0; color: var(--text-secondary); }
+
+@media (max-width: 768px) {
+  .rw-defs { grid-template-columns: 1fr; }
+  .rw-year-row { grid-template-columns: 3rem 1fr; }
+  .rw-year-value { grid-column: 2; }
+  .rw-film { grid-template-columns: 2.5rem minmax(0, 1fr); }
+  .rw-film .rw-strip { grid-column: 1 / -1; }
+  .rw-axis { display: none; }
+}
