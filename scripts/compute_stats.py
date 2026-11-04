@@ -411,6 +411,85 @@ def compute_lists_summary():
     ]
 
 
+def compute_rewatches(entries, watched=None, unique_films=None):
+    """Everything the Rewatches page shows, written to data/rewatches.json.
+
+    Films are grouped by normalized (name, year) — `_inventory_key` — and NOT by
+    `_film_key`: that one prefers tmdbId, which only RSS entries carry, so a
+    film's archive watches and its later RSS watches would land in two groups.
+
+    `watched` is watched.csv (film-level inventory, no dates); tests pass it in.
+    Films in it with no diary entry are the ones marked watched before the diary
+    existed. They can't be rewatches here, so the page lists them separately.
+    """
+    watched = load_watched() if watched is None else watched
+    film_link = {_inventory_key(f['name'], f.get('year')): f.get('link') for f in watched if f.get('name')}
+
+    groups = {}
+    for e in entries:
+        if not e.get('filmTitle') or not e.get('watchedDate'):
+            continue
+        key = _inventory_key(e['filmTitle'], e.get('filmYear'))
+        g = groups.setdefault(key, {'filmTitle': e['filmTitle'], 'filmYear': e.get('filmYear'),
+                                    'link': film_link.get(key), 'watches': []})
+        g['watches'].append({'date': e['watchedDate'], 'rewatch': bool(e.get('rewatch'))})
+        if not g['link']:
+            g['link'] = e.get('link')
+
+    films = []
+    for g in groups.values():
+        g['watches'].sort(key=lambda w: w['date'])
+        g['count'] = len(g['watches'])
+        g['rewatchLogs'] = sum(w['rewatch'] for w in g['watches'])
+        if g['count'] >= 2 or g['rewatchLogs']:
+            films.append(g)
+    # Most logs first; ties broken by most recent watch (two stable sorts).
+    films.sort(key=lambda g: g['watches'][-1]['date'], reverse=True)
+    films.sort(key=lambda g: g['count'], reverse=True)
+
+    by_year = defaultdict(lambda: {'logs': 0, 'rewatchLogs': 0, 'filmsRewatched': set()})
+    for e in entries:
+        if not e.get('watchedDate'):
+            continue
+        y = by_year[e['watchedDate'][:4]]
+        y['logs'] += 1
+        if e.get('rewatch'):
+            y['rewatchLogs'] += 1
+            y['filmsRewatched'].add(_inventory_key(e.get('filmTitle'), e.get('filmYear')))
+
+    undiaried = sorted(
+        ({'name': f['name'], 'year': f.get('year'), 'link': f.get('link')}
+         for f in watched
+         if f.get('name') and _inventory_key(f['name'], f.get('year')) not in groups),
+        key=lambda f: ((f['name'] or '').lower(), f['year'] or 0),
+    )
+    rewatched = [f for f in films if f['rewatchLogs']]
+    dates = [e['watchedDate'] for e in entries if e.get('watchedDate')]
+    return {
+        'totals': {
+            'logs': sum(1 for e in entries if e.get('watchedDate')),
+            'rewatchLogs': sum(1 for e in entries if e.get('rewatch')),
+            'filmsRewatched': len(rewatched),
+            'filmsLoggedTwice': sum(1 for f in films if f['count'] >= 2),
+            # Logged once, flagged rewatch: 378 rewatched = 312 (2+ logs) + these.
+            'loggedOnceAsRewatch': sum(1 for f in films if f['count'] == 1),
+            # First diary log already flagged rewatch: first seen before the diary.
+            'seenBeforeDiary': sum(1 for f in films if f['watches'][0]['rewatch']),
+            'filmsLogged': len(groups),
+            'filmsWatched': unique_films if unique_films is not None else len(
+                set(film_link) | set(groups)),
+            'undiaried': len(undiaried),
+        },
+        'films': films,
+        'byYear': {
+            y: {'logs': v['logs'], 'rewatchLogs': v['rewatchLogs'], 'filmsRewatched': len(v['filmsRewatched'])}
+            for y, v in sorted(by_year.items())
+        },
+        'undiaried': undiaried,
+        'dateRange': {'earliest': min(dates) if dates else None, 'latest': max(dates) if dates else None},
+    }
+
+
 def main():
     history_path = data_dir / 'viewing_history.json'
     if not history_path.exists():
@@ -447,6 +526,14 @@ def main():
     watchlist_path = data_dir / 'watchlist.json'
     with open(watchlist_path, 'w', encoding='utf-8') as f:
         json.dump(compute_watchlist_file(entries), f, ensure_ascii=False, separators=(',', ':'))
+
+    rewatches = compute_rewatches(entries, unique_films=stats['uniqueFilms'])
+    rewatches['archiveExportDate'] = stats['archiveExportDate']
+    with open(data_dir / 'rewatches.json', 'w', encoding='utf-8') as f:
+        json.dump(rewatches, f, ensure_ascii=False, separators=(',', ':'))
+    t = rewatches['totals']
+    print(f'  Rewatches page: {t["filmsRewatched"]} films rewatched, '
+          f'{t["filmsLoggedTwice"]} logged 2+ times, {t["undiaried"]} undiaried')
 
     print(f'Stats saved to {output_path}')
     print(f'  Total watched: {stats["totalWatched"]}')

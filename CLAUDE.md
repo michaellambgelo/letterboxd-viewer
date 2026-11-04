@@ -48,6 +48,7 @@ Letterboxd RSS  ──►  scripts/download_rss.py  ──►  data/rss.xml
 - `assets/js/rolodex.js` — rolodex card rendering, reads the Worker's `/rolodex`
 - `network.html` + `assets/js/network.js` — the Network page (see **Network** below), reads `data/network.json`
 - `tags.html` + `assets/js/tags.js` — the Tags page (see **Tags** below), reads `data/viewing_history.json` + `data/tag_categories.json`
+- `rewatches.html` + `assets/js/rewatches.js` — the Rewatches page (see **Rewatches** below), reads `data/rewatches.json`
 - `assets/js/util.js` — shared helpers (`escapeHtml`, `ratingToStars`, `formatShortDate`, `safeUrl`) on `window.LBV`; **loaded before** each page's own script on every page
 - `assets/js/nav.js` — the hamburger menu, rendered into `<div data-site-nav>` on every page so the markup lives in one file. Hrefs are **extension-less and relative** (`./`, `rolodex`): GitHub Pages resolves `/rolodex` to `rolodex.html`, and staying relative keeps them working under the `/letterboxd-viewer/` base path. `currentPage()` strips any `.html` before matching `LINKS[].page`, so the active link is right whether you arrive at `/`, `/rolodex`, or `/rolodex.html`. **`python3 -m http.server` does not resolve extension-less paths** — use `npx serve` for local preview or the nav links 404
 - `assets/css/dashboard.css` — all styling for every page
@@ -59,7 +60,7 @@ Letterboxd RSS  ──►  scripts/download_rss.py  ──►  data/rss.xml
 - `scripts/download_rss.py` — fetches `https://letterboxd.com/michaellamb/rss/`, writes raw `data/rss.xml` and `data/cleaned_rss.xml` (HTML-cleaned descriptions)
 - `scripts/extract_history.py` — merges archive baseline + working-tree `data/rss.xml` deltas **+ RSS-sourced entries carried forward from the previous `viewing_history.json`**, writes `data/viewing_history.json` (sorted by `watchedDate` desc). The carry-forward is load-bearing: RSS is a ~50-entry sliding window, so without it everything between the export date and the oldest item still in the feed silently vanishes (this happened — Jul 9 to Sep 3 2026 went missing). `--backfill-from-git` replays every committed `data/rss.xml` to recover entries that already scrolled out (needs `git fetch --unshallow` in a shallow clone).
 - `scripts/compute_network.py` — **run by hand**, not by cron; builds `data/network.json` (see **Network**)
-- `scripts/compute_stats.py` — reads `viewing_history.json` + archive sidecars, writes `data/stats.json` with pre-computed lifetime stats, `byYear` per-diary-year slices, `watchlist`, `likedFilms`, `favoriteFilms`, `lists`, `tagCloud`, and `archiveExportDate`
+- `scripts/compute_stats.py` — reads `viewing_history.json` + archive sidecars, writes `data/stats.json` with pre-computed lifetime stats, `byYear` per-diary-year slices, `watchlist`, `likedFilms`, `favoriteFilms`, `lists`, `tagCloud`, and `archiveExportDate`; also writes `data/rewatches.json` (`compute_rewatches()`) for the Rewatches page
 
 **Workflows:**
 - `.github/workflows/download-data-and-assets.yml` — cron `0 */6 * * *`. Runs the 3-script pipeline, commits any changed files in `data/`, and triggers `deploy.yml` via `actions/github-script`
@@ -272,6 +273,47 @@ the history.
 - The Person tags are my own diary tags, already public on my Letterboxd
   profile; the page adds nothing beyond what `viewing_history.json` already
   publishes.
+
+## Rewatches (`rewatches.html` + `data/rewatches.json`)
+
+Every film logged more than once, the films first seen before the diary, and a
+plain statement of how each number is computed from an export, so the page
+doubles as a worked example for anyone computing their own. Static consumer of
+`data/rewatches.json`, written by `compute_stats.compute_rewatches()` on every
+cron run (the workflow's `git add` lists it; drop it from there and the page
+goes stale silently).
+
+- **Films are grouped by normalized `(name, year)` (`_inventory_key`), not
+  `_film_key`.** `_film_key` prefers `tmdbId`, which only RSS entries carry, so
+  once a rewatched film gets a new RSS log, its archive and RSS watches split
+  into two groups. The dashboard's `mostRewatched` still uses `_film_key` and
+  can undercount a film between a new RSS log and the next export; today both
+  agree (all entries are archive-sourced after the 2026-11-03 export).
+- **Definitions (the page states each one):** rewatch logs = rows with
+  `Rewatch` = Yes (counts viewings); films rewatched = distinct films among
+  those = films with 2+ logs + films logged once as a rewatch (378 = 312 + 66
+  on 2026-11-03; every 2+ film has at least one flagged row, so the identity
+  holds); seen before the diary = films whose **first** diary row is already a
+  rewatch (124, a superset of the 66); watched, never logged = `watched.csv`
+  rows with no diary row (300). Films watched reuses
+  `compute_unique_film_count`, so it matches the dashboard's card.
+- **Year selector** (`#year=2024` in the hash): films with at least one rewatch
+  row dated that year, ranked by that year's logs, lifetime count beside it;
+  ticks outside the year are dimmed. The definitions block, the by-year bars and
+  the undiaried list are lifetime only (watched.csv has no dates) and labelled.
+  Clicking a year's bar selects it; clicking it again returns to lifetime.
+- **Date strips** span `dateRange.earliest` to `latest` from the data (2017),
+  not 2020, so the sparse early diary rows don't fall off the left. Blue tick =
+  first watch, green = rewatch; each strip's `title`/`aria-label` lists the dates.
+- **`rewatches.json`:** `{ totals: { logs, rewatchLogs, filmsRewatched,
+  filmsLoggedTwice, loggedOnceAsRewatch, seenBeforeDiary, filmsLogged,
+  filmsWatched, undiaried }, films: [{ filmTitle, filmYear, link, count,
+  rewatchLogs, watches: [{ date, rewatch }] }] (2+ logs or any rewatch row; most
+  logs first, ties by most recent watch), byYear: { "2024": { logs,
+  rewatchLogs, filmsRewatched } }, undiaried: [{ name, year, link }], dateRange,
+  archiveExportDate }`. `link` is the film's page from `watched.csv` when
+  matched, else the newest diary entry's URL. ~115 KB.
+- Tests: `scripts/test_rewatches.py`.
 
 ## Userscripts (private repo `michaellamb-userscripts`)
 

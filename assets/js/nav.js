@@ -21,6 +21,7 @@
     { href: 'rolodex', page: 'rolodex', label: 'Rolodex', icon: 'fa-address-book' },
     { href: 'network', page: 'network', label: 'Network', icon: 'fa-project-diagram' },
     { href: 'tags', page: 'tags', label: 'Tags', icon: 'fa-tags' },
+    { href: 'rewatches', page: 'rewatches', label: 'Rewatches', icon: 'fa-redo' },
     {
       href: 'https://letterboxd.com/michaellamb/',
       label: 'Letterboxd',

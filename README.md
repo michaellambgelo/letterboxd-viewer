@@ -25,6 +25,8 @@ Live site: **https://michaellambgelo.github.io/letterboxd-viewer/**
 - **Tag cloud** — diary tags weighted by use
 - **Guestbook** — contact form that posts to a Discord webhook
 
+The **Rewatches** page (`rewatches.html`, from `data/rewatches.json`) lists every film logged more than once, the films first seen before the diary, and the films marked watched with no diary entry, with each number's definition spelled out so you can compute your own from a Letterboxd export.
+
 ## Architecture
 
 ```
