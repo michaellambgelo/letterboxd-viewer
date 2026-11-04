@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Letterboxd network export
 // @namespace    https://michaellamb.dev/letterboxd-viewer
-// @version      1.2.0
+// @version      1.3.0
 // @description  Unpaginate a Letterboxd people list (followers / following / followers you know) into one page, then export it as JSON.
 // @match        https://letterboxd.com/*
 // @run-at       document-idle
@@ -26,6 +26,9 @@
  *
  * If a page fails (non-200, a challenge page, or a page with no rows), it
  * stops and exports what it has, with "complete": false.
+ *
+ * The file holds real handles, so it stays on your machine: data/network/ is
+ * gitignored, and compute_network.py publishes only an anonymous graph.
  */
 
 (function () {
@@ -40,38 +43,23 @@
 
   // ---- parsing -----------------------------------------------------------
 
-  const num = (s) => {
-    const m = (s || '').replace(/,/g, '').match(/\d+/);
-    return m ? Number(m[0]) : null;
-  };
-
-  /** One <tr> → a person record. Keyed by the href slug, which is canonical
-   *  (data-username can differ in case, e.g. "isafiIms" vs /isafiims/). */
+  /** One <tr> → { handle }. The href slug is canonical (data-username can
+   *  differ in case, e.g. "SomeOne" vs /someone/).
+   *
+   *  Handle only, on purpose. Earlier versions also kept display names,
+   *  avatars and follower/film counts; the Network page is anonymous now and
+   *  only needs to know who is connected to whom, so nothing else about
+   *  anyone is copied out of the page. */
   function parseRow(tr) {
     const nameLink = tr.querySelector('.person-summary a.name');
     if (!nameLink) return null;
     const handle = (nameLink.getAttribute('href') || '').split('/').filter(Boolean)[0];
     if (!handle) return null;
 
-    const meta = tr.querySelector('.person-summary .metadata');
-    const followersA = meta?.querySelector(`a[href$="/followers/"]`);
-    const followingA = meta?.querySelector(`a[href$="/following/"]`);
-
-    // No follow-state field: the Follow/Unfollow buttons are toggled by
-    // Letterboxd's client JS, so only rows on the first, hydrated page are
-    // accurate. The 2026-11-03 export had 129 wrong values. Work out mutuals
-    // from followers ∩ following instead.
-
-    return {
-      handle,
-      displayName: nameLink.textContent.trim(),
-      avatar: tr.querySelector('.person-summary a.avatar img')?.getAttribute('src') || null,
-      followers: num(followersA?.textContent),
-      following: num(followingA?.textContent),
-      filmsWatched: num(tr.querySelector('.col-watched a')?.textContent),
-      lists: num(tr.querySelector('.col-lists a')?.textContent),
-      likes: num(tr.querySelector('.col-likes a')?.textContent),
-    };
+    // No follow-state field either: the Follow/Unfollow buttons are toggled
+    // by Letterboxd's client JS, so only rows on the first, hydrated page are
+    // accurate. Mutuals come from followers ∩ following instead.
+    return { handle };
   }
 
   const rowsOf = (root) => [...root.querySelectorAll('td.table-person')].map((td) => td.closest('tr'));
@@ -158,7 +146,7 @@
     document.querySelectorAll('.pagination').forEach((el) => { el.style.display = 'none'; });
 
     const out = {
-      schema: 'letterboxd-network-export/1',
+      schema: 'letterboxd-network-export/2',
       owner,
       list: listKind,
       sourceUrl: location.origin + location.pathname,

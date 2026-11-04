@@ -11,8 +11,10 @@ Inputs
 ------
 data/network/*.json
     Exports from scripts/userscripts/letterboxd-network-export.user.js
-    (schema "letterboxd-network-export/1"). For each (owner, list) pair the
-    newest export by `exportedAt` is used.
+    (schema "letterboxd-network-export/2", or /1 from before 2026-11-03;
+    only each person's `handle` is read either way). For each (owner, list)
+    pair the newest export by `exportedAt` is used. These files hold real
+    handles, so they stay local: data/network/ is gitignored.
 
     - owner = OWNER, list = "followers" / "following": your own network.
     - owner = someone else: edges between people in your network. A
@@ -23,30 +25,31 @@ data/network/*.json
       follow lists.
 
 members.json (jxnfilmclub)
-    Only the `handle` field is read. Member names, ids and pronouns are never
-    copied into the output; the page shows Letterboxd display names only.
+    Only the `handle` field is read, to set each node's `jxn` flag.
 
 Output
 ------
 data/network.json, which network.js reads (shape documented in CLAUDE.md).
+It is anonymous: nodes carry only a relationship and a JXN flag, and their
+order is shuffled on every run, so a node's index can't be matched against
+the alphabetical order of a public follow list. No handle, name, avatar or
+count for anyone but me is written.
 """
 
 import argparse
 import json
+import random
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 OWNER = 'michaellamb'
-SCHEMA = 'letterboxd-network-export/1'
+SCHEMAS = {'letterboxd-network-export/1', 'letterboxd-network-export/2'}
 
 REPO = Path(__file__).resolve().parent.parent
 DEFAULT_EXPORT_DIR = REPO / 'data' / 'network'
 DEFAULT_MEMBERS = REPO.parent / 'jxnfilmclub' / 'data' / 'members.json'
 DEFAULT_OUT = REPO / 'data' / 'network.json'
-
-PERSON_FIELDS = ('handle', 'displayName', 'avatar', 'followers', 'following', 'filmsWatched')
-
 
 def norm(handle):
     """Letterboxd handles are case-insensitive in URLs; the slug is canonical."""
@@ -62,7 +65,7 @@ def load_exports(export_dir):
         except (OSError, ValueError) as e:
             print(f'skip {path.name}: {e}', file=sys.stderr)
             continue
-        if data.get('schema') != SCHEMA:
+        if data.get('schema') not in SCHEMAS:
             continue
         key = (norm(data.get('owner')), data.get('list'))
         if key not in newest or data.get('exportedAt', '') > newest[key].get('exportedAt', ''):
@@ -79,7 +82,7 @@ def load_jxn_handles(members_path):
     return {norm(m['handle']) for m in members if m.get('handle')} - {OWNER}
 
 
-def build(exports, jxn_handles, owner=OWNER):
+def build(exports, jxn_handles, owner=OWNER, rng=None):
     followers = exports.get((owner, 'followers'))
     following = exports.get((owner, 'following'))
     if not followers or not following:
@@ -90,27 +93,19 @@ def build(exports, jxn_handles, owner=OWNER):
             print(f'warning: {name} export is marked incomplete '
                   f'({exp.get("stopReason")})', file=sys.stderr)
 
-    people = {}
     fo = set()
     fg = set()
     for exp, bucket in ((followers, fo), (following, fg)):
         for p in exp['people']:
             h = norm(p.get('handle'))
-            if not h or h == owner:
-                continue
-            bucket.add(h)
-            # Same person in both lists: keep the first copy; counts drift by
-            # a few between two exports minutes apart and either is fine.
-            people.setdefault(h, {k: p.get(k) for k in PERSON_FIELDS} | {'handle': h})
-
-    for h, p in people.items():
-        p['relation'] = 'mutual' if h in fo and h in fg else ('follower' if h in fo else 'following')
-        p['jxn'] = h in jxn_handles
+            if h and h != owner:
+                bucket.add(h)
+    handles = fo | fg
 
     # Edges between people in the network, from "followers you know" exports.
     edges = set()
     for (exp_owner, lst), exp in exports.items():
-        if exp_owner == owner or exp_owner not in people:
+        if exp_owner == owner or exp_owner not in handles:
             continue
         # A following list points the other way: the owner follows each
         # person. Every other kind (followers, "followers you know") lists
@@ -118,11 +113,18 @@ def build(exports, jxn_handles, owner=OWNER):
         owner_follows = (lst or '').split('/')[0] == 'following'
         for p in exp['people']:
             h = norm(p.get('handle'))
-            if h in people and h != exp_owner:
+            if h in handles and h != exp_owner:
                 edges.add((exp_owner, h) if owner_follows else (h, exp_owner))
 
-    ordered = sorted(people.values(), key=lambda p: ((p['displayName'] or p['handle']).casefold(), p['handle']))
-    rel = [p['relation'] for p in ordered]
+    # Shuffle, then forget the handles: from here on a person is an index.
+    order = sorted(handles)
+    (rng or random.SystemRandom()).shuffle(order)
+    index = {h: i for i, h in enumerate(order)}
+    nodes = [{
+        'relation': 'mutual' if h in fo and h in fg else ('follower' if h in fo else 'following'),
+        'jxn': h in jxn_handles,
+    } for h in order]
+    rel = [n['relation'] for n in nodes]
     return {
         'owner': owner,
         'generatedAt': datetime.now(timezone.utc).isoformat(timespec='seconds'),
@@ -133,12 +135,12 @@ def build(exports, jxn_handles, owner=OWNER):
             'mutual': rel.count('mutual'),
             'followerOnly': rel.count('follower'),
             'followingOnly': rel.count('following'),
-            'jxn': sum(p['jxn'] for p in ordered),
-            'jxnMutual': sum(p['jxn'] and p['relation'] == 'mutual' for p in ordered),
+            'jxn': sum(n['jxn'] for n in nodes),
+            'jxnMutual': sum(n['jxn'] and n['relation'] == 'mutual' for n in nodes),
             'edges': len(edges),
         },
-        'people': ordered,
-        'edges': sorted([a, b] for a, b in edges),
+        'nodes': nodes,
+        'edges': sorted([index[a], index[b]] for a, b in edges),
     }
 
 

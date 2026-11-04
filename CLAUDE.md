@@ -149,9 +149,15 @@ Local dev: same `?api=` override as rolodex.js, honored only on localhost
 
 ## Network (`network.html` + `scripts/compute_network.py`)
 
-A third page: everyone I follow on Letterboxd and everyone who follows me, with
-JXN Film Club members tagged. Static, like the stats page: no Worker and no
-Letterboxd requests except the avatar `<img>`s.
+A third page: the shape of my Letterboxd network (who I follow, who follows me,
+who is in JXN Film Club, and who among them follow each other), **anonymized**:
+nobody is named on the page or in the published data. Static, like the stats
+page: no Worker and no Letterboxd requests.
+
+**Why anonymous:** Letterboxd's terms bar exporting other members' content
+and automated extraction. So the export keeps handles only, the handles never
+leave my machine, and what's published is an unlabelled graph. Don't add
+names, avatars, counts or profile links back.
 
 **Where the data comes from:** Letterboxd has no API for this, the data export
 has no followers/following file, and logged out only page 1 of a follow list
@@ -161,20 +167,24 @@ So the graph comes from a **one-time export in my logged-in browser**:
 people table it adds a button that follows the page's own "Next" link 2–4 s
 apart (it never builds URLs), adds each page's rows to the live table, and
 downloads `letterboxd-<owner>-<list>-<date>.json` (schema
-`letterboxd-network-export/1`). If a page fails it exports what it has, marked
+`letterboxd-network-export/2`: `people` is `[{ handle }]` only; `/1` files from
+before 2026-11-03 also carried names, avatars and counts and are still read,
+handles only). If a page fails it exports what it has, marked
 `complete: false`. **Don't crawl Letterboxd from scripts or CI for this.**
 
 **Refreshing (no cron, on purpose; the inputs only change when you re-export):**
 1. Run the userscript on `/michaellamb/followers/` and `/michaellamb/following/`.
 2. Drop the JSON files into `data/network/`. The newest file per (owner, list)
-   wins, so old ones can stay.
-3. `python3 scripts/compute_network.py`, then commit `data/network/` and
-   `data/network.json`. Re-run it on its own to pick up new club members.
+   wins, so old ones can stay. **`data/network/` is gitignored**: those files
+   hold real handles and must never be committed (they were until 2026-11-03,
+   so older commits still contain them).
+3. `python3 scripts/compute_network.py`, then commit `data/network.json` only.
+   Re-run it on its own to pick up new club members.
 
 **JXN tags** come from `../jxnfilmclub/data/members.json` (`--members` to
 override), matched case-insensitively on the Letterboxd handle. **Only the
-handle is read**: member names, ids and pronouns never reach `network.json`
-(a test enforces this). This page sits outside the club's privacy policy:
+handle is read**, and only to set a node's `jxn` flag: no handle, member
+name, id or pronoun reaches `network.json` (tests enforce this). This page sits outside the club's privacy policy:
 it's my own public Letterboxd graph plus a tag for people I know from the club.
 
 **Mutuals = followers ∩ following.** The export has no follow-state field on
@@ -196,17 +206,20 @@ no such exports `edges` is `[]` and nothing is drawn.
 
 **`network.json`:** `{ owner, generatedAt, exportedAt, counts: { followers,
 following, mutual, followerOnly, followingOnly, jxn, jxnMutual, edges },
-people: [{ handle, displayName, avatar, followers, following, filmsWatched,
-relation: "mutual"|"follower"|"following", jxn }], edges: [[from, to]] }`.
-`people` is sorted by display name.
+nodes: [{ relation: "mutual"|"follower"|"following", jxn }], edges: [[from,
+to]] }`, where edges are indices into `nodes`. `nodes` is **shuffled on every
+run** (`random.SystemRandom`), because alphabetical order could be matched
+against my public follow lists. Residual risk, accepted: JXN nodes plus their
+edges could be partly re-identified by someone matching the public club roster
+against public follow lists.
 
-**Page:** stat tiles, a fixed radial SVG (me at the centre; rings from inner
-to outer are mutual, followers only, following only; club members drawn larger
-with a white outline, spread in name order rather than grouped, since grouping
-overlapped them), and a list with Everyone/Followers/Following/Mutual tabs
-(Followers and Following include mutuals, like Letterboxd's tabs), a filter
-box, a "JXN only" toggle, and a sort. The list's filter dims non-matching dots
-in the graph. Tests: `scripts/test_compute_network.py`.
+**Page:** stat tiles and a fixed radial SVG (me at the centre; rings from
+inner to outer are mutual, followers only, following only; club members drawn
+larger with a white outline, spread in file order rather than grouped, since
+grouping overlapped them). Everyone/Followers/Following/Mutual tabs (Followers
+and Following include mutuals, like Letterboxd's tabs) and a "JXN only" toggle
+dim the dots outside the selection. Dots have a relationship tooltip and no
+link. There is no people list. Tests: `scripts/test_compute_network.py`.
 
 ## Userscripts (`scripts/userscripts/`)
 
@@ -220,12 +233,13 @@ build URLs or call endpoints directly, and never crawl from scripts or CI.
 - `letterboxd-network-export.user.js` exports a people list as JSON for the
   Network page (see **Network**).
 - `letterboxd-jxn-club.user.js` adds a "JXN" panel on every letterboxd.com page:
-  the club members from the live `data/network.json` (people tagged `jxn`, fetched
-  with `GM_xmlhttpRequest` so Letterboxd's CSP can't block it, cached a day),
+  the club members with a linked Letterboxd handle, from the club's public roster
+  `https://join.jxnfilm.club/members` (handles only; fetched with
+  `GM_xmlhttpRequest` so Letterboxd's CSP can't block it, cached a day),
   each with profile and followers-you-know links, plus Start/Next to work
   through the not-yet-done members. Opening a member's followers-you-know page
-  marks them done (untick by hand). Its member list only changes when
-  `compute_network.py` is re-run and deployed.
+  marks them done (untick by hand). The list follows the club roster, so it
+  includes members who aren't in my network (their exports add no edges).
 - `letterboxd-review-stack.user.js` runs on `/activity/` and turns the feed's
   unliked reviews into a swipe stack (→/swipe right = like via the real Like
   button, ← = dismiss, W = add to watchlist, Z = undo, Esc = close). The

@@ -15,3 +15,6 @@ node_modules/
 
 # Letterboxd export: self-deleted content, never read by any script.
 data/archive/*/deleted/
+
+# Network exports: real handles. Only the anonymous data/network.json is published.
+data/network/

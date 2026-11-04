@@ -1,0 +1,1731 @@
+{
+ "owner": "michaellamb",
+ "generatedAt": "2026-11-03T23:44:14+00:00",
+ "exportedAt": "2026-11-03",
+ "counts": {
+  "followers": 263,
+  "following": 224,
+  "mutual": 140,
+  "followerOnly": 123,
+  "followingOnly": 84,
+  "jxn": 26,
+  "jxnMutual": 16,
+  "edges": 81
+ },
+ "nodes": [
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": true
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": true
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": true
+  },
+  {
+   "relation": "following",
+   "jxn": true
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": true
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": true
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": true
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "following",
+   "jxn": true
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": true
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "following",
+   "jxn": true
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": true
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "follower",
+   "jxn": false
+  },
+  {
+   "relation": "following",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  },
+  {
+   "relation": "mutual",
+   "jxn": false
+  }
+ ],
+ "edges": [
+  [
+   6,
+   10
+  ],
+  [
+   6,
+   173
+  ],
+  [
+   10,
+   173
+  ],
+  [
+   10,
+   327
+  ],
+  [
+   29,
+   193
+  ],
+  [
+   30,
+   14
+  ],
+  [
+   30,
+   173
+  ],
+  [
+   35,
+   14
+  ],
+  [
+   64,
+   173
+  ],
+  [
+   66,
+   10
+  ],
+  [
+   66,
+   178
+  ],
+  [
+   66,
+   260
+  ],
+  [
+   74,
+   154
+  ],
+  [
+   74,
+   156
+  ],
+  [
+   78,
+   14
+  ],
+  [
+   78,
+   173
+  ],
+  [
+   89,
+   22
+  ],
+  [
+   89,
+   35
+  ],
+  [
+   89,
+   147
+  ],
+  [
+   89,
+   259
+  ],
+  [
+   89,
+   260
+  ],
+  [
+   89,
+   327
+  ],
+  [
+   90,
+   173
+  ],
+  [
+   92,
+   173
+  ],
+  [
+   114,
+   10
+  ],
+  [
+   114,
+   173
+  ],
+  [
+   116,
+   327
+  ],
+  [
+   119,
+   10
+  ],
+  [
+   119,
+   173
+  ],
+  [
+   121,
+   260
+  ],
+  [
+   128,
+   173
+  ],
+  [
+   134,
+   10
+  ],
+  [
+   134,
+   173
+  ],
+  [
+   147,
+   178
+  ],
+  [
+   148,
+   173
+  ],
+  [
+   148,
+   327
+  ],
+  [
+   150,
+   10
+  ],
+  [
+   150,
+   173
+  ],
+  [
+   153,
+   173
+  ],
+  [
+   153,
+   193
+  ],
+  [
+   154,
+   156
+  ],
+  [
+   156,
+   259
+  ],
+  [
+   173,
+   10
+  ],
+  [
+   173,
+   259
+  ],
+  [
+   173,
+   327
+  ],
+  [
+   175,
+   10
+  ],
+  [
+   175,
+   173
+  ],
+  [
+   178,
+   147
+  ],
+  [
+   186,
+   10
+  ],
+  [
+   186,
+   173
+  ],
+  [
+   189,
+   156
+  ],
+  [
+   207,
+   154
+  ],
+  [
+   207,
+   156
+  ],
+  [
+   218,
+   259
+  ],
+  [
+   221,
+   10
+  ],
+  [
+   221,
+   173
+  ],
+  [
+   251,
+   173
+  ],
+  [
+   259,
+   156
+  ],
+  [
+   259,
+   173
+  ],
+  [
+   259,
+   218
+  ],
+  [
+   260,
+   89
+  ],
+  [
+   267,
+   173
+  ],
+  [
+   271,
+   10
+  ],
+  [
+   271,
+   14
+  ],
+  [
+   271,
+   173
+  ],
+  [
+   299,
+   14
+  ],
+  [
+   305,
+   14
+  ],
+  [
+   305,
+   35
+  ],
+  [
+   309,
+   10
+  ],
+  [
+   309,
+   173
+  ],
+  [
+   310,
+   243
+  ],
+  [
+   314,
+   156
+  ],
+  [
+   327,
+   10
+  ],
+  [
+   327,
+   22
+  ],
+  [
+   327,
+   116
+  ],
+  [
+   327,
+   173
+  ],
+  [
+   327,
+   259
+  ],
+  [
+   332,
+   14
+  ],
+  [
+   332,
+   156
+  ],
+  [
+   332,
+   193
+  ],
+  [
+   346,
+   173
+  ]
+ ]
+}

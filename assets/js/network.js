@@ -3,7 +3,11 @@
  *
  * Static consumer of data/network.json, which scripts/compute_network.py
  * builds by hand from one-time exports (see CLAUDE.md). No Worker and no
- * Letterboxd requests beyond the avatar images in each row.
+ * Letterboxd requests.
+ *
+ * The data is anonymous: each node is just a relationship and a JXN flag, in
+ * shuffled order, and edges are pairs of node indices. Nobody is named, and
+ * the dots don't link anywhere.
  *
  * The graph is plain inline SVG with a fixed radial layout: me at the centre,
  * one ring per relationship. Nothing is simulated, so the picture is the same
@@ -13,8 +17,6 @@
 
 (function () {
   'use strict';
-
-  const { escapeHtml, safeUrl } = window.LBV;
 
   const RELATIONS = {
     mutual: { label: 'Mutual', long: 'Follow each other', color: 'var(--accent-green)' },
@@ -34,13 +36,10 @@
     { id: 'mutual', label: 'Mutual' },
   ];
 
-  const state = { tab: 'all', query: '', jxnOnly: false, sort: 'name' };
+  const state = { tab: 'all', jxnOnly: false };
   let data = null;
 
   const $ = (id) => document.getElementById(id);
-  const compact = new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 });
-  const fmt = (n) => (n == null ? '–' : compact.format(n));
-  const profileUrl = (h) => `https://letterboxd.com/${encodeURIComponent(h)}/`;
 
   // A person is "in" a tab by their relationship to me. Followers and
   // Following each include the mutuals, like Letterboxd's own tabs.
@@ -78,13 +77,14 @@
   function layout() {
     const pos = new Map();
     for (const ring of RINGS) {
-      // Name order, starting at 12 o'clock. Club members aren't grouped:
-      // bunching them made their larger dots overlap into one blob.
-      const members = data.people.filter((p) => p.relation === ring.relation);
+      // File order (shuffled by compute_network.py), starting at 12 o'clock.
+      // Club members aren't grouped: bunching them made their larger dots
+      // overlap into one blob.
+      const members = data.nodes.map((p, id) => ({ ...p, id })).filter((p) => p.relation === ring.relation);
       const step = (2 * Math.PI) / Math.max(members.length, 1);
       members.forEach((p, i) => {
         const a = -Math.PI / 2 + i * step;
-        pos.set(p.handle, { x: C + ring.r * Math.cos(a), y: C + ring.r * Math.sin(a), p });
+        pos.set(p.id, { x: C + ring.r * Math.cos(a), y: C + ring.r * Math.sin(a), p });
       });
     }
     return pos;
@@ -134,9 +134,8 @@
     // Club members are drawn last so they sit on top.
     const ordered = [...pos.values()].sort((x, y) => Number(x.p.jxn) - Number(y.p.jxn));
     for (const { x, y, p } of ordered) {
-      const link = el('a', { href: profileUrl(p.handle), target: '_blank', rel: 'noopener', 'data-handle': p.handle }, nodeLayer);
-      el('title', {}, link).textContent =
-        `${p.displayName || p.handle} (@${p.handle}) — ${RELATIONS[p.relation].label}${p.jxn ? ' · JXN' : ''}`;
+      const link = el('g', { 'data-id': p.id }, nodeLayer);
+      el('title', {}, link).textContent = `${RELATIONS[p.relation].long}${p.jxn ? ' · JXN Film Club' : ''}`;
       el('circle', {
         cx: x.toFixed(1),
         cy: y.toFixed(1),
@@ -156,7 +155,7 @@
 
     const ringItems = RINGS.map(({ relation }) => {
       const r = RELATIONS[relation];
-      const n = data.people.filter((p) => p.relation === relation).length;
+      const n = data.nodes.filter((p) => p.relation === relation).length;
       return `<li><span class="network-swatch" style="background:${r.color}"></span>${r.long} <strong>${n}</strong></li>`;
     });
     ringItems.push(
@@ -166,75 +165,27 @@
       ringItems.push(`<li><span class="network-swatch network-swatch--edge"></span>Follows someone else here <strong>${data.counts.edges}</strong></li>`);
     }
     $('network-legend').innerHTML =
-      `<ul>${ringItems.join('')}</ul><p>Inner ring to outer: mutual, followers only, following only. Hover or tap a dot for a name; it links to their Letterboxd profile.</p>`;
+      `<ul>${ringItems.join('')}</ul><p>Inner ring to outer: mutual, followers only, following only. Each dot is one person; nobody is named.</p>`;
   }
 
-  // Dim the graph to whatever the list is showing, so the two read together.
-  function syncGraph(visible) {
-    document.querySelectorAll('#network-graph a[data-handle]').forEach((a) => {
-      a.classList.toggle('is-dim', !visible.has(a.dataset.handle));
+  // Dim every dot outside the current tab and toggle.
+  function syncGraph() {
+    const on = (p) => inTab(p, state.tab) && (!state.jxnOnly || p.jxn);
+    document.querySelectorAll('#network-graph g[data-id]').forEach((g) => {
+      g.classList.toggle('is-dim', !on(data.nodes[g.dataset.id]));
     });
     document.querySelectorAll('#network-graph path[data-a]').forEach((path) => {
-      path.classList.toggle('is-dim', !(visible.has(path.dataset.a) && visible.has(path.dataset.b)));
+      path.classList.toggle('is-dim', !(on(data.nodes[path.dataset.a]) && on(data.nodes[path.dataset.b])));
     });
   }
-
-  // ---- list ----------------------------------------------------------------
 
   function renderTabs() {
     $('network-tabs').innerHTML = TABS.map((t) => {
-      const n = data.people.filter((p) => inTab(p, t.id)).length;
+      const n = data.nodes.filter((p) => inTab(p, t.id)).length;
       const on = t.id === state.tab;
       return `<button type="button" role="tab" data-tab="${t.id}" aria-selected="${on}" tabindex="${on ? 0 : -1}">` +
         `${t.label} <span class="network-tab-count">${n}</span></button>`;
     }).join('');
-  }
-
-  function row(p) {
-    const rel = RELATIONS[p.relation];
-    const avatar = safeUrl(p.avatar);
-    const name = escapeHtml(p.displayName || p.handle);
-    const url = profileUrl(p.handle);
-    return `
-      <li class="network-row${p.jxn ? ' is-jxn' : ''}">
-        <a class="network-avatar" href="${url}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-          ${avatar ? `<img src="${escapeHtml(avatar)}" alt="" width="40" height="40" loading="lazy" decoding="async" />` : ''}
-        </a>
-        <div class="network-who">
-          <a class="network-name" href="${url}" target="_blank" rel="noopener">${name}</a>
-          ${p.jxn ? '<span class="jxn-badge" title="JXN Film Club member">JXN</span>' : ''}
-          <div class="network-handle">@${escapeHtml(p.handle)}</div>
-        </div>
-        <div class="network-meta">
-          <span class="network-rel network-rel--${p.relation}">${rel.label}</span>
-          <span class="network-counts">${fmt(p.followers)} followers · ${fmt(p.filmsWatched)} films</span>
-        </div>
-      </li>`;
-  }
-
-  const SORTS = {
-    name: null, // network.json is already in name order
-    followers: (a, b) => (b.followers ?? -1) - (a.followers ?? -1),
-    films: (a, b) => (b.filmsWatched ?? -1) - (a.filmsWatched ?? -1),
-  };
-
-  function renderList() {
-    const q = state.query.trim().toLowerCase();
-    let people = data.people.filter((p) =>
-      inTab(p, state.tab) &&
-      (!state.jxnOnly || p.jxn) &&
-      (!q || p.handle.includes(q) || (p.displayName || '').toLowerCase().includes(q))
-    );
-    if (SORTS[state.sort]) people = [...people].sort(SORTS[state.sort]);
-
-    $('network-list').innerHTML = people.map(row).join('');
-    const total = data.people.filter((p) => inTab(p, state.tab)).length;
-    $('network-count').textContent = `${people.length}`;
-    $('network-status').textContent = people.length === total
-      ? ''
-      : people.length ? `Showing ${people.length} of ${total}` : 'Nobody matches that filter.';
-
-    syncGraph(new Set(people.map((p) => p.handle)));
   }
 
   function bind() {
@@ -244,7 +195,7 @@
       if (!btn) return;
       state.tab = btn.dataset.tab;
       renderTabs();
-      renderList();
+      syncGraph();
       tabs.querySelector(`[data-tab="${state.tab}"]`).focus();
     });
     // Arrow keys move between tabs (WAI-ARIA tabs pattern).
@@ -255,9 +206,7 @@
       tabs.querySelector(`[data-tab="${next.id}"]`).click();
       e.preventDefault();
     });
-    $('network-filter').addEventListener('input', (e) => { state.query = e.target.value; renderList(); });
-    $('network-jxn-only').addEventListener('change', (e) => { state.jxnOnly = e.target.checked; renderList(); });
-    $('network-sort').addEventListener('change', (e) => { state.sort = e.target.value; renderList(); });
+    $('network-jxn-only').addEventListener('change', (e) => { state.jxnOnly = e.target.checked; syncGraph(); });
   }
 
   async function init() {
@@ -266,7 +215,7 @@
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       data = await res.json();
     } catch (err) {
-      $('network-status').textContent = 'Could not load the network data.';
+      $('network-legend').textContent = 'Could not load the network data.';
       console.error('[network]', err);
       return;
     }
@@ -274,7 +223,6 @@
     renderGraph();
     renderTabs();
     bind();
-    renderList();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

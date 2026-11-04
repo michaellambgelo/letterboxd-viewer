@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Letterboxd JXN Film Club navigator
 // @namespace    https://michaellamb.dev/letterboxd-viewer
-// @version      1.0.0
+// @version      1.1.0
 // @description  A panel of JXN Film Club members on Letterboxd, with one-click links to each member's profile and "followers you know" page, and a Next button to work through them.
 // @match        https://letterboxd.com/*
 // @run-at       document-idle
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @grant        GM_xmlhttpRequest
-// @connect      letterboxd.michaellamb.dev
+// @connect      join.jxnfilm.club
 // ==/UserScript==
 
 /*
@@ -21,11 +21,12 @@
  *   3. Press "Next ›" in the panel for the next member you haven't done.
  *   4. When finished: python3 scripts/compute_network.py.
  *
- * Members come from the live Network page data
- * (letterboxd.michaellamb.dev/data/network.json, the people tagged `jxn`),
- * so the list is whoever compute_network.py last matched from jxnfilmclub's
- * members.json. It's fetched with GM_xmlhttpRequest so Letterboxd's CSP
- * doesn't apply, and cached for a day.
+ * Members come from the club's own public roster
+ * (join.jxnfilm.club/members), which lists each member's linked Letterboxd
+ * handle. Only the handle is read; names and pronouns are left alone. The
+ * Network page's data/network.json is anonymous and can't supply handles.
+ * The roster is fetched with GM_xmlhttpRequest so Letterboxd's CSP doesn't
+ * apply, and cached for a day.
  *
  * A member counts as done once you've opened their followers-you-know page
  * (stored in Tampermonkey; tick or untick by hand in the panel). This script
@@ -35,15 +36,16 @@
 (function () {
   'use strict';
 
-  const DATA_URL = 'https://letterboxd.michaellamb.dev/data/network.json';
+  const DATA_URL = 'https://join.jxnfilm.club/members';
+  const OWNER = 'michaellamb';
   const CACHE_MS = 24 * 60 * 60 * 1000;
   const YOU_KNOW = 'followers-you-know';
 
   const store = {
     get done() { return GM_getValue('done', {}); },
     set done(v) { GM_setValue('done', v); },
-    get cache() { return GM_getValue('cache', null); },
-    set cache(v) { GM_setValue('cache', v); },
+    get cache() { return GM_getValue('roster', null); },
+    set cache(v) { GM_setValue('roster', v); },
     get open() { return GM_getValue('panelOpen', false); },
     set open(v) { GM_setValue('panelOpen', v); },
   };
@@ -64,10 +66,12 @@
         onload: (res) => {
           try {
             if (res.status !== 200) throw new Error(`HTTP ${res.status}`);
-            const data = JSON.parse(res.responseText);
-            const members = data.people
-              .filter((p) => p.jxn)
-              .map((p) => ({ handle: p.handle, name: p.displayName || p.handle, avatar: p.avatar, relation: p.relation }));
+            const roster = JSON.parse(res.responseText);
+            if (!Array.isArray(roster)) throw new Error('unexpected roster shape');
+            const handles = new Set(roster
+              .map((m) => String(m.handle || '').trim().toLowerCase())
+              .filter((h) => h && h !== OWNER));
+            const members = [...handles].sort().map((handle) => ({ handle }));
             store.cache = { at: Date.now(), members };
             resolve(members);
           } catch (e) {
@@ -107,11 +111,9 @@
       ul { list-style: none; margin: 0; padding: 4px 0; overflow-y: auto; }
       li { display: flex; align-items: center; gap: 8px; padding: 5px 12px; }
       li.here { background: #242c34; }
-      li img, li .ph { width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; background: #2c3440; }
       .who { flex: 1; min-width: 0; }
       .who a { color: #fff; text-decoration: none; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
       .who a:hover { color: #40bcf4; }
-      .who small { color: #678; }
       .yk { color: #40bcf4; text-decoration: none; font-size: 12px; white-space: nowrap; }
       .yk:hover { color: #fff; }
       input[type=checkbox] { accent-color: #00e054; margin: 0; }
@@ -151,8 +153,7 @@
     $('ul').innerHTML = members.map((m) => `
       <li class="${m.handle === here.handle ? 'here' : ''}">
         <input type="checkbox" data-h="${esc(m.handle)}" ${done[m.handle] ? 'checked' : ''} title="Done">
-        ${m.avatar ? `<img src="${esc(m.avatar)}" alt="">` : '<span class="ph"></span>'}
-        <div class="who"><a href="${profileUrl(m.handle)}">${esc(m.name)}</a><small>@${esc(m.handle)} · ${m.relation === 'mutual' ? 'mutual' : m.relation === 'following' ? 'you follow' : 'follows you'}</small></div>
+        <div class="who"><a href="${profileUrl(m.handle)}">@${esc(m.handle)}</a></div>
         <a class="yk" href="${youKnowUrl(m.handle)}">you know ›</a>
       </li>`).join('');
     const nx = nextMember();
