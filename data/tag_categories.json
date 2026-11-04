@@ -1,0 +1,48 @@
+{
+  "_comment": "Hand-maintained. Groups diary tags for the Tags page (tags.html). Tags are matched lowercased; any tag not listed here shows under Other. Categories render in this order.",
+  "categories": [
+    {
+      "id": "streaming",
+      "label": "Streaming service",
+      "icon": "fa-tv",
+      "tags": [
+        "youtube", "primevideo", "hulu", "hbomax", "max", "netflix", "disney+", "mubi",
+        "mubi film of the day", "shudder", "googleplay", "tubi", "vimeo", "appletv+", "appletv",
+        "moviesanywhere", "vudu", "itunes", "amc+", "paramount+", "peacock", "crunchyroll",
+        "freevee", "watchfree+", "dekkoo", "dailymotion", "internetarchive", "libraryofcongress",
+        "lecinemaclub", "videostore", "a24 screening room", "indee", "frame.io"
+      ]
+    },
+    {
+      "id": "person",
+      "label": "Person",
+      "icon": "fa-user-friends",
+      "tags": [
+        "fellas", "samo", "jsyd", "merry", "markvs", "shelby", "mj", "ryanparker", "mattycakes",
+        "eduardo", "jawnmizzles", "lumberjake", "lovvorn", "heathwalt", "hunnit", "lolo",
+        "alexisaiah", "boppie", "lydia", "bearlee", "guffy", "egholaday", "mazza"
+      ]
+    },
+    {
+      "id": "theaters",
+      "label": "In theaters",
+      "icon": "fa-film",
+      "tags": [
+        "in theaters", "plaza", "cinemarkmovieclub", "secret movie series", "msfilmsociety",
+        "theheights", "dulinghall", "musecenter", "reel", "proximity media", "urban foxes"
+      ]
+    },
+    {
+      "id": "moviepass",
+      "label": "MoviePass",
+      "icon": "fa-ticket-alt",
+      "tags": ["moviepass"]
+    },
+    {
+      "id": "imax",
+      "label": "IMAX",
+      "icon": "fa-expand",
+      "tags": ["imax"]
+    }
+  ]
+}

@@ -47,6 +47,7 @@ Letterboxd RSS  ──►  scripts/download_rss.py  ──►  data/rss.xml
 - `assets/js/dashboard.js` — all rendering logic (data loading via `fetch('data/stats.json')`, heatmap layout, Chart.js setup, contact form handler)
 - `assets/js/rolodex.js` — rolodex card rendering, reads the Worker's `/rolodex`
 - `network.html` + `assets/js/network.js` — the Network page (see **Network** below), reads `data/network.json`
+- `tags.html` + `assets/js/tags.js` — the Tags page (see **Tags** below), reads `data/viewing_history.json` + `data/tag_categories.json`
 - `assets/js/util.js` — shared helpers (`escapeHtml`, `ratingToStars`, `formatShortDate`, `safeUrl`) on `window.LBV`; **loaded before** each page's own script on every page
 - `assets/js/nav.js` — the hamburger menu, rendered into `<div data-site-nav>` on every page so the markup lives in one file. Hrefs are **extension-less and relative** (`./`, `rolodex`): GitHub Pages resolves `/rolodex` to `rolodex.html`, and staying relative keeps them working under the `/letterboxd-viewer/` base path. `currentPage()` strips any `.html` before matching `LINKS[].page`, so the active link is right whether you arrive at `/`, `/rolodex`, or `/rolodex.html`. **`python3 -m http.server` does not resolve extension-less paths** — use `npx serve` for local preview or the nav links 404
 - `assets/css/dashboard.css` — all styling for every page
@@ -103,7 +104,7 @@ The frontend reads only these top-level keys (see `compute_stats.py` and `dashbo
   python3 scripts/extract_history.py
   python3 scripts/compute_stats.py
   ```
-- **Serving locally:** `npx serve -l 8000 .` from the repo root. Not `python3 -m http.server`: it doesn't resolve extension-less paths, so the nav links (`rolodex`, `network`) 404. Port 8000 is the one the Worker's `ALLOWED_ORIGINS` permits for the live layer.
+- **Serving locally:** `npx serve -l 8000 .` from the repo root. Not `python3 -m http.server`: it doesn't resolve extension-less paths, so the nav links (`rolodex`, `network`, `tags`) 404. Port 8000 is the one the Worker's `ALLOWED_ORIGINS` permits for the live layer.
 - **Heatmap end-date anchor:** `dashboard.js` renders a 52-week window ending on the later of `dateRange.latest` or today. This means even if the cron falls behind, the grid still extends to the current week (with empty cells for missing data) rather than truncating at the last data point.
 - **Heatmap dates are local-time strings** (`formatLocalDate()`), never `toISOString()`: the UTC conversion shifted cells by a day for anyone east of Greenwich (fixed in 49453cf).
 - **Cron health matters:** if the workflow stops successfully committing updated `data/stats.json` and `data/viewing_history.json`, the site goes stale silently. When investigating "missing recent data", first check `gh run list --workflow=download-data-and-assets.yml` — the data is almost always the problem, not the frontend.
@@ -220,6 +221,35 @@ grouping overlapped them). Everyone/Followers/Following/Mutual tabs (Followers
 and Following include mutuals, like Letterboxd's tabs) and a "JXN only" toggle
 dim the dots outside the selection. Dots have a relationship tooltip and no
 link. There is no people list. Tests: `scripts/test_compute_network.py`.
+
+## Tags (`tags.html` + `assets/js/tags.js`)
+
+Pick diary tags, get every entry logged with them. Fully static: it reads the
+already-published `data/viewing_history.json` directly, so there's no pipeline
+step and nothing to regenerate. New tags show up as soon as the cron updates
+the history.
+
+- **Categories** come from `data/tag_categories.json`, **hand-maintained**:
+  ordered `categories[]` of `{ id, label, icon, tags[] }` (Streaming service,
+  Person, In theaters, MoviePass, IMAX). Any tag no category lists falls into a
+  generated **Other** group (collapsed by default), so a new tag never vanishes;
+  to file it, add it to a category. A tag listed twice goes to the first.
+  `icon` is a Font Awesome **5** name.
+- Tags are matched **lowercased** (`MoviePass` = `moviepass`). Within a
+  category, chips sort by use count.
+- **Untagged:** a last "No tags" group holds one pseudo-tag for entries with
+  zero tags, which no real chip can reach. Its key is `(untagged)` (the
+  parentheses keep it from colliding with a real tag named "untagged"), so a
+  link reads `#tags=(untagged)`. It combines with real tags under Any; under All
+  it can't match anything, and the summary line says so.
+- **Any / All** toggle (shown with 2+ tags selected). Selection and mode live in
+  the hash (`#tags=in%20theaters,imax&match=all`) so a filtered list can be
+  linked; `+` for spaces also parses.
+- Summary line: logs, distinct films (title + year), average rating, date span.
+  Sorts: newest, oldest, highest rated, title.
+- The Person tags are my own diary tags, already public on my Letterboxd
+  profile; the page adds nothing beyond what `viewing_history.json` already
+  publishes.
 
 ## Userscripts (`scripts/userscripts/`)
 

@@ -22,6 +22,7 @@ CARDS = [
   { file: 'stats.png',   eyebrow: 'LETTERBOXD · STATS',   title: 'Every film I’ve logged, by the numbers' },
   { file: 'rolodex.png', eyebrow: 'LETTERBOXD · ROLODEX', title: 'The people I follow, and their last four films' },
   { file: 'network.png', eyebrow: 'LETTERBOXD · NETWORK', title: 'Who I follow, who follows me, and who’s in JXN Film Club' },
+  { file: 'tags.png',    eyebrow: 'LETTERBOXD · TAGS',    title: 'Every film I’ve logged, by where and who I watched it with' },
 ].freeze
 
 abort "Blog checkout not found at #{BLOG}" unless File.directory?(BLOG)
