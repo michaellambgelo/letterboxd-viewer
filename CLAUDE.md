@@ -92,7 +92,7 @@ The frontend reads only these top-level keys (see `compute_stats.py` and `dashbo
 | `orphanedFilms` | `[{ filmTitle, filmYear, watchedDate, memberRating, reviewText, tags, logCount }, ...]` | "Logged Films Removed from Letterboxd" section |
 | `archiveExportDate` | `"YYYY-MM-DD"` | Disclaimer text |
 
-`data/watchlist.json` (also from `compute_stats.py`, not read by the site): `{ snapshotDate, snapshotSource, count, films: [[name, year], …] }`, the current watchlist for the review-stack userscript.
+`data/watchlist.json` (also from `compute_stats.py`, not read by the site): `{ snapshotDate, snapshotSource, count, films: [[name, year], …] }`, the current watchlist for the review-stack userscript (in michaellamb-userscripts).
 
 ## Development Notes
 
@@ -164,7 +164,8 @@ names, avatars, counts or profile links back.
 has no followers/following file, and logged out only page 1 of a follow list
 loads (`/page/2/` onward and every `/by/…` sort hit the Cloudflare challenge).
 So the graph comes from a **one-time export in my logged-in browser**:
-`scripts/userscripts/letterboxd-network-export.user.js` (Tampermonkey). On any
+`letterboxd-network-export.user.js` (Tampermonkey, in the private
+`michaellamb-userscripts` repo). On any
 people table it adds a button that follows the page's own "Next" link 2–4 s
 apart (it never builds URLs), adds each page's rows to the live table, and
 downloads `letterboxd-<owner>-<list>-<date>.json` (schema
@@ -195,7 +196,7 @@ values.
 
 **Edges between people (optional):** run the userscript on another member's
 "followers you know" view (`/<handle>/followers-you-know/`, list kind
-`followers-you-know`; `letterboxd-jxn-club.user.js` walks you through the club
+`followers-you-know`; `letterboxd-jxn-club.user.js` in michaellamb-userscripts walks you through the club
 members). Every person listed is someone I follow who follows
 that member, so `compute_network.py` turns any export whose owner isn't me
 into edges `person -> owner`. Someone's plain followers page works the same
@@ -251,52 +252,20 @@ the history.
   profile; the page adds nothing beyond what `viewing_history.json` already
   publishes.
 
-## Userscripts (`scripts/userscripts/`)
+## Userscripts (private repo `michaellamb-userscripts`)
 
-Tampermonkey scripts that run in my logged-in browser on letterboxd.com. They
-aren't part of the site and nothing deploys them. They exist because the useful
-Letterboxd data (follow lists, the activity feed) sits behind login and the
-Cloudflare challenge. Rules for all of them: drive Letterboxd's own controls
-(Next links, "Load older activity", the Like button) at a human pace, never
-build URLs or call endpoints directly, and never crawl from scripts or CI.
-
-- `letterboxd-network-export.user.js` exports a people list as JSON for the
-  Network page (see **Network**).
-- `letterboxd-jxn-club.user.js` adds a "JXN" panel on every letterboxd.com page:
-  the club members with a linked Letterboxd handle, from the club's public roster
-  `https://join.jxnfilm.club/members` (handles only; fetched with
-  `GM_xmlhttpRequest` so Letterboxd's CSP can't block it, cached a day),
-  each with profile and followers-you-know links, plus Start/Next to work
-  through the not-yet-done members. Opening a member's followers-you-know page
-  marks them done (untick by hand). The list follows the club roster, so it
-  includes members who aren't in my network (their exports add no edges).
-- `letterboxd-review-stack.user.js` runs on `/activity/` and turns the feed's
-  unliked reviews into a swipe stack (→/swipe right = like via the real Like
-  button, ← = dismiss, W = add to watchlist, Z = undo, Esc = close). The
-  watchlist button only appears when the poster's watch button says you haven't
-  watched the film. It drives the poster's own "⋯" menu, finds the item by its
-  text, and reopens the menu to confirm "Remove from watchlist" before showing ✓.
-  Watchlist state isn't in the poster markup (and `/ajax/letterboxd-metadata/` is
-  only a csrf ping), so "✓ On your watchlist" comes from **`data/watchlist.json`**
-  on letterboxd.michaellamb.dev: the newest export minus films logged since,
-  written by `compute_stats.py` (and committed by the 6-hourly cron) as `[name,
-  year]` pairs, matched to cards on a normalized title + year. The script caches
-  it 6 h (a failed load is retried on the next card, at most every 20 s, rather
-  than sticking until reload) and unions in films it added itself since that export; films added on
-  Letterboxd directly show up after the next export. The menu is only opened to
-  *add*. Its icon sits inside the poster's film link, so that click cancels the
-  link's default action (v1.3 clicked the link itself and navigated away).
-  Spoiler reviews are blurred only when the poster says you haven't watched the
-  film (hidden while unknown). Pointer capture starts only once a horizontal
-  swipe begins: capturing on pointerdown retargets taps to the card, which broke
-  tap-to-reveal and the watchlist button in v1.1. It remembers what you've been
-  through as **contiguous activity-id ranges** in Tampermonkey storage. Ids
-  only increase and the stack walks the feed newest-first, and a range only
-  grows over the fully-decided prefix, so a still-queued review is never marked
-  seen. Once the feed's end has been reached (`feedEndId`), entering the bottom
-  range means "caught up" with no more paging. The markup it depends on is
-  listed in its header comment (read from the live feed 2026-11-03). If
-  Letterboxd changes it, that list is where to start.
+The Tampermonkey scripts that run in my logged-in browser on letterboxd.com
+(network export, JXN club navigator, review stack) live in the **private**
+repo `michaellambgelo/michaellamb-userscripts`, in its `letterboxd/` folder
+(sibling checkout `../michaellamb-userscripts`; its CLAUDE.md documents each
+one). They were in
+this repo under `scripts/userscripts/` until 2026-11-03, so older commits still
+have them. What this repo provides them: `data/network/` exports feed
+`compute_network.py` (schema `letterboxd-network-export/2`, shared, so change
+both sides together), and `compute_stats.py` publishes `data/watchlist.json`
+for the review stack. Rule for all of them: drive Letterboxd's own controls at
+a human pace, never build URLs or call endpoints directly, and never crawl
+from scripts or CI.
 
 ## Rolodex (`rolodex.html` + `worker/`)
 

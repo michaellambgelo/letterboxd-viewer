@@ -10,7 +10,8 @@ change when you re-export:
 Inputs
 ------
 data/network/*.json
-    Exports from scripts/userscripts/letterboxd-network-export.user.js
+    Exports from letterboxd-network-export.user.js (private repo
+    michaellamb-userscripts)
     (schema "letterboxd-network-export/2", or /1 from before 2026-11-03;
     only each person's `handle` is read either way). For each (owner, list)
     pair the newest export by `exportedAt` is used. These files hold real

@@ -312,7 +312,7 @@ def compute_watchlist_stats(entries, snapshot=None):
 def compute_watchlist_file(entries, snapshot=None):
     """data/watchlist.json: the whole current watchlist, compact.
 
-    Read by scripts/userscripts/letterboxd-review-stack.user.js to show
+    Read by letterboxd-review-stack.user.js (private repo michaellamb-userscripts) to show
     "On your watchlist" on a review card without opening anything on
     Letterboxd. Films are [name, year] pairs; the script matches them to a
     card's title and year the same way _inventory_key does here.
