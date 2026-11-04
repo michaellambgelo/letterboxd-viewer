@@ -256,9 +256,19 @@ the history.
   parses it into an inert DOMParser document and rebuilds it, keeping only
   i/em/b/strong/blockquote (bare), `<br>` as a newline, and links whose href
   passes `safeUrl` (http/https). Everything else is reduced to escaped text, and
-  script/style/iframe content is dropped. Only archive entries carry review text:
-  RSS-sourced entries (logged after the newest export) have none until the next
-  export.
+  script/style/iframe content is dropped. RSS-sourced entries carry review text too:
+  `extract_history.rss_review()` rebuilds the feed's description into the
+  archive's format (blank-line paragraphs, bare i/em/b/strong/blockquote, http(s)
+  `<a href>`, entities decoded), dropping the poster paragraph and the "This
+  review may contain spoilers." notice. `letterboxd-watch-*` items get `''`:
+  their "Watched on <date>." line isn't a review. Checked against the
+  2026-11-03 export: 49 of 50 overlapping entries came out identical, the 50th
+  differing only in one line break after a blockquote.
+- **RSS has no tags.** A feed item carries title, rating, rewatch, like and
+  TMDB id, but no tags, so RSS entries are written with `tags: []` and get
+  them only from the next full export. The page shows them under a
+  **"not exported yet"** pseudo-tag (`(not-exported)`, from `source: "rss"`)
+  rather than counting them as untagged.
 - The Person tags are my own diary tags, already public on my Letterboxd
   profile; the page adds nothing beyond what `viewing_history.json` already
   publishes.

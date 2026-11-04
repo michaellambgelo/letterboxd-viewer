@@ -76,20 +76,49 @@ def rss_entry(title, year, watched, rating=3.0):
     }
 
 
-# --- strip_html -------------------------------------------------------------
+# --- rss_review -------------------------------------------------------------
 
-def test_strip_html_removes_images_and_tags_and_keeps_paragraphs():
-    html = '<p><img src="x.jpg"/></p> <p>first</p><p>second<br/>line</p>'
-    assert eh.strip_html(html) == 'first\n\nsecond\nline'
-
-
-def test_strip_html_unwraps_cdata_and_unescapes_entities():
-    assert eh.strip_html('<![CDATA[&lt;p&gt;Tom &amp; Jerry&lt;/p&gt;]]>') == 'Tom & Jerry'
+REVIEW = 'letterboxd-review-1'
+POSTER = '<p><img src="https://a.ltrbxd.com/x.jpg"/></p> '
 
 
-def test_strip_html_empty():
-    assert eh.strip_html('') == ''
-    assert eh.strip_html(None) == ''
+def test_rss_review_keeps_paragraphs_and_decodes_entities():
+    html = POSTER + '<p>there&#039;s &quot;one&quot; &amp; more</p><p>second<br />line</p>'
+    assert eh.rss_review(html, REVIEW) == 'there\'s "one" &amp; more\n\nsecond\nline'
+
+
+def test_rss_review_keeps_inline_tags_and_http_links_only():
+    html = (POSTER + '<p>it&#039;s no <em>Barbarian</em>, <i>really</i> <span>plain</span></p>'
+            '<p><a href="https://youtu.be/x" rel="nofollow">watch</a> '
+            '<a href="javascript:alert(1)">bad</a></p>')
+    assert eh.rss_review(html, REVIEW) == (
+        "it's no <em>Barbarian</em>, <i>really</i> plain\n\n"
+        '<a href="https://youtu.be/x">watch</a> bad')
+
+
+def test_rss_review_drops_spoiler_notice_and_keeps_blockquotes():
+    html = (POSTER + '<p><em>This review may contain spoilers.</em></p> '
+            '<p>i loved it</p><blockquote><p>quoted</p><p>twice</p></blockquote><p>STARBUCK!</p>')
+    assert eh.rss_review(html, REVIEW) == (
+        'i loved it\n\n<blockquote>quoted\n\ntwice</blockquote>\n\nSTARBUCK!')
+
+
+def test_rss_review_escapes_text_that_looks_like_markup():
+    assert eh.rss_review(POSTER + '<p>&lt;3 this</p>', REVIEW) == '&lt;3 this'
+
+
+def test_watch_items_have_no_review():
+    html = POSTER + '<p>Watched on Wednesday October 28, 2026.</p>'
+    assert eh.rss_review(html, 'letterboxd-watch-1') == ''
+
+
+def test_rss_review_unwraps_cdata_and_double_escaping():
+    assert eh.rss_review('<![CDATA[&lt;p&gt;Tom &amp;amp; Jerry&lt;/p&gt;]]>', REVIEW) == 'Tom &amp; Jerry'
+
+
+def test_rss_review_empty():
+    assert eh.rss_review('', REVIEW) == ''
+    assert eh.rss_review(None, REVIEW) == ''
 
 
 # --- parse_rss_item ---------------------------------------------------------

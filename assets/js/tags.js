@@ -8,7 +8,10 @@
  *
  * "Untagged" is a pseudo-tag for diary entries with no tags at all, which
  * would otherwise never show up. Its key, UNTAGGED, has parentheses so it
- * can't collide with a real tag named "untagged".
+ * can't collide with a real tag named "untagged". Entries from RSS
+ * (`source: "rss"`, logged after the newest export) aren't untagged: RSS has
+ * no tags field, so their tags are unknown until the next export. They get
+ * their own pseudo-tag, PENDING, instead.
  *
  * Reviews come from the same file (`reviewText`, archive text with newline
  * breaks and a few inline tags). They're rebuilt through an allowlist in
@@ -26,10 +29,16 @@
 
   const OTHER = { id: 'other', label: 'Other', icon: 'fa-tags', tags: [] };
   const UNTAGGED = '(untagged)';
-  const UNTAGGED_CATEGORY = { id: 'untagged', label: 'No tags', icon: 'fa-minus-circle', tags: [UNTAGGED] };
+  const PENDING = '(not-exported)';
+  const UNTAGGED_CATEGORY = { id: 'untagged', label: 'No tags', icon: 'fa-minus-circle', tags: [] };
+  const PSEUDO = new Set([UNTAGGED, PENDING]);
 
-  const label = (t) => (t === UNTAGGED ? 'untagged' : t);
-  const hasTag = (e, t) => (t === UNTAGGED ? e.tagSet.size === 0 : e.tagSet.has(t));
+  const label = (t) => (t === UNTAGGED ? 'untagged' : t === PENDING ? 'not exported yet' : t);
+  const hasTag = (e, t) => {
+    if (t === UNTAGGED) return e.tagSet.size === 0 && !e.tagsPending;
+    if (t === PENDING) return e.tagsPending;
+    return e.tagSet.has(t);
+  };
 
   const state = { selected: new Set(), match: 'any', sort: 'newest', query: '', reviewsOnly: false };
   let entries = [];
@@ -104,6 +113,7 @@
     entries = history.map((e) => ({
       ...e,
       tagSet: new Set((e.tags || []).map(norm).filter(Boolean)),
+      tagsPending: e.source === 'rss' && !(e.tags || []).length,
       ...reviewMeta(e.reviewText),
     }));
 
@@ -123,12 +133,13 @@
     for (const c of categories) {
       c.tags.sort((a, b) => tagCounts.get(b) - tagCounts.get(a) || a.localeCompare(b));
     }
-    // Last, after Other: it holds the films no tag chip can reach.
-    const untagged = entries.filter((e) => !e.tagSet.size).length;
-    if (untagged) {
-      tagCounts.set(UNTAGGED, untagged);
-      categories.push({ ...UNTAGGED_CATEGORY });
-    }
+    // Last, after Other: the films no tag chip can reach.
+    const untagged = entries.filter((e) => hasTag(e, UNTAGGED)).length;
+    const pending = entries.filter((e) => e.tagsPending).length;
+    const none = { ...UNTAGGED_CATEGORY, tags: [] };
+    if (untagged) { tagCounts.set(UNTAGGED, untagged); none.tags.push(UNTAGGED); }
+    if (pending) { tagCounts.set(PENDING, pending); none.tags.push(PENDING); }
+    if (none.tags.length) categories.push(none);
     categories = categories.filter((c) => c.tags.length);
   }
 
@@ -144,7 +155,7 @@
 
   function chip(t) {
     const on = state.selected.has(t);
-    return `<button type="button" class="tag-chip${on ? ' is-on' : ''}${t === UNTAGGED ? ' is-untagged' : ''}" data-tag="${escapeHtml(t)}" aria-pressed="${on}">` +
+    return `<button type="button" class="tag-chip${on ? ' is-on' : ''}${PSEUDO.has(t) ? ' is-untagged' : ''}" data-tag="${escapeHtml(t)}" aria-pressed="${on}">` +
       `${escapeHtml(label(t))} <span class="tag-chip-count">${tagCounts.get(t)}</span></button>`;
   }
 
@@ -199,7 +210,9 @@
     const tags = e.tagSet.size
       ? [...e.tagSet].map((t) =>
           `<span class="tag-pill${state.selected.has(t) ? ' is-on' : ''}">${escapeHtml(t)}</span>`).join('')
-      : `<span class="tag-pill is-untagged${state.selected.has(UNTAGGED) ? ' is-on' : ''}">untagged</span>`;
+      : e.tagsPending
+        ? `<span class="tag-pill is-untagged${state.selected.has(PENDING) ? ' is-on' : ''}" title="Logged after the last Letterboxd export; RSS doesn't carry tags">not exported yet</span>`
+        : `<span class="tag-pill is-untagged${state.selected.has(UNTAGGED) ? ' is-on' : ''}">untagged</span>`;
     return `
       <li class="tag-row${e.reviewLength ? ' has-review' : ''}">
         <time class="tag-row-date" datetime="${escapeHtml(e.watchedDate)}">${escapeHtml(date)}</time>
@@ -246,8 +259,8 @@
           `${escapeHtml(formatShortDate(dates[0], { month: 'short', year: 'numeric' }))} – ${escapeHtml(formatShortDate(dates[dates.length - 1], { month: 'short', year: 'numeric' }))}`,
         ].filter(Boolean).join('<span aria-hidden="true"> · </span>')
       : state.selected.size
-        ? (state.selected.has(UNTAGGED)
-          ? 'An untagged entry has no other tags, so All matches nothing here. Switch to Any.'
+        ? ([...state.selected].some((t) => PSEUDO.has(t))
+          ? 'Untagged and not-exported entries have no known tags, so All matches nothing here. Switch to Any.'
           : state.reviewsOnly
             ? 'None of these have a review. Turn off Reviews only to see them.'
             : 'No diary entries have all of those tags.')
@@ -330,9 +343,12 @@
       return;
     }
     const tagged = entries.filter((e) => e.tagSet.size).length;
-    const untagged = entries.length - tagged;
-    $('tags-intro-count').textContent = `${tagCounts.size - (untagged ? 1 : 0)} tags across ${tagged.toLocaleString('en-US')} diary entries` +
-      (untagged ? `, plus ${untagged.toLocaleString('en-US')} untagged` : '');
+    const untagged = tagCounts.get(UNTAGGED) || 0;
+    const pending = tagCounts.get(PENDING) || 0;
+    const real = [...tagCounts.keys()].filter((t) => !PSEUDO.has(t)).length;
+    $('tags-intro-count').textContent = `${real} tags across ${tagged.toLocaleString('en-US')} diary entries` +
+      (untagged ? `, plus ${untagged.toLocaleString('en-US')} untagged` : '') +
+      (pending ? ` and ${pending.toLocaleString('en-US')} logged since the last export, whose tags aren't known yet` : '');
     readHash();
     $('tag-reviews-only').checked = state.reviewsOnly;
     bind();

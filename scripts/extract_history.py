@@ -32,7 +32,8 @@ import subprocess
 import sys
 import xml.etree.ElementTree as ET
 from datetime import date, timedelta
-from html import unescape
+from html import escape, unescape
+from html.parser import HTMLParser
 from pathlib import Path
 
 from load_archive import get_export_date, load_diary
@@ -49,20 +50,91 @@ base_dir = script_dir.parent
 data_dir = base_dir / 'data'
 
 
-def strip_html(html_text):
-    if not html_text:
+class _ReviewHTML(HTMLParser):
+    """An RSS description, rebuilt in the archive's reviewText format.
+
+    The archive stores reviews as text with blank-line paragraph breaks and a
+    few bare inline tags (<i>, <em>, <a href>, <blockquote>); the Tags page
+    renders that through an allowlist. RSS wraps the same review in <p>s after
+    a poster paragraph, and prepends a spoiler notice when flagged. This keeps
+    the paragraphs and the allowlisted tags, drops the poster and the notice,
+    and decodes entities (HTMLParser does that for text).
+    """
+
+    INLINE = {'i', 'em', 'b', 'strong'}
+    SPOILER_NOTICE = 'This review may contain spoilers.'
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.blocks = []      # finished paragraphs / blockquotes
+        self.buf = []         # the paragraph being built
+        self.quote = None     # paragraphs inside an open <blockquote>
+
+    def _flush(self):
+        text = ''.join(self.buf).strip()
+        self.buf = []
+        if not text or text == self.SPOILER_NOTICE or re.fullmatch(r'<(i|em)>' + re.escape(self.SPOILER_NOTICE) + r'</\1>', text):
+            return
+        (self.quote if self.quote is not None else self.blocks).append(text)
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'p':
+            self._flush()
+        elif tag == 'blockquote':
+            self._flush()
+            self.quote = []
+        elif tag == 'br':
+            self.buf.append('\n')
+        elif tag in self.INLINE:
+            self.buf.append(f'<{tag}>')
+        elif tag == 'a':
+            href = dict(attrs).get('href') or ''
+            # Only http(s); anything else keeps its text and loses the link.
+            self.buf.append(f'<a href="{escape(href)}">' if re.match(r'https?://', href) else '<a>')
+
+    def handle_endtag(self, tag):
+        if tag == 'p':
+            self._flush()
+        elif tag == 'blockquote':
+            self._flush()
+            if self.quote:
+                self.blocks.append('<blockquote>' + '\n\n'.join(self.quote) + '</blockquote>')
+            self.quote = None
+        elif tag in self.INLINE or tag == 'a':
+            self.buf.append(f'</{tag}>')
+
+    def handle_data(self, data):
+        self.buf.append(escape(data, quote=False))
+
+    def result(self):
+        self._flush()
+        if self.quote:
+            self.blocks.append('<blockquote>' + '\n\n'.join(self.quote) + '</blockquote>')
+        # <a> without a usable href was kept only to balance its closing tag.
+        text = '\n\n'.join(self.blocks).replace('\xa0', ' ')
+        text = re.sub(r'<a>(.*?)</a>', r'\1', text, flags=re.S)
+        return re.sub(r'[ \t]+\n', '\n', text).strip()
+
+
+def rss_review(description, guid):
+    """reviewText for an RSS item, or '' when it has none.
+
+    Only `letterboxd-review-*` items carry a review. A `letterboxd-watch-*`
+    item's description is just the poster plus "Watched on <date>.", which
+    is not a review.
+    """
+    if not description or not guid.startswith('letterboxd-review-'):
         return ''
-    text = html_text.strip()
+    text = description.strip()
     if text.startswith('<![CDATA[') and text.endswith(']]>'):
         text = text[9:-3]
-    if '&lt;' in text or '&amp;' in text:
+    # A description escaped twice arrives as &lt;p&gt;…; undo one layer.
+    if '<' not in text and '&lt;' in text:
         text = unescape(text)
-    text = re.sub(r'<img[^>]*/?>', '', text)
-    text = re.sub(r'<br\s*/?>', '\n', text)
-    text = re.sub(r'</p>\s*<p>', '\n\n', text)
-    text = re.sub(r'<[^>]+>', '', text)
-    text = re.sub(r'\n{3,}', '\n\n', text).strip()
-    return text
+    parser = _ReviewHTML()
+    parser.feed(text)
+    parser.close()
+    return parser.result()
 
 
 def parse_rss_item(item):
@@ -70,6 +142,7 @@ def parse_rss_item(item):
     if guid_elem is None or guid_elem.text is None:
         return None
     guid = guid_elem.text.strip()
+    feed_guid = guid
     if guid.startswith('letterboxd-list-'):
         return None
     if not (guid.startswith('letterboxd-review-') or guid.startswith('letterboxd-watch-')):
@@ -95,7 +168,7 @@ def parse_rss_item(item):
     title_elem = item.find('title')
     title = title_elem.text.strip() if title_elem is not None and title_elem.text else None
     desc_elem = item.find('description')
-    review_text = strip_html(desc_elem.text) if desc_elem is not None and desc_elem.text else ''
+    review_text = rss_review(desc_elem.text if desc_elem is not None else '', feed_guid)
 
     return {
         'guid': guid,
@@ -108,6 +181,8 @@ def parse_rss_item(item):
         'link': link,
         'title': title,
         'reviewText': review_text,
+        # RSS has no tags field; they only arrive with the next full export.
+        # The Tags page shows rss entries as "not exported yet", not untagged.
         'tags': [],
         'source': 'rss',
     }
