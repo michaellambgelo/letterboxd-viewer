@@ -304,15 +304,21 @@ goes stale silently).
   Clicking a year's bar selects it; clicking it again returns to lifetime.
 - **Date strips** span `dateRange.earliest` to `latest` from the data (2017),
   not 2020, so the sparse early diary rows don't fall off the left. Blue tick =
-  first watch, green = rewatch; each strip's `title`/`aria-label` lists the dates.
+  first watch, green = rewatch. **Each tick links to that diary entry**, and each
+  row has an "N diary entries" disclosure listing every entry (date, rewatch,
+  stars, review flag), newest first. The links are the per-entry URLs already in
+  `viewing_history.json` (diary.csv's `Letterboxd URI` short links, or the RSS
+  entry URL): no Letterboxd requests. A film's `/michaellamb/film/<slug>/activity/`
+  page would need its slug, which the export doesn't carry (only a redirecting
+  `boxd.it` link), so the page doesn't link there.
 - **`rewatches.json`:** `{ totals: { logs, rewatchLogs, filmsRewatched,
   filmsLoggedTwice, loggedOnceAsRewatch, seenBeforeDiary, filmsLogged,
   filmsWatched, undiaried }, films: [{ filmTitle, filmYear, link, count,
-  rewatchLogs, watches: [{ date, rewatch }] }] (2+ logs or any rewatch row; most
+  rewatchLogs, watches: [{ date, rewatch, link, rating, review }] }] (2+ logs or any rewatch row; most
   logs first, ties by most recent watch), byYear: { "2024": { logs,
   rewatchLogs, filmsRewatched } }, undiaried: [{ name, year, link }], dateRange,
   archiveExportDate }`. `link` is the film's page from `watched.csv` when
-  matched, else the newest diary entry's URL. ~115 KB.
+  matched, else the newest diary entry's URL; `watches[].link` is that entry's own URL and `review` is whether it has review text. ~175 KB.
 - Tests: `scripts/test_rewatches.py`.
 
 ## Userscripts (private repo `michaellamb-userscripts`)

@@ -432,7 +432,11 @@ def compute_rewatches(entries, watched=None, unique_films=None):
         key = _inventory_key(e['filmTitle'], e.get('filmYear'))
         g = groups.setdefault(key, {'filmTitle': e['filmTitle'], 'filmYear': e.get('filmYear'),
                                     'link': film_link.get(key), 'watches': []})
-        g['watches'].append({'date': e['watchedDate'], 'rewatch': bool(e.get('rewatch'))})
+        # Each diary entry's own URL (boxd.it short link from diary.csv, or the
+        # RSS entry URL): opens that viewing, with its review if there is one.
+        g['watches'].append({'date': e['watchedDate'], 'rewatch': bool(e.get('rewatch')),
+                             'link': e.get('link'), 'rating': e.get('memberRating'),
+                             'review': bool((e.get('reviewText') or '').strip())})
         if not g['link']:
             g['link'] = e.get('link')
 
