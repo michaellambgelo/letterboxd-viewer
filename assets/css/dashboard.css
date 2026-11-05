@@ -1829,6 +1829,22 @@ a.rolodex-film:hover .rolodex-film-title { color: var(--text-primary); }
   background: var(--accent-green);
 }
 .rw-tick.first { background: var(--accent-blue); height: 70%; }
+a.rw-tick::after { content: ""; position: absolute; inset: -4px -3px; } /* wider hit area */
+a.rw-tick:hover, a.rw-tick:focus-visible { background: var(--text-primary); outline: none; opacity: 1; }
+
+.rw-entries { grid-column: 2 / -1; font-size: 0.8125rem; }
+.rw-entries summary { cursor: pointer; color: var(--accent-blue); width: max-content; max-width: 100%; }
+.rw-entries[open] summary { margin-bottom: 0.4rem; }
+.rw-entries ol { list-style: none; columns: 2 18rem; column-gap: 1.5rem; }
+.rw-entries li { break-inside: avoid; padding: 0.15rem 0; color: var(--text-muted); }
+.rw-entries li.dim { opacity: 0.4; }
+.rw-entries li a { color: var(--text-primary); font-variant-numeric: tabular-nums; }
+.rw-entries li a:hover { color: var(--accent-blue); }
+.rw-entry-tag { font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.rw-entry-tag.rw { color: var(--accent-green); }
+.rw-entry-tag.first { color: var(--accent-blue); }
+.rw-entry-tag.review { color: var(--text-secondary); }
+.rw-entry-stars { color: var(--accent-green); letter-spacing: 0.05em; }
 .rw-tick.dim { opacity: 0.2; }
 .rw-key { display: inline-block; width: 0.6rem; height: 0.6rem; border-radius: 2px; vertical-align: baseline; }
 .rw-key.first { background: var(--accent-blue); }
@@ -1861,6 +1877,6 @@ a.rolodex-film:hover .rolodex-film-title { color: var(--text-primary); }
   .rw-year-row { grid-template-columns: 3rem 1fr; }
   .rw-year-value { grid-column: 2; }
   .rw-film { grid-template-columns: 2.5rem minmax(0, 1fr); }
-  .rw-film .rw-strip { grid-column: 1 / -1; }
+  .rw-film .rw-strip, .rw-entries { grid-column: 1 / -1; }
   .rw-axis { display: none; }
 }

@@ -127,16 +127,41 @@
         || b.watches[b.watches.length - 1].date.localeCompare(a.watches[a.watches.length - 1].date));
   }
 
+  const longDate = (d) => formatShortDate(d, { month: 'short', day: 'numeric', year: 'numeric' });
+  const stars = (r) => (r ? window.LBV.ratingToStars(r) : '');
+
+  // One tick per diary entry, each a link to that entry on Letterboxd.
   function strip(film, year) {
     const ticks = film.watches.map((w) => {
       const left = ((parseDay(w.date) - scale.start) / scale.span) * 100;
       const cls = ['rw-tick', w.rewatch ? 'rw' : 'first'];
       if (year !== 'lifetime' && !w.date.startsWith(year)) cls.push('dim');
-      return `<span class="${cls.join(' ')}" style="left:${left.toFixed(2)}%"></span>`;
+      const label = `${longDate(w.date)}${w.rewatch ? ' (rewatch)' : ''}`;
+      const href = safeUrl(w.link);
+      return href
+        ? `<a class="${cls.join(' ')}" style="left:${left.toFixed(2)}%" href="${escapeHtml(href)}" target="_blank" rel="noopener" title="${escapeHtml(label)}" aria-label="${escapeHtml(film.filmTitle + ', ' + label)}"></a>`
+        : `<span class="${cls.join(' ')}" style="left:${left.toFixed(2)}%" title="${escapeHtml(label)}"></span>`;
     }).join('');
-    const dates = film.watches.map((w) => formatShortDate(w.date, { month: 'short', day: 'numeric', year: 'numeric' })
-      + (w.rewatch ? ' (rewatch)' : '')).join(', ');
-    return `<span class="rw-strip" role="img" title="${escapeHtml(dates)}" aria-label="${escapeHtml('Watched ' + dates)}">${ticks}</span>`;
+    return `<span class="rw-strip">${ticks}</span>`;
+  }
+
+  // Every diary entry for the film, newest first, each linking to that entry.
+  function entries(film, year) {
+    const items = film.watches.slice().reverse().map((w) => {
+      const href = safeUrl(w.link);
+      const date = escapeHtml(longDate(w.date));
+      const bits = [
+        href ? `<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${date}</a>` : date,
+        w.rewatch ? '<span class="rw-entry-tag rw">rewatch</span>' : '<span class="rw-entry-tag first">first in diary</span>',
+        w.rating ? `<span class="rw-entry-stars">${escapeHtml(stars(w.rating))}</span>` : '',
+        w.review ? '<span class="rw-entry-tag review"><i class="fas fa-align-left" aria-hidden="true"></i> review</span>' : '',
+      ];
+      const dim = year !== 'lifetime' && !w.date.startsWith(year) ? ' class="dim"' : '';
+      return `<li${dim}>${bits.join(' ')}</li>`;
+    }).join('');
+    const reviews = film.watches.filter((w) => w.review).length;
+    const summary = `${plural(film.count, 'diary entry', 'diary entries')}${reviews ? ` \u00b7 ${plural(reviews, 'review')}` : ''}`;
+    return `<details class="rw-entries"><summary>${escapeHtml(summary)}</summary><ol>${items}</ol></details>`;
   }
 
   function filmRow(film, year) {
@@ -147,16 +172,17 @@
     const last = film.watches[film.watches.length - 1].date;
     const meta = [];
     if (year !== 'lifetime') meta.push(`${plural(film.count, 'log')} lifetime`);
-    meta.push(first === last ? monthYear(first) : `${monthYear(first)} – ${monthYear(last)}`);
+    meta.push(first === last ? monthYear(first) : `${monthYear(first)} \u2013 ${monthYear(last)}`);
     if (film.watches[0].rewatch) meta.push('seen before the diary');
     return `<li class="rw-film">
       <span class="rewatch-count">${shown}</span>
       <span class="rw-film-main">
         <span class="rw-film-title">${href ? `<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${title}</a>` : title}
           <span class="rewatch-year">${escapeHtml(film.filmYear ?? '')}</span></span>
-        <span class="rw-film-meta">${escapeHtml(meta.join(' · '))}</span>
+        <span class="rw-film-meta">${escapeHtml(meta.join(' \u00b7 '))}</span>
       </span>
       ${strip(film, year)}
+      ${entries(film, year)}
     </li>`;
   }
 
@@ -177,8 +203,8 @@
     const countOf = (f) => (lifetime ? f.count : f.yearCount);
     $('rw-films-count').textContent = plural(films.length, 'film');
     $('rw-films-note').innerHTML = lifetime
-      ? 'Every film with two or more diary rows, then the films logged once as a rewatch. Grouped by number of logs; ties go to the most recent watch. Each tick is one log: <span class="rw-key first"></span> first watch, <span class="rw-key rw"></span> rewatch.'
-      : `Films with at least one rewatch logged in ${year}, grouped by that year's logs. Ticks outside ${year} are dimmed: <span class="rw-key first"></span> first watch, <span class="rw-key rw"></span> rewatch.`;
+      ? 'Every film with two or more diary rows, then the films logged once as a rewatch. Grouped by number of logs; ties go to the most recent watch. Each tick is one diary entry and links to it: <span class="rw-key first"></span> first in diary, <span class="rw-key rw"></span> rewatch. Open a film\u2019s entries for every date, rating and review.'
+      : `Films with at least one rewatch logged in ${year}, grouped by that year's logs. Ticks and entries outside ${year} are dimmed: <span class="rw-key first"></span> first in diary, <span class="rw-key rw"></span> rewatch.`;
 
     const groups = [];
     for (const f of films) {

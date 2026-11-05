@@ -9,9 +9,10 @@ sys.path.insert(0, str(Path(__file__).parent))
 import compute_stats as cs  # noqa: E402
 
 
-def log(title, year, date, rewatch=False, tmdb=None, link=None):
+def log(title, year, date, rewatch=False, tmdb=None, link=None, rating=None, review=''):
     return {'filmTitle': title, 'filmYear': year, 'watchedDate': date, 'rewatch': rewatch,
-            'tmdbId': tmdb, 'link': link or f'https://boxd.it/{title[:2]}{date}'}
+            'tmdbId': tmdb, 'link': link or f'https://boxd.it/{title[:2]}{date}',
+            'memberRating': rating, 'reviewText': review}
 
 
 WATCHED = [
@@ -85,3 +86,12 @@ def test_seen_before_diary_counts_multi_log_films_whose_first_log_is_a_rewatch()
     t = cs.compute_rewatches([log('Heat', 1995, '2020-01-01', rewatch=True),
                               log('Heat', 1995, '2021-01-01', rewatch=True)], WATCHED)['totals']
     assert (t['seenBeforeDiary'], t['loggedOnceAsRewatch'], t['filmsLoggedTwice']) == (1, 0, 1)
+
+
+def test_each_watch_keeps_its_own_diary_entry_link_rating_and_review_flag():
+    r = cs.compute_rewatches([log('Pig', 2021, '2024-05-01', rewatch=True, link='https://boxd.it/b', rating=5.0, review='so good'),
+                              log('Pig', 2021, '2024-03-01', link='https://boxd.it/a', review='  ')], WATCHED)
+    assert r['films'][0]['watches'] == [
+        {'date': '2024-03-01', 'rewatch': False, 'link': 'https://boxd.it/a', 'rating': None, 'review': False},
+        {'date': '2024-05-01', 'rewatch': True, 'link': 'https://boxd.it/b', 'rating': 5.0, 'review': True},
+    ]
