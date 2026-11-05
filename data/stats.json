@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2666,
+  "totalWatched": 2667,
   "uniqueFilms": 2207,
-  "totalRewatches": 881,
+  "totalRewatches": 882,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -13,7 +13,7 @@
     "3.5": 393,
     "4.0": 569,
     "4.5": 393,
-    "5.0": 610,
+    "5.0": 611,
     "unrated": 83
   },
   "filmsByMonth": {
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 8
+    "2026-11": 9
   },
   "heatmapData": [
     {
@@ -6307,7 +6307,7 @@
     },
     {
       "date": "2026-11-04",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6321,7 +6321,7 @@
     "1980s": 91,
     "1990s": 173,
     "2000s": 265,
-    "2010s": 738,
+    "2010s": 739,
     "2020s": 1239
   },
   "mostRewatched": [
@@ -6408,6 +6408,20 @@
       "link": "https://letterboxd.com/michaellamb/film/dead-poets-society/1/",
       "title": "Dead Poets Society, 1989 - ★★★★★",
       "reviewText": "There was a time in my life when I was determined to be a choir teacher.\n\nChoir had been my favorite part of public education and I excelled in middle school and high school competitions. My senior year was derailed by my parents who, to teach me a lesson, withdrew me from competing in many solos and cost me opportunities.\n\nWhile I had already seen Neil go through something similar, I don't think I really appreciated just how dissimilar it was: I didn't have a father with money trying to run my life. In fact, I was more free than Neil because I ended up doing things my parents never imagined for me and while I'm grateful for their contributions to my life in the early years, it is a different kind of loneliness to find that your parents just aren't interested in your life even with some relative success.\n\nWhat this movie taught me in high school was that art and expression is for everyone, and that those who work to stamp it out have lost something human within.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1572837820",
+      "filmTitle": "Midsommar",
+      "filmYear": 2019,
+      "watchedDate": "2026-11-04",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 530385,
+      "link": "https://letterboxd.com/michaellamb/film/midsommar/53/",
+      "title": "Midsommar, 2019 - ★★★★★",
+      "reviewText": "",
       "tags": [],
       "source": "rss"
     },
@@ -6718,23 +6732,6 @@
       ],
       "loggedDate": "2026-10-25",
       "source": "archive"
-    },
-    {
-      "guid": "archive-gUkfkR",
-      "filmTitle": "Visitor",
-      "filmYear": null,
-      "watchedDate": "2026-10-22",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/gUkfkR",
-      "title": "Visitor",
-      "reviewText": "i love short films\r\n\r\n<a href=\"https://www.youtube.com/watch?v=XhnfwiKj6KQ\" target=\"_blank\">VISITOR | Omeleto Sci-Fi</a>",
-      "tags": [
-        "youtube"
-      ],
-      "loggedDate": "2026-10-22",
-      "source": "archive"
     }
   ],
   "highestRated": [
@@ -6744,6 +6741,13 @@
       "watchedDate": "2026-11-04",
       "link": "https://letterboxd.com/michaellamb/film/dead-poets-society/1/",
       "tmdbId": 207
+    },
+    {
+      "filmTitle": "Midsommar",
+      "filmYear": 2019,
+      "watchedDate": "2026-11-04",
+      "link": "https://letterboxd.com/michaellamb/film/midsommar/53/",
+      "tmdbId": 530385
     },
     {
       "filmTitle": "The Prestige",
@@ -14911,10 +14915,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 314,
-      "uniqueFilms": 277,
-      "totalRewatches": 106,
-      "averageRating": 3.91,
+      "totalWatched": 315,
+      "uniqueFilms": 278,
+      "totalRewatches": 107,
+      "averageRating": 3.92,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 5,
@@ -14925,7 +14929,7 @@
         "3.5": 43,
         "4.0": 66,
         "4.5": 58,
-        "5.0": 76,
+        "5.0": 77,
         "unrated": 2
       },
       "heatmapData": [
@@ -15683,7 +15687,7 @@
         },
         {
           "date": "2026-11-04",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15695,7 +15699,7 @@
         "1980s": 10,
         "1990s": 25,
         "2000s": 24,
-        "2010s": 48,
+        "2010s": 49,
         "2020s": 183
       },
       "mostRewatched": [
@@ -15741,6 +15745,12 @@
           "filmYear": 1989,
           "watchedDate": "2026-11-04",
           "link": "https://letterboxd.com/michaellamb/film/dead-poets-society/1/"
+        },
+        {
+          "filmTitle": "Midsommar",
+          "filmYear": 2019,
+          "watchedDate": "2026-11-04",
+          "link": "https://letterboxd.com/michaellamb/film/midsommar/53/"
         },
         {
           "filmTitle": "The Prestige",
@@ -15789,12 +15799,6 @@
           "filmYear": 2001,
           "watchedDate": "2026-10-03",
           "link": "https://boxd.it/gCqK09"
-        },
-        {
-          "filmTitle": "The Green Knight",
-          "filmYear": 2021,
-          "watchedDate": "2026-10-01",
-          "link": "https://boxd.it/gzSknZ"
         }
       ]
     }
