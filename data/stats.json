@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2669,
+  "totalWatched": 2670,
   "uniqueFilms": 2207,
-  "totalRewatches": 884,
+  "totalRewatches": 885,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -11,7 +11,7 @@
     "2.5": 134,
     "3.0": 304,
     "3.5": 393,
-    "4.0": 569,
+    "4.0": 570,
     "4.5": 394,
     "5.0": 612,
     "unrated": 83
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 11
+    "2026-11": 12
   },
   "heatmapData": [
     {
@@ -6316,6 +6316,10 @@
     {
       "date": "2026-11-06",
       "count": 1
+    },
+    {
+      "date": "2026-11-07",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6329,7 +6333,7 @@
     "1980s": 91,
     "1990s": 173,
     "2000s": 265,
-    "2010s": 740,
+    "2010s": 741,
     "2020s": 1240
   },
   "mostRewatched": [
@@ -6405,6 +6409,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1576263014",
+      "filmTitle": "Cornflower",
+      "filmYear": 2019,
+      "watchedDate": "2026-11-07",
+      "memberRating": 4.0,
+      "rewatch": true,
+      "tmdbId": 668828,
+      "link": "https://letterboxd.com/michaellamb/film/cornflower/1/",
+      "title": "Cornflower, 2019 - ★★★★",
+      "reviewText": "",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1575025770",
       "filmTitle": "Resident Evil",
@@ -6713,24 +6731,6 @@
       "reviewText": "I love tha movies!",
       "tags": [
         "youtube"
-      ],
-      "loggedDate": "2026-10-27",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-gZo59x",
-      "filmTitle": "Shift",
-      "filmYear": 2025,
-      "watchedDate": "2026-10-26",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/gZo59x",
-      "title": "Shift",
-      "reviewText": "some pretty good vfx for a short. neat.\r\n\r\n<a href=\"https://www.youtube.com/watch?v=g5-8WlCU9_M\" target=\"_blank\">Shift | Horror Short Film | ALTER</a>",
-      "tags": [
-        "youtube",
-        "alter"
       ],
       "loggedDate": "2026-10-27",
       "source": "archive"
@@ -8616,7 +8616,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-11-06"
+    "latest": "2026-11-07"
   },
   "byYear": {
     "2017": {
@@ -14924,9 +14924,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 317,
-      "uniqueFilms": 280,
-      "totalRewatches": 109,
+      "totalWatched": 318,
+      "uniqueFilms": 281,
+      "totalRewatches": 110,
       "averageRating": 3.92,
       "ratingDistribution": {
         "0.5": 2,
@@ -14936,7 +14936,7 @@
         "2.5": 20,
         "3.0": 28,
         "3.5": 43,
-        "4.0": 66,
+        "4.0": 67,
         "4.5": 59,
         "5.0": 78,
         "unrated": 2
@@ -15705,6 +15705,10 @@
         {
           "date": "2026-11-06",
           "count": 1
+        },
+        {
+          "date": "2026-11-07",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15716,7 +15720,7 @@
         "1980s": 10,
         "1990s": 25,
         "2000s": 24,
-        "2010s": 50,
+        "2010s": 51,
         "2020s": 184
       },
       "mostRewatched": [
