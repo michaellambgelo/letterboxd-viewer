@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2671,
-  "uniqueFilms": 2208,
-  "totalRewatches": 885,
+  "totalWatched": 2673,
+  "uniqueFilms": 2209,
+  "totalRewatches": 886,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -11,8 +11,8 @@
     "2.5": 134,
     "3.0": 304,
     "3.5": 393,
-    "4.0": 571,
-    "4.5": 394,
+    "4.0": 572,
+    "4.5": 395,
     "5.0": 612,
     "unrated": 83
   },
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 13
+    "2026-11": 15
   },
   "heatmapData": [
     {
@@ -6319,7 +6319,11 @@
     },
     {
       "date": "2026-11-07",
-      "count": 2
+      "count": 3
+    },
+    {
+      "date": "2026-11-08",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6334,7 +6338,7 @@
     "1990s": 173,
     "2000s": 265,
     "2010s": 741,
-    "2020s": 1241
+    "2020s": 1243
   },
   "mostRewatched": [
     {
@@ -6410,6 +6414,20 @@
   ],
   "recentActivity": [
     {
+      "guid": "letterboxd-entry-1577315123",
+      "filmTitle": "Primetime",
+      "filmYear": 2026,
+      "watchedDate": "2026-11-08",
+      "memberRating": 4.0,
+      "rewatch": true,
+      "tmdbId": 1375441,
+      "link": "https://letterboxd.com/michaellamb/film/primetime-2026/1/",
+      "title": "Primetime, 2026 - ★★★★",
+      "reviewText": "i'm sure someone's connected the lines \"you did this you yourself\" in this film and \"she did that to herself\" in <em>YCSE</em> and i want to read it",
+      "tags": [],
+      "source": "rss"
+    },
+    {
       "guid": "letterboxd-entry-1576263014",
       "filmTitle": "Cornflower",
       "filmYear": 2019,
@@ -6434,6 +6452,20 @@
       "link": "https://letterboxd.com/michaellamb/film/were-all-gonna-die-2024/",
       "title": "We're All Gonna Die, 2024 - ★★★★",
       "reviewText": "It hooked me enough at the beginning to keep in invested and I'm so glad I stayed with it. Really good stuff at the end.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1577128169",
+      "filmTitle": "Godzilla Minus Zero",
+      "filmYear": 2026,
+      "watchedDate": "2026-11-07",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 1381071,
+      "link": "https://letterboxd.com/michaellamb/film/godzilla-minus-zero/",
+      "title": "Godzilla Minus Zero, 2026 - ★★★★½",
+      "reviewText": "bruh this shit slaps so hard. it's exhilarating, heart-wrenching, and deeply human.\n\nloved it. ready to see it again with a more respectful audience. a random late saturday show just reinforces why i go to the matinee or the 4 PM show.\n\nwatched with Jon-Nolan and Lindsay\n\n<strong><a href=\"https://letterboxd.com/michaellamb/list/my-2026-releases-ranked/\">#5 in my 2026 releases ranked list</a></strong> as of this review",
       "tags": [],
       "source": "rss"
     },
@@ -6698,38 +6730,6 @@
         "youtube"
       ],
       "loggedDate": "2026-10-30",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-h26xdD",
-      "filmTitle": "KPop Demon Hunters",
-      "filmYear": 2025,
-      "watchedDate": "2026-10-28",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://boxd.it/h26xdD",
-      "title": "KPop Demon Hunters",
-      "reviewText": "",
-      "tags": [],
-      "loggedDate": "2026-10-29",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-h1ehjx",
-      "filmTitle": "Wildwood",
-      "filmYear": 2026,
-      "watchedDate": "2026-10-27",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/h1ehjx",
-      "title": "Wildwood",
-      "reviewText": "Really beautiful. Absolutely worth a 10 pm Tuesday screening.",
-      "tags": [
-        "in theaters"
-      ],
-      "loggedDate": "2026-10-28",
       "source": "archive"
     }
   ],
@@ -8613,7 +8613,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-11-07"
+    "latest": "2026-11-08"
   },
   "byYear": {
     "2017": {
@@ -14921,9 +14921,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 319,
-      "uniqueFilms": 282,
-      "totalRewatches": 110,
+      "totalWatched": 321,
+      "uniqueFilms": 284,
+      "totalRewatches": 111,
       "averageRating": 3.92,
       "ratingDistribution": {
         "0.5": 2,
@@ -14933,8 +14933,8 @@
         "2.5": 20,
         "3.0": 28,
         "3.5": 43,
-        "4.0": 68,
-        "4.5": 59,
+        "4.0": 69,
+        "4.5": 60,
         "5.0": 78,
         "unrated": 2
       },
@@ -15705,7 +15705,11 @@
         },
         {
           "date": "2026-11-07",
-          "count": 2
+          "count": 3
+        },
+        {
+          "date": "2026-11-08",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15718,7 +15722,7 @@
         "1990s": 25,
         "2000s": 24,
         "2010s": 51,
-        "2020s": 185
+        "2020s": 187
       },
       "mostRewatched": [
         {
