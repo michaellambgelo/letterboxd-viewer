@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2670,
-  "uniqueFilms": 2207,
+  "totalWatched": 2671,
+  "uniqueFilms": 2208,
   "totalRewatches": 885,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -11,7 +11,7 @@
     "2.5": 134,
     "3.0": 304,
     "3.5": 393,
-    "4.0": 570,
+    "4.0": 571,
     "4.5": 394,
     "5.0": 612,
     "unrated": 83
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 12
+    "2026-11": 13
   },
   "heatmapData": [
     {
@@ -6319,7 +6319,7 @@
     },
     {
       "date": "2026-11-07",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6334,7 +6334,7 @@
     "1990s": 173,
     "2000s": 265,
     "2010s": 741,
-    "2020s": 1240
+    "2020s": 1241
   },
   "mostRewatched": [
     {
@@ -6420,6 +6420,20 @@
       "link": "https://letterboxd.com/michaellamb/film/cornflower/1/",
       "title": "Cornflower, 2019 - ★★★★",
       "reviewText": "",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1576596772",
+      "filmTitle": "We're All Gonna Die",
+      "filmYear": 2024,
+      "watchedDate": "2026-11-07",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 1164614,
+      "link": "https://letterboxd.com/michaellamb/film/were-all-gonna-die-2024/",
+      "title": "We're All Gonna Die, 2024 - ★★★★",
+      "reviewText": "It hooked me enough at the beginning to keep in invested and I'm so glad I stayed with it. Really good stuff at the end.",
       "tags": [],
       "source": "rss"
     },
@@ -6716,23 +6730,6 @@
         "in theaters"
       ],
       "loggedDate": "2026-10-28",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-gZ1F0P",
-      "filmTitle": "Son of Rambow",
-      "filmYear": 2007,
-      "watchedDate": "2026-10-26",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/gZ1F0P",
-      "title": "Son of Rambow",
-      "reviewText": "I love tha movies!",
-      "tags": [
-        "youtube"
-      ],
-      "loggedDate": "2026-10-27",
       "source": "archive"
     }
   ],
@@ -14924,8 +14921,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 318,
-      "uniqueFilms": 281,
+      "totalWatched": 319,
+      "uniqueFilms": 282,
       "totalRewatches": 110,
       "averageRating": 3.92,
       "ratingDistribution": {
@@ -14936,7 +14933,7 @@
         "2.5": 20,
         "3.0": 28,
         "3.5": 43,
-        "4.0": 67,
+        "4.0": 68,
         "4.5": 59,
         "5.0": 78,
         "unrated": 2
@@ -15708,7 +15705,7 @@
         },
         {
           "date": "2026-11-07",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15721,7 +15718,7 @@
         "1990s": 25,
         "2000s": 24,
         "2010s": 51,
-        "2020s": 184
+        "2020s": 185
       },
       "mostRewatched": [
         {
