@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2673,
+  "totalWatched": 2675,
   "uniqueFilms": 2209,
-  "totalRewatches": 886,
+  "totalRewatches": 888,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -12,8 +12,8 @@
     "3.0": 304,
     "3.5": 393,
     "4.0": 572,
-    "4.5": 395,
-    "5.0": 612,
+    "4.5": 396,
+    "5.0": 613,
     "unrated": 83
   },
   "filmsByMonth": {
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 15
+    "2026-11": 17
   },
   "heatmapData": [
     {
@@ -6323,7 +6323,7 @@
     },
     {
       "date": "2026-11-08",
-      "count": 1
+      "count": 3
     }
   ],
   "filmYearDistribution": {
@@ -6334,11 +6334,11 @@
     "1950s": 20,
     "1960s": 32,
     "1970s": 60,
-    "1980s": 91,
+    "1980s": 92,
     "1990s": 173,
     "2000s": 265,
     "2010s": 741,
-    "2020s": 1243
+    "2020s": 1244
   },
   "mostRewatched": [
     {
@@ -6424,6 +6424,34 @@
       "link": "https://letterboxd.com/michaellamb/film/primetime-2026/1/",
       "title": "Primetime, 2026 - ★★★★",
       "reviewText": "i'm sure someone's connected the lines \"you did this you yourself\" in this film and \"she did that to herself\" in <em>YCSE</em> and i want to read it",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1578903254",
+      "filmTitle": "Dead Poets Society",
+      "filmYear": 1989,
+      "watchedDate": "2026-11-08",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 207,
+      "link": "https://letterboxd.com/michaellamb/film/dead-poets-society/2/",
+      "title": "Dead Poets Society, 1989 - ★★★★★",
+      "reviewText": "jxn movie club watch.\n\nnathaniel's pick.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1578329432",
+      "filmTitle": "Godzilla Minus Zero",
+      "filmYear": 2026,
+      "watchedDate": "2026-11-08",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 1381071,
+      "link": "https://letterboxd.com/michaellamb/film/godzilla-minus-zero/1/",
+      "title": "Godzilla Minus Zero, 2026 - ★★★★½",
+      "reviewText": "Round 2 in IMAX with Ryan and Paul\n\nPhenomenal",
       "tags": [],
       "source": "rss"
     },
@@ -6696,57 +6724,22 @@
       ],
       "loggedDate": "2026-10-30",
       "source": "archive"
-    },
-    {
-      "guid": "archive-h3mV55",
-      "filmTitle": "Halloween",
-      "filmYear": 1978,
-      "watchedDate": "2026-10-29",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://boxd.it/h3mV55",
-      "title": "Halloween",
-      "reviewText": "jxn film club outdoor garden screening. it was a perfect evening for this film!\r\n\r\ni'm always rooting for Laurie",
-      "tags": [
-        "jxnfilmclub",
-        "ryanparker"
-      ],
-      "loggedDate": "2026-10-30",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-h3o4In",
-      "filmTitle": "Epithet",
-      "filmYear": 2012,
-      "watchedDate": "2026-10-29",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/h3o4In",
-      "title": "Epithet",
-      "reviewText": "<a href=\"https://www.youtube.com/watch?v=R5QCZV0Iok4\" target=\"_blank\">Epithet: a short film starring Patrick Stewart\r\n</a>\r\n\r\nRest in peace, Sir Patrick Stewart. I don't understand this short film you starred in.",
-      "tags": [
-        "youtube"
-      ],
-      "loggedDate": "2026-10-30",
-      "source": "archive"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Dead Poets Society",
+      "filmYear": 1989,
+      "watchedDate": "2026-11-08",
+      "link": "https://letterboxd.com/michaellamb/film/dead-poets-society/2/",
+      "tmdbId": 207
+    },
     {
       "filmTitle": "Call Me by Your Name",
       "filmYear": 2017,
       "watchedDate": "2026-11-05",
       "link": "https://letterboxd.com/michaellamb/film/call-me-by-your-name/8/",
       "tmdbId": 398818
-    },
-    {
-      "filmTitle": "Dead Poets Society",
-      "filmYear": 1989,
-      "watchedDate": "2026-11-04",
-      "link": "https://letterboxd.com/michaellamb/film/dead-poets-society/1/",
-      "tmdbId": 207
     },
     {
       "filmTitle": "Midsommar",
@@ -14921,10 +14914,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 321,
+      "totalWatched": 323,
       "uniqueFilms": 284,
-      "totalRewatches": 111,
-      "averageRating": 3.92,
+      "totalRewatches": 113,
+      "averageRating": 3.93,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 5,
@@ -14934,8 +14927,8 @@
         "3.0": 28,
         "3.5": 43,
         "4.0": 69,
-        "4.5": 60,
-        "5.0": 78,
+        "4.5": 61,
+        "5.0": 79,
         "unrated": 2
       },
       "heatmapData": [
@@ -15709,7 +15702,7 @@
         },
         {
           "date": "2026-11-08",
-          "count": 1
+          "count": 3
         }
       ],
       "filmYearDistribution": {
@@ -15718,11 +15711,11 @@
         "1950s": 3,
         "1960s": 6,
         "1970s": 8,
-        "1980s": 10,
+        "1980s": 11,
         "1990s": 25,
         "2000s": 24,
         "2010s": 51,
-        "2020s": 187
+        "2020s": 188
       },
       "mostRewatched": [
         {
@@ -15763,16 +15756,16 @@
       ],
       "highestRated": [
         {
+          "filmTitle": "Dead Poets Society",
+          "filmYear": 1989,
+          "watchedDate": "2026-11-08",
+          "link": "https://letterboxd.com/michaellamb/film/dead-poets-society/2/"
+        },
+        {
           "filmTitle": "Call Me by Your Name",
           "filmYear": 2017,
           "watchedDate": "2026-11-05",
           "link": "https://letterboxd.com/michaellamb/film/call-me-by-your-name/8/"
-        },
-        {
-          "filmTitle": "Dead Poets Society",
-          "filmYear": 1989,
-          "watchedDate": "2026-11-04",
-          "link": "https://letterboxd.com/michaellamb/film/dead-poets-society/1/"
         },
         {
           "filmTitle": "Midsommar",
