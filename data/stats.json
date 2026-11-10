@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2676,
-  "uniqueFilms": 2209,
+  "totalWatched": 2678,
+  "uniqueFilms": 2211,
   "totalRewatches": 888,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -9,11 +9,11 @@
     "1.5": 32,
     "2.0": 111,
     "2.5": 134,
-    "3.0": 304,
+    "3.0": 305,
     "3.5": 393,
     "4.0": 573,
     "4.5": 396,
-    "5.0": 613,
+    "5.0": 614,
     "unrated": 83
   },
   "filmsByMonth": {
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 18
+    "2026-11": 20
   },
   "heatmapData": [
     {
@@ -6328,6 +6328,10 @@
     {
       "date": "2026-11-09",
       "count": 1
+    },
+    {
+      "date": "2026-11-10",
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6341,8 +6345,8 @@
     "1980s": 93,
     "1990s": 173,
     "2000s": 265,
-    "2010s": 741,
-    "2020s": 1244
+    "2010s": 742,
+    "2020s": 1245
   },
   "mostRewatched": [
     {
@@ -6417,6 +6421,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1580802177",
+      "filmTitle": "Word of Mouth",
+      "filmYear": 2024,
+      "watchedDate": "2026-11-10",
+      "memberRating": 5.0,
+      "rewatch": false,
+      "tmdbId": 1515052,
+      "link": "https://letterboxd.com/michaellamb/film/word-of-mouth-2024/",
+      "title": "Word of Mouth, 2024 - ★★★★★",
+      "reviewText": "can't wait to see the <em>Black Mirror</em> rip-off\n\n<a href=\"https://www.youtube.com/watch?v=kA6wW74qOSg\">WORD OF MOUTH | Omeleto Comedy</a>",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1580780019",
+      "filmTitle": "Customer Service",
+      "filmYear": 2017,
+      "watchedDate": "2026-11-10",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 748824,
+      "link": "https://letterboxd.com/michaellamb/film/customer-service/",
+      "title": "Customer Service, 2017 - ★★★",
+      "reviewText": "",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1580376374",
       "filmTitle": "The Breakfast Club",
@@ -6691,43 +6723,16 @@
       ],
       "loggedDate": "2026-11-02",
       "source": "archive"
-    },
-    {
-      "guid": "archive-h5ORx9",
-      "filmTitle": "A Story of Derry",
-      "filmYear": 2026,
-      "watchedDate": "2026-10-31",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/h5ORx9",
-      "title": "A Story of Derry",
-      "reviewText": "absolute gas",
-      "tags": [
-        "hbomax"
-      ],
-      "loggedDate": "2026-11-01",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-h55GuD",
-      "filmTitle": "Remain Calm",
-      "filmYear": 2026,
-      "watchedDate": "2026-10-30",
-      "memberRating": 3.5,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/h55GuD",
-      "title": "Remain Calm",
-      "reviewText": "zoran spotted. this was hilarious \r\n\r\n<a href=\"https://www.youtube.com/watch?v=3ETZmhzURfQ\" target=\"_blank\">REMAIN CALM - A Horror Short starring Pauly Shore, Nick Swardson and Doug Jones</a>",
-      "tags": [
-        "youtube"
-      ],
-      "loggedDate": "2026-10-31",
-      "source": "archive"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Word of Mouth",
+      "filmYear": 2024,
+      "watchedDate": "2026-11-10",
+      "link": "https://letterboxd.com/michaellamb/film/word-of-mouth-2024/",
+      "tmdbId": 1515052
+    },
     {
       "filmTitle": "Dead Poets Society",
       "filmYear": 1989,
@@ -8607,7 +8612,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-11-09"
+    "latest": "2026-11-10"
   },
   "byYear": {
     "2017": {
@@ -14915,8 +14920,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 324,
-      "uniqueFilms": 285,
+      "totalWatched": 326,
+      "uniqueFilms": 287,
       "totalRewatches": 113,
       "averageRating": 3.93,
       "ratingDistribution": {
@@ -14925,11 +14930,11 @@
         "1.5": 5,
         "2.0": 9,
         "2.5": 20,
-        "3.0": 28,
+        "3.0": 29,
         "3.5": 43,
         "4.0": 70,
         "4.5": 61,
-        "5.0": 79,
+        "5.0": 80,
         "unrated": 2
       },
       "heatmapData": [
@@ -15708,6 +15713,10 @@
         {
           "date": "2026-11-09",
           "count": 1
+        },
+        {
+          "date": "2026-11-10",
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15719,8 +15728,8 @@
         "1980s": 12,
         "1990s": 25,
         "2000s": 24,
-        "2010s": 51,
-        "2020s": 188
+        "2010s": 52,
+        "2020s": 189
       },
       "mostRewatched": [
         {
@@ -15760,6 +15769,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Word of Mouth",
+          "filmYear": 2024,
+          "watchedDate": "2026-11-10",
+          "link": "https://letterboxd.com/michaellamb/film/word-of-mouth-2024/"
+        },
         {
           "filmTitle": "Dead Poets Society",
           "filmYear": 1989,
@@ -15813,12 +15828,6 @@
           "filmYear": 1976,
           "watchedDate": "2026-10-15",
           "link": "https://boxd.it/gOdaVF"
-        },
-        {
-          "filmTitle": "Scream",
-          "filmYear": 1996,
-          "watchedDate": "2026-10-05",
-          "link": "https://boxd.it/gEBXqp"
         }
       ]
     }
