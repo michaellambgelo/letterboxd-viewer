@@ -1,5 +1,5 @@
 {
-  "totalWatched": 2675,
+  "totalWatched": 2676,
   "uniqueFilms": 2209,
   "totalRewatches": 888,
   "averageRating": 3.88,
@@ -11,7 +11,7 @@
     "2.5": 134,
     "3.0": 304,
     "3.5": 393,
-    "4.0": 572,
+    "4.0": 573,
     "4.5": 396,
     "5.0": 613,
     "unrated": 83
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 17
+    "2026-11": 18
   },
   "heatmapData": [
     {
@@ -6324,6 +6324,10 @@
     {
       "date": "2026-11-08",
       "count": 3
+    },
+    {
+      "date": "2026-11-09",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6334,7 +6338,7 @@
     "1950s": 20,
     "1960s": 32,
     "1970s": 60,
-    "1980s": 92,
+    "1980s": 93,
     "1990s": 173,
     "2000s": 265,
     "2010s": 741,
@@ -6413,6 +6417,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1580376374",
+      "filmTitle": "The Breakfast Club",
+      "filmYear": 1985,
+      "watchedDate": "2026-11-09",
+      "memberRating": 4.0,
+      "rewatch": false,
+      "tmdbId": 2108,
+      "link": "https://letterboxd.com/michaellamb/film/the-breakfast-club/",
+      "title": "The Breakfast Club, 1985 - ★★★★",
+      "reviewText": "both about 1984 and <em>1984</em> (George Orwell)",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1577315123",
       "filmTitle": "Primetime",
@@ -6706,23 +6724,6 @@
         "youtube"
       ],
       "loggedDate": "2026-10-31",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-h3aNQN",
-      "filmTitle": "Wake in Fright",
-      "filmYear": 1971,
-      "watchedDate": "2026-10-29",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/h3aNQN",
-      "title": "Wake in Fright",
-      "reviewText": "great recommendation from Kyle Crockett, teacher of the year",
-      "tags": [
-        "primevideo"
-      ],
-      "loggedDate": "2026-10-30",
       "source": "archive"
     }
   ],
@@ -8606,7 +8607,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-11-08"
+    "latest": "2026-11-09"
   },
   "byYear": {
     "2017": {
@@ -14914,8 +14915,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 323,
-      "uniqueFilms": 284,
+      "totalWatched": 324,
+      "uniqueFilms": 285,
       "totalRewatches": 113,
       "averageRating": 3.93,
       "ratingDistribution": {
@@ -14926,7 +14927,7 @@
         "2.5": 20,
         "3.0": 28,
         "3.5": 43,
-        "4.0": 69,
+        "4.0": 70,
         "4.5": 61,
         "5.0": 79,
         "unrated": 2
@@ -15703,6 +15704,10 @@
         {
           "date": "2026-11-08",
           "count": 3
+        },
+        {
+          "date": "2026-11-09",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15711,7 +15716,7 @@
         "1950s": 3,
         "1960s": 6,
         "1970s": 8,
-        "1980s": 11,
+        "1980s": 12,
         "1990s": 25,
         "2000s": 24,
         "2010s": 51,
