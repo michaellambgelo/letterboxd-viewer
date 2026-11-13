@@ -1,5 +1,19 @@
 [
   {
+    "guid": "letterboxd-entry-1584384671",
+    "filmTitle": "Godzilla Minus One",
+    "filmYear": 2023,
+    "watchedDate": "2026-11-12",
+    "memberRating": 4.5,
+    "rewatch": true,
+    "tmdbId": 940721,
+    "link": "https://letterboxd.com/michaellamb/film/godzilla-minus-one/4/",
+    "title": "Godzilla Minus One, 2023 - ★★★★½",
+    "reviewText": "First time rewatching since 2024.\nFirst viewing in 4KUHD.\n\nSo great! I really love Koichi and Noriko and their little found family with Akiko",
+    "tags": [],
+    "source": "rss"
+  },
+  {
     "guid": "letterboxd-entry-1580802177",
     "filmTitle": "Word of Mouth",
     "filmYear": 2024,
@@ -51,7 +65,7 @@
     "tmdbId": 1375441,
     "link": "https://letterboxd.com/michaellamb/film/primetime-2026/1/",
     "title": "Primetime, 2026 - ★★★★",
-    "reviewText": "i'm sure someone's connected the lines \"you did this you yourself\" in this film and \"she did that to herself\" in <em>YCSE</em> and i want to read it",
+    "reviewText": "i'm sure someone's connected the lines \"you did this you yourself\" in this film and \"she did that to herself\" in <em>YCSE</em> in an 800-word essay and i want to read it",
     "tags": [],
     "source": "rss"
   },

@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2678,
+  "totalWatched": 2679,
   "uniqueFilms": 2211,
-  "totalRewatches": 888,
+  "totalRewatches": 889,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -12,7 +12,7 @@
     "3.0": 305,
     "3.5": 393,
     "4.0": 573,
-    "4.5": 396,
+    "4.5": 397,
     "5.0": 614,
     "unrated": 83
   },
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 20
+    "2026-11": 21
   },
   "heatmapData": [
     {
@@ -6332,6 +6332,10 @@
     {
       "date": "2026-11-10",
       "count": 2
+    },
+    {
+      "date": "2026-11-12",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6346,7 +6350,7 @@
     "1990s": 173,
     "2000s": 265,
     "2010s": 742,
-    "2020s": 1245
+    "2020s": 1246
   },
   "mostRewatched": [
     {
@@ -6422,6 +6426,20 @@
   ],
   "recentActivity": [
     {
+      "guid": "letterboxd-entry-1584384671",
+      "filmTitle": "Godzilla Minus One",
+      "filmYear": 2023,
+      "watchedDate": "2026-11-12",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 940721,
+      "link": "https://letterboxd.com/michaellamb/film/godzilla-minus-one/4/",
+      "title": "Godzilla Minus One, 2023 - ★★★★½",
+      "reviewText": "First time rewatching since 2024.\nFirst viewing in 4KUHD.\n\nSo great! I really love Koichi and Noriko and their little found family with Akiko",
+      "tags": [],
+      "source": "rss"
+    },
+    {
       "guid": "letterboxd-entry-1580802177",
       "filmTitle": "Word of Mouth",
       "filmYear": 2024,
@@ -6473,7 +6491,7 @@
       "tmdbId": 1375441,
       "link": "https://letterboxd.com/michaellamb/film/primetime-2026/1/",
       "title": "Primetime, 2026 - ★★★★",
-      "reviewText": "i'm sure someone's connected the lines \"you did this you yourself\" in this film and \"she did that to herself\" in <em>YCSE</em> and i want to read it",
+      "reviewText": "i'm sure someone's connected the lines \"you did this you yourself\" in this film and \"she did that to herself\" in <em>YCSE</em> in an 800-word essay and i want to read it",
       "tags": [],
       "source": "rss"
     },
@@ -6702,24 +6720,6 @@
       "reviewText": "Kevin Smith can make a theologically potent film as an expression of his faith. like, not only is he capable of it, he actually fucking did it.\r\n\r\n<a href=\"https://www.youtube.com/watch?v=mF7qqb3yMDM\" target=\"_blank\"><em>Dogma</em> on YouTube</a>",
       "tags": [
         "youtube"
-      ],
-      "loggedDate": "2026-11-02",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-h7rXmX",
-      "filmTitle": "The Web",
-      "filmYear": 2013,
-      "watchedDate": "2026-11-01",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/h7rXmX",
-      "title": "The Web",
-      "reviewText": "incredible \r\n\r\n<a href=\"https://www.youtube.com/watch?v=XD3nq0eECz4\" target=\"_blank\">Comedy Central | Nathan For You - Exclusive - \"The Web\"</a>",
-      "tags": [
-        "youtube",
-        "comedycentral"
       ],
       "loggedDate": "2026-11-02",
       "source": "archive"
@@ -8612,7 +8612,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-11-10"
+    "latest": "2026-11-12"
   },
   "byYear": {
     "2017": {
@@ -14920,9 +14920,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 326,
-      "uniqueFilms": 287,
-      "totalRewatches": 113,
+      "totalWatched": 327,
+      "uniqueFilms": 288,
+      "totalRewatches": 114,
       "averageRating": 3.93,
       "ratingDistribution": {
         "0.5": 2,
@@ -14933,7 +14933,7 @@
         "3.0": 29,
         "3.5": 43,
         "4.0": 70,
-        "4.5": 61,
+        "4.5": 62,
         "5.0": 80,
         "unrated": 2
       },
@@ -15717,6 +15717,10 @@
         {
           "date": "2026-11-10",
           "count": 2
+        },
+        {
+          "date": "2026-11-12",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15729,7 +15733,7 @@
         "1990s": 25,
         "2000s": 24,
         "2010s": 52,
-        "2020s": 189
+        "2020s": 190
       },
       "mostRewatched": [
         {
