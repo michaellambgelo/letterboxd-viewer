@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2679,
-  "uniqueFilms": 2211,
+  "totalWatched": 2680,
+  "uniqueFilms": 2212,
   "totalRewatches": 889,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -9,7 +9,7 @@
     "1.5": 32,
     "2.0": 111,
     "2.5": 134,
-    "3.0": 305,
+    "3.0": 306,
     "3.5": 393,
     "4.0": 573,
     "4.5": 397,
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 21
+    "2026-11": 22
   },
   "heatmapData": [
     {
@@ -6336,6 +6336,10 @@
     {
       "date": "2026-11-12",
       "count": 1
+    },
+    {
+      "date": "2026-11-16",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6350,7 +6354,7 @@
     "1990s": 173,
     "2000s": 265,
     "2010s": 742,
-    "2020s": 1246
+    "2020s": 1247
   },
   "mostRewatched": [
     {
@@ -6425,6 +6429,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1590339188",
+      "filmTitle": "How to Rob a Bank",
+      "filmYear": 2026,
+      "watchedDate": "2026-11-16",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 1437511,
+      "link": "https://letterboxd.com/michaellamb/film/how-to-rob-a-bank-2026/",
+      "title": "How to Rob a Bank, 2026 - ★★★ (contains spoilers)",
+      "reviewText": "it says it’s punk but it’s an Amazon film.\n\nif it’s setting the stage for a follow up film, I’ll be interested. gotta see if the Wolf gets out of the cage",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1584384671",
       "filmTitle": "Godzilla Minus One",
@@ -6703,23 +6721,6 @@
       "tags": [
         "in theaters",
         "moviepass"
-      ],
-      "loggedDate": "2026-11-02",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-h7lxMt",
-      "filmTitle": "Dogma",
-      "filmYear": 1999,
-      "watchedDate": "2026-11-01",
-      "memberRating": 4.5,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://boxd.it/h7lxMt",
-      "title": "Dogma",
-      "reviewText": "Kevin Smith can make a theologically potent film as an expression of his faith. like, not only is he capable of it, he actually fucking did it.\r\n\r\n<a href=\"https://www.youtube.com/watch?v=mF7qqb3yMDM\" target=\"_blank\"><em>Dogma</em> on YouTube</a>",
-      "tags": [
-        "youtube"
       ],
       "loggedDate": "2026-11-02",
       "source": "archive"
@@ -8612,7 +8613,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-11-12"
+    "latest": "2026-11-16"
   },
   "byYear": {
     "2017": {
@@ -14920,8 +14921,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 327,
-      "uniqueFilms": 288,
+      "totalWatched": 328,
+      "uniqueFilms": 289,
       "totalRewatches": 114,
       "averageRating": 3.93,
       "ratingDistribution": {
@@ -14930,7 +14931,7 @@
         "1.5": 5,
         "2.0": 9,
         "2.5": 20,
-        "3.0": 29,
+        "3.0": 30,
         "3.5": 43,
         "4.0": 70,
         "4.5": 62,
@@ -15721,6 +15722,10 @@
         {
           "date": "2026-11-12",
           "count": 1
+        },
+        {
+          "date": "2026-11-16",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15733,7 +15738,7 @@
         "1990s": 25,
         "2000s": 24,
         "2010s": 52,
-        "2020s": 190
+        "2020s": 191
       },
       "mostRewatched": [
         {
