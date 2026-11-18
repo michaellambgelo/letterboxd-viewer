@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2681,
+  "totalWatched": 2682,
   "uniqueFilms": 2213,
-  "totalRewatches": 889,
+  "totalRewatches": 890,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -12,7 +12,7 @@
     "3.0": 306,
     "3.5": 394,
     "4.0": 573,
-    "4.5": 397,
+    "4.5": 398,
     "5.0": 614,
     "unrated": 83
   },
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 23
+    "2026-11": 24
   },
   "heatmapData": [
     {
@@ -6340,6 +6340,10 @@
     {
       "date": "2026-11-16",
       "count": 2
+    },
+    {
+      "date": "2026-11-17",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6354,7 +6358,7 @@
     "1990s": 173,
     "2000s": 265,
     "2010s": 742,
-    "2020s": 1248
+    "2020s": 1249
   },
   "mostRewatched": [
     {
@@ -6429,6 +6433,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1591838228",
+      "filmTitle": "Tenet",
+      "filmYear": 2020,
+      "watchedDate": "2026-11-17",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 577922,
+      "link": "https://letterboxd.com/michaellamb/film/tenet/10/",
+      "title": "Tenet, 2020 - ★★★★½",
+      "reviewText": "if you've missed the last 24 hours in film news, Robert Pattinson will be the next James Bond\n\n<em>Tenet</em> fans everywhere rejoiced",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1590339188",
       "filmTitle": "How to Rob a Bank",
@@ -6702,23 +6720,6 @@
         "bluray"
       ],
       "loggedDate": "2026-11-03",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-h6MkmR",
-      "filmTitle": "The Cycle",
-      "filmYear": 2026,
-      "watchedDate": "2026-11-01",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/h6MkmR",
-      "title": "The Cycle",
-      "reviewText": "a bit long for what it is. sick practical effects tho.",
-      "tags": [
-        "shudder"
-      ],
-      "loggedDate": "2026-11-02",
       "source": "archive"
     }
   ],
@@ -8609,7 +8610,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-11-16"
+    "latest": "2026-11-17"
   },
   "byYear": {
     "2017": {
@@ -14917,9 +14918,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 329,
-      "uniqueFilms": 290,
-      "totalRewatches": 114,
+      "totalWatched": 330,
+      "uniqueFilms": 291,
+      "totalRewatches": 115,
       "averageRating": 3.93,
       "ratingDistribution": {
         "0.5": 2,
@@ -14930,7 +14931,7 @@
         "3.0": 30,
         "3.5": 44,
         "4.0": 70,
-        "4.5": 62,
+        "4.5": 63,
         "5.0": 80,
         "unrated": 2
       },
@@ -15722,6 +15723,10 @@
         {
           "date": "2026-11-16",
           "count": 2
+        },
+        {
+          "date": "2026-11-17",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15734,7 +15739,7 @@
         "1990s": 25,
         "2000s": 24,
         "2010s": 52,
-        "2020s": 192
+        "2020s": 193
       },
       "mostRewatched": [
         {
