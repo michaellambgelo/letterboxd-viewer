@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2682,
-  "uniqueFilms": 2213,
+  "totalWatched": 2683,
+  "uniqueFilms": 2214,
   "totalRewatches": 890,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -10,7 +10,7 @@
     "2.0": 111,
     "2.5": 134,
     "3.0": 306,
-    "3.5": 394,
+    "3.5": 395,
     "4.0": 573,
     "4.5": 398,
     "5.0": 614,
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 24
+    "2026-11": 25
   },
   "heatmapData": [
     {
@@ -6344,6 +6344,10 @@
     {
       "date": "2026-11-17",
       "count": 1
+    },
+    {
+      "date": "2026-11-18",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6358,7 +6362,7 @@
     "1990s": 173,
     "2000s": 265,
     "2010s": 742,
-    "2020s": 1249
+    "2020s": 1250
   },
   "mostRewatched": [
     {
@@ -6433,6 +6437,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1592223821",
+      "filmTitle": "VisionQuest",
+      "filmYear": 2026,
+      "watchedDate": "2026-11-18",
+      "memberRating": 3.5,
+      "rewatch": false,
+      "tmdbId": null,
+      "link": "https://letterboxd.com/michaellamb/film/visionquest/",
+      "title": "VisionQuest, 2026 - ★★★½",
+      "reviewText": "by episode 4 i was loving it; by episode 8 i was glad to see it's all over.\n\npretty decent story and worth the watch. in true Marvel fashion, a mid-credits AND post-credits scene sets up a sequel and then (somehow?) ties this directly into <em>Doomsday</em>.",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1591838228",
       "filmTitle": "Tenet",
@@ -6701,23 +6719,6 @@
       "reviewText": "wow. pretty cool that there's a version of this on Shudder. i'd read about it but this was my first time watching the silent film.",
       "tags": [
         "shudder"
-      ],
-      "loggedDate": "2026-11-03",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-h8tKUv",
-      "filmTitle": "The Prestige",
-      "filmYear": 2006,
-      "watchedDate": "2026-11-02",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://boxd.it/h8tKUv",
-      "title": "The Prestige",
-      "reviewText": "It’s a really good movie. First watch on Blu-ray",
-      "tags": [
-        "bluray"
       ],
       "loggedDate": "2026-11-03",
       "source": "archive"
@@ -8610,7 +8611,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-11-17"
+    "latest": "2026-11-18"
   },
   "byYear": {
     "2017": {
@@ -14918,8 +14919,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 330,
-      "uniqueFilms": 291,
+      "totalWatched": 331,
+      "uniqueFilms": 292,
       "totalRewatches": 115,
       "averageRating": 3.93,
       "ratingDistribution": {
@@ -14929,7 +14930,7 @@
         "2.0": 9,
         "2.5": 20,
         "3.0": 30,
-        "3.5": 44,
+        "3.5": 45,
         "4.0": 70,
         "4.5": 63,
         "5.0": 80,
@@ -15727,6 +15728,10 @@
         {
           "date": "2026-11-17",
           "count": 1
+        },
+        {
+          "date": "2026-11-18",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15739,7 +15744,7 @@
         "1990s": 25,
         "2000s": 24,
         "2010s": 52,
-        "2020s": 193
+        "2020s": 194
       },
       "mostRewatched": [
         {
