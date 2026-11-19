@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2683,
+  "totalWatched": 2684,
   "uniqueFilms": 2214,
-  "totalRewatches": 890,
+  "totalRewatches": 891,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -13,7 +13,7 @@
     "3.5": 395,
     "4.0": 573,
     "4.5": 398,
-    "5.0": 614,
+    "5.0": 615,
     "unrated": 83
   },
   "filmsByMonth": {
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 25
+    "2026-11": 26
   },
   "heatmapData": [
     {
@@ -6347,7 +6347,7 @@
     },
     {
       "date": "2026-11-18",
-      "count": 1
+      "count": 2
     }
   ],
   "filmYearDistribution": {
@@ -6360,7 +6360,7 @@
     "1970s": 60,
     "1980s": 93,
     "1990s": 173,
-    "2000s": 265,
+    "2000s": 266,
     "2010s": 742,
     "2020s": 1250
   },
@@ -6448,6 +6448,20 @@
       "link": "https://letterboxd.com/michaellamb/film/visionquest/",
       "title": "VisionQuest, 2026 - ★★★½",
       "reviewText": "by episode 4 i was loving it; by episode 8 i was glad to see it's all over.\n\npretty decent story and worth the watch. in true Marvel fashion, a mid-credits AND post-credits scene sets up a sequel and then (somehow?) ties this directly into <em>Doomsday</em>.",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1593047595",
+      "filmTitle": "Shrek",
+      "filmYear": 2001,
+      "watchedDate": "2026-11-18",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 808,
+      "link": "https://letterboxd.com/michaellamb/film/shrek/2/",
+      "title": "Shrek, 2001 - ★★★★★",
+      "reviewText": "broke in the 25th anniversary 4KUHD with a director's commentary watch",
       "tags": [],
       "source": "rss"
     },
@@ -6705,26 +6719,16 @@
       ],
       "loggedDate": "2026-11-03",
       "source": "archive"
-    },
-    {
-      "guid": "archive-h8c3en",
-      "filmTitle": "Sweeney Todd",
-      "filmYear": 1928,
-      "watchedDate": "2026-11-02",
-      "memberRating": 2.5,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/h8c3en",
-      "title": "Sweeney Todd",
-      "reviewText": "wow. pretty cool that there's a version of this on Shudder. i'd read about it but this was my first time watching the silent film.",
-      "tags": [
-        "shudder"
-      ],
-      "loggedDate": "2026-11-03",
-      "source": "archive"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Shrek",
+      "filmYear": 2001,
+      "watchedDate": "2026-11-18",
+      "link": "https://letterboxd.com/michaellamb/film/shrek/2/",
+      "tmdbId": 808
+    },
     {
       "filmTitle": "Word of Mouth",
       "filmYear": 2024,
@@ -14919,9 +14923,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 331,
-      "uniqueFilms": 292,
-      "totalRewatches": 115,
+      "totalWatched": 332,
+      "uniqueFilms": 293,
+      "totalRewatches": 116,
       "averageRating": 3.93,
       "ratingDistribution": {
         "0.5": 2,
@@ -14933,7 +14937,7 @@
         "3.5": 45,
         "4.0": 70,
         "4.5": 63,
-        "5.0": 80,
+        "5.0": 81,
         "unrated": 2
       },
       "heatmapData": [
@@ -15731,7 +15735,7 @@
         },
         {
           "date": "2026-11-18",
-          "count": 1
+          "count": 2
         }
       ],
       "filmYearDistribution": {
@@ -15742,7 +15746,7 @@
         "1970s": 8,
         "1980s": 12,
         "1990s": 25,
-        "2000s": 24,
+        "2000s": 25,
         "2010s": 52,
         "2020s": 194
       },
@@ -15784,6 +15788,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Shrek",
+          "filmYear": 2001,
+          "watchedDate": "2026-11-18",
+          "link": "https://letterboxd.com/michaellamb/film/shrek/2/"
+        },
         {
           "filmTitle": "Word of Mouth",
           "filmYear": 2024,
@@ -15837,12 +15847,6 @@
           "filmYear": 2025,
           "watchedDate": "2026-10-16",
           "link": "https://boxd.it/gPd7Yv"
-        },
-        {
-          "filmTitle": "Carrie",
-          "filmYear": 1976,
-          "watchedDate": "2026-10-15",
-          "link": "https://boxd.it/gOdaVF"
         }
       ]
     }
