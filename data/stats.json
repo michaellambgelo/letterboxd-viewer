@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2685,
-  "uniqueFilms": 2215,
+  "totalWatched": 2686,
+  "uniqueFilms": 2216,
   "totalRewatches": 891,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -9,7 +9,7 @@
     "1.5": 32,
     "2.0": 111,
     "2.5": 134,
-    "3.0": 306,
+    "3.0": 307,
     "3.5": 395,
     "4.0": 573,
     "4.5": 399,
@@ -106,7 +106,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 27
+    "2026-11": 28
   },
   "heatmapData": [
     {
@@ -6348,6 +6348,10 @@
     {
       "date": "2026-11-18",
       "count": 3
+    },
+    {
+      "date": "2026-11-20",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6362,7 +6366,7 @@
     "1990s": 173,
     "2000s": 267,
     "2010s": 742,
-    "2020s": 1250
+    "2020s": 1251
   },
   "mostRewatched": [
     {
@@ -6437,6 +6441,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1595137653",
+      "filmTitle": "The Hunger Games: Sunrise on the Reaping",
+      "filmYear": 2026,
+      "watchedDate": "2026-11-20",
+      "memberRating": 3.0,
+      "rewatch": false,
+      "tmdbId": 1300968,
+      "link": "https://letterboxd.com/michaellamb/film/the-hunger-games-sunrise-on-the-reaping/",
+      "title": "The Hunger Games: Sunrise on the Reaping, 2026 - ★★★",
+      "reviewText": "I don’t know where else you take this story.\n\nGreat production value but it feels unfinished",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1592223821",
       "filmTitle": "VisionQuest",
@@ -6700,20 +6718,6 @@
       "link": "https://letterboxd.com/michaellamb/film/dead-poets-society/1/",
       "title": "Dead Poets Society, 1989 - ★★★★★",
       "reviewText": "There was a time in my life when I was determined to be a choir teacher.\n\nChoir had been my favorite part of public education and I excelled in middle school and high school competitions. My senior year was derailed by my parents who, to teach me a lesson, withdrew me from competing in many solos and cost me opportunities.\n\nWhile I had already seen Neil go through something similar, I don't think I really appreciated just how dissimilar it was: I didn't have a father with money trying to run my life. In fact, I was more free than Neil because I ended up doing things my parents never imagined for me and while I'm grateful for their contributions to my life in the early years, it is a different kind of loneliness to find that your parents just aren't interested in your life even with some relative success.\n\nWhat this movie taught me in high school was that art and expression is for everyone, and that those who work to stamp it out have lost something human within.",
-      "tags": [],
-      "source": "rss"
-    },
-    {
-      "guid": "letterboxd-entry-1572837820",
-      "filmTitle": "Midsommar",
-      "filmYear": 2019,
-      "watchedDate": "2026-11-04",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": 530385,
-      "link": "https://letterboxd.com/michaellamb/film/midsommar/53/",
-      "title": "Midsommar, 2019 - ★★★★★",
-      "reviewText": "",
       "tags": [],
       "source": "rss"
     }
@@ -8612,7 +8616,7 @@
   ],
   "dateRange": {
     "earliest": "2017-08-05",
-    "latest": "2026-11-18"
+    "latest": "2026-11-20"
   },
   "byYear": {
     "2017": {
@@ -14920,8 +14924,8 @@
       ]
     },
     "2026": {
-      "totalWatched": 333,
-      "uniqueFilms": 294,
+      "totalWatched": 334,
+      "uniqueFilms": 295,
       "totalRewatches": 116,
       "averageRating": 3.93,
       "ratingDistribution": {
@@ -14930,7 +14934,7 @@
         "1.5": 5,
         "2.0": 9,
         "2.5": 20,
-        "3.0": 30,
+        "3.0": 31,
         "3.5": 45,
         "4.0": 70,
         "4.5": 64,
@@ -15733,6 +15737,10 @@
         {
           "date": "2026-11-18",
           "count": 3
+        },
+        {
+          "date": "2026-11-20",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -15745,7 +15753,7 @@
         "1990s": 25,
         "2000s": 26,
         "2010s": 52,
-        "2020s": 194
+        "2020s": 195
       },
       "mostRewatched": [
         {
@@ -15931,7 +15939,7 @@
     "watchfree+": 1
   },
   "watchlist": {
-    "count": 1586,
+    "count": 1585,
     "oldestAdded": "2020-03-16",
     "newestAdded": "2026-11-03",
     "recentlyAdded": [
@@ -15996,7 +16004,7 @@
         "addedDate": "2026-10-14"
       }
     ],
-    "removedSinceExport": 0,
+    "removedSinceExport": 1,
     "snapshotDate": "2026-11-03",
     "snapshotSource": "letterboxd-michaellamb-2026-11-03-18-19-utc"
   },
