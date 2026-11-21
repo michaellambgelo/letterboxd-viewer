@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2737,
+  "totalWatched": 2738,
   "uniqueFilms": 2233,
-  "totalRewatches": 897,
+  "totalRewatches": 898,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -13,7 +13,7 @@
     "3.5": 395,
     "4.0": 573,
     "4.5": 399,
-    "5.0": 615,
+    "5.0": 616,
     "unrated": 134
   },
   "filmsByMonth": {
@@ -128,7 +128,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 28
+    "2026-11": 29
   },
   "heatmapData": [
     {
@@ -6534,6 +6534,10 @@
     {
       "date": "2026-11-20",
       "count": 1
+    },
+    {
+      "date": "2026-11-21",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6548,7 +6552,7 @@
     "1990s": 174,
     "2000s": 287,
     "2010s": 764,
-    "2020s": 1259
+    "2020s": 1260
   },
   "mostRewatched": [
     {
@@ -6623,6 +6627,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1596650038",
+      "filmTitle": "Oppenheimer",
+      "filmYear": 2023,
+      "watchedDate": "2026-11-21",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 872585,
+      "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/17/",
+      "title": "Oppenheimer, 2023 - ★★★★★",
+      "reviewText": "apocalypse-maxxing with a Nolan double feature\n\n<i>Oppenheimer</i> followed by <i>The Odyssey</i>",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "archive-hpwlID",
       "filmTitle": "The Hunger Games: Sunrise on the Reaping",
@@ -6947,26 +6965,16 @@
       ],
       "loggedDate": "2026-11-06",
       "source": "archive"
-    },
-    {
-      "guid": "archive-hamEJ1",
-      "filmTitle": "Dead Poets Society",
-      "filmYear": 1989,
-      "watchedDate": "2026-11-04",
-      "memberRating": 5.0,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://boxd.it/hamEJ1",
-      "title": "Dead Poets Society",
-      "reviewText": "There was a time in my life when I was determined to be a choir teacher.\r\n\r\nChoir had been my favorite part of public education and I excelled in middle school and high school competitions. My senior year was derailed by my parents who, to teach me a lesson, withdrew me from competing in many solos and cost me opportunities.\r\n\r\nWhile I had already seen Neil go through something similar, I don't think I really appreciated just how dissimilar it was: I didn't have a father with money trying to run my life. In fact, I was more free than Neil because I ended up doing things my parents never imagined for me and while I'm grateful for their contributions to my life in the early years, it is a different kind of loneliness to find that your parents just aren't interested in your life even with some relative success.\r\n\r\nWhat this movie taught me in high school was that art and expression is for everyone, and that those who work to stamp it out have lost something human within.",
-      "tags": [
-        "appletv+"
-      ],
-      "loggedDate": "2026-11-05",
-      "source": "archive"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Oppenheimer",
+      "filmYear": 2023,
+      "watchedDate": "2026-11-21",
+      "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/17/",
+      "tmdbId": 872585
+    },
     {
       "filmTitle": "Shrek",
       "filmYear": 2001,
@@ -8832,7 +8840,7 @@
   ],
   "dateRange": {
     "earliest": "2007-05-05",
-    "latest": "2026-11-20"
+    "latest": "2026-11-21"
   },
   "byYear": {
     "2007": {
@@ -15509,9 +15517,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 339,
-      "uniqueFilms": 293,
-      "totalRewatches": 117,
+      "totalWatched": 340,
+      "uniqueFilms": 294,
+      "totalRewatches": 118,
       "averageRating": 3.93,
       "ratingDistribution": {
         "0.5": 2,
@@ -15523,7 +15531,7 @@
         "3.5": 45,
         "4.0": 70,
         "4.5": 64,
-        "5.0": 81,
+        "5.0": 82,
         "unrated": 7
       },
       "heatmapData": [
@@ -16334,6 +16342,10 @@
         {
           "date": "2026-11-20",
           "count": 1
+        },
+        {
+          "date": "2026-11-21",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -16346,7 +16358,7 @@
         "1990s": 26,
         "2000s": 26,
         "2010s": 52,
-        "2020s": 199
+        "2020s": 200
       },
       "mostRewatched": [
         {
@@ -16386,6 +16398,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Oppenheimer",
+          "filmYear": 2023,
+          "watchedDate": "2026-11-21",
+          "link": "https://letterboxd.com/michaellamb/film/oppenheimer-2023/17/"
+        },
         {
           "filmTitle": "Shrek",
           "filmYear": 2001,
@@ -16439,12 +16457,6 @@
           "filmYear": 2025,
           "watchedDate": "2026-10-28",
           "link": "https://boxd.it/h26xdD"
-        },
-        {
-          "filmTitle": "Sinners",
-          "filmYear": 2025,
-          "watchedDate": "2026-10-16",
-          "link": "https://boxd.it/gPd7Yv"
         }
       ]
     }
