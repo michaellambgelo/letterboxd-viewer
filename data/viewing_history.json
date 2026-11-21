@@ -1,297 +1,363 @@
 [
   {
-    "guid": "letterboxd-entry-1595137653",
+    "guid": "archive-hpwlID",
     "filmTitle": "The Hunger Games: Sunrise on the Reaping",
     "filmYear": 2026,
     "watchedDate": "2026-11-20",
     "memberRating": 3.0,
     "rewatch": false,
-    "tmdbId": 1300968,
-    "link": "https://letterboxd.com/michaellamb/film/the-hunger-games-sunrise-on-the-reaping/",
-    "title": "The Hunger Games: Sunrise on the Reaping, 2026 - ★★★",
-    "reviewText": "I don’t know where else you take this story.\n\nGreat production value but it feels unfinished",
-    "tags": [],
-    "source": "rss"
+    "tmdbId": null,
+    "link": "https://boxd.it/hpwlID",
+    "title": "The Hunger Games: Sunrise on the Reaping",
+    "reviewText": "I don’t know where else you take this story. \r\n\r\nGreat production value but it feels unfinished",
+    "tags": [
+      "in theaters",
+      "imax"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1592223821",
+    "guid": "archive-hny5vJ",
     "filmTitle": "VisionQuest",
     "filmYear": 2026,
     "watchedDate": "2026-11-18",
     "memberRating": 3.5,
     "rewatch": false,
     "tmdbId": null,
-    "link": "https://letterboxd.com/michaellamb/film/visionquest/",
-    "title": "VisionQuest, 2026 - ★★★½",
-    "reviewText": "by episode 4 i was loving it; by episode 8 i was glad to see it's all over.\n\npretty decent story and worth the watch. in true Marvel fashion, a mid-credits AND post-credits scene sets up a sequel and then (somehow?) ties this directly into <em>Doomsday</em>.",
-    "tags": [],
-    "source": "rss"
+    "link": "https://boxd.it/hny5vJ",
+    "title": "VisionQuest",
+    "reviewText": "by episode 4 i was loving it; by episode 8 i was glad to see it's all over.\r\n\r\npretty decent story and worth the watch. in true Marvel fashion, a mid-credits AND post-credits scene sets up a sequel and then (somehow?) ties this directly into <em>Doomsday</em>.",
+    "tags": [
+      "disney+"
+    ],
+    "loggedDate": "2026-11-19",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1593047595",
+    "guid": "archive-ho6Ewv",
     "filmTitle": "Shrek",
     "filmYear": 2001,
     "watchedDate": "2026-11-18",
     "memberRating": 5.0,
     "rewatch": true,
-    "tmdbId": 808,
-    "link": "https://letterboxd.com/michaellamb/film/shrek/2/",
-    "title": "Shrek, 2001 - ★★★★★",
+    "tmdbId": null,
+    "link": "https://boxd.it/ho6Ewv",
+    "title": "Shrek",
     "reviewText": "broke in the 25th anniversary 4KUHD with a director's commentary watch",
-    "tags": [],
-    "source": "rss"
+    "tags": [
+      "4k"
+    ],
+    "loggedDate": "2026-11-19",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1593129946",
+    "guid": "archive-hoa6KV",
     "filmTitle": "Love and Cameras in America",
     "filmYear": 2009,
     "watchedDate": "2026-11-18",
     "memberRating": 4.5,
     "rewatch": false,
-    "tmdbId": 1006887,
-    "link": "https://letterboxd.com/michaellamb/film/love-and-cameras-in-america/",
-    "title": "Love and Cameras in America, 2009 - ★★★★½",
-    "reviewText": "bro wtf\n\n<a href=\"https://archive.org/details/love-and-cameras-in-america-2009\"><em>Love And Cameras In America</em></a> on the Internet Archive",
-    "tags": [],
-    "source": "rss"
+    "tmdbId": null,
+    "link": "https://boxd.it/hoa6KV",
+    "title": "Love and Cameras in America",
+    "reviewText": "bro wtf\r\n\r\n<a href=\"https://archive.org/details/love-and-cameras-in-america-2009\" target=\"_blank\"><em>Love And Cameras In America</em></a> on the Internet Archive",
+    "tags": [
+      "youtube"
+    ],
+    "loggedDate": "2026-11-19",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1591838228",
+    "guid": "archive-hnhUpj",
     "filmTitle": "Tenet",
     "filmYear": 2020,
     "watchedDate": "2026-11-17",
     "memberRating": 4.5,
     "rewatch": true,
-    "tmdbId": 577922,
-    "link": "https://letterboxd.com/michaellamb/film/tenet/10/",
-    "title": "Tenet, 2020 - ★★★★½",
-    "reviewText": "if you've missed the last 24 hours in film news, Robert Pattinson will be the next James Bond\n\n<em>Tenet</em> fans everywhere rejoiced",
-    "tags": [],
-    "source": "rss"
+    "tmdbId": null,
+    "link": "https://boxd.it/hnhUpj",
+    "title": "Tenet",
+    "reviewText": "if you've missed the last 24 hours in film news, Robert Pattinson will be the next James Bond\r\n\r\n<em>Tenet</em> fans everywhere rejoiced",
+    "tags": [
+      "4k"
+    ],
+    "loggedDate": "2026-11-18",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1590339188",
+    "guid": "archive-hmh0IF",
     "filmTitle": "How to Rob a Bank",
     "filmYear": 2026,
     "watchedDate": "2026-11-16",
     "memberRating": 3.0,
     "rewatch": false,
-    "tmdbId": 1437511,
-    "link": "https://letterboxd.com/michaellamb/film/how-to-rob-a-bank-2026/",
-    "title": "How to Rob a Bank, 2026 - ★★★ (contains spoilers)",
-    "reviewText": "it says it’s punk but it’s an Amazon film.\n\nif it’s setting the stage for a follow up film, I’ll be interested. gotta see if the Wolf gets out of the cage",
-    "tags": [],
-    "source": "rss"
+    "tmdbId": null,
+    "link": "https://boxd.it/hmh0IF",
+    "title": "How to Rob a Bank",
+    "reviewText": "it says it’s punk but it’s an Amazon film. \r\n\r\nif it’s setting the stage for a follow up film, I’ll be interested. gotta see if the Wolf gets out of the cage",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-17",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1590532646",
+    "guid": "archive-hmp7Zz",
     "filmTitle": "Wild Horse Nine",
     "filmYear": 2026,
     "watchedDate": "2026-11-16",
     "memberRating": 3.5,
     "rewatch": false,
-    "tmdbId": 891621,
-    "link": "https://letterboxd.com/michaellamb/film/wild-horse-nine/",
-    "title": "Wild Horse Nine, 2026 - ★★★½",
-    "reviewText": "I feel like I’ve seen this movie before and yet I still enjoyed it\n\nWatched with Jonathan",
-    "tags": [],
-    "source": "rss"
+    "tmdbId": null,
+    "link": "https://boxd.it/hmp7Zz",
+    "title": "Wild Horse Nine",
+    "reviewText": "I feel like I’ve seen this movie before and yet I still enjoyed it \r\n\r\nWatched with Jonathan",
+    "tags": [
+      "in theaters",
+      "jawnmizzles"
+    ],
+    "loggedDate": "2026-11-17",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1584384671",
+    "guid": "archive-hifaiH",
     "filmTitle": "Godzilla Minus One",
     "filmYear": 2023,
     "watchedDate": "2026-11-12",
     "memberRating": 4.5,
     "rewatch": true,
-    "tmdbId": 940721,
-    "link": "https://letterboxd.com/michaellamb/film/godzilla-minus-one/4/",
-    "title": "Godzilla Minus One, 2023 - ★★★★½",
-    "reviewText": "First time rewatching since 2024.\nFirst viewing in 4KUHD.\n\nSo great! I really love Koichi and Noriko and their little found family with Akiko",
-    "tags": [],
-    "source": "rss"
+    "tmdbId": null,
+    "link": "https://boxd.it/hifaiH",
+    "title": "Godzilla Minus One",
+    "reviewText": "First time rewatching since 2024.\r\nFirst viewing in 4KUHD.\r\n\r\nSo great! I really love Koichi and Noriko and their little found family with Akiko",
+    "tags": [
+      "4k"
+    ],
+    "loggedDate": "2026-11-13",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1580802177",
-    "filmTitle": "Word of Mouth",
-    "filmYear": 2024,
-    "watchedDate": "2026-11-10",
-    "memberRating": 5.0,
-    "rewatch": false,
-    "tmdbId": 1515052,
-    "link": "https://letterboxd.com/michaellamb/film/word-of-mouth-2024/",
-    "title": "Word of Mouth, 2024 - ★★★★★",
-    "reviewText": "can't wait to see the <em>Black Mirror</em> rip-off\n\n<a href=\"https://www.youtube.com/watch?v=kA6wW74qOSg\">WORD OF MOUTH | Omeleto Comedy</a>",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1580780019",
+    "guid": "archive-hfNUXd",
     "filmTitle": "Customer Service",
     "filmYear": 2017,
     "watchedDate": "2026-11-10",
     "memberRating": 3.0,
     "rewatch": false,
-    "tmdbId": 748824,
-    "link": "https://letterboxd.com/michaellamb/film/customer-service/",
-    "title": "Customer Service, 2017 - ★★★",
+    "tmdbId": null,
+    "link": "https://boxd.it/hfNUXd",
+    "title": "Customer Service",
     "reviewText": "",
-    "tags": [],
-    "source": "rss"
+    "tags": [
+      "omeleto",
+      "youtube"
+    ],
+    "loggedDate": "2026-11-11",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1580376374",
+    "guid": "archive-hfOQB5",
+    "filmTitle": "Word of Mouth",
+    "filmYear": 2024,
+    "watchedDate": "2026-11-10",
+    "memberRating": 5.0,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hfOQB5",
+    "title": "Word of Mouth",
+    "reviewText": "can't wait to see the <em>Black Mirror</em> rip-off\r\n\r\n<a href=\"https://www.youtube.com/watch?v=kA6wW74qOSg\" target=\"_blank\">WORD OF MOUTH | Omeleto Comedy</a>",
+    "tags": [
+      "omeleto",
+      "youtube"
+    ],
+    "loggedDate": "2026-11-11",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hfwYTb",
     "filmTitle": "The Breakfast Club",
     "filmYear": 1985,
     "watchedDate": "2026-11-09",
     "memberRating": 4.0,
     "rewatch": false,
-    "tmdbId": 2108,
-    "link": "https://letterboxd.com/michaellamb/film/the-breakfast-club/",
-    "title": "The Breakfast Club, 1985 - ★★★★",
+    "tmdbId": null,
+    "link": "https://boxd.it/hfwYTb",
+    "title": "The Breakfast Club",
     "reviewText": "both about 1984 and <em>1984</em> (George Orwell)",
-    "tags": [],
-    "source": "rss"
+    "tags": [
+      "youtube"
+    ],
+    "loggedDate": "2026-11-10",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1577315123",
+    "guid": "archive-hdsxb1",
     "filmTitle": "Primetime",
     "filmYear": 2026,
     "watchedDate": "2026-11-08",
     "memberRating": 4.0,
     "rewatch": true,
-    "tmdbId": 1375441,
-    "link": "https://letterboxd.com/michaellamb/film/primetime-2026/1/",
-    "title": "Primetime, 2026 - ★★★★",
+    "tmdbId": null,
+    "link": "https://boxd.it/hdsxb1",
+    "title": "Primetime",
     "reviewText": "i'm sure someone's connected the lines \"you did this you yourself\" in this film and \"she did that to herself\" in <em>YCSE</em> in an 800-word essay and i want to read it",
     "tags": [],
-    "source": "rss"
+    "loggedDate": "2026-11-08",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1578903254",
-    "filmTitle": "Dead Poets Society",
-    "filmYear": 1989,
-    "watchedDate": "2026-11-08",
-    "memberRating": 5.0,
-    "rewatch": true,
-    "tmdbId": 207,
-    "link": "https://letterboxd.com/michaellamb/film/dead-poets-society/2/",
-    "title": "Dead Poets Society, 1989 - ★★★★★",
-    "reviewText": "jxn movie club watch.\n\nnathaniel's pick.",
-    "tags": [],
-    "source": "rss"
-  },
-  {
-    "guid": "letterboxd-entry-1578329432",
+    "guid": "archive-he95Rf",
     "filmTitle": "Godzilla Minus Zero",
     "filmYear": 2026,
     "watchedDate": "2026-11-08",
     "memberRating": 4.5,
     "rewatch": true,
-    "tmdbId": 1381071,
-    "link": "https://letterboxd.com/michaellamb/film/godzilla-minus-zero/1/",
-    "title": "Godzilla Minus Zero, 2026 - ★★★★½",
-    "reviewText": "Round 2 in IMAX with Ryan and Paul\n\nPhenomenal",
-    "tags": [],
-    "source": "rss"
+    "tmdbId": null,
+    "link": "https://boxd.it/he95Rf",
+    "title": "Godzilla Minus Zero",
+    "reviewText": "Round 2 in IMAX with Ryan and Paul \r\n\r\nPhenomenal",
+    "tags": [
+      "in theaters",
+      "imax",
+      "ryanparker"
+    ],
+    "loggedDate": "2026-11-09",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1576263014",
+    "guid": "archive-hexaDb",
+    "filmTitle": "Dead Poets Society",
+    "filmYear": 1989,
+    "watchedDate": "2026-11-08",
+    "memberRating": 5.0,
+    "rewatch": true,
+    "tmdbId": null,
+    "link": "https://boxd.it/hexaDb",
+    "title": "Dead Poets Society",
+    "reviewText": "jxn movie club watch.\r\n\r\nnathaniel's pick.",
+    "tags": [
+      "youtube",
+      "jon-nolan"
+    ],
+    "loggedDate": "2026-11-09",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hcKoa1",
     "filmTitle": "Cornflower",
     "filmYear": 2019,
     "watchedDate": "2026-11-07",
     "memberRating": 4.0,
     "rewatch": true,
-    "tmdbId": 668828,
-    "link": "https://letterboxd.com/michaellamb/film/cornflower/1/",
-    "title": "Cornflower, 2019 - ★★★★",
+    "tmdbId": null,
+    "link": "https://boxd.it/hcKoa1",
+    "title": "Cornflower",
     "reviewText": "",
-    "tags": [],
-    "source": "rss"
+    "tags": [
+      "youtube",
+      "omeleto"
+    ],
+    "loggedDate": "2026-11-08",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1576596772",
+    "guid": "archive-hcYopX",
     "filmTitle": "We're All Gonna Die",
     "filmYear": 2024,
     "watchedDate": "2026-11-07",
     "memberRating": 4.0,
     "rewatch": false,
-    "tmdbId": 1164614,
-    "link": "https://letterboxd.com/michaellamb/film/were-all-gonna-die-2024/",
-    "title": "We're All Gonna Die, 2024 - ★★★★",
+    "tmdbId": null,
+    "link": "https://boxd.it/hcYopX",
+    "title": "We're All Gonna Die",
     "reviewText": "It hooked me enough at the beginning to keep in invested and I'm so glad I stayed with it. Really good stuff at the end.",
     "tags": [],
-    "source": "rss"
+    "loggedDate": "2026-11-08",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1577128169",
+    "guid": "archive-hdkGP9",
     "filmTitle": "Godzilla Minus Zero",
     "filmYear": 2026,
     "watchedDate": "2026-11-07",
     "memberRating": 4.5,
     "rewatch": false,
-    "tmdbId": 1381071,
-    "link": "https://letterboxd.com/michaellamb/film/godzilla-minus-zero/",
-    "title": "Godzilla Minus Zero, 2026 - ★★★★½",
-    "reviewText": "bruh this shit slaps so hard. it's exhilarating, heart-wrenching, and deeply human.\n\nloved it. ready to see it again with a more respectful audience. a random late saturday show just reinforces why i go to the matinee or the 4 PM show.\n\nwatched with Jon-Nolan and Lindsay\n\n<strong><a href=\"https://letterboxd.com/michaellamb/list/my-2026-releases-ranked/\">#5 in my 2026 releases ranked list</a></strong> as of this review",
-    "tags": [],
-    "source": "rss"
+    "tmdbId": null,
+    "link": "https://boxd.it/hdkGP9",
+    "title": "Godzilla Minus Zero",
+    "reviewText": "bruh this shit slaps so hard. it's exhilarating, heart-wrenching, and deeply human. \r\n\r\nloved it. ready to see it again with a more respectful audience. a random late saturday show just reinforces why i go to the matinee or the 4 PM show. \r\n\r\nwatched with Jon-Nolan and Lindsay \r\n\r\n<strong><a href=\"https://letterboxd.com/michaellamb/list/my-2026-releases-ranked/\" target=\"_blank\">#5 in my 2026 releases ranked list</a></strong> as of this review",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-08",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1575025770",
+    "guid": "archive-hbUtwx",
     "filmTitle": "Resident Evil",
     "filmYear": 2026,
     "watchedDate": "2026-11-06",
     "memberRating": 4.5,
     "rewatch": true,
-    "tmdbId": 1423191,
-    "link": "https://letterboxd.com/michaellamb/film/resident-evil-2026/2/",
-    "title": "Resident Evil, 2026 - ★★★★½",
+    "tmdbId": null,
+    "link": "https://boxd.it/hbUtwx",
+    "title": "Resident Evil",
     "reviewText": "",
     "tags": [],
-    "source": "rss"
+    "loggedDate": "2026-11-07",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1574158315",
+    "guid": "archive-hbk4Sr",
     "filmTitle": "Call Me by Your Name",
     "filmYear": 2017,
     "watchedDate": "2026-11-05",
     "memberRating": 5.0,
     "rewatch": true,
-    "tmdbId": 398818,
-    "link": "https://letterboxd.com/michaellamb/film/call-me-by-your-name/8/",
-    "title": "Call Me by Your Name, 2017 - ★★★★★",
-    "reviewText": "<blockquote>I think he was better than me...</blockquote>\n\ni kinda got annoyed with Armie Hammer this watch but i still believe Timmée too much to not be moved",
-    "tags": [],
-    "source": "rss"
+    "tmdbId": null,
+    "link": "https://boxd.it/hbk4Sr",
+    "title": "Call Me by Your Name",
+    "reviewText": "<blockquote>I think he was better than me...</blockquote>\r\n\r\ni kinda got annoyed with Armie Hammer this watch but i still believe Timmée too much to not be moved",
+    "tags": [
+      "bluray"
+    ],
+    "loggedDate": "2026-11-06",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1572742127",
+    "guid": "archive-hamEJ1",
     "filmTitle": "Dead Poets Society",
     "filmYear": 1989,
     "watchedDate": "2026-11-04",
     "memberRating": 5.0,
     "rewatch": true,
-    "tmdbId": 207,
-    "link": "https://letterboxd.com/michaellamb/film/dead-poets-society/1/",
-    "title": "Dead Poets Society, 1989 - ★★★★★",
-    "reviewText": "There was a time in my life when I was determined to be a choir teacher.\n\nChoir had been my favorite part of public education and I excelled in middle school and high school competitions. My senior year was derailed by my parents who, to teach me a lesson, withdrew me from competing in many solos and cost me opportunities.\n\nWhile I had already seen Neil go through something similar, I don't think I really appreciated just how dissimilar it was: I didn't have a father with money trying to run my life. In fact, I was more free than Neil because I ended up doing things my parents never imagined for me and while I'm grateful for their contributions to my life in the early years, it is a different kind of loneliness to find that your parents just aren't interested in your life even with some relative success.\n\nWhat this movie taught me in high school was that art and expression is for everyone, and that those who work to stamp it out have lost something human within.",
-    "tags": [],
-    "source": "rss"
+    "tmdbId": null,
+    "link": "https://boxd.it/hamEJ1",
+    "title": "Dead Poets Society",
+    "reviewText": "There was a time in my life when I was determined to be a choir teacher.\r\n\r\nChoir had been my favorite part of public education and I excelled in middle school and high school competitions. My senior year was derailed by my parents who, to teach me a lesson, withdrew me from competing in many solos and cost me opportunities.\r\n\r\nWhile I had already seen Neil go through something similar, I don't think I really appreciated just how dissimilar it was: I didn't have a father with money trying to run my life. In fact, I was more free than Neil because I ended up doing things my parents never imagined for me and while I'm grateful for their contributions to my life in the early years, it is a different kind of loneliness to find that your parents just aren't interested in your life even with some relative success.\r\n\r\nWhat this movie taught me in high school was that art and expression is for everyone, and that those who work to stamp it out have lost something human within.",
+    "tags": [
+      "appletv+"
+    ],
+    "loggedDate": "2026-11-05",
+    "source": "archive"
   },
   {
-    "guid": "letterboxd-entry-1572837820",
+    "guid": "archive-haqFFn",
     "filmTitle": "Midsommar",
     "filmYear": 2019,
     "watchedDate": "2026-11-04",
     "memberRating": 5.0,
     "rewatch": true,
-    "tmdbId": 530385,
-    "link": "https://letterboxd.com/michaellamb/film/midsommar/53/",
-    "title": "Midsommar, 2019 - ★★★★★",
+    "tmdbId": null,
+    "link": "https://boxd.it/haqFFn",
+    "title": "Midsommar",
     "reviewText": "",
-    "tags": [],
-    "source": "rss"
+    "tags": [
+      "4k",
+      "directors cut"
+    ],
+    "loggedDate": "2026-11-05",
+    "source": "archive"
   },
   {
     "guid": "archive-h7OUuv",
@@ -596,7 +662,9 @@
     "title": "You Can See Everything",
     "reviewText": "Second watch. \r\n\r\nJoined by Russell, Jon Nolan, Ryan, Amy, Brandon, PJ, and Jordan.\r\n\r\nI timed about 70 minutes of debrief over beers following the film with Jon Nolan, Ryan, and Amy. \r\n\r\nIf you asked 100 people to share their top 10 moments from the film, you'd have 100 different lists.",
     "tags": [
-      "in theaters"
+      "in theaters",
+      "ryanparker",
+      "jon-nolan"
     ],
     "loggedDate": "2026-10-25",
     "source": "archive"
@@ -648,7 +716,8 @@
     "reviewText": "Kinda great double feature with <i>You Can See Everything</i>. Identity, media, performance, manipulation, power. It’s all there \r\n\r\nJXN Film Club preview screening with Offbeat and MS Film Society at Capri Theatre",
     "tags": [
       "in theaters",
-      "jxnfilmclub"
+      "jxnfilmclub",
+      "jon-nolan"
     ],
     "loggedDate": "2026-10-23",
     "source": "archive"
@@ -1699,7 +1768,9 @@
     "title": "Yojimbo",
     "reviewText": "Treated to a screening in a theater thanks to Morgan Sumner. This is first in a double feature he’s calling <i>Men With No Names</i>\r\n\r\nWatched with Morgan, Ryan, Brady, and Jon-Nolan",
     "tags": [
-      "in theaters"
+      "in theaters",
+      "ryanparker",
+      "jon-nolan"
     ],
     "loggedDate": "2026-09-14",
     "source": "archive"
@@ -1716,7 +1787,8 @@
     "title": "A Fistful of Dollars",
     "reviewText": "I prefer the moral stakes of <i>Yojimbo </i>but the pacing in this was better. Clint Eastwood is stupid hot. \r\n\r\nThis was the second half of the <i>Men With No Names</i> double feature organized by Morgan. Watched with Morgan, Lydia, and Jon-Nolan.",
     "tags": [
-      "in theaters"
+      "in theaters",
+      "jon-nolan"
     ],
     "loggedDate": "2026-09-14",
     "source": "archive"
@@ -2059,7 +2131,9 @@
     "reviewText": "Theater rewatch with Jon Nolan, Faith, Eric, Mary, Ben, Elizabeth, Anna, and Drake",
     "tags": [
       "in theaters",
-      "moviepass"
+      "moviepass",
+      "jon-nolan",
+      "merry"
     ],
     "loggedDate": "2026-09-02",
     "source": "archive"
@@ -2076,7 +2150,8 @@
     "title": "Buddy",
     "reviewText": "If this film is about Buddy, the sequels will follow Benny and Bobby. I think Benny might have been the unicorn at the bottom of the Worry Well. \r\n\r\nThe domestic interior drama is played so well — a husband who doesn’t listen to his wife could be overdone but it is used effectively and really makes Grace’s journey to the Park meaningful. \r\n\r\nThis was a fun double-feature night at the theater. Theater rewatch with Jon Nolan and Ben",
     "tags": [
-      "in theaters"
+      "in theaters",
+      "jon-nolan"
     ],
     "loggedDate": "2026-09-02",
     "source": "archive"
@@ -3126,6 +3201,23 @@
     "source": "archive"
   },
   {
+    "guid": "archive-hpX8Df",
+    "filmTitle": "The Invite",
+    "filmYear": 2026,
+    "watchedDate": "2026-06-30",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8Df",
+    "title": "The Invite",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
     "guid": "archive-f0Cnfp",
     "filmTitle": "Oppenheimer",
     "filmYear": 2023,
@@ -3857,6 +3949,23 @@
     "source": "archive"
   },
   {
+    "guid": "archive-hpX8Ch",
+    "filmTitle": "Stolen Kingdom",
+    "filmYear": 2025,
+    "watchedDate": "2026-05-12",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8Ch",
+    "title": "Stolen Kingdom",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
     "guid": "archive-ekAfC9",
     "filmTitle": "Short Circuit",
     "filmYear": 1986,
@@ -4319,6 +4428,23 @@
       "bluray"
     ],
     "loggedDate": "2026-04-22",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8C7",
+    "filmTitle": "Mockbuster",
+    "filmYear": 2025,
+    "watchedDate": "2026-04-21",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8C7",
+    "title": "Mockbuster",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
     "source": "archive"
   },
   {
@@ -5098,6 +5224,23 @@
     "source": "archive"
   },
   {
+    "guid": "archive-hpX8BX",
+    "filmTitle": "Bugonia",
+    "filmYear": 2025,
+    "watchedDate": "2026-02-20",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8BX",
+    "title": "Bugonia",
+    "reviewText": "",
+    "tags": [
+      "googleplay"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
     "guid": "archive-ddz7lL",
     "filmTitle": "Omni Loop",
     "filmYear": 2024,
@@ -5249,6 +5392,23 @@
       "mubi"
     ],
     "loggedDate": "2026-02-08",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8BN",
+    "filmTitle": "Groundhog Day",
+    "filmYear": 1993,
+    "watchedDate": "2026-02-07",
+    "memberRating": null,
+    "rewatch": true,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8BN",
+    "title": "Groundhog Day",
+    "reviewText": "",
+    "tags": [
+      "appletv"
+    ],
+    "loggedDate": "2026-11-21",
     "source": "archive"
   },
   {
@@ -8211,7 +8371,7 @@
     "tmdbId": null,
     "link": "https://boxd.it/aGFd1V",
     "title": "Sunshine",
-    "reviewText": "i fell in love with this movie at the viewing of mercury. watching celestial events is a human activity that spans all boundaries and biases.\r\n\r\nthis movie broke me at Kaneda's death, subsumed by the sun, hearing a final question, \"What do you see?\" the weight of that moment and the time allowed for it.... this is filmmaking as storytelling. \r\n\r\nwhere it absolutely hooked me was the boarding of <i>Icarus I</i> and the slow build-up to the terrifying affirmation: \"Five crew members.\" the horror bend here loses people, but it really worked for me the first time and i've come to embrace it. \r\n\r\nthe characters are well-written, and the cinematography makes me eyeballs feel good.\r\n\r\nwatched with lolo and gibby.",
+    "reviewText": "i fell in love with this movie at the viewing of mercury. watching celestial events is a human activity that spans all boundaries and biases.\r\n\r\nthis movie broke me at Kaneda's death, subsumed by the sun, hearing a final question, \"What do you see?\" the weight of that moment and the time allowed for it.... this is filmmaking as storytelling. \r\n\r\nwhere it absolutely hooked me was the boarding of <i>Icarus I</i> and the slow build-up to the terrifying affirmation: \"Five crew members.\" the horror bend here loses people, but it really worked for me the first time and i've come to embrace it. perhaps it helps that i have already witnessed other, comparatively more meditative filmmaking from Alex Garland and Danny Boyle like <em>Ex Machina/Devs</em> and <em>28 Years Later</em>. i guess i view the boogeyman, discount freddy kreuger act as a precursor to the way both filmmakers have learned to weave action into their stories without detracting from other, thought-provoking elements.\r\n\r\nthe characters are well-written, and the cinematography makes me eyeballs feel good.\r\n\r\nwatched with lolo and gibby.",
     "tags": [
       "garbage",
       "lolo"
@@ -10781,6 +10941,23 @@
     "source": "archive"
   },
   {
+    "guid": "archive-hpX8Bt",
+    "filmTitle": "Sinners",
+    "filmYear": 2025,
+    "watchedDate": "2025-04-27",
+    "memberRating": null,
+    "rewatch": true,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8Bt",
+    "title": "Sinners",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
     "guid": "archive-9x3m5H",
     "filmTitle": "Saltburn",
     "filmYear": 2023,
@@ -12728,6 +12905,24 @@
       "in theaters"
     ],
     "loggedDate": "2025-01-30",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8Bj",
+    "filmTitle": "The Brutalist",
+    "filmYear": 2024,
+    "watchedDate": "2025-01-27",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8Bj",
+    "title": "The Brutalist",
+    "reviewText": "",
+    "tags": [
+      "in theaters",
+      "imax"
+    ],
+    "loggedDate": "2026-11-21",
     "source": "archive"
   },
   {
@@ -16908,6 +17103,23 @@
     "source": "archive"
   },
   {
+    "guid": "archive-hpX8B9",
+    "filmTitle": "Trap",
+    "filmYear": 2024,
+    "watchedDate": "2024-08-04",
+    "memberRating": null,
+    "rewatch": true,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8B9",
+    "title": "Trap",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
     "guid": "archive-71xugT",
     "filmTitle": "Dogleg",
     "filmYear": 2023,
@@ -17873,7 +18085,7 @@
   {
     "guid": "archive-6DNzun",
     "filmTitle": "The F-Word",
-    "filmYear": null,
+    "filmYear": 2022,
     "watchedDate": "2024-06-08",
     "memberRating": 4.0,
     "rewatch": false,
@@ -21937,14 +22149,14 @@
   },
   {
     "guid": "archive-5ExGtF",
-    "filmTitle": "Fannie Lou Hamer’s America",
+    "filmTitle": "Fannie Lou Hamer's America",
     "filmYear": 2022,
     "watchedDate": "2024-01-21",
     "memberRating": 4.5,
     "rewatch": false,
     "tmdbId": null,
     "link": "https://boxd.it/5ExGtF",
-    "title": "Fannie Lou Hamer’s America",
+    "title": "Fannie Lou Hamer's America",
     "reviewText": "Thanks to the Mississippi Film Office, Mississippi Humanities Council, and the Two Mississippi Museums for screening this.",
     "tags": [
       "jxnfilmclub"
@@ -33066,6 +33278,23 @@
     "source": "archive"
   },
   {
+    "guid": "archive-hpX8AP",
+    "filmTitle": "Monty Python and the Holy Grail",
+    "filmYear": 1975,
+    "watchedDate": "2022-09-13",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8AP",
+    "title": "Monty Python and the Holy Grail",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
     "guid": "archive-3dN5fp",
     "filmTitle": "Moonfall",
     "filmYear": 2022,
@@ -33085,7 +33314,7 @@
   {
     "guid": "archive-3djmt9",
     "filmTitle": "War and Peace",
-    "filmYear": 1968,
+    "filmYear": 1965,
     "watchedDate": "2022-09-10",
     "memberRating": 5.0,
     "rewatch": false,
@@ -43581,6 +43810,23 @@
     "source": "archive"
   },
   {
+    "guid": "archive-hpX8AF",
+    "filmTitle": "The Pervert's Guide to Ideology",
+    "filmYear": 2012,
+    "watchedDate": "2021-02-13",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8AF",
+    "title": "The Pervert's Guide to Ideology",
+    "reviewText": "",
+    "tags": [
+      "appletv"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
     "guid": "archive-1EKRgV",
     "filmTitle": "Resolution",
     "filmYear": 2012,
@@ -43957,6 +44203,23 @@
     "source": "archive"
   },
   {
+    "guid": "archive-hpX8Av",
+    "filmTitle": "Mother of George",
+    "filmYear": 2013,
+    "watchedDate": "2021-01-22",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8Av",
+    "title": "Mother of George",
+    "reviewText": "",
+    "tags": [
+      "primevideo"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
     "guid": "archive-1BrUaL",
     "filmTitle": "The Lovebirds",
     "filmYear": 2020,
@@ -44241,6 +44504,23 @@
     "reviewText": "This is special. A little slice of heaven on earth.",
     "tags": [],
     "loggedDate": "2021-01-10",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8Al",
+    "filmTitle": "Hereditary",
+    "filmYear": 2018,
+    "watchedDate": "2021-01-09",
+    "memberRating": null,
+    "rewatch": true,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8Al",
+    "title": "Hereditary",
+    "reviewText": "",
+    "tags": [
+      "appletv"
+    ],
+    "loggedDate": "2026-11-21",
     "source": "archive"
   },
   {
@@ -45945,6 +46225,23 @@
     "source": "archive"
   },
   {
+    "guid": "archive-hpX8Ab",
+    "filmTitle": "Midsommar",
+    "filmYear": 2019,
+    "watchedDate": "2019-12-24",
+    "memberRating": null,
+    "rewatch": true,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8Ab",
+    "title": "Midsommar",
+    "reviewText": "",
+    "tags": [
+      "appletv"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
     "guid": "archive-1HleWb",
     "filmTitle": "Regulation",
     "filmYear": 2019,
@@ -45959,6 +46256,23 @@
       "dust"
     ],
     "loggedDate": "2021-03-03",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8zR",
+    "filmTitle": "Star Wars: The Rise of Skywalker",
+    "filmYear": 2019,
+    "watchedDate": "2019-12-19",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8zR",
+    "title": "Star Wars: The Rise of Skywalker",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
     "source": "archive"
   },
   {
@@ -45979,6 +46293,23 @@
     "source": "archive"
   },
   {
+    "guid": "archive-hpX8zH",
+    "filmTitle": "Frozen II",
+    "filmYear": 2019,
+    "watchedDate": "2019-11-25",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8zH",
+    "title": "Frozen II",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
     "guid": "archive-1Hlewx",
     "filmTitle": "World Builder",
     "filmYear": 2007,
@@ -45993,6 +46324,23 @@
       "dust"
     ],
     "loggedDate": "2021-03-03",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8zx",
+    "filmTitle": "Joker",
+    "filmYear": 2019,
+    "watchedDate": "2019-10-03",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8zx",
+    "title": "Joker",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
     "source": "archive"
   },
   {
@@ -46026,6 +46374,23 @@
     "source": "archive"
   },
   {
+    "guid": "archive-hpX8zn",
+    "filmTitle": "Toy Story 4",
+    "filmYear": 2019,
+    "watchedDate": "2019-06-22",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8zn",
+    "title": "Toy Story 4",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
     "guid": "archive-1Hl6fX",
     "filmTitle": "After Her",
     "filmYear": 2018,
@@ -46040,6 +46405,108 @@
       "dust"
     ],
     "loggedDate": "2021-03-03",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8zd",
+    "filmTitle": "Godzilla: King of the Monsters",
+    "filmYear": 2019,
+    "watchedDate": "2019-06-11",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8zd",
+    "title": "Godzilla: King of the Monsters",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8z3",
+    "filmTitle": "Aladdin",
+    "filmYear": 2019,
+    "watchedDate": "2019-06-02",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8z3",
+    "title": "Aladdin",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8yT",
+    "filmTitle": "Avengers: Endgame",
+    "filmYear": 2019,
+    "watchedDate": "2019-04-27",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8yT",
+    "title": "Avengers: Endgame",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8yJ",
+    "filmTitle": "Annihilation",
+    "filmYear": 2018,
+    "watchedDate": "2018-03-11",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8yJ",
+    "title": "Annihilation",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8yz",
+    "filmTitle": "Black Panther",
+    "filmYear": 2018,
+    "watchedDate": "2018-02-18",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8yz",
+    "title": "Black Panther",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8yp",
+    "filmTitle": "Star Wars: The Last Jedi",
+    "filmYear": 2017,
+    "watchedDate": "2017-12-14",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8yp",
+    "title": "Star Wars: The Last Jedi",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
     "source": "archive"
   },
   {
@@ -46074,6 +46541,505 @@
       "in theaters"
     ],
     "loggedDate": "2019-08-06",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8yf",
+    "filmTitle": "Moonlight",
+    "filmYear": 2016,
+    "watchedDate": "2017-02-25",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8yf",
+    "title": "Moonlight",
+    "reviewText": "",
+    "tags": [
+      "googleplay"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8y5",
+    "filmTitle": "Star Wars: The Force Awakens",
+    "filmYear": 2015,
+    "watchedDate": "2015-12-17",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8y5",
+    "title": "Star Wars: The Force Awakens",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8xV",
+    "filmTitle": "Birdman or (The Unexpected Virtue of Ignorance)",
+    "filmYear": 2014,
+    "watchedDate": "2015-04-30",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8xV",
+    "title": "Birdman or (The Unexpected Virtue of Ignorance)",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8xr",
+    "filmTitle": "The Hobbit: The Desolation of Smaug",
+    "filmYear": 2013,
+    "watchedDate": "2013-12-29",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8xr",
+    "title": "The Hobbit: The Desolation of Smaug",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8xh",
+    "filmTitle": "The Hunger Games: Catching Fire",
+    "filmYear": 2013,
+    "watchedDate": "2013-11-21",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8xh",
+    "title": "The Hunger Games: Catching Fire",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8x7",
+    "filmTitle": "Due Date",
+    "filmYear": 2010,
+    "watchedDate": "2011-05-30",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8x7",
+    "title": "Due Date",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8wX",
+    "filmTitle": "Devil",
+    "filmYear": 2010,
+    "watchedDate": "2010-09-19",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8wX",
+    "title": "Devil",
+    "reviewText": "",
+    "tags": [
+      "in theaters"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8wN",
+    "filmTitle": "Shutter Island",
+    "filmYear": 2010,
+    "watchedDate": "2010-06-12",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8wN",
+    "title": "Shutter Island",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8wD",
+    "filmTitle": "Public Enemies",
+    "filmYear": 2009,
+    "watchedDate": "2010-06-05",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8wD",
+    "title": "Public Enemies",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8wt",
+    "filmTitle": "The Curious Case of Benjamin Button",
+    "filmYear": 2008,
+    "watchedDate": "2010-04-10",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8wt",
+    "title": "The Curious Case of Benjamin Button",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "netflix"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8wj",
+    "filmTitle": "(500) Days of Summer",
+    "filmYear": 2009,
+    "watchedDate": "2010-04-06",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8wj",
+    "title": "(500) Days of Summer",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "netflix"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8w9",
+    "filmTitle": "Snatch",
+    "filmYear": 2000,
+    "watchedDate": "2009-06-19",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8w9",
+    "title": "Snatch",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8vP",
+    "filmTitle": "Traitor",
+    "filmYear": 2008,
+    "watchedDate": "2009-04-14",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8vP",
+    "title": "Traitor",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8vF",
+    "filmTitle": "Mongol: The Rise of Genghis Khan",
+    "filmYear": 2007,
+    "watchedDate": "2009-03-27",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8vF",
+    "title": "Mongol: The Rise of Genghis Khan",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8vl",
+    "filmTitle": "Flawless",
+    "filmYear": 2007,
+    "watchedDate": "2009-03-07",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8vl",
+    "title": "Flawless",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8v1",
+    "filmTitle": "Black Hawk Down",
+    "filmYear": 2001,
+    "watchedDate": "2009-03-06",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8v1",
+    "title": "Black Hawk Down",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8uR",
+    "filmTitle": "Body of Lies",
+    "filmYear": 2008,
+    "watchedDate": "2009-02-26",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8uR",
+    "title": "Body of Lies",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8uH",
+    "filmTitle": "The Happening",
+    "filmYear": 2008,
+    "watchedDate": "2009-02-06",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8uH",
+    "title": "The Happening",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8un",
+    "filmTitle": "88 Minutes",
+    "filmYear": 2007,
+    "watchedDate": "2009-01-31",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8un",
+    "title": "88 Minutes",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8u3",
+    "filmTitle": "Vantage Point",
+    "filmYear": 2008,
+    "watchedDate": "2008-07-31",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8u3",
+    "title": "Vantage Point",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8ud",
+    "filmTitle": "Ratatouille",
+    "filmYear": 2007,
+    "watchedDate": "2008-07-31",
+    "memberRating": null,
+    "rewatch": true,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8ud",
+    "title": "Ratatouille",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8tJ",
+    "filmTitle": "3:10 to Yuma",
+    "filmYear": 2007,
+    "watchedDate": "2008-07-30",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8tJ",
+    "title": "3:10 to Yuma",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8tf",
+    "filmTitle": "Hitman",
+    "filmYear": 2007,
+    "watchedDate": "2008-07-29",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8tf",
+    "title": "Hitman",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8sV",
+    "filmTitle": "Ratatouille",
+    "filmYear": 2007,
+    "watchedDate": "2008-07-05",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8sV",
+    "title": "Ratatouille",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8sL",
+    "filmTitle": "Sweeney Todd: The Demon Barber of Fleet Street",
+    "filmYear": 2007,
+    "watchedDate": "2008-07-03",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8sL",
+    "title": "Sweeney Todd: The Demon Barber of Fleet Street",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8sr",
+    "filmTitle": "Macbeth",
+    "filmYear": 2006,
+    "watchedDate": "2008-06-27",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8sr",
+    "title": "Macbeth",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8sh",
+    "filmTitle": "Dan in Real Life",
+    "filmYear": 2007,
+    "watchedDate": "2008-06-25",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8sh",
+    "title": "Dan in Real Life",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
+    "source": "archive"
+  },
+  {
+    "guid": "archive-hpX8s7",
+    "filmTitle": "The Prestige",
+    "filmYear": 2006,
+    "watchedDate": "2007-05-05",
+    "memberRating": null,
+    "rewatch": false,
+    "tmdbId": null,
+    "link": "https://boxd.it/hpX8s7",
+    "title": "The Prestige",
+    "reviewText": "",
+    "tags": [
+      "dvd",
+      "redbox"
+    ],
+    "loggedDate": "2026-11-21",
     "source": "archive"
   }
 ]
