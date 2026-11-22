@@ -9,9 +9,11 @@ change when you re-export:
 
 Inputs
 ------
-data/network/*.json
+data/network/**/*.json
     Exports from letterboxd-network-export.user.js (private repo
-    michaellamb-userscripts)
+    michaellamb-userscripts), searched recursively, so files kept in a
+    subfolder (data/network/network-raw/) and ones scripts/network_receiver.py
+    writes at the top level are read together
     (schema "letterboxd-network-export/2", or /1 from before 2026-11-03;
     only each person's `handle` is read either way). For each (owner, list)
     pair the newest export by `exportedAt` is used. These files hold real
@@ -58,15 +60,19 @@ def norm(handle):
 
 
 def load_exports(export_dir):
-    """Newest export per (owner, list), keyed by that tuple."""
+    """Newest export per (owner, list), keyed by that tuple.
+
+    Recursive: subfolders of export_dir are searched too, and `exportedAt`
+    alone decides which copy of a list wins, wherever the file sits.
+    """
     newest = {}
-    for path in sorted(Path(export_dir).glob('*.json')):
+    for path in sorted(Path(export_dir).rglob('*.json')):
         try:
             data = json.loads(path.read_text())
         except (OSError, ValueError) as e:
             print(f'skip {path.name}: {e}', file=sys.stderr)
             continue
-        if data.get('schema') not in SCHEMAS:
+        if not isinstance(data, dict) or data.get('schema') not in SCHEMAS:
             continue
         key = (norm(data.get('owner')), data.get('list'))
         if key not in newest or data.get('exportedAt', '') > newest[key].get('exportedAt', ''):

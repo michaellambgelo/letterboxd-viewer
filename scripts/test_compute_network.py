@@ -144,3 +144,18 @@ def test_someone_elses_following_list_points_outward():
 def test_missing_list_is_an_error():
     with pytest.raises(SystemExit):
         cn.build({('michaellamb', 'followers'): export('michaellamb', 'followers', ['a'])}, set())
+
+
+def test_exports_in_subfolders_are_found_and_newest_still_wins(tmp_path):
+    # Exports kept in a subfolder and ones the receiver writes at the top
+    # level are read together; exportedAt decides, not where the file sits.
+    sub = tmp_path / 'network-raw'
+    sub.mkdir()
+    write(sub, 'followers.json', export('michaellamb', 'followers', ['a'], exported='2026-11-01T00:00:00Z'))
+    write(sub, 'following.json', export('michaellamb', 'following', ['a', 'b'], exported='2026-11-01T00:00:00Z'))
+    write(tmp_path, 'followers-new.json', export('michaellamb', 'followers', ['a', 'c'], exported='2026-11-05T00:00:00Z'))
+    write(tmp_path, 'not-an-export.json', ['just', 'a', 'list'])
+    exports = cn.load_exports(tmp_path)
+    assert set(exports) == {('michaellamb', 'followers'), ('michaellamb', 'following')}
+    assert len(exports[('michaellamb', 'followers')]['people']) == 2
+    assert len(exports[('michaellamb', 'following')]['people']) == 2
