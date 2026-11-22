@@ -41,6 +41,14 @@ preview_id = "432dcadaad684af89ddcef6577393cef"
 ACCESS_TEAM_DOMAIN = "michaellamb.cloudflareaccess.com"
 ACCESS_AUD = "5f3a9d86e42cb9858ab043e674a988347eac7a9860998e5a28f2bb7bf0677d80"
 
+# The admin's Pipeline and Diary tags tabs read and write this repo through the
+# GitHub API. The token itself is a secret, never a var:
+#   npx wrangler secret put GITHUB_TOKEN
+# Fine-grained token, this one repository only, with Contents: read/write and
+# Actions: read/write. Without it those tabs are read-only.
+GITHUB_REPO = "michaellambgelo/letterboxd-viewer"
+GITHUB_BRANCH = "main"
+
 # Custom domain so the Access application has a hostname to attach to.
 [[routes]]
 pattern = "rolodex.michaellamb.dev"

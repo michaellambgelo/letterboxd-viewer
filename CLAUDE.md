@@ -185,6 +185,33 @@ handles only). If a page fails it exports what it has, marked
 3. `python3 scripts/compute_network.py`, then commit `data/network.json` only.
    Re-run it on its own to pick up new club members.
 
+**Receiver (`scripts/network_receiver.py`, local only):** `python3
+scripts/network_receiver.py` serves `http://127.0.0.1:8791/`. Since 1.4.0 the
+export userscript POSTs each export there (`POST /export`) instead of
+downloading it, falling back to the download if the receiver isn't running,
+refuses, or takes over 3 s. The receiver rebuilds the export from known fields
+(each person keeps `handle` only), writes it to `data/network/`, re-runs
+`compute_network.build()` in-process and rewrites `data/network.json`; a graph
+only exists once both my followers and following lists are on disk. Its page
+shows HEAD's counts beside the working tree's (nodes reshuffle every run, so
+the counts are the real diff), lists the exports on disk, and has Recompute and
+a two-step Commit that runs `git commit -- data/network.json` — that path only,
+after checking the file still carries nothing but the anonymous graph. It never
+pushes, pulls or rebases, never contacts Letterboxd, and never logs a handle.
+Hardening, because any open web page can reach 127.0.0.1: `Host` must be
+`127.0.0.1:<port>` or `localhost:<port>` (DNS rebinding); every POST needs
+`X-LB-Network: 1`; no CORS preflight is ever approved, so no page can send that
+header; `Origin`, when present, must be the receiver's own or a
+browser-extension origin, which is how `GM_xmlhttpRequest` arrives. The port,
+header and reply shape are shared with the userscript, so change both
+together. `load_exports` is recursive, so exports kept in
+`data/network/network-raw/` and ones the receiver writes at the top level are
+read together; newest `exportedAt` per (owner, list) wins. An **incomplete**
+export is refused when a complete one for the same list is already on disk (it
+would win as the newest and shrink the graph); the userscript then downloads it
+instead. Tests: `scripts/test_network_receiver.py`. **This is deliberately not a Worker admin
+tab:** uploading exports would put real handles on Cloudflare.
+
 **JXN tags** come from `../jxnfilmclub/data/members.json` (`--members` to
 override), matched case-insensitively on the Letterboxd handle. **Only the
 handle is read**, and only to set a node's `jxn` flag: no handle, member
@@ -232,7 +259,8 @@ already-published `data/viewing_history.json` directly, so there's no pipeline
 step and nothing to regenerate. New tags show up as soon as the cron updates
 the history.
 
-- **Categories** come from `data/tag_categories.json`, **hand-maintained**:
+- **Categories** come from `data/tag_categories.json`, **hand-maintained**
+  (or filed from the Worker admin's Diary tags tab; see **Rolodex → Admin**):
   ordered `categories[]` of `{ id, label, icon, tags[] }` (Streaming service,
   Person, In theaters, MoviePass, IMAX). Any tag no category lists falls into a
   generated **Other** group (collapsed by default), so a new tag never vanishes;
@@ -418,7 +446,8 @@ made `boxd-card` a Chrome extension.) Everything must be fetched server-side.
 - **KV keys:** `rolodex:v1` is the whole curated list in a single key, so
   `GET /rolodex` is one read. (Contrast `now-store`, which is key-per-entry only
   because it needs per-key TTLs.) `snapshot:<user>` and `avatar:<user>` are
-  derived caches, safe to delete.
+  derived caches, safe to delete. `rolodex:prev` is the pre-import
+  copy of the list (see **Admin**).
 - **Display order is derived, never stored.** `readProfiles()` sorts by first
   name (`byFirstName`, `Intl.Collator` — case- and accent-insensitive, tie-broken
   on full label then handle) on every read, so the public page and the admin list
@@ -435,9 +464,78 @@ made `boxd-card` a Chrome extension.) Everything must be fetched server-side.
   verifies the `Cf-Access-Jwt-Assertion` signature, so a missing Access app fails
   closed. Local dev uses `npm run dev`, which passes `ADMIN_DEV_BYPASS` on the
   command line — never committed as a var.
+- **Admin (`/admin`, markup + browser script in `worker/admin-page.js`)** has
+  four tabs over `/admin/api/*`:
+  - **Profiles**: the original add/edit/remove form.
+  - **Feed health**: one row per member from `snapshot:<user>` alone (it is only
+    written by a successful fetch, so its `fetchedAt` is "last time this feed
+    worked", and it already carries the history summary): one KV read per
+    member, no Letterboxd requests. `stale` = no success in 48h
+    (`STALE_AFTER_MS`), not 24h: the cron slot is "index in the sorted list mod
+    8", so any add/remove/rename shifts slots and a member can legitimately go
+    past a day unread. Per-member **Refresh** (bypasses the feed cache),
+    **Clear** (cache + snapshot + avatar, never history), **Run current cron
+    slice** (`refreshSlice`, the same function `scheduled` calls) and **Purge
+    /stats/live cache**. `caches.default` is per data centre, so cache purges
+    only reach the colo that answered.
+  - **History** (dialog from either list): view, download, or reset a member's
+    `history:<user>`. Reset reseeds from the current feed and **skips the KV
+    read instead of delete-then-read**: KV is eventually consistent, so a read
+    straight after a delete can return the old history and merge it back.
+  - **Backup & bulk**: download `rolodex:v1` as JSON
+    (`letterboxd-rolodex-backup/1`), restore it (`add` / `merge` / `replace`),
+    or paste handles to bulk add. Imports are **dry-run by default**: the API
+    writes only on `dryRun: false`, and the UI shows the diff first. Every item
+    goes through `normalizeUsername` + `sanitizeFields`, like the form.
+    `replace` removes everyone not in the file **and deletes their history**
+    (same delete-on-removal bound as removing one profile), and refuses to
+    leave the list empty. The list as it was before the last import is kept in
+    `rolodex:prev` for a one-step undo; that holds the list only, so deleted
+    histories do not come back, and anyone an undo takes off the list loses
+    their derived keys too (no history is ever left for someone not on the
+    list). The backup doesn't include histories either.
+  - **Rolodex tags**: rename a tag across every profile; renaming onto an
+    existing tag merges, an empty target removes. Matching is exact.
+  - **Pipeline** and **Diary tags** are the Worker's only path into git, via
+    the GitHub API for `GITHUB_REPO` with the **`GITHUB_TOKEN` secret**
+    (fine-grained: this repo only, Contents + Actions read/write; `npx wrangler
+    secret put GITHUB_TOKEN` from `worker/`). Without it every write answers
+    503. Reads are attempted unauthenticated, which is enough for `npm run dev`
+    (public repo) but not something to rely on in production: those calls
+    leave from shared Cloudflare IPs and can be rate-limited, so set the token. A GitHub 401/403 is surfaced as a 502, never as the Worker's own.
+    - **Pipeline**: data-cron health, last deploy, export age, RSS-only entry
+      count, watchlist snapshot, and whether `rewatches.json` still matches
+      `stats.json` (the "goes stale silently" case). Cron health is judged on
+      the **last success** (late after 13h), not the last run: the data
+      workflow pushes without pulling, so an API commit landing mid-run fails
+      that one run and the next recovers. "Run now" dispatches the data
+      workflow. **Watchlist upload** commits a `watchlist-<user>-…-utc.csv` to
+      `data/archive/` (dry-run first; name, header and rows validated) and then
+      dispatches the pipeline, because the commit alone recomputes nothing. It
+      refuses a file whose stamp isn't newer than the current snapshot — the
+      loader would ignore it — and never overwrites an existing path.
+    - **Diary tags**: files tags under the categories `data/tag_categories.json`
+      already has. It only moves tags: adding, renaming or reordering a category
+      is still a hand edit. The write is conditional on the sha the page loaded,
+      and `formatCategories()` reproduces the file's hand-kept layout byte for
+      byte (a test pins that against the committed file), so a commit's diff is
+      just the tags that moved. Counts come from `viewing_history.json`, not
+      `stats.json`'s `tagCloud`, which is truncated to the top 80.
+  - Mutating `/admin` requests the browser labels cross-site (`Sec-Fetch-Site`)
+    are refused, on top of Access; requests without the header (curl) pass.
+  - Destructive buttons use an in-page two-step confirm (`armed()`), never
+    `window.confirm()`.
+  - **The browser script is a real function serialized with `toString()`**, so
+    it's syntax-checked and regexes aren't double-escaped. wrangler's bundler
+    wraps inner functions in `__name(...)`, which doesn't exist in a browser:
+    `adminScript()` emits a one-line shim first. Node tests can't see this
+    (they run unbundled) — after touching it, check `/admin` under `npm run dev`.
 - `worker/SETUP.md` is the one-time runbook (KV, deploy, Access, verification).
 - `worker/test.mjs` — `npm test`, no dependencies. Covers the regex feed parser
-  against a fixture plus a smoke test against the committed `data/rss.xml`.
+  against a fixture plus a smoke test against the committed `data/rss.xml`. The
+  admin endpoints run against a fake KV with `caches` and `fetch` stubbed, so
+  nothing in the suite reaches letterboxd.com. The fetch stub **throws on any
+  URL it wasn't given**, GitHub included, so a test can't write to the real repo.
 - `scripts/test_extract_history.py` — `python -m pytest scripts/`. Covers
   `extract_history.py`'s parsing and the archive + RSS + carry-forward merge
   against a tmp data dir. Both suites run in `.github/workflows/tests.yml`.

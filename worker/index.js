@@ -16,6 +16,9 @@
  *   stats:live:v1       last successful /stats/live payload, no TTL (serve-stale)
  *   history:<user>      { since, entries[] } every diary entry seen in that
  *                       member's RSS since tracking began (see mergeHistory)
+ *   rolodex:prev        { savedAt, profiles } the curated list as it was before
+ *                       the last admin import — a one-step undo. Holds the list
+ *                       only: histories deleted by an import or an undo are gone.
  *
  * Auth: unlike the sibling `now-store` Worker — where Cloudflare Access gates
  * the entire hostname — this host is deliberately MIXED. `/rolodex` must stay
@@ -36,6 +39,33 @@
  *   PUT    /admin/api/profiles/{username}        Access
  *   DELETE /admin/api/profiles/{username}        Access
  *   POST   /admin/api/preview                    Access — { username } uncached probe
+ *   GET    /admin/api/health                     Access — per-member feed health
+ *   GET    /admin/api/export                     Access — curated list as a backup file
+ *   POST   /admin/api/import                     Access — { mode, profiles, dryRun? }
+ *   GET    /admin/api/import/prev                Access — what the undo would restore
+ *   POST   /admin/api/import/undo                Access — swap rolodex:v1 and rolodex:prev
+ *   POST   /admin/api/profiles/{username}/refresh  Access — bypass the feed cache
+ *   POST   /admin/api/profiles/{username}/clear    Access — { what?: [cache|snapshot|avatar] }
+ *   GET    /admin/api/profiles/{username}/history  Access — stored history (?download=1)
+ *   DELETE /admin/api/profiles/{username}/history  Access — reset, then reseed from the feed
+ *   POST   /admin/api/cron/run                   Access — { slot?, force? } run a cron slice now
+ *   POST   /admin/api/stats-live/purge           Access — drop the /stats/live cache entry
+ *   GET    /admin/api/tags                       Access — [{ tag, count }]
+ *   POST   /admin/api/tags                       Access — { from, to, dryRun? } rename/merge/remove
+ *   GET    /admin/api/pipeline                   Access — data cron, deploy and freshness report
+ *   POST   /admin/api/pipeline/run               Access — dispatch the data workflow
+ *   POST   /admin/api/pipeline/watchlist         Access — { filename, content, dryRun?, run? }
+ *   GET    /admin/api/tag-categories             Access — data/tag_categories.json + diary tag counts
+ *   PUT    /admin/api/tag-categories             Access — { sha, categories } commit new assignments
+ *
+ * The pipeline and tag-category routes are the Worker's only path into git.
+ * They talk to the GitHub API for GITHUB_REPO with the GITHUB_TOKEN secret (a
+ * fine-grained token: this one repo, Contents + Actions read/write). Reads work
+ * without it (the repo is public); every write refuses with 503 until it is set.
+ *
+ * Mutating /admin requests are refused when the browser reports them as
+ * cross-site (Sec-Fetch-Site), on top of Access. Requests without the header
+ * (curl, service tokens) are unaffected.
  *
  * Cron (every 3h): refreshes one eighth of the rolodex per run, so every
  * member's feed is read at least daily even when nobody visits. That keeps
@@ -43,7 +73,26 @@
  * window between visits.
  */
 
+import { renderAdminPage } from './admin-page.js';
+
 const ROLODEX_KEY = 'rolodex:v1';
+const PREV_KEY = 'rolodex:prev';
+const BACKUP_SCHEMA = 'letterboxd-rolodex-backup/1';
+
+const GITHUB_API = 'https://api.github.com';
+const DEFAULT_REPO = 'michaellambgelo/letterboxd-viewer';
+const DATA_WORKFLOW = 'download-data-and-assets.yml';
+const DEPLOY_WORKFLOW = 'deploy.yml';
+const CATEGORIES_PATH = 'data/tag_categories.json';
+// The data cron runs every 6h and GitHub starts scheduled runs late under
+// load. One failed run is also normal (an API commit landing mid-run makes its
+// push fail, and the next run recovers), so health is judged on how long ago
+// the last *success* was, with a full missed run of slack.
+const PIPELINE_LATE_MS = 13 * 3600 * 1000;
+const MAX_WATCHLIST_BYTES = 2 * 1024 * 1024;
+const WATCHLIST_HEADER = 'Date,Name,Year,Letterboxd URI';
+const MAX_DIARY_TAG_LEN = 80;
+const CATEGORY_WRAP = 100;
 
 const LAST_N = 4; // "Last Four Watched"
 const RSS_TTL = 900; // 15min per-profile feed cache
@@ -53,6 +102,14 @@ const CONCURRENCY = 6; // never fan 30 requests at Letterboxd at once
 const MAX_PROFILES = 200;
 const HISTORY_MAX = 1000; // entries kept per member (newest by watchedDate)
 const CRON_SLOTS = 8; // the rolodex is refreshed 1/8 per cron run (every 3h -> daily)
+const CRON_PERIOD_MS = 3 * 3600 * 1000;
+
+// Admin health panel. A member is normally read daily, but the cron slot is
+// "index in the sorted list mod 8", so adding, removing or renaming anyone
+// shifts slots and a member can legitimately go past 24h unread. 48h is the
+// point where a quiet snapshot means the feed is actually failing.
+const STALE_AFTER_MS = 48 * 3600 * 1000;
+const HISTORY_WARN_AT = Math.floor(HISTORY_MAX * 0.9);
 
 // /stats/live serves the dashboard owner's own feed — the live enrichment
 // layer on index.html. Same hard-coded single-user stance as the Python
@@ -508,11 +565,15 @@ function summarizeHistory(history, today) {
  * fetch, so an entry a lost write dropped comes back on the next fetch while
  * it's still in the ~50-item window, which the daily cron guarantees.
  */
-async function updateHistory(username, films, env, ctx) {
+async function updateHistory(username, films, env, ctx, { reset = false } = {}) {
   const key = `history:${username}`;
   const today = new Date().toISOString().slice(0, 10);
   try {
-    const existing = await env.ROLODEX.get(key, 'json');
+    // `reset` (admin only) seeds from this feed alone. It skips the read rather
+    // than deleting first and reading back: KV is eventually consistent, so a
+    // read straight after a delete can still return the old history and the
+    // merge would quietly write it back.
+    const existing = reset ? null : await env.ROLODEX.get(key, 'json');
     const { history, changed, summary } = mergeHistory(existing, films, today);
     if (changed) ctx.waitUntil(env.ROLODEX.put(key, JSON.stringify(history)));
     return summary;
@@ -525,9 +586,28 @@ async function updateHistory(username, films, env, ctx) {
 /** Which profiles a cron run refreshes: a fixed 1/CRON_SLOTS of the list,
  *  rotating with the run's 3-hour slot, so each member is read daily and no
  *  single run fetches more than ~1/8 of the rolodex. */
-function cronSlice(profiles, scheduledTime) {
-  const slot = Math.floor(scheduledTime / (3 * 3600 * 1000)) % CRON_SLOTS;
+function cronSlot(time) {
+  return Math.floor(time / CRON_PERIOD_MS) % CRON_SLOTS;
+}
+
+function cronSlice(profiles, scheduledTime, slot = cronSlot(scheduledTime)) {
   return profiles.filter((_, i) => i % CRON_SLOTS === slot);
+}
+
+/** When the cron will next reach `slot`: the first 3-hour boundary after `now`
+ *  whose slot matches. */
+function nextCronRun(slot, now) {
+  const period = Math.floor(now / CRON_PERIOD_MS) + 1;
+  const ahead = (slot - (period % CRON_SLOTS) + CRON_SLOTS) % CRON_SLOTS;
+  return (period + ahead) * CRON_PERIOD_MS;
+}
+
+function rssCacheKey(username) {
+  return new Request(`https://rolodex.internal/rss/${username}`);
+}
+
+function statsCacheKey() {
+  return new Request('https://rolodex.internal/stats-live');
 }
 
 /**
@@ -535,34 +615,38 @@ function cronSlice(profiles, scheduledTime) {
  * floor: if Letterboxd is unreachable or the feed stops parsing, the card keeps
  * showing the last known-good four and is flagged `stale` instead of vanishing.
  */
-async function loadWatches(username, env, ctx) {
-  const cacheKey = new Request(`https://rolodex.internal/rss/${username}`);
-  const cache = caches.default;
+/** Fetch a member's feed and store everything derived from it: history, the
+ *  per-colo cache entry and the KV snapshot. Throws when the feed can't be read. */
+async function fetchAndStore(username, env, ctx, { resetHistory = false } = {}) {
+  // The whole feed, not just four: every diary entry goes into history, and
+  // the card still gets only the newest LAST_N.
+  const { films: all, fetchedAt } = await fetchWatches(username, { limit: Infinity });
+  const summary = await updateHistory(username, all, env, ctx, { reset: resetHistory });
+  const payload = { films: all.slice(0, LAST_N), fetchedAt, history: summary };
+  ctx.waitUntil(
+    caches.default.put(
+      rssCacheKey(username),
+      new Response(JSON.stringify(payload), {
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': `max-age=${RSS_TTL}`,
+        },
+      })
+    )
+  );
+  ctx.waitUntil(env.ROLODEX.put(`snapshot:${username}`, JSON.stringify(payload)));
+  return payload;
+}
 
-  const hit = await cache.match(cacheKey);
+async function loadWatches(username, env, ctx) {
+  const hit = await caches.default.match(rssCacheKey(username));
   if (hit) {
     const payload = await hit.json();
     return { ...payload, stale: false };
   }
 
   try {
-    // The whole feed, not just four: every diary entry goes into history, and
-    // the card still gets only the newest LAST_N.
-    const { films: all, fetchedAt } = await fetchWatches(username, { limit: Infinity });
-    const summary = await updateHistory(username, all, env, ctx);
-    const payload = { films: all.slice(0, LAST_N), fetchedAt, history: summary };
-    ctx.waitUntil(
-      cache.put(
-        cacheKey,
-        new Response(JSON.stringify(payload), {
-          headers: {
-            'Content-Type': 'application/json',
-            'Cache-Control': `max-age=${RSS_TTL}`,
-          },
-        })
-      )
-    );
-    ctx.waitUntil(env.ROLODEX.put(`snapshot:${username}`, JSON.stringify(payload)));
+    const payload = await fetchAndStore(username, env, ctx);
     return { ...payload, stale: false };
   } catch (err) {
     console.error(`rolodex: feed failed for ${username}`, err);
@@ -744,7 +828,7 @@ function streamRolodex(request, env, ctx) {
  * last four, without the extended fields.
  */
 async function getStatsLive(request, env, ctx) {
-  const cacheKey = new Request('https://rolodex.internal/stats-live');
+  const cacheKey = statsCacheKey();
   const cache = caches.default;
 
   let payload;
@@ -870,11 +954,7 @@ async function deleteProfile(username, env) {
 
   await writeProfiles(env, remaining);
   // Drop the derived keys too, so re-adding someone starts clean.
-  await Promise.all([
-    env.ROLODEX.delete(`snapshot:${username}`),
-    env.ROLODEX.delete(`avatar:${username}`),
-    env.ROLODEX.delete(`history:${username}`),
-  ]);
+  await dropDerived(username, env);
   return new Response(null, { status: 204 });
 }
 
@@ -901,8 +981,870 @@ async function previewProfile(request, env, ctx) {
   }
 }
 
+/* -------------------------------------------------------------------------- */
+/* Admin API — health, backup, cache controls, history, tags                  */
+/* -------------------------------------------------------------------------- */
+
+async function readBody(request) {
+  try {
+    const body = await request.json();
+    return body && typeof body === 'object' && !Array.isArray(body) ? body : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Everything derived from a member's feed. `caches.default` is per data
+ *  centre, so the cache half only clears the colo that handled this request. */
+async function dropDerived(username, env, { history = true } = {}) {
+  await Promise.all([
+    env.ROLODEX.delete(`snapshot:${username}`),
+    env.ROLODEX.delete(`avatar:${username}`),
+    history ? env.ROLODEX.delete(`history:${username}`) : null,
+    caches.default.delete(rssCacheKey(username)),
+  ]);
+}
+
+/**
+ * One row of the health panel, from the curated entry and its KV snapshot
+ * alone. The snapshot is only written by a successful fetch, so its fetchedAt
+ * *is* "last time this feed worked", and it already carries the history
+ * summary — no second read per member.
+ */
+function healthRow(profile, index, snapshot, now) {
+  const fetchedAt = snapshot && typeof snapshot.fetchedAt === 'string' ? snapshot.fetchedAt : null;
+  const parsed = fetchedAt ? Date.parse(fetchedAt) : NaN;
+  const ageMs = Number.isNaN(parsed) ? null : Math.max(0, now - parsed);
+
+  let status = 'ok';
+  if (ageMs === null) status = 'never';
+  else if (ageMs > STALE_AFTER_MS) status = 'stale';
+
+  const films = snapshot && Array.isArray(snapshot.films) ? snapshot.films : [];
+  // Snapshots written before history existed have no summary.
+  const history = snapshot && snapshot.history ? snapshot.history : null;
+  const slot = index % CRON_SLOTS;
+
+  return {
+    username: profile.username,
+    displayName: displayLabel(profile),
+    status,
+    fetchedAt,
+    ageHours: ageMs === null ? null : Math.round(ageMs / 360000) / 10,
+    films: films.length,
+    latestWatched: films.length ? films[0].watchedDate || null : null,
+    history,
+    nearCap: Boolean(history && history.logged >= HISTORY_WARN_AT),
+    slot,
+    nextRefreshAt: new Date(nextCronRun(slot, now)).toISOString(),
+  };
+}
+
+async function getHealth(env) {
+  const now = Date.now();
+  const profiles = await readProfiles(env);
+  const rows = await mapWithLimit(profiles, 20, async (profile, index) => {
+    const snapshot = await env.ROLODEX.get(`snapshot:${profile.username}`, 'json').catch(() => null);
+    return healthRow(profile, index, snapshot, now);
+  });
+  const counts = { ok: 0, stale: 0, never: 0, nearCap: 0 };
+  for (const row of rows) {
+    counts[row.status] += 1;
+    if (row.nearCap) counts.nearCap += 1;
+  }
+  return json({
+    now: new Date(now).toISOString(),
+    staleAfterHours: STALE_AFTER_MS / 3600000,
+    historyCap: HISTORY_MAX,
+    currentSlot: cronSlot(now),
+    counts,
+    profiles: rows,
+  });
+}
+
+/** Shared by the cron and the admin "run now" button, so they can't drift. */
+async function refreshSlice(env, ctx, time, { slot, force = false } = {}) {
+  const profiles = await readProfiles(env);
+  const useSlot = slot === undefined || slot === null ? cronSlot(time) : slot;
+  const slice = cronSlice(profiles, time, useSlot);
+  const results = await mapWithLimit(slice, CONCURRENCY, async (p) => {
+    if (force) await caches.default.delete(rssCacheKey(p.username));
+    const watches = await loadWatches(p.username, env, ctx);
+    return { username: p.username, stale: Boolean(watches.stale) };
+  });
+  return {
+    slot: useSlot,
+    total: profiles.length,
+    refreshed: results.length,
+    failed: results.filter((r) => r.stale).map((r) => r.username),
+  };
+}
+
+async function runCronNow(request, env, ctx) {
+  const body = (await readBody(request)) || {};
+  let slot;
+  if (body.slot !== undefined && body.slot !== null) {
+    slot = Number(body.slot);
+    if (!Number.isInteger(slot) || slot < 0 || slot >= CRON_SLOTS) {
+      return json({ error: `slot must be 0-${CRON_SLOTS - 1}` }, 400);
+    }
+  }
+  return json(await refreshSlice(env, ctx, Date.now(), { slot, force: Boolean(body.force) }));
+}
+
+async function purgeStatsLive() {
+  const purged = await caches.default.delete(statsCacheKey());
+  return json({ purged });
+}
+
+async function findProfile(username, env) {
+  const profiles = await readProfiles(env);
+  const index = profiles.findIndex((p) => p.username === username);
+  return index === -1 ? null : { profile: profiles[index], index };
+}
+
+/** Bypass the feed cache for one member. `ok: false` means Letterboxd couldn't
+ *  be read just now — the public card keeps serving the snapshot. */
+async function refreshProfile(username, env, ctx) {
+  const found = await findProfile(username, env);
+  if (!found) return json({ error: 'not found' }, 404);
+  try {
+    const payload = await fetchAndStore(username, env, ctx);
+    return json({ ok: true, row: healthRow(found.profile, found.index, payload, Date.now()) });
+  } catch (err) {
+    console.error(`admin: refresh failed for ${username}`, err);
+    return json({ ok: false, error: `could not read letterboxd.com/${username}/rss/` });
+  }
+}
+
+const CLEARABLE = ['cache', 'snapshot', 'avatar'];
+
+async function clearProfile(username, request, env) {
+  if (!(await findProfile(username, env))) return json({ error: 'not found' }, 404);
+  const body = (await readBody(request)) || {};
+  const what = Array.isArray(body.what) && body.what.length ? body.what : CLEARABLE;
+  if (what.some((w) => !CLEARABLE.includes(w))) {
+    return json({ error: `what must be any of ${CLEARABLE.join(', ')}` }, 400);
+  }
+  await Promise.all([
+    what.includes('cache') ? caches.default.delete(rssCacheKey(username)) : null,
+    what.includes('snapshot') ? env.ROLODEX.delete(`snapshot:${username}`) : null,
+    what.includes('avatar') ? env.ROLODEX.delete(`avatar:${username}`) : null,
+  ]);
+  return json({ cleared: what });
+}
+
+async function getHistory(username, request, env) {
+  if (!(await findProfile(username, env))) return json({ error: 'not found' }, 404);
+  const stored = await env.ROLODEX.get(`history:${username}`, 'json');
+  const entries = stored && Array.isArray(stored.entries) ? stored.entries : [];
+  const body = {
+    username,
+    since: stored ? stored.since || null : null,
+    count: entries.length,
+    cap: HISTORY_MAX,
+    entries,
+  };
+  const download = new URL(request.url).searchParams.get('download');
+  return json(
+    body,
+    200,
+    download
+      ? { 'Content-Disposition': `attachment; filename="history-${username}.json"`, 'Cache-Control': 'no-store' }
+      : { 'Cache-Control': 'no-store' }
+  );
+}
+
+/** Throw a member's stored history away and start again from what the feed
+ *  shows now. `since` moves forward to the oldest entry still in the feed. */
+async function resetHistory(username, env, ctx) {
+  const found = await findProfile(username, env);
+  if (!found) return json({ error: 'not found' }, 404);
+  try {
+    const payload = await fetchAndStore(username, env, ctx, { resetHistory: true });
+    return json({ reset: true, reseeded: true, history: payload.history });
+  } catch (err) {
+    // Feed unreachable: still honour the reset. The next successful fetch seeds it.
+    console.error(`admin: history reseed failed for ${username}`, err);
+    await Promise.all([
+      env.ROLODEX.delete(`history:${username}`),
+      caches.default.delete(rssCacheKey(username)),
+    ]);
+    return json({ reset: true, reseeded: false, history: null });
+  }
+}
+
+function validIso(value, fallback) {
+  return typeof value === 'string' && !Number.isNaN(Date.parse(value)) ? value : fallback;
+}
+
+function sameFields(a, b) {
+  return (
+    (a.displayName || '') === b.displayName &&
+    (a.note || '') === b.note &&
+    JSON.stringify(a.tags || []) === JSON.stringify(b.tags)
+  );
+}
+
+/**
+ * Pure plan for an import; the caller writes it (or just shows it, on a dry
+ * run). `incoming` items are profile objects or bare handles.
+ *
+ *   add      only handles not already present are added; nothing else changes
+ *   merge    adds new handles and overwrites the fields of ones already present
+ *   replace  the file becomes the whole list; everyone else is removed
+ *
+ * Every item goes through the same normalizeUsername/sanitizeFields as the
+ * single-profile form, so a hand-edited backup can't smuggle in anything the
+ * form would refuse.
+ */
+function planImport(existing, incoming, mode, now) {
+  const byUser = new Map(existing.map((p) => [p.username, p]));
+  const next = new Map(mode === 'replace' ? [] : byUser);
+  const seen = new Set();
+  const added = [];
+  const updated = [];
+  const invalid = [];
+
+  incoming.forEach((raw, index) => {
+    const item = typeof raw === 'string' ? { username: raw } : raw;
+    const username =
+      item && typeof item === 'object' && !Array.isArray(item)
+        ? normalizeUsername(item.username)
+        : null;
+    if (!username) {
+      const shown = item && typeof item === 'object' ? item.username : raw;
+      invalid.push({ index, value: String(shown ?? '').slice(0, 60), reason: 'invalid username' });
+      return;
+    }
+    if (seen.has(username)) {
+      invalid.push({ index, value: username, reason: 'duplicate in file' });
+      return;
+    }
+    seen.add(username);
+
+    const old = byUser.get(username);
+    const fields = sanitizeFields(item);
+    if (!old) {
+      next.set(username, {
+        username,
+        ...fields,
+        addedAt: validIso(item.addedAt, now),
+        updatedAt: validIso(item.updatedAt, now),
+      });
+      added.push(username);
+    } else if (mode === 'add' || sameFields(old, fields)) {
+      next.set(username, old);
+    } else {
+      next.set(username, { ...old, ...fields, updatedAt: now });
+      updated.push(username);
+    }
+  });
+
+  const removed =
+    mode === 'replace' ? existing.filter((p) => !seen.has(p.username)).map((p) => p.username) : [];
+  const profiles = [...next.values()];
+
+  return {
+    profiles,
+    summary: {
+      mode,
+      before: existing.length,
+      count: profiles.length,
+      added,
+      updated,
+      removed,
+      invalid,
+    },
+  };
+}
+
+async function exportProfiles(env) {
+  const profiles = await readProfiles(env);
+  const exportedAt = new Date().toISOString();
+  return json({ schema: BACKUP_SCHEMA, exportedAt, count: profiles.length, profiles }, 200, {
+    'Content-Disposition': `attachment; filename="rolodex-backup-${exportedAt.slice(0, 10)}.json"`,
+    'Cache-Control': 'no-store',
+  });
+}
+
+async function importProfiles(request, env) {
+  const body = await readBody(request);
+  if (!body) return json({ error: 'invalid JSON body' }, 400);
+
+  const mode = body.mode;
+  if (!['add', 'merge', 'replace'].includes(mode)) {
+    return json({ error: 'mode must be add, merge or replace' }, 400);
+  }
+  if (!Array.isArray(body.profiles)) return json({ error: 'profiles must be an array' }, 400);
+  if (body.profiles.length > MAX_PROFILES * 5) return json({ error: 'too many entries' }, 400);
+
+  const existing = await readProfiles(env);
+  const now = new Date().toISOString();
+  const { profiles, summary } = planImport(existing, body.profiles, mode, now);
+  const dryRun = body.dryRun !== false; // writing must be asked for explicitly
+
+  if (profiles.length > MAX_PROFILES) {
+    return json({ error: `that would make ${profiles.length} profiles; the limit is ${MAX_PROFILES}`, ...summary }, 409);
+  }
+  // A replace with nothing valid in it would empty the rolodex. That is never
+  // what a restore means; delete profiles one by one if it really is.
+  if (mode === 'replace' && profiles.length === 0) {
+    return json({ error: 'replace would leave the rolodex empty; refusing', ...summary }, 409);
+  }
+
+  const changes = summary.added.length + summary.updated.length + summary.removed.length;
+  if (dryRun || changes === 0) return json({ dryRun, applied: false, ...summary });
+
+  await env.ROLODEX.put(PREV_KEY, JSON.stringify({ savedAt: now, profiles: existing }));
+  await writeProfiles(env, profiles);
+  // Same rule as deleting one profile: removal deletes the stored history too.
+  await mapWithLimit(summary.removed, CONCURRENCY, (username) => dropDerived(username, env));
+  return json({ dryRun: false, applied: true, ...summary });
+}
+
+async function getPrevious(env) {
+  const prev = await env.ROLODEX.get(PREV_KEY, 'json');
+  if (!prev || !Array.isArray(prev.profiles)) return json({ available: false });
+  return json({ available: true, savedAt: prev.savedAt || null, count: prev.profiles.length });
+}
+
+/**
+ * Swap the list with the one saved before the last import; running it twice
+ * puts the imported list back. Anyone the swap takes off the list loses their
+ * derived keys, history included, exactly as if they had been removed by hand
+ * — otherwise their history would sit in KV with no admin route able to reach
+ * it. So the lists round-trip, but histories never come back.
+ */
+async function undoImport(env) {
+  const prev = await env.ROLODEX.get(PREV_KEY, 'json');
+  if (!prev || !Array.isArray(prev.profiles)) return json({ error: 'nothing to undo' }, 404);
+  const current = await readProfiles(env);
+  const kept = new Set(prev.profiles.map((p) => p.username));
+  const removed = current.filter((p) => !kept.has(p.username)).map((p) => p.username);
+  await env.ROLODEX.put(PREV_KEY, JSON.stringify({ savedAt: new Date().toISOString(), profiles: current }));
+  await writeProfiles(env, prev.profiles);
+  await mapWithLimit(removed, CONCURRENCY, (username) => dropDerived(username, env));
+  return json({ restored: prev.profiles.length, replaced: current.length, removed });
+}
+
+function tagCounts(profiles) {
+  const counts = new Map();
+  for (const p of profiles) {
+    for (const tag of p.tags || []) counts.set(tag, (counts.get(tag) || 0) + 1);
+  }
+  return [...counts.entries()]
+    .map(([tag, count]) => ({ tag, count }))
+    .sort((a, b) => b.count - a.count || COLLATOR.compare(a.tag, b.tag));
+}
+
+/**
+ * Rename `from` on every profile that has it. Renaming onto a tag a profile
+ * already carries is a merge (the duplicate collapses, case-insensitively); an
+ * empty `to` removes the tag. `from` matches exactly, so two spellings of one
+ * tag can be merged into either.
+ */
+function renameTag(profiles, from, to, now) {
+  const target = String(to || '').trim().slice(0, MAX_TAG_LEN);
+  const changed = [];
+  const next = profiles.map((p) => {
+    const tags = p.tags || [];
+    if (!tags.includes(from)) return p;
+    const out = [];
+    for (const tag of tags) {
+      const value = tag === from ? target : tag;
+      if (value && !out.some((o) => o.toLowerCase() === value.toLowerCase())) out.push(value);
+    }
+    changed.push(p.username);
+    return { ...p, tags: out, updatedAt: now };
+  });
+  return { profiles: next, changed, to: target };
+}
+
+async function renameTagRequest(request, env) {
+  const body = await readBody(request);
+  if (!body) return json({ error: 'invalid JSON body' }, 400);
+  const from = typeof body.from === 'string' ? body.from : '';
+  if (!from) return json({ error: 'from is required' }, 400);
+
+  const existing = await readProfiles(env);
+  const { profiles, changed, to } = renameTag(existing, from, body.to, new Date().toISOString());
+  if (!changed.length) return json({ error: `no profile has the tag "${from}"` }, 404);
+  if (from === to) return json({ error: 'that is the same tag' }, 400);
+
+  const dryRun = Boolean(body.dryRun);
+  if (!dryRun) await writeProfiles(env, profiles);
+  return json({ dryRun, from, to, changed });
+}
+
+/* -------------------------------------------------------------------------- */
+/* GitHub — the Worker's only path into the repo                              */
+/* -------------------------------------------------------------------------- */
+
+class GitHubError extends Error {
+  constructor(status, message) {
+    super(message);
+    this.status = status;
+  }
+}
+
+const repoOf = (env) => env.GITHUB_REPO || DEFAULT_REPO;
+const branchOf = (env) => env.GITHUB_BRANCH || 'main';
+
+async function gh(env, path, { method = 'GET', body, raw = false } = {}) {
+  if (method !== 'GET' && !env.GITHUB_TOKEN) {
+    throw new GitHubError(503, 'GITHUB_TOKEN is not configured on the Worker, so it cannot write to GitHub');
+  }
+  const headers = {
+    Accept: raw ? 'application/vnd.github.raw+json' : 'application/vnd.github+json',
+    'User-Agent': UA,
+    'X-GitHub-Api-Version': '2022-11-28',
+  };
+  if (env.GITHUB_TOKEN) headers.Authorization = `Bearer ${env.GITHUB_TOKEN}`;
+  if (body !== undefined) headers['Content-Type'] = 'application/json';
+
+  const res = await fetch(`${GITHUB_API}/repos/${repoOf(env)}${path}`, {
+    method,
+    headers,
+    body: body === undefined ? undefined : JSON.stringify(body),
+  });
+  if (!res.ok) {
+    let message = `HTTP ${res.status}`;
+    try {
+      const detail = await res.json();
+      if (detail && detail.message) message = detail.message;
+    } catch {
+      // non-JSON error body
+    }
+    throw new GitHubError(res.status, message);
+  }
+  if (res.status === 204) return null;
+  return raw ? res.text() : res.json();
+}
+
+/** A file's text at the tip of the branch. The raw media type has no 1 MB
+ *  ceiling, which data/viewing_history.json is already past. */
+const ghFile = (env, path) => gh(env, `/contents/${path}?ref=${branchOf(env)}`, { raw: true });
+
+/** Upstream failures must never look like this Worker's own auth errors: a
+ *  GitHub 401/403 becomes a 502 that says what GitHub said. */
+function githubFailure(err) {
+  if (!(err instanceof GitHubError)) throw err;
+  if (err.status === 503) return json({ error: err.message }, 503);
+  if (err.status === 409 || err.status === 422) {
+    return json({ error: `GitHub refused the write: ${err.message}` }, 409);
+  }
+  return json({ error: `GitHub API ${err.status}: ${err.message}` }, 502);
+}
+
+// btoa/atob are Latin-1 only; film titles and tags are not.
+function toBase64(text) {
+  const bytes = new TextEncoder().encode(text);
+  let bin = '';
+  for (let i = 0; i < bytes.length; i += 0x8000) {
+    bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+  }
+  return btoa(bin);
+}
+
+function fromBase64(b64) {
+  const bin = atob(String(b64).replace(/\s+/g, ''));
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return new TextDecoder().decode(bytes);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Admin API — pipeline                                                       */
+/* -------------------------------------------------------------------------- */
+
+function runBrief(run) {
+  if (!run) return null;
+  return {
+    status: run.status,
+    conclusion: run.conclusion || null,
+    event: run.event || null,
+    createdAt: run.created_at,
+    url: run.html_url,
+  };
+}
+
+/**
+ * Pure summary of the data pipeline's state. `runs` are the data workflow's
+ * newest runs first, as the GitHub API returns them.
+ */
+function pipelineReport({ runs, deployRuns, stats, rewatches, rssOnly, dataCommit }, now) {
+  const list = Array.isArray(runs) ? runs : [];
+  const success = list.find((r) => r.conclusion === 'success');
+  const successAt = success ? Date.parse(success.created_at) : null;
+  const ageMs = successAt === null ? null : Math.max(0, now - successAt);
+
+  let cronStatus = 'ok';
+  if (successAt === null) cronStatus = 'never';
+  else if (ageMs > PIPELINE_LATE_MS) cronStatus = 'late';
+
+  const exportDate = (stats && stats.archiveExportDate) || null;
+  const exportAt = exportDate ? Date.parse(`${exportDate}T00:00:00Z`) : NaN;
+  const watchlist = (stats && stats.watchlist) || {};
+  const rewatchTotals = (rewatches && rewatches.totals) || {};
+
+  return {
+    cron: {
+      status: cronStatus,
+      lateAfterHours: PIPELINE_LATE_MS / 3600000,
+      lastSuccessAt: success ? success.created_at : null,
+      hoursSinceSuccess: ageMs === null ? null : Math.round(ageMs / 360000) / 10,
+      failedSinceSuccess: list.filter(
+        (r) => r.conclusion === 'failure' && (successAt === null || Date.parse(r.created_at) > successAt)
+      ).length,
+      running: list.some((r) => r.status === 'in_progress' || r.status === 'queued'),
+      checked: list.length,
+      lastRun: runBrief(list[0]),
+    },
+    deploy: runBrief(Array.isArray(deployRuns) ? deployRuns[0] : null),
+    data: {
+      lastCommitAt: dataCommit ? dataCommit.date : null,
+      lastCommitUrl: dataCommit ? dataCommit.url : null,
+      totalWatched: stats ? stats.totalWatched ?? null : null,
+      latestWatched: stats && stats.dateRange ? stats.dateRange.latest || null : null,
+    },
+    archive: {
+      exportDate,
+      ageDays: Number.isNaN(exportAt) ? null : Math.max(0, Math.floor((now - exportAt) / 86400000)),
+      // Diary entries known only from RSS: no tags, and gone from the feed
+      // eventually. This is what the next full export will pick up.
+      rssOnly,
+    },
+    watchlist: {
+      count: watchlist.count ?? null,
+      snapshotDate: watchlist.snapshotDate || null,
+      snapshotSource: watchlist.snapshotSource || null,
+    },
+    // rewatches.json is written by the same run as stats.json. If the workflow
+    // ever stops committing it, its log total falls behind — the page would be
+    // stale with nothing else to show for it.
+    rewatches: {
+      inSync:
+        Boolean(stats && rewatches) &&
+        rewatchTotals.logs === stats.totalWatched &&
+        rewatches.archiveExportDate === stats.archiveExportDate,
+      logs: rewatchTotals.logs ?? null,
+      exportDate: (rewatches && rewatches.archiveExportDate) || null,
+    },
+  };
+}
+
+async function readStats(env) {
+  return JSON.parse(await ghFile(env, 'data/stats.json'));
+}
+
+async function getPipeline(env) {
+  const branch = branchOf(env);
+  const [dataRuns, deployRuns, stats, rewatchesText, historyText, commits] = await Promise.all([
+    gh(env, `/actions/workflows/${DATA_WORKFLOW}/runs?per_page=10&branch=${branch}`),
+    gh(env, `/actions/workflows/${DEPLOY_WORKFLOW}/runs?per_page=1&branch=${branch}`),
+    readStats(env),
+    ghFile(env, 'data/rewatches.json'),
+    ghFile(env, 'data/viewing_history.json'),
+    gh(env, `/commits?path=data/stats.json&per_page=1&sha=${branch}`),
+  ]);
+  const commit = Array.isArray(commits) && commits[0];
+  const report = pipelineReport(
+    {
+      runs: dataRuns.workflow_runs,
+      deployRuns: deployRuns.workflow_runs,
+      stats,
+      rewatches: JSON.parse(rewatchesText),
+      // Counted on the text: no need to parse 1.3 MB to count one field.
+      rssOnly: (historyText.match(/"source":\s*"rss"/g) || []).length,
+      dataCommit: commit ? { date: commit.commit.committer.date, url: commit.html_url } : null,
+    },
+    Date.now()
+  );
+  return json({ repo: repoOf(env), canWrite: Boolean(env.GITHUB_TOKEN), ...report }, 200, {
+    'Cache-Control': 'no-store',
+  });
+}
+
+async function dispatchPipeline(env) {
+  await gh(env, `/actions/workflows/${DATA_WORKFLOW}/dispatches`, {
+    method: 'POST',
+    body: { ref: branchOf(env) },
+  });
+}
+
+async function runPipeline(env) {
+  await dispatchPipeline(env);
+  return json({ dispatched: true });
+}
+
+const EXPORT_STAMP_RE = /(\d{4}-\d{2}-\d{2})-(\d{2})-(\d{2})-utc/;
+
+/** "2026-11-21-05-45" from either kind of export name; sorts as text. */
+function exportStamp(name) {
+  const m = EXPORT_STAMP_RE.exec(String(name || ''));
+  return m ? `${m[1]}-${m[2]}-${m[3]}` : null;
+}
+
+/**
+ * Pure check of a watchlist-only export before it is committed. The pipeline
+ * uses whichever snapshot carries the newest timestamp in its name — a full
+ * archive or a watchlist file — so an upload older than the current snapshot
+ * would commit and then change nothing; `supersedes` says which this is.
+ */
+function checkWatchlist(filename, content, currentSource) {
+  const name = String(filename || '');
+  const expected = new RegExp(`^watchlist-${STATS_USERNAME}-\\d{4}-\\d{2}-\\d{2}-\\d{2}-\\d{2}-utc\\.csv$`);
+  if (!expected.test(name)) {
+    return { ok: false, error: `the file must be named watchlist-${STATS_USERNAME}-YYYY-MM-DD-HH-MM-utc.csv, as Letterboxd exports it` };
+  }
+  if (typeof content !== 'string' || !content.trim()) return { ok: false, error: 'the file is empty' };
+  if (new TextEncoder().encode(content).length > MAX_WATCHLIST_BYTES) {
+    return { ok: false, error: 'the file is larger than 2 MB' };
+  }
+
+  const lines = content.replace(/^﻿/, '').split(/\r?\n/).filter((line) => line.trim());
+  if (lines[0] !== WATCHLIST_HEADER) {
+    return { ok: false, error: `not a Letterboxd watchlist export: the first line must be "${WATCHLIST_HEADER}"` };
+  }
+  const rows = lines.slice(1);
+  if (!rows.length) return { ok: false, error: 'the watchlist has no films in it' };
+  const bad = rows.findIndex((row) => !/^\d{4}-\d{2}-\d{2},.+,https:\/\/boxd\.it\/\w+$/.test(row));
+  if (bad !== -1) return { ok: false, error: `line ${bad + 2} is not a watchlist row` };
+
+  const dates = rows.map((row) => row.slice(0, 10)).sort();
+  const stamp = exportStamp(name);
+  const currentStamp = exportStamp(currentSource);
+  return {
+    ok: true,
+    filename: name,
+    rows: rows.length,
+    oldestAdded: dates[0],
+    newestAdded: dates[dates.length - 1],
+    stamp,
+    currentStamp,
+    currentSource: currentSource || null,
+    supersedes: !currentStamp || stamp > currentStamp,
+  };
+}
+
+async function uploadWatchlist(request, env) {
+  const body = await readBody(request);
+  if (!body) return json({ error: 'invalid JSON body' }, 400);
+
+  const stats = await readStats(env);
+  const current = stats.watchlist || {};
+  const check = checkWatchlist(body.filename, body.content, current.snapshotSource);
+  if (!check.ok) return json({ error: check.error }, 400);
+  const report = { ...check, currentCount: current.count ?? null };
+
+  if (body.dryRun !== false) return json({ dryRun: true, committed: false, ...report });
+  if (!check.supersedes) {
+    return json(
+      { error: `the current snapshot (${check.currentSource}) is newer, so this file would change nothing`, ...report },
+      409
+    );
+  }
+
+  let commit;
+  try {
+    commit = await gh(env, `/contents/data/archive/${check.filename}`, {
+      method: 'PUT',
+      body: {
+        message: `Add watchlist export ${check.stamp}`,
+        content: toBase64(body.content),
+        branch: branchOf(env),
+      },
+    });
+  } catch (err) {
+    // No sha was sent, so GitHub answers 422 when the path already exists.
+    if (err instanceof GitHubError && err.status === 422) {
+      return json({ error: `${check.filename} is already in the repo`, ...report }, 409);
+    }
+    throw err;
+  }
+
+  // The commit alone redeploys the site but recomputes nothing: stats.json is
+  // only rebuilt by the data workflow.
+  let dispatched = false;
+  if (body.run !== false) {
+    await dispatchPipeline(env);
+    dispatched = true;
+  }
+  return json({
+    dryRun: false,
+    committed: true,
+    commitUrl: commit && commit.commit ? commit.commit.html_url : null,
+    dispatched,
+    ...report,
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/* Admin API — diary tag categories (data/tag_categories.json)                */
+/* -------------------------------------------------------------------------- */
+
+const normTag = (tag) => String(tag ?? '').trim().toLowerCase();
+
+/** Use counts for every diary tag, lowercased like tags.js matches them. */
+function diaryTagCounts(history) {
+  const counts = {};
+  for (const entry of Array.isArray(history) ? history : []) {
+    for (const tag of entry.tags || []) {
+      const key = normTag(tag);
+      if (key) counts[key] = (counts[key] || 0) + 1;
+    }
+  }
+  return counts;
+}
+
+/**
+ * The editor only moves tags between the categories the file already has.
+ * Ids, labels, icons and order come from `existing`; `incoming` supplies each
+ * category's tags. A tag listed twice stays in the first category that has it,
+ * which is how tags.js would resolve it anyway.
+ */
+function applyCategoryTags(existing, incoming) {
+  const current = Array.isArray(existing.categories) ? existing.categories : [];
+  if (!Array.isArray(incoming) || incoming.length !== current.length) {
+    return { error: 'categories must list every existing category, in order' };
+  }
+  const seen = new Set();
+  const categories = [];
+  for (let i = 0; i < current.length; i++) {
+    const given = incoming[i];
+    if (!given || given.id !== current[i].id) {
+      return { error: `category ${i + 1} must be "${current[i].id}"; categories can't be added, removed or reordered here` };
+    }
+    if (!Array.isArray(given.tags)) return { error: `"${current[i].id}" needs a tags list` };
+    const tags = [];
+    for (const raw of given.tags) {
+      if (typeof raw !== 'string') return { error: `"${current[i].id}" has a tag that is not text` };
+      const tag = normTag(raw);
+      if (!tag || tag.length > MAX_DIARY_TAG_LEN) return { error: `"${current[i].id}" has an empty or over-long tag` };
+      if (seen.has(tag)) continue;
+      seen.add(tag);
+      tags.push(tag);
+    }
+    categories.push({ ...current[i], tags });
+  }
+  return { categories };
+}
+
+/**
+ * Serialize in the file's hand-kept layout: two-space JSON, with each `tags`
+ * array on one line when it fits and wrapped at 100 columns when it doesn't,
+ * so a commit's diff is the tags that moved rather than a reformat.
+ */
+function formatCategories(doc) {
+  const lines = ['{'];
+  const top = Object.keys(doc).filter((key) => key !== 'categories');
+  for (const key of top) lines.push(`  ${JSON.stringify(key)}: ${JSON.stringify(doc[key])},`);
+  lines.push('  "categories": [');
+
+  doc.categories.forEach((category, index) => {
+    lines.push('    {');
+    const keys = Object.keys(category).filter((key) => key !== 'tags');
+    for (const key of keys) lines.push(`      ${JSON.stringify(key)}: ${JSON.stringify(category[key])},`);
+
+    const items = category.tags.map((tag) => JSON.stringify(tag));
+    const inline = `      "tags": [${items.join(', ')}]`;
+    if (inline.length <= CATEGORY_WRAP) {
+      lines.push(inline);
+    } else {
+      lines.push('      "tags": [');
+      let row = '';
+      items.forEach((item, i) => {
+        const piece = item + (i < items.length - 1 ? ',' : '');
+        const next = row ? `${row} ${piece}` : `        ${piece}`;
+        if (row && next.length > CATEGORY_WRAP) {
+          lines.push(row);
+          row = `        ${piece}`;
+        } else {
+          row = next;
+        }
+      });
+      if (row) lines.push(row);
+      lines.push('      ]');
+    }
+    lines.push(index < doc.categories.length - 1 ? '    },' : '    }');
+  });
+
+  lines.push('  ]', '}');
+  return lines.join('\n') + '\n';
+}
+
+async function readCategories(env) {
+  const file = await gh(env, `/contents/${CATEGORIES_PATH}?ref=${branchOf(env)}`);
+  const text = fromBase64(file.content);
+  return { sha: file.sha, text, doc: JSON.parse(text) };
+}
+
+async function getTagCategories(env) {
+  const [file, historyText] = await Promise.all([
+    readCategories(env),
+    ghFile(env, 'data/viewing_history.json'),
+  ]);
+  return json(
+    {
+      sha: file.sha,
+      canWrite: Boolean(env.GITHUB_TOKEN),
+      categories: (file.doc.categories || []).map((c) => ({
+        id: c.id,
+        label: c.label,
+        icon: c.icon,
+        tags: (c.tags || []).map(normTag),
+      })),
+      counts: diaryTagCounts(JSON.parse(historyText)),
+    },
+    200,
+    { 'Cache-Control': 'no-store' }
+  );
+}
+
+async function putTagCategories(request, env) {
+  const body = await readBody(request);
+  if (!body) return json({ error: 'invalid JSON body' }, 400);
+
+  const file = await readCategories(env);
+  // The editor's copy must be the one on the branch, or its save would undo
+  // whoever committed in between.
+  if (body.sha !== file.sha) {
+    return json({ error: 'tag_categories.json changed on GitHub since this page loaded; reload and reapply' }, 409);
+  }
+  const result = applyCategoryTags(file.doc, body.categories);
+  if (result.error) return json({ error: result.error }, 400);
+
+  const before = new Map();
+  for (const c of file.doc.categories) for (const tag of c.tags || []) before.set(normTag(tag), c.id);
+  const after = new Map();
+  for (const c of result.categories) for (const tag of c.tags) after.set(tag, c.id);
+  const moved = [...new Set([...before.keys(), ...after.keys()])].filter((tag) => before.get(tag) !== after.get(tag));
+
+  const text = formatCategories({ ...file.doc, categories: result.categories });
+  if (!moved.length || text === file.text) return json({ committed: false, moved: [] });
+
+  const commit = await gh(env, `/contents/${CATEGORIES_PATH}`, {
+    method: 'PUT',
+    body: {
+      message: `Recategorise ${moved.length} diary tag${moved.length === 1 ? '' : 's'}`,
+      content: toBase64(text),
+      sha: file.sha,
+      branch: branchOf(env),
+    },
+  });
+  return json({
+    committed: true,
+    moved,
+    sha: commit && commit.content ? commit.content.sha : null,
+    commitUrl: commit && commit.commit ? commit.commit.html_url : null,
+  });
+}
+
 async function routeAdminApi(request, env, ctx, pathname) {
   const rest = pathname.slice('/admin/api/'.length);
+  const only = (method) =>
+    request.method === method ? null : json({ error: 'method not allowed' }, 405);
 
   if (rest === 'preview') {
     if (request.method !== 'POST') return json({ error: 'method not allowed' }, 405);
@@ -917,12 +1859,52 @@ async function routeAdminApi(request, env, ctx, pathname) {
 
   if (rest.startsWith('profiles/')) {
     const segments = rest.slice('profiles/'.length).split('/');
-    const username = normalizeUsername(decodeURIComponent(segments[0]));
+    let username = null;
+    try {
+      username = normalizeUsername(decodeURIComponent(segments[0]));
+    } catch {
+      // malformed percent-encoding
+    }
     if (!username) return json({ error: 'invalid username' }, 400);
-    if (segments.length > 1) return json({ error: 'not found' }, 404);
+    if (segments.length > 2) return json({ error: 'not found' }, 404);
+
+    if (segments.length === 2) {
+      const action = segments[1];
+      if (action === 'refresh') return only('POST') || refreshProfile(username, env, ctx);
+      if (action === 'clear') return only('POST') || clearProfile(username, request, env);
+      if (action === 'history') {
+        if (request.method === 'GET') return getHistory(username, request, env);
+        if (request.method === 'DELETE') return resetHistory(username, env, ctx);
+        return json({ error: 'method not allowed' }, 405);
+      }
+      return json({ error: 'not found' }, 404);
+    }
 
     if (request.method === 'PUT') return updateProfile(username, request, env);
     if (request.method === 'DELETE') return deleteProfile(username, env);
+    return json({ error: 'method not allowed' }, 405);
+  }
+
+  if (rest === 'health') return only('GET') || getHealth(env);
+  if (rest === 'export') return only('GET') || exportProfiles(env);
+  if (rest === 'import') return only('POST') || importProfiles(request, env);
+  if (rest === 'import/prev') return only('GET') || getPrevious(env);
+  if (rest === 'import/undo') return only('POST') || undoImport(env);
+  if (rest === 'cron/run') return only('POST') || runCronNow(request, env, ctx);
+  if (rest === 'stats-live/purge') return only('POST') || purgeStatsLive();
+  if (rest === 'pipeline') return only('GET') || getPipeline(env).catch(githubFailure);
+  if (rest === 'pipeline/run') return only('POST') || runPipeline(env).catch(githubFailure);
+  if (rest === 'pipeline/watchlist') {
+    return only('POST') || uploadWatchlist(request, env).catch(githubFailure);
+  }
+  if (rest === 'tag-categories') {
+    if (request.method === 'GET') return getTagCategories(env).catch(githubFailure);
+    if (request.method === 'PUT') return putTagCategories(request, env).catch(githubFailure);
+    return json({ error: 'method not allowed' }, 405);
+  }
+  if (rest === 'tags') {
+    if (request.method === 'GET') return json(tagCounts(await readProfiles(env)));
+    if (request.method === 'POST') return renameTagRequest(request, env);
     return json({ error: 'method not allowed' }, 405);
   }
 
@@ -969,6 +1951,16 @@ async function route(request, env, ctx) {
     const auth = await requireAdmin(request, env);
     if (!auth.ok) return auth.response;
 
+    // Defence in depth on top of Access: a browser labels every request with
+    // where it came from, so a write that another site triggered is refused
+    // even if the Access cookie rode along. Absent header = not a browser.
+    if (request.method !== 'GET' && request.method !== 'HEAD') {
+      const site = request.headers.get('Sec-Fetch-Site');
+      if (site && site !== 'same-origin' && site !== 'none') {
+        return json({ error: 'cross-site request refused' }, 403);
+      }
+    }
+
     if (pathname === '/admin' || pathname === '/admin/') {
       return html(renderAdminPage());
     }
@@ -995,345 +1987,16 @@ export default {
    *  loadWatches, so a member a visitor just loaded is a cache hit, not a
    *  second Letterboxd request. */
   async scheduled(event, env, ctx) {
-    const profiles = await readProfiles(env);
-    const slice = cronSlice(profiles, event.scheduledTime);
     ctx.waitUntil(
-      mapWithLimit(slice, CONCURRENCY, (p) => loadWatches(p.username, env, ctx)).then(() =>
-        console.log(`rolodex cron: refreshed ${slice.length} of ${profiles.length}`)
+      refreshSlice(env, ctx, event.scheduledTime).then((r) =>
+        console.log(
+          `rolodex cron: slot ${r.slot}, refreshed ${r.refreshed} of ${r.total}` +
+            (r.failed.length ? `, serving snapshots for ${r.failed.join(', ')}` : '')
+        )
       )
     );
   },
 };
-
-/* -------------------------------------------------------------------------- */
-/* Admin UI                                                                   */
-/* -------------------------------------------------------------------------- */
-
-function renderAdminPage() {
-  // Inline, no build step — same spirit as the rest of this repo. Colors mirror
-  // assets/css/dashboard.css so the admin feels like part of the site.
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Rolodex admin</title>
-<style>
-  :root {
-    --bg-primary: #14181c; --bg-secondary: #1c2228; --bg-tertiary: #242c34;
-    --bg-hover: #2c3440; --text-primary: #fff; --text-secondary: #99aabb;
-    --text-muted: #667788; --accent-green: #00e054; --accent-blue: #40bcf4;
-    --border: #2c3440; --danger: #f44336;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--bg-primary); color: var(--text-secondary);
-    line-height: 1.5; padding: 2rem 1.5rem 4rem;
-  }
-  .wrap { max-width: 760px; margin: 0 auto; }
-  h1 { color: var(--text-primary); font-size: 1.5rem; margin-bottom: .25rem; }
-  .sub { color: var(--text-muted); font-size: .875rem; margin-bottom: 2rem; }
-  fieldset { border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin-bottom: 2rem; }
-  legend { color: var(--text-primary); font-size: .875rem; font-weight: 600; padding: 0 .5rem; }
-  label { display: block; font-size: .75rem; text-transform: uppercase;
-          letter-spacing: .05em; color: var(--text-muted); margin: .875rem 0 .25rem; }
-  input[type=text] {
-    width: 100%; padding: .5rem .625rem; background: var(--bg-tertiary);
-    border: 1px solid var(--border); border-radius: 4px; color: var(--text-primary);
-    font: inherit; font-size: .9375rem;
-  }
-  input[type=text]:focus { outline: none; border-color: var(--accent-blue); }
-  /* The username field is disabled while editing — make that visible at a
-     glance rather than only discoverable by clicking into it. */
-  input[type=text]:disabled {
-    opacity: 0.55; cursor: not-allowed;
-    background: var(--bg-secondary); border-style: dashed;
-  }
-  .row { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1.25rem; }
-  button {
-    padding: .5rem .875rem; border-radius: 4px; border: 1px solid var(--border);
-    background: var(--bg-tertiary); color: var(--text-secondary);
-    font: inherit; font-size: .875rem; cursor: pointer;
-  }
-  button:hover:not(:disabled) { background: var(--bg-hover); color: var(--text-primary); }
-  button:disabled { opacity: .5; cursor: default; }
-  button.primary { background: var(--accent-green); border-color: var(--accent-green); color: #05140a; font-weight: 600; }
-  button.danger:hover { border-color: var(--danger); color: var(--danger); }
-  /* Scoped to the edit form so the list's small × buttons keep their
-     quieter hover-only treatment. */
-  #btn-delete { color: var(--danger); margin-left: auto; }
-  #btn-delete:hover:not(:disabled) {
-    border-color: var(--danger); background: rgba(244, 67, 54, 0.12); color: var(--danger);
-  }
-  .field-hint {
-    font-size: 0.75rem; color: var(--text-muted);
-    margin-top: 0.375rem; max-width: 46ch;
-  }
-  .field-hint[hidden] { display: none; }
-  .icon { padding: .25rem .5rem; font-size: .8125rem; }
-  .entry {
-    display: flex; align-items: flex-start; gap: .875rem; padding: .875rem;
-    background: var(--bg-secondary); border: 1px solid var(--border);
-    border-radius: 8px; margin-bottom: .625rem;
-  }
-  .entry .meta { flex: 1; min-width: 0; }
-  .entry .name { color: var(--text-primary); font-weight: 600; }
-  .entry .handle { color: var(--text-muted); font-size: .8125rem; }
-  .entry .note { font-size: .875rem; margin-top: .25rem; }
-  .tags { display: flex; gap: .375rem; flex-wrap: wrap; margin-top: .5rem; }
-  .tag { font-size: .6875rem; text-transform: uppercase; letter-spacing: .04em;
-         background: var(--bg-tertiary); color: var(--text-muted);
-         padding: .125rem .5rem; border-radius: 999px; }
-  .controls { display: flex; gap: .25rem; flex-shrink: 0; }
-  .status { min-height: 1.5rem; font-size: .875rem; margin-top: .875rem; }
-  .status.error { color: var(--danger); }
-  .status.ok { color: var(--accent-green); }
-  .preview { display: flex; gap: .5rem; margin-top: .875rem; }
-  .preview figure { flex: 1; }
-  .preview img { width: 100%; border-radius: 4px; display: block; background: var(--bg-tertiary); aspect-ratio: 2/3; }
-  .preview figcaption { font-size: .6875rem; color: var(--text-muted); margin-top: .25rem; }
-  .empty { color: var(--text-muted); font-style: italic; }
-</style>
-</head>
-<body>
-<div class="wrap">
-  <h1>Rolodex admin</h1>
-  <p class="sub">Curated Letterboxd profiles for the public rolodex page.
-     Sorted automatically by first name — display order isn't stored, so
-     renaming someone moves their card.</p>
-
-  <fieldset>
-    <legend id="form-legend">Add a profile</legend>
-    <label for="f-username">Letterboxd username or profile URL</label>
-    <input type="text" id="f-username" placeholder="michaellamb" autocomplete="off" />
-    <p class="field-hint" id="username-hint" hidden>
-      The username is this entry's key, so it can't be edited. To fix a typo,
-      delete this entry and add it again.
-    </p>
-    <label for="f-display">Display name</label>
-    <input type="text" id="f-display" placeholder="Michael" autocomplete="off" />
-    <label for="f-note">Note</label>
-    <input type="text" id="f-note" placeholder="met at JXN Film Club" autocomplete="off" />
-    <label for="f-tags">Tags (comma separated)</label>
-    <input type="text" id="f-tags" placeholder="jxnfilmclub, horror" autocomplete="off" />
-    <div class="row">
-      <button type="button" id="btn-preview">Preview feed</button>
-      <button type="button" class="primary" id="btn-save">Save</button>
-      <button type="button" id="btn-cancel" hidden>Cancel edit</button>
-      <button type="button" id="btn-delete" hidden>Delete entry</button>
-    </div>
-    <div class="status" id="status"></div>
-    <div class="preview" id="preview"></div>
-  </fieldset>
-
-  <div id="list"><p class="empty">Loading…</p></div>
-</div>
-
-<script>
-(function () {
-  'use strict';
-
-  var API = '/admin/api';
-  var editing = null;
-
-  var el = function (id) { return document.getElementById(id); };
-
-  function setStatus(message, kind) {
-    var node = el('status');
-    node.textContent = message || '';
-    node.className = 'status' + (kind ? ' ' + kind : '');
-  }
-
-  function escapeHtml(str) {
-    var div = document.createElement('div');
-    div.textContent = str == null ? '' : str;
-    return div.innerHTML;
-  }
-
-  function readForm() {
-    return {
-      username: el('f-username').value,
-      displayName: el('f-display').value,
-      note: el('f-note').value,
-      tags: el('f-tags').value.split(',').map(function (t) { return t.trim(); }).filter(Boolean)
-    };
-  }
-
-  function resetForm() {
-    editing = null;
-    el('f-username').value = '';
-    el('f-display').value = '';
-    el('f-note').value = '';
-    el('f-tags').value = '';
-    el('f-username').disabled = false;
-    el('form-legend').textContent = 'Add a profile';
-    el('btn-cancel').hidden = true;
-    el('btn-delete').hidden = true;
-    el('username-hint').hidden = true;
-    el('preview').innerHTML = '';
-    setStatus('');
-  }
-
-  async function api(path, options) {
-    var res = await fetch(API + path, options || {});
-    if (res.status === 204) return null;
-    var body = await res.json().catch(function () { return {}; });
-    if (!res.ok) throw new Error(body.error || ('HTTP ' + res.status));
-    return body;
-  }
-
-  async function load() {
-    try {
-      var profiles = await api('/profiles');
-      render(profiles);
-    } catch (err) {
-      el('list').innerHTML = '<p class="empty">Could not load: ' + escapeHtml(err.message) + '</p>';
-    }
-  }
-
-  function render(profiles) {
-    if (!profiles.length) {
-      el('list').innerHTML = '<p class="empty">No profiles yet.</p>';
-      return;
-    }
-    el('list').innerHTML = profiles.map(function (p) {
-      return '<div class="entry">' +
-        '<div class="meta">' +
-          '<div class="name">' + escapeHtml(p.displayName || p.username) + '</div>' +
-          '<div class="handle">@' + escapeHtml(p.username) + '</div>' +
-          (p.note ? '<div class="note">' + escapeHtml(p.note) + '</div>' : '') +
-          (p.tags && p.tags.length
-            ? '<div class="tags">' + p.tags.map(function (t) {
-                return '<span class="tag">' + escapeHtml(t) + '</span>';
-              }).join('') + '</div>'
-            : '') +
-        '</div>' +
-        '<div class="controls">' +
-          '<button class="icon" data-edit="' + escapeHtml(p.username) + '" title="Edit">Edit</button>' +
-          '<button class="icon danger" data-delete="' + escapeHtml(p.username) + '" title="Remove">&times;</button>' +
-        '</div>' +
-      '</div>';
-    }).join('');
-  }
-
-  el('list').addEventListener('click', async function (event) {
-    var button = event.target.closest('button');
-    if (!button) return;
-
-    try {
-      if (button.dataset.delete) {
-        var username = button.dataset.delete;
-        if (!confirm('Remove @' + username + ' from the rolodex?')) return;
-        await api('/profiles/' + username, { method: 'DELETE' });
-        setStatus('Removed @' + username + '.', 'ok');
-        load();
-      } else if (button.dataset.edit) {
-        var profiles = await api('/profiles');
-        var profile = profiles.find(function (p) { return p.username === button.dataset.edit; });
-        if (!profile) return;
-        editing = profile.username;
-        el('f-username').value = profile.username;
-        el('f-username').disabled = true;
-        el('f-display').value = profile.displayName || '';
-        el('f-note').value = profile.note || '';
-        el('f-tags').value = (profile.tags || []).join(', ');
-        el('form-legend').textContent = 'Editing @' + profile.username;
-        el('btn-cancel').hidden = false;
-        el('btn-delete').hidden = false;
-        el('username-hint').hidden = false;
-        setStatus('');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    } catch (err) {
-      setStatus(err.message, 'error');
-    }
-  });
-
-  el('btn-preview').addEventListener('click', async function () {
-    var username = el('f-username').value.trim();
-    if (!username) return setStatus('Enter a username first.', 'error');
-    setStatus('Fetching feed…');
-    el('preview').innerHTML = '';
-    try {
-      var result = await api('/preview', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: username })
-      });
-      if (!result.films.length) {
-        setStatus('Feed reachable, but no diary entries yet.', 'ok');
-        return;
-      }
-      setStatus('Found @' + result.username + '.', 'ok');
-      el('preview').innerHTML = result.films.map(function (film) {
-        return '<figure>' +
-          (film.poster ? '<img alt="" src="' + escapeHtml(film.poster) + '" />' : '<img alt="" />') +
-          '<figcaption>' + escapeHtml(film.title) + '</figcaption>' +
-        '</figure>';
-      }).join('');
-    } catch (err) {
-      setStatus(err.message, 'error');
-    }
-  });
-
-  el('btn-save').addEventListener('click', async function () {
-    var payload = readForm();
-    if (!payload.username.trim()) return setStatus('Username is required.', 'error');
-    el('btn-save').disabled = true;
-    try {
-      if (editing) {
-        await api('/profiles/' + editing, {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        setStatus('Saved.', 'ok');
-      } else {
-        var created = await api('/profiles', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        setStatus('Added @' + created.username + '.', 'ok');
-      }
-      resetForm();
-      load();
-    } catch (err) {
-      setStatus(err.message, 'error');
-    } finally {
-      el('btn-save').disabled = false;
-    }
-  });
-
-  el('btn-cancel').addEventListener('click', resetForm);
-
-  // Delete the entry being edited. The username is the KV key and so can't be
-  // changed by an edit — this is the one-step path for fixing a wrong handle
-  // without hunting for the row again.
-  el('btn-delete').addEventListener('click', async function () {
-    if (!editing) return;
-    var username = editing;
-    if (!confirm('Remove @' + username + ' from the rolodex?')) return;
-    el('btn-delete').disabled = true;
-    try {
-      await api('/profiles/' + username, { method: 'DELETE' });
-      resetForm();
-      setStatus('Removed @' + username + '. Add it again with the corrected username.', 'ok');
-      load();
-    } catch (err) {
-      setStatus(err.message, 'error');
-    } finally {
-      el('btn-delete').disabled = false;
-    }
-  });
-
-  load();
-})();
-</script>
-</body>
-</html>`;
-}
 
 export {
   mergeHistory,
@@ -1348,4 +2011,18 @@ export {
   corsHeaders,
   byFirstName,
   firstName,
+  cronSlot,
+  nextCronRun,
+  healthRow,
+  planImport,
+  renameTag,
+  tagCounts,
+  pipelineReport,
+  checkWatchlist,
+  exportStamp,
+  diaryTagCounts,
+  applyCategoryTags,
+  formatCategories,
+  toBase64,
+  fromBase64,
 };
