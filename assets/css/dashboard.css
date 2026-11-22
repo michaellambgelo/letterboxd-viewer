@@ -242,12 +242,13 @@ a:hover { color: var(--text-primary); }
 .heatmap-cell[data-count="5"],
 .heatmap-cell[data-count="6"] { background: #52b788; }
 
-.heatmap-cell .tooltip {
+/* Single shared tooltip on <body>, positioned by dashboard.js. It must live
+   outside .heatmap-wrapper, whose overflow-x:auto would clip it at the edges. */
+.heatmap-tooltip {
   display: none;
-  position: absolute;
-  bottom: calc(100% + 6px);
-  left: 50%;
-  transform: translateX(-50%);
+  position: fixed;
+  top: 0;
+  left: 0;
   background: var(--bg-primary);
   border: 1px solid var(--border);
   color: var(--text-primary);
@@ -259,7 +260,7 @@ a:hover { color: var(--text-primary); }
   pointer-events: none;
 }
 
-.heatmap-cell:hover .tooltip { display: block; }
+.heatmap-tooltip.is-visible { display: block; }
 
 .heatmap-legend {
   display: flex;

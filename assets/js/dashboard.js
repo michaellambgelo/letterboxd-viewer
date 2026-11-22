@@ -239,11 +239,66 @@
     if (el) el.textContent = value;
   }
 
+  // Heatmap tooltip
+  //
+  // One tooltip for the whole grid, appended to <body> and positioned with
+  // `position: fixed`. A per-cell absolutely-positioned tooltip gets clipped by
+  // .heatmap-wrapper (overflow-x: auto clips both axes), so cells near the
+  // left/right edge showed a cut-off label. Living outside the wrapper, this
+  // one is clamped to the viewport instead.
+  let heatmapTip = null;
+
+  function hideHeatmapTooltip() {
+    if (heatmapTip) heatmapTip.classList.remove('is-visible');
+  }
+
+  function showHeatmapTooltip(cell) {
+    const MARGIN = 8;
+    const GAP = 6;
+    heatmapTip.textContent = cell.dataset.tip;
+    heatmapTip.classList.add('is-visible');
+
+    const cellRect = cell.getBoundingClientRect();
+    const tipRect = heatmapTip.getBoundingClientRect();
+    const viewportWidth = document.documentElement.clientWidth;
+
+    let left = cellRect.left + cellRect.width / 2 - tipRect.width / 2;
+    left = Math.max(MARGIN, Math.min(left, viewportWidth - tipRect.width - MARGIN));
+
+    let top = cellRect.top - tipRect.height - GAP;
+    if (top < MARGIN) top = cellRect.bottom + GAP; // no room above: flip below
+
+    heatmapTip.style.left = `${Math.round(left)}px`;
+    heatmapTip.style.top = `${Math.round(top)}px`;
+  }
+
+  // Bound once per grid element — renderHeatmap re-runs on every year switch.
+  function bindHeatmapTooltip(container) {
+    if (heatmapTip) return;
+    heatmapTip = document.createElement('div');
+    heatmapTip.className = 'heatmap-tooltip';
+    heatmapTip.setAttribute('role', 'tooltip');
+    document.body.appendChild(heatmapTip);
+
+    container.addEventListener('mouseover', (e) => {
+      const cell = e.target.closest('.heatmap-cell[data-tip]');
+      if (cell) showHeatmapTooltip(cell);
+      else hideHeatmapTooltip();
+    });
+    container.addEventListener('mouseleave', hideHeatmapTooltip);
+    // A fixed tooltip doesn't follow its cell, so drop it when anything scrolls
+    // (capture: scroll doesn't bubble, and the wrapper scrolls on narrow screens).
+    window.addEventListener('scroll', hideHeatmapTooltip, { capture: true, passive: true });
+    window.addEventListener('resize', hideHeatmapTooltip);
+  }
+
   // Heatmap
   function renderHeatmap(heatmapData, dateRange, options) {
     const container = document.getElementById('heatmap-grid');
     const monthLabels = document.getElementById('heatmap-months');
     if (!container) return;
+    bindHeatmapTooltip(container);
+    hideHeatmapTooltip();
 
     // Build a lookup of date -> count
     const counts = {};
@@ -352,16 +407,14 @@
           cell.setAttribute('data-count', Math.min(day.count, 6));
         }
 
-        const tooltip = document.createElement('span');
-        tooltip.className = 'tooltip';
         const dateObj = new Date(day.date + 'T00:00:00');
         const dateLabel = dateObj.toLocaleDateString('en-US', {
           month: 'short', day: 'numeric', year: 'numeric',
         });
-        tooltip.textContent = day.count > 0
+        // Read by the shared tooltip (see bindHeatmapTooltip).
+        cell.dataset.tip = day.count > 0
           ? `${day.count} film${day.count > 1 ? 's' : ''} on ${dateLabel}`
           : `No films on ${dateLabel}`;
-        cell.appendChild(tooltip);
         col.appendChild(cell);
       }
       container.appendChild(col);
