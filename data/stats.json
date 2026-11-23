@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2740,
+  "totalWatched": 2741,
   "uniqueFilms": 2234,
-  "totalRewatches": 899,
+  "totalRewatches": 900,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -11,7 +11,7 @@
     "2.5": 134,
     "3.0": 307,
     "3.5": 396,
-    "4.0": 573,
+    "4.0": 574,
     "4.5": 400,
     "5.0": 616,
     "unrated": 134
@@ -128,7 +128,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 31
+    "2026-11": 32
   },
   "heatmapData": [
     {
@@ -6538,6 +6538,10 @@
     {
       "date": "2026-11-21",
       "count": 3
+    },
+    {
+      "date": "2026-11-22",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6550,7 +6554,7 @@
     "1970s": 61,
     "1980s": 93,
     "1990s": 175,
-    "2000s": 287,
+    "2000s": 288,
     "2010s": 764,
     "2020s": 1261
   },
@@ -6627,6 +6631,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1599363303",
+      "filmTitle": "Saved!",
+      "filmYear": 2004,
+      "watchedDate": "2026-11-22",
+      "memberRating": 4.0,
+      "rewatch": true,
+      "tmdbId": 13193,
+      "link": "https://letterboxd.com/michaellamb/film/saved/1/",
+      "title": "Saved!, 2004 - ★★★★",
+      "reviewText": "",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1596650038",
       "filmTitle": "Oppenheimer",
@@ -6942,23 +6960,6 @@
       "title": "We're All Gonna Die",
       "reviewText": "It hooked me enough at the beginning to keep in invested and I'm so glad I stayed with it. Really good stuff at the end.",
       "tags": [],
-      "loggedDate": "2026-11-08",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-hdkGP9",
-      "filmTitle": "Godzilla Minus Zero",
-      "filmYear": 2026,
-      "watchedDate": "2026-11-07",
-      "memberRating": 4.5,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/hdkGP9",
-      "title": "Godzilla Minus Zero",
-      "reviewText": "bruh this shit slaps so hard. it's exhilarating, heart-wrenching, and deeply human. \r\n\r\nloved it. ready to see it again with a more respectful audience. a random late saturday show just reinforces why i go to the matinee or the 4 PM show. \r\n\r\nwatched with Jon-Nolan and Lindsay \r\n\r\n<strong><a href=\"https://letterboxd.com/michaellamb/list/my-2026-releases-ranked/\" target=\"_blank\">#5 in my 2026 releases ranked list</a></strong> as of this review",
-      "tags": [
-        "in theaters"
-      ],
       "loggedDate": "2026-11-08",
       "source": "archive"
     }
@@ -8836,7 +8837,7 @@
   ],
   "dateRange": {
     "earliest": "2007-05-05",
-    "latest": "2026-11-21"
+    "latest": "2026-11-22"
   },
   "byYear": {
     "2007": {
@@ -15513,9 +15514,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 342,
-      "uniqueFilms": 296,
-      "totalRewatches": 119,
+      "totalWatched": 343,
+      "uniqueFilms": 297,
+      "totalRewatches": 120,
       "averageRating": 3.93,
       "ratingDistribution": {
         "0.5": 2,
@@ -15525,7 +15526,7 @@
         "2.5": 20,
         "3.0": 31,
         "3.5": 46,
-        "4.0": 70,
+        "4.0": 71,
         "4.5": 65,
         "5.0": 82,
         "unrated": 7
@@ -16342,6 +16343,10 @@
         {
           "date": "2026-11-21",
           "count": 3
+        },
+        {
+          "date": "2026-11-22",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -16352,7 +16357,7 @@
         "1970s": 8,
         "1980s": 12,
         "1990s": 27,
-        "2000s": 26,
+        "2000s": 27,
         "2010s": 52,
         "2020s": 201
       },
