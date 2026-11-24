@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -65,7 +66,25 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
-          
+
+      # deploy-pages looks the artifact up through the REST API a fraction of
+      # a second after the upload is finalized. That listing can lag, and the
+      # deploy then fails with 'No artifacts named "github-pages" were found'.
+      # Wait until the listing shows it (up to ~60s) before deploying.
+      - name: Wait for the artifact to be listed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for attempt in $(seq 1 20); do
+            count=$(gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts?name=github-pages" --jq '.total_count' || echo 0)
+            if [ "${count:-0}" -ge 1 ]; then
+              echo "Artifact listed after $attempt check(s)"
+              exit 0
+            fi
+            sleep 3
+          done
+          echo "Artifact still not listed after 60s; trying the deploy anyway"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
