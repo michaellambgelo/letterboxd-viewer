@@ -7,7 +7,7 @@
 
 A personal Letterboxd stats dashboard rendered as a static site on GitHub Pages. A Python pipeline runs on a cron schedule, merges a Letterboxd export archive (historical baseline) with the public RSS feed (delta for new entries), and pre-computes every field the frontend displays into `data/stats.json`.
 
-Live site: **https://michaellambgelo.github.io/letterboxd-viewer/**
+Live site: **https://letterboxd.michaellamb.dev/** (the GitHub Pages default, `michaellambgelo.github.io/letterboxd-viewer/`, redirects to it)
 
 ## What the dashboard shows
 
@@ -23,7 +23,16 @@ Live site: **https://michaellambgelo.github.io/letterboxd-viewer/**
 - **Favorite films** — the four favorites pulled from `profile.csv`
 - **Lists** — every Letterboxd list with film count, tags, and description
 - **Tag cloud** — diary tags weighted by use
-- **Guestbook** — contact form that posts to a Discord webhook
+- **Guestbook** — contact form that posts to a Discord webhook (in the footer of every page)
+
+When the rolodex Worker is reachable, the dashboard also layers live data from its `GET /stats/live` over the static render: avatar, posters and like hearts in Recent activity, a Latest Reviews section, and a "+N since last update" note. Without the Worker the static render is complete on its own.
+
+## Other pages
+
+- **Rolodex** (`rolodex.html`) — a curated shortlist of Letterboxd members, each card showing their last four watched. Served by the Cloudflare Worker in `worker/` (KV-backed, with an admin UI behind Cloudflare Access); see `worker/SETUP.md`.
+- **Network** (`network.html`, from `data/network.json`) — an anonymized graph of followers, following and mutuals. Built by hand with `scripts/compute_network.py` from browser exports that are never committed.
+- **Tags** (`tags.html`) — pick diary tags and get every entry logged with them, read straight from `data/viewing_history.json` and grouped by `data/tag_categories.json`.
+- **Rewatches** — see below.
 
 The **Rewatches** page (`rewatches.html`, from `data/rewatches.json`) lists every film logged more than once, the films first seen before the diary, and the films marked watched with no diary entry, with each number's definition spelled out so you can compute your own from a Letterboxd export.
 
@@ -62,9 +71,9 @@ Merge key: `(filmTitle, filmYear, watchedDate)`. RSS guids and archive `boxd.it`
 | `scripts/download_rss.py` | `https://letterboxd.com/michaellamb/rss/` | `data/rss.xml`, `data/cleaned_rss.xml` |
 | `scripts/load_archive.py` | `data/archive/letterboxd-<user>-<date>/*.csv` | (library — used by the two scripts below) |
 | `scripts/extract_history.py` | archive baseline + `data/rss.xml` deltas + RSS-sourced entries carried forward from the previous `data/viewing_history.json` | `data/viewing_history.json` |
-| `scripts/compute_stats.py` | `viewing_history.json` + archive sidecars | `data/stats.json` |
+| `scripts/compute_stats.py` | `viewing_history.json` + archive sidecars | `data/stats.json`, `data/rewatches.json`, `data/watchlist.json` |
 
-`stats.json` contains every field the dashboard consumes — lifetime stat totals, rating distribution, heatmap series, decade buckets, most-rewatched/highest-rated lists, recent activity, watchlist summary, favorite films, lists, tag cloud, profile, archive export date, and a `byYear` block with per-diary-year slices for the year selector. The frontend is a pure static-file consumer — no runtime computation beyond Chart.js rendering, the heatmap grid layout, and the year-selector swap.
+`stats.json` contains every field the dashboard consumes — lifetime stat totals, rating distribution, heatmap series, decade buckets, most-rewatched/highest-rated lists, recent activity, watchlist summary, favorite films, lists, tag cloud, profile, archive export date, and a `byYear` block with per-diary-year slices for the year selector. The frontend is a static-file consumer of it — no runtime computation beyond Chart.js rendering, the heatmap grid layout, and the year-selector swap — plus the optional live layer described above.
 
 ## Automated updates
 
@@ -72,8 +81,8 @@ Merge key: `(filmTitle, filmYear, watchedDate)`. RSS guids and archive `boxd.it`
 
 1. Fetches the latest RSS feed
 2. Runs `extract_history.py` to merge the archive baseline with RSS deltas newer than the archive export date
-3. Runs `compute_stats.py` to regenerate `data/stats.json`
-4. Commits `data/rss.xml`, `data/cleaned_rss.xml`, `data/viewing_history.json`, and `data/stats.json` if anything changed
+3. Runs `compute_stats.py` to regenerate `data/stats.json`, `data/rewatches.json` and `data/watchlist.json`
+4. Commits `data/rss.xml`, `data/cleaned_rss.xml`, `data/viewing_history.json`, `data/stats.json`, `data/watchlist.json`, and `data/rewatches.json` if anything changed
 5. Triggers `deploy.yml` to republish GitHub Pages
 
 ## Running the pipeline locally
@@ -93,9 +102,11 @@ python3 scripts/compute_stats.py
 Then serve the site:
 
 ```bash
-python3 -m http.server 8000
+npx serve -l 8000 .
 # open http://localhost:8000
 ```
+
+Not `python3 -m http.server`: the nav links are extension-less (`rolodex`, `tags`), which it doesn't resolve, so they 404.
 
 ## Refreshing the archive
 
@@ -107,7 +118,7 @@ The Letterboxd username is hard-coded in `scripts/download_rss.py`. To point the
 
 ## Contact form
 
-The guestbook posts through a Discord webhook. The webhook URL is injected at deploy time via a GitHub Actions secret (`DISCORD_WEBHOOK_URL`) so the URL never lives in the repo. See the [Discord webhook intro](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) for setup.
+The guestbook posts through a Discord webhook. The webhook URL is injected at deploy time via a GitHub Actions secret (`DISCORD_WEBHOOK_URL`) so the URL never lives in the repo. `deploy.yml` writes it into all five pages. See the [Discord webhook intro](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) for setup.
 
 ## Related projects
 

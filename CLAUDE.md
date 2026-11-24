@@ -44,7 +44,8 @@ Letterboxd RSS  ──►  scripts/download_rss.py  ──►  data/rss.xml
 **Frontend (static):**
 - `index.html` — dashboard shell with stat cards, heatmap, charts, rewatched list, five-star grid, recent activity, guestbook form
 - `rolodex.html` — the curated-profiles page (see **Rolodex** below)
-- `assets/js/dashboard.js` — all rendering logic (data loading via `fetch('data/stats.json')`, heatmap layout, Chart.js setup, contact form handler)
+- `assets/js/dashboard.js` — all rendering logic (data loading via `fetch('data/stats.json')`, heatmap layout, Chart.js setup, live enrichment)
+- `assets/js/guestbook.js` — the footer guestbook form + toast on all 5 pages; posts to `window.DISCORD_WEBHOOK_URL`, which `deploy.yml` injects (absent locally, so submitting shows "not configured")
 - `assets/js/rolodex.js` — rolodex card rendering, reads the Worker's `/rolodex`
 - `network.html` + `assets/js/network.js` — the Network page (see **Network** below), reads `data/network.json`
 - `tags.html` + `assets/js/tags.js` — the Tags page (see **Tags** below), reads `data/viewing_history.json` + `data/tag_categories.json`
@@ -64,8 +65,10 @@ Letterboxd RSS  ──►  scripts/download_rss.py  ──►  data/rss.xml
 - `scripts/compute_stats.py` — reads `viewing_history.json` + archive sidecars, writes `data/stats.json` with pre-computed lifetime stats, `byYear` per-diary-year slices, `watchlist`, `likedFilms`, `favoriteFilms`, `lists`, `tagCloud`, and `archiveExportDate`; also writes `data/rewatches.json` (`compute_rewatches()`) for the Rewatches page
 
 **Workflows:**
-- `.github/workflows/download-data-and-assets.yml` — cron `0 */6 * * *`. Runs the 3-script pipeline, commits any changed files in `data/`, and triggers `deploy.yml` via `actions/github-script`
-- `.github/workflows/deploy.yml` — publishes to GitHub Pages on push to `main`; injects `DISCORD_WEBHOOK_URL` into the built HTML
+- `.github/workflows/download-data-and-assets.yml` — cron `0 */6 * * *`. Runs the 3-script pipeline, commits the six generated files it lists by name (`rss.xml`, `cleaned_rss.xml`, `viewing_history.json`, `stats.json`, `watchlist.json`, `rewatches.json`; a new output must be added to that `git add`), and triggers `deploy.yml` via `actions/github-script`
+- `.github/workflows/deploy.yml` — publishes to GitHub Pages on push to `main`; injects `DISCORD_WEBHOOK_URL` into all 5 pages. After the upload it sleeps 10s and runs `actions/deploy-pages` up to three times: the action looks the artifact up once, with no retry, in an internal service that can lag the upload ("No artifacts named github-pages", actions/deploy-pages#451). Polling the REST artifact listing doesn't help; it's a different backend. Don't re-run a failed attempt of that job, dispatch a fresh run: a re-run uploads a second artifact
+- `.github/workflows/tests.yml` — pytest over `scripts/` and `npm test` in `worker/`, on PRs and pushes to `main` (pushes touching only `data/**` are skipped)
+- `scripts/deploy.sh` — local deploy helper: `site` pushes `main`, `worker` runs `wrangler deploy`
 
 ## Data contract: `stats.json`
 
@@ -113,7 +116,7 @@ The frontend reads only these top-level keys (see `compute_stats.py` and `dashbo
 - **Refreshing the archive:** export from Letterboxd, drop the new `letterboxd-michaellamb-YYYY-MM-DD-HH-MM-utc/` folder under `data/archive/`, optionally delete the older one, and re-run `extract_history.py` + `compute_stats.py`. The loader picks the lexicographically newest folder.
 - **Watchlist-only exports:** Letterboxd can export just the watchlist as `watchlist-<user>-YYYY-MM-DD-HH-MM-utc.csv`. Drop it straight into `data/archive/` (not inside a folder). `load_archive.load_watchlist_snapshot()` uses whichever is newer by the timestamp in the name, this file or the full archive's `watchlist.csv`, so a quick watchlist refresh doesn't need a full re-export. Like the archive, the cron doesn't commit it, so commit the CSV by hand.
 - **Orphaned (removed) films:** a Letterboxd export natively ships an `orphaned/` subfolder (`diary.csv`, `reviews.csv`, `comments.csv`) holding entries whose film was later **removed from Letterboxd's database** — these rows have an empty `Letterboxd URI` and are kept *out* of the main `diary.csv`/`watched.csv`, so they never enter the main stats. `load_archive.load_orphaned()` reads that folder and `compute_stats.compute_orphaned_films()` emits `orphanedFilms` for the "Logged Films Removed from Letterboxd" section (dedicated, not counted in lifetime totals). RSS can't reveal removals (it's a ~50-item recent window), so the export is the only source. The sibling `deleted/` subfolder (entries the user deleted, valid URIs) is intentionally unused. The archive CSVs aren't committed by the cron workflow — commit a re-exported archive folder by hand so the cron's `compute_stats.py` re-reads it.
-- **Stale artifacts to ignore:** `docs/letterboxd-viewer-presentation.md` is leftover from the old Last Four Watched direction and is not part of the deployed site. (`worker/` used to be listed here too — it is now live; see **Rolodex**.)
+- **Stale artifacts to ignore:** `docs/letterboxd-viewer-presentation.md` is leftover from the old Last Four Watched direction, as are `assets/sass/`, `assets/css/images/` and `assets/images/fulls|thumbs/` (the old template's styles and one poster; no page references them). (`worker/` used to be listed here too — it is now live; see **Rolodex**.)
 
 ## Live enrichment (`GET /stats/live` on the rolodex Worker)
 
@@ -147,7 +150,7 @@ Worker call never blocks or breaks the page):
   scope only — the year selector hides it via `liveState`.
 
 Local dev: same `?api=` override as rolodex.js, honored only on localhost
-(`http://localhost:8000/index.html?api=http://localhost:8787` against
+(`http://localhost:8000/index.html?api=http://localhost:8788` against
 `npm run dev` in `worker/`).
 
 ## Network (`network.html` + `scripts/compute_network.py`)
@@ -465,7 +468,7 @@ made `boxd-card` a Chrome extension.) Everything must be fetched server-side.
   closed. Local dev uses `npm run dev`, which passes `ADMIN_DEV_BYPASS` on the
   command line — never committed as a var.
 - **Admin (`/admin`, markup + browser script in `worker/admin-page.js`)** has
-  four tabs over `/admin/api/*`:
+  six tabs (plus a History dialog) over `/admin/api/*`:
   - **Profiles**: the original add/edit/remove form.
   - **Feed health**: one row per member from `snapshot:<user>` alone (it is only
     written by a successful fetch, so its `fetchedAt` is "last time this feed

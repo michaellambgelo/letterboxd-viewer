@@ -1,8 +1,9 @@
 # Letterboxd Viewer Sequence Diagrams
 
-How the two pages load (stats dashboard + rolodex), how the rolodex Worker
-enriches profiles, how the admin curates them, and how the cron pipeline
-refreshes the stats data.
+How the stats dashboard and the rolodex load, how the rolodex Worker enriches
+profiles, how the admin curates them, and how the cron pipeline refreshes the
+stats data. The other three pages (Network, Tags, Rewatches) are plain static
+consumers of a JSON file under `data/` and have no diagram; see CLAUDE.md.
 
 ## Runtime: stats dashboard (`index.html`)
 
@@ -15,6 +16,8 @@ sequenceDiagram
     participant Dashboard as dashboard.js
     participant ChartJS as Chart.js (CDN)
     participant Stats as data/stats.json
+    participant Worker as rolodex Worker
+    participant Guestbook as guestbook.js
     participant Discord as Discord Webhook
 
     %% Initial page load
@@ -24,18 +27,27 @@ sequenceDiagram
     Index->>Shared: <script util.js> then <script nav.js>
     Note over Shared: util.js exposes window.LBV<br/>(escapeHtml, ratingToStars, …)<br/>nav.js renders the hamburger<br/>into <div data-site-nav>
     Index->>Dashboard: <script dashboard.js>
+    Dashboard->>Worker: fetch /stats/live (started first, not awaited)
     Dashboard->>Stats: fetch('data/stats.json')
     Stats-->>Dashboard: JSON (pre-computed stats)
     Dashboard->>Browser: renderStatCards, renderHeatmap, renderCharts, renderLists
     Browser-->>User: Show dashboard
 
-    %% Guestbook submission
+    %% Live enrichment (optional)
+    alt Worker reachable
+        Worker-->>Dashboard: recent feed (~50 items) + avatar, stale flag
+        Dashboard->>Browser: avatar, Recent Activity with posters and likes,<br/>Latest Reviews, "+N since last update"
+    else Worker unreachable
+        Note over Dashboard: static render stays as it is
+    end
+
+    %% Guestbook submission (same on every page)
     User->>Browser: Fill guestbook form, click Send
-    Browser->>Dashboard: submit event
-    Dashboard->>Discord: POST webhookUrl (embed payload)
-    Note over Dashboard,Discord: webhookUrl comes from<br/>window.DISCORD_WEBHOOK_URL,<br/>injected at deploy time
-    Discord-->>Dashboard: 204 No Content
-    Dashboard->>Browser: showToast('Message sent')
+    Browser->>Guestbook: submit event
+    Guestbook->>Discord: POST webhookUrl (embed payload)
+    Note over Guestbook,Discord: webhookUrl comes from<br/>window.DISCORD_WEBHOOK_URL,<br/>injected at deploy time
+    Discord-->>Guestbook: 204 No Content
+    Guestbook->>Browser: showToast('Message sent')
     Browser-->>User: Success toast
 ```
 
@@ -65,7 +77,7 @@ sequenceDiagram
 
     loop per profile, ≤6 concurrent, completion order
         Worker->>Worker: enrich(profile)  — see next diagram
-        Worker-->>Rolodex: {"type":"profile", username, films, avatar, stale}
+        Worker-->>Rolodex: {"type":"profile", username, films, avatar, stale, history}
         Rolodex->>Rolodex: fillCard(matched by username)
     end
     Worker-->>Rolodex: stream closes
@@ -77,6 +89,8 @@ sequenceDiagram
     end
 
     %% Navigation
+    User->>Rolodex: pick a sort
+    Rolodex->>Rolodex: applySort(): re-append the card nodes;<br/>film-based sorts re-apply once at stream end
     User->>Rolodex: type in filter / click a letter
     Rolodex->>Rolodex: applyFilter(): hide non-matching cards,<br/>disable letters with no visible card
     Rolodex->>Rolodex: jumpToLetter(): instant scrollIntoView
@@ -87,6 +101,10 @@ sequenceDiagram
 Per-profile caching is what shields letterboxd.com — each feed is fetched at
 most once per 15 minutes no matter how many visitors arrive. Snapshots make a
 failing feed degrade to "last known good, flagged stale" instead of a blank card.
+On a cache miss the whole feed is also merged into `history:<username>`, which
+is what the history sorts and the card's "N logged" line read. A Worker cron
+(`0 */3 * * *`) runs this same path for 1/8 of the rolodex per run, so every
+member's feed is read daily.
 
 ```mermaid
 sequenceDiagram
@@ -103,7 +121,8 @@ sequenceDiagram
             Worker->>LB: GET /<username>/rss/
             alt 200 OK
                 LB-->>Worker: RSS XML
-                Worker->>Worker: parseFeed(): keep only items with<br/>letterboxd:watchedDate (skip lists),<br/>decode entities, take first 4
+                Worker->>Worker: parseFeed(): keep only items with<br/>letterboxd:watchedDate (skip lists),<br/>decode entities; first 4 go on the card
+                Worker->>KV: mergeHistory() into history:<username><br/>(written only when something changed)
                 Worker->>Cache: put (15min)
                 Worker->>KV: put snapshot:<username> (no TTL)
             else error / non-200
@@ -140,7 +159,7 @@ sequenceDiagram
     Admin->>Access: complete PIN
     Access->>Worker: forward request + Cf-Access-Jwt-Assertion
     Worker->>Worker: verify JWT signature against team certs,<br/>check aud / iss / exp
-    Worker-->>Admin: admin UI (inline HTML)
+    Worker-->>Admin: admin UI (worker/admin-page.js)
 
     %% Preview before save
     Admin->>Worker: POST /admin/api/preview {username}
@@ -150,14 +169,21 @@ sequenceDiagram
     %% CRUD (username is the KV key — immutable; delete + re-add to fix)
     Admin->>Worker: POST | PUT | DELETE /admin/api/profiles[/username]
     Worker->>KV: read-modify-write rolodex:v1
-    Note over Worker,KV: DELETE also removes snapshot:<user><br/>and avatar:<user> so re-adding starts clean
+    Note over Worker,KV: DELETE also removes snapshot:<user>,<br/>avatar:<user> and history:<user>
     Worker-->>Admin: updated entry / 204
     Note over Admin: Display order is never stored —<br/>readProfiles() sorts by first name,<br/>so renaming someone moves their card
 ```
 
-## Data pipeline (cron, every 6 hours — stats dashboard only)
+This shows the Profiles tab only. The admin also has Feed health, Backup &
+bulk, Rolodex tags, Pipeline and Diary tags tabs; the last two read and write
+this repo through the GitHub API. CLAUDE.md (**Rolodex → Admin**) covers them.
 
-The rolodex does not touch this pipeline; it is entirely Worker + KV.
+## Data pipeline (cron, every 6 hours)
+
+Feeds the dashboard, Tags (`viewing_history.json`) and Rewatches
+(`rewatches.json`). The rolodex cards do not touch this pipeline; they are
+entirely Worker + KV. (The admin's Pipeline tab can dispatch this workflow and
+commit a watchlist CSV.)
 
 ```mermaid
 sequenceDiagram
@@ -181,18 +207,19 @@ sequenceDiagram
     Extract->>Archive: load_diary() — full diary baseline
     Archive-->>Extract: all entries up to export date
     Extract->>Extract: Read current data/rss.xml
+    Extract->>History: Read previous viewing_history.json<br/>(carry forward RSS-sourced entries<br/>that have scrolled out of the feed)
     Extract->>Extract: Merge — archive wins on overlap,<br/>RSS adds only entries newer than<br/>export date − 1 day<br/>key = (filmTitle, filmYear, watchedDate)
     Extract->>History: Write data/viewing_history.json
 
     Cron->>Compute: python3 scripts/compute_stats.py
     Compute->>History: Read viewing_history.json
     Compute->>Archive: watchlist, likes, lists, favorites,<br/>profile, orphaned/
-    Compute->>Stats: Write data/stats.json<br/>(lifetime + byYear slices)
+    Compute->>Stats: Write data/stats.json<br/>(lifetime + byYear slices),<br/>data/rewatches.json, data/watchlist.json
 
-    Cron->>Cron: git add data/ && commit && push
+    Cron->>Cron: git add the six generated files,<br/>commit && push (only if changed)
     Cron->>Deploy: workflow_dispatch (deploy.yml)
-    Deploy->>Deploy: Inject DISCORD_WEBHOOK_URL into index.html
-    Deploy->>Deploy: Publish to GitHub Pages
+    Deploy->>Deploy: Inject DISCORD_WEBHOOK_URL into all five pages
+    Deploy->>Deploy: Publish to GitHub Pages<br/>(deploy-pages retried up to 3 times)
 ```
 
 ## Key ideas
@@ -200,13 +227,16 @@ sequenceDiagram
 - **Archive + RSS merge.** Letterboxd's RSS only exposes the ~50 most recent
   diary entries. The full history comes from a Letterboxd export archive under
   `data/archive/`; RSS layers on only entries logged **after** the export date.
-  The archive wins on overlap, which also lets its deletions stick. (An earlier
+  The archive wins on overlap, which also lets its deletions stick. RSS-sourced
+  entries are carried forward from the previous `viewing_history.json`, since
+  the feed is a sliding window. (An earlier
   design reconstructed history by walking every git commit of `data/rss.xml`;
   the archive replaced that.)
-- **Two data planes.** The stats dashboard is fully static — pre-computed JSON,
-  refreshed by cron, no runtime backend. The rolodex is fully live — Worker +
-  KV, no cron involvement. Neither depends on the other; they share only the
-  static shell (CSS, `util.js`, `nav.js`).
+- **Two data planes.** The stats dashboard is static — pre-computed JSON,
+  refreshed by the GitHub Actions cron — with an optional live layer from the
+  Worker's `/stats/live` that it never depends on. The rolodex is fully live —
+  Worker + KV, with its own Worker cron keeping histories current. They share
+  the static shell (CSS, `util.js`, `nav.js`, `guestbook.js`).
 - **Streaming beats caching harder.** All per-profile cache entries are filled
   by whichever request finds them empty, so they expire together ~15min later.
   Rather than making the unlucky cold visitor wait on the slowest of 60+ feeds,

@@ -63,7 +63,19 @@ The Worker verifies the `Cf-Access-Jwt-Assertion` signature against
 `exp` on every admin request — so a removed or misconfigured Access application
 fails closed instead of silently exposing the write API.
 
-## 5. Verify
+## 5. GitHub token (admin Pipeline and Diary tags tabs)
+
+Those two tabs read and write this repo through the GitHub API. Create a
+fine-grained token scoped to this repository only, with **Contents** and
+**Actions** read/write, and store it as a secret:
+
+```bash
+npx wrangler secret put GITHUB_TOKEN
+```
+
+Without it every write from those tabs answers 503; the rest of the admin works.
+
+## 6. Verify
 
 ```bash
 # public read stays open
@@ -85,7 +97,7 @@ resolves before you save it.
 
 ```bash
 npm run dev     # wrangler dev --var ADMIN_DEV_BYPASS:true  (port 8788)
-npm test        # node:test — feed parsing, entity decoding, username rules
+npm test        # node:test — feed parsing, history merge, admin endpoints (fake KV, stubbed fetch)
 ```
 
 `ADMIN_DEV_BYPASS` is passed on the command line, never committed as a var, so it
@@ -116,11 +128,17 @@ would let a crafted link repoint the page at an attacker-controlled JSON source.
   ```bash
   npx wrangler kv key get rolodex:v1 --binding ROLODEX --remote
   ```
-- **KV keys:** `rolodex:v1` is the ordered curated list and the only source of
-  truth. `snapshot:<user>` (no TTL) and `avatar:<user>` (24h TTL) are derived
-  caches — safe to delete at any time; they refill on the next request.
-- **Removing someone** in the admin also deletes their snapshot and avatar keys,
-  so re-adding them starts clean.
+- **KV keys:** `rolodex:v1` is the curated list and the only source of truth
+  (display order is derived on read, not stored). `snapshot:<user>` (no TTL),
+  `avatar:<user>` (24h TTL) and `stats:live:v1` are derived caches — safe to
+  delete at any time; they refill on the next request. `history:<user>` is not
+  a cache: it holds every diary entry seen in that member's feed and only
+  regrows from what is still in the ~50-item window. `rolodex:prev` is the list
+  as it was before the last import, for the admin's one-step undo.
+- **Removing someone** in the admin also deletes their snapshot, avatar and
+  history keys, so re-adding them starts clean.
+- **Cron:** `wrangler.toml` schedules `0 */3 * * *`, refreshing 1/8 of the
+  rolodex per run. It deploys with the Worker; nothing to set up.
 - **The rolodex page is public.** Everything on it is already public on Letterboxd,
   but it does publish the list of who you follow closely alongside their recent
   watches. If you ever want someone curated but not featured, add a
