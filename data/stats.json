@@ -1,6 +1,6 @@
 {
-  "totalWatched": 2741,
-  "uniqueFilms": 2234,
+  "totalWatched": 2742,
+  "uniqueFilms": 2235,
   "totalRewatches": 900,
   "averageRating": 3.88,
   "ratingDistribution": {
@@ -12,7 +12,7 @@
     "3.0": 307,
     "3.5": 396,
     "4.0": 574,
-    "4.5": 400,
+    "4.5": 401,
     "5.0": 616,
     "unrated": 134
   },
@@ -128,7 +128,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 32
+    "2026-11": 33
   },
   "heatmapData": [
     {
@@ -6542,6 +6542,10 @@
     {
       "date": "2026-11-22",
       "count": 1
+    },
+    {
+      "date": "2026-11-24",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6550,7 +6554,7 @@
     "1930s": 7,
     "1940s": 17,
     "1950s": 20,
-    "1960s": 32,
+    "1960s": 33,
     "1970s": 61,
     "1980s": 93,
     "1990s": 175,
@@ -6631,6 +6635,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1601660565",
+      "filmTitle": "Dont Look Back",
+      "filmYear": 1967,
+      "watchedDate": "2026-11-24",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 135,
+      "link": "https://letterboxd.com/michaellamb/film/dont-look-back-1967/",
+      "title": "Dont Look Back, 1967 - ★★★★½",
+      "reviewText": "watched in preparation for a free screening of <em>The Last Waltz</em> (1978) on the 50th anniversary of the farewell concert\n\nthis documentary is quite incredible at letting Bob Dylan be Bob Dylan on camera\n\nI haven't heard that Medgar Evers lyric before",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1599363303",
       "filmTitle": "Saved!",
@@ -6945,21 +6963,6 @@
         "youtube",
         "omeleto"
       ],
-      "loggedDate": "2026-11-08",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-hcYopX",
-      "filmTitle": "We're All Gonna Die",
-      "filmYear": 2024,
-      "watchedDate": "2026-11-07",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/hcYopX",
-      "title": "We're All Gonna Die",
-      "reviewText": "It hooked me enough at the beginning to keep in invested and I'm so glad I stayed with it. Really good stuff at the end.",
-      "tags": [],
       "loggedDate": "2026-11-08",
       "source": "archive"
     }
@@ -8837,7 +8840,7 @@
   ],
   "dateRange": {
     "earliest": "2007-05-05",
-    "latest": "2026-11-22"
+    "latest": "2026-11-24"
   },
   "byYear": {
     "2007": {
@@ -15514,10 +15517,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 343,
-      "uniqueFilms": 297,
+      "totalWatched": 344,
+      "uniqueFilms": 298,
       "totalRewatches": 120,
-      "averageRating": 3.93,
+      "averageRating": 3.94,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 5,
@@ -15527,7 +15530,7 @@
         "3.0": 31,
         "3.5": 46,
         "4.0": 71,
-        "4.5": 65,
+        "4.5": 66,
         "5.0": 82,
         "unrated": 7
       },
@@ -16347,13 +16350,17 @@
         {
           "date": "2026-11-22",
           "count": 1
+        },
+        {
+          "date": "2026-11-24",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
         "1890s": 1,
         "1920s": 1,
         "1950s": 3,
-        "1960s": 6,
+        "1960s": 7,
         "1970s": 8,
         "1980s": 12,
         "1990s": 27,
@@ -16545,7 +16552,7 @@
     "comedycentral": 1
   },
   "watchlist": {
-    "count": 1594,
+    "count": 1593,
     "oldestAdded": "2020-03-16",
     "newestAdded": "2026-11-19",
     "recentlyAdded": [
@@ -16610,7 +16617,7 @@
         "addedDate": "2026-11-03"
       }
     ],
-    "removedSinceExport": 1,
+    "removedSinceExport": 2,
     "snapshotDate": "2026-11-21",
     "snapshotSource": "letterboxd-michaellamb-2026-11-21-05-45-utc"
   },
