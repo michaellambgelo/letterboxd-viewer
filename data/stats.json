@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2744,
-  "uniqueFilms": 2235,
-  "totalRewatches": 902,
+  "totalWatched": 2746,
+  "uniqueFilms": 2236,
+  "totalRewatches": 903,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -12,8 +12,8 @@
     "3.0": 307,
     "3.5": 396,
     "4.0": 575,
-    "4.5": 402,
-    "5.0": 616,
+    "4.5": 403,
+    "5.0": 617,
     "unrated": 134
   },
   "filmsByMonth": {
@@ -128,7 +128,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 35
+    "2026-11": 37
   },
   "heatmapData": [
     {
@@ -6546,6 +6546,14 @@
     {
       "date": "2026-11-24",
       "count": 3
+    },
+    {
+      "date": "2026-11-25",
+      "count": 1
+    },
+    {
+      "date": "2026-11-26",
+      "count": 1
     }
   ],
   "filmYearDistribution": {
@@ -6555,12 +6563,12 @@
     "1940s": 17,
     "1950s": 21,
     "1960s": 33,
-    "1970s": 61,
+    "1970s": 62,
     "1980s": 93,
     "1990s": 175,
     "2000s": 288,
     "2010s": 765,
-    "2020s": 1261
+    "2020s": 1262
   },
   "mostRewatched": [
     {
@@ -6635,6 +6643,34 @@
     }
   ],
   "recentActivity": [
+    {
+      "guid": "letterboxd-entry-1603319779",
+      "filmTitle": "Wicker",
+      "filmYear": 2026,
+      "watchedDate": "2026-11-26",
+      "memberRating": 5.0,
+      "rewatch": false,
+      "tmdbId": 1195803,
+      "link": "https://letterboxd.com/michaellamb/film/wicker/",
+      "title": "Wicker, 2026 - ★★★★★",
+      "reviewText": "i loved it",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1603169353",
+      "filmTitle": "The Last Waltz",
+      "filmYear": 1978,
+      "watchedDate": "2026-11-25",
+      "memberRating": 4.5,
+      "rewatch": true,
+      "tmdbId": 13963,
+      "link": "https://letterboxd.com/michaellamb/film/the-last-waltz/1/",
+      "title": "The Last Waltz, 1978 - ★★★★½",
+      "reviewText": "i watched this for the first time this year and i was lucky to be part of bringing a free screening to Jackson, MS, to celebrate the 50th anniversary of the concert at the center of the film.\n\nthanks to Ryan Parker at Mississippi Film Society and Conner Reeves and Matthew McLaughlin at Fertile Ground Beer Co for their partnership in this special event!",
+      "tags": [],
+      "source": "rss"
+    },
     {
       "guid": "letterboxd-entry-1601660565",
       "filmTitle": "Dont Look Back",
@@ -6923,43 +6959,16 @@
       ],
       "loggedDate": "2026-11-10",
       "source": "archive"
-    },
-    {
-      "guid": "archive-hdsxb1",
-      "filmTitle": "Primetime",
-      "filmYear": 2026,
-      "watchedDate": "2026-11-08",
-      "memberRating": 4.0,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://boxd.it/hdsxb1",
-      "title": "Primetime",
-      "reviewText": "i'm sure someone's connected the lines \"you did this you yourself\" in this film and \"she did that to herself\" in <em>YCSE</em> in an 800-word essay and i want to read it",
-      "tags": [],
-      "loggedDate": "2026-11-08",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-he95Rf",
-      "filmTitle": "Godzilla Minus Zero",
-      "filmYear": 2026,
-      "watchedDate": "2026-11-08",
-      "memberRating": 4.5,
-      "rewatch": true,
-      "tmdbId": null,
-      "link": "https://boxd.it/he95Rf",
-      "title": "Godzilla Minus Zero",
-      "reviewText": "Round 2 in IMAX with Ryan and Paul \r\n\r\nPhenomenal",
-      "tags": [
-        "in theaters",
-        "imax",
-        "ryanparker"
-      ],
-      "loggedDate": "2026-11-09",
-      "source": "archive"
     }
   ],
   "highestRated": [
+    {
+      "filmTitle": "Wicker",
+      "filmYear": 2026,
+      "watchedDate": "2026-11-26",
+      "link": "https://letterboxd.com/michaellamb/film/wicker/",
+      "tmdbId": 1195803
+    },
     {
       "filmTitle": "Oppenheimer",
       "filmYear": 2023,
@@ -8832,7 +8841,7 @@
   ],
   "dateRange": {
     "earliest": "2007-05-05",
-    "latest": "2026-11-24"
+    "latest": "2026-11-26"
   },
   "byYear": {
     "2007": {
@@ -15509,9 +15518,9 @@
       ]
     },
     "2026": {
-      "totalWatched": 346,
-      "uniqueFilms": 300,
-      "totalRewatches": 122,
+      "totalWatched": 348,
+      "uniqueFilms": 302,
+      "totalRewatches": 123,
       "averageRating": 3.94,
       "ratingDistribution": {
         "0.5": 2,
@@ -15522,8 +15531,8 @@
         "3.0": 31,
         "3.5": 46,
         "4.0": 72,
-        "4.5": 67,
-        "5.0": 82,
+        "4.5": 68,
+        "5.0": 83,
         "unrated": 7
       },
       "heatmapData": [
@@ -16346,6 +16355,14 @@
         {
           "date": "2026-11-24",
           "count": 3
+        },
+        {
+          "date": "2026-11-25",
+          "count": 1
+        },
+        {
+          "date": "2026-11-26",
+          "count": 1
         }
       ],
       "filmYearDistribution": {
@@ -16353,12 +16370,12 @@
         "1920s": 1,
         "1950s": 4,
         "1960s": 7,
-        "1970s": 8,
+        "1970s": 9,
         "1980s": 12,
         "1990s": 27,
         "2000s": 27,
         "2010s": 53,
-        "2020s": 201
+        "2020s": 202
       },
       "mostRewatched": [
         {
@@ -16398,6 +16415,12 @@
         }
       ],
       "highestRated": [
+        {
+          "filmTitle": "Wicker",
+          "filmYear": 2026,
+          "watchedDate": "2026-11-26",
+          "link": "https://letterboxd.com/michaellamb/film/wicker/"
+        },
         {
           "filmTitle": "Oppenheimer",
           "filmYear": 2023,
@@ -16451,12 +16474,6 @@
           "filmYear": 1978,
           "watchedDate": "2026-10-29",
           "link": "https://boxd.it/h3mV55"
-        },
-        {
-          "filmTitle": "KPop Demon Hunters",
-          "filmYear": 2025,
-          "watchedDate": "2026-10-28",
-          "link": "https://boxd.it/h26xdD"
         }
       ]
     }
@@ -16544,7 +16561,7 @@
     "comedycentral": 1
   },
   "watchlist": {
-    "count": 1593,
+    "count": 1592,
     "oldestAdded": "2020-03-16",
     "newestAdded": "2026-11-19",
     "recentlyAdded": [
@@ -16609,7 +16626,7 @@
         "addedDate": "2026-11-03"
       }
     ],
-    "removedSinceExport": 2,
+    "removedSinceExport": 3,
     "snapshotDate": "2026-11-21",
     "snapshotSource": "letterboxd-michaellamb-2026-11-21-05-45-utc"
   },
