@@ -1,7 +1,7 @@
 {
-  "totalWatched": 2746,
-  "uniqueFilms": 2236,
-  "totalRewatches": 903,
+  "totalWatched": 2749,
+  "uniqueFilms": 2238,
+  "totalRewatches": 904,
   "averageRating": 3.88,
   "ratingDistribution": {
     "0.5": 11,
@@ -12,8 +12,8 @@
     "3.0": 307,
     "3.5": 396,
     "4.0": 575,
-    "4.5": 403,
-    "5.0": 617,
+    "4.5": 404,
+    "5.0": 619,
     "unrated": 134
   },
   "filmsByMonth": {
@@ -128,7 +128,7 @@
     "2026-08": 23,
     "2026-09": 51,
     "2026-10": 46,
-    "2026-11": 37
+    "2026-11": 40
   },
   "heatmapData": [
     {
@@ -6553,7 +6553,7 @@
     },
     {
       "date": "2026-11-26",
-      "count": 1
+      "count": 4
     }
   ],
   "filmYearDistribution": {
@@ -6563,12 +6563,12 @@
     "1940s": 17,
     "1950s": 21,
     "1960s": 33,
-    "1970s": 62,
+    "1970s": 63,
     "1980s": 93,
     "1990s": 175,
     "2000s": 288,
     "2010s": 765,
-    "2020s": 1262
+    "2020s": 1264
   },
   "mostRewatched": [
     {
@@ -6654,6 +6654,48 @@
       "link": "https://letterboxd.com/michaellamb/film/wicker/",
       "title": "Wicker, 2026 - ★★★★★",
       "reviewText": "i loved it",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1604425545",
+      "filmTitle": "Club Kid",
+      "filmYear": 2026,
+      "watchedDate": "2026-11-26",
+      "memberRating": 5.0,
+      "rewatch": false,
+      "tmdbId": 1585239,
+      "link": "https://letterboxd.com/michaellamb/film/club-kid/",
+      "title": "Club Kid, 2026 - ★★★★★",
+      "reviewText": "i thought this was a really personal movie and i'm glad i got to see it in a theater in Mississippi\n\ni've only been to NYC once and cannot really relate to Peter in many socioeconomic ways, but i watched him be changed by an idea and i love how he came to be a whole person for himself by the end.\n\nwatched with Bear on Thanksgiving Day",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1604419049",
+      "filmTitle": "You Can See Everything",
+      "filmYear": 2026,
+      "watchedDate": "2026-11-26",
+      "memberRating": 5.0,
+      "rewatch": true,
+      "tmdbId": 1765072,
+      "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/3/",
+      "title": "You Can See Everything, 2026 - ★★★★★ (contains spoilers)",
+      "reviewText": "i've posted on other socials including the final frame with the question: is this an homage to <em>The Creation of Adam</em> by Michelangelo?\n\n<a href=\"https://www.threads.com/share/D3GexsZ_E\">threads</a> | <a href=\"https://x.com/themichaellamb/status/2126146538208423969/photo/1\">twitter</a>\n\nif intentional (and i believe it was) it brings a level of commentary to the characters of Billy and Liz. The mixture of the sacred and the profane gives this film its own tableau\n\na little monument of our love",
+      "tags": [],
+      "source": "rss"
+    },
+    {
+      "guid": "letterboxd-entry-1604346317",
+      "filmTitle": "A Charlie Brown Thanksgiving",
+      "filmYear": 1973,
+      "watchedDate": "2026-11-26",
+      "memberRating": 4.5,
+      "rewatch": false,
+      "tmdbId": 13479,
+      "link": "https://letterboxd.com/michaellamb/film/a-charlie-brown-thanksgiving/",
+      "title": "A Charlie Brown Thanksgiving, 1973 - ★★★★½",
+      "reviewText": "Snoopy and Woodstock always have the funnest sequences\n\nHappy Thanksgiving, Letterboxd!",
       "tags": [],
       "source": "rss"
     },
@@ -6906,59 +6948,6 @@
       ],
       "loggedDate": "2026-11-13",
       "source": "archive"
-    },
-    {
-      "guid": "archive-hfNUXd",
-      "filmTitle": "Customer Service",
-      "filmYear": 2017,
-      "watchedDate": "2026-11-10",
-      "memberRating": 3.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/hfNUXd",
-      "title": "Customer Service",
-      "reviewText": "",
-      "tags": [
-        "omeleto",
-        "youtube"
-      ],
-      "loggedDate": "2026-11-11",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-hfOQB5",
-      "filmTitle": "Word of Mouth",
-      "filmYear": 2024,
-      "watchedDate": "2026-11-10",
-      "memberRating": 5.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/hfOQB5",
-      "title": "Word of Mouth",
-      "reviewText": "can't wait to see the <em>Black Mirror</em> rip-off\r\n\r\n<a href=\"https://www.youtube.com/watch?v=kA6wW74qOSg\" target=\"_blank\">WORD OF MOUTH | Omeleto Comedy</a>",
-      "tags": [
-        "omeleto",
-        "youtube"
-      ],
-      "loggedDate": "2026-11-11",
-      "source": "archive"
-    },
-    {
-      "guid": "archive-hfwYTb",
-      "filmTitle": "The Breakfast Club",
-      "filmYear": 1985,
-      "watchedDate": "2026-11-09",
-      "memberRating": 4.0,
-      "rewatch": false,
-      "tmdbId": null,
-      "link": "https://boxd.it/hfwYTb",
-      "title": "The Breakfast Club",
-      "reviewText": "both about 1984 and <em>1984</em> (George Orwell)",
-      "tags": [
-        "youtube"
-      ],
-      "loggedDate": "2026-11-10",
-      "source": "archive"
     }
   ],
   "highestRated": [
@@ -6968,6 +6957,20 @@
       "watchedDate": "2026-11-26",
       "link": "https://letterboxd.com/michaellamb/film/wicker/",
       "tmdbId": 1195803
+    },
+    {
+      "filmTitle": "Club Kid",
+      "filmYear": 2026,
+      "watchedDate": "2026-11-26",
+      "link": "https://letterboxd.com/michaellamb/film/club-kid/",
+      "tmdbId": 1585239
+    },
+    {
+      "filmTitle": "You Can See Everything",
+      "filmYear": 2026,
+      "watchedDate": "2026-11-26",
+      "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/3/",
+      "tmdbId": 1765072
     },
     {
       "filmTitle": "Oppenheimer",
@@ -15518,10 +15521,10 @@
       ]
     },
     "2026": {
-      "totalWatched": 348,
-      "uniqueFilms": 302,
-      "totalRewatches": 123,
-      "averageRating": 3.94,
+      "totalWatched": 351,
+      "uniqueFilms": 305,
+      "totalRewatches": 124,
+      "averageRating": 3.95,
       "ratingDistribution": {
         "0.5": 2,
         "1.0": 5,
@@ -15531,8 +15534,8 @@
         "3.0": 31,
         "3.5": 46,
         "4.0": 72,
-        "4.5": 68,
-        "5.0": 83,
+        "4.5": 69,
+        "5.0": 85,
         "unrated": 7
       },
       "heatmapData": [
@@ -16362,7 +16365,7 @@
         },
         {
           "date": "2026-11-26",
-          "count": 1
+          "count": 4
         }
       ],
       "filmYearDistribution": {
@@ -16370,12 +16373,12 @@
         "1920s": 1,
         "1950s": 4,
         "1960s": 7,
-        "1970s": 9,
+        "1970s": 10,
         "1980s": 12,
         "1990s": 27,
         "2000s": 27,
         "2010s": 53,
-        "2020s": 202
+        "2020s": 204
       },
       "mostRewatched": [
         {
@@ -16422,6 +16425,18 @@
           "link": "https://letterboxd.com/michaellamb/film/wicker/"
         },
         {
+          "filmTitle": "Club Kid",
+          "filmYear": 2026,
+          "watchedDate": "2026-11-26",
+          "link": "https://letterboxd.com/michaellamb/film/club-kid/"
+        },
+        {
+          "filmTitle": "You Can See Everything",
+          "filmYear": 2026,
+          "watchedDate": "2026-11-26",
+          "link": "https://letterboxd.com/michaellamb/film/you-can-see-everything/3/"
+        },
+        {
           "filmTitle": "Oppenheimer",
           "filmYear": 2023,
           "watchedDate": "2026-11-21",
@@ -16462,18 +16477,6 @@
           "filmYear": 2006,
           "watchedDate": "2026-11-02",
           "link": "https://boxd.it/h8tKUv"
-        },
-        {
-          "filmTitle": "You Can See Everything",
-          "filmYear": 2026,
-          "watchedDate": "2026-11-01",
-          "link": "https://boxd.it/h7de6H"
-        },
-        {
-          "filmTitle": "Halloween",
-          "filmYear": 1978,
-          "watchedDate": "2026-10-29",
-          "link": "https://boxd.it/h3mV55"
         }
       ]
     }
